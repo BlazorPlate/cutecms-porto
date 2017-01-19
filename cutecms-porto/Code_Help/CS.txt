@@ -1,0 +1,59 @@
+#CACHE
+//[OutputCache(Duration = 3600, Location = OutputCacheLocation.Server)]
+
+#DEBUG GENERATED SQL
+db.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
+
+#LANGUAGE SELECTOR
+if (Thread.CurrentThread.CurrentCulture.Name.Equals("en-US"))
+{
+
+}
+if (Thread.CurrentThread.CurrentCulture.Name.Equals("ar-JO"))
+{
+ 
+}
+
+#TRY CATCH
+ try
+ {
+
+ }
+ catch (DbEntityValidationException e)
+ {
+  foreach (var eve in e.EntityValidationErrors)
+  {
+Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+ eve.Entry.Entity.GetType().Name, eve.Entry.State);
+	foreach (var ve in eve.ValidationErrors)
+	{
+ Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+  ve.PropertyName, ve.ErrorMessage);
+	}
+  }
+  throw;
+ }
+
+#WHERE IN Example
+var statusList = new string[] {"schedule","bbb" };
+var con = db.Contents.Where(c => statusList.Any(s => c.Status.Code.Equals(s)));
+
+#DATABASE TRANSACTION
+using (CMSEntities db = new CMSEntities())
+{
+DbContextTransaction transaction = db.Database.BeginTransaction();
+try
+{
+ db.SaveChanges();
+ transaction.Commit();
+}
+ catch
+{
+  transaction.Rollback();
+}
+}
+
+#Find & Replace
+e.g
+@OrganizationData.Organization.([a-z]\w*)
+@(OrganizationData.Organization?.$1)

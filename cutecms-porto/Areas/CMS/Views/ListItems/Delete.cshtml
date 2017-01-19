@@ -1,0 +1,36 @@
+﻿@model cutecms_porto.Areas.CMS.Models.DBModel.ListItem
+@{
+    ViewBag.MainTitle = Resources.Resources.ListItem;
+    ViewBag.Title = Resources.Resources.Delete;
+}
+<h3>@Resources.Resources.DeleteConfirmation</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ContentList.Code)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ContentList.Code)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Body)
+        </dt>
+        <dd>
+            @Html.Raw(HttpUtility.HtmlDecode(Model.Body))
+        </dd>
+    </dl>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" value=@Resources.Resources.Delete class="btn btn-default" /> |
+            @Html.ActionLink(Resources.Resources.BackToList, "Index", new { id = Model.ContentListId })
+        </div>
+    }
+</div>

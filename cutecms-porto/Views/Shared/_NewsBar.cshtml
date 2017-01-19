@@ -1,0 +1,82 @@
+﻿@using cutecms_porto.Areas.CMS.Models.DBModel
+@using System.Threading;
+@{
+    CMSEntities db = new CMSEntities();
+    var news = db.Contents.Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && c.IsUrgent && c.Status.Code.Equals("published")).ToList();
+}
+@if (news.Count() != 0)
+{
+    <div class="smarticker blink">
+        <ul>
+            <li style="color:white"><i class="fa fa-flash fa-2x"></i></li>
+            @foreach (var item in news)
+            {
+                <li><a href="@Url.Action("Content", "Pages", new { slug = @item.UrlSlug })">@item.Title</a></li>
+            }
+        </ul>
+    </div>
+    <script src="~/assets/plugins/smarticker/js/jquery.smarticker.min.js"></script>
+    if (CultureHelper.IsRighToLeft())
+    {
+        <script type="text/javascript">
+            $('.smarticker').smarticker({
+                theme: 2, 				// Defines SmarTicker Style: 1, 2, 3, 4 ...
+                direction: 'rtl',
+                layout: 'horizontal',
+                animation: 'slide',	    // Defines transition of news titles: default, fade, slide, ...
+                speed: 3000,			// Defines speed of transition for subcategory, category and news
+                startindex: 0,			// Starter index
+                pausetime: 5000,		// Pause time on each news
+                rounded: false,			// Add border radius to parent node
+                shadow: true,			// Add box-shadow to parent node
+                border: false,			// Add 1px solid border to parent node
+                category: true,			// If change this to false, the Category section will not be created
+                subcategory: true,		// If change this to false, the Subcategory section will not be created
+                titlesection: true,		// Define a title section before news title section
+                title: '@Resources.Resources.BreakingNews',	// When category and subcategory not available this section will show
+                progressbar: true,		// Add a progress bar
+                catcolor: true,			// Animate category section background color
+                subcatcolor: true,		// Animate sub category section background color
+                shuffle: true,			// Shuffles news titles sort order
+                showDate: true,			// If this be true, the date will show after news title
+                feedsOrder: 'older',		// Change sort order of news titles
+                controllerType: true,	// Change controller panel themes
+                developerMode: false,	// If this be true, You can see some logs in console
+                controllerType: 2,
+            });
+        </script>
+    }
+    else
+    {
+        <script type="text/javascript">
+            $('.smarticker').smarticker({
+                theme: 2, 				// Defines SmarTicker Style: 1, 2, 3, 4 ...
+                direction: 'ltr',
+                layout: 'horizontal',
+                animation: 'slide',	    // Defines transition of news titles: default, fade, slide, ...
+                speed: 3000,			// Defines speed of transition for subcategory, category and news
+                startindex: 0,			// Starter index
+                pausetime: 5000,		// Pause time on each news
+                rounded: false,			// Add border radius to parent node
+                shadow: true,			// Add box-shadow to parent node
+                border: false,			// Add 1px solid border to parent node
+                category: true,			// If change this to false, the Category section will not be created
+                subcategory: true,		// If change this to false, the Subcategory section will not be created
+                titlesection: true,		// Define a title section before news title section
+                title: '@Resources.Resources.BreakingNews',	// When category and subcategory not available this section will show
+                progressbar: true,		// Add a progress bar
+                catcolor: true,			// Animate category section background color
+                subcatcolor: true,		// Animate sub category section background color
+                shuffle: true,			// Shuffles news titles sort order
+                showDate: true,			// If this be true, the date will show after news title
+                feedsOrder: 'older',		// Change sort order of news titles
+                controllerType: true,	// Change controller panel themes
+                developerMode: false,	// If this be true, You can see some logs in console
+                controllerType: 2,
+            });
+        </script>
+    }
+}
+
+
+

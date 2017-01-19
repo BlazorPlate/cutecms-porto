@@ -1,0 +1,29 @@
+﻿@using System.Threading
+@using cutecms_porto.Areas.CMS.Models.DBModel;
+@{
+    CMSEntities db = new CMSEntities();
+    ViewBag.Title = Resources.Resources.Welcome;
+    ViewBag.MainTitle = Resources.Resources.Welcome;
+    ViewBag.SubTitle = Html.ActionLink(Resources.Resources.ExploreOurSite, "Index", "Home", new { area = "" }, null);
+    ViewBag.IconTitle = "fa fa-home";
+    Layout = "~/Areas/Identity/Views/Shared/_Layout.cshtml";
+}
+@Html.AntiForgeryToken()
+<div>
+    @if (Thread.CurrentThread.CurrentCulture.Name.Equals("en-US"))
+    {
+        Content Content = db.Contents.Where(c => c.Title.Equals("Welcome")).FirstOrDefault();
+        if (Content != null)
+        {
+            @Html.Raw(Content.MainContent)
+        }
+    }
+    @if (Thread.CurrentThread.CurrentCulture.Name.Equals("ar-JO"))
+    {
+        Content Content = db.Contents.Where(c => c.Title.Equals("مرحباً")).FirstOrDefault();
+        if (Content != null)
+        {
+            @Html.Raw(Content.MainContent)
+        }
+    }
+</div>

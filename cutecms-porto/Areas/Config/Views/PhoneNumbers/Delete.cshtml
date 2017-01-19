@@ -1,0 +1,35 @@
+﻿@model cutecms_porto.Areas.Config.Models.DBModel.PhoneNumber
+@{   
+    ViewBag.MainTitle = Resources.Resources.PhoneNumber;
+    ViewBag.Title = Resources.Resources.Delete;
+}
+<h3>@Resources.Resources.DeleteConfirmation</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Contact.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Number)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Number)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Extension)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Extension)
+        </dd>
+    </dl>
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" value=@Resources.Resources.Delete class="btn btn-default" /> |
+            @Html.ActionLink(Resources.Resources.BackToList, "Index", new { contactId = ViewBag.ContactId })
+        </div>
+    }
+</div>

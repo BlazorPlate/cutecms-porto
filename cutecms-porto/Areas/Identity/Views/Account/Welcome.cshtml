@@ -1,0 +1,27 @@
+﻿@using cutecms_porto.Areas.Config.Models.DBModel
+@using cutecms_porto.Helpers
+@model cutecms_porto.Areas.Identity.Models.LoginViewModel
+@{
+    ViewBag.Title = Resources.Resources.Welcome;
+    ViewBag.MainTitle = Resources.Resources.ThankYou;
+    ViewBag.SubTitle = Resources.Resources.EmailConfirmationCheck;
+    ViewBag.IconTitle = "fa fa-smile-o";
+    var organization = (Organization)System.Web.HttpRuntime.Cache["Organization"];
+    Layout = "~/Areas/Identity/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Welcome", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <div class="form-group" style="text-align:@(CultureHelper.IsRighToLeft() ? "right" : "left")">
+        <div>
+            <p>@Resources.Resources.ThankYouFor @(OrganizationData.Organization?.Name)</p>
+            <p>@Resources.Resources.Instruction</p>
+        </div>
+        <div>
+            <p>@Resources.Resources.Regards</p>
+            <p>@(OrganizationData.Organization?.Name)</p>
+        </div>
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

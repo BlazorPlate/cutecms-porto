@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = Resources.Resources.ConfirmEmail;
+    ViewBag.MainTitle = Resources.Resources.ConfirmEmail;
+    ViewBag.SubTitle = Resources.Resources.ConfirmEmail;
+    ViewBag.IconTitle = "fa fa-envelope";
+    Layout = "~/Areas/Identity/Views/Shared/_Layout.cshtml";
+}
+<h2>@ViewBag.Title.</h2>
+<div>
+    <p>
+        @Resources.Resources.ConfirmEmailThanks @Resources.Resources.Please @Html.ActionLink(@Resources.Resources.ClickHereToLogin, "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+    </p>
+</div>

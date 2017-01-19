@@ -1,0 +1,40 @@
+﻿@model cutecms_porto.Areas.Identity.Models.DBModel.IdentityDepartment
+@{
+    ViewBag.MainTitle = Resources.Resources.Department;
+    ViewBag.Title = @Resources.Resources.Details;
+}
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Code)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ManagerId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ManagerId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ParentId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ParentId)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Employee.LoginId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ordinal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ordinal)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(Resources.Resources.Edit, "Edit", new { id = Model.Id, languageId = ViewBag.LanguageId }) |
+    @Html.ActionLink(Resources.Resources.BackToList, "Index")
+</p>

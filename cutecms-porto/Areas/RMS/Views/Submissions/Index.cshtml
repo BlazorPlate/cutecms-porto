@@ -1,0 +1,150 @@
+﻿@model IEnumerable<cutecms_porto.Areas.RMS.Models.SubmissionViewModel>
+@{
+    ViewBag.MainTitle = Resources.Resources.Submissions;
+    ViewBag.Title = Resources.Resources.Index;
+}
+<div>@Html.ActionLink(Resources.Resources.DownloadApplications, "ExportApplicants", null, new { @class = "btn btn-danger" })</div>
+@section styles{ 
+<link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/buttons/1.2.1/css/buttons.dataTables.min.css" rel="stylesheet" />
+}
+<div style="margin-top:25px;">
+    <table id="submissionsTable" class="table table-bordered table-hover nowrap">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Id)</th>
+                <th>@Html.DisplayNameFor(model => model.ApplicantFullName)</th>
+                <th>@Html.DisplayNameFor(model => model.SubmissionDate)</th>
+                <th class="select-filter">@Html.DisplayNameFor(model => model.VacancyTitle)</th>
+                <th class="select-filter">@Html.DisplayNameFor(model => model.Department)</th>
+                <th>@Resources.Resources.Actions</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>@Html.DisplayNameFor(model => model.VacancyTitle)</th>
+                <th>@Html.DisplayNameFor(model => model.Department)</th>
+                <th></th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+@section Scripts{
+    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script src="//cdn.datatables.net/buttons/1.2.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.1/js/dataTables.buttons.min.js"></script>
+    <script src="//cdn.datatables.net/buttons/1.2.1/js/buttons.colVis.min.js"></script>
+    <script src="//cdn.datatables.net/buttons/1.2.1/js/buttons.print.min.js"></script>
+    <script>
+        $('.tfoot_search').each(function () {
+            var title = $('.datatable-column-search-inputs thead th').eq($(this).index()).text();
+            $(this).html('<input type="text" class="form-control input-sm" placeholder="Search ' + title + '" />');
+        });
+        $(document).ready(function () {
+            var oTable = $('#submissionsTable').DataTable({
+                "serverSide": true,
+                "autoWidth": false,
+                "scrollX": true,
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                dom: 'lBfrtip',
+                buttons: [
+             {
+                 text: '@Resources.Resources.Reload',
+                 action: function (e, dt, node, config) {
+                     dt.ajax.reload();
+                 }
+             },
+             {
+                 text: '@Resources.Resources.Copy',
+                 extend: 'copyHtml5',
+                 exportOptions: {
+                     columns: ':visible'
+                 }
+             },
+            {
+                text: '@Resources.Resources.ExportExcel',
+                extend: 'excelHtml5',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },
+            {
+                text: '@Resources.Resources.ExportPDF',
+                extend: 'pdfHtml5',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },
+            {
+                text: '@Resources.Resources.Print',
+                extend: 'print',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },
+            {
+                text: '@Resources.Resources.ColVis',
+                extend: 'colvis',
+            },
+                ],
+                //"responsive": true,
+                "language": {
+                    "url": "@Resources.Resources.DataTableLanguage"
+                },
+                "ajax": {
+                    "type": "POST",
+                    "url": "@Url.Action("DataHandler", "Submissions", new { area = "RMS" })",
+                    "contentType": 'application/json; charset=utf-8',
+                    'data': function (data) {
+                        return data = JSON.stringify(data);
+                    }
+                },
+                "processing": true,
+                "paging": true,
+                "deferRender": true,
+                "columns": [
+               { "data": "Id" },
+               { "data": "ApplicantFullName" },
+               { "data": "SubmissionDate" },
+               { "data": "VacancyTitle" },
+               { "data": "Department", "visible": false },
+               {
+                   "data": "Action",
+                   "sortable": false,
+                   "render": function (data, type, col) {
+                    return '<a class=\'btn\' href=\'' + '@Url.Action("Details", "Submissions")?id=' + col["Id"] + '\'>@Resources.Resources.View</a>'
+                    + '|<a class=\'btn\' href=\'' + '@Url.Action("ExportCV", "Submissions")?id=' + col["Id"] + '\'>@Resources.Resources.CurriculumVitae</a>'
+                    + '|<a class=\'btn\' href=\'' + '@Url.Action("ExportApplicant", "Submissions")?id=' + col["Id"] + '\'>@Resources.Resources.Export</a>';
+                       @*+ '<a class=\'btn\' href=\'' + '@Url.Action("Delete", "Vacancies")?Id=' + col["Id"] + '\'>Delete</a>';*@
+                   }
+                   //"render": function (o) { return '<i class="ui-tooltip fa fa-pencil" style="font-size: 22px;" data-original-title="Edit"></i><i class="ui-tooltip fa fa-trash-o" style="font-size: 22px;" data-original-title="Delete"></i>'; }
+               },
+                ],
+                "order": [0, "asc"],
+                "initComplete": function () {
+                    this.api().columns('.select-filter').every(function () {
+                        var column = this;
+                        var select = $('<select><option value=""></option></select>')
+                                   .appendTo($(column.footer()).empty())
+                                   .on('change', function () {
+                                       var val = $(this).val();
+                                       column
+                                           .search(val, true, false)
+                                           .draw();
+                                   });
+                        column.data().unique().sort().each(function (d, j) {
+                            select.append('<option value="' + d + '">' + d + '</option>')
+                        });
+                    });
+                }
+            });
+        });
+    </script>
+}

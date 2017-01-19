@@ -1,0 +1,29 @@
+﻿@model IEnumerable<cutecms_porto.Areas.Identity.Models.Group>
+@{
+    ViewBag.MainTitle = Resources.Resources.Groups;
+    ViewBag.Title = Resources.Resources.Index;;
+}
+<p>
+    @Html.ActionLink(Resources.Resources.Create, "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.ActionLink(Resources.Resources.Edit, "Edit", new { id = item.Id }) |
+                @Html.ActionLink(Resources.Resources.Roles, "GroupRoles", new { id = item.Id }) |
+                @Html.ActionLink(Resources.Resources.Delete, "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>

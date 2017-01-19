@@ -1,0 +1,113 @@
+﻿@using cutecms_porto.Areas.Identity.Models.DBModel
+@using Microsoft.AspNet.Identity;
+@using System.Threading
+@using System.Reflection;
+@using cutecms_porto.Areas.Identity.Models;
+@{
+    IdentityEntities db = new IdentityEntities();
+    Employee employee = (Employee)ViewBag.Employee;
+    var percentage = ProfileCompletion(employee);
+    ApplicationDbContext _db = new ApplicationDbContext();
+    var empEmail = _db.Users.Find(employee.LoginId).Email;
+}
+<div class="col-lg-3 col-md-3 col-sm-4 col-lg-pull-9 col-md-pull-9 col-sm-pull-8">
+    <div class="thumbnail text-center">
+        @if (employee != null)
+        {
+            if (employee.PersonalPhotoPath != null)
+
+            {
+                <img class="img-responsive" alt="" src="@employee.PersonalPhotoPath">
+            }
+            else
+            {
+                <i class="fa fa-user fa-5x"></i>
+            }
+            string personalTitle = (employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : employee.PersonalTitle.Code;
+            <h2 class="size-18 margin-top-10 margin-bottom-0">@personalTitle @employee.FullName</h2>
+            foreach (var item in employee.EmpInDepts)
+            {
+                string occupation = (item.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? item.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : item.Occupation.Code;
+                string department = (item.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? item.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : item.Department.Code;
+                <h3 class="size-11 margin-top-0 margin-bottom-10 text-muted uppercase">@occupation &#64; @department</h3>
+            }
+        }
+        else
+        {
+            <i class="fa fa-user fa-5x"></i>
+        }
+    </div>
+    @if (employee != null)
+    {
+    <!-- completed -->
+        <div class="margin-bottom-30">
+            <label>@percentage% @Resources.Resources.CompletedProfile</label>
+            <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="@percentage" aria-valuemin="0" aria-valuemax="100" style="width: @percentage%; min-width: 2em;"></div>
+            </div>
+        </div>
+    <!-- /completed -->
+            <!-- info -->
+        <div class="box-light margin-bottom-30">
+            <!-- .box-light OR .box-light -->
+            @if (employee.Publications.Count() != 0)
+            {
+                <div class="row box-dark radius-8">
+                    <div>
+                        <p class="countTo text-center size-20 font-raleway" data-speed="3000">@employee.Publications.Count()</p>
+                        <p class="size-14 text-center text-info">@Resources.Resources.RnC.ToUpper()</p>
+                    </div>
+                </div>
+            }
+            <!-- info -->
+            <div class="text-muted">
+                <h5 class="margin-bottom-6"><b>@Resources.Resources.About @employee.FullName,</b></h5>
+                <p class="justify">@employee.Biography.StripHtml().Chop(190)</p>
+                <ul class="list-unstyled nomargin">
+                    <li class="margin-bottom-10"><i class="fa fa-2x fa-envelope-square width-20 hidden-xs hidden-sm"></i> <a href="@empEmail">@empEmail</a></li>
+                    @if (!string.IsNullOrEmpty(employee.FacebookUrl))
+                    {
+                        <li class="margin-bottom-10"><i class="fa fa-2x fa-facebook-square width-20 hidden-xs hidden-sm"></i> <a href="@employee.FacebookUrl">@Resources.Resources.ViewMySocialNetwork</a></li>
+                    }
+                    @if (!string.IsNullOrEmpty(employee.TwitterUrl))
+                    {
+                        <li class="margin-bottom-10"><i class="fa fa-2x fa-twitter-square width-20 hidden-xs hidden-sm"></i> <a href="@employee.TwitterUrl">@Resources.Resources.ViewMySocialNetwork</a></li>
+                    }
+                    @if (!string.IsNullOrEmpty(employee.LinkedInUrl))
+                    {
+                        <li class="margin-bottom-10"><i class="fa fa-2x fa-linkedin-square width-20 hidden-xs hidden-sm"></i> <a href="@employee.LinkedInUrl">@Resources.Resources.ViewMySocialNetwork</li>
+                    }
+                    @if (!string.IsNullOrEmpty(employee.GooglePlusUrl))
+                    {
+                        <li class="margin-bottom-10"><i class="fa fa-2x  fa-google-plus-square width-20 hidden-xs hidden-sm"></i> <a href="@employee.GooglePlusUrl">@Resources.Resources.ViewMySocialNetwork</a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    }
+</div>
+
+@functions{
+    public int ProfileCompletion(Employee emp)
+    {
+        var percentage = 100;
+        List<string> values = new List<string>();
+        var properties = emp.GetType().GetProperties().Where(p => !p.GetGetMethod().IsVirtual && p.Name != "Id" && p.Name != "LoginId" && p.Name != "Image" && p.Name != "File" && p.Name != "Mobile" && p.Name != "MiddleName" && p.Name != "MiddleName_Ar" && p.Name != "FacebookUrl" && p.Name != "TwitterUrl" && p.Name != "YouTubeUrl" && p.Name != "GooglePlusUrl" && p.Name != "LinkedInUrl" && p.Name != "Ordinal");
+        foreach (PropertyInfo propInfo in properties)
+        {
+            if (propInfo.GetValue(emp, null) == null)
+            {
+                values.Add("NULL");
+            }
+            else
+            {
+                values.Add(propInfo.GetValue(emp, null).ToString());
+            }
+        }
+        var nullValues = values.Where(nv => nv.Contains("NULL")).Count();
+        var realValues = values.Where(rv => !rv.Contains("NULL")).Count();
+        var allValues = values.Count();
+        percentage = (realValues * 100) / allValues;
+        return percentage;
+    }
+}

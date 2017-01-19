@@ -1,0 +1,31 @@
+﻿@using System.Threading
+@model cutecms_porto.Areas.Identity.Models.VerifyPhoneNumberViewModel
+@{
+    ViewBag.Title = Resources.Resources.VerifyPhoneNumber;
+    ViewBag.MainTitle = Resources.Resources.VerifyPhoneNumber;
+    ViewBag.SubTitle = Resources.Resources.VerifyPhoneNumberOption;
+    ViewBag.IconTitle = "fa fa-hand-paper-o";
+    Layout = "~/Areas/Identity/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("VerifyPhoneNumber", "Manage", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Code, new { @class = "form-control", @placeholder = @Resources.Resources.VerificationCode + "..." })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            <input type="submit" value='@Resources.Resources.Save' class="btn btn-primary"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+        </div>
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

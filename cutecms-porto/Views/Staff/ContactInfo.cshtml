@@ -1,0 +1,39 @@
+﻿@model cutecms_porto.Areas.Identity.Models.DBModel.Employee
+<form role="form" action="#" method="post">
+    <div class="form-group">
+        @Html.LabelFor(model => model.OfficeNumber)
+        @Html.DisplayFor(model => model.OfficeNumber)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Mobile)
+        @Html.DisplayFor(model => model.Mobile)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.LandLine)
+        @Html.DisplayFor(model => model.LandLine)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Extension)
+        @Html.DisplayFor(model => model.Extension)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.FacebookUrl)
+        <a href="@Model.FacebookUrl">@Model.FacebookUrl</a>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.TwitterUrl)
+        <a href="@Model.TwitterUrl">@Model.TwitterUrl</a>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.YouTubeUrl)
+        <a href="@Model.YouTubeUrl">@Model.YouTubeUrl</a>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.GooglePlusUrl)
+        <a href="@Model.GooglePlusUrl">@Model.GooglePlusUrl</a>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.LinkedInUrl)
+        <a href="@Model.LinkedInUrl">@Model.LinkedInUrl</a>
+    </div>
+</form>

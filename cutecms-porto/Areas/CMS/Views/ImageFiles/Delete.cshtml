@@ -1,0 +1,42 @@
+﻿@model cutecms_porto.Areas.CMS.Models.DBModel.ImageFile
+@{
+    ViewBag.MainTitle = Resources.Resources.Delete;
+    ViewBag.Title = Resources.Resources.Image;
+}
+<h3>@Resources.Resources.DeleteConfirmation</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Code)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FilePath)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FilePath)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ThumbPath)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ThumbPath)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreatedOn)
+        </dd>
+    </dl>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" value=@Resources.Resources.Delete class="btn btn-primary" /> |
+            @Html.ActionLink(Resources.Resources.BackToList, "Index")
+        </div>
+    }
+</div>

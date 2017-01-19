@@ -1,0 +1,79 @@
+﻿@model cutecms_porto.Areas.Config.Models.DBModel.Statistic
+@{
+    ViewBag.MainTitle = Resources.Resources.Statistic;
+    ViewBag.Title = Resources.Resources.Details;
+}
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IP)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IP)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CountryCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CountryCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CountryName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CountryName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RegionCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RegionCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RegionName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RegionName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeZone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TimeZone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Latitude)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Longitude)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MetroCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MetroCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RequestDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RequestDate)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(Resources.Resources.Edit, "Edit", new { id = Model.Id }) |
+    @Html.ActionLink(Resources.Resources.BackToList, "Index")
+</p>

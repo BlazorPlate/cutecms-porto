@@ -1,0 +1,163 @@
+﻿@using cutecms_porto.Areas.CMS.Models.DBModel
+@using System.Globalization
+@using System.Threading
+@{
+    int count = 0;
+    CMSEntities db = new CMSEntities();
+    List<MenuItem> menuItems = (System.Web.HttpRuntime.Cache["MenuItems"] == null ? db.MenuItems.Include("Status").Include("Menu").Include("Language").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).ToList() : (List<MenuItem>)System.Web.HttpRuntime.Cache["MenuItems"]).Where(m => m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).ToList();
+    count = menuItems.Count();
+    CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
+    RegionInfo regionInfo = new RegionInfo(cultureInfo.LCID);
+}
+<header id="header" data-plugin-options='{"stickyEnabled": true, "stickyEnableOnBoxed": true, "stickyEnableOnMobile": true, "stickyStartAt": 90, "stickySetTop": "-90px", "stickyChangeLogo": true}'>
+    <div class="header-body">
+        <div class="header-top">
+            <div class="container">
+                <nav class="header-nav-top" style="margin-left:0px;">
+                    <ul class="nav nav-pills">
+                        <li>
+                            <a href="#" class="dropdown-menu-toggle" id="dropdownLanguage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="~/assets/porto/img/blank.gif" class="flag flag-@regionInfo.TwoLetterISORegionName.ToLower()" alt="@regionInfo.DisplayName"> @regionInfo.NativeName
+                                <i class="fa fa-globe"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu" aria-labelledby="dropdownLanguage">
+                                @foreach (var item in db.CMSLanguages.Where(l => l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal))
+                                {
+                                    @*<li><a tabindex="-1" href=""><img width="16" height="11" class="flag-lang" alt="lang" src="~/assets/images/flags/@item.Flag"> @item.Name</a></li>*@
+                                CultureInfo itemCultureInfo = CultureInfo.CreateSpecificCulture(item.CultureName.Trim());
+                                RegionInfo itemRegionInfo = new RegionInfo(itemCultureInfo.LCID);
+                                <li><a href="@Url.RouteUrl(new RouteValueDictionary(ViewContext.RouteData.Values.ToDictionary(r => r.Key, r => r.Key == "culture" ? item.CultureName.Trim() : r.Value)))"><img src="~/assets/porto/img/blank.gif" class="flag flag-@item.FlagCode" alt="@itemRegionInfo.NativeName"> @itemRegionInfo.NativeName</a></li>
+                                }
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="header-nav-top" style="margin-left:0px;">
+                    <ul class="nav nav-pills">
+                        @{var topItems = menuItems.Where(m => m.Menu.Code.Trim().Equals("top-menu")).ToList(); }
+                        @if (CultureHelper.IsRighToLeft())
+                        {
+                            foreach (var item in topItems)
+                            {
+                                <li class="hidden-xs">
+                                    <a href="@item.Path"><i class="fa fa-angle-left"></i> @item.Name</a>
+                                </li>
+                            }
+                        }
+                        else
+                        {
+                            foreach (var item in topItems)
+                            {
+                                <li class="hidden-xs">
+                                    <a href="@item.Path"><i class="fa fa-angle-right"></i> @item.Name</a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </nav>
+                <ul class="header-social-icons social-icons hidden-xs">
+                    <li class="social-icons-facebook"><a href="@(OrganizationData.Organization?.FacebookUrl)" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li class="social-icons-twitter"><a href="@(OrganizationData.Organization?.TwitterUrl)" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                    <li class="social-icons-googleplus"><a href="@(OrganizationData.Organization?.LinkedInUrl)" target="_blank" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
+                    <li class="social-icons-linkedin"><a href="@(OrganizationData.Organization?.GooglePlusUrl)" target="_blank" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+                <div class="header-search hidden-xs">
+                    @using (Html.BeginForm("Contents", "Home", new { id = "searchForm", area = "" }, FormMethod.Post))
+                    {
+                        <div class="input-group">
+                            @Html.Editor("keywordFilter", new { htmlAttributes = new { @placeholder = Resources.Resources.Search, @class = "form-control" } })
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                    }
+                </div>
+
+            </div>
+        </div>
+        <div class="header-container container">
+            <div class="header-row">
+                <div class="header-column">
+                    <div class="header-logo">
+                        <a href="~/@Thread.CurrentThread.CurrentCulture.Name">
+                            @*<img alt="@(OrganizationData.Organization?.PrimaryLogoName)" width="100" height="100" data-sticky-width="80" data-sticky-height="80" data-sticky-top="40" src="@(OrganizationData.Organization?.PrimaryLogoPath)">*@
+                            <img alt="Porto" width="111" height="54" data-sticky-width="82" data-sticky-height="40" data-sticky-top="29" src="~/assets/porto/img/logo-default.png" style="top: 0px; width: 111px; height: 54px;">
+                        </a>
+                    </div>
+                </div>
+                <div class="header-column">
+                    <div class="header-row">
+                        <div class="header-nav header-nav-stripe">
+                            <button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <div class="header-nav-main header-nav-main-square header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse">
+                                <nav>
+                                    <ul class="nav nav-pills" id="mainNav">
+                                        <li class="active">
+                                            <a class="dropdown-toggle" href="~/@Thread.CurrentThread.CurrentCulture.Name">
+                                                @Resources.Resources.Home
+                                            </a>
+                                        </li>
+                                        @{var headerItems = menuItems.Where(m => m.Menu.Code.Trim().Equals("header")).ToList(); }
+                                        @if (headerItems != null && count > 0)
+                                        {
+                                            @GetTreeView(headerItems, null)
+                                        }
+                                        @{Html.RenderPartial("~/Views/Shared/Account.cshtml");}
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+@helper GetTreeView(List<MenuItem> menuItems, int? parentID)
+{
+foreach (var item in menuItems.Where(m => m.ParentId.Equals(parentID)))
+{
+
+    var submenu = menuItems.Where(s => s.ParentId.Equals(item.Id)).Count();
+    if (item.IsParent)
+    {
+        if (submenu > 0 && item.MenuItem1 == null)
+        {
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="@item.Path">@item.Name</a>
+                    @if (submenu > 0)
+                    {
+                        <ul class="dropdown-menu">
+                            @* Recursive  Call for Populate Sub items here*@
+                            @GetTreeView(menuItems, item.Id)
+                        </ul>
+                    }
+                </li>
+
+            }
+            else
+            {
+                <li class="dropdown-submenu">
+                    <a href="@item.Path">@item.Name</a>
+
+                    @if (submenu > 0)
+                    {
+                        <ul class="dropdown-menu">
+                            @* Recursive  Call for Populate Sub items here*@
+                            @GetTreeView(menuItems, item.Id)
+                        </ul>
+                    }
+                </li>
+        }
+    }
+    else
+    {
+            <li>
+                <a href=@item.Path>@item.Name</a>
+            </li>
+
+    }
+}
+}

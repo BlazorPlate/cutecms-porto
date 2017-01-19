@@ -1,0 +1,6 @@
+﻿@using System.Threading
+@model cutecms_porto.Areas.RMS.Models.SelectDegreeEditorViewModel
+@Html.HiddenFor(model => model.DegreeId)
+@Html.HiddenFor(model => model.DegreeName)
+@Html.CheckBoxFor(model => model.Selected, new { @class = "js-switch"})
+@Html.DisplayFor(model => model.DegreeName)<br />

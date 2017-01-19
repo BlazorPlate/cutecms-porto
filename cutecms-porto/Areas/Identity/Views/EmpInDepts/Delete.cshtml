@@ -1,0 +1,50 @@
+﻿@model cutecms_porto.Areas.Identity.Models.DBModel.EmpInDept
+@using System.Threading
+@{
+    ViewBag.MainTitle = Resources.Resources.EmpInDepts;
+    ViewBag.Title = Resources.Resources.Delete;
+}
+<h3>@Resources.Resources.DeleteConfirmation</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.FullName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Employee.FullName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DeptId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Department.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OccupationId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Occupation.OccupationTerms.Where(o => o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeType.EmployeeTypeTerms.Where(o => o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ordinal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeType.Ordinal)
+        </dd>
+    </dl>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.Hidden("LanguageId")
+        <div class="form-actions no-color">
+            <input type="submit" value=@Resources.Resources.Delete class="btn btn-primary" /> |
+            @Html.ActionLink(Resources.Resources.BackToList, "Index", new { deptId = Model.DeptId, languageId = ViewBag.LanguageId })
+        </div>
+    }
+</div>

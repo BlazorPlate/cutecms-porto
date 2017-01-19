@@ -1,0 +1,36 @@
+﻿@model IEnumerable<cutecms_porto.Areas.CMS.Models.DBModel.ImageTag>
+@using System.Threading
+@{
+    ViewBag.MainTitle = Resources.Resources.ImageTags;
+    ViewBag.Title = Resources.Resources.Index;
+}
+<p>
+    @Html.ActionLink(Resources.Resources.Create, "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TagId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageFileId)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tag.TagTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.TagId == item.TagId).FirstOrDefault().Value)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageFileId)
+            </td>
+            <td>
+                @Html.ActionLink(Resources.Resources.Edit, "Edit", new { id = item.Id }) |
+                @Html.ActionLink(Resources.Resources.Details, "Details", new { id = item.Id }) |
+                @Html.ActionLink(Resources.Resources.Delete, "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>

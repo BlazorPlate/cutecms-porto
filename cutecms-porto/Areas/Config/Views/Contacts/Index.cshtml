@@ -1,0 +1,70 @@
+﻿@model IEnumerable<cutecms_porto.Areas.Config.Models.DBModel.Contact>
+@using System.Threading
+@{
+    ViewBag.MainTitle = Resources.Resources.Contacts;
+    ViewBag.Title = Resources.Resources.Index;
+}
+<p>
+    @Html.ActionLink(Resources.Resources.Create, "Create", new { organizationId = ViewBag.organizationId })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Organization.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonalTitleId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Position)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartmentId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Office)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Organization.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.PersonalTitleId == item.PersonalTitleId).FirstOrDefault().Value)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Position)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && d.DepartmentId == item.DepartmentId).FirstOrDefault().Value)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Office)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.ActionLink(" ", "Index", "PhoneNumbers", new { contactId = item.Id }, new { @class = "fa fa-phone-square", @style = "color:black;text-decoration:none", @title = "Manage Contacts" }) |
+                @Html.ActionLink(Resources.Resources.Edit, "Edit", new { id = item.Id }) |
+                @Html.ActionLink(Resources.Resources.Details, "Details", new { id = item.Id }) |
+                @Html.ActionLink(Resources.Resources.Delete, "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>
+<p>
+    @Html.ActionLink(Resources.Resources.BackToList, "Index", "Organizations")
+</p>

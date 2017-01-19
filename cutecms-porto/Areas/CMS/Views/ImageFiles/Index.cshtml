@@ -1,0 +1,80 @@
+﻿@model IEnumerable<cutecms_porto.Areas.CMS.Models.DBModel.ImageFile>
+@using PagedList.Mvc;
+@using PagedList;
+@using System.Threading;
+@{
+    ViewBag.MainTitle = Resources.Resources.Images;
+    ViewBag.Title = Resources.Resources.Index;
+}
+@using (Html.BeginForm("Index", "ImageFiles", FormMethod.Post))
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.Label(Resources.Resources.Search)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.DropDownList("id", new SelectList(ViewBag.GalleryIdFilter, "Value", "Text"), Resources.Resources.ChooseAlbum, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                <input type="submit" value="@Resources.Resources.Search" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+<p>
+    @Html.ActionLink(Resources.Resources.Create, "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Code)
+        </th>
+        <th>
+            @Resources.Resources.Image
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GalleryId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ordinal)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Code
+            </td>
+            <td>
+                <a href="@Url.Content(item.FilePath)"><img src="@Url.Content(item.ThumbPath)" alt="Image" /></a>
+            </td>
+            <td>
+                @item.Gallery.Code
+            </td>
+            <td>
+                @item.CreatedOn
+            </td>
+            <td>
+                @item.Ordinal
+            </td>
+            <td>
+                @Html.ActionLink(Resources.Resources.Edit, "Edit", new { id = item.Id }) |
+                @Html.ActionLink(Resources.Resources.Terms, "Index", "ImageFileTerms", new { id = item.Id }, null) |
+                @Html.ActionLink(Resources.Resources.Delete, "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page, id = ViewBag.GalleryId }))
+<div>
+    @Html.ActionLink(Resources.Resources.BackToList, "Index", "Galleries")
+</div>

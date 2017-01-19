@@ -1,0 +1,60 @@
+﻿@model cutecms_porto.Areas.RMS.Models.DBModel.Submission
+@{
+    ViewBag.MainTitle = Resources.Resources.Submission;
+    ViewBag.Title = Resources.Resources.Delete;
+}
+<h3>@Resources.Resources.DeleteConfirmation</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Vacancy.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Vacancy.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CoverLetter)
+        </dt>
+        <dd>
+            @Html.Raw(HttpUtility.HtmlDecode(Model.CoverLetter))
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SubmissionDate)
+        </dt>
+        <dd>
+            @Html.DisplayNameFor(model => model.SubmissionDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Applicant.FullName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Applicant.FullName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Applicant.Mobile)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Applicant.Mobile)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Applicant.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Applicant.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Applicant.DOB)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Applicant.DOB)
+        </dd>
+    </dl>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+             <input type="submit" value=@Resources.Resources.Delete class="btn btn-primary" /> |
+            @Html.ActionLink(Resources.Resources.BackToList, "Index")
+        </div>
+    }
+</div>

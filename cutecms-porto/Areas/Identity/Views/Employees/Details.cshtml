@@ -1,0 +1,152 @@
+﻿@model cutecms_porto.Areas.Identity.Models.DBModel.Employee
+@using cutecms_porto.Areas.Identity.Models;
+@using cutecms_porto.Areas.Identity.Models.DBModel
+@using System.Threading;
+@{
+    ViewBag.MainTitle = Resources.Resources.Employee;
+    ViewBag.Title = Resources.Resources.Details;
+    ApplicationDbContext _db = new ApplicationDbContext();
+    IdentityEntities identityDb = new IdentityEntities();
+}
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonalPhotoPath)
+        </dt>
+        @if (Model.PersonalPhotoPath != null)
+            {
+            <dd>
+                <img height="500" width="200" class="img-responsive" alt="@Model.PersonalPhotoName" src="@Model.PersonalPhotoPath">
+            </dd>
+        }
+        else
+        {
+            <dd>
+                <i class="fa fa-user fa-x5" aria-hidden="true"></i>
+            </dd>
+        }
+        <dt>
+            @Html.DisplayNameFor(model => model.LoginId)
+        </dt>
+        <dd>
+            @if (@_db.Users.Find(Model.LoginId) != null)
+            {
+                @_db.Users.Find(Model.LoginId).UserName
+            }
+            else
+            {
+                @Resources.Resources.NotAvailable
+            }
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonalTitleId)
+        </dt>
+        <dd>
+            @{ var personalTitle = identityDb.IdentityPersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.PersonalTitleId == Model.PersonalTitleId).FirstOrDefault() != null ? identityDb.IdentityPersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.PersonalTitleId == Model.PersonalTitleId).FirstOrDefault().Value : identityDb.IdentityPersonalTitles.Where(i => i.Id == Model.PersonalTitleId).FirstOrDefault().Code;}
+            @personalTitle
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Biography)
+        </dt>
+        <dd>
+            @Html.Raw(HttpUtility.HtmlDecode(Model.Biography))
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DegreeId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Degree.Code)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProgramId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Program.Code)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RankId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Rank.Code)
+        </dd>
+        <dt>
+            @Html.DisplayName(Resources.Resources.ViewCV)
+        </dt>
+        @if (Model.ResumeFilePath != null)
+            {
+            <dd>
+                <a href="@Url.Content(Model.ResumeFilePath)">@Resources.Resources.Download</a>
+            </dd>
+        }
+        else
+        {
+            <dd>
+                <span>@Resources.Resources.NoCVUploaded</span>
+            </dd>
+        }
+        <dt>
+            @Html.DisplayNameFor(model => model.OfficeNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OfficeNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Mobile)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Mobile)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LandLine)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LandLine)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Extension)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Extension)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FacebookUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FacebookUrl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TwitterUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TwitterUrl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.YouTubeUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.YouTubeUrl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.GooglePlusUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GooglePlusUrl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LinkedInUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LinkedInUrl)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(Resources.Resources.Edit, "Edit", new { id = Model.Id }) |
+    @Html.ActionLink(Resources.Resources.BackToList, "Index")
+</p>

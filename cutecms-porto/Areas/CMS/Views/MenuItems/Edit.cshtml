@@ -1,0 +1,104 @@
+﻿@model cutecms_porto.Areas.CMS.Models.DBModel.MenuItem
+@using System.Threading
+@{
+    ViewBag.MainTitle = Resources.Resources.MenuItem;
+    ViewBag.Title = Resources.Resources.Edit;
+}
+@using (Html.BeginForm("Edit", "MenuItems", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.Hidden("MenuId");
+    <div class="form-horizontal">
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.MenuId)
+        @Html.HiddenFor(model => model.LanguageId)
+        @Html.HiddenFor(model => model.StatusId)
+        @Html.HiddenFor(model => model.ContentId)
+        @Html.HiddenFor(model => model.IsCms)
+        @if (Model.ContentId != null)
+        {
+            @Html.HiddenFor(model => model.Path)
+        }
+        @if (Model.IsCms)
+        {
+            @Html.HiddenFor(model => model.Visible)
+        }
+        <div class="form-group">
+            @Html.LabelFor(model => model.MenuId, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBox("MenuCode", null, new { @disabled = "disabled", @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.LanguageId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBox("LanguageName", null, new { @disabled = "disabled", @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ParentId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ParentId", null, Resources.Resources.ChooseParentMenuItem, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ParentId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.CssClass, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CssClass, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CssClass, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Ordinal, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Ordinal, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Ordinal, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        @if (!Model.IsCms)
+        {
+            <div class="form-group">
+                @Html.LabelFor(model => model.Visible, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.CheckBoxFor(model => model.Visible, new { @class = "js-switch" })
+                    @Html.ValidationMessageFor(model => model.Visible, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        }
+        <div class="form-group">
+            @Html.LabelFor(model => model.IsParent, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.CheckBoxFor(model => model.IsParent, new { @class = "js-switch" })
+                @Html.ValidationMessageFor(model => model.IsParent, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Path, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Path, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Path, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value=@Resources.Resources.Save class="btn btn-primary" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+}
+<div>
+    @Html.ActionLink(Resources.Resources.BackToList, "Index", new { id = Model.MenuId, selectedLanguageId = Model.LanguageId })
+</div>

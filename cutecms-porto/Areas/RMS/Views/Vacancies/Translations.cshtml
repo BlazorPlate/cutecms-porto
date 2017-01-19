@@ -1,0 +1,58 @@
+﻿@model IEnumerable<cutecms_porto.Areas.RMS.Models.DBModel.Vacancy>
+@using System.Threading
+@{
+    ViewBag.MainTitle = Resources.Resources.Translations;
+    ViewBag.Title = Resources.Resources.Index;
+}
+<p>
+    @Html.ActionLink(Resources.Resources.AddTranslation, "Create", new { id = ViewBag.TranslationId })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LanguageId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobTypeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StatusId)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Language.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobType.JobTypeTerms.Where(j => j.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && j.JobTypeId == item.JobTypeId).FirstOrDefault().Value)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status.StatusTerms.Where(s => s.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && s.StatusId == item.StatusId).FirstOrDefault().Value)
+            </td>
+            <td>
+                @Html.ActionLink(" ", "Edit", new { id = item.Id }, new { @class = "fa fa-2x fa-pencil", @title = Resources.Resources.Edit })
+                @Html.ActionLink(" ", "Details", new { id = item.Id }, new { @class = "fa fa-2x fa-file-text", @title = Resources.Resources.Details })
+                @Html.ActionLink(" ", "Index", "Submissions", new { id = item.Id }, new { @class = "fa fa-2x fa-list", @title = Resources.Resources.Submissions })
+                @Html.ActionLink(" ", "Delete", new { id = item.Id }, new { @class = "fa fa-2x fa-times", @title = Resources.Resources.Delete })
+            </td>
+        </tr>
+    }
+</table>
+<div>
+    @Html.ActionLink(Resources.Resources.BackToList, "Index")
+</div>

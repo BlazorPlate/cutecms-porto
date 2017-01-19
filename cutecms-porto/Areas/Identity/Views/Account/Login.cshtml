@@ -1,0 +1,58 @@
+﻿@using System.Threading
+@model cutecms_porto.Areas.Identity.Models.LoginViewModel
+@{
+    ViewBag.Title = Resources.Resources.LogIn;
+    ViewBag.MainTitle = Resources.Resources.LoginToSite;
+    ViewBag.SubTitle = Resources.Resources.EnterCredentials;
+    ViewBag.IconTitle = "fa fa-lock";
+    Layout = "~/Areas/Identity/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = Resources.Resources.Email + "..." })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = Resources.Resources.Password + "..." })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            <div style="color:#fff">
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor(m => m.RememberMe)
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            <input type="submit" value='@Resources.Resources.LogIn' class="btn btn-primary"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            <div>
+                @Html.ActionLink(Resources.Resources.ForgetPassword, "ForgotPassword")
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            <div>
+                @Html.ActionLink(Resources.Resources.RegisterNewUser, "Register")
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+        </div>
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,82 @@
+﻿@using cutecms_porto.Areas.Identity.Models.DBModel
+@using Microsoft.AspNet.Identity;
+@using System.Threading
+@using System.Reflection;
+@{
+    var loginId = User.Identity.GetUserId();
+    IdentityEntities db = new IdentityEntities();
+    var employee = db.Employees.Where(e => e.LoginId.Equals(loginId) && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
+    var percentage = new object();
+    if (employee != null)
+    {
+        percentage = ProfileCompletion(employee);
+    }
+}
+@if (employee != null)
+{
+    string personalTitle = (employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : employee.PersonalTitle.Code;
+    <div class="col-lg-3 col-md-3 col-sm-4 col-lg-pull-9 col-md-pull-9 col-sm-pull-8">
+        <div class="thumbnail text-center">
+
+            @if (employee.PersonalPhotoPath != null)
+            {
+                <img class="img-responsive" alt="@employee.PersonalPhotoName" src="@employee.PersonalPhotoPath">
+            }
+            else
+            {
+                <i class="fa icon-user fa-5x"></i>
+            }
+
+            <h2 class="size-18 margin-top-10 margin-bottom-0">@personalTitle @employee.FullName</h2>
+            @foreach (var item in employee.EmpInDepts)
+            {
+                string occupation = (item.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? item.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : item.Occupation.Code;
+                string department = (item.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? item.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : item.Department.Code;
+                <p><small>@occupation &#64; @department</small></p>
+            }
+        </div>
+
+        <!-- completed -->
+
+        <div class="margin-bottom-30">
+            <label>@percentage% @Resources.Resources.CompletedProfile</label>
+            <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="@percentage" aria-valuemin="0" aria-valuemax="100" style="width: @percentage%; min-width: 2em;"></div>
+            </div>
+        </div>
+        <!-- /completed -->
+        <!-- SIDE NAV -->
+        <ul class="side-nav list-group margin-bottom-60" id="sidebar-nav">
+            <li class="list-group-item"><a href=@Url.Action("Index", "MyProfile")><i class="fa fa-user"></i><span class="uppercase">@Resources.Resources.MyProfile</span></a></li>
+            <li id="Publications" class="list-group-item"><a href=@Url.Action("Index", "Publications", new { id = employee.TranslationId })><i class="fa fa-file-text"></i><span class="uppercase">@Resources.Resources.Publications</span></a></li>
+            <li id="EmpInDepts" class="list-group-item"><a href=@Url.Action("Index", "EmpInDepts", new { id = employee.TranslationId })><i class="fa fa-building"></i><span class="uppercase">@Resources.Resources.Departments</span></a></li>
+            <li id="Translations" class="list-group-item"><a href=@Url.Action("Translations", "MyProfile", new { id = employee.TranslationId})><i class="fa fa-globe"></i><span class="uppercase">@Resources.Resources.Translations</span></a></li>
+            <li class="list-group-item"><a href=@Url.Action("Index", "Manage", new { area = "Identity" })><i class="fa fa-gears"></i><span class="uppercase">@Resources.Resources.AccountSettings</span></a></li>
+        </ul>
+
+    </div>
+}
+@functions{
+    public int ProfileCompletion(Employee emp)
+    {
+        var percentage = 100;
+        List<string> values = new List<string>();
+        var properties = emp.GetType().GetProperties().Where(p => !p.GetGetMethod().IsVirtual && p.Name != "Id" && p.Name != "LoginId" && p.Name != "Image" && p.Name != "File" && p.Name != "Mobile" && p.Name != "MiddleName" && p.Name != "MiddleName_Ar" && p.Name != "FacebookUrl" && p.Name != "TwitterUrl" && p.Name != "YouTubeUrl" && p.Name != "GooglePlusUrl" && p.Name != "LinkedInUrl" && p.Name != "Ordinal");
+        foreach (PropertyInfo propInfo in properties)
+        {
+            if (propInfo.GetValue(emp, null) == null)
+            {
+                values.Add("NULL");
+            }
+            else
+            {
+                values.Add(propInfo.GetValue(emp, null).ToString());
+            }
+        }
+        var nullValues = values.Where(nv => nv.Contains("NULL")).Count();
+        var realValues = values.Where(rv => !rv.Contains("NULL")).Count();
+        var allValues = values.Count();
+        percentage = (realValues * 100) / allValues;
+        return percentage;
+    }
+}

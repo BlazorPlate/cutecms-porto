@@ -1,0 +1,77 @@
+﻿
+<li class="dropdown dropdown-mega dropdown-mega-signin signin pull-right" id="headerAccount">
+    <a class="dropdown-toggle" href="page-login.html">
+        <i class="fa fa-user"></i> Sign In
+        <i class="fa fa-caret-down"></i>
+    </a>
+    <ul class="dropdown-menu">
+        <li>
+            <div class="dropdown-mega-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="signin-form">
+                            <span class="dropdown-mega-sub-title">Sign In</span>
+                            @{
+                                cutecms_porto.Areas.Identity.Models.LoginViewModel login = new cutecms_porto.Areas.Identity.Models.LoginViewModel();
+                            }
+                            @{Html.RenderPartial("~/Views/Shared/Login.cshtml", login);}
+                            <p class="sign-up-info">@Resources.Resources.RegisterNewUser <a href="#" id="headerSignUp" class="p-none m-none ml-xs">@Resources.Resources.Register</a></p>
+                          </div>
+                        <div class="signup-form">
+                            <span class="dropdown-mega-sub-title">Create Account</span>
+
+                            <form action="/" id="frmSignUp" method="post">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-12 p-none">
+                                            <label>E-mail Address</label>
+                                            <input type="text" value="" class="form-control input-lg">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-6 pl-none">
+                                            <label>Password</label>
+                                            <input type="password" value="" class="form-control input-lg">
+                                        </div>
+                                        <div class="col-md-6 pr-none">
+                                            <label>Re-enter Password</label>
+                                            <input type="password" value="" class="form-control input-lg">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 p-none">
+                                        <input type="submit" value="Create Account" class="btn btn-primary pull-right mb-xl" data-loading-text="Loading...">
+                                    </div>
+                                </div>
+                            </form>
+                            <p class="log-in-info">Already have an account? <a href="#" id="headerSignIn" class="p-none m-none ml-xs">Log In</a></p>
+                        </div>
+                        <div class="recover-form">
+                            <span class="dropdown-mega-sub-title">Reset My Password</span>
+                            <p>Complete the form below to receive an email with the authorization code needed to reset your password.</p>
+                            <form action="/" id="frmResetPassword" method="post">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-12 p-none">
+                                            <label>E-mail Address</label>
+                                            <input type="text" value="" class="form-control input-lg">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 p-none">
+                                        <input type="submit" value="Submit" class="btn btn-primary pull-right mb-xl" data-loading-text="Loading...">
+                                    </div>
+                                </div>
+                            </form>
+                            <p class="log-in-info">Already have an account? <a href="#" id="headerRecoverCancel" class="p-none m-none ml-xs">Log In</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</li>

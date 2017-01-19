@@ -1,0 +1,208 @@
+﻿@model IEnumerable<IdentityDepartment>
+@using cutecms_porto.Areas.Identity.Models.DBModel
+@using System.Threading
+@{
+    ViewBag.Title = Resources.Resources.OurStaffDirectory;
+}
+@section Styles {
+    <style>
+        .glyphicon-folder-open {
+            margin-right: 10px !important;
+        }
+        .glyphicon-folder-close {
+            margin-right: 10px !important;
+        }
+        .glyphicon-user {
+            margin-right: 10px !important;
+        }
+        .dir {
+            direction: ltr !important;
+        }
+        .tree {
+            min-height: 20px;
+            padding: 19px;
+            margin-bottom: 20px;
+            background-color: #fbfbfb;
+            border: 1px solid #999;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+            -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+        }
+            .tree li {
+                list-style-type: none;
+                margin: 0;
+                padding: 10px 5px 0 5px;
+                position: relative;
+            }
+                .tree li::before, .tree li::after {
+                    content: '';
+                    left: -20px;
+                    position: absolute;
+                    right: auto;
+                }
+                .tree li::before {
+                    border-left: 1px solid #999;
+                    bottom: 50px;
+                    height: 100%;
+                    top: 0;
+                    width: 1px;
+                }
+                .tree li::after {
+                    border-top: 1px solid #999;
+                    height: 20px;
+                    top: 25px;
+                    width: 25px;
+                }
+                .tree li span {
+                    -moz-border-radius: 5px;
+                    -webkit-border-radius: 5px;
+                    border: 1px solid #999;
+                    border-radius: 5px;
+                    display: inline-block;
+                    padding: 3px 8px;
+                    text-decoration: none;
+                }
+                .tree li.parent_li > span {
+                    cursor: pointer;
+                }
+            .tree > ul > li::before, .tree > ul > li::after {
+                border: 0;
+            }
+            .tree li:last-child::before {
+                height: 30px;
+            }
+            .tree li.parent_li > span:hover, .tree li.parent_li > span:hover + ul li span {
+                background: #eee;
+                border: 1px solid #94a0b4;
+                color: #000;
+            }
+        .wheat-color {
+            background-color: wheat;
+        }
+        /*.tree li ul > li {
+                display: none;
+            }*/
+    </style>
+}
+@section PageHeader
+{
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>@ViewBag.Title</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h3>@Resources.Resources.SearchBy</h3>
+                @using (Html.BeginForm("Index", "Staff", FormMethod.Get))
+                {
+                    <div class="form-group">
+                        @Html.Label(Resources.Resources.EmployeeName)
+                        @Html.TextBox("EmpName", string.Empty, htmlAttributes: new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label(Resources.Resources.EmployeeType)
+                        @Html.DropDownList("EmpTypeId", null, string.Empty, htmlAttributes: new { @class = "form-control" })
+                    </div>
+                    @*<div class="form-group">
+                            @Html.Label(Resources.Resources.Department)
+                            @Html.DropDownList("DeptId", null, string.Empty, htmlAttributes: new { @class = "form-control" })
+                        </div>*@
+                    <div class="form-group">
+                        <input type="submit" value="@Resources.Resources.Search" class="btn btn-primary"/>
+                    </div>
+                }
+            </div>
+            <div class="col-md-8">
+                <h3>@Resources.Resources.SearchByDepartmet</h3>
+                @using (Html.BeginForm("Index", "Departments", FormMethod.Get))
+                {
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="tree well dir">
+                                    @if (Model != null && Model.Count() > 0)
+                                    {
+                                        <ul>
+                                            @GetTreeView(Model, null)
+                                        </ul>
+                                    }
+                                    @helper GetTreeView(IEnumerable<IdentityDepartment> departments, int? parentId)
+                                    {
+IdentityEntities db = new IdentityEntities();
+var departmentLists = departments.Where(d => d.ParentId.Equals(parentId) && d.DepartmentTerms.Count != 0).OrderBy(d => d.Ordinal);
+foreach (var item in departmentLists.Where(d => d.DepartmentTerms.Any(dl => dl.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name))))
+{
+        <li>
+            @{
+                var submenu = departmentLists.Where(a => a.ParentId.Equals(parentId)).Count();
+            }
+            <span><i class="glyphicon glyphicon-folder-open"></i>@item.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value</span>
+            <a class="fa fa-users fa-1x" href="@Url.Action("EmpsInDept", "Staff", new { id = item.Id })"></a>
+            @if (item.EmpInDepts != null)
+            {
+                <ul>
+                    @if (item.Employee != null)
+                    {
+                        string personalTitle = (item.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? item.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : item.Employee.PersonalTitle.Code;
+                        var employee = db.Employees.Where(e => e.Language.CultureName.Equals(Thread.CurrentThread.CurrentCulture.Name) && e.TranslationId == item.ManagerId).FirstOrDefault();
+                        <li><span class="wheat-color"><i class="glyphicon glyphicon-user"></i><a href="@Url.Action("MemberProfile", "Staff", new { id = employee.TranslationId })">@personalTitle @employee.FullName</a></span></li>
+                    }
+                    @foreach (var empInDept in item.EmpInDepts.Where(e => e.EmpId != e.Department.ManagerId).OrderBy(ed => ed.Employee.Ordinal))
+                    {
+                        string personalTitle = (empInDept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? empInDept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : empInDept.Employee.PersonalTitle.Code;
+                        var employee = db.Employees.Where(e => e.TranslationId == empInDept.Employee.TranslationId && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
+                        if (employee != null)
+                        {
+                            <li><span><i class="glyphicon glyphicon-user"></i><a href="@Url.Action("MemberProfile", "Staff", new { id = empInDept.Employee.TranslationId })">@personalTitle @employee.FullName</a></span></li>
+                        }
+                    }
+                </ul>
+            }
+            @if (submenu > 0)
+            {
+                <ul>
+                    @GetTreeView(departments, item.Id)
+                    @* Recursive  Call for Populate Sub items here*@
+                </ul>
+            }
+        </li>
+                }
+}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts{
+    <script type="text/javascript">
+        $(function () {
+            $('.tree li:has(ul)').addClass('parent_li').find(' > span').attr('title', 'Collapse this branch');
+            $('.tree li.parent_li > span').on('click', function (e) {
+                var children = $(this).parent('li.parent_li').find(' > ul > li');
+                if (children.is(":visible")) {
+                    children.hide('fast');
+                    $(this).attr('title', 'Expand this branch').find(' > i').addClass('glyphicon-folder-close').removeClass('glyphicon-folder-open');
+                } else {
+                    children.show('fast');
+                    $(this).attr('title', 'Collapse this branch').find(' > i').addClass('glyphicon-folder-open').removeClass('glyphicon-folder-close');
+                }
+                e.stopPropagation();
+            });
+        });
+    </script>
+}

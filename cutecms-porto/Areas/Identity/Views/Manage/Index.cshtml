@@ -1,0 +1,86 @@
+﻿@model cutecms_porto.Areas.Identity.Models.IndexViewModel
+@{
+    ViewBag.Title = Resources.Resources.AccountSettings;
+    ViewBag.MainTitle = Resources.Resources.AccountSettings;
+    ViewBag.SubTitle = Resources.Resources.ChangeAccountSettings;
+    ViewBag.IconTitle = "fa fa-user";
+    Layout = "~/Areas/Identity/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Index", "Manage", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.ActionLink(Resources.Resources.ExploreOurSite, "Index", "Home", new { area = "" }, null)
+            <br />
+            @if (User.IsInRole("Admin"))
+            {
+                @Html.ActionLink(Resources.Resources.GoCuteCMS, "Index", "Home", new { area = "CMS" }, null)
+            }
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.Label(Resources.Resources.Password):
+            @if (Model.HasPassword)
+                {
+                @:[@Html.ActionLink(Resources.Resources.ChangePassword, "ChangePassword")]
+            }
+                else
+                {
+                @:[ @Html.ActionLink(Resources.Resources.SetPassword, "SetPassword")]
+                 }
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.Label(Resources.Resources.ExternalLogins):
+            [@Model.Logins.Count @Html.ActionLink(Resources.Resources.ManageLogins, "ManageLogins")]
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.Label(Resources.Resources.PhoneNumber):
+            @(Model.PhoneNumber ?? Resources.Resources.NotAvailable)
+            @if (Model.PhoneNumber != null)
+                {@:[
+                @Html.ActionLink(Resources.Resources.Edit, "AddPhoneNumber")
+                @: &nbsp;|&nbsp;
+                @Html.ActionLink(Resources.Resources.Delete, "RemovePhoneNumber")
+                @:]
+            }
+                else
+                {
+                @Html.ActionLink(Resources.Resources.Create, "AddPhoneNumber")
+            }
+        </div>
+    </div>
+}
+@if (Model.TwoFactor)
+{
+    using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.Label(Resources.Resources.TwoFactor):
+                <input type="submit" value=@Resources.Resources.Disable class="btn " style="color:dimgrey" />
+            </div>
+        </div>
+    }
+}
+else
+{
+    using (Html.BeginForm("EnableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.Label(Resources.Resources.TwoFactor):
+                <input type="submit" value=@Resources.Resources.Enable class="btn " style="color:dimgrey" />
+            </div>
+        </div>
+    }
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

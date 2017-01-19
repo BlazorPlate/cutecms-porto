@@ -1,0 +1,37 @@
+﻿@model cutecms_porto.Areas.Identity.Models.SelectUserGroupsViewModel
+@{
+    ViewBag.MainTitle = Resources.Resources.Groups;
+    ViewBag.Title = Resources.Resources.Index;
+}
+<h3>@Resources.Resources.GroupsAssignment @Html.DisplayFor(model => model.UserName)</h3>
+<hr />
+@using (Html.BeginForm("UserGroups", "Account", FormMethod.Post, new { encType = "multipart/form-data", name = "myform" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.HiddenFor(model => model.UserName)
+            </div>
+        </div>
+        <h4>@Resources.Resources.SelectGroups</h4>
+        <hr />
+        @Html.EditorFor(model => model.Groups)
+        <br />
+        <hr />
+        <div class="form-group">
+            <div class="col-md-offset-0 col-md-10">
+                <input type="submit" value=@Resources.Resources.Save class="btn btn-primary" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+}
+<div>
+    @Html.ActionLink(Resources.Resources.BackToList, "Index")
+</div>

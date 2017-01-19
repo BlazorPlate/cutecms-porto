@@ -1,0 +1,35 @@
+﻿@model cutecms_porto.Areas.Identity.Models.LoginViewModel
+@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form", area = "Identity" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="form-group">
+            <div class="col-md-12 p-none">
+                @*<label>Username or E-mail Address</label>*@
+                @Html.LabelFor(m => m.Email)
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control input-lg" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <div class="col-md-12 p-none">
+                <a class="pull-right mt-none p-none" id="headerRecover" href="@Url.Action("ForgotPassword","Account",new { area="Identity"})">(@Resources.Resources.ForgetPassword)</a>
+                @Html.LabelFor(m => m.Password)
+                @Html.TextBoxFor(m => m.Password, new { @class = "form-control input-lg" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 pl-none">
+            <span class="remember-box checkbox">
+                <label for="rememberme">
+                    <input type="checkbox" id="rememberme" name="rememberme">@Html.LabelFor(m => m.RememberMe)
+                </label>
+            </span>
+        </div>
+        <div class="col-md-6 pr-none">
+            <input type="submit" value="@Resources.Resources.LogIn" class="btn btn-primary pull-right mb-xl" data-loading-text="Loading...">
+        </div>
+    </div>
+}

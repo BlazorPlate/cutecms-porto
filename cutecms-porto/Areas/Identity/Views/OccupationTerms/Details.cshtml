@@ -1,0 +1,31 @@
+﻿@model cutecms_porto.Areas.Identity.Models.DBModel.OccupationTerm
+@{
+    ViewBag.MainTitle = Resources.Resources.Term;
+    ViewBag.Title = Resources.Resources.Details;
+}
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Occupation.Code)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Occupation.Code)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LanguageId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Language.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Value)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Value)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(Resources.Resources.Edit, "Edit", new { id = Model.Id }) |
+    @Html.ActionLink(Resources.Resources.BackToList, "Index", new { id = Model.OccupationId })
+</p>

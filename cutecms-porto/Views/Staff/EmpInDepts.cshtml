@@ -1,0 +1,48 @@
+﻿@model IEnumerable<cutecms_porto.Areas.Identity.Models.DBModel.EmpInDept>
+@using System.Threading
+@{
+    ViewBag.Title = @Resources.Resources.Departments;
+}
+<h2>@Resources.Resources.Departments</h2>
+<section>
+    <div class="container">
+        <!-- RIGHT -->
+        <div class="col-lg-9 col-md-9 col-sm-8 col-lg-push-3 col-md-push-3 col-sm-push-4 margin-bottom-80">
+            <ul id="tabbed-list" class="nav nav-tabs nav-top-border">
+                <li class="active"><a data-toggle="tab">@Resources.Resources.Departments</a></li>
+            </ul>
+            <div class="tab-content margin-top-20">
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DeptId)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.OccupationId)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EmployeeTypeId)
+                        </th>
+                        <th></th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Department.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Occupation.OccupationTerms.Where(o => o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EmployeeType.EmployeeTypeTerms.Where(e => e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value)
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+        <!-- LEFT -->
+        @Html.Partial("_Profile");
+    </div>
+</section>

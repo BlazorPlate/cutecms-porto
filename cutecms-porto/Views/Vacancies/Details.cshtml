@@ -1,0 +1,85 @@
+﻿@model cutecms_porto.Areas.RMS.Models.DBModel.Vacancy
+@using System.Threading
+@using cutecms_porto.Areas.RMS.Models.DBModel
+@{
+    ViewBag.Title = Resources.Resources.JobAnnouncement;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    RMSEntities db = new RMSEntities();
+}
+@section PageHeader
+{
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>@ViewBag.Title</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+<section>
+    <div class="container">
+        <div>
+            <div class="heading-title heading-border-bottom heading-color">
+                <h2 class="size-20 margin-top-1">@Model.Title.ToUpperInvariant()</h2>
+                <br />
+                <small>@Model.Code.ToUpperInvariant()</small>
+                <span class="pull-right text-muted">@Model.Available @Resources.Resources.Available</span>
+            </div>
+            <div>
+                <p>@Html.Raw(HttpUtility.HtmlDecode(Model.Description))</p>
+                <h5>@Resources.Resources.Requirements.ToUpperInvariant()</h5>
+                <p>@Html.Raw(HttpUtility.HtmlDecode(Model.Requirements))</p>
+                <h5>@Resources.Resources.Documents.ToUpperInvariant()</h5>
+                <p>@Html.Raw(HttpUtility.HtmlDecode(Model.Requirements))</p>
+                <h5>@Resources.Resources.Skills.ToUpperInvariant()</h5>
+                <p>@Html.Raw(HttpUtility.HtmlDecode(Model.Skills))</p>
+                <h5>@Resources.Resources.JobType.ToUpperInvariant()</h5>
+                @{
+                    string jobTypeName = (TermsHelper.JobTypes().Where(j => j.JobTypeId == Model.JobTypeId).FirstOrDefault() == null) ?
+                              db.JobTypes.Where(j => j.Id == Model.JobTypeId).FirstOrDefault().Code :
+                              TermsHelper.JobTypes().Where(d => d.JobTypeId == Model.JobTypeId).FirstOrDefault().Value;
+                    <p>@jobTypeName</p>
+                }
+                <h5>@Resources.Resources.Degree.ToUpperInvariant()</h5>
+                <p>
+                    @foreach (var degree in Model.VacancyDegrees)
+            {
+                string degreeName = (TermsHelper.Degrees().Where(d => d.DegreeId == degree.DegreeId).FirstOrDefault() == null) ?
+                    db.RMSDegrees.Where(d => d.Id == degree.DegreeId).FirstOrDefault().Code :
+                    TermsHelper.Degrees().Where(d => d.DegreeId == degree.DegreeId).FirstOrDefault().Value;
+                        @degreeName
+                        <br />
+                    }
+                </p>
+                <h5>@Resources.Resources.Rank.ToUpperInvariant()</h5>
+                <p>
+                    @foreach (var rank in Model.VacancyRanks)
+            {
+                string rankName = (TermsHelper.Ranks().Where(d => d.RankId == rank.RankId).FirstOrDefault() == null) ?
+                                    db.RMSRanks.Where(d => d.Id == rank.RankId).FirstOrDefault().Code :
+                                    TermsHelper.Ranks().Where(d => d.RankId == rank.RankId).FirstOrDefault().Value;
+                        @rankName
+                        <br />
+                    }
+                </p>
+                @if (Model.Notes != null)
+                {
+                    <h5>@Resources.Resources.Notes.ToUpperInvariant()</h5>
+                    <p>@Html.Raw(HttpUtility.HtmlDecode(Model.Notes))</p>
+                }
+                @if (Model.ExpiredOn != null)
+                {
+                    <h5>@Resources.Resources.ExpiredOn.ToUpperInvariant()</h5>
+                    <p>@Model.ExpiredOn</p>
+                }
+                <h5>@Resources.Resources.PostUrl.ToUpperInvariant()</h5>
+                <p><a href="@Url.Action("Details", "Vacancies", new { id = Model.Id })">www.@Request.Url.Host@Url.Action("Details", "Vacancies", new { id = Model.Id })</a></p>
+                <a href="@Url.Action("Apply", "Vacancies", new { id = Model.Id })" class="btn btn-3d btn-teal"><i class="fa fa-check"></i> @Resources.Resources.ApplyNow.ToUpperInvariant()</a>
+                <a href="@Url.Action("Index","Vacancies")" class="btn btn-3d btn-teal"><i class="fa fa-arrow-left"></i> @Resources.Resources.BackToList.ToUpperInvariant()</a>
+            </div>
+        </div>
+        @Html.Partial("_JobShareButtons")
+    </div>
+</section>

@@ -1,0 +1,6 @@
+﻿@using System.Threading
+@model cutecms_porto.Areas.RMS.Models.SelectRankEditorViewModel
+@Html.HiddenFor(model => model.RankId)
+@Html.HiddenFor(model => model.RankName)
+@Html.CheckBoxFor(model => model.Selected, new { @class = "js-switch"})
+@Html.DisplayFor(model => model.RankName)<br />

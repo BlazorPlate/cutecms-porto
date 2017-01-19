@@ -1,0 +1,37 @@
+﻿@model cutecms_porto.Areas.Config.Models.DBModel.NotificationTerm
+@{ 
+    ViewBag.MainTitle = Resources.Resources.Term;
+    ViewBag.Title = Resources.Resources.Details;
+}
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Notification.NotificationCode.Code)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Notification.NotificationCode.Code)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LanguageId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Language.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Subject)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Body)
+        </dt>
+        <dd>
+            @Html.Raw(HttpUtility.HtmlDecode(Model.Body))
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(Resources.Resources.Edit, "Edit", new { id = Model.Id }) |
+    @Html.ActionLink(Resources.Resources.BackToList, "Index", new { id = Model.NotificationId })
+</p>

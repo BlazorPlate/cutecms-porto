@@ -1,0 +1,25 @@
+﻿@model cutecms_porto.Areas.RMS.Models.DBModel.Attachment
+@{
+    ViewBag.MainTitle = Resources.Resources.Attachment;
+    ViewBag.Title = Resources.Resources.Details;
+}
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FilePath)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FilePath)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Applicant.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Applicant.FirstName)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(Resources.Resources.Edit, "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink(Resources.Resources.BackToList, "Index")
+</p>

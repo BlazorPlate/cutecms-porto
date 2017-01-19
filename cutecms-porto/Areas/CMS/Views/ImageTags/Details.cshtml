@@ -1,0 +1,27 @@
+﻿@using System.Threading;
+@using cutecms_porto.Areas.CMS.Models.DBModel
+@model cutecms_porto.Areas.CMS.Models.DBModel.ImageTag
+@{
+    ViewBag.MainTitle = Resources.Resources.Image;
+    ViewBag.Title = Resources.Resources.Details;
+}
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tag.Code)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tag.Code)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageFileId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ImageFileId)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(Resources.Resources.Edit, "Edit", new { id = Model.Id }) |
+    @Html.ActionLink(Resources.Resources.BackToList, "Index")
+</p>

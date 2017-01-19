@@ -1,0 +1,67 @@
+﻿@using Microsoft.AspNet.Identity
+@using cutecms_porto.Areas.Identity.Models
+@using cutecms_porto.Areas.Identity.Models.DBModel
+@using cutecms_porto.Areas.Config.Models.DBModel
+@using System.Threading
+@{
+    ConfigEntities configDB = new ConfigEntities();
+    ApplicationDbContext _db = new ApplicationDbContext();
+    IdentityEntities identityDb = new IdentityEntities();
+    string username = null;
+}
+@if (Request.IsAuthenticated)
+{
+    var email = _db.Users.Find(User.Identity.GetUserId()).UserName;
+    var userId = User.Identity.GetUserId();
+    if (identityDb.Employees.Where(e => e.LoginId.Equals(userId) && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null)
+    {
+        username = identityDb.Employees.Where(e => e.LoginId.Equals(userId) && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().FullName;
+    }
+    else
+    {
+        username = email.Substring(0, email.LastIndexOf("@"));
+    }
+    using (Html.BeginForm("LogOff", "Account", null, FormMethod.Post, new { id = "logoutForm" }))
+    {
+        @Html.AntiForgeryToken()
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="fa fa-globe fa-1x"></span> <span>@Resources.Resources.Language</span> <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    @foreach (var item in configDB.ConfigLanguages.Where(l => l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal))
+                    {
+                        <li>
+                            <a style="font-weight:bold" href="@Url.RouteUrl(new RouteValueDictionary(ViewContext.RouteData.Values.ToDictionary(r => r.Key, r => r.Key == "culture" ? item.CultureName.Trim() : r.Value)))">
+                                <img alt="lang" src="~/assets/images/flags/@item.Flag"> @item.Name
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </li>
+            <li>
+                @Html.ActionLink(Resources.Resources.Hello + " " + username.ToUpper() + " !", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">@Resources.Resources.LogOff</a></li>
+        </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="fa fa-globe fa-1x"></span> <span>@Resources.Resources.Language</span> <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+                @foreach (var item in configDB.ConfigLanguages.Where(l => l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal))
+                {
+                    <li>
+                        <a href="@Url.RouteUrl(new RouteValueDictionary(ViewContext.RouteData.Values.ToDictionary(r => r.Key, r => r.Key == "culture" ? item.CultureName.Trim() : r.Value)))">
+                            <img alt="lang" src="~/assets/images/flags/@item.Flag"> @item.Name
+                        </a>
+                    </li>
+                }
+            </ul>
+        </li>
+        <li>@Html.ActionLink(Resources.Resources.Register, "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink(Resources.Resources.LogOn, "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

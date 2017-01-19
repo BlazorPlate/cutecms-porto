@@ -1,0 +1,24 @@
+﻿@model  cutecms_porto.Areas.Identity.Models.DBModel.Employee
+@using System.Threading
+@{
+    ViewBag.Title = @Resources.Resources.Publications;
+}
+<!-- RIGHT -->
+<form role="form" action="#" method="post">
+    <table class="table">
+        <tr>
+            <th>
+                @Resources.Resources.RnC
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model.Publications.OrderBy(p => p.Ordinal))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+            </tr>
+        }
+    </table>
+</form>

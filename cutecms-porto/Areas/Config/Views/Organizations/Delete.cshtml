@@ -1,0 +1,181 @@
+﻿@model cutecms_porto.Areas.Config.Models.DBModel.Organization
+@using System.Threading
+@{   
+    ViewBag.MainTitle = Resources.Resources.Organization;
+    ViewBag.Title = Resources.Resources.Delete;
+}
+<h3>@Resources.Resources.DeleteConfirmation</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LanguageId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Language.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Code)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Telephone_1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Telephone_1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Telephone_2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Telephone_2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Telephone_3)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Telephone_3)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Fax)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Fax)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Country)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Province)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Province)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.District)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.District)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Street)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Street)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Building)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Building)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PostalCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PostalCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.POBox)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.POBox)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Longitude)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Latitude)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaDescription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MetaDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FacebookUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FacebookUrl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TwitterUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TwitterUrl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.YouTubeUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.YouTubeUrl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.GooglePlusUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GooglePlusUrl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LinkedInUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LinkedInUrl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RSS)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RSS)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Developer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Developer)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DeveloperURL)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DeveloperURL)
+        </dd>
+    </dl>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" value=@Resources.Resources.Delete class="btn btn-default" /> |
+            @Html.ActionLink(Resources.Resources.BackToList, "Index")
+        </div>
+    }
+</div>

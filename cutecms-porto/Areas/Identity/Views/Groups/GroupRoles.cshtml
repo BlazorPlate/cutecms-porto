@@ -1,0 +1,32 @@
+﻿@model cutecms_porto.Areas.Identity.Models.SelectGroupRolesViewModel
+@{
+    ViewBag.MainTitle = Resources.Resources.Roles;
+    ViewBag.Title = Resources.Resources.Index;
+}
+<h3>@Resources.Resources.GroupRolesAssignment @Html.DisplayFor(model => model.GroupName)</h3>
+@using (Html.BeginForm("GroupRoles", "Groups", FormMethod.Post, new { encType = "multipart/form-data", name = "myform" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.GroupName)
+    @Html.HiddenFor(model => model.GroupId)
+    <div class="form-horizontal">
+        <h4>@Resources.Resources.Roles @Html.DisplayFor(model => model.GroupName)</h4>
+        <table class="table">
+            @Html.EditorFor(model => model.Roles)
+        </table>
+        <hr />
+        <div class="form-group">
+            <div class="col-md-offset-0 col-md-10">
+                <input type="submit" value=@Resources.Resources.Save class="btn btn-primary" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+}
+<div>
+    @Html.ActionLink(Resources.Resources.BackToList, "Index")
+</div>

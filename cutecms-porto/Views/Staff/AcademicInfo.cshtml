@@ -1,0 +1,16 @@
+﻿@model cutecms_porto.Areas.Identity.Models.DBModel.Employee
+@using System.Threading
+<form role="form" action="#" method="post">
+        <div class="form-group">
+            @Html.LabelFor(model => model.RankId)
+            @Html.DisplayFor(model => model.Rank.RankTerms.Where(r => r.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DegreeId)
+            @Html.DisplayFor(model => model.Degree.DegreeTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProgramId)
+            @Html.DisplayFor(model => model.Program.ProgramTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value)
+        </div>
+    </form>

@@ -1,0 +1,1714 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="RMSDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Applicants">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="DOB" Type="datetime" Nullable="false" />
+          <Property Name="ResumeFileName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ResumeFilePath" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="GenderId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Attachments">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FileName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FilePath" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ApplicantId" Type="int" />
+        </EntityType>
+        <EntityType Name="Degrees">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Visible" Type="bit" Nullable="false" />
+          <Property Name="Ordinal" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DegreeTerms">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LanguageId" Type="int" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DegreeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Departments">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ManagerId" Type="int" />
+          <Property Name="ParentId" Type="int" />
+          <Property Name="Ordinal" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DepartmentTerms">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LanguageId" Type="int" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DepartmentId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Genders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Visible" Type="bit" Nullable="false" />
+          <Property Name="Ordinal" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GenderTerms">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LanguageId" Type="int" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="GenderId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JobTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Ordinal" Type="int" Nullable="false" />
+          <Property Name="Visible" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JobTypeTerms">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LanguageId" Type="int" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="JobTypeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Languages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CultureName" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="FlagCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsEnabled" Type="bit" Nullable="false" />
+          <Property Name="IsDefault" Type="bit" Nullable="false" />
+          <Property Name="Ordinal" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Programs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Visible" Type="bit" Nullable="false" />
+          <Property Name="Ordinal" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProgramTerms">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LanguageId" Type="int" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ProgramId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ranks">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Visible" Type="bit" Nullable="false" />
+          <Property Name="Ordinal" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RankTerms">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LanguageId" Type="int" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RankId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Statuses">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Visible" Type="bit" Nullable="false" />
+          <Property Name="Ordinal" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StatusTerms">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LanguageId" Type="int" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="StatusId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Submissions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VacancyId" Type="int" Nullable="false" />
+          <Property Name="ApplicantId" Type="int" Nullable="false" />
+          <Property Name="CoverLetter" Type="nvarchar(max)" />
+          <Property Name="SubmissionDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vacancies">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenantId" Type="nvarchar" MaxLength="50" />
+          <Property Name="Code" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Requirements" Type="nvarchar(max)" />
+          <Property Name="Skills" Type="nvarchar(max)" />
+          <Property Name="Documents" Type="nvarchar(max)" />
+          <Property Name="DeptId" Type="int" Nullable="false" />
+          <Property Name="JobTypeId" Type="int" Nullable="false" />
+          <Property Name="ProgramId" Type="int" Nullable="false" />
+          <Property Name="Available" Type="int" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+          <Property Name="RoleVID" Type="nvarchar" MaxLength="128" />
+          <Property Name="Author" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="128" />
+          <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
+          <Property Name="PublishedOn" Type="datetime2" Precision="7" />
+          <Property Name="ExpiredOn" Type="datetime2" Precision="7" />
+          <Property Name="LanguageId" Type="int" Nullable="false" />
+          <Property Name="IsTranslated" Type="bit" Nullable="false" />
+          <Property Name="TranslationId" Type="int" />
+          <Property Name="StatusId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VacancyDegrees">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VacancyId" Type="int" Nullable="false" />
+          <Property Name="DegreeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VacancyRanks">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VacancyId" Type="int" Nullable="false" />
+          <Property Name="RankId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Applicants_Genders">
+          <End Role="Genders" Type="Self.Genders" Multiplicity="1" />
+          <End Role="Applicants" Type="Self.Applicants" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genders">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Applicants">
+              <PropertyRef Name="GenderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Attachments_Applicants">
+          <End Role="Applicants" Type="Self.Applicants" Multiplicity="0..1" />
+          <End Role="Attachments" Type="Self.Attachments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Applicants">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Attachments">
+              <PropertyRef Name="ApplicantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DegreeTerms_Degrees">
+          <End Role="Degrees" Type="Self.Degrees" Multiplicity="1" />
+          <End Role="DegreeTerms" Type="Self.DegreeTerms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Degrees">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DegreeTerms">
+              <PropertyRef Name="DegreeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DegreeTerms_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+          <End Role="DegreeTerms" Type="Self.DegreeTerms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DegreeTerms">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Departments_Departments">
+          <End Role="Departments" Type="Self.Departments" Multiplicity="0..1" />
+          <End Role="Departments1" Type="Self.Departments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departments">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Departments1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DepartmentTerms_Departments">
+          <End Role="Departments" Type="Self.Departments" Multiplicity="1" />
+          <End Role="DepartmentTerms" Type="Self.DepartmentTerms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departments">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DepartmentTerms">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DepartmentTerms_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+          <End Role="DepartmentTerms" Type="Self.DepartmentTerms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DepartmentTerms">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GenderTerms_Genders">
+          <End Role="Genders" Type="Self.Genders" Multiplicity="1" />
+          <End Role="GenderTerms" Type="Self.GenderTerms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genders">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GenderTerms">
+              <PropertyRef Name="GenderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GenderTerms_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+          <End Role="GenderTerms" Type="Self.GenderTerms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GenderTerms">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobTypeTerms_JobTypes">
+          <End Role="JobTypes" Type="Self.JobTypes" Multiplicity="1" />
+          <End Role="JobTypeTerms" Type="Self.JobTypeTerms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JobTypeTerms">
+              <PropertyRef Name="JobTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobTypeTerms_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+          <End Role="JobTypeTerms" Type="Self.JobTypeTerms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JobTypeTerms">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProgramTerms_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+          <End Role="ProgramTerms" Type="Self.ProgramTerms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProgramTerms">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProgramTerms_Programs">
+          <End Role="Programs" Type="Self.Programs" Multiplicity="1" />
+          <End Role="ProgramTerms" Type="Self.ProgramTerms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Programs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProgramTerms">
+              <PropertyRef Name="ProgramId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RankTerms_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+          <End Role="RankTerms" Type="Self.RankTerms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RankTerms">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RankTerms_Ranks">
+          <End Role="Ranks" Type="Self.Ranks" Multiplicity="1" />
+          <End Role="RankTerms" Type="Self.RankTerms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ranks">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RankTerms">
+              <PropertyRef Name="RankId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusTerms_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+          <End Role="StatusTerms" Type="Self.StatusTerms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StatusTerms">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusTerms_Statuses">
+          <End Role="Statuses" Type="Self.Statuses" Multiplicity="1" />
+          <End Role="StatusTerms" Type="Self.StatusTerms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Statuses">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StatusTerms">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Submissions_Applicants">
+          <End Role="Applicants" Type="Self.Applicants" Multiplicity="1" />
+          <End Role="Submissions" Type="Self.Submissions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Applicants">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Submissions">
+              <PropertyRef Name="ApplicantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Submissions_Vacancies">
+          <End Role="Vacancies" Type="Self.Vacancies" Multiplicity="1" />
+          <End Role="Submissions" Type="Self.Submissions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vacancies">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Submissions">
+              <PropertyRef Name="VacancyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vacancies_Departments">
+          <End Role="Departments" Type="Self.Departments" Multiplicity="1" />
+          <End Role="Vacancies" Type="Self.Vacancies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departments">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vacancies">
+              <PropertyRef Name="DeptId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vacancies_JobTypes">
+          <End Role="JobTypes" Type="Self.JobTypes" Multiplicity="1" />
+          <End Role="Vacancies" Type="Self.Vacancies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vacancies">
+              <PropertyRef Name="JobTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vacancies_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+          <End Role="Vacancies" Type="Self.Vacancies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vacancies">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vacancies_Programs">
+          <End Role="Programs" Type="Self.Programs" Multiplicity="1" />
+          <End Role="Vacancies" Type="Self.Vacancies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Programs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vacancies">
+              <PropertyRef Name="ProgramId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vacancies_Statuses">
+          <End Role="Statuses" Type="Self.Statuses" Multiplicity="1" />
+          <End Role="Vacancies" Type="Self.Vacancies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Statuses">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vacancies">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VacancyDegrees_DegreeTypes">
+          <End Role="Degrees" Type="Self.Degrees" Multiplicity="1" />
+          <End Role="VacancyDegrees" Type="Self.VacancyDegrees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Degrees">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VacancyDegrees">
+              <PropertyRef Name="DegreeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VacancyDegrees_Vacancies">
+          <End Role="Vacancies" Type="Self.Vacancies" Multiplicity="1" />
+          <End Role="VacancyDegrees" Type="Self.VacancyDegrees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vacancies">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VacancyDegrees">
+              <PropertyRef Name="VacancyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VacancyRanks_RankTypes">
+          <End Role="Ranks" Type="Self.Ranks" Multiplicity="1" />
+          <End Role="VacancyRanks" Type="Self.VacancyRanks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ranks">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VacancyRanks">
+              <PropertyRef Name="RankId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VacancyRanks_Vacancies">
+          <End Role="Vacancies" Type="Self.Vacancies" Multiplicity="1" />
+          <End Role="VacancyRanks" Type="Self.VacancyRanks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vacancies">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VacancyRanks">
+              <PropertyRef Name="VacancyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RMSDBModelStoreContainer">
+          <EntitySet Name="Applicants" EntityType="Self.Applicants" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Attachments" EntityType="Self.Attachments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Degrees" EntityType="Self.Degrees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DegreeTerms" EntityType="Self.DegreeTerms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DepartmentTerms" EntityType="Self.DepartmentTerms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Genders" EntityType="Self.Genders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GenderTerms" EntityType="Self.GenderTerms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JobTypes" EntityType="Self.JobTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JobTypeTerms" EntityType="Self.JobTypeTerms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Languages" EntityType="Self.Languages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Programs" EntityType="Self.Programs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProgramTerms" EntityType="Self.ProgramTerms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ranks" EntityType="Self.Ranks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RankTerms" EntityType="Self.RankTerms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Statuses" EntityType="Self.Statuses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatusTerms" EntityType="Self.StatusTerms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Submissions" EntityType="Self.Submissions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vacancies" EntityType="Self.Vacancies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VacancyDegrees" EntityType="Self.VacancyDegrees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VacancyRanks" EntityType="Self.VacancyRanks" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Applicants_Genders" Association="Self.FK_Applicants_Genders">
+            <End Role="Genders" EntitySet="Genders" />
+            <End Role="Applicants" EntitySet="Applicants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Attachments_Applicants" Association="Self.FK_Attachments_Applicants">
+            <End Role="Applicants" EntitySet="Applicants" />
+            <End Role="Attachments" EntitySet="Attachments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DegreeTerms_Degrees" Association="Self.FK_DegreeTerms_Degrees">
+            <End Role="Degrees" EntitySet="Degrees" />
+            <End Role="DegreeTerms" EntitySet="DegreeTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DegreeTerms_Languages" Association="Self.FK_DegreeTerms_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="DegreeTerms" EntitySet="DegreeTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Departments_Departments" Association="Self.FK_Departments_Departments">
+            <End Role="Departments" EntitySet="Departments" />
+            <End Role="Departments1" EntitySet="Departments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DepartmentTerms_Departments" Association="Self.FK_DepartmentTerms_Departments">
+            <End Role="Departments" EntitySet="Departments" />
+            <End Role="DepartmentTerms" EntitySet="DepartmentTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DepartmentTerms_Languages" Association="Self.FK_DepartmentTerms_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="DepartmentTerms" EntitySet="DepartmentTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GenderTerms_Genders" Association="Self.FK_GenderTerms_Genders">
+            <End Role="Genders" EntitySet="Genders" />
+            <End Role="GenderTerms" EntitySet="GenderTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GenderTerms_Languages" Association="Self.FK_GenderTerms_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="GenderTerms" EntitySet="GenderTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobTypeTerms_JobTypes" Association="Self.FK_JobTypeTerms_JobTypes">
+            <End Role="JobTypes" EntitySet="JobTypes" />
+            <End Role="JobTypeTerms" EntitySet="JobTypeTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobTypeTerms_Languages" Association="Self.FK_JobTypeTerms_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="JobTypeTerms" EntitySet="JobTypeTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProgramTerms_Languages" Association="Self.FK_ProgramTerms_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="ProgramTerms" EntitySet="ProgramTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProgramTerms_Programs" Association="Self.FK_ProgramTerms_Programs">
+            <End Role="Programs" EntitySet="Programs" />
+            <End Role="ProgramTerms" EntitySet="ProgramTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RankTerms_Languages" Association="Self.FK_RankTerms_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="RankTerms" EntitySet="RankTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RankTerms_Ranks" Association="Self.FK_RankTerms_Ranks">
+            <End Role="Ranks" EntitySet="Ranks" />
+            <End Role="RankTerms" EntitySet="RankTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusTerms_Languages" Association="Self.FK_StatusTerms_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="StatusTerms" EntitySet="StatusTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusTerms_Statuses" Association="Self.FK_StatusTerms_Statuses">
+            <End Role="Statuses" EntitySet="Statuses" />
+            <End Role="StatusTerms" EntitySet="StatusTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Submissions_Applicants" Association="Self.FK_Submissions_Applicants">
+            <End Role="Applicants" EntitySet="Applicants" />
+            <End Role="Submissions" EntitySet="Submissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Submissions_Vacancies" Association="Self.FK_Submissions_Vacancies">
+            <End Role="Vacancies" EntitySet="Vacancies" />
+            <End Role="Submissions" EntitySet="Submissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vacancies_Departments" Association="Self.FK_Vacancies_Departments">
+            <End Role="Departments" EntitySet="Departments" />
+            <End Role="Vacancies" EntitySet="Vacancies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vacancies_JobTypes" Association="Self.FK_Vacancies_JobTypes">
+            <End Role="JobTypes" EntitySet="JobTypes" />
+            <End Role="Vacancies" EntitySet="Vacancies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vacancies_Languages" Association="Self.FK_Vacancies_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="Vacancies" EntitySet="Vacancies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vacancies_Programs" Association="Self.FK_Vacancies_Programs">
+            <End Role="Programs" EntitySet="Programs" />
+            <End Role="Vacancies" EntitySet="Vacancies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vacancies_Statuses" Association="Self.FK_Vacancies_Statuses">
+            <End Role="Statuses" EntitySet="Statuses" />
+            <End Role="Vacancies" EntitySet="Vacancies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VacancyDegrees_DegreeTypes" Association="Self.FK_VacancyDegrees_DegreeTypes">
+            <End Role="Degrees" EntitySet="Degrees" />
+            <End Role="VacancyDegrees" EntitySet="VacancyDegrees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VacancyDegrees_Vacancies" Association="Self.FK_VacancyDegrees_Vacancies">
+            <End Role="Vacancies" EntitySet="Vacancies" />
+            <End Role="VacancyDegrees" EntitySet="VacancyDegrees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VacancyRanks_RankTypes" Association="Self.FK_VacancyRanks_RankTypes">
+            <End Role="Ranks" EntitySet="Ranks" />
+            <End Role="VacancyRanks" EntitySet="VacancyRanks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VacancyRanks_Vacancies" Association="Self.FK_VacancyRanks_Vacancies">
+            <End Role="Vacancies" EntitySet="Vacancies" />
+            <End Role="VacancyRanks" EntitySet="VacancyRanks" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RMSDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="RMSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Attachments" EntityType="RMSDBModel.Attachment" />
+          <EntitySet Name="RMSDegrees" EntityType="RMSDBModel.RMSDegree" />
+          <EntitySet Name="RMSDegreeTerms" EntityType="RMSDBModel.RMSDegreeTerm" />
+          <EntitySet Name="RMSPrograms" EntityType="RMSDBModel.RMSProgram" />
+          <EntitySet Name="RMSProgramTerms" EntityType="RMSDBModel.RMSProgramTerm" />
+          <EntitySet Name="RMSRanks" EntityType="RMSDBModel.RMSRank" />
+          <EntitySet Name="RMSRankTerms" EntityType="RMSDBModel.RMSRankTerm" />
+          <EntitySet Name="Statuses" EntityType="RMSDBModel.RMSStatus" />
+          <EntitySet Name="RMSStatusTerms" EntityType="RMSDBModel.RMSStatusTerm" />
+          <EntitySet Name="Submissions" EntityType="RMSDBModel.Submission" />
+          <EntitySet Name="VacancyDegrees" EntityType="RMSDBModel.VacancyDegree" />
+          <EntitySet Name="VacancyRanks" EntityType="RMSDBModel.VacancyRank" />
+          <AssociationSet Name="FK_DegreeTerms_Degrees" Association="RMSDBModel.FK_DegreeTerms_Degrees">
+            <End Role="Degree" EntitySet="RMSDegrees" />
+            <End Role="DegreeTerm" EntitySet="RMSDegreeTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VacancyDegrees_DegreeTypes" Association="RMSDBModel.FK_VacancyDegrees_DegreeTypes">
+            <End Role="Degree" EntitySet="RMSDegrees" />
+            <End Role="VacancyDegree" EntitySet="VacancyDegrees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProgramTerms_Programs" Association="RMSDBModel.FK_ProgramTerms_Programs">
+            <End Role="Program" EntitySet="RMSPrograms" />
+            <End Role="ProgramTerm" EntitySet="RMSProgramTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RankTerms_Ranks" Association="RMSDBModel.FK_RankTerms_Ranks">
+            <End Role="Rank" EntitySet="RMSRanks" />
+            <End Role="RankTerm" EntitySet="RMSRankTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VacancyRanks_RankTypes" Association="RMSDBModel.FK_VacancyRanks_RankTypes">
+            <End Role="Rank" EntitySet="RMSRanks" />
+            <End Role="VacancyRank" EntitySet="VacancyRanks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusTerms_Statuses" Association="RMSDBModel.FK_StatusTerms_Statuses">
+            <End Role="Status" EntitySet="Statuses" />
+            <End Role="StatusTerm" EntitySet="RMSStatusTerms" />
+          </AssociationSet>
+          <EntitySet Name="RMSDepartments" EntityType="RMSDBModel.RMSDepartment" />
+          <AssociationSet Name="FK_Departments_Departments" Association="RMSDBModel.FK_Departments_Departments">
+            <End Role="Department" EntitySet="RMSDepartments" />
+            <End Role="Department1" EntitySet="RMSDepartments" />
+          </AssociationSet>
+          <EntitySet Name="RMSDepartmentTerms" EntityType="RMSDBModel.RMSDepartmentTerm" />
+          <AssociationSet Name="FK_DepartmentTerms_Departments" Association="RMSDBModel.FK_DepartmentTerms_Departments">
+            <End Role="RMSDepartment" EntitySet="RMSDepartments" />
+            <End Role="DepartmentTerm" EntitySet="RMSDepartmentTerms" />
+          </AssociationSet>
+          <EntitySet Name="JobTypes" EntityType="RMSDBModel.JobType" />
+          <EntitySet Name="JobTypeTerms" EntityType="RMSDBModel.JobTypeTerm" />
+          <AssociationSet Name="FK_JobTypeTerms_JobTypes" Association="RMSDBModel.FK_JobTypeTerms_JobTypes">
+            <End Role="JobType" EntitySet="JobTypes" />
+            <End Role="JobTypeTerm" EntitySet="JobTypeTerms" />
+          </AssociationSet>
+          <EntitySet Name="Applicants" EntityType="RMSDBModel.Applicant" />
+          <EntitySet Name="Genders" EntityType="RMSDBModel.Gender" />
+          <AssociationSet Name="FK_Applicants_Genders" Association="RMSDBModel.FK_Applicants_Genders">
+            <End Role="Gender" EntitySet="Genders" />
+            <End Role="Applicant" EntitySet="Applicants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Attachments_Applicants" Association="RMSDBModel.FK_Attachments_Applicants">
+            <End Role="Applicant" EntitySet="Applicants" />
+            <End Role="Attachment" EntitySet="Attachments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Submissions_Applicants" Association="RMSDBModel.FK_Submissions_Applicants">
+            <End Role="Applicant" EntitySet="Applicants" />
+            <End Role="Submission" EntitySet="Submissions" />
+          </AssociationSet>
+          <EntitySet Name="GenderTerms" EntityType="RMSDBModel.GenderTerm" />
+          <EntitySet Name="RMSLanguages" EntityType="RMSDBModel.RMSLanguage" />
+          <AssociationSet Name="FK_DegreeTerms_Languages" Association="RMSDBModel.FK_DegreeTerms_Languages">
+            <End Role="Language" EntitySet="RMSLanguages" />
+            <End Role="RMSDegreeTerm" EntitySet="RMSDegreeTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DepartmentTerms_Languages" Association="RMSDBModel.FK_DepartmentTerms_Languages">
+            <End Role="Language" EntitySet="RMSLanguages" />
+            <End Role="RMSDepartmentTerm" EntitySet="RMSDepartmentTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GenderTerms_Genders" Association="RMSDBModel.FK_GenderTerms_Genders">
+            <End Role="Gender" EntitySet="Genders" />
+            <End Role="GenderTerm" EntitySet="GenderTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GenderTerms_Languages" Association="RMSDBModel.FK_GenderTerms_Languages">
+            <End Role="Language" EntitySet="RMSLanguages" />
+            <End Role="GenderTerm" EntitySet="GenderTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobTypeTerms_Languages" Association="RMSDBModel.FK_JobTypeTerms_Languages">
+            <End Role="Language" EntitySet="RMSLanguages" />
+            <End Role="JobTypeTerm" EntitySet="JobTypeTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProgramTerms_Languages" Association="RMSDBModel.FK_ProgramTerms_Languages">
+            <End Role="Language" EntitySet="RMSLanguages" />
+            <End Role="RMSProgramTerm" EntitySet="RMSProgramTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RankTerms_Languages" Association="RMSDBModel.FK_RankTerms_Languages">
+            <End Role="Language" EntitySet="RMSLanguages" />
+            <End Role="RMSRankTerm" EntitySet="RMSRankTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusTerms_Languages" Association="RMSDBModel.FK_StatusTerms_Languages">
+            <End Role="Language" EntitySet="RMSLanguages" />
+            <End Role="RMSStatusTerm" EntitySet="RMSStatusTerms" />
+          </AssociationSet>
+          <EntitySet Name="Vacancies" EntityType="RMSDBModel.Vacancy" />
+          <AssociationSet Name="FK_Vacancies_Departments" Association="RMSDBModel.FK_Vacancies_Departments">
+            <End Role="RMSDepartment" EntitySet="RMSDepartments" />
+            <End Role="Vacancy" EntitySet="Vacancies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vacancies_JobTypes" Association="RMSDBModel.FK_Vacancies_JobTypes">
+            <End Role="JobType" EntitySet="JobTypes" />
+            <End Role="Vacancy" EntitySet="Vacancies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vacancies_Languages" Association="RMSDBModel.FK_Vacancies_Languages">
+            <End Role="RMSLanguage" EntitySet="RMSLanguages" />
+            <End Role="Vacancy" EntitySet="Vacancies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vacancies_Programs" Association="RMSDBModel.FK_Vacancies_Programs">
+            <End Role="RMSProgram" EntitySet="RMSPrograms" />
+            <End Role="Vacancy" EntitySet="Vacancies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vacancies_Statuses" Association="RMSDBModel.FK_Vacancies_Statuses">
+            <End Role="RMSStatus" EntitySet="Statuses" />
+            <End Role="Vacancy" EntitySet="Vacancies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Submissions_Vacancies" Association="RMSDBModel.FK_Submissions_Vacancies">
+            <End Role="Vacancy" EntitySet="Vacancies" />
+            <End Role="Submission" EntitySet="Submissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VacancyDegrees_Vacancies" Association="RMSDBModel.FK_VacancyDegrees_Vacancies">
+            <End Role="Vacancy" EntitySet="Vacancies" />
+            <End Role="VacancyDegree" EntitySet="VacancyDegrees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VacancyRanks_Vacancies" Association="RMSDBModel.FK_VacancyRanks_Vacancies">
+            <End Role="Vacancy" EntitySet="Vacancies" />
+            <End Role="VacancyRank" EntitySet="VacancyRanks" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="Attachment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FileName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FilePath" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ApplicantId" Type="Int32" />
+          <NavigationProperty Name="Applicant" Relationship="RMSDBModel.FK_Attachments_Applicants" FromRole="Attachment" ToRole="Applicant" />
+        </EntityType>
+        <EntityType Name="RMSDegree">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Visible" Type="Boolean" Nullable="false" />
+          <Property Name="Ordinal" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DegreeTerms" Relationship="RMSDBModel.FK_DegreeTerms_Degrees" FromRole="Degree" ToRole="DegreeTerm" />
+          <NavigationProperty Name="VacancyDegrees" Relationship="RMSDBModel.FK_VacancyDegrees_DegreeTypes" FromRole="Degree" ToRole="VacancyDegree" />
+        </EntityType>
+        <EntityType Name="RMSDegreeTerm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageId" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DegreeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Degree" Relationship="RMSDBModel.FK_DegreeTerms_Degrees" FromRole="DegreeTerm" ToRole="Degree" />
+          <NavigationProperty Name="Language" Relationship="RMSDBModel.FK_DegreeTerms_Languages" FromRole="RMSDegreeTerm" ToRole="Language" />
+        </EntityType>
+        <EntityType Name="RMSProgram">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Visible" Type="Boolean" Nullable="false" />
+          <Property Name="Ordinal" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ProgramTerms" Relationship="RMSDBModel.FK_ProgramTerms_Programs" FromRole="Program" ToRole="ProgramTerm" />
+          <NavigationProperty Name="Vacancies" Relationship="RMSDBModel.FK_Vacancies_Programs" FromRole="RMSProgram" ToRole="Vacancy" />
+        </EntityType>
+        <EntityType Name="RMSProgramTerm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageId" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProgramId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Program" Relationship="RMSDBModel.FK_ProgramTerms_Programs" FromRole="ProgramTerm" ToRole="Program" />
+          <NavigationProperty Name="Language" Relationship="RMSDBModel.FK_ProgramTerms_Languages" FromRole="RMSProgramTerm" ToRole="Language" />
+        </EntityType>
+        <EntityType Name="RMSRank">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Visible" Type="Boolean" Nullable="false" />
+          <Property Name="Ordinal" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="RankTerms" Relationship="RMSDBModel.FK_RankTerms_Ranks" FromRole="Rank" ToRole="RankTerm" />
+          <NavigationProperty Name="VacancyRanks" Relationship="RMSDBModel.FK_VacancyRanks_RankTypes" FromRole="Rank" ToRole="VacancyRank" />
+        </EntityType>
+        <EntityType Name="RMSRankTerm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageId" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RankId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Rank" Relationship="RMSDBModel.FK_RankTerms_Ranks" FromRole="RankTerm" ToRole="Rank" />
+          <NavigationProperty Name="Language" Relationship="RMSDBModel.FK_RankTerms_Languages" FromRole="RMSRankTerm" ToRole="Language" />
+        </EntityType>
+        <EntityType Name="RMSStatus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Visible" Type="Boolean" Nullable="false" />
+          <Property Name="Ordinal" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="StatusTerms" Relationship="RMSDBModel.FK_StatusTerms_Statuses" FromRole="Status" ToRole="StatusTerm" />
+          <NavigationProperty Name="Vacancies" Relationship="RMSDBModel.FK_Vacancies_Statuses" FromRole="RMSStatus" ToRole="Vacancy" />
+        </EntityType>
+        <EntityType Name="RMSStatusTerm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageId" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StatusId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Status" Relationship="RMSDBModel.FK_StatusTerms_Statuses" FromRole="StatusTerm" ToRole="Status" />
+          <NavigationProperty Name="Language" Relationship="RMSDBModel.FK_StatusTerms_Languages" FromRole="RMSStatusTerm" ToRole="Language" />
+        </EntityType>
+        <EntityType Name="Submission">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VacancyId" Type="Int32" Nullable="false" />
+          <Property Name="ApplicantId" Type="Int32" Nullable="false" />
+          <Property Name="CoverLetter" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SubmissionDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Applicant" Relationship="RMSDBModel.FK_Submissions_Applicants" FromRole="Submission" ToRole="Applicant" />
+          <NavigationProperty Name="Vacancy" Relationship="RMSDBModel.FK_Submissions_Vacancies" FromRole="Submission" ToRole="Vacancy" />
+        </EntityType>
+        <EntityType Name="VacancyDegree">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VacancyId" Type="Int32" Nullable="false" />
+          <Property Name="DegreeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Degree" Relationship="RMSDBModel.FK_VacancyDegrees_DegreeTypes" FromRole="VacancyDegree" ToRole="Degree" />
+          <NavigationProperty Name="Vacancy" Relationship="RMSDBModel.FK_VacancyDegrees_Vacancies" FromRole="VacancyDegree" ToRole="Vacancy" />
+        </EntityType>
+        <EntityType Name="VacancyRank">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VacancyId" Type="Int32" Nullable="false" />
+          <Property Name="RankId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Rank" Relationship="RMSDBModel.FK_VacancyRanks_RankTypes" FromRole="VacancyRank" ToRole="Rank" />
+          <NavigationProperty Name="Vacancy" Relationship="RMSDBModel.FK_VacancyRanks_Vacancies" FromRole="VacancyRank" ToRole="Vacancy" />
+        </EntityType>
+        <Association Name="FK_DegreeTerms_Degrees">
+          <End Type="RMSDBModel.RMSDegree" Role="Degree" Multiplicity="1" />
+          <End Type="RMSDBModel.RMSDegreeTerm" Role="DegreeTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Degree">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DegreeTerm">
+              <PropertyRef Name="DegreeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VacancyDegrees_DegreeTypes">
+          <End Type="RMSDBModel.RMSDegree" Role="Degree" Multiplicity="1" />
+          <End Type="RMSDBModel.VacancyDegree" Role="VacancyDegree" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Degree">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VacancyDegree">
+              <PropertyRef Name="DegreeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProgramTerms_Programs">
+          <End Type="RMSDBModel.RMSProgram" Role="Program" Multiplicity="1" />
+          <End Type="RMSDBModel.RMSProgramTerm" Role="ProgramTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Program">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProgramTerm">
+              <PropertyRef Name="ProgramId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RankTerms_Ranks">
+          <End Type="RMSDBModel.RMSRank" Role="Rank" Multiplicity="1" />
+          <End Type="RMSDBModel.RMSRankTerm" Role="RankTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rank">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RankTerm">
+              <PropertyRef Name="RankId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VacancyRanks_RankTypes">
+          <End Type="RMSDBModel.RMSRank" Role="Rank" Multiplicity="1" />
+          <End Type="RMSDBModel.VacancyRank" Role="VacancyRank" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rank">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VacancyRank">
+              <PropertyRef Name="RankId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusTerms_Statuses">
+          <End Type="RMSDBModel.RMSStatus" Role="Status" Multiplicity="1" />
+          <End Type="RMSDBModel.RMSStatusTerm" Role="StatusTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StatusTerm">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="RMSDepartment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ManagerId" Type="Int32" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="Ordinal" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Departments1" Relationship="RMSDBModel.FK_Departments_Departments" FromRole="Department" ToRole="Department1" />
+          <NavigationProperty Name="Department1" Relationship="RMSDBModel.FK_Departments_Departments" FromRole="Department1" ToRole="Department" />
+          <NavigationProperty Name="DepartmentTerms" Relationship="RMSDBModel.FK_DepartmentTerms_Departments" FromRole="RMSDepartment" ToRole="DepartmentTerm" />
+          <NavigationProperty Name="Vacancies" Relationship="RMSDBModel.FK_Vacancies_Departments" FromRole="RMSDepartment" ToRole="Vacancy" />
+        </EntityType>
+        <Association Name="FK_Departments_Departments">
+          <End Type="RMSDBModel.RMSDepartment" Role="Department" Multiplicity="0..1" />
+          <End Type="RMSDBModel.RMSDepartment" Role="Department1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Department1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="RMSDepartmentTerm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageId" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Department" Relationship="RMSDBModel.FK_DepartmentTerms_Departments" FromRole="DepartmentTerm" ToRole="RMSDepartment" />
+          <NavigationProperty Name="Language" Relationship="RMSDBModel.FK_DepartmentTerms_Languages" FromRole="RMSDepartmentTerm" ToRole="Language" />
+        </EntityType>
+        <Association Name="FK_DepartmentTerms_Departments">
+          <End Type="RMSDBModel.RMSDepartment" Role="RMSDepartment" Multiplicity="1" />
+          <End Type="RMSDBModel.RMSDepartmentTerm" Role="DepartmentTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RMSDepartment">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DepartmentTerm">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="JobType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Ordinal" Type="Int32" Nullable="false" />
+          <Property Name="Visible" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="JobTypeTerms" Relationship="RMSDBModel.FK_JobTypeTerms_JobTypes" FromRole="JobType" ToRole="JobTypeTerm" />
+          <NavigationProperty Name="Vacancies" Relationship="RMSDBModel.FK_Vacancies_JobTypes" FromRole="JobType" ToRole="Vacancy" />
+        </EntityType>
+        <EntityType Name="JobTypeTerm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageId" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="JobTypeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="JobType" Relationship="RMSDBModel.FK_JobTypeTerms_JobTypes" FromRole="JobTypeTerm" ToRole="JobType" />
+          <NavigationProperty Name="Language" Relationship="RMSDBModel.FK_JobTypeTerms_Languages" FromRole="JobTypeTerm" ToRole="Language" />
+        </EntityType>
+        <Association Name="FK_JobTypeTerms_JobTypes">
+          <End Type="RMSDBModel.JobType" Role="JobType" Multiplicity="1" />
+          <End Type="RMSDBModel.JobTypeTerm" Role="JobTypeTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JobTypeTerm">
+              <PropertyRef Name="JobTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Applicant">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ResumeFileName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ResumeFilePath" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GenderId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Gender" Relationship="RMSDBModel.FK_Applicants_Genders" FromRole="Applicant" ToRole="Gender" />
+          <NavigationProperty Name="Attachments" Relationship="RMSDBModel.FK_Attachments_Applicants" FromRole="Applicant" ToRole="Attachment" />
+          <NavigationProperty Name="Submissions" Relationship="RMSDBModel.FK_Submissions_Applicants" FromRole="Applicant" ToRole="Submission" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Visible" Type="Boolean" Nullable="false" />
+          <Property Name="Ordinal" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Applicants" Relationship="RMSDBModel.FK_Applicants_Genders" FromRole="Gender" ToRole="Applicant" />
+          <NavigationProperty Name="GenderTerms" Relationship="RMSDBModel.FK_GenderTerms_Genders" FromRole="Gender" ToRole="GenderTerm" />
+        </EntityType>
+        <Association Name="FK_Applicants_Genders">
+          <End Type="RMSDBModel.Gender" Role="Gender" Multiplicity="1" />
+          <End Type="RMSDBModel.Applicant" Role="Applicant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Applicant">
+              <PropertyRef Name="GenderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Attachments_Applicants">
+          <End Type="RMSDBModel.Applicant" Role="Applicant" Multiplicity="0..1" />
+          <End Type="RMSDBModel.Attachment" Role="Attachment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Applicant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Attachment">
+              <PropertyRef Name="ApplicantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Submissions_Applicants">
+          <End Type="RMSDBModel.Applicant" Role="Applicant" Multiplicity="1" />
+          <End Type="RMSDBModel.Submission" Role="Submission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Applicant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Submission">
+              <PropertyRef Name="ApplicantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="GenderTerm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageId" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GenderId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Gender" Relationship="RMSDBModel.FK_GenderTerms_Genders" FromRole="GenderTerm" ToRole="Gender" />
+          <NavigationProperty Name="Language" Relationship="RMSDBModel.FK_GenderTerms_Languages" FromRole="GenderTerm" ToRole="Language" />
+        </EntityType>
+        <EntityType Name="RMSLanguage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CultureName" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="FlagCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="IsDefault" Type="Boolean" Nullable="false" />
+          <Property Name="Ordinal" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DegreeTerms" Relationship="RMSDBModel.FK_DegreeTerms_Languages" FromRole="Language" ToRole="RMSDegreeTerm" />
+          <NavigationProperty Name="DepartmentTerms" Relationship="RMSDBModel.FK_DepartmentTerms_Languages" FromRole="Language" ToRole="RMSDepartmentTerm" />
+          <NavigationProperty Name="GenderTerms" Relationship="RMSDBModel.FK_GenderTerms_Languages" FromRole="Language" ToRole="GenderTerm" />
+          <NavigationProperty Name="JobTypeTerms" Relationship="RMSDBModel.FK_JobTypeTerms_Languages" FromRole="Language" ToRole="JobTypeTerm" />
+          <NavigationProperty Name="ProgramTerms" Relationship="RMSDBModel.FK_ProgramTerms_Languages" FromRole="Language" ToRole="RMSProgramTerm" />
+          <NavigationProperty Name="RankTerms" Relationship="RMSDBModel.FK_RankTerms_Languages" FromRole="Language" ToRole="RMSRankTerm" />
+          <NavigationProperty Name="StatusTerms" Relationship="RMSDBModel.FK_StatusTerms_Languages" FromRole="Language" ToRole="RMSStatusTerm" />
+          <NavigationProperty Name="Vacancies" Relationship="RMSDBModel.FK_Vacancies_Languages" FromRole="RMSLanguage" ToRole="Vacancy" />
+        </EntityType>
+        <Association Name="FK_DegreeTerms_Languages">
+          <End Type="RMSDBModel.RMSLanguage" Role="Language" Multiplicity="1" />
+          <End Type="RMSDBModel.RMSDegreeTerm" Role="RMSDegreeTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RMSDegreeTerm">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DepartmentTerms_Languages">
+          <End Type="RMSDBModel.RMSLanguage" Role="Language" Multiplicity="1" />
+          <End Type="RMSDBModel.RMSDepartmentTerm" Role="RMSDepartmentTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RMSDepartmentTerm">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GenderTerms_Genders">
+          <End Type="RMSDBModel.Gender" Role="Gender" Multiplicity="1" />
+          <End Type="RMSDBModel.GenderTerm" Role="GenderTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GenderTerm">
+              <PropertyRef Name="GenderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GenderTerms_Languages">
+          <End Type="RMSDBModel.RMSLanguage" Role="Language" Multiplicity="1" />
+          <End Type="RMSDBModel.GenderTerm" Role="GenderTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GenderTerm">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobTypeTerms_Languages">
+          <End Type="RMSDBModel.RMSLanguage" Role="Language" Multiplicity="1" />
+          <End Type="RMSDBModel.JobTypeTerm" Role="JobTypeTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JobTypeTerm">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProgramTerms_Languages">
+          <End Type="RMSDBModel.RMSLanguage" Role="Language" Multiplicity="1" />
+          <End Type="RMSDBModel.RMSProgramTerm" Role="RMSProgramTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RMSProgramTerm">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RankTerms_Languages">
+          <End Type="RMSDBModel.RMSLanguage" Role="Language" Multiplicity="1" />
+          <End Type="RMSDBModel.RMSRankTerm" Role="RMSRankTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RMSRankTerm">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusTerms_Languages">
+          <End Type="RMSDBModel.RMSLanguage" Role="Language" Multiplicity="1" />
+          <End Type="RMSDBModel.RMSStatusTerm" Role="RMSStatusTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RMSStatusTerm">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Vacancy">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Requirements" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Skills" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Documents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DeptId" Type="Int32" Nullable="false" />
+          <Property Name="JobTypeId" Type="Int32" Nullable="false" />
+          <Property Name="ProgramId" Type="Int32" Nullable="false" />
+          <Property Name="Available" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RoleVID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Author" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+          <Property Name="PublishedOn" Type="DateTime" Precision="7" />
+          <Property Name="ExpiredOn" Type="DateTime" Precision="7" />
+          <Property Name="LanguageId" Type="Int32" Nullable="false" />
+          <Property Name="IsTranslated" Type="Boolean" Nullable="false" />
+          <Property Name="TranslationId" Type="Int32" />
+          <Property Name="StatusId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Department" Relationship="RMSDBModel.FK_Vacancies_Departments" FromRole="Vacancy" ToRole="RMSDepartment" />
+          <NavigationProperty Name="JobType" Relationship="RMSDBModel.FK_Vacancies_JobTypes" FromRole="Vacancy" ToRole="JobType" />
+          <NavigationProperty Name="Language" Relationship="RMSDBModel.FK_Vacancies_Languages" FromRole="Vacancy" ToRole="RMSLanguage" />
+          <NavigationProperty Name="Program" Relationship="RMSDBModel.FK_Vacancies_Programs" FromRole="Vacancy" ToRole="RMSProgram" />
+          <NavigationProperty Name="Status" Relationship="RMSDBModel.FK_Vacancies_Statuses" FromRole="Vacancy" ToRole="RMSStatus" />
+          <NavigationProperty Name="Submissions" Relationship="RMSDBModel.FK_Submissions_Vacancies" FromRole="Vacancy" ToRole="Submission" />
+          <NavigationProperty Name="VacancyDegrees" Relationship="RMSDBModel.FK_VacancyDegrees_Vacancies" FromRole="Vacancy" ToRole="VacancyDegree" />
+          <NavigationProperty Name="VacancyRanks" Relationship="RMSDBModel.FK_VacancyRanks_Vacancies" FromRole="Vacancy" ToRole="VacancyRank" />
+          <Property Name="TenantId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_Vacancies_Departments">
+          <End Type="RMSDBModel.RMSDepartment" Role="RMSDepartment" Multiplicity="1" />
+          <End Type="RMSDBModel.Vacancy" Role="Vacancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RMSDepartment">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vacancy">
+              <PropertyRef Name="DeptId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vacancies_JobTypes">
+          <End Type="RMSDBModel.JobType" Role="JobType" Multiplicity="1" />
+          <End Type="RMSDBModel.Vacancy" Role="Vacancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vacancy">
+              <PropertyRef Name="JobTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vacancies_Languages">
+          <End Type="RMSDBModel.RMSLanguage" Role="RMSLanguage" Multiplicity="1" />
+          <End Type="RMSDBModel.Vacancy" Role="Vacancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RMSLanguage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vacancy">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vacancies_Programs">
+          <End Type="RMSDBModel.RMSProgram" Role="RMSProgram" Multiplicity="1" />
+          <End Type="RMSDBModel.Vacancy" Role="Vacancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RMSProgram">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vacancy">
+              <PropertyRef Name="ProgramId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vacancies_Statuses">
+          <End Type="RMSDBModel.RMSStatus" Role="RMSStatus" Multiplicity="1" />
+          <End Type="RMSDBModel.Vacancy" Role="Vacancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RMSStatus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vacancy">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Submissions_Vacancies">
+          <End Type="RMSDBModel.Vacancy" Role="Vacancy" Multiplicity="1" />
+          <End Type="RMSDBModel.Submission" Role="Submission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vacancy">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Submission">
+              <PropertyRef Name="VacancyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VacancyDegrees_Vacancies">
+          <End Type="RMSDBModel.Vacancy" Role="Vacancy" Multiplicity="1" />
+          <End Type="RMSDBModel.VacancyDegree" Role="VacancyDegree" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vacancy">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VacancyDegree">
+              <PropertyRef Name="VacancyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VacancyRanks_Vacancies">
+          <End Type="RMSDBModel.Vacancy" Role="Vacancy" Multiplicity="1" />
+          <End Type="RMSDBModel.VacancyRank" Role="VacancyRank" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vacancy">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VacancyRank">
+              <PropertyRef Name="VacancyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RMSDBModelStoreContainer" CdmEntityContainer="RMSEntities">
+          <EntitySetMapping Name="Attachments">
+            <EntityTypeMapping TypeName="RMSDBModel.Attachment">
+              <MappingFragment StoreEntitySet="Attachments">
+                <ScalarProperty Name="ApplicantId" ColumnName="ApplicantId" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RMSDegrees">
+            <EntityTypeMapping TypeName="RMSDBModel.RMSDegree">
+              <MappingFragment StoreEntitySet="Degrees">
+                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+                <ScalarProperty Name="Visible" ColumnName="Visible" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RMSDegreeTerms">
+            <EntityTypeMapping TypeName="RMSDBModel.RMSDegreeTerm">
+              <MappingFragment StoreEntitySet="DegreeTerms">
+                <ScalarProperty Name="DegreeId" ColumnName="DegreeId" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RMSPrograms">
+            <EntityTypeMapping TypeName="RMSDBModel.RMSProgram">
+              <MappingFragment StoreEntitySet="Programs">
+                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+                <ScalarProperty Name="Visible" ColumnName="Visible" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RMSProgramTerms">
+            <EntityTypeMapping TypeName="RMSDBModel.RMSProgramTerm">
+              <MappingFragment StoreEntitySet="ProgramTerms">
+                <ScalarProperty Name="ProgramId" ColumnName="ProgramId" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RMSRanks">
+            <EntityTypeMapping TypeName="RMSDBModel.RMSRank">
+              <MappingFragment StoreEntitySet="Ranks">
+                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+                <ScalarProperty Name="Visible" ColumnName="Visible" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RMSRankTerms">
+            <EntityTypeMapping TypeName="RMSDBModel.RMSRankTerm">
+              <MappingFragment StoreEntitySet="RankTerms">
+                <ScalarProperty Name="RankId" ColumnName="RankId" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Statuses">
+            <EntityTypeMapping TypeName="RMSDBModel.RMSStatus">
+              <MappingFragment StoreEntitySet="Statuses">
+                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+                <ScalarProperty Name="Visible" ColumnName="Visible" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RMSStatusTerms">
+            <EntityTypeMapping TypeName="RMSDBModel.RMSStatusTerm">
+              <MappingFragment StoreEntitySet="StatusTerms">
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Submissions">
+            <EntityTypeMapping TypeName="RMSDBModel.Submission">
+              <MappingFragment StoreEntitySet="Submissions">
+                <ScalarProperty Name="SubmissionDate" ColumnName="SubmissionDate" />
+                <ScalarProperty Name="CoverLetter" ColumnName="CoverLetter" />
+                <ScalarProperty Name="ApplicantId" ColumnName="ApplicantId" />
+                <ScalarProperty Name="VacancyId" ColumnName="VacancyId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VacancyDegrees">
+            <EntityTypeMapping TypeName="RMSDBModel.VacancyDegree">
+              <MappingFragment StoreEntitySet="VacancyDegrees">
+                <ScalarProperty Name="DegreeId" ColumnName="DegreeId" />
+                <ScalarProperty Name="VacancyId" ColumnName="VacancyId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VacancyRanks">
+            <EntityTypeMapping TypeName="RMSDBModel.VacancyRank">
+              <MappingFragment StoreEntitySet="VacancyRanks">
+                <ScalarProperty Name="RankId" ColumnName="RankId" />
+                <ScalarProperty Name="VacancyId" ColumnName="VacancyId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RMSDepartments">
+            <EntityTypeMapping TypeName="RMSDBModel.RMSDepartment">
+              <MappingFragment StoreEntitySet="Departments">
+                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="ManagerId" ColumnName="ManagerId" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RMSDepartmentTerms">
+            <EntityTypeMapping TypeName="RMSDBModel.RMSDepartmentTerm">
+              <MappingFragment StoreEntitySet="DepartmentTerms">
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobTypes">
+            <EntityTypeMapping TypeName="RMSDBModel.JobType">
+              <MappingFragment StoreEntitySet="JobTypes">
+                <ScalarProperty Name="Visible" ColumnName="Visible" />
+                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobTypeTerms">
+            <EntityTypeMapping TypeName="RMSDBModel.JobTypeTerm">
+              <MappingFragment StoreEntitySet="JobTypeTerms">
+                <ScalarProperty Name="JobTypeId" ColumnName="JobTypeId" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Applicants">
+            <EntityTypeMapping TypeName="RMSDBModel.Applicant">
+              <MappingFragment StoreEntitySet="Applicants">
+                <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ResumeFilePath" ColumnName="ResumeFilePath" />
+                <ScalarProperty Name="ResumeFileName" ColumnName="ResumeFileName" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Genders">
+            <EntityTypeMapping TypeName="RMSDBModel.Gender">
+              <MappingFragment StoreEntitySet="Genders">
+                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+                <ScalarProperty Name="Visible" ColumnName="Visible" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GenderTerms">
+            <EntityTypeMapping TypeName="RMSDBModel.GenderTerm">
+              <MappingFragment StoreEntitySet="GenderTerms">
+                <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RMSLanguages">
+            <EntityTypeMapping TypeName="RMSDBModel.RMSLanguage">
+              <MappingFragment StoreEntitySet="Languages">
+                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+                <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+                <ScalarProperty Name="FlagCode" ColumnName="FlagCode" />
+                <ScalarProperty Name="CultureName" ColumnName="CultureName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vacancies">
+            <EntityTypeMapping TypeName="RMSDBModel.Vacancy">
+              <MappingFragment StoreEntitySet="Vacancies">
+                <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="TranslationId" ColumnName="TranslationId" />
+                <ScalarProperty Name="IsTranslated" ColumnName="IsTranslated" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="ExpiredOn" ColumnName="ExpiredOn" />
+                <ScalarProperty Name="PublishedOn" ColumnName="PublishedOn" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="RoleVID" ColumnName="RoleVID" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Available" ColumnName="Available" />
+                <ScalarProperty Name="ProgramId" ColumnName="ProgramId" />
+                <ScalarProperty Name="JobTypeId" ColumnName="JobTypeId" />
+                <ScalarProperty Name="DeptId" ColumnName="DeptId" />
+                <ScalarProperty Name="Documents" ColumnName="Documents" />
+                <ScalarProperty Name="Skills" ColumnName="Skills" />
+                <ScalarProperty Name="Requirements" ColumnName="Requirements" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

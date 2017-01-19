@@ -1,0 +1,121 @@
+﻿@model IEnumerable<Employee>
+@using cutecms_porto.Areas.Identity.Models.DBModel;
+@using System.Threading
+@using PagedList.Mvc;
+@using PagedList;
+@{
+    ViewBag.Title = Resources.Resources.SearchResult;
+    IdentityEntities db = new IdentityEntities();
+}
+@section PageHeader
+{
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>@ViewBag.Title</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+<section>
+    <div class="container">
+        @if (Model.Count() != 0)
+            {
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    var empInDepts = db.EmpInDepts.Where(p => p.EmpId == item.TranslationId);
+                    string personalTitle = (item.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? item.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : item.PersonalTitle.Code;
+                    <div class="col-md-3 col-sm-6">
+                        <div class="box-flip box-color box-icon box-icon-center box-icon-round box-icon-large text-center" style="min-height: 436px;">
+                            <div class="front">
+                                <div class="box1 box-default" style="min-height: 436px;">
+                                    @if (item.PersonalPhotoPath != null)
+                                    {
+                                        <img class="img-responsive" alt="@item.PersonalPhotoName" src="@item.PersonalPhotoPath">
+                                    }
+                                    else
+                                    {
+                                        <i class="icon-user fa-5x"></i>
+                                    }
+                                    <div class="box-icon-title">
+                                        <h2>@personalTitle @item.FullName</h2>
+                                        @foreach (var empInDept in empInDepts)
+                                        {
+                                            string occupation = (empInDept.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? empInDept.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : empInDept.Occupation.Code;
+                                            string department = (empInDept.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? empInDept.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : empInDept.Department.Code;
+                                            <small>@occupation &#64; @department</small>
+                                            <br />
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="box2 box-blue" style="min-height: 436px;">
+                                    <h5 class="uppercase">@personalTitle @item.FullName</h5>
+                                    @foreach (var empInDept in empInDepts)
+                                    {
+                                        string occupation = (empInDept.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? empInDept.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : empInDept.Occupation.Code;
+                                        string department = (empInDept.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? empInDept.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : empInDept.Department.Code;
+                                        <small>@occupation &#64; @department</small>
+                                        <br />
+                                    }
+                                    <hr>
+                                    <p>@Html.Raw(item.Biography.StripHtml().Chop(290))</p>
+                                    <hr>
+                                    <a class="btn btn-translucid btn-lg btn-block" href="@Url.Action("MemberProfile", new { id = item.TranslationId })">@Resources.Resources.ViewProfile.ToUpper()</a>
+                                    @if (!string.IsNullOrEmpty(@item.FacebookUrl))
+                                    {
+                                        <a class="social-icon social-icon-sm social-facebook" href="@item.FacebookUrl">
+                                            <i class="fa fa-facebook"></i>
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    }
+                                    @if (!string.IsNullOrEmpty(@item.TwitterUrl))
+                                    {
+                                        <a class="social-icon social-icon-sm social-facebook" href="@item.FacebookUrl">
+                                            <i class="fa fa-twitter"></i>
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                    }
+                                    @if (!string.IsNullOrEmpty(@item.LinkedInUrl))
+                                    {
+                                        <a class="social-icon social-icon-sm social-facebook" href="@item.FacebookUrl">
+                                            <i class="fa fa-linkedin"></i>
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    }
+                                    @if (!string.IsNullOrEmpty(@item.GooglePlusUrl))
+                                    {
+                                        <a class="social-icon social-icon-sm social-facebook" href="@item.FacebookUrl">
+                                            <i class="fa fa-google-plus"></i>
+                                            <i class="fa fa-google-plus"></i>
+                                        </a>
+                                    }
+                                    @if (!string.IsNullOrEmpty(@item.YouTubeUrl))
+                                    {
+                                        <a class="social-icon social-icon-sm social-facebook" href="@item.FacebookUrl">
+                                            <i class="fa fa-youtube"></i>
+                                            <i class="fa fa-youtube"></i>
+                                        </a>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="clearfix search-result text-center">
+                <p class="text-danger">@Resources.Resources.NoResult</p>
+                <br />
+                <p><a class="text-blue" href="~/@Thread.CurrentThread.CurrentCulture.Name"><i class="glyphicon glyphicon-menu-left margin-right-10 size-16"></i>@Resources.Resources.BackToHome</a></p>
+            </div>
+        }
+        @Html.PagedListPager((IPagedList)Model, page => Url.Action("Result", new { page, empName = ViewBag.EmpName, empTypeId = ViewBag.EmpTypeId }))
+    </div>
+</section>

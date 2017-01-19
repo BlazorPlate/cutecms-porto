@@ -1,0 +1,16 @@
+﻿@model cutecms_porto.Models.SubscriberViewModel
+@using (Html.BeginForm("Subscribe", "Home", new { returnUrl = Request.Url.AbsoluteUri }))
+{
+    @Html.AntiForgeryToken()
+    <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @placeholder = @Resources.Resources.EnterYourEmail, @class = "form-control required" } })
+        <br />
+        <span class="input-group-btn">
+            <button class="btn btn-success" type="submit">@Resources.Resources.Subscribe</button>
+        </span>
+    </div>
+    <div class="input-group">
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+}

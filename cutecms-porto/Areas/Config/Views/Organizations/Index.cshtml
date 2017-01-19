@@ -1,0 +1,49 @@
+﻿@model IEnumerable<cutecms_porto.Areas.Config.Models.DBModel.Organization>
+@{  
+    ViewBag.MainTitle = Resources.Resources.Organizations;
+    ViewBag.Title = Resources.Resources.Index;
+}
+<p>
+    @Html.ActionLink(Resources.Resources.Create, "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LanguageId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsDefault)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Language.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDefault)
+            </td>
+            <td>
+                @Html.ActionLink(" ", "Translations", new { id = item.TranslationId, isDefault = item.IsDefault }, new { @class = "fa  fa-2x fa-globe", @title = Resources.Resources.Translations })
+                @Html.ActionLink(" ", "Index", "Contacts", new { organizationId = item.Id }, new { @class = "fa fa-2x fa-users", @Resources.Resources.ManageContacts })
+                @Html.ActionLink(" ", "Edit", new { id = item.Id }, new { @class = "fa fa-2x fa-pencil", @title = Resources.Resources.Edit })
+                @Html.ActionLink(" ", "Details", new { id = item.Id }, new { @class = "fa fa-2x fa-file-text", @title = Resources.Resources.Details })
+                @Html.ActionLink(" ", "Delete", new { id = item.Id }, new { @class = "fa fa-2x fa-times", @title = Resources.Resources.Delete })
+            </td>
+        </tr>
+    }
+</table>

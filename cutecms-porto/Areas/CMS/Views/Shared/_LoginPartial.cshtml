@@ -1,0 +1,46 @@
+﻿@using cutecms_porto.Helpers
+@using cutecms_porto.Areas.CMS.Models.DBModel
+@{
+    CMSEntities cmsDb = new CMSEntities();
+}
+@if (Request.IsAuthenticated)
+{
+    <li class="dropdown">
+        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="@(string.IsNullOrEmpty(ViewBag.PersonalPhotoPath) ? "/assets/admin/plugins/images/users/user-icon.png" : @ViewBag.PersonalPhotoPath)" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">@ViewBag.Username</b> </a>
+        <ul class="dropdown-menu dropdown-user scale-up">
+            <li><a href="@Url.Action("Index", "MyProfile", new { area = "" })"><i class="ti-user"></i> @Resources.Resources.MyProfile</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="@Url.Action("Index", "Manage", new { area = "Identity" })"><i class="ti-settings"></i> @Resources.Resources.AccountSettings</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()"><i class="ti-power-off"></i> @Resources.Resources.LogOff</a></li>
+            @using (Html.BeginForm("LogOff", "Account", new { area = "Identity" }, FormMethod.Post, new { id = "logoutForm" }))
+            {
+                @Html.AntiForgeryToken()
+            }
+        </ul>
+    </li>
+}
+else
+{
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="ti-user"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-user scale-up">
+            <li><a href="@Url.Action("Login", "Account", new { area = "Identity" })"><i class="ti-key"></i> @Resources.Resources.LogOn</a></li>
+            <li class="divider"></li>
+            <li><a href="@Url.Action("Register", "Account", new { area = "Identity" })"><i class="ti-user"></i> @Resources.Resources.Register</a></li>
+        </ul>
+    </li>
+}
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <i class="ti-world"></i>
+    </a>
+    <ul class="dropdown-menu scale-up">
+        @foreach (var item in cmsDb.CMSLanguages.Where(l => l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal))
+            {
+            <li><a href="@Url.RouteUrl(new RouteValueDictionary(ViewContext.RouteData.Values.ToDictionary(r => r.Key, r => r.Key == "culture" ? item.CultureName.Trim() : r.Value)))"><img alt="lang" src="~/assets/images/flags/@item.Flag"> @item.Name</a></li>
+        }
+    </ul>
+</li>

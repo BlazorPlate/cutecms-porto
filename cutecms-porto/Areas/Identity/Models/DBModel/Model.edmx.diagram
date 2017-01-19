@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2a63e579e5254b36b5472bcfc8e1518c" Name="Diagram1" ZoomLevel="85">
+        <EntityTypeShape EntityType="IdentityModel.IdentityDegree" Width="1.5" PointX="0.75" PointY="8.625" />
+        <EntityTypeShape EntityType="IdentityModel.IdentityDegreeTerm" Width="1.5" PointX="8" PointY="9.125" />
+        <EntityTypeShape EntityType="IdentityModel.Occupation" Width="1.5" PointX="6.25" PointY="15.375" />
+        <EntityTypeShape EntityType="IdentityModel.IdentityPersonalTitle" Width="1.5" PointX="0.75" PointY="11.5" />
+        <EntityTypeShape EntityType="IdentityModel.IdentityProgram" Width="1.5" PointX="0.75" PointY="2.875" />
+        <EntityTypeShape EntityType="IdentityModel.IdentityRank" Width="1.5" PointX="0.75" PointY="5.625" />
+        <EntityTypeShape EntityType="IdentityModel.IdentityRankTerm" Width="1.5" PointX="6" PointY="5.625" />
+        <AssociationConnector Association="IdentityModel.FK_DegreeTerms_Degrees" />
+        <AssociationConnector Association="IdentityModel.FK_RankTerms_Ranks" />
+        <EntityTypeShape EntityType="IdentityModel.IdentityPersonalTitleTerm" Width="1.5" PointX="9" PointY="12.75" />
+        <AssociationConnector Association="IdentityModel.FK_PersonalTitleTerms_PersonalTitles" />
+        <EntityTypeShape EntityType="IdentityModel.OccupationTerm" Width="1.5" PointX="8.5" PointY="16.5" />
+        <AssociationConnector Association="IdentityModel.FK_OccupationTerms_Occupations" />
+        <EntityTypeShape EntityType="IdentityModel.IdentityProgramTerm" Width="1.5" PointX="11" PointY="8.125" />
+        <AssociationConnector Association="IdentityModel.FK_ProgramTerms_Programs" />
+        <EntityTypeShape EntityType="IdentityModel.IdentityDepartment" Width="1.5" PointX="13.25" PointY="3.25" />
+        <EntityTypeShape EntityType="IdentityModel.Employee" Width="1.5" PointX="11" PointY="0.75" />
+        <AssociationConnector Association="IdentityModel.FK_Employee_DegreeTypes" />
+        <AssociationConnector Association="IdentityModel.FK_Departments_Departments" />
+        <AssociationConnector Association="IdentityModel.FK_Departments_Employees" />
+        <AssociationConnector Association="IdentityModel.FK_Employee_PersonalTitles" />
+        <AssociationConnector Association="IdentityModel.FK_Employee_Programs" />
+        <AssociationConnector Association="IdentityModel.FK_Employee_RankTypes" />
+        <EntityTypeShape EntityType="IdentityModel.IdentityDepartmentTerm" Width="1.5" PointX="15.5" PointY="9" />
+        <AssociationConnector Association="IdentityModel.FK_DepartmentTerms_Departments" />
+        <EntityTypeShape EntityType="IdentityModel.Publication" Width="1.5" PointX="13.25" PointY="7.5" />
+        <AssociationConnector Association="IdentityModel.FK_Publications_Employees" />
+        <EntityTypeShape EntityType="IdentityModel.IdentityLanguage" Width="1.5" PointX="3.75" PointY="8.75" />
+        <AssociationConnector Association="IdentityModel.FK_DegreeTerms_Languages" />
+        <AssociationConnector Association="IdentityModel.FK_DepartmentTerms_Languages" />
+        <AssociationConnector Association="IdentityModel.FK_Employees_Languages" />
+        <AssociationConnector Association="IdentityModel.FK_OccupationTerms_Languages" />
+        <AssociationConnector Association="IdentityModel.FK_PersonalTitleTerms_Languages" />
+        <AssociationConnector Association="IdentityModel.FK_ProgramTerms_Languages" />
+        <AssociationConnector Association="IdentityModel.FK_RankTerms_Languages" />
+        <EntityTypeShape EntityType="IdentityModel.EmployeeType" Width="1.5" PointX="8" PointY="1.75" />
+        <EntityTypeShape EntityType="IdentityModel.EmployeeTypeTerm" Width="1.5" PointX="12" PointY="11.625" />
+        <AssociationConnector Association="IdentityModel.FK_EmployeeTypeTerms_EmployeeTypes" />
+        <AssociationConnector Association="IdentityModel.FK_EmployeeTypeTerms_Languages" />
+        <EntityTypeShape EntityType="IdentityModel.EmpInDept" Width="1.5" PointX="15.5" PointY="4.625" />
+        <AssociationConnector Association="IdentityModel.FK_EmpInDept_Departments" />
+        <AssociationConnector Association="IdentityModel.FK_EmpInDept_Employees" />
+        <AssociationConnector Association="IdentityModel.FK_EmpInDept_EmployeeTypes" />
+        <AssociationConnector Association="IdentityModel.FK_EmpInDept_Positions" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

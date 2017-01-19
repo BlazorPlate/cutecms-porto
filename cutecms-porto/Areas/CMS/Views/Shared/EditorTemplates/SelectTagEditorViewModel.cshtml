@@ -1,0 +1,7 @@
+﻿@using System.Threading
+@model cutecms_porto.Areas.CMS.Models.SelectTagEditorViewModel
+@Html.HiddenFor(model => model.TagId)
+@Html.HiddenFor(model => model.TagName)
+@Html.CheckBoxFor(model => model.Selected, new { @class = "js-switch"})
+@Html.DisplayFor(model => model.TagName)
+<br />

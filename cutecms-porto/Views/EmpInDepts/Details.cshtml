@@ -1,0 +1,61 @@
+﻿@model cutecms_porto.Areas.Identity.Models.DBModel.EmpInDept
+@using System.Threading
+@{
+    ViewBag.Title = Resources.Resources.Departments;
+}
+@section PageHeader
+{
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>@ViewBag.Title</h1>
+                    <h2>@Resources.Resources.Details</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+<section>
+    <div class="container">
+        <!-- RIGHT -->
+        <div class="col-lg-9 col-md-9 col-sm-8 col-lg-push-3 col-md-push-3 col-sm-push-4 margin-bottom-80">
+            <ul id="tabbed-list" class="nav nav-tabs nav-top-border">
+                <li class="active"><a data-toggle="tab">@Resources.Resources.Departments</a></li>
+            </ul>
+            <div class="tab-content margin-top-20">
+                <h4>@Resources.Resources.Details</h4>
+                @Html.AntiForgeryToken()
+                <div>
+                    <hr/>
+                    <dl>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.DeptId)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Department.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.OccupationId)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Occupation.OccupationTerms.Where(o => o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.EmployeeTypeId)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.EmployeeType.EmployeeTypeTerms.Where(e => e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value)
+                        </dd>
+                    </dl>
+                </div>
+                <div class="form-actions no-color">
+                    @Html.ActionLink(Resources.Resources.Edit, "Edit", new { id = Model.Id }) |
+                    @Html.ActionLink(Resources.Resources.BackToList, "Index", new { redirectEmpId = Model.EmpId })
+                </div>
+            </div>
+        </div>
+        <!-- LEFT -->
+        @Html.Partial("_MyProfile");
+    </div>
+</section>

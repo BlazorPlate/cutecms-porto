@@ -1,0 +1,238 @@
+﻿@model IEnumerable<cutecms_porto.Areas.RMS.Models.VacancyViewModel>
+@using cutecms_porto.Areas.RMS.Models.DBModel
+@using System.Threading
+@using cutecms_porto.Helpers
+@{
+    ViewBag.MainTitle = Resources.Resources.Vacancies;
+    ViewBag.Title = Resources.Resources.Index;
+    RMSEntities db = new RMSEntities();
+}
+<p>
+    @Html.ActionLink(Resources.Resources.Create, "Create")
+</p>
+<div>
+    <table id="vacanciesTable" class="table table-bordered table-hover nowrap">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Code)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th class="select-filter">
+                    @Html.DisplayNameFor(model => model.Language)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LanguageId)
+                </th>
+                <th class="select-filter">
+                    @Html.DisplayNameFor(model => model.Department)
+                </th>
+                <th class="select-filter">
+                    @Html.DisplayNameFor(model => model.JobType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PublishedOn)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ExpiredOn)
+                </th>
+                <th class="select-filter">
+                    @Html.DisplayNameFor(model => model.IsTranslated)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TranslationId)
+                </th>
+                <th class="select-filter">
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+                <th>@Resources.Resources.Actions</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Language)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Department)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.JobType)
+                </th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+                <th></th>
+                <th></th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+@section Scripts{
+    <link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/buttons/1.2.1/css/buttons.dataTables.min.css" rel="stylesheet" />
+    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script src="//cdn.datatables.net/buttons/1.2.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.1/js/dataTables.buttons.min.js"></script>
+    <script src="//cdn.datatables.net/buttons/1.2.1/js/buttons.colVis.min.js"></script>
+    <script src="//cdn.datatables.net/buttons/1.2.1/js/buttons.print.min.js"></script>
+    <script>
+        //$('#vacanciesTable tfoot th').each(function () {
+        //    $(this).html('<input type="text" />');
+        //});
+        $(document).ready(function () {
+            var oTable = $('#vacanciesTable').DataTable({
+                "serverSide": true,
+                "scrollX": true,
+                "scrollX": true,
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                dom: 'lBfrtip',
+                buttons: [
+                   {
+                       text: '@Resources.Resources.Reload',
+                       action: function (e, dt, node, config) {
+                           dt.ajax.reload();
+                       }
+                   },
+                   {
+                       text: '@Resources.Resources.Copy',
+                       extend: 'copyHtml5',
+                       exportOptions: {
+                           columns: ':visible'
+                       }
+                   },
+                  {
+                      text: '@Resources.Resources.ExportExcel',
+                      extend: 'excelHtml5',
+                      exportOptions: {
+                          columns: ':visible'
+                      }
+                  },
+                  {
+                      text: '@Resources.Resources.ExportPDF',
+                      extend: 'pdfHtml5',
+                      exportOptions: {
+                          columns: ':visible'
+                      }
+                  },
+                  {
+                      text: '@Resources.Resources.Print',
+                      extend: 'print',
+                      exportOptions: {
+                          columns: ':visible'
+                      }
+                  },
+                  {
+                      text: '@Resources.Resources.ColVis',
+                      extend: 'colvis',
+                  },
+                ],
+                "language": {
+                    "url": "@Resources.Resources.DataTableLanguage"
+                },
+                //"responsive": true,
+                "ajax": {
+                    "type": "POST",
+                    "url": "@Url.Action("DataHandler", "Vacancies", new { area = "RMS" })",
+                    "contentType": 'application/json; charset=utf-8',
+                    'data': function (data) {
+                        return data = JSON.stringify(data);
+                    }
+                },
+                "processing": true,
+                "paging": true,
+                "deferRender": true,
+                "columns": [
+               { "data": "Id", "visible": false },
+               { "data": "Code" },
+               { "data": "Title" },
+               { "data": "Language" },
+               { "data": "LanguageId", "visible": false },
+               { "data": "Department", "visible": false },
+               { "data": "JobType", "visible": false },
+               { "data": "PublishedOn", "visible": false },
+               { "data": "ExpiredOn", "visible": false },
+               { "data": "IsTranslated", "visible": false },
+               { "data": "TranslationId", "visible": false },
+               { "data": "Status" },
+               {
+                   "data": null,
+                   "sortable": false,
+                   "render": function (data, type, col) {
+                       return '<a class=\'btn\' href=\'' + '@Url.Action("Index", "Submissions")?id=' + col["Id"] + '\'>@Resources.Resources.Submissions</a>'
+                           + '|<a class=\'btn\' href=\'' + '@Url.Action("Translations", "Vacancies")?id=' + col["TranslationId"] + '\'>@Resources.Resources.Translations</a>'
+                           + '|<a class=\'btn\' href=\'' + '@Url.Action("Edit", "Vacancies")?id=' + col["Id"] + '\'>@Resources.Resources.Edit</a>'
+                           + '|<a class=\'btn\' href=\'' + '@Url.Action("Details", "Vacancies")?id=' + col["Id"] + '\'>@Resources.Resources.Details</a>'
+                           + '|<a class=\'btn\' href=\'' + '@Url.Action("Delete", "Vacancies")?id=' + col["Id"] + '\'>@Resources.Resources.Delete</a>';
+                       @*+ '<a class=\'btn\' href=\'' + '@Url.Action("Delete", "Vacancies")?Id=' + col["Id"] + '\'>Delete</a>';*@
+                   }
+                   //"render": function (o) { return '<i class="ui-tooltip fa fa-pencil" style="font-size: 22px;" data-original-title="Edit"></i><i class="ui-tooltip fa fa-trash-o" style="font-size: 22px;" data-original-title="Delete"></i>'; }
+               },
+                ],
+                "order": [0, "asc"],
+                "initComplete": function () {
+                    this.api().columns('.select-filter').every(function () {
+                        var column = this;
+                        var select = $('<select><option value=""></option></select>')
+                       .appendTo($(column.footer()).empty())
+                       .on('change', function () {
+                           var val = $(this).val();
+                           column
+                               .search(val, true, false)
+                               .draw();
+                       });
+                        column.data().unique().sort().each(function (d, j) {
+                            select.append('<option value="' + d + '">' + d + '</option>')
+                        });
+                    });
+                }
+            });
+            oTable.columns().every(function () {
+                var that = this;
+                $('input', this.footer()).on('keyup change', function () {
+                    that
+                        .search(this.value)
+                        .draw();
+                });
+            });
+        });
+    </script>
+}
+@if (ViewBag.StatusMessageId != null)
+{
+    int statusId = ViewBag.StatusMessageId;
+    string status = db.RMSStatusTerms.Where(s => s.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && s.StatusId == statusId).FirstOrDefault() != null ? db.RMSStatusTerms.Where(s => s.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && s.StatusId == statusId).FirstOrDefault().Value : db.Statuses.Where(i => i.Id == statusId).FirstOrDefault().Code;
+    if (@CultureHelper.IsRighToLeft())
+    {
+        <script type="text/javascript">
+            $(document).ready(function () {
+                toastr.options.positionClass = 'toast-top-left'
+                toastr.success('@status')
+            });
+        </script>
+    }
+    else
+    {
+        <script type="text/javascript">
+            $(document).ready(function () {
+                toastr.options.positionClass = 'toast-top-right'
+                toastr.success('@status')
+            });
+        </script>
+    }
+}

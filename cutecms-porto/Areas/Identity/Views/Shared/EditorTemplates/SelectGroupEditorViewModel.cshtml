@@ -1,0 +1,10 @@
+﻿@model cutecms_porto.Areas.Identity.Models.SelectGroupEditorViewModel
+@Html.HiddenFor(model => model.GroupId)
+<tr>
+    <td>
+        @Html.CheckBoxFor(model => model.Selected, new { @class = "js-switch"})
+    </td>
+    <td>
+        @Html.DisplayFor(model => model.GroupName)
+    </td>
+</tr>

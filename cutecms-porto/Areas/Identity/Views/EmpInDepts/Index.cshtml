@@ -1,0 +1,59 @@
+﻿@model IEnumerable<cutecms_porto.Areas.Identity.Models.DBModel.EmpInDept>
+@using cutecms_porto.Areas.Identity.Models.DBModel
+@using System.Threading
+@{
+    ViewBag.MainTitle = Resources.Resources.EmpInDepts;
+    ViewBag.Title = Resources.Resources.Index;
+    IdentityEntities db = new IdentityEntities();
+}
+<p>
+    @Html.ActionLink(Resources.Resources.Create, "Create", new { deptId = ViewBag.DeptId, languageId = ViewBag.LanguageId })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DeptId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OccupationId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeTypeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ordinal)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Department.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && d.DepartmentId == item.DeptId).FirstOrDefault().Value
+            </td>
+            <td>
+                @db.Employees.Where(e => e.TranslationId == item.EmpId && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().FullName
+            </td>
+            <td>
+                @item.Occupation.OccupationTerms.Where(o => o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && o.OccupationId == item.OccupationId).FirstOrDefault().Value
+            </td>
+            <td>
+                @item.EmployeeType.EmployeeTypeTerms.Where(e => e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && e.EmployeeTypeId == item.EmployeeTypeId).FirstOrDefault().Value
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ordinal)
+            </td>
+            <td>
+                @Html.ActionLink(Resources.Resources.Edit, "Edit", new { id = item.Id, languageId = ViewBag.LanguageId }) |
+                @Html.ActionLink(Resources.Resources.Details, "Details", new { id = item.Id, languageId = ViewBag.LanguageId }) |
+                @Html.ActionLink(Resources.Resources.Delete, "Delete", new { id = item.Id, languageId = ViewBag.LanguageId })
+            </td>
+        </tr>
+    }
+</table>
+<div>
+    @Html.ActionLink(Resources.Resources.BackToList, "Index", "IdentityDepartments")
+</div>

@@ -1,0 +1,359 @@
+﻿@using cutecms_porto.Areas.Config.Models.DBModel
+@using cutecms_porto.Areas.CMS.Models.DBModel;
+@using System.Threading
+@model cutecms_porto.Models.HomeViewModel
+@{
+    ViewBag.Title = Resources.Resources.Home;
+    ViewBag.Contents = Model.Contents;
+    CMSEntities cmsDb = new CMSEntities();
+}
+@if (Model != null)
+{
+    if (Model.HomeGallery.Count != 0)
+    {
+        <!-- REVOLUTION SLIDER -->
+        <div class="slider fullwidthbanner-container roundedcorners margin-bottom-20">
+            <!--
+                Navigation Styles:
+                    data-navigationStyle="" theme default navigation
+                    data-navigationStyle="preview1"
+                    data-navigationStyle="preview2"
+                    data-navigationStyle="preview3"
+                    data-navigationStyle="preview4"
+                Bottom Shadows
+                    data-shadow="1"
+                    data-shadow="2"
+                    data-shadow="3"
+                Slider Height (do not use on fullscreen mode)
+                    data-height="300"
+                    data-height="350"
+                    data-height="400"
+                    data-height="450"
+                    data-height="500"
+                    data-height="550"
+                    data-height="600"
+                    data-height="650"
+                    data-height="700"
+                    data-height="750"
+                    data-height="800"
+            -->
+            <div class="fullwidthbanner" data-height="500" data-shadow="3" data-navigationStyle="preview1">
+                <ul class="hide">
+                    @foreach (var item in Model.HomeGallery)
+                    {
+            <!-- SLIDE  -->
+                        string title = item.ImageFileTerms.Where(i => i.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && i.ImageFileId == item.Id).FirstOrDefault()?.Value;
+                        string description = item.ImageFileTerms.Where(i => i.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && i.ImageFileId == item.Id).FirstOrDefault()?.Description;
+                        <li data-transition="random" data-slotamount="1" data-masterspeed="1000" data-saveperformance="off" data-title="Slide title 1" data-thumb="@item.ThumbPath">
+                            <img src="/assets/images/1x1.png" data-lazyload="@item.FilePath" alt="" data-bgposition="center center" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-bgfit="100" data-bgfitend="110" />
+                            <div class="overlay dark-3"><!-- dark overlay [1 to 9 opacity] --></div>
+                            <div class="tp-caption customin ltl tp-resizeme large_bold_white"
+                                 data-x="center"
+                                 data-y="155"
+                                 data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+                                 data-speed="800"
+                                 data-start="1200"
+                                 data-easing="easeOutQuad"
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-elementdelay="0.01"
+                                 data-endelementdelay="0.1"
+                                 data-endspeed="1000"
+                                 data-endeasing="Power4.easeIn" style="z-index: 10;">
+                                @title
+                            </div>
+                            <div class="tp-caption customin ltl tp-resizeme small_light_white font-lato"
+                                 data-x="center"
+                                 data-y="245"
+                                 data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+                                 data-speed="800"
+                                 data-start="1400"
+                                 data-easing="easeOutQuad"
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-elementdelay="0.01"
+                                 data-endelementdelay="0.1"
+                                 data-endspeed="1000"
+                                 data-endeasing="Power4.easeIn" style="z-index: 10; width: 100%; max-width: 750px; white-space: normal; text-align:center; font-size:20px;">
+                                @description
+                            </div>
+                        </li>
+                    }
+                </ul>
+                <div class="tp-bannertimer"><!-- progress bar --></div>
+            </div>
+        </div>
+        <!-- /REVOLUTION SLIDER -->
+    }
+    <!-- Overview Contents -->
+    <section>
+        <div class="container">
+            <!--
+            LTR INFO: box-icon-left or box-icon-right - are the same on LTR
+            -->
+            <div class="row">
+                @if (Model.Contents.Count != 0)
+                {
+                    foreach (var item in Model.Contents.Where(c => c.HasShortcut == true))
+                    {
+                        <div class="col-sm-4">
+                            <div class="box-icon box-icon-left">
+                                <a class="box-icon-title" href="@Url.Action("Content", "Pages", new { slug = @item.UrlSlug })">
+                                    <i class="@item.CssClass"></i>
+                                    <h2>@item.ShortcutTitle.Trim()</h2>
+                                </a>
+                                <p class="text-justify">@item.MainContent.StripHtml().Chop(300)</p>
+                            </div>
+                            <a class="btn btn-reveal btn-default" href="@Url.Action("Content", "Pages", new { slug = @item.UrlSlug })"><i class="fa fa-plus"></i><span>@Resources.Resources.ReadMore</span></a>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </section>
+    <!-- /Overview Contents -->
+    <!-- Overview Parallax -->
+    <section class="parallax parallax parallax-1" style="background-image: url('assets/images/demo/1200x800/15-min.jpg');">
+        <div class="overlay dark-5"><!-- dark overlay [1 to 9 opacity] --></div>
+        <div class="container">
+            <div class="text-center">
+                <h2 class="size-40 weight-300">@(OrganizationData.Organization?.Name)</h2>
+                <h3 class="size-40 weight-300">@(OrganizationData.Organization?.Description)</h3>
+                <a class="btn btn-3d btn-blue btn-lg" href="#">@Resources.Resources.TakeTour <i class="fa fa-angle-left"></i></a>
+            </div>
+        </div>
+    </section>
+    <!-- Overview Parallax -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div>
+                            <div class="row text-justify">
+                                <div class="col-xs-12">
+                                    <div class="panel-footer">
+                                        <i class="fa fa-newspaper-o fa-3x"><a class="btn" href="@Url.Action("Contents", "Home" , new { contentTypeIdFilter=cmsDb.ContentTypes.Where(c =>c.Code.Trim().Equals("news")).FirstOrDefault().Id })">@Resources.Resources.News.ToUpper()</a></i>
+                                    </div>
+                                    <ul class="ul-panel news">
+                                        @if (Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("news")).Count() != 0)
+                                        {
+                                            foreach (var item in Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("news")))
+                                            {
+                                                <li class="news-item">
+                                                    <div>
+                                                        <a href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@item.Title</a><br />
+                                                        <small class="text-danger text-small">@item.PublishedOn.Value.ToString("dddd, d MMMM, yyyy")</small>
+                                                    </div>
+                                                    <small>@item.MainContent.StripHtml().Chop(155)<br /><a class="btn btn-reveal btn-info btn-xs" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })"><i class="fa fa-plus"></i><span>@Resources.Resources.ReadMore</span></a></small>
+                                                </li>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <li class="news-item">
+                                                <small>@Resources.Resources.NoNews</small>
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div>
+                            <div class="row text-justify">
+                                <div class="col-xs-12">
+                                    <div class="panel-footer">
+                                        <i class="fa fa-calendar fa-3x"><a class="btn" href="@Url.Action("Contents", "Home" , new { contentTypeIdFilter=cmsDb.ContentTypes.Where(c =>c.Code.Trim().Equals("event")).FirstOrDefault().Id })">@Resources.Resources.Events.ToUpper()</a></i>
+                                    </div>
+                                    <ul class="ul-panel events">
+                                        @if (Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("event")).Count() != 0)
+                                        {
+                                            foreach (var item in Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("event")))
+                                            {
+                                                <li class="news-item">
+                                                    <div>
+                                                        <a href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@item.Title</a><br />
+                                                        @if (item.StartDate != null)
+                                                        {
+                                                            <small class="text-danger text-small">@Resources.Resources.From @item.StartDate.Value.ToString("dddd, d MMMM, yyyy | h:mm tt") @(item.EndDate == null ? "" : @Resources.Resources.Till + " " + item.EndDate.Value.ToString("dddd, d MMMM, yyyy | h:mm tt")) @(item.Location == null ? "" : "@ " + item.Location)</small>
+                                                        }
+                                                    </div>
+                                                    <small>@item.MainContent.StripHtml().Chop(155)<br /><a class="btn btn-reveal btn-info btn-xs" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })"><i class="fa fa-plus"></i><span>@Resources.Resources.ReadMore</span></a></small>
+                                                </li>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <li class="news-item">
+                                                <small>@Resources.Resources.NoEvents</small>
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div>
+                            <div class="row text-justify">
+                                <div class="col-xs-12">
+                                    <div class="panel-footer">
+                                        <i class="fa fa-exclamation-circle fa-3x"><a class="btn" href="@Url.Action("Contents", "Home" , new { contentTypeIdFilter=cmsDb.ContentTypes.Where(c =>c.Code.Trim().Equals("announcement")).FirstOrDefault().Id })">@Resources.Resources.Announcements.ToUpper()</a></i>
+                                    </div>
+                                    <ul class="ul-panel announcements">
+                                        @if (Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("announcement")).Count() != 0)
+                                        {
+                                            foreach (var item in Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("announcement")))
+                                            {
+                                                <li class="news-item">
+                                                    <div>
+                                                        <a href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@item.Title</a><br />
+                                                        <small class="text-danger text-small">@item.PublishedOn.Value.ToString("dddd, d MMMM, yyyy")</small>
+                                                    </div>
+                                                    <small>@item.MainContent.StripHtml().Chop(155)<br /><a class="btn btn-reveal btn-info btn-xs" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })"><i class="fa fa-plus"></i><span>@Resources.Resources.ReadMore</span></a></small>
+                                                </li>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <li class="news-item">
+                                                <small>@Resources.Resources.NoAnnouncements</small>
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- Testimonials Parallax -->
+    <section class="padding-xxs parallax parallax-1" style="background-image: url('assets/images/demo/1200x800/32-min.jpg'); background-position: 50% -104px;">
+        <div class="overlay dark-5"><!-- dark overlay [1 to 9 opacity] --></div>
+        <div class="container">
+            @{var testimonialListItems = Model.ContentLists.FirstOrDefault(c => c.Code.Trim().Equals("testimonials"))?.ListItems; }
+            @if (testimonialListItems != null)
+            {
+                <div class="owl-carousel text-center owl-testimonial nomargin" data-plugin-options='{"singleItem": true, "autoPlay": 3500, "navigation": false, "pagination": true, "transitionStyle":"fade"}'>
+                    <h1>@(Model.ContentLists.FirstOrDefault(c => c.Code.Trim().Equals("testimonials"))?.Name)</h1>
+
+                    @foreach (var item in testimonialListItems)
+                    {
+                        <div class="testimonial">
+                            <figure>
+                                <img class="rounded" src="@item.ThumbPath" alt="@item.ThumbName" />
+                            </figure>
+                            <div class="testimonial-content nopadding">
+                                <p class="lead">@item.Body.StripHtml().Trim()</p>
+                                <cite>
+                                    @item.Title.Trim()
+                                </cite>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="text-center">
+                    <h2 class="size-40 weight-300">@(OrganizationData.Organization?.Name)</h2>
+                    <h3 class="size-40 weight-300">@(OrganizationData.Organization?.Description)</h3>
+                </div>
+            }
+        </div>
+
+    </section>
+    <!-- /Testimonials Parallax -->
+        <!-- Services List -->
+    <section>
+        <div class="container">
+            @{var servicesContentLists = Model.ContentLists?.FirstOrDefault(c => c.Code.Trim().Equals("services")); }
+
+            <h1>@(servicesContentLists?.Name)</h1>
+            <hr />
+            <div class="row">
+                @if (servicesContentLists != null)
+                {
+                    foreach (var item in servicesContentLists.ListItems)
+                    {
+                        <div class="col-sm-4">
+                            <img class="img-responsive" src="@item.ThumbPath" alt="img" />
+                            <h4 class="margin-top-10 text-center">@item.Title.Trim()</h4>
+                            <p class="text-justify">@item.Body.StripHtml().Trim()</p>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </section>
+    <!-- /Services List -->
+    <section>
+     <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <i class="fa fa-twitter-square fa-3x"><a class="btn" href="@(OrganizationData.Organization?.TwitterUrl)">@Resources.Resources.TwitterUrl</a></i>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <a class="twitter-timeline" href="@(OrganizationData.Organization?.TwitterUrl)" data-widget-id="673859244354109440">تغريدات بواسطة psutJO</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="panel panel-default">
+                                                <div>
+                                                    <div class="row text-justify">
+                                                        <div class="col-xs-12">
+                                                            <div class="panel-footer">
+                                                                <i class="fa fa-feed fa-3x"><a class="btn" href="@Url.Action("Contents", "Home" , new { contentTypeIdFilter=cmsDb.ContentTypes.Where(c =>c.Code.Trim().Equals("article")).FirstOrDefault().Id})">@Resources.Resources.AcademicJournal.ToUpper()</a></i>
+                                                            </div>
+                                                            <ul class="ul-panel articles">
+                                                                @if (Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("article")).Count() != 0)
+                                                                {
+                                                                    foreach (var item in Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("article")))
+                                                                    {
+                                                                        <li class="news-item">
+                                                                            <div>
+                                                                                <a href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@item.Title</a><br />
+                                                                                <small class="text-danger text-small">@item.PublishedOn.Value.ToString("dddd, d MMMM, yyyy")</small>
+                                                                            </div>
+                                                                            <small>@item.MainContent.StripHtml().Chop(155)<br /><a class="btn btn-reveal btn-info btn-xs" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })"><i class="fa fa-plus"></i><span>@Resources.Resources.ReadMore</span></a></small>
+                                                                        </li>
+                                                                    }
+                                                                }
+                                                                else
+                                                                {
+                                                                    <li class="news-item">
+                                                                        <small>@Resources.Resources.NoArticles</small>
+                                                                    </li>
+                                                                }
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <i class="fa fa-facebook-square fa-3x"><a class="btn" href="@(OrganizationData.Organization?.FacebookUrl)">@Resources.Resources.FacebookUrl</a></i>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <div class="fb-page" data-href="@(OrganizationData.Organization?.FacebookUrl)" data-width="500px" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="@(OrganizationData.Organization?.FacebookUrl)"><a href="@(OrganizationData.Organization?.FacebookUrl)">Princess Sumaya University For Technology</a></blockquote></div></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    </section>
+}
+

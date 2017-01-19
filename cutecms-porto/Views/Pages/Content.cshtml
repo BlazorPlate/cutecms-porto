@@ -1,0 +1,115 @@
+﻿@model cutecms_porto.Areas.CMS.Models.DBModel.Content
+@using cutecms_porto.Areas.CMS.Models.DBModel
+@using System.Threading
+@using cutecms_porto.Areas.Identity.Models
+<head>
+    @{
+        ApplicationDbContext _db = new ApplicationDbContext();
+        CMSEntities db = new CMSEntities();
+        List<MenuItem> menuItems = db.MenuItems.Include("Menu").Include("Status").Include("Language").Where(m => m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && m.Menu.Code.Trim().Equals("header") && m.Status.Code.Trim().Equals("published")).ToList();
+        ViewBag.Title = Model.Title;
+        ViewBag.Description = Model.MetaDescription;
+        ViewBag.Author = _db.Users.Find(Model.Author).UserName;
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+</head>
+@section PageHeader
+{
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="breadcrumb">
+                        <li><a href="~/@Thread.CurrentThread.CurrentCulture.Name">@Resources.Resources.Home</a></li>
+                        @if (Model.ParentMenuItemId != null && menuItems.Count != 0)
+                        {
+                            var menuItemId = menuItems.FirstOrDefault(m => m.ContentId == Model.Id)?.Id;
+                            if (menuItemId != null)
+                            {
+                                ViewBag.ParentMenuItems = BreadcrumbsHelper.GetParentMenuItems(menuItemId).ToList();
+                                @Html.Partial("_Breadcrumb")
+                            }
+                        }
+                    </ul>
+                    <br />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h1><a style="color:white;text-decoration:none" href="@Url.Action("Content", "Pages" , new { slug=Model.UrlSlug })">@Model.Title</a></h1>
+
+                </div>
+            </div>
+        </div>
+    </section>
+}
+<div class="blog-posts single-post">
+    <article class="post post-large blog-single-post">
+        @if (Model.ContentGalleries.Count != 0)
+        {
+            <div class="post-image">
+                <div class="owl-carousel owl-theme owl-loaded owl-drag owl-carousel-init" data-plugin-options="{&quot;items&quot;:1}">
+
+                    <div class="owl-carousel owl-theme" data-plugin-options='{"items":1}'>
+
+                        @if (Model.ContentGalleries.FirstOrDefault() != null)
+                        {
+                            foreach (var item in Model.ContentGalleries.FirstOrDefault().Gallery.ImageFiles.Take(10))
+                            {
+                                string description = item.ImageFileTerms.Where(i => i.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && i.ImageFileId == item.Id).FirstOrDefault()?.Description;
+                                <div>
+                                    <div class="img-thumbnail">
+                                        <img class="img-responsive" src="@item.FilePath" alt="@description">
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="post-date">
+            <span class="day">@(Model.ModifiedOn?.Date.Day)</span>
+            <span class="month">@(Model.ModifiedOn?.Date.ToString("MM")) - @(Model.ModifiedOn?.Date.Year)</span>
+        </div>
+    </article><div class="post-content">
+    <div class="col">
+        <div class="row">
+            @if (Model.StartDate != null)
+            {
+                <div class="post-meta">
+                    <span><i class="fa fa-clock-o"></i> @Resources.Resources.From @Model.StartDate.Value.ToString("dddd, d MMMM, yyyy") @(Model.EndDate == null ? "" : @Resources.Resources.Till + " " + Model.EndDate.Value.ToString("dddd, d MMMM, yyyy")) @(Model.Location == null ? "" : "@ " + Model.Location)</span>
+                </div>
+                        @*<span><i class="fa fa-tag"></i> <a href="#">Duis</a>, <a href="#">@Model.ContentType.Code</a> </span>
+                            <span><i class="fa fa-comments"></i> <a href="#">12 Comments</a></span>*@
+            }
+        </div>
+        <div class="row" style="margin:10px">
+            <div class="text-justify">
+                @Html.Raw(HttpUtility.HtmlDecode(Model.MainContent))
+            </div>
+            @if (User.IsInRole("Admin"))
+            {
+                <div>
+                    @Html.ActionLink(Resources.Resources.Edit, "Edit", "Contents", new { Area = "CMS", id = Model.Id }, null)
+                </div>
+            }
+            <div class="post-block post-share">
+                <h3 class="heading-primary"><i class="fa fa-share"></i>@Resources.Resources.Share</h3>
+
+                <!-- AddThis Button BEGIN -->
+                <div class="addthis_toolbox addthis_default_style ">
+                    <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                    <a class="addthis_button_tweet"></a>
+                    <a class="addthis_button_pinterest_pinit"></a>
+                    <a class="addthis_counter addthis_pill_style"></a>
+                </div>
+                <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50faf75173aadc53"></script>
+                <!-- AddThis Button END -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>

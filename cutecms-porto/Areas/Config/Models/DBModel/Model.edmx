@@ -1,0 +1,1201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ConfigDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Contacts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonalTitleId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Position" Type="nvarchar" MaxLength="50" />
+          <Property Name="DepartmentId" Type="int" Nullable="false" />
+          <Property Name="Office" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="OrganizationId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Departments">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ManagerId" Type="int" />
+          <Property Name="ParentId" Type="int" />
+          <Property Name="Ordinal" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DepartmentTerms">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LanguageId" Type="int" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DepartmentId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Languages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CultureName" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="FlagCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsEnabled" Type="bit" Nullable="false" />
+          <Property Name="IsDefault" Type="bit" Nullable="false" />
+          <Property Name="Ordinal" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NotificationCodes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Ordinal" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Notifications">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodeId" Type="int" Nullable="false" />
+          <Property Name="SMTPId" Type="int" />
+        </EntityType>
+        <EntityType Name="NotificationTerms">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LanguageId" Type="int" Nullable="false" />
+          <Property Name="Subject" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="NotificationId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Organization">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenantId" Type="nvarchar" MaxLength="50" />
+          <Property Name="LanguageId" Type="int" Nullable="false" />
+          <Property Name="IsTranslated" Type="bit" />
+          <Property Name="TranslationId" Type="int" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telephone_1" Type="nvarchar" MaxLength="20" />
+          <Property Name="Telephone_2" Type="nvarchar" MaxLength="20" />
+          <Property Name="Telephone_3" Type="nvarchar" MaxLength="20" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="20" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" />
+          <Property Name="Province" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="District" Type="nvarchar" MaxLength="50" />
+          <Property Name="Street" Type="nvarchar" MaxLength="50" />
+          <Property Name="Longitude" Type="decimal" Precision="12" Scale="9" />
+          <Property Name="Latitude" Type="decimal" Precision="12" Scale="9" />
+          <Property Name="Building" Type="nvarchar" MaxLength="50" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="POBox" Type="nvarchar" MaxLength="20" />
+          <Property Name="MetaDescription" Type="nvarchar" MaxLength="1000" />
+          <Property Name="FacebookUrl" Type="nvarchar(max)" />
+          <Property Name="TwitterUrl" Type="nvarchar(max)" />
+          <Property Name="YouTubeUrl" Type="nvarchar(max)" />
+          <Property Name="GooglePlusUrl" Type="nvarchar(max)" />
+          <Property Name="LinkedInUrl" Type="nvarchar(max)" />
+          <Property Name="RSS" Type="nvarchar(max)" />
+          <Property Name="Developer" Type="nvarchar(max)" />
+          <Property Name="DeveloperURL" Type="nvarchar(max)" />
+          <Property Name="PrimaryLogoPath" Type="nvarchar(max)" />
+          <Property Name="PrimaryLogoName" Type="nvarchar(max)" />
+          <Property Name="SecondaryLogoPath" Type="nvarchar(max)" />
+          <Property Name="SecondaryLogoName" Type="nvarchar(max)" />
+          <Property Name="IsDefault" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PersonalTitles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Visible" Type="bit" Nullable="false" />
+          <Property Name="Ordinal" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PersonalTitleTerms">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LanguageId" Type="int" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PersonalTitleId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PhoneNumbers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Number" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Extension" Type="nvarchar" MaxLength="5" />
+          <Property Name="ContactId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SMTPSettings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="SMTP" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Port" Type="int" Nullable="false" />
+          <Property Name="EnableSsl" Type="bit" Nullable="false" />
+          <Property Name="SenderEmail" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="SenderPasswordHash" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RecipientEmail" Type="nvarchar(max)" />
+          <Property Name="Visible" Type="bit" Nullable="false" />
+          <Property Name="Ordinal" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Statistics">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IP" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CountryCode" Type="nchar" MaxLength="10" />
+          <Property Name="CountryName" Type="nvarchar(max)" />
+          <Property Name="RegionCode" Type="nchar" MaxLength="10" />
+          <Property Name="RegionName" Type="nvarchar(max)" />
+          <Property Name="City" Type="nchar" MaxLength="10" />
+          <Property Name="TimeZone" Type="nvarchar(max)" />
+          <Property Name="Latitude" Type="decimal" Precision="12" Scale="9" />
+          <Property Name="Longitude" Type="decimal" Precision="12" Scale="9" />
+          <Property Name="MetroCode" Type="nchar" MaxLength="10" />
+          <Property Name="RequestDate" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Statuses">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Visible" Type="bit" Nullable="false" />
+          <Property Name="Ordinal" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StatusTerms">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LanguageId" Type="int" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="StatusId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Contacts_Departments">
+          <End Role="Departments" Type="Self.Departments" Multiplicity="1" />
+          <End Role="Contacts" Type="Self.Contacts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departments">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contacts">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contacts_Organization">
+          <End Role="Organization" Type="Self.Organization" Multiplicity="1" />
+          <End Role="Contacts" Type="Self.Contacts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organization">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contacts">
+              <PropertyRef Name="OrganizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contacts_PersonalTitles">
+          <End Role="PersonalTitles" Type="Self.PersonalTitles" Multiplicity="1" />
+          <End Role="Contacts" Type="Self.Contacts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonalTitles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contacts">
+              <PropertyRef Name="PersonalTitleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Departments_Departments">
+          <End Role="Departments" Type="Self.Departments" Multiplicity="0..1" />
+          <End Role="Departments1" Type="Self.Departments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departments">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Departments1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DepartmentTerms_Departments">
+          <End Role="Departments" Type="Self.Departments" Multiplicity="1" />
+          <End Role="DepartmentTerms" Type="Self.DepartmentTerms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departments">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DepartmentTerms">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DepartmentTerms_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+          <End Role="DepartmentTerms" Type="Self.DepartmentTerms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DepartmentTerms">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Notifications_NotificationCodes">
+          <End Role="NotificationCodes" Type="Self.NotificationCodes" Multiplicity="1" />
+          <End Role="Notifications" Type="Self.Notifications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NotificationCodes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Notifications">
+              <PropertyRef Name="CodeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Notifications_SMTP">
+          <End Role="SMTPSettings" Type="Self.SMTPSettings" Multiplicity="0..1" />
+          <End Role="Notifications" Type="Self.Notifications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SMTPSettings">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Notifications">
+              <PropertyRef Name="SMTPId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationTerms_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+          <End Role="NotificationTerms" Type="Self.NotificationTerms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NotificationTerms">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationTerms_Notifications">
+          <End Role="Notifications" Type="Self.Notifications" Multiplicity="1" />
+          <End Role="NotificationTerms" Type="Self.NotificationTerms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Notifications">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NotificationTerms">
+              <PropertyRef Name="NotificationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Organization_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+          <End Role="Organization" Type="Self.Organization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Organization">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonalTitleTerms_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+          <End Role="PersonalTitleTerms" Type="Self.PersonalTitleTerms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PersonalTitleTerms">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonalTitleTerms_PersonalTitles">
+          <End Role="PersonalTitles" Type="Self.PersonalTitles" Multiplicity="1" />
+          <End Role="PersonalTitleTerms" Type="Self.PersonalTitleTerms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonalTitles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PersonalTitleTerms">
+              <PropertyRef Name="PersonalTitleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PhoneNumbers_Contacts">
+          <End Role="Contacts" Type="Self.Contacts" Multiplicity="1" />
+          <End Role="PhoneNumbers" Type="Self.PhoneNumbers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contacts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PhoneNumbers">
+              <PropertyRef Name="ContactId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusTerms_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+          <End Role="StatusTerms" Type="Self.StatusTerms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StatusTerms">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusTerms_Statuses">
+          <End Role="Statuses" Type="Self.Statuses" Multiplicity="1" />
+          <End Role="StatusTerms" Type="Self.StatusTerms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Statuses">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StatusTerms">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ConfigDBModelStoreContainer">
+          <EntitySet Name="Contacts" EntityType="Self.Contacts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DepartmentTerms" EntityType="Self.DepartmentTerms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Languages" EntityType="Self.Languages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NotificationCodes" EntityType="Self.NotificationCodes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Notifications" EntityType="Self.Notifications" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NotificationTerms" EntityType="Self.NotificationTerms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Organization" EntityType="Self.Organization" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonalTitles" EntityType="Self.PersonalTitles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonalTitleTerms" EntityType="Self.PersonalTitleTerms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PhoneNumbers" EntityType="Self.PhoneNumbers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SMTPSettings" EntityType="Self.SMTPSettings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Statistics" EntityType="Self.Statistics" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Statuses" EntityType="Self.Statuses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatusTerms" EntityType="Self.StatusTerms" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Contacts_Departments" Association="Self.FK_Contacts_Departments">
+            <End Role="Departments" EntitySet="Departments" />
+            <End Role="Contacts" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contacts_Organization" Association="Self.FK_Contacts_Organization">
+            <End Role="Organization" EntitySet="Organization" />
+            <End Role="Contacts" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contacts_PersonalTitles" Association="Self.FK_Contacts_PersonalTitles">
+            <End Role="PersonalTitles" EntitySet="PersonalTitles" />
+            <End Role="Contacts" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Departments_Departments" Association="Self.FK_Departments_Departments">
+            <End Role="Departments" EntitySet="Departments" />
+            <End Role="Departments1" EntitySet="Departments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DepartmentTerms_Departments" Association="Self.FK_DepartmentTerms_Departments">
+            <End Role="Departments" EntitySet="Departments" />
+            <End Role="DepartmentTerms" EntitySet="DepartmentTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DepartmentTerms_Languages" Association="Self.FK_DepartmentTerms_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="DepartmentTerms" EntitySet="DepartmentTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notifications_NotificationCodes" Association="Self.FK_Notifications_NotificationCodes">
+            <End Role="NotificationCodes" EntitySet="NotificationCodes" />
+            <End Role="Notifications" EntitySet="Notifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notifications_SMTP" Association="Self.FK_Notifications_SMTP">
+            <End Role="SMTPSettings" EntitySet="SMTPSettings" />
+            <End Role="Notifications" EntitySet="Notifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationTerms_Languages" Association="Self.FK_NotificationTerms_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="NotificationTerms" EntitySet="NotificationTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationTerms_Notifications" Association="Self.FK_NotificationTerms_Notifications">
+            <End Role="Notifications" EntitySet="Notifications" />
+            <End Role="NotificationTerms" EntitySet="NotificationTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Organization_Languages" Association="Self.FK_Organization_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="Organization" EntitySet="Organization" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonalTitleTerms_Languages" Association="Self.FK_PersonalTitleTerms_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="PersonalTitleTerms" EntitySet="PersonalTitleTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonalTitleTerms_PersonalTitles" Association="Self.FK_PersonalTitleTerms_PersonalTitles">
+            <End Role="PersonalTitles" EntitySet="PersonalTitles" />
+            <End Role="PersonalTitleTerms" EntitySet="PersonalTitleTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PhoneNumbers_Contacts" Association="Self.FK_PhoneNumbers_Contacts">
+            <End Role="Contacts" EntitySet="Contacts" />
+            <End Role="PhoneNumbers" EntitySet="PhoneNumbers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusTerms_Languages" Association="Self.FK_StatusTerms_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="StatusTerms" EntitySet="StatusTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusTerms_Statuses" Association="Self.FK_StatusTerms_Statuses">
+            <End Role="Statuses" EntitySet="Statuses" />
+            <End Role="StatusTerms" EntitySet="StatusTerms" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ConfigDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonalTitleId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+          <Property Name="Office" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OrganizationId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Organization" Relationship="Self.FK_Contacts_Organization" FromRole="Contacts" ToRole="Organization" />
+          <NavigationProperty Name="PhoneNumbers" Relationship="Self.FK_PhoneNumbers_Contacts" FromRole="Contacts" ToRole="PhoneNumbers" />
+          <NavigationProperty Name="Department" Relationship="ConfigDBModel.FK_Contacts_Departments" FromRole="Contact" ToRole="Department" />
+          <NavigationProperty Name="PersonalTitle" Relationship="ConfigDBModel.FK_Contacts_PersonalTitles" FromRole="Contact" ToRole="PersonalTitle" />
+        </EntityType>
+        <EntityType Name="Organization">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageId" Type="Int32" Nullable="false" />
+          <Property Name="IsTranslated" Type="Boolean" />
+          <Property Name="TranslationId" Type="Int32" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone_1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone_2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone_3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Province" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="District" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Longitude" Type="Decimal" Precision="12" Scale="9" />
+          <Property Name="Latitude" Type="Decimal" Precision="12" Scale="9" />
+          <Property Name="Building" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="POBox" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MetaDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="FacebookUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TwitterUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="YouTubeUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GooglePlusUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LinkedInUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RSS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Developer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DeveloperURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PrimaryLogoPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PrimaryLogoName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecondaryLogoPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecondaryLogoName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsDefault" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Contacts" Relationship="Self.FK_Contacts_Organization" FromRole="Organization" ToRole="Contacts" />
+          <NavigationProperty Name="Language" Relationship="ConfigDBModel.FK_Organization_Languages" FromRole="Organization" ToRole="Language" />
+          <Property Name="TenantId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PhoneNumber">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Extension" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="ContactId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Contact" Relationship="Self.FK_PhoneNumbers_Contacts" FromRole="PhoneNumbers" ToRole="Contacts" />
+        </EntityType>
+        <EntityType Name="Statistic">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CountryCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CountryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RegionCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="RegionName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="TimeZone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Latitude" Type="Decimal" Precision="12" Scale="9" />
+          <Property Name="Longitude" Type="Decimal" Precision="12" Scale="9" />
+          <Property Name="MetroCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="RequestDate" Type="DateTime" Nullable="false" Precision="7" />
+        </EntityType>
+        <Association Name="FK_Contacts_Organization">
+          <End Role="Organization" Type="Self.Organization" Multiplicity="1" />
+          <End Role="Contacts" Type="Self.Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organization">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contacts">
+              <PropertyRef Name="OrganizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PhoneNumbers_Contacts">
+          <End Role="Contacts" Type="Self.Contact" Multiplicity="1" />
+          <End Role="PhoneNumbers" Type="Self.PhoneNumber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contacts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PhoneNumbers">
+              <PropertyRef Name="ContactId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ConfigEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Contacts" EntityType="Self.Contact" />
+          <EntitySet Name="Organizations" EntityType="Self.Organization" />
+          <EntitySet Name="PhoneNumbers" EntityType="Self.PhoneNumber" />
+          <EntitySet Name="Statistics" EntityType="Self.Statistic" />
+          <AssociationSet Name="FK_Contacts_Organization" Association="Self.FK_Contacts_Organization">
+            <End Role="Organization" EntitySet="Organizations" />
+            <End Role="Contacts" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PhoneNumbers_Contacts" Association="Self.FK_PhoneNumbers_Contacts">
+            <End Role="Contacts" EntitySet="Contacts" />
+            <End Role="PhoneNumbers" EntitySet="PhoneNumbers" />
+          </AssociationSet>
+          <EntitySet Name="ConfigDepartments" EntityType="ConfigDBModel.ConfigDepartment" />
+          <AssociationSet Name="FK_Contacts_Departments" Association="ConfigDBModel.FK_Contacts_Departments">
+            <End Role="Department" EntitySet="ConfigDepartments" />
+            <End Role="Contact" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Departments_Departments" Association="ConfigDBModel.FK_Departments_Departments">
+            <End Role="Department" EntitySet="ConfigDepartments" />
+            <End Role="Department1" EntitySet="ConfigDepartments" />
+          </AssociationSet>
+          <EntitySet Name="ConfigDepartmentTerms" EntityType="ConfigDBModel.ConfigDepartmentTerm" />
+          <AssociationSet Name="FK_DepartmentTerms_Departments" Association="ConfigDBModel.FK_DepartmentTerms_Departments">
+            <End Role="ConfigDepartment" EntitySet="ConfigDepartments" />
+            <End Role="DepartmentTerm" EntitySet="ConfigDepartmentTerms" />
+          </AssociationSet>
+          <EntitySet Name="ConfigPersonalTitles" EntityType="ConfigDBModel.ConfigPersonalTitle" />
+          <AssociationSet Name="FK_Contacts_PersonalTitles" Association="ConfigDBModel.FK_Contacts_PersonalTitles">
+            <End Role="PersonalTitle" EntitySet="ConfigPersonalTitles" />
+            <End Role="Contact" EntitySet="Contacts" />
+          </AssociationSet>
+          <EntitySet Name="ConfigPersonalTitleTerms" EntityType="ConfigDBModel.ConfigPersonalTitleTerm" />
+          <AssociationSet Name="FK_PersonalTitleTerms_PersonalTitles" Association="ConfigDBModel.FK_PersonalTitleTerms_PersonalTitles">
+            <End Role="ConfigPersonalTitle" EntitySet="ConfigPersonalTitles" />
+            <End Role="PersonalTitleTerm" EntitySet="ConfigPersonalTitleTerms" />
+          </AssociationSet>
+          <EntitySet Name="ConfigLanguages" EntityType="ConfigDBModel.ConfigLanguage" />
+          <AssociationSet Name="FK_DepartmentTerms_Languages" Association="ConfigDBModel.FK_DepartmentTerms_Languages">
+            <End Role="Language" EntitySet="ConfigLanguages" />
+            <End Role="ConfigDepartmentTerm" EntitySet="ConfigDepartmentTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Organization_Languages" Association="ConfigDBModel.FK_Organization_Languages">
+            <End Role="Language" EntitySet="ConfigLanguages" />
+            <End Role="Organization" EntitySet="Organizations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonalTitleTerms_Languages" Association="ConfigDBModel.FK_PersonalTitleTerms_Languages">
+            <End Role="Language" EntitySet="ConfigLanguages" />
+            <End Role="ConfigPersonalTitleTerm" EntitySet="ConfigPersonalTitleTerms" />
+          </AssociationSet>
+          <EntitySet Name="NotificationTerms" EntityType="ConfigDBModel.NotificationTerm" />
+          <AssociationSet Name="FK_NotificationTerms_Languages" Association="ConfigDBModel.FK_NotificationTerms_Languages">
+            <End Role="ConfigLanguage" EntitySet="ConfigLanguages" />
+            <End Role="NotificationTerm" EntitySet="NotificationTerms" />
+          </AssociationSet>
+          <EntitySet Name="SMTPSettings" EntityType="ConfigDBModel.SMTPSetting" />
+          <EntitySet Name="NotificationCodes" EntityType="ConfigDBModel.NotificationCode" />
+          <EntitySet Name="Notifications" EntityType="ConfigDBModel.Notification" />
+          <AssociationSet Name="FK_Notifications_NotificationCodes" Association="ConfigDBModel.FK_Notifications_NotificationCodes">
+            <End Role="NotificationCode" EntitySet="NotificationCodes" />
+            <End Role="Notification" EntitySet="Notifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notifications_SMTP" Association="ConfigDBModel.FK_Notifications_SMTP">
+            <End Role="ConfigSMTPSetting" EntitySet="SMTPSettings" />
+            <End Role="Notification" EntitySet="Notifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationTerms_Notifications" Association="ConfigDBModel.FK_NotificationTerms_Notifications">
+            <End Role="Notification" EntitySet="Notifications" />
+            <End Role="ConfigNotificationTerm" EntitySet="NotificationTerms" />
+          </AssociationSet>
+          <EntitySet Name="Statuses" EntityType="ConfigDBModel.ConfigStatus" />
+          <EntitySet Name="ConfigStatusTerms" EntityType="ConfigDBModel.ConfigStatusTerm" />
+          <AssociationSet Name="FK_StatusTerms_Languages" Association="ConfigDBModel.FK_StatusTerms_Languages">
+            <End Role="ConfigLanguage" EntitySet="ConfigLanguages" />
+            <End Role="StatusTerm" EntitySet="ConfigStatusTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusTerms_Statuses" Association="ConfigDBModel.FK_StatusTerms_Statuses">
+            <End Role="Status" EntitySet="Statuses" />
+            <End Role="StatusTerm" EntitySet="ConfigStatusTerms" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ConfigDepartment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ManagerId" Type="Int32" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="Ordinal" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Contacts" Relationship="ConfigDBModel.FK_Contacts_Departments" FromRole="Department" ToRole="Contact" />
+          <NavigationProperty Name="Departments1" Relationship="ConfigDBModel.FK_Departments_Departments" FromRole="Department" ToRole="Department1" />
+          <NavigationProperty Name="Department1" Relationship="ConfigDBModel.FK_Departments_Departments" FromRole="Department1" ToRole="Department" />
+          <NavigationProperty Name="DepartmentTerms" Relationship="ConfigDBModel.FK_DepartmentTerms_Departments" FromRole="ConfigDepartment" ToRole="DepartmentTerm" />
+        </EntityType>
+        <Association Name="FK_Contacts_Departments">
+          <End Type="ConfigDBModel.ConfigDepartment" Role="Department" Multiplicity="1" />
+          <End Type="ConfigDBModel.Contact" Role="Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contact">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Departments_Departments">
+          <End Type="ConfigDBModel.ConfigDepartment" Role="Department" Multiplicity="0..1" />
+          <End Type="ConfigDBModel.ConfigDepartment" Role="Department1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Department1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ConfigDepartmentTerm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageId" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Department" Relationship="ConfigDBModel.FK_DepartmentTerms_Departments" FromRole="DepartmentTerm" ToRole="ConfigDepartment" />
+          <NavigationProperty Name="Language" Relationship="ConfigDBModel.FK_DepartmentTerms_Languages" FromRole="ConfigDepartmentTerm" ToRole="Language" />
+        </EntityType>
+        <Association Name="FK_DepartmentTerms_Departments">
+          <End Type="ConfigDBModel.ConfigDepartment" Role="ConfigDepartment" Multiplicity="1" />
+          <End Type="ConfigDBModel.ConfigDepartmentTerm" Role="DepartmentTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConfigDepartment">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DepartmentTerm">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ConfigPersonalTitle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Visible" Type="Boolean" Nullable="false" />
+          <Property Name="Ordinal" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Contacts" Relationship="ConfigDBModel.FK_Contacts_PersonalTitles" FromRole="PersonalTitle" ToRole="Contact" />
+          <NavigationProperty Name="PersonalTitleTerms" Relationship="ConfigDBModel.FK_PersonalTitleTerms_PersonalTitles" FromRole="ConfigPersonalTitle" ToRole="PersonalTitleTerm" />
+        </EntityType>
+        <Association Name="FK_Contacts_PersonalTitles">
+          <End Type="ConfigDBModel.ConfigPersonalTitle" Role="PersonalTitle" Multiplicity="1" />
+          <End Type="ConfigDBModel.Contact" Role="Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonalTitle">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contact">
+              <PropertyRef Name="PersonalTitleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ConfigPersonalTitleTerm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageId" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PersonalTitleId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PersonalTitle" Relationship="ConfigDBModel.FK_PersonalTitleTerms_PersonalTitles" FromRole="PersonalTitleTerm" ToRole="ConfigPersonalTitle" />
+          <NavigationProperty Name="Language" Relationship="ConfigDBModel.FK_PersonalTitleTerms_Languages" FromRole="ConfigPersonalTitleTerm" ToRole="Language" />
+        </EntityType>
+        <Association Name="FK_PersonalTitleTerms_PersonalTitles">
+          <End Type="ConfigDBModel.ConfigPersonalTitle" Role="ConfigPersonalTitle" Multiplicity="1" />
+          <End Type="ConfigDBModel.ConfigPersonalTitleTerm" Role="PersonalTitleTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConfigPersonalTitle">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PersonalTitleTerm">
+              <PropertyRef Name="PersonalTitleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ConfigLanguage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CultureName" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="FlagCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="IsDefault" Type="Boolean" Nullable="false" />
+          <Property Name="Ordinal" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DepartmentTerms" Relationship="ConfigDBModel.FK_DepartmentTerms_Languages" FromRole="Language" ToRole="ConfigDepartmentTerm" />
+          <NavigationProperty Name="Organizations" Relationship="ConfigDBModel.FK_Organization_Languages" FromRole="Language" ToRole="Organization" />
+          <NavigationProperty Name="PersonalTitleTerms" Relationship="ConfigDBModel.FK_PersonalTitleTerms_Languages" FromRole="Language" ToRole="ConfigPersonalTitleTerm" />
+          <NavigationProperty Name="NotificationTerms" Relationship="ConfigDBModel.FK_NotificationTerms_Languages" FromRole="ConfigLanguage" ToRole="NotificationTerm" />
+          <NavigationProperty Name="StatusTerms" Relationship="ConfigDBModel.FK_StatusTerms_Languages" FromRole="ConfigLanguage" ToRole="StatusTerm" />
+        </EntityType>
+        <Association Name="FK_DepartmentTerms_Languages">
+          <End Type="ConfigDBModel.ConfigLanguage" Role="Language" Multiplicity="1" />
+          <End Type="ConfigDBModel.ConfigDepartmentTerm" Role="ConfigDepartmentTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ConfigDepartmentTerm">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Organization_Languages">
+          <End Type="ConfigDBModel.ConfigLanguage" Role="Language" Multiplicity="1" />
+          <End Type="ConfigDBModel.Organization" Role="Organization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Organization">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonalTitleTerms_Languages">
+          <End Type="ConfigDBModel.ConfigLanguage" Role="Language" Multiplicity="1" />
+          <End Type="ConfigDBModel.ConfigPersonalTitleTerm" Role="ConfigPersonalTitleTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ConfigPersonalTitleTerm">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="NotificationTerm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageId" Type="Int32" Nullable="false" />
+          <Property Name="Subject" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NotificationId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Language" Relationship="ConfigDBModel.FK_NotificationTerms_Languages" FromRole="NotificationTerm" ToRole="ConfigLanguage" />
+          <NavigationProperty Name="Notification" Relationship="ConfigDBModel.FK_NotificationTerms_Notifications" FromRole="ConfigNotificationTerm" ToRole="Notification" />
+        </EntityType>
+        <Association Name="FK_NotificationTerms_Languages">
+          <End Type="ConfigDBModel.ConfigLanguage" Role="ConfigLanguage" Multiplicity="1" />
+          <End Type="ConfigDBModel.NotificationTerm" Role="NotificationTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConfigLanguage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NotificationTerm">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SMTPSetting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SMTP" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Port" Type="Int32" Nullable="false" />
+          <Property Name="EnableSsl" Type="Boolean" Nullable="false" />
+          <Property Name="SenderEmail" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SenderPasswordHash" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RecipientEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Visible" Type="Boolean" Nullable="false" />
+          <Property Name="Ordinal" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Notifications" Relationship="ConfigDBModel.FK_Notifications_SMTP" FromRole="ConfigSMTPSetting" ToRole="Notification" />
+        </EntityType>
+        <EntityType Name="NotificationCode">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Ordinal" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Notifications" Relationship="ConfigDBModel.FK_Notifications_NotificationCodes" FromRole="NotificationCode" ToRole="Notification" />
+        </EntityType>
+        <EntityType Name="Notification">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodeId" Type="Int32" Nullable="false" />
+          <Property Name="SMTPId" Type="Int32" />
+          <NavigationProperty Name="NotificationCode" Relationship="ConfigDBModel.FK_Notifications_NotificationCodes" FromRole="Notification" ToRole="NotificationCode" />
+          <NavigationProperty Name="SMTPSetting" Relationship="ConfigDBModel.FK_Notifications_SMTP" FromRole="Notification" ToRole="ConfigSMTPSetting" />
+          <NavigationProperty Name="NotificationTerms" Relationship="ConfigDBModel.FK_NotificationTerms_Notifications" FromRole="Notification" ToRole="ConfigNotificationTerm" />
+        </EntityType>
+        <Association Name="FK_Notifications_NotificationCodes">
+          <End Type="ConfigDBModel.NotificationCode" Role="NotificationCode" Multiplicity="1" />
+          <End Type="ConfigDBModel.Notification" Role="Notification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NotificationCode">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Notification">
+              <PropertyRef Name="CodeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Notifications_SMTP">
+          <End Type="ConfigDBModel.SMTPSetting" Role="ConfigSMTPSetting" Multiplicity="0..1" />
+          <End Type="ConfigDBModel.Notification" Role="Notification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConfigSMTPSetting">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Notification">
+              <PropertyRef Name="SMTPId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationTerms_Notifications">
+          <End Type="ConfigDBModel.Notification" Role="Notification" Multiplicity="1" />
+          <End Type="ConfigDBModel.NotificationTerm" Role="ConfigNotificationTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Notification">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ConfigNotificationTerm">
+              <PropertyRef Name="NotificationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ConfigStatus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Visible" Type="Boolean" Nullable="false" />
+          <Property Name="Ordinal" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="StatusTerms" Relationship="ConfigDBModel.FK_StatusTerms_Statuses" FromRole="Status" ToRole="StatusTerm" />
+        </EntityType>
+        <EntityType Name="ConfigStatusTerm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageId" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StatusId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Language" Relationship="ConfigDBModel.FK_StatusTerms_Languages" FromRole="StatusTerm" ToRole="ConfigLanguage" />
+          <NavigationProperty Name="Status" Relationship="ConfigDBModel.FK_StatusTerms_Statuses" FromRole="StatusTerm" ToRole="Status" />
+        </EntityType>
+        <Association Name="FK_StatusTerms_Languages">
+          <End Type="ConfigDBModel.ConfigLanguage" Role="ConfigLanguage" Multiplicity="1" />
+          <End Type="ConfigDBModel.ConfigStatusTerm" Role="StatusTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConfigLanguage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StatusTerm">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusTerms_Statuses">
+          <End Type="ConfigDBModel.ConfigStatus" Role="Status" Multiplicity="1" />
+          <End Type="ConfigDBModel.ConfigStatusTerm" Role="StatusTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StatusTerm">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ConfigDBModelStoreContainer" CdmEntityContainer="ConfigEntities">
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="ConfigDBModel.Contact">
+              <MappingFragment StoreEntitySet="Contacts">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PersonalTitleId" ColumnName="PersonalTitleId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="Office" ColumnName="Office" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Organizations">
+            <EntityTypeMapping TypeName="ConfigDBModel.Organization">
+              <MappingFragment StoreEntitySet="Organization">
+                <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="IsTranslated" ColumnName="IsTranslated" />
+                <ScalarProperty Name="TranslationId" ColumnName="TranslationId" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telephone_1" ColumnName="Telephone_1" />
+                <ScalarProperty Name="Telephone_2" ColumnName="Telephone_2" />
+                <ScalarProperty Name="Telephone_3" ColumnName="Telephone_3" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Building" ColumnName="Building" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="POBox" ColumnName="POBox" />
+                <ScalarProperty Name="MetaDescription" ColumnName="MetaDescription" />
+                <ScalarProperty Name="FacebookUrl" ColumnName="FacebookUrl" />
+                <ScalarProperty Name="TwitterUrl" ColumnName="TwitterUrl" />
+                <ScalarProperty Name="YouTubeUrl" ColumnName="YouTubeUrl" />
+                <ScalarProperty Name="GooglePlusUrl" ColumnName="GooglePlusUrl" />
+                <ScalarProperty Name="LinkedInUrl" ColumnName="LinkedInUrl" />
+                <ScalarProperty Name="RSS" ColumnName="RSS" />
+                <ScalarProperty Name="Developer" ColumnName="Developer" />
+                <ScalarProperty Name="DeveloperURL" ColumnName="DeveloperURL" />
+                <ScalarProperty Name="PrimaryLogoPath" ColumnName="PrimaryLogoPath" />
+                <ScalarProperty Name="PrimaryLogoName" ColumnName="PrimaryLogoName" />
+                <ScalarProperty Name="SecondaryLogoPath" ColumnName="SecondaryLogoPath" />
+                <ScalarProperty Name="SecondaryLogoName" ColumnName="SecondaryLogoName" />
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PhoneNumbers">
+            <EntityTypeMapping TypeName="ConfigDBModel.PhoneNumber">
+              <MappingFragment StoreEntitySet="PhoneNumbers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Extension" ColumnName="Extension" />
+                <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Statistics">
+            <EntityTypeMapping TypeName="ConfigDBModel.Statistic">
+              <MappingFragment StoreEntitySet="Statistics">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="RegionCode" ColumnName="RegionCode" />
+                <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="TimeZone" ColumnName="TimeZone" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="MetroCode" ColumnName="MetroCode" />
+                <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConfigDepartments">
+            <EntityTypeMapping TypeName="ConfigDBModel.ConfigDepartment">
+              <MappingFragment StoreEntitySet="Departments">
+                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="ManagerId" ColumnName="ManagerId" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConfigDepartmentTerms">
+            <EntityTypeMapping TypeName="ConfigDBModel.ConfigDepartmentTerm">
+              <MappingFragment StoreEntitySet="DepartmentTerms">
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConfigPersonalTitles">
+            <EntityTypeMapping TypeName="ConfigDBModel.ConfigPersonalTitle">
+              <MappingFragment StoreEntitySet="PersonalTitles">
+                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+                <ScalarProperty Name="Visible" ColumnName="Visible" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConfigPersonalTitleTerms">
+            <EntityTypeMapping TypeName="ConfigDBModel.ConfigPersonalTitleTerm">
+              <MappingFragment StoreEntitySet="PersonalTitleTerms">
+                <ScalarProperty Name="PersonalTitleId" ColumnName="PersonalTitleId" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConfigLanguages">
+            <EntityTypeMapping TypeName="ConfigDBModel.ConfigLanguage">
+              <MappingFragment StoreEntitySet="Languages">
+                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+                <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+                <ScalarProperty Name="FlagCode" ColumnName="FlagCode" />
+                <ScalarProperty Name="CultureName" ColumnName="CultureName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NotificationTerms">
+            <EntityTypeMapping TypeName="ConfigDBModel.NotificationTerm">
+              <MappingFragment StoreEntitySet="NotificationTerms">
+                <ScalarProperty Name="NotificationId" ColumnName="NotificationId" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SMTPSettings">
+            <EntityTypeMapping TypeName="ConfigDBModel.SMTPSetting">
+              <MappingFragment StoreEntitySet="SMTPSettings">
+                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+                <ScalarProperty Name="Visible" ColumnName="Visible" />
+                <ScalarProperty Name="RecipientEmail" ColumnName="RecipientEmail" />
+                <ScalarProperty Name="SenderPasswordHash" ColumnName="SenderPasswordHash" />
+                <ScalarProperty Name="SenderEmail" ColumnName="SenderEmail" />
+                <ScalarProperty Name="EnableSsl" ColumnName="EnableSsl" />
+                <ScalarProperty Name="Port" ColumnName="Port" />
+                <ScalarProperty Name="SMTP" ColumnName="SMTP" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NotificationCodes">
+            <EntityTypeMapping TypeName="ConfigDBModel.NotificationCode">
+              <MappingFragment StoreEntitySet="NotificationCodes">
+                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notifications">
+            <EntityTypeMapping TypeName="ConfigDBModel.Notification">
+              <MappingFragment StoreEntitySet="Notifications">
+                <ScalarProperty Name="SMTPId" ColumnName="SMTPId" />
+                <ScalarProperty Name="CodeId" ColumnName="CodeId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Statuses">
+            <EntityTypeMapping TypeName="ConfigDBModel.ConfigStatus">
+              <MappingFragment StoreEntitySet="Statuses">
+                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+                <ScalarProperty Name="Visible" ColumnName="Visible" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConfigStatusTerms">
+            <EntityTypeMapping TypeName="ConfigDBModel.ConfigStatusTerm">
+              <MappingFragment StoreEntitySet="StatusTerms">
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

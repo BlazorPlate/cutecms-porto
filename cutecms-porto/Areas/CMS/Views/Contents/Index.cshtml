@@ -1,0 +1,127 @@
+﻿@model IEnumerable<cutecms_porto.Areas.CMS.Models.ContentsViewModel>
+@using cutecms_porto.Areas.CMS.Models.DBModel
+@using System.Threading
+@using cutecms_porto.Helpers
+@using PagedList.Mvc
+@using PagedList
+@{
+    ViewBag.MainTitle = Resources.Resources.Contents;
+    ViewBag.Title = Resources.Resources.Index;
+    CMSEntities db = new CMSEntities();
+}
+@using (Html.BeginForm("Index", "Contents", FormMethod.Post))
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.Label(Resources.Resources.Search)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.TextBox("pageTitleFilter", ViewBag.PageTitleFilter as string, new { @class = "form-control", @placeholder = Resources.Resources.Title })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.DropDownList("languageIdFilter", new SelectList(ViewBag.LanguageIdFilter, "Value", "Text"), Resources.Resources.ChooseLanguage, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.DropDownList("contentTypeIdFilter", new SelectList(ViewBag.ContentTypeIdFilter, "Value", "Text"), Resources.Resources.ChooseContentType, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.DropDownList("authorIdFilter", new SelectList(ViewBag.AuthorIdFilter, "Value", "Text"), Resources.Resources.ChooseAuthor, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.DropDownList("statusIdFilter", new SelectList(ViewBag.StatusIdFilter, "Value", "Text"), Resources.Resources.ChooseStatus, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                <input type="submit" value="@Resources.Resources.Search" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+<p>
+    @Html.ActionLink(Resources.Resources.Create, "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AbsolutePath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContentType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Author)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Language)
+        </th>
+        <th>
+            @Html.DisplayName(Resources.Resources.Status)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <small><a href="@item.AbsolutePath">@item.UrlSlug.Substring(item.UrlSlug.IndexOf('/') + 1)</a></small>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContentType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <th>
+                @Html.DisplayFor(modelItem => item.Language)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.ActionLink(" ", "Translations", new { id = item.TranslationId }, new { @class = "fa  fa-2x fa-globe", @title = Resources.Resources.Translations })
+                @Html.ActionLink(" ", "Index", "ContentLists", new { id = item.Id }, new { @class = "fa fa-2x fa-list", @title = Resources.Resources.ManageLists })
+                @Html.ActionLink(" ", "Index", "ContentGalleries", new { id = item.Id }, new { @class = "fa fa-2x fa-photo", @title = Resources.Resources.Galleries })
+                @Html.ActionLink(" ", "Edit", new { id = item.Id }, new { @class = "fa fa-2x fa-pencil", @title = Resources.Resources.Edit })
+                @Html.ActionLink(" ", "Delete", new { id = item.Id }, new { @class = "fa fa-2x fa-times", @title = Resources.Resources.Delete })
+            </td>
+        </tr>
+    }
+</table>
+<div>
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page, pageTitleFilter = ViewBag.PageTitleFilter, languageIdFilter = ViewBag.LanguageId, contentTypeIdFilter = ViewBag.ContentTypeId, authorIdFilter = ViewBag.AuthorId, statusIdFilter = ViewBag.StatusId }))
+</div>
+@if (ViewBag.StatusMessageId != null)
+{
+    int statusId = ViewBag.StatusMessageId;
+    string status = db.CMSStatusTerms.Where(s => s.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && s.StatusId == statusId).FirstOrDefault() != null ? db.CMSStatusTerms.Where(s => s.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && s.StatusId == statusId).FirstOrDefault().Value : db.CMSStatuses.Where(i => i.Id == statusId).FirstOrDefault().Code;
+    if (@CultureHelper.IsRighToLeft())
+    {
+        <script type="text/javascript">
+            $(document).ready(function () {
+                toastr.options.positionClass = 'toast-top-left'
+                toastr.success('@status')
+            });
+        </script>
+    }
+    else
+    {
+        <script type="text/javascript">
+            $(document).ready(function () {
+                toastr.options.positionClass = 'toast-top-right'
+                toastr.success('@status')
+            });
+        </script>
+    }
+}

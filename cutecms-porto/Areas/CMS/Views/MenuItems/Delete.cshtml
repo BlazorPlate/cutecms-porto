@@ -1,0 +1,60 @@
+﻿@model cutecms_porto.Areas.CMS.Models.DBModel.MenuItem
+@{
+    ViewBag.MainTitle = Resources.Resources.Delete;
+    ViewBag.Title = Resources.Resources.Delete;
+}
+<h3>@Resources.Resources.DeleteConfirmation</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MenuId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Menu.Code)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Path)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Path)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ParentId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ParentId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ordinal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ordinal)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsCms)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsCms)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsParent)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsParent)
+        </dd>
+    </dl>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" value=@Resources.Resources.Delete class="btn btn-primary" /> |
+            @Html.ActionLink(Resources.Resources.BackToList, "Index", new { id = Model.MenuId, selectedLanguageId = Model.LanguageId })
+        </div>
+    }
+</div>

@@ -1,0 +1,31 @@
+﻿@model cutecms_porto.Areas.CMS.Models.DBModel.ContentGallery
+@{
+    ViewBag.MainTitle = Resources.Resources.Gallery;
+    ViewBag.Title = Resources.Resources.Details;
+}
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ContentId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Content.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Gallery.Code)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Gallery.Code)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ordinal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ordinal)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(Resources.Resources.Edit, "Edit", new { id = Model.Id }) |
+    @Html.ActionLink(Resources.Resources.BackToList, "Index", new { id = Model.ContentId })
+</p>

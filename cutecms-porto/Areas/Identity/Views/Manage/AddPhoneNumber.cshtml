@@ -1,0 +1,30 @@
+﻿@model cutecms_porto.Areas.Identity.Models.AddPhoneNumberViewModel
+@{
+    ViewBag.Title = Resources.Resources.AddPhoneNumber;
+    ViewBag.MainTitle = Resources.Resources.AddPhoneNumber;
+    ViewBag.SubTitle = Resources.Resources.PhoneNumberOption;
+    ViewBag.IconTitle = "fa fa-mobile";
+    Layout = "~/Areas/Identity/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("AddPhoneNumber", "Manage", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Number, new { @class = "form-control", @placeholder = @Resources.Resources.PhoneNumber + "..." })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            <input type="submit" value='@Resources.Resources.Save' class="btn btn-primary"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+        </div>
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,80 @@
+﻿@model cutecms_porto.Areas.RMS.Models.DBModel.Submission
+@using System.Threading
+@{
+    ViewBag.MainTitle = Resources.Resources.Submission;
+    ViewBag.Title = Resources.Resources.Details;
+}
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Applicant.FullName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Applicant.FullName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Applicant.GenderId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Applicant.Gender.GenderTerms.Where(g => g.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && g.GenderId == Model.Applicant.GenderId).FirstOrDefault().Value)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Applicant.DOB)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Applicant.DOB)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Applicant.Mobile)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Applicant.Mobile)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Applicant.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Applicant.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CoverLetter)
+        </dt>
+        <dd>
+            @Html.Raw(HttpUtility.HtmlDecode(Model.CoverLetter))
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SubmissionDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SubmissionDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Applicant.ResumeFilePath)
+        </dt>
+        <dd>
+            @Html.ActionLink(Resources.Resources.Download, "Download", new { FilePath = Model.Applicant.ResumeFilePath, FileName = Model.Applicant.ResumeFileName })
+        </dd>
+        <dd>
+            <br />
+        </dd>
+        <dt>
+            @Resources.Resources.Attachments
+        </dt>
+        <dd>
+            @foreach (var item in Model.Applicant.Attachments)
+            {
+                @Html.ActionLink(Resources.Resources.Download, "Download", new { FilePath = item.FilePath, FileName = @item.FileName })
+                <br />
+            }
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(Resources.Resources.BackToList, "Index")
+</p>

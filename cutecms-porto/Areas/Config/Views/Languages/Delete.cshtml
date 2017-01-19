@@ -1,0 +1,53 @@
+﻿@model cutecms_porto.Areas.Config.Models.DBModel.ConfigLanguage
+@{
+    ViewBag.MainTitle = Resources.Resources.Language;
+    ViewBag.Title = Resources.Resources.Delete;
+}
+<h3>@Resources.Resources.DeleteConfirmation</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CultureName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CultureName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FlagCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FlagCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsEnabled)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsEnabled)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDefault)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsDefault)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ordinal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ordinal)
+        </dd>
+    </dl>
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" value=@Resources.Resources.Delete class="btn btn-default" /> |
+            @Html.ActionLink(Resources.Resources.BackToList, "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,99 @@
+﻿@model cutecms_porto.Areas.Identity.Models.DBModel.Employee
+
+<!-- PERSONAL PHOTO TAB -->
+@using (Html.BeginForm("Manage", "MyProfile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    if (Model != null)
+    {
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.LoginId)
+
+        @Html.HiddenFor(model => model.LanguageId)
+        @Html.HiddenFor(model => model.PersonalTitleId)
+        @Html.HiddenFor(model => model.FirstName)
+        @Html.HiddenFor(model => model.MiddleName)
+        @Html.HiddenFor(model => model.LastName)
+
+        @Html.HiddenFor(model => model.PersonalPhotoPath)
+        @Html.HiddenFor(model => model.PersonalPhotoName)
+
+        @Html.HiddenFor(model => model.RankId)
+        @Html.HiddenFor(model => model.DegreeId)
+        @Html.HiddenFor(model => model.ProgramId)
+
+        @Html.HiddenFor(model => model.Biography)
+        @Html.HiddenFor(model => model.ResumeFilePath)
+        @Html.HiddenFor(model => model.ResumeFileName)
+
+        @Html.HiddenFor(model => model.OfficeNumber)
+        @Html.HiddenFor(model => model.Mobile)
+        @Html.HiddenFor(model => model.LandLine)
+        @Html.HiddenFor(model => model.Extension)
+        @Html.HiddenFor(model => model.FacebookUrl)
+        @Html.HiddenFor(model => model.TwitterUrl)
+        @Html.HiddenFor(model => model.YouTubeUrl)
+        @Html.HiddenFor(model => model.GooglePlusUrl)
+        @Html.HiddenFor(model => model.LinkedInUrl)
+
+        @Html.HiddenFor(model => model.TranslationId)
+    }
+    <form role="form" action="#" method="post">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-3 col-sm-4">
+                    <div class="thumbnail">
+                        @if (Model != null)
+                        {
+                            <img class="img-responsive" alt="" src="@Model.PersonalPhotoPath">
+                        }
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-8">
+                    <div class="sky-form nomargin">
+
+                        <label class="input input-file" for="image">
+                            <div class="button">
+                                @Html.TextBoxFor(model => model.Image, new { @class = "form-control", type = "file", multiple = "false", placeholder = "upload files", onchange = "this.parentNode.nextSibling.value = this.value" })
+                                @Resources.Resources.Browse
+                            </div><input id="imagePath" type="text" readonly="">
+                            @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                        </label>
+                    </div>
+                    <a id="removeImagePathBtn" class="btn btn-danger btn-xs noradius" href="#"><i class="fa fa-times"></i>@Resources.Resources.Remove</a>
+                    <div class="clearfix margin-top-20">
+                        <span class="label label-warning">@Resources.Resources.Note! </span>
+                        <p class="margin-top-10">
+                            <small>
+                                @Resources.Resources.ImageNotes
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="margiv-top10">
+            <button type="submit" name="submit" value="PersonalPhoto" class="btn btn-primary">@Resources.Resources.Save</button>
+            @if (Model != null)
+            {
+                @Html.ActionLink(Resources.Resources.Delete, "Delete", new { id = Model.Id }, new { @class = "btn btn-danger" })
+            }
+        </div>
+        <div class="form-group">
+            <br />
+            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+        </div>
+    </form>
+}
+<script type="text/javascript">
+    $(function () {
+        $("#removeImagePathBtn").click(function (event) {
+            event.preventDefault();
+            //alert("clicked");
+            $("#imagePath").val(null);
+            $("#Image").val(null);
+        }
+        );
+    });
+    $("#Image").replaceWith($("#Image").val('').clone(true));
+</script>

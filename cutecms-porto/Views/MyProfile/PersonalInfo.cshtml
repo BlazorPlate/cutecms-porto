@@ -1,0 +1,81 @@
+﻿@model cutecms_porto.Areas.Identity.Models.DBModel.Employee
+
+<!-- PERSONAL INFO TAB -->
+@using (Html.BeginForm("Manage", "MyProfile", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    if (Model != null)
+    {
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.LoginId)
+
+        if (Model != null)
+        {
+            @Html.HiddenFor(model => model.Id)
+            @Html.HiddenFor(model => model.LoginId)
+
+            @Html.HiddenFor(model => model.RankId)
+            @Html.HiddenFor(model => model.DegreeId)
+            @Html.HiddenFor(model => model.ProgramId)
+
+            @Html.HiddenFor(model => model.PersonalPhotoPath)
+            @Html.HiddenFor(model => model.PersonalPhotoName)
+
+            @Html.HiddenFor(model => model.Biography)
+            @Html.HiddenFor(model => model.ResumeFilePath)
+            @Html.HiddenFor(model => model.ResumeFileName)
+
+            @Html.HiddenFor(model => model.OfficeNumber)
+            @Html.HiddenFor(model => model.Mobile)
+            @Html.HiddenFor(model => model.LandLine)
+            @Html.HiddenFor(model => model.Extension)
+            @Html.HiddenFor(model => model.FacebookUrl)
+            @Html.HiddenFor(model => model.TwitterUrl)
+            @Html.HiddenFor(model => model.YouTubeUrl)
+            @Html.HiddenFor(model => model.GooglePlusUrl)
+            @Html.HiddenFor(model => model.LinkedInUrl)
+
+            @Html.HiddenFor(model => model.TranslationId)
+        }
+    }
+
+    <form role="form" action="#" method="post">
+        <div class="form-group">
+            @Html.LabelFor(model => model.LanguageId, new { @class = "control-label col-md-2" })
+            @Html.DropDownList("LanguageId", null, Resources.Resources.ChooseLanguage, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.LanguageId, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.PersonalTitleId)
+            @Html.DropDownList("PersonalTitleId", null, string.Empty, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.PersonalTitleId, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstName)
+            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.MiddleName)
+            @Html.EditorFor(model => model.MiddleName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MiddleName, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.LastName)
+            @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+        </div>
+        <div class="margiv-top10">
+            <button type="submit" name="submit" value="PersonalInfo" class="btn btn-primary">@Resources.Resources.Save</button>
+            @if (Model != null)
+            {
+                @Html.ActionLink(Resources.Resources.Delete, "Delete", new { id = Model.Id }, new { @class = "btn btn-danger" })
+            }
+        </div>
+        <div class="form-group">
+            <br />
+            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+        </div>
+    </form>
+}

@@ -1,0 +1,61 @@
+﻿@model cutecms_porto.Areas.Identity.Models.DBModel.Employee
+@using cutecms_porto.Areas.Identity.Models;
+@{
+    ViewBag.Title = @Resources.Resources.Profile;
+    ApplicationDbContext dbIdentity = new ApplicationDbContext();
+}
+@section PageHeader
+{
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>@ViewBag.Title</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+<section>
+    <div class="container">
+        <!-- RIGHT -->
+        <div class="col-lg-9 col-md-9 col-sm-8 col-lg-push-3 col-md-push-3 col-sm-push-4 margin-bottom-80">
+            <ul class="nav nav-tabs nav-top-border">
+                <li class="active" id="AcademicInfo"><a href="#academic-info" data-toggle="tab">@Resources.Resources.AcademicInfo </a></li>
+                <li id="Biography"><a href="#biography" data-toggle="tab">@Resources.Resources.Biography</a></li>
+                <li id="ContactInfo"><a href="#contact-info" data-toggle="tab">@Resources.Resources.ContactInfo</a></li>
+                <li id="Departments"><a href="#departments" data-toggle="tab">@Resources.Resources.Departments</a></li>
+                <li id="Publications"><a href="#publications" data-toggle="tab">@Resources.Resources.Publications</a></li>
+                  </ul>
+            <div class="tab-content margin-top-20">
+                <!-- AcademicInfo TAB -->
+                <div class="tab-pane active fade in" id="academic-info">
+                    @Html.Partial("AcademicInfo", Model)
+                </div>
+                <!-- /AcademicInfo TAB -->
+                <!-- Biography TAB -->
+                <div class="tab-pane fade" id="biography">
+                    @Html.Partial("Biography", Model)
+                </div>
+                <!-- /Biography TAB -->
+                <!-- ContactInfo TAB -->
+                <div class="tab-pane fade" id="contact-info">
+                    @Html.Partial("ContactInfo", Model)
+                </div>
+                <!-- /ContactInfo TAB -->
+                <!-- Departments TAB -->
+                <div class="tab-pane fade" id="departments">
+                    @Html.Partial("Departments", Model)
+                </div>
+                <!-- /Departments TAB -->
+                <!-- Publications TAB -->
+                <div class="tab-pane fade" id="publications">
+                    @Html.Partial("Publications", Model)
+                </div>
+                <!-- /Publications TAB -->
+            </div>
+        </div>
+        <!-- LEFT -->
+        @Html.Partial("_Profile")
+    </div>
+</section>

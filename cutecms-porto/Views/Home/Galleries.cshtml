@@ -1,0 +1,62 @@
+﻿@model IEnumerable<cutecms_porto.Areas.CMS.Models.DBModel.Gallery>
+@using PagedList.Mvc;
+@using PagedList;
+@using System.Threading;
+@{
+    ViewBag.Title = @Resources.Resources.PhotoGallery;
+}
+@section PageHeader
+{
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>@ViewBag.Title</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+<section>
+    <div class="container">
+        <div class="portfolio-gutter pajinate" id="portfolio" data-pajinate-container=".pajinate-container" data-pajinante-items-per-page="8">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-3 col-sm-6" style="display: block">
+                        <!-- item -->
+                        <div class="item-box">
+                            <figure>
+                                <!-- carousel -->
+                                <div class="flexslider">
+                                    <ul class="slides" style="width: 1000%; transform: translate3d(-789px, 0px, 0px); transition-duration: 0.6s;">
+                                        @foreach (var image in item.ImageFiles.Take(10))
+                                        {
+                                            <!-- Slide 1 -->
+                                            string description = (image.ImageFileTerms.Where(i => i.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && i.ImageFileId == item.Id).FirstOrDefault() != null) ? image.ImageFileTerms.Where(i => i.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && i.ImageFileId == item.Id).FirstOrDefault().Description : image.Code;
+                                            <li style="width: 263px; display: block; float: left;">
+                                                <a href="@Url.Action( "ImageFiles", "Home", new { id = item.Id, returnUrl = Request.Url.AbsoluteUri, area = "" }, null)">
+                                                    <img width="600" height="399" class="img-responsive" draggable="false" alt="@description" src="@image.FilePath">
+                                                </a>
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                                <!-- /carousel -->
+                                <div>
+                                    @{
+                                        string gallery = item.GalleryTerms.Where(g => g.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && g.GalleryId == item.Id).FirstOrDefault()?.Value;
+                                        string galleryDescription = item.GalleryTerms.Where(g => g.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && g.GalleryId == item.Id).FirstOrDefault()?.Description;
+                                    }
+                                    <h3 class="margin-bottom-3">@Html.ActionLink(gallery ?? Resources.Resources.View, "ImageFiles", new { id = item.Id, returnUrl = Request.Url.AbsoluteUri, area = "" })</h3>
+                                    <p class="margin-top-0">@galleryDescription</p>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                                        }
+            </div>
+        </div>
+    </div>
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Galleries", new { page }))
+</section>

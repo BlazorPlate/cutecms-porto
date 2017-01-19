@@ -1,0 +1,306 @@
+﻿@model cutecms_porto.Areas.RMS.Models.EditVacancyWithDRViewModel
+@using cutecms_porto.Helpers
+@{
+    ViewBag.MainTitle = Resources.Resources.Vacancy;
+    ViewBag.Title = Resources.Resources.Edit;
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.LanguageId)
+        @Html.HiddenFor(model => model.IsTranslated)
+        @Html.HiddenFor(model => model.TranslationId)
+        @Html.HiddenFor(model => model.Author)
+        @Html.HiddenFor(model => model.CreatedOn)
+        <div class="form-group">
+            @Html.LabelFor(model => model.LanguageId, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBox("LanguageId", null, new { @class = "form-control", @disabled = "disabled" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Code, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Code, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Available, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Available, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Available, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Description, new { @class = "mceEditor" })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Requirements, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Requirements, new { @class = "mceEditor" })
+                @Html.ValidationMessageFor(model => model.Requirements, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Skills, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Skills, new { @class = "mceEditor" })
+                @Html.ValidationMessageFor(model => model.Skills, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Documents, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Documents, new { @class = "mceEditor" })
+                @Html.ValidationMessageFor(model => model.Documents, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DeptId, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("DeptId", null, string.Empty, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DeptId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.JobTypeId, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("JobTypeId", null, string.Empty, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.JobTypeId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Degrees, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Degrees, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Degrees, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProgramId, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ProgramId", null, string.Empty, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ProgramId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Ranks, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Ranks, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Ranks, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Notes, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Notes, new { @class = "mceEditor" })
+                @Html.ValidationMessageFor(model => model.Notes, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.RoleVID, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("RoleVID", null, Resources.Resources.ChooseRole, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.RoleVID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.StatusId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("StatusId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.StatusId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" id="PublishedOnDiv">
+            @Html.LabelFor(model => model.PublishedOn, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PublishedOn, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PublishedOn, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" id="ExpiredOnDiv">
+            @Html.LabelFor(model => model.ExpiredOn, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ExpiredOn, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ExpiredOn, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Author, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBox("Author", null, htmlAttributes: new { @class = "form-control", @disabled = "disabled" })
+                @Html.HiddenFor(model => model.Author)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ModifiedBy, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBox("ModifiedBy", null, htmlAttributes: new { @class = "form-control", @disabled = "disabled" })
+                @Html.HiddenFor(model => model.ModifiedBy)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.CreatedOn, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.CreatedOn, null, htmlAttributes: new { @class = "form-control", @disabled = "disabled" })
+                @Html.HiddenFor(model => model.CreatedOn)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ModifiedOn, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.ModifiedOn, null, htmlAttributes: new { @class = "form-control", @disabled = "disabled" })
+                @Html.HiddenFor(model => model.ModifiedOn)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.PublishedOn, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.PublishedOn, null, htmlAttributes: new { @class = "form-control", @disabled = "disabled" })
+                @Html.HiddenFor(model => model.PublishedOn)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ExpiredOn, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.ExpiredOn, null, htmlAttributes: new { @class = "form-control", @disabled = "disabled" })
+                @Html.HiddenFor(model => model.ExpiredOn)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value=@Resources.Resources.Save class="btn btn-primary" />
+                @if (!Model.IsTranslated)
+                {
+                    @Html.ActionLink(Resources.Resources.AddTranslation, "Create", new { id = Model.TranslationId }, new { @class = "btn btn-info" })
+                }
+                else
+                {
+                    @Html.ActionLink(Resources.Resources.ViewTranslation, "Edit", new { id = Model.Id, translationId = Model.TranslationId, lang = Model.LanguageId }, new { @class = "btn btn-info" })
+                }
+                @Html.ActionLink(Resources.Resources.Delete, "Delete", new { id = Model.Id }, new { @class = "btn btn-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+        </div>
+    </div>
+}
+<div>
+    @Html.ActionLink(Resources.Resources.BackToList, "Index")
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        $('#PublishedOn').removeAttr("data-val-date");
+        $('#ExpiredOn').removeAttr("data-val-date");
+        $('#StartDate').removeAttr("data-val-date");
+        $('#EndDate').removeAttr("data-val-date");
+    </script>
+    @if (CultureHelper.IsRighToLeft())
+    {
+        <script type="text/javascript">
+            $('#PublishedOn').datetimepicker({
+                showClose: true,
+                showClear: true,
+                showTodayButton: true,
+                useCurrent: true,
+                format: "DD/MM/YYYY LT",
+                widgetPositioning: {
+                    horizontal: 'right'
+                }
+            });
+            $('#ExpiredOn').datetimepicker({
+                showClose: true,
+                showClear: true,
+                showTodayButton: true,
+                useCurrent: false,
+                format: "DD/MM/YYYY LT",
+                widgetPositioning: {
+                    horizontal: 'right'
+                }
+            });
+            $("#PublishedOn").on("dp.change", function (e) {
+                $('#ExpiredOn').data("DateTimePicker").minDate(e.date);
+            });
+            $("#ExpiredOn").on("dp.change", function (e) {
+                $('#PublishedOn').data("DateTimePicker").maxDate(e.date);
+            });
+        </script>
+    }
+    else
+    {
+        <script type="text/javascript">
+            $('#PublishedOn').datetimepicker({
+                showClose: true,
+                showClear: true,
+                showTodayButton: true,
+                useCurrent: true
+            });
+            $('#ExpiredOn').datetimepicker({
+                showClose: true,
+                showClear: true,
+                showTodayButton: true,
+                useCurrent: false
+            });
+            $("#PublishedOn").on("dp.change", function (e) {
+                $('#ExpiredOn').data("DateTimePicker").minDate(e.date);
+            });
+            $("#ExpiredOn").on("dp.change", function (e) {
+                $('#PublishedOn').data("DateTimePicker").maxDate(e.date);
+            });
+        </script>
+    }
+    <script type="text/javascript">
+        $("#ExpiredOnDiv").hide();
+        $("#PublishedOnDiv").hide();
+        var selectedValue = $("#StatusId").val();
+        if (selectedValue == 1) {
+            $("#ExpiredOnDiv").fadeIn();
+        }
+        if (selectedValue == 3) {
+            $("#PublishedOnDiv").fadeIn();
+            $("#ExpiredOnDiv").fadeIn();
+        }
+        $(function () {
+            $("#StatusId").change(function () {
+                var selectedText = $(this).find("option:selected").text();
+                var selectedValue = $(this).val();
+                if (selectedValue == 1) {
+                    $("#PublishedOnDiv").fadeOut();
+                    $("#ExpiredOnDiv").fadeIn();
+                    $("#PublishedOn").val(null);
+                }
+                if (selectedValue == 2) {
+                    $("#ExpiredOnDiv").fadeOut();
+                    $("#PublishedOnDiv").fadeOut();
+                    $("#PublishedOn").val(null);
+                    $("#ExpiredOn").val(null);
+                }
+                if (selectedValue == 3) {
+                    $("#ExpiredOnDiv").fadeIn();
+                    $("#PublishedOnDiv").fadeIn();
+                    $("#PublishedOn").val(null);
+                    $("#ExpiredOn").val(null);
+                }
+                //alert("Selected Text: " + selectedText + " Value: " + selectedValue);
+            });
+        });
+    </script>
+}

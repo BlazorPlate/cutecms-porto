@@ -1,0 +1,82 @@
+﻿@model IEnumerable<cutecms_porto.Areas.CMS.Models.DBModel.Content>
+@using cutecms_porto.Areas.CMS.Models.DBModel
+@using System.Threading
+@{
+    ViewBag.Title = Resources.Resources.Calendar;
+    string langFile = CultureHelper.GetCurrentNeutralCulture();
+    CMSEntities db = new CMSEntities();
+}
+@section PageHeader
+{
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>@ViewBag.Title</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+<section class="justify">
+    <div class="container">
+        <div class="row">
+            <div id='calendar' class="col-lg-8">
+                <script type="text/javascript">
+                    function GetCurrentDate() {
+                        var date = new Date();
+                        var yyyy = date.getFullYear().toString();
+                        var mm = (date.getMonth() + 1).toString();
+                        var dd = date.getDate().toString();
+                        return yyyy + '-' + (mm[1] ? mm : "0" + mm[0]) + '-' + (dd[1] ? dd : "0" + dd[0]);
+                    }
+                    $(document).ready(function () {
+                        $('#calendar').fullCalendar({
+                            locale: '@langFile',
+                            header: {
+                                left: 'prev,next today',
+                                center: 'title',
+                                right: 'month,agendaWeek,agendaDay'
+                            },
+                            defaultDate: GetCurrentDate(),
+                            events: "@Url.Action("ListEvents")",
+                            droppable: false,
+                            editable: false,
+                            eventRender: function (event, element) {
+                                element.attr('Title', event.title);
+                                if (event.location != null) {
+                                    element.find('.fc-title').append("<hr>" + event.location);
+                                }
+                            },
+                            eventClick: function (calEvent, jsEvent, view) {
+                                window.location = "/" + "@Thread.CurrentThread.CurrentCulture.Name" + "/home/contents?contentTypeIdFilter=" + "@db.ContentTypes.Where(c=>c.Code.Trim().Equals("event")).FirstOrDefault().Id";
+                            }
+                        });
+                    });
+                </script>
+            </div>
+            <div class="col-lg-4">
+                <h2>@Resources.Resources.UpcomingEvents</h2>
+                @if (Model.Count() > 0)
+            {
+                foreach (var item in Model)
+                {
+                        <div>
+                            <a href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@item.Title</a><br />
+                            @if (item.StartDate != null)
+                            {
+                                <small class="text-danger text-small">@Resources.Resources.From @item.StartDate.Value.ToString("dddd, d MMMM, yyyy | h:mm tt") @(item.EndDate == null ? "" : @Resources.Resources.Till + " " + item.EndDate.Value.ToString("dddd, d MMMM, yyyy | h:mm tt")) @(item.Location == null ? "" : "@ " + item.Location)</small>
+                            }
+                        </div>
+                        <small>@item.MainContent.StripHtml().Chop(155)<br /><a class="btn btn-reveal btn-info btn-xs" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })"><i class="fa fa-plus"></i><span>@Resources.Resources.ReadMore</span></a></small>
+                        <hr />
+                    }
+                }
+                else
+                {
+                    <p>@Resources.Resources.NoUpcomingEvents</p>
+                }
+            </div>
+        </div>
+    </div>
+</section>

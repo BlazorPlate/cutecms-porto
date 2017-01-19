@@ -1,0 +1,32 @@
+﻿@using System.Threading;
+@using cutecms_porto.Areas.CMS.Models.DBModel
+@model cutecms_porto.Areas.CMS.Models.DBModel.ImageTag
+@{
+    ViewBag.MainTitle = Resources.Resources.ImageTag;
+    ViewBag.Title = Resources.Resources.Delete;
+}
+<h3>@Resources.Resources.DeleteConfirmation</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tag.Code)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tag.Code)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageFileId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ImageFileId)
+        </dd>
+    </dl>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" value=@Resources.Resources.Delete class="btn btn-primary" /> |
+            @Html.ActionLink(Resources.Resources.BackToList, "Index")
+        </div>
+    }
+</div>

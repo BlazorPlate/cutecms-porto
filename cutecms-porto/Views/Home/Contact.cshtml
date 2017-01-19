@@ -1,0 +1,132 @@
+﻿@model cutecms_porto.Areas.Config.Models.DBModel.Organization
+@using System.Threading
+@{
+    ViewBag.Title = Resources.Resources.ContactUs;
+}
+@section PageHeader
+{
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>@ViewBag.Title</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+<section>
+    <div class="container">
+        <div>
+            <h2>@Model.Name</h2>
+            <table>
+                <tr>
+                    <td>
+                        <i class="fa fa-map-marker"></i>
+                    </td>
+                    <td>
+                        @Model.Street, @Model.City @Model.PostalCode @Model.District, @Model.POBox @Model.Country
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fa fa-phone"></i>
+                    </td>
+                    <td>
+                        @Model.Telephone_1
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fa fa-fax"></i>
+                    </td>
+                    <td>
+                        @Model.Fax
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fa fa-envelope"></i>
+                    </td>
+                    <td>
+                        <a href="mailto:@Model.Email">@Model.Email</a>
+                    </td>
+                </tr>
+            </table>
+            @foreach (var item in Model.Contacts)
+            {
+                <h3>
+                    @item.Department.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && d.DepartmentId == item.DepartmentId).FirstOrDefault().Value
+                </h3>
+                <table>
+                    <tr>
+                        <td>
+                            <i class="fa fa-user"></i>
+                        </td>
+                        <td>
+                            <span>
+                                @string.Format(item.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.PersonalTitleId == item.PersonalTitleId).FirstOrDefault().Value + " " + "{0}", @item.Name), @item.Position
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fa fa-envelope"></i>
+                        </td>
+                        <td>
+                            <a href="mailto:@item.Email">@item.Email</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fa fa-building"></i>
+                        </td>
+                        <td>
+                            @item.Office
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fa fa-phone"></i>
+                        </td>
+                        <td>
+                            @foreach (var phoneNumber in item.PhoneNumbers)
+                            {
+                                <span>@phoneNumber.Number, @Resources.Resources.Extension: @phoneNumber.Extension</span>
+                            }
+                        </td>
+                    </tr>
+                </table>
+            }
+        </div>
+        <div>
+            <h2>@Resources.Resources.OurLocationOnMap</h2>
+            <div id="map_canvas" style="width: 100%; height: 480px">
+            </div>
+            <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        </div>
+    </div>
+</section>
+@section Scripts{
+<script type="text/javascript">
+    $(document).ready(function () {
+        initialize();
+    });
+    function initialize() {
+        var mapOptions = {
+            center: new google.maps.LatLng(@Model.Longitude,@Model.Latitude),
+            zoom: 17,
+            mapTypeId: google.maps.MapTypeId.HYBRID
+        };
+        var map = new google.maps.Map(document.getElementById("map_canvas"),
+          mapOptions);
+        // create a marker
+        var latlng = new google.maps.LatLng(@Model.Longitude,@Model.Latitude);;
+        var marker = new google.maps.Marker({
+            position: latlng,
+            map: map,
+            title: '@Model.Name'
+        });
+    }
+</script>
+}

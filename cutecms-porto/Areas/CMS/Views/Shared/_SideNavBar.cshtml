@@ -1,0 +1,40 @@
+﻿@using cutecms_porto.Areas.CMS.Models.DBModel
+@using cutecms_porto.Helpers
+@using System.Threading;
+@{
+    int count = 0;
+    CMSEntities db = new CMSEntities();
+    List<MenuItem> menuItems = db.MenuItems.Where(mi => mi.Menu.TenantId.Trim().Equals(Tenant.TenantId) && mi.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && mi.Menu.Code.Equals("side-navbar") && mi.Status.Code.Equals("published")).OrderBy(mi => mi.Ordinal).ToList();
+    count = menuItems.Count();
+}
+<li>
+    @if (menuItems != null && count > 0)
+    {
+        @GetTreeView(menuItems.ToList(), null)
+    }
+    @helper GetTreeView(List<MenuItem> menuItems, int? parentID)
+    {
+foreach (var item in menuItems.Where(mi => mi.ParentId.Equals(parentID)))
+{
+    var submenu = menuItems.Where(s => s.ParentId.Equals(item.Id)).Count();
+    <li>
+        @if (item.IsParent)
+        {
+            <a href="#" class="waves-effect"><i class="ti-folder"></i> <span class="hide-menu">@item.Name<span class="fa arrow"></span></span></a>
+        }
+        else
+        {
+            <a href="@item.Path">
+                <i class="@item.CssClass"></i> @item.Name
+            </a>
+        }
+        @if (submenu > 0)
+        {
+            <ul class="nav @(cutecms_porto.Helpers.TreeHelper.Depth(item) == 0 ? "nav-second-level":"nav-third-level")">
+                @GetTreeView(menuItems, item.Id)
+            </ul>
+        }
+    </li>
+}
+}
+    </li>

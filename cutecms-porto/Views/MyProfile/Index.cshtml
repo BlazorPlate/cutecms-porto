@@ -1,0 +1,107 @@
+﻿@model cutecms_porto.Areas.Identity.Models.DBModel.Employee
+@using System.Threading;
+@{
+    ViewBag.Title = Resources.Resources.MyProfile;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section PageHeader
+{
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>@ViewBag.Title</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+<section>
+    <div class="container">
+        <!-- RIGHT -->
+        <div class="col-lg-9 col-md-9 col-sm-8 col-lg-push-3 col-md-push-3 col-sm-push-4 margin-bottom-80">
+            <ul id="tabbed-list" class="nav nav-tabs nav-top-border">
+                <li class="@ViewBag.ActivePersonalInfo"><a aria-expanded="@ViewBag.AriaExpandedPersonalInfo" href="#personal-info" data-toggle="tab">@Resources.Resources.PersonalInfo</a></li>
+                <li id="PersonalPhoto" class="@ViewBag.ActivePersonalPhoto"><a aria-expanded="@ViewBag.AriaExpandedPersonalPhoto" href="#personal-photo" data-toggle="tab">@Resources.Resources.PersonalPhoto</a></li>
+                <li id="AcademicInfo" class="@ViewBag.ActiveAcademicInfo"><a aria-expanded="@ViewBag.AcademicInfo" href="#academic-info" data-toggle="tab">@Resources.Resources.AcademicInfo</a></li>
+                <li id="Biography" class="@ViewBag.ActiveBiography"><a aria-expanded="@ViewBag.Biography" href="#biography" data-toggle="tab">@Resources.Resources.Biography</a></li>
+                <li id="ContactInfo" class="@ViewBag.ActiveContactInfo"><a aria-expanded="@ViewBag.ContactInfo" href="#contact-info" data-toggle="tab">@Resources.Resources.ContactInfo</a></li>
+            </ul>
+            <div class="tab-content margin-top-20">
+                <div class="tab-pane fade @ViewBag.ActiveInPersonalInfo" id="personal-info">
+                    @Html.Partial("PersonalInfo", Model)
+                </div>
+                <!-- /PERSONAL INFO TAB -->
+                <!-- PersonalPhoto TAB -->
+                <div class="tab-pane fade @ViewBag.ActiveInPersonalPhoto" id="personal-photo">
+                    @Html.Partial("PersonalPhoto", Model)
+                </div>
+                <!-- /PersonalPhoto TAB -->
+                <!-- AcademicInfo TAB -->
+                <div class="tab-pane fade @ViewBag.ActiveInAcademicInfo" id="academic-info">
+                    @Html.Partial("AcademicInfo", Model)
+                </div>
+                <!-- /AcademicInfo TAB -->
+                <!-- Biography TAB -->
+                <div class="tab-pane fade @ViewBag.ActiveInBiography" id="biography">
+                    @Html.Partial("Biography", Model)
+                </div>
+                <!-- /Biography TAB -->
+                <!-- ContactInfo TAB -->
+                <div class="tab-pane fade @ViewBag.ActiveInContactInfo" id="contact-info">
+                    @Html.Partial("ContactInfo", Model)
+                </div>
+                <!-- /ContactInfo TAB -->
+            </div>
+        </div>
+        <!-- LEFT -->
+        @Html.Partial("_MyProfile");
+    </div>
+</section>
+@if (ViewBag.StatusMessage == "Success")
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            toastr.options.positionClass = 'toast-top-center'
+            toastr.success('@Resources.Resources.Saved')
+        });
+    </script>
+}
+@if (ViewBag.StatusMessage == "Error")
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            toastr.options.positionClass = 'toast-top-center'
+            toastr.error('@Resources.Resources.Error')
+        });
+    </script>
+}
+@if (Model == null || Model.Id == 0)
+{
+    @*PREVENT CLICK EVENT ON TABS*@
+    @section Scripts{
+<script type="text/javascript">
+        $("#tabbed-list > li").addClass('disabled');
+        $("#PersonalPhoto").click(function (e) {
+            e.preventDefault();     // stop the default action if u need
+            e.stopPropagation();
+            alert('@Resources.Resources.FillOutPersonalInfo');
+        });
+        $("#AcademicInfo").click(function (e) {
+            e.preventDefault();     // stop the default action if u need
+            e.stopPropagation();
+            alert('@Resources.Resources.FillOutPersonalInfo');
+        });
+        $("#Biography").click(function (e) {
+            e.preventDefault();     // stop the default action if u need
+            e.stopPropagation();
+            alert('@Resources.Resources.FillOutPersonalInfo');
+        });
+        $("#ContactInfo").click(function (e) {
+            e.preventDefault();     // stop the default action if u need
+            e.stopPropagation();
+            alert('@Resources.Resources.FillOutPersonalInfo');
+        });
+</script>
+    }
+}

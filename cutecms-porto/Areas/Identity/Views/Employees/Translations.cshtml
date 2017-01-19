@@ -1,0 +1,77 @@
+﻿@model IEnumerable<cutecms_porto.Areas.Identity.Models.DBModel.Employee>
+@using cutecms_porto.Areas.Identity.Models;
+@{
+    ViewBag.MainTitle = Resources.Resources.Employees;
+    ViewBag.Title = @Resources.Resources.Translations;
+    ApplicationDbContext dbIdentity = new ApplicationDbContext();
+}
+<p>
+    @Html.ActionLink(Resources.Resources.AddTranslation, "Create", new { id = ViewBag.TranslationId, loginId = ViewBag.LoginId })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonalPhotoPath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LanguageId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoginId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ordinal)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            @if (item.PersonalPhotoPath != null)
+            {
+                <td>
+                    <img height="400" width="100" class="img-responsive" alt="" src="@item.PersonalPhotoPath">
+                </td>
+            }
+            else
+            {
+                <td>
+                    <span>@Resources.Resources.NoPersonalPhotoUploaded</span>
+                </td>
+            }
+            <td>
+                @Html.DisplayFor(modelItem => item.Language.Name)
+            </td>
+            @if (dbIdentity.Users.Find(item.LoginId) != null)
+            {
+                <td>
+                    @dbIdentity.Users.Find(item.LoginId).UserName
+                </td>
+            }
+            else
+            {
+                <td>
+                    <span>@Resources.Resources.NotAvailable</span>
+                </td>
+            }
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ordinal)
+            </td>
+            <td>
+                @Html.ActionLink(" ", "Index", "Publications", new { empId = item.Id }, new { @class = "fa fa-2x fa-book", @title = Resources.Resources.Publications })
+                @Html.ActionLink(" ", "Edit", new { id = item.Id }, new { @class = "fa fa-2x fa-pencil", @title = Resources.Resources.Edit })
+                @Html.ActionLink(" ", "Details", new { id = item.Id }, new { @class = "fa fa-2x fa-file-text", @title = Resources.Resources.Details })
+                @Html.ActionLink(" ", "Delete", new { id = item.Id }, new { @class = "fa fa-2x fa-times", @title = Resources.Resources.Delete })
+            </td>
+        </tr>
+    }
+</table>
+<div>
+    @Html.ActionLink(Resources.Resources.BackToList, "Index")
+</div>

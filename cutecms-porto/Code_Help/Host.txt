@@ -1,0 +1,29 @@
+#Main Domain Name:
+C:\WINDOWS\system32\drivers\etc
+------------------------
+	127.0.0.1    localhost
+	127.0.0.1    psut.com
+ 	::1          localhost
+
+
+#Sub Domain
+C:\Users\Home\Source\Repos\cutecms_porto\.vs\config
+--------------------------
+            <site name="cutecms_porto" id="1">
+                <application path="/" applicationPool="Clr4IntegratedAppPool">
+                    <virtualDirectory path="/" physicalPath="C:\Users\Home\Source\Repos\cutecms_porto\cutecms_porto" />
+                </application>
+                <bindings>
+                    <binding protocol="http" bindingInformation="*:44200:psut.com" />
+                  <binding protocol="http" bindingInformation="*:44200:demo.psut.com" />
+                    <binding protocol="https" bindingInformation="*:44300:psut.com" />
+                </bindings>
+            </site>
+
+#Visual Studio
+Project-->Properties-->Web
+Project URL http://psut.com:44200
+
+#LocalDb
+From VS Modify Db Server from (SQLExpress) to (LocalDB)
+Double click mdf -> right click db -> Modify connection -> Advance -> Source -> Change Datasource and change the connection string in web.config accordingly.

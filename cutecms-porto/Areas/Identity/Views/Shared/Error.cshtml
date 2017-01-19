@@ -1,0 +1,10 @@
+﻿@using System.Diagnostics
+@model System.Web.Mvc.HandleErrorInfo
+@{
+    ViewBag.Title = "Error";
+    var message = string.Format("Error in Controller ({0}), Action Method ({1}). Exception: {2}",
+        Model.ControllerName, Model.ActionName, Model.Exception.InnerException.InnerException.Message);
+    ViewBag.Error = message;
+}
+<h1 class="text-danger">Error.</h1>
+<h5 class="text-danger">@ViewBag.Error</h5>

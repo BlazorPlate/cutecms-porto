@@ -1,0 +1,44 @@
+﻿@model IEnumerable<cutecms_porto.Areas.CMS.Models.DBModel.ContentGallery>
+@{
+    ViewBag.MainTitle = Resources.Resources.Galleries;
+    ViewBag.Title = Resources.Resources.Index;
+}
+<p>
+    @Html.ActionLink(Resources.Resources.Create, "Create", new { id = ViewBag.ContentId })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Content.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gallery.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ordinal)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gallery.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ordinal)
+            </td>
+            <td>
+                @Html.ActionLink(Resources.Resources.Edit, "Edit", new { id = item.Id }) |
+                @Html.ActionLink(Resources.Resources.Details, "Details", new { id = item.Id }) |
+                @Html.ActionLink(Resources.Resources.Delete, "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>
+<p>
+    @Html.ActionLink(Resources.Resources.BackToList, "Index", "Contents")
+</p>

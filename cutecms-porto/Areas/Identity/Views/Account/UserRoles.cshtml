@@ -1,0 +1,51 @@
+﻿@using cutecms_porto.Helpers
+@model cutecms_porto.Areas.Identity.Models.SelectUserRolesViewModel
+@{
+    ViewBag.MainTitle = Resources.Resources.Roles;
+    ViewBag.Title = Resources.Resources.Index;
+}
+<h3>@Resources.Resources.UserRolesAssignment @Html.DisplayFor(model => model.UserName)</h3>
+<hr />
+@using (Html.BeginForm("UserRoles", "Account", FormMethod.Post, new { encType = "multipart/form-data", name = "myform" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.UserName)
+    <table>
+        @Html.EditorFor(model => model.Roles)
+    </table>
+    <br />
+    <div class="form-group">
+        <input type="submit" value=@Resources.Resources.Save class="btn btn-default" />
+    </div>
+}
+<table class="table">
+    @if (Model.Roles.Count() != 0)
+    {
+        <tr>
+            <th>
+                @Resources.Resources.Name
+            </th>
+            <th>
+                @Resources.Resources.Description
+            </th>
+            <th></th>
+        </tr>
+        foreach (var item in Model.Roles)
+        {
+            if (item.Selected)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RoleName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RoleDescription)
+                    </td>
+                </tr>
+            }
+        }
+    }
+</table>
+<div>
+    @Html.ActionLink(Resources.Resources.BackToList, "Index")
+</div>

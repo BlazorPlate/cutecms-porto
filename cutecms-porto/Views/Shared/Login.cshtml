@@ -1,5 +1,5 @@
 ﻿@model cutecms_porto.Areas.Identity.Models.LoginViewModel
-@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form", area = "Identity" }))
+@using (Html.BeginForm("Login", "Account", new { ReturnUrl = Request.Url.AbsoluteUri }, FormMethod.Post, new { @class = "form-horizontal", role = "form", area = "Identity" }))
 {
     @Html.AntiForgeryToken()
     <div class="row">

@@ -4616,6 +4616,8 @@
     <Content Include="assets\porto\vendor\simple-line-icons\package.json" />
     <Content Include="assets\porto\vendor\simple-line-icons\README.md" />
     <Content Include="assets\porto\vendor\simple-line-icons\scss\simple-line-icons.scss" />
+    <Content Include="assets\porto\vendor\validation\jquery.validate.js" />
+    <Content Include="assets\porto\vendor\validation\jquery.validate.unobtrusive.js" />
     <Content Include="assets\porto\vendor\vide\vide.js" />
     <Content Include="assets\porto\vendor\vide\vide.min.js" />
     <Content Include="Code_Help\CS.txt" />

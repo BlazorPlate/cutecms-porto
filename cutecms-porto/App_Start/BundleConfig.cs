@@ -12,8 +12,8 @@ namespace cutecms_porto
                         "~/assets/plugins/jquery/jquery-2.1.4.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/assets/plugins/validation/jquery.validate.js",
-                        "~/assets/plugins/validation/jquery.validate.unobtrusive.js"));
+                        "~/assets/porto/vendor/validation/jquery.validate.js",
+                        "~/assets/porto/vendor/validation/jquery.validate.unobtrusive.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/assets/plugins/bootstrap/js/bootstrap.js"));

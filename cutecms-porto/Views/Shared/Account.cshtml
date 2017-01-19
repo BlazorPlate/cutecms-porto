@@ -16,38 +16,14 @@
                             }
                             @{Html.RenderPartial("~/Views/Shared/Login.cshtml", login);}
                             <p class="sign-up-info">@Resources.Resources.RegisterNewUser <a href="#" id="headerSignUp" class="p-none m-none ml-xs">@Resources.Resources.Register</a></p>
-                          </div>
+                        </div>
                         <div class="signup-form">
-                            <span class="dropdown-mega-sub-title">Create Account</span>
-
-                            <form action="/" id="frmSignUp" method="post">
-                                <div class="row">
-                                    <div class="form-group">
-                                        <div class="col-md-12 p-none">
-                                            <label>E-mail Address</label>
-                                            <input type="text" value="" class="form-control input-lg">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group">
-                                        <div class="col-md-6 pl-none">
-                                            <label>Password</label>
-                                            <input type="password" value="" class="form-control input-lg">
-                                        </div>
-                                        <div class="col-md-6 pr-none">
-                                            <label>Re-enter Password</label>
-                                            <input type="password" value="" class="form-control input-lg">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 p-none">
-                                        <input type="submit" value="Create Account" class="btn btn-primary pull-right mb-xl" data-loading-text="Loading...">
-                                    </div>
-                                </div>
-                            </form>
-                            <p class="log-in-info">Already have an account? <a href="#" id="headerSignIn" class="p-none m-none ml-xs">Log In</a></p>
+                            <span class="dropdown-mega-sub-title">@Resources.Resources.RegisterNewUser</span>
+                            @{
+                                cutecms_porto.Areas.Identity.Models.RegisterViewModel register = new cutecms_porto.Areas.Identity.Models.RegisterViewModel();
+                            }
+                            @{Html.RenderPartial("~/Views/Shared/Register.cshtml", register);}
+                            <p class="log-in-info">@Resources.Resources.AlreadyMember <a href="#" id="headerSignIn" class="p-none m-none ml-xs">Log In</a></p>
                         </div>
                         <div class="recover-form">
                             <span class="dropdown-mega-sub-title">Reset My Password</span>
@@ -67,7 +43,7 @@
                                     </div>
                                 </div>
                             </form>
-                            <p class="log-in-info">Already have an account? <a href="#" id="headerRecoverCancel" class="p-none m-none ml-xs">Log In</a></p>
+                            <p class="log-in-info">@Resources.Resources.AlreadyMember <a href="#" id="headerRecoverCancel" class="p-none m-none ml-xs">Log In</a></p>
                         </div>
                     </div>
                 </div>

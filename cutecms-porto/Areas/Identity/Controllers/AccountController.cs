@@ -100,6 +100,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
 
         // GET: /Account/Login
         [AllowAnonymous]
+        [ChildActionOnly]
         public ActionResult Login(string returnUrl)
         {
             if (returnUrl != null && returnUrl.ToLowerInvariant().Contains("/logoff"))
@@ -108,7 +109,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 return RedirectToAction("Login"); // Redirect to your default account page
             }
             ViewBag.ReturnUrl = returnUrl;
-            return View();
+            return PartialView();
         }
 
         // POST: /Account/Login

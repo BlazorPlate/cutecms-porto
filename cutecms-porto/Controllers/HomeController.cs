@@ -87,7 +87,6 @@ namespace cutecms_porto.Controllers
                          };
             return Json(events.ToList(), JsonRequestBehavior.AllowGet);
         }
-        // GET: File
         public ActionResult Galleries(int? page)
         {
             var pageNumber = page ?? 1;
@@ -128,6 +127,10 @@ namespace cutecms_porto.Controllers
                 return Redirect("/" + Thread.CurrentThread.CurrentCulture.Name);
             }
             return Redirect(returnUrl);
+        }
+        public ActionResult ForgotPasswordConfirmation()
+        {
+            return View();
         }
         public static string ReplaceArabicNumerals(string input)
         {

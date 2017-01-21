@@ -1072,7 +1072,7 @@
     <value>الرجاء تفقد بريدك الالكتروني لإعادة ضبط كلمة المرور الخاصة بك.</value>
   </data>
   <data name="ForgotPasswordConfirmation" xml:space="preserve">
-    <value>تأكيد نسيان كلمة المرور</value>
+    <value>تأكيد إعادة ضبط كلمة المرور</value>
   </data>
   <data name="Please" xml:space="preserve">
     <value>يرجى</value>
@@ -1469,5 +1469,8 @@
   </data>
   <data name="Share" xml:space="preserve">
     <value>شارك هذه الصفحة</value>
+  </data>
+  <data name="ForgotPasswordInstructions" xml:space="preserve">
+    <value>أكمل النموذج أدناه لتلقي بريد إلكتروني يتصمن الرابط اللازم لإعادة تعيين كلمة المرور الخاصة بك.</value>
   </data>
 </root>

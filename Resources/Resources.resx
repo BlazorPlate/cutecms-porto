@@ -1470,4 +1470,7 @@
   <data name="Share" xml:space="preserve">
     <value>Share this page</value>
   </data>
+  <data name="ForgotPasswordInstructions" xml:space="preserve">
+    <value>Complete the form below to receive an email with the authorization code needed to reset your password.</value>
+  </data>
 </root>

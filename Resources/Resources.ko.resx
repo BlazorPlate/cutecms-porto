@@ -1470,4 +1470,7 @@
   <data name="Share" xml:space="preserve">
     <value>이 페이지 공유</value>
   </data>
+  <data name="ForgotPasswordInstructions" xml:space="preserve">
+    <value>암호를 다시 설정 하는 데 필요한 인증 코드와 함께 이메일을 받을 수 아래 양식을 작성.</value>
+  </data>
 </root>

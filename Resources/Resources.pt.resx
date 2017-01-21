@@ -1470,4 +1470,7 @@
   <data name="Share" xml:space="preserve">
     <value>Compartilhar esta página</value>
   </data>
+  <data name="ForgotPasswordInstructions" xml:space="preserve">
+    <value>Preencha o formulário abaixo para receber um email com o código de autorização necessário para redefinir sua senha.</value>
+  </data>
 </root>

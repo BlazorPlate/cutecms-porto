@@ -1470,4 +1470,7 @@
   <data name="Share" xml:space="preserve">
     <value>تقسیم این صفحه</value>
   </data>
+  <data name="ForgotPasswordInstructions" xml:space="preserve">
+    <value>تکمیل فرم زیر برای دریافت یک ایمیل با کد مجوز مورد نیاز برای تنظیم مجدد رمز عبور خود را.</value>
+  </data>
 </root>

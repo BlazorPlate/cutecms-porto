@@ -1470,4 +1470,7 @@
   <data name="Share" xml:space="preserve">
     <value>اس صفحہ کی حصہ داری</value>
   </data>
+  <data name="ForgotPasswordInstructions" xml:space="preserve">
+    <value>آپ کا پاس ورڈ پھر سیٹ کرنے کی ضرورت کا اجازت نامہ کوڈ کے ساتھ ایک ای میل وصول کرنے کے لیے ذیل فارم مکمل کریں ۔</value>
+  </data>
 </root>

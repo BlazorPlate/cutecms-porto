@@ -1470,4 +1470,7 @@
   <data name="Share" xml:space="preserve">
     <value>Chia sẻ trang này</value>
   </data>
+  <data name="ForgotPasswordInstructions" xml:space="preserve">
+    <value>Điền vào mẫu dưới đây để nhận được một email với mã uỷ quyền cần thiết để đặt lại mật khẩu của bạn.</value>
+  </data>
 </root>

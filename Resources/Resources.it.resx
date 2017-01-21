@@ -1470,4 +1470,7 @@
   <data name="Share" xml:space="preserve">
     <value>Condividi questa pagina</value>
   </data>
+  <data name="ForgotPasswordInstructions" xml:space="preserve">
+    <value>Compilare il modulo sottostante per ricevere una mail con il codice di autorizzazione necessario per reimpostare la password.</value>
+  </data>
 </root>

@@ -1470,4 +1470,7 @@
   <data name="Share" xml:space="preserve">
     <value>Koplietojiet šo lapu</value>
   </data>
+  <data name="ForgotPasswordInstructions" xml:space="preserve">
+    <value>Aizpildiet zemāk esošo formu, lai saņemtu e-pastu ar autorizācijas kods, kas nepieciešama paroles atiestatīšanai.</value>
+  </data>
 </root>

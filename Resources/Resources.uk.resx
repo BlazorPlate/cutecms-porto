@@ -1470,4 +1470,7 @@
   <data name="Share" xml:space="preserve">
     <value>Поділись сторінкою</value>
   </data>
+  <data name="ForgotPasswordInstructions" xml:space="preserve">
+    <value>Заповніть форму нижче, щоб отримати повідомлення з кодом авторизації, необхідні для відновлення пароля.</value>
+  </data>
 </root>

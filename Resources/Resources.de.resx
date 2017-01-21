@@ -1470,4 +1470,7 @@
   <data name="Share" xml:space="preserve">
     <value>Teilen Sie diese Seite</value>
   </data>
+  <data name="ForgotPasswordInstructions" xml:space="preserve">
+    <value>Füllen Sie das Formular unten, um eine Email mit den Authorisierungs-Code zum Zurücksetzen Ihres Kennworts erforderlich.</value>
+  </data>
 </root>

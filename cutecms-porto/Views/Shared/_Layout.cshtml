@@ -95,7 +95,6 @@
             }
         </style>
     }
-    @Scripts.Render("~/bundles/jquery") @*  <-- This is very necessary to render the JS files*@
     @RenderSection("Styles", false)
 </head>
 <body>
@@ -122,14 +121,18 @@
 
                             <div class="alert alert-danger hidden" id="newsletterError"></div>
 
-                            <form id="newsletterForm" action="php/newsletter-subscribe.php" method="POST">
+                            @*<form id="newsletterForm" action="php/newsletter-subscribe.php" method="POST">
                                 <div class="input-group">
                                     <input class="form-control" placeholder="Email Address" name="newsletterEmail" id="newsletterEmail" type="text">
                                     <span class="input-group-btn">
                                         <button class="btn btn-default" type="submit">Go!</button>
                                     </span>
                                 </div>
-                            </form>
+                            </form>*@
+                            @{
+                                cutecms_porto.Models.SubscriberViewModel subscriber = new cutecms_porto.Models.SubscriberViewModel();
+                            }
+                            @{Html.RenderPartial("~/Views/Shared/Subscribe.cshtml", subscriber);}
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -191,7 +194,11 @@
     <script src="~/assets/porto/vendor/jquery-cookie/jquery-cookie.min.js"></script>
     <script src="~/assets/porto/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="~/assets/porto/vendor/common/common.min.js"></script>
-    <script src="~/assets/porto/vendor/jquery.validation/jquery.validation.min.js"></script>
+    @*<script src="~/assets/porto/vendor/jquery.validation/jquery.validation.min.js"></script>*@
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.bootstrap.min.js"></script>
+
     <script src="~/assets/porto/vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
     <script src="~/assets/porto/vendor/jquery.gmap/jquery.gmap.min.js"></script>
     <script src="~/assets/porto/vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
@@ -226,7 +233,6 @@
         ga('send', 'pageview');
     </script>
      -->
-    @Scripts.Render("~/bundles/jqueryval")
     <script>
         $(document).ready(function () {
             $("table").addClass("table");

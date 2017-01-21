@@ -1470,4 +1470,7 @@
   <data name="Share" xml:space="preserve">
     <value>Dela sidan</value>
   </data>
+  <data name="ForgotPasswordInstructions" xml:space="preserve">
+    <value>Fyll i formuläret nedan för att få ett mail med den behörighetskod som behövs för att återställa ditt lösenord.</value>
+  </data>
 </root>

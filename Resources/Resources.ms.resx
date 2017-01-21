@@ -1470,4 +1470,7 @@
   <data name="Share" xml:space="preserve">
     <value>Kongsi Laman ini</value>
   </data>
+  <data name="ForgotPasswordInstructions" xml:space="preserve">
+    <value>Lengkapkan borang di bawah untuk menerima e-mel dengan kod kebenaran diperlukan untuk set semula kata laluan anda.</value>
+  </data>
 </root>

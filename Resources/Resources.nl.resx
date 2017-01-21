@@ -1470,4 +1470,7 @@
   <data name="Share" xml:space="preserve">
     <value>Deze pagina delen</value>
   </data>
+  <data name="ForgotPasswordInstructions" xml:space="preserve">
+    <value>Vul het formulier hieronder om een e-mail ontvangen met de authorisatiecode die nodig is om uw wachtwoord te resetten.</value>
+  </data>
 </root>

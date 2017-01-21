@@ -1,53 +1,50 @@
-﻿
-<li class="dropdown dropdown-mega dropdown-mega-signin signin pull-right" id="headerAccount">
-    <a class="dropdown-toggle" href="page-login.html">
-        <i class="fa fa-user"></i> Sign In
-        <i class="fa fa-caret-down"></i>
-    </a>
-    <ul class="dropdown-menu">
-        <li>
-            <div class="dropdown-mega-content">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="signin-form">
-                            <span class="dropdown-mega-sub-title">Sign In</span>
-                            @{
-                                cutecms_porto.Areas.Identity.Models.LoginViewModel login = new cutecms_porto.Areas.Identity.Models.LoginViewModel();
-                            }
-                            @{Html.RenderPartial("~/Views/Shared/Login.cshtml", login);}
-                            <p class="sign-up-info">@Resources.Resources.RegisterNewUser <a href="#" id="headerSignUp" class="p-none m-none ml-xs">@Resources.Resources.Register</a></p>
-                        </div>
-                        <div class="signup-form">
-                            <span class="dropdown-mega-sub-title">@Resources.Resources.RegisterNewUser</span>
-                            @{
-                                cutecms_porto.Areas.Identity.Models.RegisterViewModel register = new cutecms_porto.Areas.Identity.Models.RegisterViewModel();
-                            }
-                            @{Html.RenderPartial("~/Views/Shared/Register.cshtml", register);}
-                            <p class="log-in-info">@Resources.Resources.AlreadyMember <a href="#" id="headerSignIn" class="p-none m-none ml-xs">Log In</a></p>
-                        </div>
-                        <div class="recover-form">
-                            <span class="dropdown-mega-sub-title">Reset My Password</span>
-                            <p>Complete the form below to receive an email with the authorization code needed to reset your password.</p>
-                            <form action="/" id="frmResetPassword" method="post">
-                                <div class="row">
-                                    <div class="form-group">
-                                        <div class="col-md-12 p-none">
-                                            <label>E-mail Address</label>
-                                            <input type="text" value="" class="form-control input-lg">
+﻿@using cutecms_porto.Areas.Identity.Models
+    <li class="dropdown dropdown-mega dropdown-mega-signin signin pull-right" id="headerAccount">
+        <a class="dropdown-toggle" href="page-login.html">
+            <i class="fa fa-user"></i> @Resources.Resources.LogIn
+            <i class="fa fa-caret-down"></i>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+                <div class="dropdown-mega-content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="signin-form">
+                                @{Html.RenderPartial("~/Views/Shared/LoginAjax.cshtml", new LoginViewModel());}
+                                <p class="sign-up-info">@Resources.Resources.RegisterNewUser <a href="#" id="headerSignUp" class="p-none m-none ml-xs">@Resources.Resources.Register</a></p>
+                            </div>
+                            <div class="signup-form">
+                                @{Html.RenderPartial("~/Views/Shared/RegisterAjax.cshtml", new RegisterViewModel());}
+                                <p class="log-in-info">@Resources.Resources.AlreadyMember <a href="#" id="headerSignIn" class="p-none m-none ml-xs">@Resources.Resources.LogIn</a></p>
+                            </div>
+                            <div class="recover-form">
+                                <span class="dropdown-mega-sub-title">@Resources.Resources.ResetYourPassword</span>                            
+                                @{Html.RenderPartial("~/Views/Shared/ForgotPasswordAjax.cshtml", new ForgotPasswordViewModel());}
+                                <p class="log-in-info">@Resources.Resources.AlreadyMember <a href="#" id="headerRecoverCancel" class="p-none m-none ml-xs">@Resources.Resources.LogIn</a></p>
+                            </div>
+                            @*<div class="recover-form">
+                                <span class="dropdown-mega-sub-title">Reset My Password</span>
+                                <p>Complete the form below to receive an email with the authorization code needed to reset your password.</p>
+                                <form action="/" id="frmResetPassword" method="post">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-12 p-none">
+                                                <label>E-mail Address</label>
+                                                <input type="text" value="" class="form-control input-lg">
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 p-none">
-                                        <input type="submit" value="Submit" class="btn btn-primary pull-right mb-xl" data-loading-text="Loading...">
+                                    <div class="row">
+                                        <div class="col-md-12 p-none">
+                                            <input type="submit" value="Submit" class="btn btn-primary pull-right mb-xl" data-loading-text="Loading...">
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
-                            <p class="log-in-info">@Resources.Resources.AlreadyMember <a href="#" id="headerRecoverCancel" class="p-none m-none ml-xs">Log In</a></p>
+                                </form>
+                                <p class="log-in-info">@Resources.Resources.AlreadyMember <a href="#" id="headerRecoverCancel" class="p-none m-none ml-xs">@Resources.Resources.LogIn</a></p>
+                            </div>*@
                         </div>
                     </div>
                 </div>
-            </div>
-        </li>
-    </ul>
-</li>
+            </li>
+        </ul>
+    </li>

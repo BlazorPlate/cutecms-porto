@@ -1470,4 +1470,7 @@
   <data name="Share" xml:space="preserve">
     <value>Dijelite ovu stranicu</value>
   </data>
+  <data name="ForgotPasswordInstructions" xml:space="preserve">
+    <value>Ispunite obrazac ispod kako biste primiti elektronička pošta sa šifrom ovlaštenja potrebna za vraćanje izvorne lozinke.</value>
+  </data>
 </root>

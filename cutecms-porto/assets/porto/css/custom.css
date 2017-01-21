@@ -1,1 +1,18 @@
 /* Add here all your CSS customizations */
+@media (min-width: 992px) {
+    #header .header-nav-main nav > ul > li.dropdown .dropdown-menu li.dropdown-submenu > .dropdown-menu {
+        right: auto;
+    }
+
+    #header .header-nav-main nav > ul > li.dropdown:hover .dropdown-menu li.dropdown-submenu > .dropdown-menu {
+        right: 100%;
+    }
+}
+
+.no-list ul {
+    list-style-type: none;
+}
+
+.max-width-400 {
+    max-width: 400px !important;
+}

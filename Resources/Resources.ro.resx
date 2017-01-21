@@ -1470,4 +1470,7 @@
   <data name="Share" xml:space="preserve">
     <value>Împărtăşiţi această pagină</value>
   </data>
+  <data name="ForgotPasswordInstructions" xml:space="preserve">
+    <value>Completaţi formularul de mai jos pentru a primi un email cu codul de autorizare necesare pentru a reiniţializa parola.</value>
+  </data>
 </root>

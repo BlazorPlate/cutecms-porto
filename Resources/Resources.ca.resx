@@ -1470,4 +1470,7 @@
   <data name="Share" xml:space="preserve">
     <value>Compartir aquesta pàgina</value>
   </data>
+  <data name="ForgotPasswordInstructions" xml:space="preserve">
+    <value>Completi el següent formulari per rebre un e-mail amb el codi d'autorització necessari per restablir la contrasenya.</value>
+  </data>
 </root>

@@ -1470,4 +1470,7 @@
   <data name="Share" xml:space="preserve">
     <value>שתפו עמוד זה</value>
   </data>
+  <data name="ForgotPasswordInstructions" xml:space="preserve">
+    <value>מלא את הטופס שלהלן כדי לקבל הודעת דוא עם קוד אישור הדרושים כדי לאפס את הסיסמה שלך.</value>
+  </data>
 </root>

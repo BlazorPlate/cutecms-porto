@@ -1470,4 +1470,7 @@
   <data name="Share" xml:space="preserve">
     <value>Отправить эту страницу</value>
   </data>
+  <data name="ForgotPasswordInstructions" xml:space="preserve">
+    <value>Заполните форму ниже, чтобы получить письмо с кодом авторизации, необходимо сбросить пароль.</value>
+  </data>
 </root>

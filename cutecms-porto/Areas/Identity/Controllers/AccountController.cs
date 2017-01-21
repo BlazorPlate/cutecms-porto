@@ -100,7 +100,6 @@ namespace cutecms_porto.Areas.Identity.Controllers
 
         // GET: /Account/Login
         [AllowAnonymous]
-        [ChildActionOnly]
         public ActionResult Login(string returnUrl)
         {
             if (returnUrl != null && returnUrl.ToLowerInvariant().Contains("/logoff"))
@@ -120,7 +119,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(model);
+                return PartialView("~/Views/Shared/Login.cshtml", model);
             }
 
             // This doesn't count login failures towards account lockout To enable password failures
@@ -150,7 +149,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", @Resources.Resources.InvalidLoginAttempt);
-                    return View(model);
+                    return View("~/Views/Shared/LoginAjax.cshtml", model);
             }
         }
 
@@ -230,7 +229,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
             }
 
             // If we got this far, something failed, redisplay form
-            return View(model);
+            return View("~/Views/Shared/RegisterAjax.cshtml", model);
         }
 
         // GET: /Account/ConfirmEmail
@@ -264,7 +263,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 if (user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)))
                 {
                     // Don't reveal that the user does not exist or is not confirmed
-                    return View("ForgotPasswordConfirmation");
+                    return View("ForgotPasswordConfirmation", "Home", new { area = "" });
                 }
 
                 // For more information on how to enable account confirmation and password reset
@@ -273,7 +272,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
                 var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                 await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                return RedirectToAction("ForgotPasswordConfirmation", "Home", new { area = "" });
             }
 
             // If we got this far, something failed, redisplay form
@@ -316,7 +315,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 return RedirectToAction("ResetPasswordConfirmation", "Account");
             }
             AddErrors(result);
-            return View();
+            return View("~/Views/Shared/ForgotPasswordAjax.cshtml", model);
         }
 
         // GET: /Account/ResetPasswordConfirmation

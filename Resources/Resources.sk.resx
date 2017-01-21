@@ -1470,4 +1470,7 @@
   <data name="Share" xml:space="preserve">
     <value>Zdieľať túto stránku</value>
   </data>
+  <data name="ForgotPasswordInstructions" xml:space="preserve">
+    <value>Vyplňte formulár nižšie a dostanete e-mail s kódom povolenia potrebné na vytvorenie nového hesla.</value>
+  </data>
 </root>

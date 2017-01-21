@@ -129,6 +129,10 @@ namespace cutecms_porto.Controllers
             }
             return Redirect(returnUrl);
         }
+        public ActionResult Welcome()
+        {
+            return View();
+        }
         public ActionResult ForgotPasswordConfirmation()
         {
             return View();

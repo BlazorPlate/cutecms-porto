@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace cutecms_porto.Areas.Identity.Models
 {
-    public class IndexViewModel
+    public class ManageViewModel
     {
         #region Properties
         public bool HasPassword { get; set; }

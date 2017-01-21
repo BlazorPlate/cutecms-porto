@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = @Resources.Resources.Welcome;
+}
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>@ViewBag.Title</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                <p>@Resources.Resources.ThankYouFor @(OrganizationData.Organization?.Name)</p>
+                <p>@Resources.Resources.Instruction</p>
+            </div>
+            <div>
+                <p>@Resources.Resources.Regards</p>
+                <p>@(OrganizationData.Organization?.Name)</p>
+            </div>
+        </div>
+    </div>
+</div>
+

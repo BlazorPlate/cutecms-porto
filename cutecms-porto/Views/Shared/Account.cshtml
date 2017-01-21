@@ -1,4 +1,7 @@
 ﻿@using cutecms_porto.Areas.Identity.Models
+@using cutecms_porto.Areas.Identity.Models.DBModel
+@using Microsoft.AspNet.Identity
+@using System.Threading
 @if (!Request.IsAuthenticated)
 {
     <li class="dropdown dropdown-mega dropdown-mega-signin signin pull-right" id="headerAccount">
@@ -30,7 +33,44 @@
             </li>
         </ul>
     </li>
-}
-else
-{
-}
+                                    }
+                                    else
+                                    {
+                                        string username = null;
+                                        ApplicationDbContext _db = new ApplicationDbContext();
+                                        IdentityEntities identityDb = new IdentityEntities();
+                                        var email = _db.Users.Find(User.Identity.GetUserId()).UserName;
+                                        var userId = User.Identity.GetUserId();
+                                        if (identityDb.Employees.Where(e => e.LoginId.Equals(userId) && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null)
+                                        {
+                                            username = identityDb.Employees.Where(e => e.LoginId.Equals(userId) && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().FullName;
+                                        }
+                                        else
+                                        {
+                                            username = email.Substring(0, email.LastIndexOf("@"));
+                                        }
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <div class="dropdown-mega-content">
+                                                    <div class="row">
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+                                        <li class="dropdown dropdown-mega dropdown-mega-signin signin pull-right" id="headerAccount">
+                                            @Html.ActionLink(Resources.Resources.Hello + " " + username + "!", "Index", "MyProfile", null, htmlAttributes: new { @class = "dropdown-toggle" })
+                                            <ul class="dropdown-menu">
+                                                <li><a href="@Url.Action("Index", "MyProfile")"><i class="fa fa-user"></i> @Resources.Resources.MyProfile</a></li>
+
+                                                <li><a href="@Url.Action("Index", "Manage", new { area="Identity"})"><i class="fa fa-cog"></i> @Resources.Resources.AccountSettings</a></li>
+
+                                                @if (User.IsInRole("Admin"))
+                                                {
+                                                    <li><a href="@Url.Action("Index", "Home", new { area="CMS"})"><i class="fa fa-arrow-circle-left"></i> @Resources.Resources.Backend</a></li>
+
+                                                }
+                                                <li><a href="javascript:document.getElementById('logoutForm').submit()"><i class="glyphicon glyphicon-off"></i>@Resources.Resources.LogOff</a></li>
+                                            </ul>
+                                        </li>
+                                    }

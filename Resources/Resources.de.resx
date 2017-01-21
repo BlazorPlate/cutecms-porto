@@ -1473,4 +1473,7 @@
   <data name="ForgotPasswordInstructions" xml:space="preserve">
     <value>Füllen Sie das Formular unten, um eine Email mit den Authorisierungs-Code zum Zurücksetzen Ihres Kennworts erforderlich.</value>
   </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>Ungültiges Token</value>
+  </data>
 </root>

@@ -1473,4 +1473,7 @@
   <data name="ForgotPasswordInstructions" xml:space="preserve">
     <value>أكمل النموذج أدناه لتلقي بريد إلكتروني يتصمن الرابط اللازم لإعادة تعيين كلمة المرور الخاصة بك.</value>
   </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>رمز اعادة ضبط كلمة السر غير صالح</value>
+  </data>
 </root>

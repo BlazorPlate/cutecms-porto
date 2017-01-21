@@ -1473,4 +1473,7 @@
   <data name="ForgotPasswordInstructions" xml:space="preserve">
     <value>Попълнете формата по-долу за да получите имейл с кода за разрешение, е необходимо да възстановите паролата си.</value>
   </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>Невалиден маркер</value>
+  </data>
 </root>

@@ -1473,4 +1473,7 @@
   <data name="ForgotPasswordInstructions" xml:space="preserve">
     <value>מלא את הטופס שלהלן כדי לקבל הודעת דוא עם קוד אישור הדרושים כדי לאפס את הסיסמה שלך.</value>
   </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>Token לא חוקי</value>
+  </data>
 </root>

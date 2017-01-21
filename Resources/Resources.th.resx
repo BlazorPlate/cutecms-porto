@@ -1473,4 +1473,7 @@
   <data name="ForgotPasswordInstructions" xml:space="preserve">
     <value>กรอกแบบฟอร์มด้านล่างเพื่อรับอีเมลที่ มีรหัสการอนุญาตที่จำเป็นในการรีเซ็ตรหัสผ่าน</value>
   </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>โทเค็นไม่ถูกต้อง</value>
+  </data>
 </root>

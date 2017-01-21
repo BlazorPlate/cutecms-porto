@@ -1473,4 +1473,7 @@
   <data name="ForgotPasswordInstructions" xml:space="preserve">
     <value>Điền vào mẫu dưới đây để nhận được một email với mã uỷ quyền cần thiết để đặt lại mật khẩu của bạn.</value>
   </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>Mã thông báo không hợp lệ</value>
+  </data>
 </root>

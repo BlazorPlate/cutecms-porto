@@ -1473,4 +1473,7 @@
   <data name="ForgotPasswordInstructions" xml:space="preserve">
     <value>Wypełnij formularz poniżej, aby otrzymać wiadomość e-mail z kodem weryfikacyjnym, potrzebne do zresetowania hasła.</value>
   </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>Nieprawidłowy Token</value>
+  </data>
 </root>

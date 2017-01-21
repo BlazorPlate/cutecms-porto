@@ -1473,4 +1473,7 @@
   <data name="ForgotPasswordInstructions" xml:space="preserve">
     <value>Remplir le formulaire ci-dessous pour recevoir un email avec le code d’autorisation nécessaire pour réinitialiser votre mot de passe.</value>
   </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>Jeton non valide</value>
+  </data>
 </root>

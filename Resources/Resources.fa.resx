@@ -1473,4 +1473,7 @@
   <data name="ForgotPasswordInstructions" xml:space="preserve">
     <value>تکمیل فرم زیر برای دریافت یک ایمیل با کد مجوز مورد نیاز برای تنظیم مجدد رمز عبور خود را.</value>
   </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>علامت نامعتبر</value>
+  </data>
 </root>

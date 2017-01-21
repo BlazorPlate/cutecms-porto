@@ -1473,4 +1473,7 @@
   <data name="ForgotPasswordInstructions" xml:space="preserve">
     <value>完成下面的表单以收到一封电子邮件与重置您的密码所需的授权码。</value>
   </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>无效的标记</value>
+  </data>
 </root>

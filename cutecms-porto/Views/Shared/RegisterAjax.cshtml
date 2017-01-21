@@ -1,9 +1,4 @@
-﻿@model cutecms_porto.Areas.Identity.Models.RegisterViewModel
+﻿@model RegisterViewModel
 @using cutecms_porto.Areas.Identity.Models
-@using (Ajax.BeginForm("Register", "Account", new AjaxOptions { UpdateTargetId = "RegisterAjax" }))
-{
-    @Html.AntiForgeryToken()
-    <div class="container max-width-400" id="RegisterAjax">
-        @{Html.RenderPartial("~/Views/Shared/Register.cshtml", new RegisterViewModel());}
-    </div>
-}
+
+@{Html.RenderPartial("~/Views/Shared/Register.cshtml", new RegisterViewModel());}

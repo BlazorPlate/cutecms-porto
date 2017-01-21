@@ -1473,4 +1473,7 @@
   <data name="ForgotPasswordInstructions" xml:space="preserve">
     <value>Complete el siguiente formulario para recibir un correo electrónico con el código de autorización necesario para restablecer su contraseña.</value>
   </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>Código no válido</value>
+  </data>
 </root>

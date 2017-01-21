@@ -1473,4 +1473,7 @@
   <data name="ForgotPasswordInstructions" xml:space="preserve">
     <value>अपना पासवर्ड रीसेट करने के लिए की जरूरत प्राधिकरण कोड के साथ एक ईमेल प्राप्त करने के लिए नीचे के फार्म पूरा करें।</value>
   </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>अमान्य टोकन</value>
+  </data>
 </root>

@@ -1473,4 +1473,7 @@
   <data name="ForgotPasswordInstructions" xml:space="preserve">
     <value>Ispunite obrazac ispod kako biste primiti e-poštu sa šifrom ovlaštenja potrebna za ponovno postavljanje lozinke.</value>
   </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>Token nije valjan</value>
+  </data>
 </root>

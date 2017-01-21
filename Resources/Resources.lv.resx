@@ -1473,4 +1473,7 @@
   <data name="ForgotPasswordInstructions" xml:space="preserve">
     <value>Aizpildiet zemāk esošo formu, lai saņemtu e-pastu ar autorizācijas kods, kas nepieciešama paroles atiestatīšanai.</value>
   </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>Nederīgs marķieris</value>
+  </data>
 </root>

@@ -1473,4 +1473,7 @@
   <data name="ForgotPasswordInstructions" xml:space="preserve">
     <value>Şifrenizi sıfırlamak için gereken yetkilendirme kodu ile bir e-posta almak için aşağıdaki formu doldurunuz.</value>
   </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>Geçersiz simge</value>
+  </data>
 </root>

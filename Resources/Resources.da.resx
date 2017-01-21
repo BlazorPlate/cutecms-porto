@@ -1473,4 +1473,7 @@
   <data name="ForgotPasswordInstructions" xml:space="preserve">
     <value>Udfyld formularen nedenfor for at modtage en e-mail med den tilladelse kode er nødvendig for at nulstille din adgangskode.</value>
   </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>Ugyldigt Token</value>
+  </data>
 </root>

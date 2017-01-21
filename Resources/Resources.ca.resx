@@ -1473,4 +1473,7 @@
   <data name="ForgotPasswordInstructions" xml:space="preserve">
     <value>Completi el següent formulari per rebre un e-mail amb el codi d'autorització necessari per restablir la contrasenya.</value>
   </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>Testimoni no vàlid</value>
+  </data>
 </root>

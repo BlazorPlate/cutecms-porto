@@ -1473,4 +1473,7 @@
   <data name="ForgotPasswordInstructions" xml:space="preserve">
     <value>Vul het formulier hieronder om een e-mail ontvangen met de authorisatiecode die nodig is om uw wachtwoord te resetten.</value>
   </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>Ongeldige Token</value>
+  </data>
 </root>

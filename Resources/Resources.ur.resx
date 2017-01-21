@@ -1473,4 +1473,7 @@
   <data name="ForgotPasswordInstructions" xml:space="preserve">
     <value>آپ کا پاس ورڈ پھر سیٹ کرنے کی ضرورت کا اجازت نامہ کوڈ کے ساتھ ایک ای میل وصول کرنے کے لیے ذیل فارم مکمل کریں ۔</value>
   </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>کالعدم ٹوکن</value>
+  </data>
 </root>

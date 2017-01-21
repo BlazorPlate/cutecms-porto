@@ -1473,4 +1473,7 @@
   <data name="ForgotPasswordInstructions" xml:space="preserve">
     <value>Completaţi formularul de mai jos pentru a primi un email cu codul de autorizare necesare pentru a reiniţializa parola.</value>
   </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>Semn nevalid</value>
+  </data>
 </root>

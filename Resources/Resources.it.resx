@@ -1473,4 +1473,7 @@
   <data name="ForgotPasswordInstructions" xml:space="preserve">
     <value>Compilare il modulo sottostante per ricevere una mail con il codice di autorizzazione necessario per reimpostare la password.</value>
   </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>Token non valido</value>
+  </data>
 </root>

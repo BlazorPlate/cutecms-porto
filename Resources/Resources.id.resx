@@ -1473,4 +1473,7 @@
   <data name="ForgotPasswordInstructions" xml:space="preserve">
     <value>Lengkapi formulir di bawah ini untuk menerima email dengan kode otorisasi yang diperlukan untuk membuat ulang sandi.</value>
   </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>Token tidak valid</value>
+  </data>
 </root>

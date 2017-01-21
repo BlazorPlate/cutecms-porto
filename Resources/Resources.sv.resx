@@ -1473,4 +1473,7 @@
   <data name="ForgotPasswordInstructions" xml:space="preserve">
     <value>Fyll i formuläret nedan för att få ett mail med den behörighetskod som behövs för att återställa ditt lösenord.</value>
   </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>Ogiltig Token</value>
+  </data>
 </root>

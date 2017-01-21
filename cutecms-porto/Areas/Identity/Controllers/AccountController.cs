@@ -108,7 +108,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 return RedirectToAction("Login"); // Redirect to your default account page
             }
             ViewBag.ReturnUrl = returnUrl;
-            return PartialView();
+            return View();
         }
 
         // POST: /Account/Login
@@ -270,13 +270,13 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 // please visit http://go.microsoft.com/fwlink/?LinkID=320771 Send an email with this link
 
                 string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                var callbackUrl = Url.Action("ResetPassword", "Account", new { area = "Identity", userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                 await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
                 return RedirectToAction("ForgotPasswordConfirmation", "Home", new { area = "" });
             }
 
             // If we got this far, something failed, redisplay form
-            return View(model);
+            return View("~/Views/Shared/ForgotPasswordAjax.cshtml", model);
         }
 
         // GET: /Account/ForgotPasswordConfirmation
@@ -290,7 +290,8 @@ namespace cutecms_porto.Areas.Identity.Controllers
         [AllowAnonymous]
         public ActionResult ResetPassword(string code)
         {
-            return code == null ? View("Error") : View();
+
+            return code == null ? RedirectToAction("NotFound", "Error", new { area = "" }) : RedirectToAction("ResetPassword", "Home", new { code = code, area = "" });
         }
 
         // POST: /Account/ResetPassword
@@ -307,22 +308,22 @@ namespace cutecms_porto.Areas.Identity.Controllers
             if (user == null)
             {
                 // Don't reveal that the user does not exist
-                return RedirectToAction("ResetPasswordConfirmation", "Account");
+                return RedirectToAction("ResetPasswordConfirmation", "Home", new { area = "" });
             }
             var result = await UserManager.ResetPasswordAsync(user.Id, model.Code, model.Password);
             if (result.Succeeded)
             {
-                return RedirectToAction("ResetPasswordConfirmation", "Account");
+                return RedirectToAction("ResetPasswordConfirmation", "Home", new { area = "" });
             }
             AddErrors(result);
-            return View("~/Views/Shared/ForgotPasswordAjax.cshtml", model);
+            return RedirectToAction("InvalidToken", "Error", new { area = "" });
         }
 
         // GET: /Account/ResetPasswordConfirmation
         [AllowAnonymous]
         public ActionResult ResetPasswordConfirmation()
         {
-            return View();
+            return RedirectToAction("ResetPasswordConfirmation", "Home", new { area = "" });
         }
 
         // POST: /Account/ExternalLogin

@@ -1,6 +1,7 @@
 ﻿using cutecms_porto.Areas.CMS.Models;
 using cutecms_porto.Areas.CMS.Models.DBModel;
 using cutecms_porto.Areas.Config.Models.DBModel;
+using cutecms_porto.Areas.Identity.Models;
 using cutecms_porto.Helpers;
 using cutecms_porto.Models;
 using PagedList;
@@ -129,6 +130,17 @@ namespace cutecms_porto.Controllers
             return Redirect(returnUrl);
         }
         public ActionResult ForgotPasswordConfirmation()
+        {
+            return View();
+        }
+        public ActionResult ResetPassword(string code)
+        {
+            ResetPasswordViewModel model = new ResetPasswordViewModel();
+            model.Code = code;
+            return View(model);
+        }
+
+        public ActionResult ResetPasswordConfirmation()
         {
             return View();
         }

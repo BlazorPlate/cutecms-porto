@@ -1,36 +1,44 @@
 ﻿@model cutecms_porto.Areas.Identity.Models.LoginViewModel
-<span class="dropdown-mega-sub-title">@Resources.Resources.LoginToSite</span>
-<div class="row">
-    <div class="form-group">
-        <div class="col-md-12 p-none">
-            @*<label>Username or E-mail Address</label>*@
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = @Resources.Resources.Email + "..." })
-            @Html.ValidationMessageFor(m => m.Email)
+@using (Ajax.BeginForm("Login", "Account", new AjaxOptions { UpdateTargetId = "LoginAjax" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="container max-width-400" id="LoginAjax">
+        <h4 class="dropdown-mega-sub-title">@Resources.Resources.LoginToSite</h4>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-md-12 p-none">
+                    @*<label>Username or E-mail Address</label>*@
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = @Resources.Resources.Email + "..." })
+                    @Html.ValidationMessageFor(m => m.Email)
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-md-12 p-none">
+                    <a class="pull-right mt-none p-none" id="headerRecover" href="#">(@Resources.Resources.ForgetPassword)</a>
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = @Resources.Resources.Password + "..." })
+                    @Html.ValidationMessageFor(m => m.Password)
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 pl-none">
+                <span class="remember-box checkbox">
+                    <label for="rememberme">
+                        <input type="checkbox" id="rememberme" name="rememberme">@Html.LabelFor(m => m.RememberMe)
+                    </label>
+                </span>
+            </div>
+            <div class="col-md-6 p-none">
+                <input type="submit" value="@Resources.Resources.LogIn" class="btn btn-primary pull-right mb-xl" data-loading-text="Loading...">
+            </div>
+            <div class="col-md-12 p-none">
+                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+            </div>
         </div>
     </div>
-</div>
-<div class="row">
-    <div class="form-group">
-        <div class="col-md-12 p-none">
-            <a class="pull-right mt-none p-none" id="headerRecover" href="#">(@Resources.Resources.ForgetPassword)</a>
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = @Resources.Resources.Password + "..." })
-            @Html.ValidationMessageFor(m => m.Password)
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-6 pl-none">
-        <span class="remember-box checkbox">
-            <label for="rememberme">
-                <input type="checkbox" id="rememberme" name="rememberme">@Html.LabelFor(m => m.RememberMe)
-            </label>
-        </span>
-    </div>
-    <div class="col-md-6 pr-none">
-        <input type="submit" value="@Resources.Resources.LogIn" class="btn btn-primary pull-right mb-xl" data-loading-text="Loading...">
-    </div>
-    <div class="col-md-12 pr-none">
-        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
-    </div>
-</div>
+
+}
+
 

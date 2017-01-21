@@ -1473,4 +1473,7 @@
   <data name="ForgotPasswordInstructions" xml:space="preserve">
     <value>メール パスワードの再設定に必要な認証コードを表示するには下のフォームを完了します。</value>
   </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>無効なトークン</value>
+  </data>
 </root>

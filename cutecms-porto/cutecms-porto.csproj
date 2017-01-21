@@ -5333,6 +5333,9 @@
     <Content Include="Views\Shared\ForgotPassword.cshtml" />
     <Content Include="Views\Shared\ForgotPasswordAjax.cshtml" />
     <Content Include="Views\Home\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Home\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Home\ResetPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
@@ -6492,7 +6495,7 @@
     <None Include="Properties\PublishProfiles\cutecms.pubxml" />
     <Content Include="Views\Home\Index.old3.cshtml" />
     <Content Include="Views\Home\Ad.cshtml" />
-    <Content Include="Views\Error\NoConnection.cshtml" />
+    <Content Include="Views\Error\InvalidToken.cshtml" />
     <Content Include="Views\Shared\Account.cshtml" />
     <Content Include="Views\Shared\Login.cshtml" />
     <Content Include="Views\Shared\Register.cshtml" />

@@ -1,0 +1,23 @@
+﻿@using System.Threading
+@{
+    ViewBag.Title = Resources.Resources.Error;
+}
+@section PageHeader
+{
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>@ViewBag.Title</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+<section>
+    <div class="container">
+        <h1>@Resources.Resources.Oops</h1>
+        <h2>@Resources.Resources.InvalidToken</h2>
+        <a class="size-20" href="~/@Thread.CurrentThread.CurrentCulture.Name"><i class="glyphicon glyphicon-menu-left margin-right-10 size-16"></i>@Resources.Resources.BackToHome</a>
+    </div>
+</section>

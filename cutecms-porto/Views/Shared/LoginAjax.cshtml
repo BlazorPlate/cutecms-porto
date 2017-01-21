@@ -1,9 +1,3 @@
-﻿@model cutecms_porto.Areas.Identity.Models.LoginViewModel
+﻿@model LoginViewModel
 @using cutecms_porto.Areas.Identity.Models
-@using (Ajax.BeginForm("Login", "Account", new AjaxOptions { UpdateTargetId = "LoginAjax" }))
-{
-    @Html.AntiForgeryToken()
-    <div class="container max-width-400" id="LoginAjax">
-        @{Html.RenderPartial("~/Views/Shared/Login.cshtml", new LoginViewModel());}
-    </div>
-}
+@{Html.RenderPartial("~/Views/Shared/Login.cshtml", new LoginViewModel());}

@@ -1473,4 +1473,7 @@
   <data name="ForgotPasswordInstructions" xml:space="preserve">
     <value>Заповніть форму нижче, щоб отримати повідомлення з кодом авторизації, необхідні для відновлення пароля.</value>
   </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>Неприпустимий маркер</value>
+  </data>
 </root>

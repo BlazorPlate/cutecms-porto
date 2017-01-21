@@ -1473,4 +1473,7 @@
   <data name="ForgotPasswordInstructions" xml:space="preserve">
     <value>Заполните форму ниже, чтобы получить письмо с кодом авторизации, необходимо сбросить пароль.</value>
   </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>Недопустимый маркер</value>
+  </data>
 </root>

@@ -8,6 +8,8 @@
     @Html.AntiForgeryToken()
     @Html.HiddenFor(model => model.PrimaryLogoPath)
     @Html.HiddenFor(model => model.SecondaryLogoPath)
+    @Html.HiddenFor(model => model.PrimaryLogoName)
+    @Html.HiddenFor(model => model.SecondaryLogoName)
     @Html.HiddenFor(model => model.TranslationId)
     <div class="form-horizontal">
         @Html.HiddenFor(model => model.Id)

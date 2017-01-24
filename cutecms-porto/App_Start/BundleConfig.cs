@@ -13,10 +13,11 @@ namespace cutecms_porto
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/assets/porto/vendor/validation/jquery.validate.js",
-                        "~/assets/porto/vendor/validation/jquery.validate.unobtrusive.js"));
+                        "~/assets/porto/vendor/validation/jquery.validate.unobtrusive.min.js",
+                        "~/assets/porto/vendor/validation/jquery.validate.unobtrusive.bootstrap.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/assets/plugins/bootstrap/js/bootstrap.js"));
+                   "~/assets/plugins/bootstrap/js/bootstrap.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/root-js")
                 .Include("~/assets/plugins/newsbox/jquery.bootstrap.newsbox.js")

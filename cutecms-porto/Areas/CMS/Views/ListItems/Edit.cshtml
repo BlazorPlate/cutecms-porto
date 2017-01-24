@@ -8,6 +8,9 @@
     @Html.AntiForgeryToken()
     @Html.HiddenFor(model => model.Id)
     @Html.HiddenFor(model => model.FilePath)
+    @Html.HiddenFor(model => model.ThumbPath)
+    @Html.HiddenFor(model => model.FileName)
+    @Html.HiddenFor(model => model.ThumbName)
     @Html.HiddenFor(model => model.ContentListId)
     <div class="form-horizontal">
         <div class="form-group">

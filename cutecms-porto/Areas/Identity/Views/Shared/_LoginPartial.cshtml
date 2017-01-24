@@ -2,11 +2,14 @@
 @using cutecms_porto.Areas.Identity.Models
 @using cutecms_porto.Areas.Identity.Models.DBModel
 @using cutecms_porto.Areas.Config.Models.DBModel
+@using System.Globalization
 @using System.Threading
 @{
     ConfigEntities configDB = new ConfigEntities();
     ApplicationDbContext _db = new ApplicationDbContext();
     IdentityEntities identityDb = new IdentityEntities();
+    CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
+    RegionInfo regionInfo = new RegionInfo(cultureInfo.LCID);
     string username = null;
 }
 @if (Request.IsAuthenticated)
@@ -30,12 +33,11 @@
                 <ul class="dropdown-menu" role="menu">
                     @foreach (var item in configDB.ConfigLanguages.Where(l => l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal))
                     {
-                        <li>
-                            <a style="font-weight:bold" href="@Url.RouteUrl(new RouteValueDictionary(ViewContext.RouteData.Values.ToDictionary(r => r.Key, r => r.Key == "culture" ? item.CultureName.Trim() : r.Value)))">
-                                <img alt="lang" src="~/assets/images/flags/@item.Flag"> @item.Name
-                            </a>
-                        </li>
+                        CultureInfo itemCultureInfo = CultureInfo.CreateSpecificCulture(item.CultureName.Trim());
+                        RegionInfo itemRegionInfo = new RegionInfo(itemCultureInfo.LCID);
+                        <li><a href="@Url.RouteUrl(new RouteValueDictionary(ViewContext.RouteData.Values.ToDictionary(r => r.Key, r => r.Key == "culture" ? item.CultureName.Trim() : r.Value)))"><img src="~/assets/porto/img/blank.gif" class="flag flag-@item.FlagCode" alt="@itemRegionInfo.NativeName"> @itemRegionInfo.NativeName</a></li>
                     }
+
                 </ul>
             </li>
             <li>

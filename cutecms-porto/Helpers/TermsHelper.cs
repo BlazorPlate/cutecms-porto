@@ -54,7 +54,7 @@ namespace cutecms_porto.Helpers
         {
             var galleries = (from p in cmsDb.Galleries
                              join c in cmsDb.GalleryTerms on p.Id equals c.GalleryId
-                             where c != null && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.Visible
+                             where p.TenantId == Tenant.TenantId && c != null && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.Visible
                              orderby p.Ordinal
                              select c);
             return galleries;
@@ -63,7 +63,7 @@ namespace cutecms_porto.Helpers
         {
             var imageFiles = (from p in cmsDb.ImageFiles
                               join c in cmsDb.ImageFileTerms on p.Id equals c.ImageFileId
-                              where c != null && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)
+                              where p.TenantId == Tenant.TenantId && c != null && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)
                               orderby p.Ordinal
                               select c);
             return imageFiles;
@@ -72,7 +72,7 @@ namespace cutecms_porto.Helpers
         {
             var tags = (from p in cmsDb.Tags
                         join c in cmsDb.TagTerms on p.Id equals c.TagId
-                        where c != null && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.Visible
+                        where p.TenantId == Tenant.TenantId && c != null && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.Visible
                         orderby p.Ordinal
                         select c);
             return tags;

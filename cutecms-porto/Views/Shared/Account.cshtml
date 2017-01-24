@@ -49,17 +49,9 @@
                                         {
                                             username = email.Substring(0, email.LastIndexOf("@"));
                                         }
-                                        <ul class="dropdown-menu">
-                                            <li>
-                                                <div class="dropdown-mega-content">
-                                                    <div class="row">
-                                                    </div>
-                                                </div>
-
-                                            </li>
-                                        </ul>
-                                        <li class="dropdown dropdown-mega dropdown-mega-signin signin pull-right" id="headerAccount">
-                                            @Html.ActionLink(Resources.Resources.Hello + " " + username + "!", "Index", "MyProfile", null, htmlAttributes: new { @class = "dropdown-toggle" })
+                                        <li class="dropdown active pull-right width-100">
+                                            @*<a href="#" class="dropdown-toggle">content</a>*@
+                                            <a class="dropdown-toggle" href="#">@Resources.Resources.Hello @username!</a>
                                             <ul class="dropdown-menu">
                                                 <li><a href="@Url.Action("Index", "MyProfile")"><i class="fa fa-user"></i> @Resources.Resources.MyProfile</a></li>
 
@@ -70,7 +62,9 @@
                                                     <li><a href="@Url.Action("Index", "Home", new { area="CMS"})"><i class="fa fa-arrow-circle-left"></i> @Resources.Resources.Backend</a></li>
 
                                                 }
-                                                <li><a href="javascript:document.getElementById('logoutForm').submit()"><i class="glyphicon glyphicon-off"></i>@Resources.Resources.LogOff</a></li>
+                                                <li><a href="javascript:document.getElementById('logoutForm').submit()"><i class="glyphicon glyphicon-off"></i> @Resources.Resources.LogOff</a></li>
+
                                             </ul>
+
                                         </li>
                                     }

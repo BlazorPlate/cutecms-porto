@@ -3012,6 +3012,10 @@
     <Content Include="assets\admin\plugins\images\users\salman.jpg" />
     <Content Include="assets\admin\plugins\images\users\sonu.jpg" />
     <Content Include="assets\admin\plugins\images\users\varun.jpg" />
+    <Content Include="assets\identity\bootstrap-rtl.min.css" />
+    <Content Include="assets\identity\bootstrap.min.css" />
+    <Content Include="assets\identity\images\login-bg.jpg" />
+    <Content Include="assets\identity\images\register-bg.jpg" />
     <Content Include="assets\porto\css\custom.css" />
     <Content Include="assets\porto\css\demos\demo-business-consulting.css" />
     <Content Include="assets\porto\css\demos\demo-construction.css" />
@@ -4608,8 +4612,13 @@
     <Content Include="assets\porto\vendor\simple-line-icons\package.json" />
     <Content Include="assets\porto\vendor\simple-line-icons\README.md" />
     <Content Include="assets\porto\vendor\simple-line-icons\scss\simple-line-icons.scss" />
+    <None Include="assets\porto\vendor\validation\jquery.validate-vsdoc.js" />
     <Content Include="assets\porto\vendor\validation\jquery.validate.js" />
+    <Content Include="assets\porto\vendor\validation\jquery.validate.min.js" />
+    <Content Include="assets\porto\vendor\validation\jquery.validate.unobtrusive.bootstrap.js" />
+    <Content Include="assets\porto\vendor\validation\jquery.validate.unobtrusive.bootstrap.min.js" />
     <Content Include="assets\porto\vendor\validation\jquery.validate.unobtrusive.js" />
+    <Content Include="assets\porto\vendor\validation\jquery.validate.unobtrusive.min.js" />
     <Content Include="assets\porto\vendor\vide\vide.js" />
     <Content Include="assets\porto\vendor\vide\vide.min.js" />
     <Content Include="Code_Help\CS.txt" />
@@ -5218,13 +5227,7 @@
     <Content Include="Areas\Config\Views\ConfigStatusTerms\Details.cshtml" />
     <Content Include="Areas\Config\Views\ConfigStatusTerms\Edit.cshtml" />
     <Content Include="Areas\Config\Views\ConfigStatusTerms\Index.cshtml" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.bootstrap.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.bootstrap.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="assets\porto\vendor\validation\jquery.validate.unobtrusive.bootstrap.min.js.map" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -5327,7 +5330,6 @@
     <Content Include="Views\MyProfile\Delete.cshtml" />
     <Content Include="Views\Shared\Subscribe.cshtml" />
     <Content Include="Views\Shared\_JobShareButtons.cshtml" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.bootstrap.min.js.map" />
     <Content Include="Views\Shared\LoginAjax.cshtml" />
     <Content Include="Views\Shared\RegisterAjax.cshtml" />
     <Content Include="Views\Shared\ForgotPassword.cshtml" />

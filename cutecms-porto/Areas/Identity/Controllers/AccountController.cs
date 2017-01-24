@@ -119,7 +119,9 @@ namespace cutecms_porto.Areas.Identity.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return PartialView("~/Views/Shared/Login.cshtml", model);
+                if (RouteData.DataTokens["area"] == null)
+                    return View("~/Views/Shared/LoginAjax.cshtml", model);
+                return View(model);
             }
 
             // This doesn't count login failures towards account lockout To enable password failures
@@ -149,7 +151,9 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", @Resources.Resources.InvalidLoginAttempt);
-                    return View("~/Views/Shared/LoginAjax.cshtml", model);
+                    if (RouteData.DataTokens["area"] == null)
+                        return View("~/Views/Shared/LoginAjax.cshtml", model);
+                    return View(model);
             }
         }
 
@@ -229,7 +233,10 @@ namespace cutecms_porto.Areas.Identity.Controllers
             }
 
             // If we got this far, something failed, redisplay form
-            return View("~/Views/Shared/RegisterAjax.cshtml", model);
+            if (RouteData.DataTokens["area"] == null)
+                return View("~/Views/Shared/RegisterAjax.cshtml", model);
+            return View(model);
+
         }
 
         // GET: /Account/ConfirmEmail
@@ -274,9 +281,10 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
                 return RedirectToAction("ForgotPasswordConfirmation", "Home", new { area = "" });
             }
-
             // If we got this far, something failed, redisplay form
-            return View("~/Views/Shared/ForgotPasswordAjax.cshtml", model);
+            if (RouteData.DataTokens["area"] == null)
+                return View("~/Views/Shared/ForgotPasswordAjax.cshtml", model);
+            return View(model);
         }
 
         // GET: /Account/ForgotPasswordConfirmation

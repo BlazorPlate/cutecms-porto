@@ -25,7 +25,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            var imageFileTerms = db.ImageFileTerms.Include(i => i.ImageFile).Include(i => i.Language).Where(i => i.ImageFile.TenantId.Trim().Equals(Tenant.TenantId) && i.ImageFileId == id);
+            var imageFileTerms = db.ImageFileTerms.Include(i => i.ImageFile).Include(i => i.Language).Where(i => i.ImageFile.TenantId.Trim().Equals(Tenant.TenantId) && i.Id == id);
             ViewBag.ImageFileId = id;
             return View(imageFileTerms.ToList());
         }
@@ -37,7 +37,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            ImageFileTerm imageFileTerm = db.ImageFileTerms.Include("Language").Include("ImageFile").Where(i => i.ImageFile.TenantId.Trim().Equals(Tenant.TenantId) && i.ImageFileId == id).FirstOrDefault();
+            ImageFileTerm imageFileTerm = db.ImageFileTerms.Include("Language").Include("ImageFile").Where(i => i.ImageFile.TenantId.Trim().Equals(Tenant.TenantId) && i.Id == id).FirstOrDefault();
             if (imageFileTerm == null)
             {
                 throw new HttpException(404, "Page Not Found");
@@ -85,7 +85,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            ImageFileTerm imageFileTerm = db.ImageFileTerms.Where(i => i.ImageFile.TenantId.Trim().Equals(Tenant.TenantId) && i.ImageFileId == id).FirstOrDefault();
+            ImageFileTerm imageFileTerm = db.ImageFileTerms.Where(i => i.ImageFile.TenantId.Trim().Equals(Tenant.TenantId) && i.Id == id).FirstOrDefault();
             if (imageFileTerm == null)
             {
                 throw new HttpException(404, "Page Not Found");
@@ -119,7 +119,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            ImageFileTerm imageFileTerm = db.ImageFileTerms.Include("Language").Include("ImageFile").Where(i => i.ImageFile.TenantId.Trim().Equals(Tenant.TenantId) && i.ImageFileId == id).FirstOrDefault();
+            ImageFileTerm imageFileTerm = db.ImageFileTerms.Include("Language").Include("ImageFile").Where(i => i.ImageFile.TenantId.Trim().Equals(Tenant.TenantId) && i.Id == id).FirstOrDefault();
             if (imageFileTerm == null)
             {
                 throw new HttpException(404, "Page Not Found");

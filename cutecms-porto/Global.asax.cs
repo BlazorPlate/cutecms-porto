@@ -148,8 +148,17 @@ namespace cutecms_porto
                         httpContext.Response.Redirect("~/" + culture + "/" + currentArea + "/Error/NotTranslated");
                         break;
                     default:
-                        NotifyDeveloper((exception != null ? exception : exception = new Exception()), currentArea.ToString(), currentController, currentAction, (exception.StackTrace != null ? exception.StackTrace : "N/A"));
-                        httpContext.Response.Redirect("~/" + culture + "/" + currentArea + "/Error/Index");
+                        if (exception is HttpAntiForgeryException)
+                        {
+                            Response.Clear();
+                            Server.ClearError(); //make sure you log the exception first
+                            httpContext.Response.Redirect("~/" + culture + "/" + currentArea + "/Home/Index");
+                        }
+                        else
+                        {
+                            NotifyDeveloper((exception != null ? exception : exception = new Exception()), currentArea.ToString(), currentController, currentAction, (exception.StackTrace != null ? exception.StackTrace : "N/A"));
+                            httpContext.Response.Redirect("~/" + culture + "/" + currentArea + "/Error/Index");
+                        }
                         break;
                 }
             }

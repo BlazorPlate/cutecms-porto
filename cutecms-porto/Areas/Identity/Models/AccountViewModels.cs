@@ -379,6 +379,7 @@ namespace cutecms_porto.Areas.Identity.Models
                 this.Roles.Add(rvm);
             }
             // Set the Selected property to true for those roles for which the current user is a member:
+
             ApplicationUserManager UserManager = HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var roles = UserManager.GetRoles(user.Id);
             foreach (var userRole in roles)

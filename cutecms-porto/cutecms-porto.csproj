@@ -835,7 +835,10 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <Content Include="assets\admin\css\custom.css" />
     <Content Include="assets\admin\plugins\bower_components\tinymce\tinymce-layout.js" />
+    <Content Include="assets\admin\plugins\images\blank.gif" />
+    <Content Include="assets\admin\plugins\images\flags.png" />
     <Content Include="assets\admin\plugins\images\users\user-icon.png" />
     <Content Include="Areas\CMS\Models\DBModel\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -3014,6 +3017,8 @@
     <Content Include="assets\admin\plugins\images\users\varun.jpg" />
     <Content Include="assets\identity\bootstrap-rtl.min.css" />
     <Content Include="assets\identity\bootstrap.min.css" />
+    <Content Include="assets\identity\images\blank.gif" />
+    <Content Include="assets\identity\images\flags.png" />
     <Content Include="assets\identity\images\login-bg.jpg" />
     <Content Include="assets\identity\images\register-bg.jpg" />
     <Content Include="assets\porto\css\custom.css" />

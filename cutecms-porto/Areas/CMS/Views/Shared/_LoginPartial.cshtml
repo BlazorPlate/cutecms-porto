@@ -1,8 +1,9 @@
-﻿@using cutecms_porto.Helpers
+﻿@using System.Globalization
 @using cutecms_porto.Areas.CMS.Models.DBModel
 @{
     CMSEntities cmsDb = new CMSEntities();
 }
+<link href="~/assets/admin/css/custom.css" rel="stylesheet" />
 @if (Request.IsAuthenticated)
 {
     <li class="dropdown">
@@ -13,7 +14,7 @@
             <li><a href="@Url.Action("Index", "Manage", new { area = "Identity" })"><i class="ti-settings"></i> @Resources.Resources.AccountSettings</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="javascript:document.getElementById('logoutForm').submit()"><i class="ti-power-off"></i> @Resources.Resources.LogOff</a></li>
-            @using (Html.BeginForm("LogOff", "Account", new { area = "Identity" }, FormMethod.Post, new { id = "logoutForm" }))
+            @using (Html.BeginForm("LogOff", "Account", new { area = "Identity", returnUrl = HttpContext.Current.Request.Url.AbsolutePath }, FormMethod.Post, new { id = "logoutForm", style = "margin:0" }))
             {
                 @Html.AntiForgeryToken()
             }
@@ -39,8 +40,10 @@ else
     </a>
     <ul class="dropdown-menu scale-up">
         @foreach (var item in cmsDb.CMSLanguages.Where(l => l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal))
-            {
-            <li><a href="@Url.RouteUrl(new RouteValueDictionary(ViewContext.RouteData.Values.ToDictionary(r => r.Key, r => r.Key == "culture" ? item.CultureName.Trim() : r.Value)))"><img alt="lang" src="~/assets/images/flags/@item.Flag"> @item.Name</a></li>
+        {
+            CultureInfo itemCultureInfo = CultureInfo.CreateSpecificCulture(item.CultureName.Trim());
+            RegionInfo itemRegionInfo = new RegionInfo(itemCultureInfo.LCID);
+            <li><a href="@Url.RouteUrl(new RouteValueDictionary(ViewContext.RouteData.Values.ToDictionary(r => r.Key, r => r.Key == "culture" ? item.CultureName.Trim() : r.Value)))"><img src="~/assets/admin/plugins/images/blank.gif" class="flag flag-@item.FlagCode" alt="@itemRegionInfo.NativeName"> @itemRegionInfo.NativeName</a></li>
         }
     </ul>
 </li>

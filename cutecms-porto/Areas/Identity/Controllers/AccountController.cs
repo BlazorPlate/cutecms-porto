@@ -102,11 +102,11 @@ namespace cutecms_porto.Areas.Identity.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
-            if (returnUrl != null && returnUrl.ToLowerInvariant().Contains("/logoff"))
-            {
-                returnUrl = null;
-                return RedirectToAction("Login"); // Redirect to your default account page
-            }
+            //if (returnUrl != null && returnUrl.ToLowerInvariant().Contains("/logoff"))
+            //{
+            //    returnUrl = null;
+            //    return RedirectToAction("Login"); // Redirect to your default account page
+            //}
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
@@ -450,10 +450,10 @@ namespace cutecms_porto.Areas.Identity.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult LogOff()
+        public ActionResult LogOff(string returnUrl)
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home");
+            return RedirectToLocal(returnUrl, null);
         }
 
         // GET: /Account/ExternalLoginFailure
@@ -598,15 +598,23 @@ namespace cutecms_porto.Areas.Identity.Controllers
 
         private ActionResult RedirectToLocal(string returnUrl, string currentUserId)
         {
+            if (!string.IsNullOrEmpty(currentUserId))
+            {
+                IdentityEntities identityDB = new IdentityEntities();
+                var hasProfile = identityDB.Employees.Where(e => e.LoginId.Equals(currentUserId) && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).SingleOrDefault();
+                if (hasProfile == null)
+                {
+                    return RedirectToAction("Index", "MyProfile", new { area = "" });
+                }
+            }
             if (Url.IsLocalUrl(returnUrl))
             {
                 return Redirect(returnUrl);
             }
-            IdentityEntities identityDB = new IdentityEntities();
-            var hasProfile = identityDB.Employees.Where(e => e.LoginId.Equals(currentUserId) && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).SingleOrDefault();
-            if (hasProfile == null)
-                return RedirectToAction("Index", "MyProfile", new { area = "" });
-            return RedirectToAction("Index", "Home");
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
         #endregion Methods
 

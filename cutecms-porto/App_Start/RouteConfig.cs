@@ -11,7 +11,9 @@ namespace cutecms_porto
         {
             routes.LowercaseUrls = true;
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
+            routes.IgnoreRoute("{file}.js");
+            routes.IgnoreRoute("{file}.html");
+            routes.IgnoreRoute("{*favicon}", new { favicon = @"(.*/)?favicon.ico(/.*)?" });
             routes.MapRoute(name: "Content", url: "{culture}/content/pages/{*slug}",
             defaults: new { culture = CultureHelper.GetDefaultCulture(), controller = "Pages", action = "Content", id = UrlParameter.Optional },
             constraints: new { TenantAccess = new TenantRouteConstraint() },

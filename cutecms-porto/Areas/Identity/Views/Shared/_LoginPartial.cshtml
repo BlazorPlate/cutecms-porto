@@ -24,7 +24,7 @@
     {
         username = email.Substring(0, email.LastIndexOf("@"));
     }
-    using (Html.BeginForm("LogOff", "Account", null, FormMethod.Post, new { id = "logoutForm" }))
+    using (Html.BeginForm("LogOff", "Account", new { area = "Identity", returnUrl = HttpContext.Current.Request.Url.AbsolutePath }, FormMethod.Post, new { id = "logoutForm", style = "margin:0" }))
     {
         @Html.AntiForgeryToken()
         <ul class="nav navbar-nav navbar-right">
@@ -35,7 +35,7 @@
                     {
                         CultureInfo itemCultureInfo = CultureInfo.CreateSpecificCulture(item.CultureName.Trim());
                         RegionInfo itemRegionInfo = new RegionInfo(itemCultureInfo.LCID);
-                        <li><a href="@Url.RouteUrl(new RouteValueDictionary(ViewContext.RouteData.Values.ToDictionary(r => r.Key, r => r.Key == "culture" ? item.CultureName.Trim() : r.Value)))"><img src="~/assets/porto/img/blank.gif" class="flag flag-@item.FlagCode" alt="@itemRegionInfo.NativeName"> @itemRegionInfo.NativeName</a></li>
+                        <li><a href="@Url.RouteUrl(new RouteValueDictionary(ViewContext.RouteData.Values.ToDictionary(r => r.Key, r => r.Key == "culture" ? item.CultureName.Trim() : r.Value)))"><img src="~/assets/identity/images/blank.gif" class="flag flag-@item.FlagCode" alt="@itemRegionInfo.NativeName"> @itemRegionInfo.NativeName</a></li>
                     }
 
                 </ul>
@@ -55,11 +55,9 @@ else
             <ul class="dropdown-menu" role="menu">
                 @foreach (var item in configDB.ConfigLanguages.Where(l => l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal))
                 {
-                    <li>
-                        <a href="@Url.RouteUrl(new RouteValueDictionary(ViewContext.RouteData.Values.ToDictionary(r => r.Key, r => r.Key == "culture" ? item.CultureName.Trim() : r.Value)))">
-                            <img alt="lang" src="~/assets/images/flags/@item.Flag"> @item.Name
-                        </a>
-                    </li>
+                    CultureInfo itemCultureInfo = CultureInfo.CreateSpecificCulture(item.CultureName.Trim());
+                    RegionInfo itemRegionInfo = new RegionInfo(itemCultureInfo.LCID);
+                    <li><a href="@Url.RouteUrl(new RouteValueDictionary(ViewContext.RouteData.Values.ToDictionary(r => r.Key, r => r.Key == "culture" ? item.CultureName.Trim() : r.Value)))"><img src="~/assets/identity/images/blank.gif" class="flag flag-@item.FlagCode" alt="@itemRegionInfo.NativeName"> @itemRegionInfo.NativeName</a></li>
                 }
             </ul>
         </li>

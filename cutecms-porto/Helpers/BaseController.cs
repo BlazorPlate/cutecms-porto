@@ -15,7 +15,7 @@ namespace cutecms_porto.Helpers
     {
         #region Fields
         public static object BreadcrumbLock = new object();
-        private static object MenuBuilderLock = new object();
+        public static object MenuBuilderLock = new object();
         private ConfigEntities configDb = new ConfigEntities();
         private CMSEntities cmsDb = new CMSEntities();
         #endregion Fields
@@ -40,27 +40,9 @@ namespace cutecms_porto.Helpers
             // Modify current thread's cultures
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cultureName);
             Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
-
-            var returnUrl = Request.Url.AbsoluteUri;
             if (HttpRuntime.Cache["Organization"] == null)
-            {
                 OrganizationData.Organization = configDb.Organizations.Where(o => o.TenantId.Trim().Equals(Tenant.TenantId) && o.IsDefault == true && o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
-            }
-            if (HttpRuntime.Cache["MenuItems"] == null)
-                MenuBuilder();
             return base.BeginExecuteCore(callback, state);
-        }
-        public void MenuBuilder()
-        {
-            lock (MenuBuilderLock)
-            {
-                ExpiryHelper.ExpiryValidator();
-                var dbContext = ((IObjectContextAdapter)cmsDb).ObjectContext;//Resolve Caching
-                var refreshableObjects = cmsDb.ChangeTracker.Entries().Select(c => c.Entity).ToList();//Resolve Caching
-                dbContext.Refresh(RefreshMode.StoreWins, refreshableObjects);//Resolve Caching
-                var menuItems = cmsDb.MenuItems.Include("Status").Include("Menu").Include("Language").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Status.Code.Trim().Equals("published") && m.Visible).OrderBy(m => m.Ordinal).ToList();
-                HttpRuntime.Cache.Insert("MenuItems", menuItems, null, DateTime.Now.AddDays(1), Cache.NoSlidingExpiration);
-            }
         }
         #endregion Methods
     }

@@ -173,7 +173,7 @@ namespace cutecms_porto.Controllers
                 throw new HttpException(404, "Page Not Found");
             }
             var translationId = db.Vacancies.Find(id).TranslationId;
-            List<Vacancy> translatedVacancies = db.Vacancies.Include("Status").Include("Language").Where(v => v.TenantId.Trim().Equals(Tenant.TenantId) && v.TranslationId == translationId).ToList();
+            IEnumerable<Vacancy> translatedVacancies = db.Vacancies.Include("Status").Include("Language").Where(v => v.TenantId.Trim().Equals(Tenant.TenantId) && v.TranslationId == translationId);
             Vacancy translatedVacancy = translatedVacancies.Where(v => v.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
             if (translatedVacancy == null)
             {

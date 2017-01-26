@@ -9,7 +9,7 @@
     ApplicationDbContext _db = new ApplicationDbContext();
     IdentityEntities identityDb = new IdentityEntities();
     CMSEntities cmdDb = new CMSEntities();
-    List<MenuItem> menuItems = (System.Web.HttpRuntime.Cache["MenuItems"] == null ? cmdDb.MenuItems.Include("Menu").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && m.Menu.Code.Equals("top-menu")).ToList() : (List<MenuItem>)System.Web.HttpRuntime.Cache["MenuItems"]).Where(m => m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && m.Menu.Code.Equals("top-menu")).ToList();
+    IEnumerable<MenuItem> menuItems = (HttpRuntime.Cache["MenuItems"] == null ? cmdDb.MenuItems.Include("Menu").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && m.Menu.Code.Equals("top-menu")) : (IEnumerable<MenuItem>)System.Web.HttpRuntime.Cache["MenuItems"]).Where(m => m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && m.Menu.Code.Equals("top-menu"));
     if (Request.IsAuthenticated)
     {
         var email = _db.Users.Find(User.Identity.GetUserId()).UserName;

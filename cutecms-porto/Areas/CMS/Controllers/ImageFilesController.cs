@@ -165,7 +165,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             ImageFile imageFile = db.ImageFiles.Find(id);
-            foreach (var item in imageFile.ImageTags.ToList())
+            foreach (var item in imageFile.ImageTags)
             {
                 db.ImageTags.Remove(item);
             }
@@ -196,7 +196,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
 
         public void ClearFileTags(int imageId)
         {
-            List<ImageTag> imageTags = db.ImageTags.Where(it => it.ImageFileId.Equals(imageId)).ToList();
+            IEnumerable<ImageTag> imageTags = db.ImageTags.Where(it => it.ImageFileId.Equals(imageId));
             foreach (var item in imageTags)
             {
                 db.ImageTags.Remove(item);

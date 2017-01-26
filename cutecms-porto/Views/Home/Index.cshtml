@@ -9,7 +9,7 @@
 }
 @if (Model != null)
 {
-    if (Model.HomeGallery.Count != 0)
+    if (Model.HomeGallery.Count() != 0)
     {
         <!-- REVOLUTION SLIDER -->
         <div class="slider fullwidthbanner-container roundedcorners margin-bottom-20">
@@ -92,7 +92,7 @@
             LTR INFO: box-icon-left or box-icon-right - are the same on LTR
             -->
             <div class="row">
-                @if (Model.Contents.Count != 0)
+                @if (Model.Contents.Count() != 0)
                 {
                     foreach (var item in Model.Contents.Where(c => c.HasShortcut == true))
                     {

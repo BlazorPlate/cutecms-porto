@@ -1,12 +1,8 @@
 ﻿using cutecms_porto.Areas.CMS.Models.DBModel;
 using cutecms_porto.Areas.RMS.Models.DBModel;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web.Caching;
-using System.Web.Mvc;
-using System.Web.UI;
 
 namespace cutecms_porto.Helpers
 {
@@ -17,7 +13,7 @@ namespace cutecms_porto.Helpers
         {
             using (CMSEntities cmdDb = new CMSEntities())
             {
-                var contents = cmdDb.Contents.Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && !c.Status.Code.Trim().Equals("archived") && !c.Status.Code.Equals("unpublished")).ToList();
+                var contents = cmdDb.Contents.Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && !c.Status.Code.Trim().Equals("archived") && !c.Status.Code.Equals("unpublished"));
                 foreach (var content in contents)
                 {
                     if (content.PublishedOn <= DateTime.Now && (DateTime.Now <= content.ExpiredOn || content.ExpiredOn == null))
@@ -46,7 +42,7 @@ namespace cutecms_porto.Helpers
             }
             using (RMSEntities rmsDb = new RMSEntities())
             {
-                var vacancies = rmsDb.Vacancies.Where(c => !c.Status.Code.Trim().Equals("archived")).ToList();
+                var vacancies = rmsDb.Vacancies.Where(c => !c.Status.Code.Trim().Equals("archived"));
                 foreach (var vacancy in vacancies)
                 {
                     if (vacancy.PublishedOn <= DateTime.Now && (DateTime.Now <= vacancy.ExpiredOn || vacancy.ExpiredOn == null))

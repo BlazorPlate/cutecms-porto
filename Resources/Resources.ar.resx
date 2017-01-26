@@ -904,7 +904,7 @@
     <value>اسم الشارع</value>
   </data>
   <data name="StringLength" xml:space="preserve">
-    <value>{0} يجب أن تتكون من {2} خانات</value>
+    <value>{0} يجب أن تتكون من {2} خانات على الأقل.</value>
   </data>
   <data name="Submission" xml:space="preserve">
     <value>الطلب الوظيفي</value>

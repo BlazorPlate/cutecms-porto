@@ -57,7 +57,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         {
             DepartmentsViewModel departments = new DepartmentsViewModel();
             departments.DepartmentWithTerms = TermsHelper.DepartmentList(languageId);
-            departments.Departments = db.IdentityDepartments.Where(i => i.DepartmentTerms.Where(d => d.LanguageId == languageId).ToList().Count == 0).ToList();
+            departments.Departments = db.IdentityDepartments.Where(i => i.DepartmentTerms.Where(d => d.LanguageId == languageId).Count() == 0).ToList();
             ViewBag.LanguageId = new SelectList(db.IdentityLanguages.Where(l => l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", languageId);
             ViewBag.CurrentLanguageId = languageId;
             return View(departments);

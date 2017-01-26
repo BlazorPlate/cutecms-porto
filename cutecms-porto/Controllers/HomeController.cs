@@ -12,6 +12,8 @@ using System.Linq;
 using System.Threading;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
+
 namespace cutecms_porto.Controllers
 {
     //[Whitespace]
@@ -28,9 +30,9 @@ namespace cutecms_porto.Controllers
         #region Methods
         public ActionResult Index(HomeViewModel homePage)
         {
-            homePage.HomeGallery = cmsDb.ImageFiles.Include("ImageFileTerms").Include("ImageFileTerms.Language").Where(i => i.TenantId.Trim().Equals(Tenant.TenantId) && i.Gallery.HomeVisible && i.Gallery.Code.Trim().Equals("home-gallery")).OrderBy(i => i.Ordinal).ToList();
-            homePage.Contents = cmsDb.Contents.Include("ContentType").Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && c.Status.Code.Trim().Equals("published") && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).OrderBy(c => c.Ordinal).ToList();
-            homePage.ContentLists = cmsDb.ContentLists.Include("Content").Include("ListItems").Where(c => c.Content.TenantId.Trim().Equals(Tenant.TenantId) && c.Content.Status.Code.Trim().Equals("published") && c.Content.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && (c.Content.Code.Trim().Equals("home-list"))).OrderBy(li => li.Ordinal).ToList();
+            homePage.HomeGallery = cmsDb.ImageFiles.Include("ImageFileTerms").Include("ImageFileTerms.Language").Where(i => i.TenantId.Trim().Equals(Tenant.TenantId) && i.Gallery.HomeVisible && i.Gallery.Code.Trim().Equals("home-gallery")).OrderBy(i => i.Ordinal);
+            homePage.Contents = cmsDb.Contents.Include("ContentType").Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && c.Status.Code.Trim().Equals("published") && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).OrderBy(c => c.Ordinal);
+            homePage.ContentLists = cmsDb.ContentLists.Include("Content").Include("ListItems").Where(c => c.Content.TenantId.Trim().Equals(Tenant.TenantId) && c.Content.Status.Code.Trim().Equals("published") && c.Content.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && (c.Content.Code.Trim().Equals("home-list"))).OrderBy(li => li.Ordinal);
             return View(homePage);
         }
         public ActionResult Contents(int? page, string keywordFilter = "", int contentTypeIdFilter = 0, int statusIdFilter = 0)
@@ -59,7 +61,7 @@ namespace cutecms_porto.Controllers
         public ActionResult Calendar()
         {
             var upcomingEvents = cmsDb.Contents.Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && c.ContentType.Code.Equals("event") && c.Status.Code.Trim().Equals("published") && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && System.Data.Entity.DbFunctions.TruncateTime(c.StartDate.Value) >= System.Data.Entity.DbFunctions.TruncateTime(DateTime.Now)).OrderBy(c => c.StartDate).Take(5);
-            return View(upcomingEvents.ToList());
+            return View(upcomingEvents);
         }
         public ActionResult ListEvents(string start, string end)
         {
@@ -76,7 +78,7 @@ namespace cutecms_porto.Controllers
             DateTime StartDate = startDate;
             DateTime EndDate = endDate;
             var eventCalendar = cmsDb.Contents.Where(e => e.TenantId.Trim().Equals(Tenant.TenantId) && e.ContentType.Code.Equals("event") && !e.Status.Code.Equals("unpublished") && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name));
-            var events = from e in eventCalendar.ToList()
+            var events = from e in eventCalendar
                          select new
                          {
                              id = e.Id,
@@ -86,7 +88,7 @@ namespace cutecms_porto.Controllers
                              description = e.MainContent,
                              location = e.Location
                          };
-            return Json(events.ToList(), JsonRequestBehavior.AllowGet);
+            return Json(events, JsonRequestBehavior.AllowGet);
         }
         public ActionResult Galleries(int? page)
         {
@@ -110,6 +112,16 @@ namespace cutecms_porto.Controllers
             }
             ViewBag.ReturnUrl = returnUrl;
             return View(imageFiles);
+        }
+        [ChildActionOnly]
+        [OutputCache(Duration = 864000)]
+        public ActionResult HeaderMenu()
+        {
+            lock (MenuBuilderLock)
+            {
+                ExpiryHelper.ExpiryValidator();
+            }
+            return PartialView("_HeaderMenu");
         }
         [ChildActionOnly]
         public ActionResult Subscribe()

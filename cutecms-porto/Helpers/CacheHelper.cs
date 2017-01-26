@@ -22,17 +22,9 @@ namespace cutecms_porto.Helpers
             //Clear Output Cache
             if (!string.IsNullOrEmpty(absolutePath))
                 HttpResponse.RemoveOutputCacheItem(absolutePath);
-            var homeIndex = new UrlHelper(requestContext).Action("Home", "Index");
-            var homeContents = new UrlHelper(requestContext).Action("Home", "Contents");
-            var homeContact = new UrlHelper(requestContext).Action("Home", "Contact");
-            var homeCalendar = new UrlHelper(requestContext).Action("Home", "Calendar");
-            var homeGalleries = new UrlHelper(requestContext).Action("Home", "Galleries");
+            var homeIndex = new UrlHelper(requestContext).Action("HeaderMenu", "Home", new { area = "" });
             HttpResponse.RemoveOutputCacheItem(homeIndex);
-            HttpResponse.RemoveOutputCacheItem(homeContents);
-            HttpResponse.RemoveOutputCacheItem(homeContact);
-            HttpResponse.RemoveOutputCacheItem(homeCalendar);
-            HttpResponse.RemoveOutputCacheItem(homeGalleries);
-            HttpResponse.RemoveOutputCacheItem(homeCalendar);
+
         }
         #endregion Methods
     }

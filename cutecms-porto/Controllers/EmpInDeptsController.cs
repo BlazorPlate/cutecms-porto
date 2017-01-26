@@ -61,7 +61,7 @@ namespace cutecms_porto.Controllers
             if (empTranslationId == 0)
                 throw new HttpException(602, "Page Not Translated");
             ViewBag.EmpId = id;
-            var empInDepts = db.EmpInDepts.Include(e => e.Employee).Where(e => e.Employee.TranslationId == empTranslationId).ToList();
+            var empInDepts = db.EmpInDepts.Include(e => e.Employee).Where(e => e.Employee.TranslationId == empTranslationId);
             return View(empInDepts);
         }
 

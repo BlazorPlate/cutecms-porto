@@ -3,7 +3,7 @@
 @{
     CMSEntities db = new CMSEntities();
     var news = db.Contents.Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && (c.Status.Code.Equals("published") && c.ContentType.Code.Equals("news") && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name))).Take(4).OrderByDescending(c => c.PublishedOn);
-    List<MenuItem> menuItems = (System.Web.HttpRuntime.Cache["MenuItems"] == null ? db.MenuItems.Include("Menu").Where(m => m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && m.Menu.Code.Equals("footer")).ToList() : (List<MenuItem>)System.Web.HttpRuntime.Cache["MenuItems"]).Where(m => m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && m.Menu.Code.Equals("footer")).ToList();
+    //IEnumerable<MenuItem> menuItems = (HttpRuntime.Cache["MenuItems"] == null ? db.MenuItems.Include("Menu").Where(m => m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && m.Menu.Code.Equals("footer")) : (IEnumerable<MenuItem>)System.Web.HttpRuntime.Cache["MenuItems"]).Where(m => m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && m.Menu.Code.Equals("footer"));
 }
 <style>
     h4 {
@@ -59,7 +59,7 @@
                 </ul>
                 <!-- /Latest Blog Post -->
             </div>
-            <div class="col-md-2">
+            @*<div class="col-md-2">
                 <!-- Links -->
                 <h4 class="letter-spacing-1">@Resources.Resources.ExploreOurSite</h4>
                 @foreach (var parentItem in menuItems)
@@ -75,7 +75,7 @@
                     </div>
                 }
                 <!-- /Links -->
-            </div>
+            </div>*@
             <div class="col-md-4">
                 <!-- Newsletter Form -->
                 <h4 class="letter-spacing-1">@Resources.Resources.KeepInTouch</h4>

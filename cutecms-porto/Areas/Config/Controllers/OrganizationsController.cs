@@ -111,7 +111,7 @@ namespace cutecms_porto.Areas.Config.Controllers
                 }
                 if (organization.IsDefault)
                 {
-                    foreach (var item in db.Organizations)
+                    foreach (var item in db.Organizations.Where(o => o.TenantId.Equals(Tenant.TenantId)))
                     {
                         if (item.TranslationId == organization.TranslationId)
                         {

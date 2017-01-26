@@ -99,7 +99,7 @@
 </head>
 <body>
     <div class="body">
-        @Html.Partial("_PageHeader")
+        @Html.Action("HeaderMenu", "Home")
         @RenderSection("PageHeader", false)
         <div role="main" class="main">
             @RenderBody()

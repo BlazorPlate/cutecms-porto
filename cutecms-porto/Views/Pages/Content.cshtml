@@ -6,7 +6,6 @@
     @{
         ApplicationDbContext _db = new ApplicationDbContext();
         CMSEntities db = new CMSEntities();
-        List<MenuItem> menuItems = db.MenuItems.Include("Menu").Include("Status").Include("Language").Where(m => m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && m.Menu.Code.Trim().Equals("header") && m.Status.Code.Trim().Equals("published")).ToList();
         ViewBag.Title = Model.Title;
         ViewBag.Description = Model.MetaDescription;
         ViewBag.Author = _db.Users.Find(Model.Author).UserName;
@@ -21,12 +20,12 @@
                 <div class="col-md-12">
                     <ul class="breadcrumb">
                         <li><a href="~/@Thread.CurrentThread.CurrentCulture.Name">@Resources.Resources.Home</a></li>
-                        @if (Model.ParentMenuItemId != null && menuItems.Count != 0)
+                        @if (Model.ParentMenuItemId != null)
                         {
-                            var menuItemId = menuItems.FirstOrDefault(m => m.ContentId == Model.Id)?.Id;
+                            var menuItemId = db.MenuItems.FirstOrDefault(m => m.ContentId == Model.Id)?.Id;
                             if (menuItemId != null)
                             {
-                                ViewBag.ParentMenuItems = BreadcrumbsHelper.GetParentMenuItems(menuItemId).ToList();
+                                ViewBag.ParentMenuItems = BreadcrumbsHelper.GetParentMenuItems(menuItemId);
                                 @Html.Partial("_Breadcrumb")
                             }
                         }

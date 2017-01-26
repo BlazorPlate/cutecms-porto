@@ -4,7 +4,7 @@
 @{
     int count = 0;
     CMSEntities db = new CMSEntities();
-    List<MenuItem> menuItems = (System.Web.HttpRuntime.Cache["MenuItems"] == null ? db.MenuItems.Include("Status").Include("Menu").Include("Language").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).ToList() : (List<MenuItem>)System.Web.HttpRuntime.Cache["MenuItems"]).Where(m => m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).ToList();
+    IEnumerable<MenuItem> menuItems = db.MenuItems.Include("Status").Include("Menu").Include("Language").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name));
     count = menuItems.Count();
     CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
     RegionInfo regionInfo = new RegionInfo(cultureInfo.LCID);
@@ -34,7 +34,7 @@
                 </nav>
                 <nav class="header-nav-top" style="margin-left:0px;">
                     <ul class="nav nav-pills">
-                        @{var topItems = menuItems.Where(m => m.Menu.Code.Trim().Equals("top-menu")).ToList(); }
+                        @{var topItems = menuItems.Where(m => m.Menu.Code.Trim().Equals("top-menu")); }
                         @if (CultureHelper.IsRighToLeft())
                         {
                             foreach (var item in topItems)
@@ -99,7 +99,7 @@
                                                 @Resources.Resources.Home
                                             </a>
                                         </li>
-                                        @{var headerItems = menuItems.Where(m => m.Menu.Code.Trim().Equals("header")).ToList(); }
+                                        @{var headerItems = menuItems.Where(m => m.Menu.Code.Trim().Equals("header")); }
                                         @if (headerItems != null && count > 0)
                                         {
                                             @GetTreeView(headerItems, null)
@@ -115,7 +115,7 @@
         </div>
     </div>
 </header>
-@helper GetTreeView(List<MenuItem> menuItems, int? parentID)
+@helper GetTreeView(IEnumerable<MenuItem> menuItems, int? parentID)
 {
 foreach (var item in menuItems.Where(m => m.ParentId.Equals(parentID)))
 {

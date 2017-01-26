@@ -60,7 +60,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                 using (RMSEntities db = new RMSEntities())
                 {
                     List<string> roles = GetUserRoles();
-                    var vacancies = db.Vacancies.Include("Language").Include("Status").Include("JobType").Include("Department").Where(v => v.TenantId.Trim().Equals(Tenant.TenantId) && (roles.Any(r => v.RoleVID.Equals(r)) || v.RoleVID == null) || v.RoleVID == null).OrderBy(v => v.Title).ToList();
+                    var vacancies = db.Vacancies.Include("Language").Include("Status").Include("JobType").Include("Department").Where(v => v.TenantId.Trim().Equals(Tenant.TenantId) && (roles.Any(r => v.RoleVID.Equals(r)) || v.RoleVID == null) || v.RoleVID == null).OrderBy(v => v.Title);
                     foreach (var item in vacancies)
                     {
                         string departmentName = (TermsHelper.Departments().Where(d => d.DepartmentId == item.Department.Id).FirstOrDefault() == null) ?
@@ -371,15 +371,15 @@ namespace cutecms_porto.Areas.RMS.Controllers
             {
                 using (var dbContextTransaction = db.Database.BeginTransaction())
                 {
-                    Vacancy vacancy = db.Vacancies.Find(id);
+                    Vacancy vacancy = db.Vacancies.Include("VacancyRanks").Include("VacancyDegrees").Where(v => v.Id == id).FirstOrDefault();
                     try
                     {
-                        foreach (var item in vacancy.VacancyRanks.ToList())
+                        foreach (var item in vacancy.VacancyRanks)
                         {
                             db.Entry(item).State = System.Data.Entity.EntityState.Deleted;
                             db.VacancyRanks.Remove(item);
                         }
-                        foreach (var item in vacancy.VacancyDegrees.ToList())
+                        foreach (var item in vacancy.VacancyDegrees)
                         {
                             db.Entry(item).State = System.Data.Entity.EntityState.Deleted;
                             db.VacancyDegrees.Remove(item);
@@ -444,7 +444,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
         }
         public void ClearVacancyDegrees(int vacancyId)
         {
-            List<VacancyDegree> vacancyDegrees = db.VacancyDegrees.Where(vd => vd.VacancyId.Equals(vacancyId)).ToList();
+            IEnumerable<VacancyDegree> vacancyDegrees = db.VacancyDegrees.Where(vd => vd.VacancyId.Equals(vacancyId));
             foreach (var item in vacancyDegrees)
             {
                 db.VacancyDegrees.Remove(item);
@@ -453,7 +453,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
         }
         public void ClearVacancyRanks(int vacancyId)
         {
-            List<VacancyRank> vacancyRanks = db.VacancyRanks.Where(vr => vr.VacancyId.Equals(vacancyId)).ToList();
+            IEnumerable<VacancyRank> vacancyRanks = db.VacancyRanks.Where(vr => vr.VacancyId == vacancyId);
             foreach (var item in vacancyRanks)
             {
                 db.VacancyRanks.Remove(item);
@@ -462,11 +462,11 @@ namespace cutecms_porto.Areas.RMS.Controllers
         }
         public void ReGenerateCodes()
         {
-            var departments = (from v in db.Vacancies join d in db.RMSDepartments on v.DeptId equals d.Id select d).Distinct().ToList();
+            var departments = (from v in db.Vacancies join d in db.RMSDepartments on v.DeptId equals d.Id select d).Distinct();
             foreach (var dept in departments)
             {
                 int vacancyCounter = 0;
-                var vacanciesInDept = db.Vacancies.Where(v => v.TenantId.Trim().Equals(Tenant.TenantId) && v.DeptId == dept.Id).OrderBy(v => v.CreatedOn).ToList();
+                var vacanciesInDept = db.Vacancies.Where(v => v.TenantId.Trim().Equals(Tenant.TenantId) && v.DeptId == dept.Id).OrderBy(v => v.CreatedOn);
                 foreach (var vacancy in vacanciesInDept)
                 {
                     vacancyCounter++;

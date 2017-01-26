@@ -1,5 +1,4 @@
 ﻿@using cutecms_porto.Areas.CMS.Models.DBModel
-@using System.Threading;
 @{
     CMSEntities db = new CMSEntities();
     List<MenuItem> menuItems = new List<MenuItem>();
@@ -10,25 +9,21 @@
 
 @helper GetTreeView(List<MenuItem> menuItems, short? parentID)
         {
-CMSEntities db = new CMSEntities();
 lock (cutecms_porto.Helpers.BaseController.BreadcrumbLock)
 {
     for (int index = menuItems.Count() - 1; index >= 0; index--)
     {
         int copyOfIndex = index;
-        if (menuItems[copyOfIndex].Status.Code.Equals("published"))
-        {
-                <li>
-                    @if (menuItems[copyOfIndex].IsLeaf)
-                    {
-                        <a href="@menuItems[copyOfIndex].Path">@menuItems[copyOfIndex].Name</a>
-                    }
-                    else
-                    {
-                        <a href="#">@menuItems[copyOfIndex].Name <b class="@Resources.Resources.MarginDirClass @Resources.Resources.Arrow"></b></a>
-                    }
-                </li>
-        }
+            <li>
+                @if (menuItems[copyOfIndex].IsLeaf)
+                {
+                    <a href="@menuItems[copyOfIndex].Path">@menuItems[copyOfIndex].Name</a>
+                }
+                else
+                {
+                    <a href="#">@menuItems[copyOfIndex].Name <b class="@Resources.Resources.MarginDirClass @Resources.Resources.Arrow"></b></a>
+                }
+            </li>
     }
 }
 }

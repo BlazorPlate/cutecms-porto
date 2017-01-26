@@ -112,7 +112,7 @@ namespace cutecms_porto.Areas.Identity.Models
                 UserId = user.Id
             };
 
-            foreach (ApplicationRoleGroup role in group.Roles.ToList())
+            foreach (ApplicationRoleGroup role in group.Roles)
             {
                 _userManager.AddToRole(userId, role.Role.Name);
             }

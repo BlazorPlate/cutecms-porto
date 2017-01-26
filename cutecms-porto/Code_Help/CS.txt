@@ -57,3 +57,15 @@ try
 e.g
 @OrganizationData.Organization.([a-z]\w*)
 @(OrganizationData.Organization?.$1)
+
+
+
+#Disable Track Changes
+BusOrder orderBO = new BusOrder();
+orderBO.Context.Configuration.AutoDetectChangesEnabled = false;
+
+foreach (OrderIDsToProcess orderID in orderIDsToProcess)
+{        
+    var order = orderBO.Context.Orders.FirstOrDefault(o=> o.OrderID == orderID.OrderID); 
+    orderID.CustomerID = order.CustomerID; 
+}

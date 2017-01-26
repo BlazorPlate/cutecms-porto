@@ -5283,7 +5283,7 @@
     <Content Include="Views\Shared\EditorTemplates\SelectTagEditorViewModel.cshtml" />
     <Content Include="Areas\Identity\Views\Account\Delete.cshtml" />
     <Content Include="Areas\Identity\Views\Account\Edit.cshtml" />
-    <Content Include="Views\Shared\_PageHeader.cshtml" />
+    <Content Include="Views\Shared\_HeaderMenu.cshtml" />
     <Content Include="Views\Shared\_NewsBar.cshtml" />
     <Content Include="Views\Pages\Content.cshtml" />
     <Content Include="Views\Home\Contents.cshtml" />

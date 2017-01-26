@@ -25,6 +25,7 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
         public string TenantId { get; set; }
         [Display(Name = "Code", ResourceType = typeof(Resources.Resources))]
         public string Code { get; set; }
+        //[StringLength(5, ErrorMessageResourceType = typeof(Resources.Resources), ErrorMessageResourceName = "StringLength", MinimumLength = 1)]
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
         [Display(Name = "Title", ResourceType = typeof(Resources.Resources))]
         public string Title { get; set; }

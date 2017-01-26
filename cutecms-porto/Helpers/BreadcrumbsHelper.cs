@@ -1,9 +1,6 @@
 ﻿using cutecms_porto.Areas.CMS.Models.DBModel;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.Entity.Core.Objects;
-using System.Data.Entity.Infrastructure;
 using System.Linq;
 
 namespace cutecms_porto.Helpers
@@ -21,8 +18,7 @@ namespace cutecms_porto.Helpers
         {
             lock (thisLock)
             {
-                var updatedMenuItems = ((List<MenuItem>)System.Web.HttpRuntime.Cache["MenuItems"]).Where(m => m.Menu.Code.Trim().Equals("header"));
-                var menuItem = updatedMenuItems.Where(mi => mi.Id == menuItemId).FirstOrDefault();
+                var menuItem = db.MenuItems.Find(menuItemId);
                 if (menuItem.IsLeaf)
                 {
                     menuItemsList.Clear();
@@ -30,7 +26,7 @@ namespace cutecms_porto.Helpers
                 }
                 if (menuItem.ParentId != null)
                 {
-                    menuItemsList.Add(updatedMenuItems.Where(mi => mi.Id == menuItem.ParentId).Single());
+                    menuItemsList.Add(db.MenuItems.Find(menuItem.ParentId));
                     GetParentMenuItems(menuItem.ParentId);
                 }
             }

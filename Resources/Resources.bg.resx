@@ -330,9 +330,6 @@
   <data name="RememberMe" xml:space="preserve">
     <value>Запомни ме</value>
   </data>
-  <data name="LogIn" xml:space="preserve">
-    <value>Влизане.</value>
-  </data>
   <data name="PhotoGallery" xml:space="preserve">
     <value>Фото галерия</value>
   </data>
@@ -422,9 +419,6 @@
   </data>
   <data name="NoNews" xml:space="preserve">
     <value>Няма новини.</value>
-  </data>
-  <data name="ReadMore" xml:space="preserve">
-    <value>Прочетете повече...</value>
   </data>
   <data name="ContentTypes" xml:space="preserve">
     <value>Типове съдържание</value>
@@ -1475,5 +1469,11 @@
   </data>
   <data name="InvalidToken" xml:space="preserve">
     <value>Невалиден маркер</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Прочети повече</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Влизане</value>
   </data>
 </root>

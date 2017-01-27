@@ -54,7 +54,7 @@ namespace cutecms_porto.Controllers
             var organization = configDb.Organizations.Where(o => o.TenantId.Trim().Equals(Tenant.TenantId) && o.IsDefault == true && o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
             if (organization == null)
             {
-                throw new HttpException(400, "Bad Request");
+                throw new HttpException(404, "Page Not Found");
             }
             return View(organization);
         }
@@ -77,7 +77,7 @@ namespace cutecms_porto.Controllers
             DateTime.TryParse(end, provider, DateTimeStyles.None, out endDate);
             DateTime StartDate = startDate;
             DateTime EndDate = endDate;
-            var eventCalendar = cmsDb.Contents.Where(e => e.TenantId.Trim().Equals(Tenant.TenantId) && e.ContentType.Code.Equals("event") && !e.Status.Code.Equals("unpublished") && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name));
+            var eventCalendar = cmsDb.Contents.Where(e => e.TenantId.Trim().Equals(Tenant.TenantId) && e.ContentType.Code.Equals("event") && !e.Status.Code.Equals("unpublished") && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).AsEnumerable();
             var events = from e in eventCalendar
                          select new
                          {
@@ -108,25 +108,16 @@ namespace cutecms_porto.Controllers
             var imageFiles = cmsDb.ImageFiles.Where(i => i.TenantId.Trim().Equals(Tenant.TenantId) && i.GalleryId == id && (i.ImageTags.Any(t => t.Tag.Id == tagIdFilter) || tagIdFilter == 0)).OrderBy(i => i.CreatedOn).ToPagedList(pageNumber, 10);
             if (imageFiles == null)
             {
-                throw new HttpException(400, "Bad Request");
+                throw new HttpException(404, "Page Not Found");
             }
             ViewBag.ReturnUrl = returnUrl;
             return View(imageFiles);
         }
+        [OutputCache(Duration = 9000, VaryByCustom = "culture")]
         [ChildActionOnly]
-        [OutputCache(Duration = 864000)]
-        public ActionResult HeaderMenu()
+        public PartialViewResult GetHeaderMenu()
         {
-            lock (MenuBuilderLock)
-            {
-                ExpiryHelper.ExpiryValidator();
-            }
             return PartialView("_HeaderMenu");
-        }
-        [ChildActionOnly]
-        public ActionResult Subscribe()
-        {
-            return PartialView();
         }
         [HttpPost]
         public ActionResult Subscribe(SubscriberViewModel subscriber, string returnUrl)

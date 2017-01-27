@@ -4,7 +4,7 @@
 @{
     int count = 0;
     CMSEntities db = new CMSEntities();
-    IEnumerable<MenuItem> menuItems = db.MenuItems.Include("Status").Include("Menu").Include("Language").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name));
+    IEnumerable<MenuItem> menuItems =  db.MenuItems.Include("Status").Include("Menu").Include("Language").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name));
     count = menuItems.Count();
     CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
     RegionInfo regionInfo = new RegionInfo(cultureInfo.LCID);
@@ -16,14 +16,13 @@
                 <nav class="header-nav-top" style="margin-left:0px;">
                     <ul class="nav nav-pills">
                         <li>
-                            <a href="#" class="dropdown-menu-toggle" id="dropdownLanguage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a href="#" id="dropdownLanguage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img src="~/assets/porto/img/blank.gif" class="flag flag-@regionInfo.TwoLetterISORegionName.ToLower()" alt="@regionInfo.DisplayName"> @regionInfo.NativeName
                                 <i class="fa fa-globe"></i>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu" aria-labelledby="dropdownLanguage">
+                            <ul class="dropdown-menu" aria-labelledby="dropdownLanguage">
                                 @foreach (var item in db.CMSLanguages.Where(l => l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal))
                                 {
-                                    @*<li><a tabindex="-1" href=""><img width="16" height="11" class="flag-lang" alt="lang" src="~/assets/images/flags/@item.Flag"> @item.Name</a></li>*@
                                 CultureInfo itemCultureInfo = CultureInfo.CreateSpecificCulture(item.CultureName.Trim());
                                 RegionInfo itemRegionInfo = new RegionInfo(itemCultureInfo.LCID);
                                 <li><a href="@Url.RouteUrl(new RouteValueDictionary(ViewContext.RouteData.Values.ToDictionary(r => r.Key, r => r.Key == "culture" ? item.CultureName.Trim() : r.Value)))"><img src="~/assets/porto/img/blank.gif" class="flag flag-@item.FlagCode" alt="@itemRegionInfo.NativeName"> @itemRegionInfo.NativeName</a></li>
@@ -62,7 +61,7 @@
                     <li class="social-icons-linkedin"><a href="@(OrganizationData.Organization?.GooglePlusUrl)" target="_blank" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
                 </ul>
                 <div class="header-search hidden-xs">
-                    @using (Html.BeginForm("Contents", "Home", new { id = "searchForm", area = "" }, FormMethod.Post))
+                    @using (Html.BeginForm("Contents", "Home", new { area = "" }, FormMethod.Post))
                     {
                         <div class="input-group">
                             @Html.Editor("keywordFilter", new { htmlAttributes = new { @placeholder = Resources.Resources.Search, @class = "form-control" } })

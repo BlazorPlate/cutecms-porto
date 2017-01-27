@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.Entity;
 using System.Linq;
-using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using cutecms_porto.Areas.CMS.Models.DBModel;
@@ -22,7 +19,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            var contentGalleries = db.ContentGalleries.Include(c => c.Content).Include(c => c.Gallery).Where(c => c.ContentId == id);
+            var contentGalleries = db.ContentGalleries.Include(c => c.Content).Include(c => c.Gallery).Where(c => c.Gallery.TenantId.Equals(Tenant.TenantId) && c.ContentId == id);
             ViewBag.ContentId = id;
             return View(contentGalleries.ToList());
         }
@@ -34,7 +31,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            ContentGallery contentGallery = db.ContentGalleries.Find(id);
+            var contentGallery = db.ContentGalleries.Include(c => c.Content).Include(c => c.Gallery).Where(c => c.Gallery.TenantId.Equals(Tenant.TenantId) && c.Id == id).FirstOrDefault();
             if (contentGallery == null)
             {
                 throw new HttpException(404, "Page Not Found");
@@ -51,8 +48,10 @@ namespace cutecms_porto.Areas.CMS.Controllers
             }
             ViewBag.ContentId = id;
             ViewBag.ContentTitle = db.Contents.Find(id).Title;
-            int[] assignedGalleries = db.Galleries.Where(c => c.ContentGalleries.Any(cg => cg.ContentId == id)).Select(c => c.Id).ToArray();
-            ViewBag.GalleryId = new SelectList(db.Galleries.Where(g => !assignedGalleries.Contains(g.Id)), "Id", "Code");
+            var contentGallery = db.ContentGalleries.Include(c => c.Content).Include(c => c.Gallery).Where(c => c.Gallery.TenantId.Equals(Tenant.TenantId) && c.Id == id).FirstOrDefault();
+
+            int[] assignedGalleries = db.Galleries.Where(g => g.TenantId.Equals(Tenant.TenantId) && g.ContentGalleries.Any(cg => cg.ContentId == id)).Select(c => c.Id).ToArray();
+            ViewBag.GalleryId = new SelectList(db.Galleries.Where(g => g.TenantId.Equals(Tenant.TenantId) && !assignedGalleries.Contains(g.Id)), "Id", "Code");
             return View();
         }
 
@@ -71,8 +70,8 @@ namespace cutecms_porto.Areas.CMS.Controllers
             }
 
             ViewBag.ContentId = contentGallery.ContentId;
-            int[] assignedGalleries = db.Galleries.Where(c => c.ContentGalleries.Any(cg => cg.ContentId == contentGallery.ContentId)).Select(c => c.Id).ToArray();
-            ViewBag.GalleryId = new SelectList(db.Galleries.Where(g => !assignedGalleries.Contains(g.Id)), "Id", "Code", contentGallery.GalleryId);
+            int[] assignedGalleries = db.Galleries.Where(c => c.TenantId.Equals(Tenant.TenantId) && c.ContentGalleries.Any(cg => cg.ContentId == contentGallery.ContentId)).Select(c => c.Id).ToArray();
+            ViewBag.GalleryId = new SelectList(db.Galleries.Where(g => g.TenantId.Equals(Tenant.TenantId) && !assignedGalleries.Contains(g.Id)), "Id", "Code", contentGallery.GalleryId);
             return View(contentGallery);
         }
 
@@ -90,7 +89,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             }
             ViewBag.ContentId = contentGallery.ContentId;
             ViewBag.ContentTitle = contentGallery.Content.Title;
-            ViewBag.GalleryId = new SelectList(db.Galleries, "Id", "Code", contentGallery.GalleryId);
+            ViewBag.GalleryId = new SelectList(db.Galleries.Where(g=> g.TenantId.Equals(Tenant.TenantId)), "Id", "Code", contentGallery.GalleryId);
             return View(contentGallery);
         }
 
@@ -109,7 +108,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             }
             ViewBag.ContentId = contentGallery.ContentId;
             ViewBag.ContentTitle = db.Contents.Find(contentGallery.ContentId).Title;
-            ViewBag.GalleryId = new SelectList(db.Galleries, "Id", "Code", contentGallery.GalleryId);
+            ViewBag.GalleryId = new SelectList(db.Galleries.Where(g=> g.TenantId.Equals(Tenant.TenantId)), "Id", "Code", contentGallery.GalleryId);
             return View(contentGallery);
         }
 
@@ -120,7 +119,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            ContentGallery contentGallery = db.ContentGalleries.Find(id);
+            var contentGallery = db.ContentGalleries.Include(c => c.Content).Include(c => c.Gallery).Where(c => c.Gallery.TenantId.Equals(Tenant.TenantId) && c.Id == id).FirstOrDefault();
             if (contentGallery == null)
             {
                 throw new HttpException(404, "Page Not Found");
@@ -133,7 +132,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ContentGallery contentGallery = db.ContentGalleries.Find(id);
+            var contentGallery = db.ContentGalleries.Include(c => c.Content).Include(c => c.Gallery).Where(c => c.Gallery.TenantId.Equals(Tenant.TenantId) && c.Id == id).FirstOrDefault();
             db.ContentGalleries.Remove(contentGallery);
             db.SaveChanges();
             return RedirectToAction("Index", new { id = contentGallery.ContentId });

@@ -591,9 +591,6 @@
   <data name="Location" xml:space="preserve">
     <value>الموقع</value>
   </data>
-  <data name="LogIn" xml:space="preserve">
-    <value>تسجيل الدخول.</value>
-  </data>
   <data name="LoginToSite" xml:space="preserve">
     <value>تسجيل الدخول الى الموقع</value>
   </data>
@@ -830,9 +827,6 @@
   </data>
   <data name="StartDate" xml:space="preserve">
     <value>تاريخ بداية الفعالية</value>
-  </data>
-  <data name="ReadMore" xml:space="preserve">
-    <value>اقرأ المزيد...</value>
   </data>
   <data name="Regards" xml:space="preserve">
     <value>لكم منـا أجمل تحية.</value>
@@ -1475,5 +1469,11 @@
   </data>
   <data name="InvalidToken" xml:space="preserve">
     <value>رمز اعادة ضبط كلمة السر غير صالح</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>اقرأ المزيد</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>تسجيل الدخول</value>
   </data>
 </root>

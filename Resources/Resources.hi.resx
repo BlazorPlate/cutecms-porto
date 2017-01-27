@@ -330,9 +330,6 @@
   <data name="RememberMe" xml:space="preserve">
     <value>याद है मुझे</value>
   </data>
-  <data name="LogIn" xml:space="preserve">
-    <value>लॉग इन करो.</value>
-  </data>
   <data name="PhotoGallery" xml:space="preserve">
     <value>फोटो गैलरी</value>
   </data>
@@ -422,9 +419,6 @@
   </data>
   <data name="NoNews" xml:space="preserve">
     <value>कोई खबर नहीं हैं।</value>
-  </data>
-  <data name="ReadMore" xml:space="preserve">
-    <value>और अधिक पढ़ें...</value>
   </data>
   <data name="ContentTypes" xml:space="preserve">
     <value>सामग्री प्रकार</value>
@@ -1475,5 +1469,11 @@
   </data>
   <data name="InvalidToken" xml:space="preserve">
     <value>अमान्य टोकन</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>और अधिक पढ़ें</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>लॉग इन करो</value>
   </data>
 </root>

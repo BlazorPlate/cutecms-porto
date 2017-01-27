@@ -330,9 +330,6 @@
   <data name="RememberMe" xml:space="preserve">
     <value>Ingat saya</value>
   </data>
-  <data name="LogIn" xml:space="preserve">
-    <value>Masuk.</value>
-  </data>
   <data name="PhotoGallery" xml:space="preserve">
     <value>Galeri foto</value>
   </data>
@@ -422,9 +419,6 @@
   </data>
   <data name="NoNews" xml:space="preserve">
     <value>Ada tidak ada berita.</value>
-  </data>
-  <data name="ReadMore" xml:space="preserve">
-    <value>Baca lebih lanjut...</value>
   </data>
   <data name="ContentTypes" xml:space="preserve">
     <value>Jenis konten</value>
@@ -1475,5 +1469,11 @@
   </data>
   <data name="InvalidToken" xml:space="preserve">
     <value>Token tidak valid</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Baca lebih lanjut</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Masuk</value>
   </data>
 </root>

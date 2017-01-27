@@ -330,9 +330,6 @@
   <data name="RememberMe" xml:space="preserve">
     <value>Acuérdate de mí</value>
   </data>
-  <data name="LogIn" xml:space="preserve">
-    <value>Inicia sesión.</value>
-  </data>
   <data name="PhotoGallery" xml:space="preserve">
     <value>Galería de fotos</value>
   </data>
@@ -422,9 +419,6 @@
   </data>
   <data name="NoNews" xml:space="preserve">
     <value>No hay ninguna noticia.</value>
-  </data>
-  <data name="ReadMore" xml:space="preserve">
-    <value>Leer más...</value>
   </data>
   <data name="ContentTypes" xml:space="preserve">
     <value>Tipos de contenido</value>
@@ -1475,5 +1469,11 @@
   </data>
   <data name="InvalidToken" xml:space="preserve">
     <value>Código no válido</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Leer más</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Inicia sesión</value>
   </data>
 </root>

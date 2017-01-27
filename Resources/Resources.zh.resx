@@ -330,9 +330,6 @@
   <data name="RememberMe" xml:space="preserve">
     <value>还记得我</value>
   </data>
-  <data name="LogIn" xml:space="preserve">
-    <value>登录。</value>
-  </data>
   <data name="PhotoGallery" xml:space="preserve">
     <value>照片库</value>
   </data>
@@ -422,9 +419,6 @@
   </data>
   <data name="NoNews" xml:space="preserve">
     <value>没有消息。</value>
-  </data>
-  <data name="ReadMore" xml:space="preserve">
-    <value>阅读更多...</value>
   </data>
   <data name="ContentTypes" xml:space="preserve">
     <value>内容类型</value>
@@ -1475,5 +1469,11 @@
   </data>
   <data name="InvalidToken" xml:space="preserve">
     <value>无效的标记</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>阅读更多</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>登录</value>
   </data>
 </root>

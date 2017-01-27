@@ -330,9 +330,6 @@
   <data name="RememberMe" xml:space="preserve">
     <value>나를 기억합니다</value>
   </data>
-  <data name="LogIn" xml:space="preserve">
-    <value>로그인.</value>
-  </data>
   <data name="PhotoGallery" xml:space="preserve">
     <value>사진 갤러리</value>
   </data>
@@ -422,9 +419,6 @@
   </data>
   <data name="NoNews" xml:space="preserve">
     <value>아무런 소식이 있다.</value>
-  </data>
-  <data name="ReadMore" xml:space="preserve">
-    <value>읽기 더 많은...</value>
   </data>
   <data name="ContentTypes" xml:space="preserve">
     <value>콘텐츠 형식</value>
@@ -1475,5 +1469,11 @@
   </data>
   <data name="InvalidToken" xml:space="preserve">
     <value>잘못 된 토큰</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>더 읽기</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>로그인</value>
   </data>
 </root>

@@ -30,7 +30,7 @@
                     {
                         <div class="clearfix search-result">
                             <!-- item -->
-                            <h4><a href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@item.Title</a></h4>
+                            <h4><a href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@Html.Raw(item.Title.HighlightKeyWords(ViewBag.KeywordFilter as string, "yellow", false))</a></h4>
                             @if (item.StartDate != null)
                             {
                                 <div>
@@ -41,11 +41,9 @@
                             {
                                 <small class="text-danger text-small">@Resources.Resources.PublishedOn: @item.PublishedOn.Value.ToString("dddd, d MMMM, yyyy")</small>
                             }
-                            <p>@Html.Raw(item.MainContent.StripHtml().Chop(500).HighlightKeyWords(ViewBag.KeywordFilter as string, "yellow", false))</p>
-                            <a class="btn btn-reveal btn-default" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">
-                                <i class="fa fa-plus"></i>
-                                <span>@Resources.Resources.ReadMore</span>
-                            </a>
+                            <p class="text-justify">
+                                @Html.Raw(item.MainContent.StripHtml().Chop(500).HighlightKeyWords(ViewBag.KeywordFilter as string, "yellow", false)) <a class="btn btn-primary btn-xs" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })"><i class="fa fa-plus"></i><span> @Resources.Resources.ReadMore</span></a>
+                            </p>
                             <!-- /item -->
                         </div>
                     }

@@ -330,9 +330,6 @@
   <data name="RememberMe" xml:space="preserve">
     <value>Ghi nhớ tôi</value>
   </data>
-  <data name="LogIn" xml:space="preserve">
-    <value>Đăng nhập.</value>
-  </data>
   <data name="PhotoGallery" xml:space="preserve">
     <value>Thư viện ảnh</value>
   </data>
@@ -422,9 +419,6 @@
   </data>
   <data name="NoNews" xml:space="preserve">
     <value>Không có không có tin tức.</value>
-  </data>
-  <data name="ReadMore" xml:space="preserve">
-    <value>Đọc thêm...</value>
   </data>
   <data name="ContentTypes" xml:space="preserve">
     <value>Loại nội dung</value>
@@ -1475,5 +1469,11 @@
   </data>
   <data name="InvalidToken" xml:space="preserve">
     <value>Mã thông báo không hợp lệ</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Đọc thêm</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Đăng nhập</value>
   </data>
 </root>

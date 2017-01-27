@@ -279,7 +279,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                             }
                             db.SaveChanges();
                             dbContextTransaction.Commit();
-                            CacheHelper.ClearCache(null);
+                            CacheHelper.ClearCache();
                             statusId = contentStatus.Id;
                             return RedirectToAction("Index", new { statusId = statusId });
                         }
@@ -416,7 +416,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                             db.Entry(content).State = EntityState.Modified;
                             db.SaveChanges();
                             dbContextTransaction.Commit();
-                            CacheHelper.ClearCache(content.AbsolutePath);
+                            CacheHelper.ClearCache();
                             statusId = contentStatus.Id;
                             return RedirectToAction("Index", new { statusId = statusId });
                         }
@@ -501,7 +501,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                     }
                 }
             }
-            CacheHelper.ClearCache(null);
+            CacheHelper.ClearCache();
             return RedirectToAction("Index");
         }
         protected override void Dispose(bool disposing)

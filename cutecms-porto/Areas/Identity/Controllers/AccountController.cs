@@ -9,6 +9,7 @@ using Microsoft.Owin.Security;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Runtime.Caching;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
@@ -117,6 +118,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
+            OutputCacheAttribute.ChildActionCache = new MemoryCache("NewDefault");
             if (!ModelState.IsValid)
             {
                 if (RouteData.DataTokens["area"] == null)
@@ -213,6 +215,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
+            OutputCacheAttribute.ChildActionCache = new MemoryCache("NewDefault");
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.Email.Trim().ToLower(), Email = model.Email.Trim().ToLower() };
@@ -220,7 +223,6 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 if (result.Succeeded)
                 {
                     //await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-
                     // For more information on how to enable account confirmation and password reset
                     // please visit http://go.microsoft.com/fwlink/?LinkID=320771 Send an email with
                     // this link
@@ -453,6 +455,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         public ActionResult LogOff(string returnUrl)
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            OutputCacheAttribute.ChildActionCache = new MemoryCache("NewDefault");
             return RedirectToLocal(returnUrl, null);
         }
 

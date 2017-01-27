@@ -2176,7 +2176,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Log in..
+        ///   Looks up a localized string similar to Log in.
         /// </summary>
         public static string LogIn {
             get {
@@ -3130,7 +3130,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Read more....
+        ///   Looks up a localized string similar to Read more.
         /// </summary>
         public static string ReadMore {
             get {

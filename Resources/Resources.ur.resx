@@ -330,9 +330,6 @@
   <data name="RememberMe" xml:space="preserve">
     <value>مجھے یاد ہے</value>
   </data>
-  <data name="LogIn" xml:space="preserve">
-    <value>درج کريں.</value>
-  </data>
   <data name="PhotoGallery" xml:space="preserve">
     <value>تصویر گیلری، نگارخانہ</value>
   </data>
@@ -422,9 +419,6 @@
   </data>
   <data name="NoNews" xml:space="preserve">
     <value>کوئی خبر ہیں ۔</value>
-  </data>
-  <data name="ReadMore" xml:space="preserve">
-    <value>مزید پڑھیں...</value>
   </data>
   <data name="ContentTypes" xml:space="preserve">
     <value>مواد کی اقسام</value>
@@ -1475,5 +1469,11 @@
   </data>
   <data name="InvalidToken" xml:space="preserve">
     <value>کالعدم ٹوکن</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>مزید پڑھیں</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>درج کريں</value>
   </data>
 </root>

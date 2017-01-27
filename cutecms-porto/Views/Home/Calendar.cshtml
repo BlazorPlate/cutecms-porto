@@ -18,10 +18,18 @@
         </div>
     </section>
 }
+@section Styles{
+    <link href="~/assets/porto/vendor/fullcalendar/fullcalendar.min.css" rel="stylesheet" />
+}
+@section Scripts{
+    <script src="~/assets/porto/vendor/fullcalendar/lib/moment.min.js"></script>
+    <script src="~/assets/porto/vendor/fullcalendar/fullcalendar.min.js"></script>
+    <script src="~/assets/porto/vendor/fullcalendar/locale-all.js"></script>
+}
 <section class="justify">
     <div class="container">
         <div class="row">
-            <div id='calendar' class="col-lg-8">
+            <div id="calendar" class="col-lg-8">
                 <script type="text/javascript">
                     function GetCurrentDate() {
                         var date = new Date();
@@ -34,9 +42,18 @@
                         $('#calendar').fullCalendar({
                             locale: '@langFile',
                             header: {
-                                left: 'prev,next today',
+                                left: 'prev,next,today',
                                 center: 'title',
                                 right: 'month,agendaWeek,agendaDay'
+                            },
+                            viewRender: function(view,element){
+
+                                $('#calendar table').css('background-color','transparent');
+
+                                $('#calendar tr.fc-minor').attr('style','background:initial;');
+
+                                $('#calendar table').css('margin-bottom','0');
+
                             },
                             defaultDate: GetCurrentDate(),
                             events: "@Url.Action("ListEvents")",
@@ -61,20 +78,20 @@
             {
                 foreach (var item in Model)
                 {
-                        <div>
-                            <a href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@item.Title</a><br />
-                            @if (item.StartDate != null)
+                <div>
+                    <a href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@item.Title</a><br />
+                    @if (item.StartDate != null)
                             {
-                                <small class="text-danger text-small">@Resources.Resources.From @item.StartDate.Value.ToString("dddd, d MMMM, yyyy | h:mm tt") @(item.EndDate == null ? "" : @Resources.Resources.Till + " " + item.EndDate.Value.ToString("dddd, d MMMM, yyyy | h:mm tt")) @(item.Location == null ? "" : "@ " + item.Location)</small>
+                            <small class="text-danger text-small">@Resources.Resources.From @item.StartDate.Value.ToString("dddd, d MMMM, yyyy | h:mm tt") @(item.EndDate == null ? "" : @Resources.Resources.Till + " " + item.EndDate.Value.ToString("dddd, d MMMM, yyyy | h:mm tt")) @(item.Location == null ? "" : "@ " + item.Location)</small>
                             }
-                        </div>
-                        <small>@item.MainContent.StripHtml().Chop(155)<br /><a class="btn btn-reveal btn-info btn-xs" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })"><i class="fa fa-plus"></i><span>@Resources.Resources.ReadMore</span></a></small>
-                        <hr />
+                </div>
+                <small>@item.MainContent.StripHtml().Chop(155)<br /><a class="btn btn-reveal btn-info btn-xs" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })"><i class="fa fa-plus"></i><span>@Resources.Resources.ReadMore</span></a></small>
+                <hr />
                     }
                 }
                 else
                 {
-                    <p>@Resources.Resources.NoUpcomingEvents</p>
+                <p>@Resources.Resources.NoUpcomingEvents</p>
                 }
             </div>
         </div>

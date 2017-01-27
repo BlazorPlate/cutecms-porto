@@ -31,7 +31,7 @@ namespace cutecms_porto.Controllers
             var contentTranslationId = db.Contents.FirstOrDefault(c => c.TenantId.Trim().Equals(Tenant.TenantId) && c.UrlSlug.Trim().Equals(slug))?.TranslationId;
             if (contentTranslationId == null)
                 throw new HttpException(404, "Page Not Found");
-            translatedContent = db.Contents.Include("Status").Include("ContentType").Include("ContentLists").Include("ContentLists.ListItems").Include("ContentGalleries").Include("ContentGalleries.Gallery").Include("ContentGalleries.Gallery.GalleryTerms").Include("ContentGalleries.Gallery.GalleryTerms.Language").Include("ContentGalleries.Gallery.ImageFiles").Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && c.TranslationId == contentTranslationId && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
+            translatedContent = db.Contents.Include("Status").Include("ContentType").Include("ContentLists").Include("ContentLists.ListItems").Include("ContentGalleries").Include("ContentGalleries.Gallery").Include("ContentGalleries.Gallery.GalleryTerms").Include("ContentGalleries.Gallery.GalleryTerms.Language").Include("ContentGalleries.Gallery.ImageFiles").Include("ContentGalleries.Gallery.ImageFiles.ImageFileTerms").Include("ContentGalleries.Gallery.ImageFiles.ImageFileTerms.Language").Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && c.TranslationId == contentTranslationId && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
             if (translatedContent == null)
                 throw new HttpException(602, "Page Not Translated");
             if (translatedContent.Status.Code.Equals("unpublished"))

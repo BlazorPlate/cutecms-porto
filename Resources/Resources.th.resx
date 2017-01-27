@@ -330,9 +330,6 @@
   <data name="RememberMe" xml:space="preserve">
     <value>จดจำ</value>
   </data>
-  <data name="LogIn" xml:space="preserve">
-    <value>เข้าสู่ระบบ</value>
-  </data>
   <data name="PhotoGallery" xml:space="preserve">
     <value>รูปภาพ</value>
   </data>
@@ -422,9 +419,6 @@
   </data>
   <data name="NoNews" xml:space="preserve">
     <value>มีข่าว</value>
-  </data>
-  <data name="ReadMore" xml:space="preserve">
-    <value>อ่านเพิ่มเติม...</value>
   </data>
   <data name="ContentTypes" xml:space="preserve">
     <value>ชนิดเนื้อหา</value>
@@ -1475,5 +1469,11 @@
   </data>
   <data name="InvalidToken" xml:space="preserve">
     <value>โทเค็นไม่ถูกต้อง</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>อ่านเพิ่มเติม</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>เข้าสู่ระบบ</value>
   </data>
 </root>

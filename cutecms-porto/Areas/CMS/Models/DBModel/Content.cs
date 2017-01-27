@@ -20,12 +20,11 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
         {
             this.ContentLists = new HashSet<ContentList>();
         }
-
         public int Id { get; set; }
         public string TenantId { get; set; }
         [Display(Name = "Code", ResourceType = typeof(Resources.Resources))]
         public string Code { get; set; }
-        //[StringLength(5, ErrorMessageResourceType = typeof(Resources.Resources), ErrorMessageResourceName = "StringLength", MinimumLength = 1)]
+        //[StringLength(500, ErrorMessageResourceType = typeof(Resources.Resources), ErrorMessageResourceName = "StringLength", MinimumLength = 1)]
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
         [Display(Name = "Title", ResourceType = typeof(Resources.Resources))]
         public string Title { get; set; }

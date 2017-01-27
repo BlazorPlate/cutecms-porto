@@ -264,6 +264,13 @@ namespace cutecms_porto
                 }
             }
         }
+        public override string GetVaryByCustomString(HttpContext context, string arg)
+        {
+            if (arg == "culture")
+                return HttpContext.Current.Request.RequestContext.RouteData.Values["culture"].ToString();
+            return String.Empty;
+        }
         #endregion Methods
+
     }
 }

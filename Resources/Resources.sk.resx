@@ -330,9 +330,6 @@
   <data name="RememberMe" xml:space="preserve">
     <value>Pamätaj si ma</value>
   </data>
-  <data name="LogIn" xml:space="preserve">
-    <value>prihlásiť sa.</value>
-  </data>
   <data name="PhotoGallery" xml:space="preserve">
     <value>Fotogaléria</value>
   </data>
@@ -422,9 +419,6 @@
   </data>
   <data name="NoNews" xml:space="preserve">
     <value>Nie sú žiadne správy.</value>
-  </data>
-  <data name="ReadMore" xml:space="preserve">
-    <value>Prečítajte si viac...</value>
   </data>
   <data name="ContentTypes" xml:space="preserve">
     <value>Typy obsahu</value>
@@ -1475,5 +1469,11 @@
   </data>
   <data name="InvalidToken" xml:space="preserve">
     <value>Neplatný Token</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Prečítajte si viac</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>prihlásiť sa</value>
   </data>
 </root>

@@ -132,7 +132,7 @@ namespace cutecms_porto.Areas.Config.Controllers
                 db.Entry(organization).State = EntityState.Modified;
 
                 db.SaveChanges();
-                CacheHelper.ClearCache(null);
+                CacheHelper.ClearCache();
                 return RedirectToAction("Index");
             }
             ViewBag.LanguageId = new SelectList(db.ConfigLanguages.Where(l => l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", organization.LanguageId);
@@ -209,7 +209,7 @@ namespace cutecms_porto.Areas.Config.Controllers
                     item.IsDefault = organization.IsDefault;
                     db.Entry(item).State = EntityState.Modified;
                 }
-                CacheHelper.ClearCache(null);
+                CacheHelper.ClearCache();
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

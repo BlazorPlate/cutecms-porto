@@ -1,8 +1,4 @@
 ﻿@using cutecms_porto.Areas.CMS.Models.DBModel
-@using cutecms_porto.Areas.Config.Models.DBModel
-@{
-    CMSEntities cmsDb = new CMSEntities();
-}
 <!DOCTYPE html>
 <html dir="@(CultureHelper.IsRighToLeft() ? "rtl" : "ltr")" class="boxed">
 <head>
@@ -44,7 +40,7 @@
         <link rel="stylesheet" href="~/assets/porto/css/rtl-theme.css">
         <link rel="stylesheet" href="~/assets/porto/css/rtl-theme-elements.css">
         <link rel="stylesheet" href="~/assets/porto/css/rtl-theme-blog.css">
-        <link rel="stylesheet" href="~/assets/porto/css/rtl-theme-shop.css">  
+        <link rel="stylesheet" href="~/assets/porto/css/rtl-theme-shop.css">
         <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/droid-arabic-kufi" type="text/css" />
     }
     else
@@ -58,7 +54,6 @@
     <link rel="stylesheet" href="~/assets/porto/vendor/rs-plugin/css/settings.css">
     <link rel="stylesheet" href="~/assets/porto/vendor/rs-plugin/css/layers.css">
     <link rel="stylesheet" href="~/assets/porto/vendor/rs-plugin/css/navigation.css">
-    <link rel="stylesheet" href="~/assets/porto/vendor/circle-flip-slideshow/css/component.css">
 
     <!-- Skin CSS -->
     <link rel="stylesheet" href="~/assets/porto/css/skins/default.css">
@@ -68,6 +63,7 @@
 
     <!-- Head Libs -->
     <script src="~/assets/porto/vendor/modernizr/modernizr.min.js"></script>
+
     @if (cutecms_porto.Helpers.CultureHelper.IsRighToLeft())
     {
         <style>
@@ -96,10 +92,12 @@
         </style>
     }
     @RenderSection("Styles", false)
+    <script src="~/assets/porto/vendor/jquery/jquery.min.js"></script>
+
 </head>
 <body>
     <div class="body">
-        @Html.Action("HeaderMenu", "Home")
+        @{Html.RenderAction("GetHeaderMenu","Home", new { area = "" });}
         @RenderSection("PageHeader", false)
         <div role="main" class="main">
             @RenderBody()
@@ -122,13 +120,13 @@
                             <div class="alert alert-danger hidden" id="newsletterError"></div>
 
                             @*<form id="newsletterForm" action="php/newsletter-subscribe.php" method="POST">
-                                <div class="input-group">
-                                    <input class="form-control" placeholder="Email Address" name="newsletterEmail" id="newsletterEmail" type="text">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-default" type="submit">Go!</button>
-                                    </span>
-                                </div>
-                            </form>*@
+                                    <div class="input-group">
+                                        <input class="form-control" placeholder="Email Address" name="newsletterEmail" id="newsletterEmail" type="text">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="submit">Go!</button>
+                                        </span>
+                                    </div>
+                                </form>*@
                             @{
                                 cutecms_porto.Models.SubscriberViewModel subscriber = new cutecms_porto.Models.SubscriberViewModel();
                             }
@@ -186,9 +184,7 @@
             </div>
         </footer>
     </div>
-
     <!-- Vendor -->
-    <script src="~/assets/porto/vendor/jquery/jquery.min.js"></script>
     <script src="~/assets/porto/vendor/jquery.appear/jquery.appear.min.js"></script>
     <script src="~/assets/porto/vendor/jquery.easing/jquery.easing.min.js"></script>
     <script src="~/assets/porto/vendor/jquery-cookie/jquery-cookie.min.js"></script>
@@ -210,6 +206,7 @@
     <script src="~/assets/porto/vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
     <script src="~/assets/porto/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
     <script src="~/assets/porto/vendor/circle-flip-slideshow/js/jquery.flipshow.min.js"></script>
+    <script src="~/assets/porto/vendor/nivo-slider/jquery.nivo.slider.min.js"></script>
     <script src="~/assets/porto/js/views/view.home.js"></script>
 
     <!-- Theme Custom -->

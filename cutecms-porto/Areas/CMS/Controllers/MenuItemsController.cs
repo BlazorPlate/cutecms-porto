@@ -133,7 +133,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                     menuItem.ParentId = null;
                 db.MenuItems.Add(menuItem);
                 db.SaveChanges();
-                CacheHelper.ClearCache(null);
+                CacheHelper.ClearCache();
                 return RedirectToAction("Index", new { id = menuItem.MenuId });
             }
             ViewBag.MenuCode = db.Menus.Find(menuItem.MenuId).Code;
@@ -253,7 +253,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                         finally
                         {
                             context.Configuration.AutoDetectChangesEnabled = true;
-                            CacheHelper.ClearCache(null);
+                            CacheHelper.ClearCache();
                         }
                     }
                 }
@@ -289,7 +289,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             MenuItem menuItem = db.MenuItems.Include("Language").Include("Menu").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Id == id).FirstOrDefault();
             db.MenuItems.Remove(menuItem);
             db.SaveChanges();
-            CacheHelper.ClearCache(null);
+            CacheHelper.ClearCache();
             return RedirectToAction("Index", new { id = menuItem.MenuId });
         }
 

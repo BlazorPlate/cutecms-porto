@@ -4,7 +4,6 @@
 @{
     CMSEntities db = new CMSEntities();
     IEnumerable<MenuItem> topMenuItems = db.MenuItems.Include("Status").Include("Menu").Include("Language").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Menu.Code.Trim().Equals("top-menu")&& m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name));
-    count = topMenuItems.Count();
     CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
     RegionInfo regionInfo = new RegionInfo(cultureInfo.LCID);
 }

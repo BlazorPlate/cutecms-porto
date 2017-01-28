@@ -67,7 +67,7 @@ namespace cutecms_porto
             var currentController = "";
             var currentAction = "";
             var currentRouteData = RouteTable.Routes.GetRouteData(new HttpContextWrapper(httpContext));
-            var currentArea = currentRouteData.DataTokens["area"];
+            var currentArea = currentRouteData?.DataTokens["area"];
             if (currentArea == null)
                 currentArea = string.Empty;
             if (currentRouteData != null)

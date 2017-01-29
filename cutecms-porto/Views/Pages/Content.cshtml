@@ -53,7 +53,7 @@
             <div class="nivo-slider">
                 <div class="slider-wrapper theme-default">
                     <div id="nivoSlider" class="nivoSlider">
-                        @foreach (var contentGallery in Model.ContentGalleries)
+                        @foreach (var contentGallery in Model.ContentGalleries.OrderBy(c=>c.Ordinal))
                         {
                             var images = contentGallery.Gallery.ImageFiles.Take(5).OrderBy(i => i.Ordinal);
                             foreach (var image in images)
@@ -88,14 +88,14 @@
                     @Html.Raw(HttpUtility.HtmlDecode(Model.MainContent))
                 </div>
                 <div>
-                    @foreach (var contentList in Model.ContentLists)
+                    @foreach (var contentList in Model.ContentLists.OrderBy(c => c.Ordinal))
                     {
                         string active = "active";
                         int count = 0;
                         <h2>@contentList.Name</h2>
                         <div class="toggle toggle-quaternary" data-plugin-toggle>
 
-                            @foreach (var item in contentList.ListItems)
+                            @foreach (var item in contentList.ListItems.OrderBy(l => l.Ordinal))
                             {
                                 if (count != 0)
                                 {

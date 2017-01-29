@@ -71,9 +71,9 @@
                 @using (Html.BeginForm("Contents", "Home", FormMethod.Get))
                 {
                     @Html.TextBox("keywordFilter", ViewBag.KeywordFilter as string, new { @class = "form-control", @placeholder = Resources.Resources.Keywords })
-                    <label class="size-12 margin-top-10">@Resources.Resources.Category</label>
+                    <b>@Resources.Resources.Category</b>
                     @Html.DropDownList("contentTypeIdFilter", new SelectList(ViewBag.ContentTypeIdFilter, "Value", "Text"), Resources.Resources.ChooseContentType, new { @class = "form-control" })
-                    <label class="size-12 margin-top-10">@Resources.Resources.Status</label>
+                    <b>@Resources.Resources.Status</b>
                     @Html.DropDownList("statusIdFilter", new SelectList(ViewBag.StatusIdFilter, "Value", "Text"), Resources.Resources.ChooseStatus, new { @class = "form-control" })
                     <br />
                     <input type="submit" value="@Resources.Resources.Search" class="btn btn-primary form-control" />

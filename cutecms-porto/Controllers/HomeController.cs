@@ -46,8 +46,8 @@ namespace cutecms_porto.Controllers
             ViewBag.KeywordFilter = keywordFilter;
             ViewBag.ContentTypeId = contentTypeIdFilter;
             ViewBag.StatusId = statusIdFilter;
-            var contents = cmsDb.Contents.Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && (c.Title.Contains(keywordFilter.Trim()) || c.MainContent.Contains(keywordFilter.Trim()) || string.IsNullOrEmpty(keywordFilter)) && (c.ContentTypeId == contentTypeIdFilter || contentTypeIdFilter == 0) && (c.StatusId == statusIdFilter || statusIdFilter == 0)).OrderByDescending(c => c.PublishedOn).ThenByDescending(c => c.StartDate);
-            return View(contents.ToPagedList(pageNumber, 8));
+            var contents = cmsDb.Contents.Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && (c.Title.Contains(keywordFilter.Trim()) || c.MainContent.Contains(keywordFilter.Trim()) || c.ContentLists.Any(cl => cl.MainContent.Contains(keywordFilter.Trim())) || string.IsNullOrEmpty(keywordFilter)) && (c.ContentTypeId == contentTypeIdFilter || contentTypeIdFilter == 0) && (c.StatusId == statusIdFilter || statusIdFilter == 0)).OrderByDescending(c => c.PublishedOn).ThenByDescending(c => c.StartDate);
+            return View(contents.ToPagedList(pageNumber, 10));
         }
         public ActionResult Contact()
         {

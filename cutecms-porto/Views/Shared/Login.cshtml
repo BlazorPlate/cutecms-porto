@@ -23,16 +23,21 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 pl-none">
+            <div class="col-md-6 p-none">
                 <span class="remember-box checkbox">
                     <label for="rememberme">
                         <input type="checkbox" id="rememberme" name="rememberme">@Html.LabelFor(m => m.RememberMe)
                     </label>
                 </span>
             </div>
-            <div class="col-md-6 p-none">
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 p-none">
                 <input type="submit" value="@Resources.Resources.LogIn" class="btn btn-primary pull-right mb-xl" data-loading-text="Loading...">
             </div>
+        </div>
+        <div class="row">
             <div class="col-md-12 p-none">
                 @Html.ValidationSummary(false, "", new { @class = "text-danger" })
             </div>

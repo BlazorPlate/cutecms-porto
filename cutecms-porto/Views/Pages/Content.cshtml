@@ -87,27 +87,6 @@
                 <div class="text-justify">
                     @Html.Raw(HttpUtility.HtmlDecode(Model.MainContent))
                 </div>
-                <div class="toggle toggle-quaternary" data-plugin-toggle>
-                    <section class="toggle active">
-                        <label>Curabitur eget leo at.</label>
-                        <div class="toggle-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                    </section>
-                    <section class="toggle">
-                        <label>Curabitur eget leo.</label>
-                        <div class="toggle-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                    </section>
-                    <section class="toggle">
-                        <label>Curabitur eget leo at.</label>
-                        <div class="toggle-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                    </section>
-                </div>
-
                 <div>
                     @foreach (var contentList in Model.ContentLists)
                     {
@@ -124,7 +103,7 @@
                                 }
                                 <section class="toggle @active">
                                     <label>@item.Title</label>
-                                    <div class="toggle-content" style="display: block;">
+                                    <div class="toggle-content">
                                         <p>@Html.Raw(HttpUtility.HtmlDecode(item.Body))</p>
 
                                         @if (item.Url != null)
@@ -167,3 +146,10 @@
         </div>
     </div>
 </div>
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $("table").addClass("table");
+        });
+    </script>
+}

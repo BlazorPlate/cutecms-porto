@@ -87,6 +87,63 @@
                 <div class="text-justify">
                     @Html.Raw(HttpUtility.HtmlDecode(Model.MainContent))
                 </div>
+                <div class="toggle toggle-quaternary" data-plugin-toggle>
+                    <section class="toggle active">
+                        <label>Curabitur eget leo at.</label>
+                        <div class="toggle-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </section>
+                    <section class="toggle">
+                        <label>Curabitur eget leo.</label>
+                        <div class="toggle-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </section>
+                    <section class="toggle">
+                        <label>Curabitur eget leo at.</label>
+                        <div class="toggle-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </section>
+                </div>
+
+                <div>
+                    @foreach (var contentList in Model.ContentLists)
+                    {
+                        string active = "active";
+                        int count = 0;
+                        <h2>@contentList.Name</h2>
+                        <div class="toggle toggle-quaternary" data-plugin-toggle>
+
+                            @foreach (var item in contentList.ListItems)
+                            {
+                                if (count != 0)
+                                {
+                                    active = "";
+                                }
+                                <section class="toggle @active">
+                                    <label>@item.Title</label>
+                                    <div class="toggle-content" style="display: block;">
+                                        <p>@Html.Raw(HttpUtility.HtmlDecode(item.Body))</p>
+
+                                        @if (item.Url != null)
+                                        {
+                                            <label>@Resources.Resources.Website</label>
+                                            <p><a href="@item.Url" target="_blank">@item.Url</a></p>
+                                        }
+                                        @if (item.FilePath != null)
+                                        {
+                                            <label>@Resources.Resources.Attachments</label>
+                                            <a href="@Url.Content(item.FilePath)">@Resources.Resources.Download @item.Title</a>
+                                        }
+                                    </div>
+                                </section>
+                                count++;
+                            }
+                        </div>
+                    }
+                </div>
                 @if (User.IsInRole("Admin"))
             {
                     <div>

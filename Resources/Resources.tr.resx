@@ -1476,4 +1476,7 @@
   <data name="LogIn" xml:space="preserve">
     <value>Oturum aç</value>
   </data>
+  <data name="Dimensions" xml:space="preserve">
+    <value>Boyutlar</value>
+  </data>
 </root>

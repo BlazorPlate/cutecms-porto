@@ -36,11 +36,11 @@ namespace cutecms_porto
 
             // This will handle any non-existing urls
             routes.MapRoute(name: "404-PageNotFound", url: "{*url}",
-            defaults: new { culture = CultureHelper.GetDefaultCulture(), controller = "Error", action = "NotFound" },
+            defaults: new { culture = CultureHelper.GetDefaultCulture(), controller = "Error", action = "CatchAll" },
             constraints: new { TenantAccess = new TenantRouteConstraint() },
             namespaces: new[] { "cutecms_porto.Controllers" });
-
         }
+
         #endregion Methods
     }
 }

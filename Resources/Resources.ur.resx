@@ -1476,4 +1476,7 @@
   <data name="LogIn" xml:space="preserve">
     <value>درج کريں</value>
   </data>
+  <data name="Dimensions" xml:space="preserve">
+    <value>طول و عرض</value>
+  </data>
 </root>

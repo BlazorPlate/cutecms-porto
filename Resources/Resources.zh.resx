@@ -1476,4 +1476,7 @@
   <data name="LogIn" xml:space="preserve">
     <value>登录</value>
   </data>
+  <data name="Dimensions" xml:space="preserve">
+    <value>尺寸</value>
+  </data>
 </root>

@@ -802,6 +802,7 @@
     <Compile Include="Helpers\ImageHelper.cs" />
     <Compile Include="Helpers\LoginRedirectHelper.cs" />
     <Compile Include="Helpers\ExpiryHelper.cs" />
+    <Compile Include="Helpers\RouteCollectionHelper.cs" />
     <Compile Include="Helpers\StringHelper.cs" />
     <Compile Include="Helpers\TenantRouteHelper.cs" />
     <Compile Include="Helpers\TermsHelper.cs" />
@@ -6668,7 +6669,7 @@
     <None Include="Properties\PublishProfiles\cutecms.pubxml" />
     <Content Include="Views\Home\Index.old3.cshtml" />
     <Content Include="Views\Home\Ad.cshtml" />
-    <Content Include="Views\Error\InvalidToken.cshtml" />
+    <Content Include="Views\Error\CatchAll.cshtml" />
     <Content Include="Views\Shared\Account.cshtml" />
     <Content Include="Views\Shared\Login.cshtml" />
     <Content Include="Views\Shared\Register.cshtml" />

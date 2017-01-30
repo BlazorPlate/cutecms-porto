@@ -29,14 +29,14 @@
             </div>
         </div>
         <div class="form-group">
-            @Html.Label(@Resources.Resources.Images, new { @class = "control-label col-md-2" })
+            @Html.Label(Resources.Resources.Images, new { @class = "control-label col-md-2" })
             <div class="col-sm-5">
                 @Html.TextBoxFor(model => model.ImageFiles, new { type = "file", multiple = "multiple" })
                 @Html.ValidationMessageFor(model => model.ImageFile)
             </div>
         </div>
         <div class="form-group">
-            @Html.Label("Dimensions", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label(Resources.Resources.Dimensions, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.TextBox("width", null, new { @placeholder = @Resources.Resources.Width })
                 @Html.TextBox("height", null, new { @placeholder = @Resources.Resources.Height })

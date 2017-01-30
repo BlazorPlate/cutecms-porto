@@ -27,7 +27,7 @@ namespace cutecms_porto.Controllers
         {
             return View();
         }
-        public ActionResult InvalidToken()
+        public ActionResult CatchAll()
         {
             return View();
         }

@@ -1476,4 +1476,7 @@
   <data name="LogIn" xml:space="preserve">
     <value>Log på</value>
   </data>
+  <data name="Dimensions" xml:space="preserve">
+    <value>Dimensioner</value>
+  </data>
 </root>

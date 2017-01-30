@@ -83,7 +83,7 @@ namespace cutecms_porto.Areas.Config.Controllers
                     var path = String.Format("/fileman/Uploads/Images/Config/Organizations/{0}", newFileName);
                     organization.PrimaryLogoPath = path;
                     organization.PrimaryLogoName = newFileName;
-                    using (var img = System.Drawing.Image.FromStream(organization.PrimaryLogo.InputStream))
+                    using (var img = Image.FromStream(organization.PrimaryLogo.InputStream))
                     {
                         if (pWidth == null)
                             pWidth = img.Width;

@@ -802,7 +802,6 @@
     <Compile Include="Helpers\ImageHelper.cs" />
     <Compile Include="Helpers\LoginRedirectHelper.cs" />
     <Compile Include="Helpers\ExpiryHelper.cs" />
-    <Compile Include="Helpers\RouteCollectionHelper.cs" />
     <Compile Include="Helpers\StringHelper.cs" />
     <Compile Include="Helpers\TenantRouteHelper.cs" />
     <Compile Include="Helpers\TermsHelper.cs" />

@@ -38,6 +38,7 @@ namespace cutecms_porto.Areas.CMS.Models
         public short GalleryId { get; set; }
         public string[] AvailableTags { get; set; }
         public List<SelectTagEditorViewModel> Tags { get; set; }
+        [Display(Name = "ImageFiles", ResourceType = typeof(Resources.Resources))]
         public IEnumerable<HttpPostedFileBase> ImageFiles { get; set; }
         #endregion Properties
     }
@@ -111,9 +112,10 @@ namespace cutecms_porto.Areas.CMS.Models
         #endregion Constructors
 
         #region Properties
+        [Display(Name = "Tags", ResourceType = typeof(Resources.Resources))]
         public List<SelectTagEditorViewModel> Tags { get; set; }
         public ImageFile ImageFile { get; set; }
-
+        [Display(Name = "ImageFiles", ResourceType = typeof(Resources.Resources))]
         public IEnumerable<HttpPostedFileBase> ImageFiles { get; set; }
         #endregion Properties
     }

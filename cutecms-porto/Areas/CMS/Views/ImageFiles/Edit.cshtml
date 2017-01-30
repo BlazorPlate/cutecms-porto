@@ -11,7 +11,7 @@
         @Html.HiddenFor(model => model.ImageFile.FilePath)
         @Html.HiddenFor(model => model.ImageFile.ThumbPath)
         @Html.HiddenFor(model => model.ImageFile.CreatedOn)
-        @Html.HiddenFor(model => model.ImageFile.MIME)
+        @Html.HiddenFor(model => model.ImageFile.MIME, new { id = "CreatedOn" })
         <div class="form-group">
             @Html.LabelFor(model => model.ImageFile.GalleryId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -40,7 +40,7 @@
             </div>
         </div>
         <div class="form-group">
-            @Html.Label(@Resources.Resources.Tags, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Tags, new { @class = "control-label col-md-2" })
             <div class="col-sm-5">
                 @Html.EditorFor(model => model.Tags, new { htmlAttributes = new { @class = "form-control" } })
             </div>
@@ -60,6 +60,7 @@
 <div>
     @Html.ActionLink(Resources.Resources.BackToList, "Index")
 </div>
+
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+    @*@Scripts.Render("~/bundles/jqueryval") NOT WORKING*@ 
 }

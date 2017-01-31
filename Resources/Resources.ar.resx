@@ -1482,4 +1482,16 @@
   <data name="CategoryId" xml:space="preserve">
     <value>التصنيف</value>
   </data>
+  <data name="Categories" xml:space="preserve">
+    <value>التصنيفات</value>
+  </data>
+  <data name="ChooseCategory" xml:space="preserve">
+    <value>--اختر الفئة-</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>تصنيفات المعارض</value>
+  </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>تصنيف المعارض</value>
+  </data>
 </root>

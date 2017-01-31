@@ -16,9 +16,10 @@ namespace cutecms_porto.Areas.CMS.Controllers
         private CMSEntities db = new CMSEntities();
 
         // GET: CMS/GalleryCategories
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
-            var galleryCategories = db.GalleryCategories.Include(g => g.Category).Include(g => g.Gallery);
+            var galleryCategories = db.GalleryCategories.Include(g => g.Category).Include(g => g.Gallery).Where(g => g.Gallery.TenantId.Trim().Equals(Tenant.TenantId) && g.GalleryId == id);
+            ViewBag.GalleryId = id;
             return View(galleryCategories.ToList());
         }
 
@@ -27,21 +28,27 @@ namespace cutecms_porto.Areas.CMS.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                 throw new HttpException(400, "Bad Request");
             }
-            GalleryCategory galleryCategory = db.GalleryCategories.Find(id);
+            GalleryCategory galleryCategory = db.GalleryCategories.Include("Gallery").Where(g => g.Gallery.TenantId.Trim().Equals(Tenant.TenantId) && g.Id == id).FirstOrDefault();
             if (galleryCategory == null)
             {
-                return HttpNotFound();
+                throw new HttpException(404, "Page Not Found");
             }
+            ViewBag.GalleryId = galleryCategory.GalleryId;
             return View(galleryCategory);
         }
 
         // GET: CMS/GalleryCategories/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "TenantId");
-            ViewBag.GalleryId = new SelectList(db.Galleries, "Id", "TenantId");
+            if (id == null)
+            {
+                 throw new HttpException(400, "Bad Request");
+            }
+            ViewBag.CategoryId = new SelectList(TermsHelper.Categories(), "CategoryId", "Value");
+            ViewBag.GalleryId = id;
+            ViewBag.GalleryCode = db.Galleries.Find(id).Code;
             return View();
         }
 
@@ -56,11 +63,11 @@ namespace cutecms_porto.Areas.CMS.Controllers
             {
                 db.GalleryCategories.Add(galleryCategory);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { id = galleryCategory.GalleryId});
             }
-
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "TenantId", galleryCategory.CategoryId);
-            ViewBag.GalleryId = new SelectList(db.Galleries, "Id", "TenantId", galleryCategory.GalleryId);
+            ViewBag.CategoryId = new SelectList(TermsHelper.Categories(), "CategoryId", "Value", galleryCategory.CategoryId);
+            ViewBag.GalleryId = galleryCategory.GalleryId;
+            ViewBag.GalleryCode = db.Galleries.Find(galleryCategory.GalleryId).Code;
             return View(galleryCategory);
         }
 
@@ -69,15 +76,16 @@ namespace cutecms_porto.Areas.CMS.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                 throw new HttpException(400, "Bad Request");
             }
-            GalleryCategory galleryCategory = db.GalleryCategories.Find(id);
+            GalleryCategory galleryCategory = db.GalleryCategories.Include("Gallery").Where(g => g.Gallery.TenantId.Trim().Equals(Tenant.TenantId) && g.Id == id).FirstOrDefault();
             if (galleryCategory == null)
             {
-                return HttpNotFound();
+                throw new HttpException(404, "Page Not Found");
             }
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "TenantId", galleryCategory.CategoryId);
-            ViewBag.GalleryId = new SelectList(db.Galleries, "Id", "TenantId", galleryCategory.GalleryId);
+            ViewBag.CategoryId = new SelectList(TermsHelper.Categories(), "CategoryId", "Value", galleryCategory.CategoryId);
+            ViewBag.GalleryId = galleryCategory.GalleryId;
+            ViewBag.GalleryCode = db.Galleries.Find(galleryCategory.GalleryId).Code;
             return View(galleryCategory);
         }
 
@@ -92,10 +100,11 @@ namespace cutecms_porto.Areas.CMS.Controllers
             {
                 db.Entry(galleryCategory).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { id = galleryCategory.GalleryId});
             }
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "TenantId", galleryCategory.CategoryId);
-            ViewBag.GalleryId = new SelectList(db.Galleries, "Id", "TenantId", galleryCategory.GalleryId);
+            ViewBag.CategoryId = new SelectList(TermsHelper.Categories(), "CategoryId", "Value", galleryCategory.CategoryId);
+            ViewBag.GalleryId = galleryCategory.GalleryId;
+            ViewBag.GalleryCode = db.Galleries.Find(galleryCategory.GalleryId).Code;
             return View(galleryCategory);
         }
 
@@ -104,13 +113,14 @@ namespace cutecms_porto.Areas.CMS.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                 throw new HttpException(400, "Bad Request");
             }
-            GalleryCategory galleryCategory = db.GalleryCategories.Find(id);
+            GalleryCategory galleryCategory = db.GalleryCategories.Include("Gallery").Where(g => g.Gallery.TenantId.Trim().Equals(Tenant.TenantId) && g.Id == id).FirstOrDefault();
             if (galleryCategory == null)
             {
-                return HttpNotFound();
+                throw new HttpException(404, "Page Not Found");
             }
+            ViewBag.GalleryId = galleryCategory.GalleryId;
             return View(galleryCategory);
         }
 
@@ -122,7 +132,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             GalleryCategory galleryCategory = db.GalleryCategories.Find(id);
             db.GalleryCategories.Remove(galleryCategory);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { id = galleryCategory.GalleryId});
         }
 
         protected override void Dispose(bool disposing)

@@ -1482,4 +1482,16 @@
   <data name="CategoryId" xml:space="preserve">
     <value>Категория</value>
   </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Категории</value>
+  </data>
+  <data name="ChooseCategory" xml:space="preserve">
+    <value>--Изберете категория--</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>Галерия категории</value>
+  </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>Галерия Категория</value>
+  </data>
 </root>

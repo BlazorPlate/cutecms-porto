@@ -41,14 +41,14 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
         public virtual DbSet<ImageFileTerm> ImageFileTerms { get; set; }
         public virtual DbSet<CMSDepartment> CMSDepartments { get; set; }
         public virtual DbSet<CMSDepartmentTerm> CMSDepartmentTerms { get; set; }
-        public virtual DbSet<CMSLanguage> CMSLanguages { get; set; }
         public virtual DbSet<MenuItem> MenuItems { get; set; }
         public virtual DbSet<Content> Contents { get; set; }
         public virtual DbSet<ContentList> ContentLists { get; set; }
         public virtual DbSet<ContentGallery> ContentGalleries { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
-        public virtual DbSet<CategoryTerm> CategoryTerms { get; set; }
         public virtual DbSet<Gallery> Galleries { get; set; }
         public virtual DbSet<GalleryCategory> GalleryCategories { get; set; }
+        public virtual DbSet<CategoryTerm> CategoryTerms { get; set; }
+        public virtual DbSet<CMSLanguage> CMSLanguages { get; set; }
     }
 }

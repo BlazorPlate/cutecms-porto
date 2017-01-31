@@ -1482,4 +1482,16 @@
   <data name="CategoryId" xml:space="preserve">
     <value>श्रेणी</value>
   </data>
+  <data name="Categories" xml:space="preserve">
+    <value>श्रेणियाँ</value>
+  </data>
+  <data name="ChooseCategory" xml:space="preserve">
+    <value>-- चुनें श्रेणी-</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>गैलरी श्रेणियाँ</value>
+  </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>गैलरी श्रेणी</value>
+  </data>
 </root>

@@ -26,12 +26,12 @@ namespace cutecms_porto.Areas.CMS.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                throw new HttpException(400, "Bad Request");
             }
             Category category = db.Categories.Find(id);
             if (category == null)
             {
-                return HttpNotFound();
+                throw new HttpException(404, "Page Not Found");
             }
             return View(category);
         }
@@ -47,10 +47,11 @@ namespace cutecms_porto.Areas.CMS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,TenantId,Code,Visible,Ordinal")] Category category)
+        public ActionResult Create([Bind(Include = "Id,Code,Visible,Ordinal")] Category category)
         {
             if (ModelState.IsValid)
             {
+                category.TenantId = Tenant.TenantId;
                 db.Categories.Add(category);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -64,12 +65,12 @@ namespace cutecms_porto.Areas.CMS.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                throw new HttpException(400, "Bad Request");
             }
             Category category = db.Categories.Find(id);
             if (category == null)
             {
-                return HttpNotFound();
+                throw new HttpException(404, "Page Not Found");
             }
             return View(category);
         }
@@ -79,10 +80,11 @@ namespace cutecms_porto.Areas.CMS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,TenantId,Code,Visible,Ordinal")] Category category)
+        public ActionResult Edit([Bind(Include = "Id,Code,Visible,Ordinal")] Category category)
         {
             if (ModelState.IsValid)
             {
+                category.TenantId = Tenant.TenantId;
                 db.Entry(category).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -95,12 +97,12 @@ namespace cutecms_porto.Areas.CMS.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                throw new HttpException(400, "Bad Request");
             }
             Category category = db.Categories.Find(id);
             if (category == null)
             {
-                return HttpNotFound();
+                throw new HttpException(404, "Page Not Found");
             }
             return View(category);
         }

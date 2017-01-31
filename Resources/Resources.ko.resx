@@ -1482,4 +1482,16 @@
   <data name="CategoryId" xml:space="preserve">
     <value>카테고리</value>
   </data>
+  <data name="Categories" xml:space="preserve">
+    <value>카테고리</value>
+  </data>
+  <data name="ChooseCategory" xml:space="preserve">
+    <value>-선택 카테고리-</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>갤러리 카테고리</value>
+  </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>갤러리 카테고리</value>
+  </data>
 </root>

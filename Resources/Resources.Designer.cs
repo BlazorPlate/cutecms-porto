@@ -412,6 +412,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Categories.
+        /// </summary>
+        public static string Categories {
+            get {
+                return ResourceManager.GetString("Categories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Category.
         /// </summary>
         public static string Category {
@@ -471,6 +480,15 @@ namespace Resources {
         public static string ChooseAuthor {
             get {
                 return ResourceManager.GetString("ChooseAuthor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to --Choose category--.
+        /// </summary>
+        public static string ChooseCategory {
+            get {
+                return ResourceManager.GetString("ChooseCategory", resourceCulture);
             }
         }
         
@@ -1578,6 +1596,24 @@ namespace Resources {
         public static string Gallery {
             get {
                 return ResourceManager.GetString("Gallery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gallery Categories.
+        /// </summary>
+        public static string GalleryCategories {
+            get {
+                return ResourceManager.GetString("GalleryCategories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gallery Category.
+        /// </summary>
+        public static string GalleryCategory {
+            get {
+                return ResourceManager.GetString("GalleryCategory", resourceCulture);
             }
         }
         

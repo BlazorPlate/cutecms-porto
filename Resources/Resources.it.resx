@@ -1482,4 +1482,16 @@
   <data name="CategoryId" xml:space="preserve">
     <value>Categoria</value>
   </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Categorie</value>
+  </data>
+  <data name="ChooseCategory" xml:space="preserve">
+    <value>-- Scegli la categoria...</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>Categorie della raccolta</value>
+  </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>Galleria Categoria</value>
+  </data>
 </root>

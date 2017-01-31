@@ -1482,4 +1482,16 @@
   <data name="CategoryId" xml:space="preserve">
     <value>Kategória</value>
   </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Kategórie</value>
+  </data>
+  <data name="ChooseCategory" xml:space="preserve">
+    <value>--Vyberte kategóriu--</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>Fotogaléria kategórií</value>
+  </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>Galéria kategórie</value>
+  </data>
 </root>

@@ -1,48 +1,35 @@
 ﻿@model cutecms_porto.Areas.CMS.Models.DBModel.CategoryTerm
-
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.MainTitle = Resources.Resources.Term;
+    ViewBag.Title = Resources.Resources.Delete;
 }
-
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
+<h3>@Resources.Resources.DeleteConfirmation</h3>
 <div>
-    <h4>CategoryTerm</h4>
-    <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.Code)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Category.Code)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.LanguageId)
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.LanguageId)
+            @Html.DisplayFor(model => model.Language.Name)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Value)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Value)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Category.TenantId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Category.TenantId)
-        </dd>
-
     </dl>
-
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
-
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value=@Resources.Resources.Delete class="btn btn-default" /> |
+            @Html.ActionLink(Resources.Resources.BackToList, "Index", new { id = Model.CategoryId })
         </div>
     }
 </div>

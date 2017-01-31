@@ -1482,4 +1482,16 @@
   <data name="CategoryId" xml:space="preserve">
     <value>زمرہ</value>
   </data>
+  <data name="Categories" xml:space="preserve">
+    <value>زمرہ جات</value>
+  </data>
+  <data name="ChooseCategory" xml:space="preserve">
+    <value>-زمرہ – کا انتخاب کریں</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>گیلری، نگارخانہ زمرہ جات</value>
+  </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>گیلری، نگارخانہ زمرہ</value>
+  </data>
 </root>

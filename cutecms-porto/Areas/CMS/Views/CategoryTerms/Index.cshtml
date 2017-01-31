@@ -1,45 +1,44 @@
 ﻿@model IEnumerable<cutecms_porto.Areas.CMS.Models.DBModel.CategoryTerm>
-
 @{
-    ViewBag.Title = "Index";
+    ViewBag.MainTitle = Resources.Resources.Terms;
+    ViewBag.Title = Resources.Resources.Index;
 }
-
-<h2>Index</h2>
-
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink(Resources.Resources.Create, "Create", new { id = ViewBag.CategoryId })
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.Code)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.LanguageId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Value)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Category.TenantId)
-        </th>
         <th></th>
     </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.LanguageId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Value)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Category.TenantId)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
-
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Language.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Value)
+            </td>
+            <td>
+                @Html.ActionLink(Resources.Resources.Edit, "Edit", new { id = item.Id }) |
+                @Html.ActionLink(Resources.Resources.Details, "Details", new { id = item.Id }) |
+                @Html.ActionLink(Resources.Resources.Delete, "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 </table>
+<p>
+    @Html.ActionLink(Resources.Resources.BackToList, "Index", "Categorys", new { id = ViewBag.CategoryId }, null)
+</p>

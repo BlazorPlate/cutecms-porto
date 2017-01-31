@@ -431,6 +431,9 @@
     <Compile Include="Areas\CMS\Models\DBModel\CategoryTerm.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Areas\CMS\Models\DBModel\CMSLanguage.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Areas\CMS\Models\DBModel\ContentGallery.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -472,9 +475,6 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\CMS\Models\DBModel\CMSDepartmentTerm.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Models\DBModel\CMSLanguage.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\CMS\Models\DBModel\CMSPersonalTitle.cs">

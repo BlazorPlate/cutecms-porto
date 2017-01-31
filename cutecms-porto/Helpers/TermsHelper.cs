@@ -41,6 +41,7 @@ namespace cutecms_porto.Helpers
                             select c);
             return statuses;
         }
+
         public static IEnumerable<ContentTypeTerm> ContentTypes()
         {
             var contentTypes = (from p in cmsDb.ContentTypes
@@ -49,6 +50,15 @@ namespace cutecms_porto.Helpers
                                 orderby p.Ordinal
                                 select c);
             return contentTypes;
+        }
+        public static IEnumerable<CategoryTerm> Categories()
+        {
+            var categories = (from p in cmsDb.Categories
+                              join c in cmsDb.CategoryTerms on p.Id equals c.CategoryId
+                              where c != null && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.Visible
+                              orderby p.Ordinal
+                              select c);
+            return categories;
         }
         public static IEnumerable<GalleryTerm> Galleries()
         {

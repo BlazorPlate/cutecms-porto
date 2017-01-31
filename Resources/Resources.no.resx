@@ -1482,4 +1482,16 @@
   <data name="CategoryId" xml:space="preserve">
     <value>Kategori</value>
   </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Kategorier</value>
+  </data>
+  <data name="ChooseCategory" xml:space="preserve">
+    <value>-Velg kategori-</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>Galleri kategorier</value>
+  </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>Galleri kategori</value>
+  </data>
 </root>

@@ -304,6 +304,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_CategoryTerms_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+          <End Role="CategoryTerms" Type="Self.CategoryTerms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CategoryTerms">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ContentGalleries_Contents">
           <End Role="Contents" Type="Self.Contents" Multiplicity="1" />
           <End Role="ContentGalleries" Type="Self.ContentGalleries" Multiplicity="*" />
@@ -718,6 +730,10 @@
             <End Role="Categories" EntitySet="Categories" />
             <End Role="CategoryTerms" EntitySet="CategoryTerms" />
           </AssociationSet>
+          <AssociationSet Name="FK_CategoryTerms_Languages" Association="Self.FK_CategoryTerms_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="CategoryTerms" EntitySet="CategoryTerms" />
+          </AssociationSet>
           <AssociationSet Name="FK_ContentGalleries_Contents" Association="Self.FK_ContentGalleries_Contents">
             <End Role="Contents" EntitySet="Contents" />
             <End Role="ContentGalleries" EntitySet="ContentGalleries" />
@@ -904,40 +920,7 @@
             <End Role="Department" EntitySet="CMSDepartments" />
             <End Role="DepartmentTerm" EntitySet="CMSDepartmentTerms" />
           </AssociationSet>
-          <EntitySet Name="CMSLanguages" EntityType="CuteCMSDBModel.CMSLanguage" />
-          <AssociationSet Name="FK_ContentTypeTerms_Languages" Association="CuteCMSDBModel.FK_ContentTypeTerms_Languages">
-            <End Role="Language" EntitySet="CMSLanguages" />
-            <End Role="ContentTypeTerm" EntitySet="ContentTypeTerms" />
-          </AssociationSet>
-          <AssociationSet Name="FK_DepartmentTerms_Languages" Association="CuteCMSDBModel.FK_DepartmentTerms_Languages">
-            <End Role="Language" EntitySet="CMSLanguages" />
-            <End Role="CMSDepartmentTerm" EntitySet="CMSDepartmentTerms" />
-          </AssociationSet>
-          <AssociationSet Name="FK_GalleryTerms_Languages" Association="CuteCMSDBModel.FK_GalleryTerms_Languages">
-            <End Role="Language" EntitySet="CMSLanguages" />
-            <End Role="GalleryTerm" EntitySet="GalleryTerms" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ImageFileTerms_Languages" Association="CuteCMSDBModel.FK_ImageFileTerms_Languages">
-            <End Role="Language" EntitySet="CMSLanguages" />
-            <End Role="ImageFileTerm" EntitySet="ImageFileTerms" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PersonalTitleTerms_Languages" Association="CuteCMSDBModel.FK_PersonalTitleTerms_Languages">
-            <End Role="Language" EntitySet="CMSLanguages" />
-            <End Role="CMSPersonalTitleTerm" EntitySet="CMSPersonalTitleTerms" />
-          </AssociationSet>
-          <AssociationSet Name="FK_StatusTerms_Languages" Association="CuteCMSDBModel.FK_StatusTerms_Languages">
-            <End Role="Language" EntitySet="CMSLanguages" />
-            <End Role="CMSStatusTerm" EntitySet="CMSStatusTerms" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TagTerms_Languages" Association="CuteCMSDBModel.FK_TagTerms_Languages">
-            <End Role="Language" EntitySet="CMSLanguages" />
-            <End Role="TagTerm" EntitySet="TagTerms" />
-          </AssociationSet>
           <EntitySet Name="MenuItems" EntityType="CuteCMSDBModel.MenuItem" />
-          <AssociationSet Name="FK_MenuItems_Languages" Association="CuteCMSDBModel.FK_MenuItems_Languages">
-            <End Role="CMSLanguage" EntitySet="CMSLanguages" />
-            <End Role="MenuItem" EntitySet="MenuItems" />
-          </AssociationSet>
           <AssociationSet Name="FK_MenuItems_MenuItems1" Association="CuteCMSDBModel.FK_MenuItems_MenuItems1">
             <End Role="MenuItem" EntitySet="MenuItems" />
             <End Role="MenuItem1" EntitySet="MenuItems" />
@@ -953,10 +936,6 @@
           <EntitySet Name="Contents" EntityType="CuteCMSDBModel.Content" />
           <AssociationSet Name="FK_Contents_ContentTypes" Association="CuteCMSDBModel.FK_Contents_ContentTypes">
             <End Role="ContentType" EntitySet="ContentTypes" />
-            <End Role="Content" EntitySet="Contents" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Contents_Languages" Association="CuteCMSDBModel.FK_Contents_Languages">
-            <End Role="CMSLanguage" EntitySet="CMSLanguages" />
             <End Role="Content" EntitySet="Contents" />
           </AssociationSet>
           <AssociationSet Name="FK_Contents_MenuItems" Association="CuteCMSDBModel.FK_Contents_MenuItems">
@@ -982,12 +961,7 @@
             <End Role="ContentGallery" EntitySet="ContentGalleries" />
           </AssociationSet>
           <EntitySet Name="Categories" EntityType="CuteCMSDBModel.Category" />
-          <EntitySet Name="CategoryTerms" EntityType="CuteCMSDBModel.CategoryTerm" />
           <EntitySet Name="Galleries" EntityType="CuteCMSDBModel.Gallery" />
-          <AssociationSet Name="FK_CategoryTerms_Categories" Association="CuteCMSDBModel.FK_CategoryTerms_Categories">
-            <End Role="Category" EntitySet="Categories" />
-            <End Role="CategoryTerm" EntitySet="CategoryTerms" />
-          </AssociationSet>
           <AssociationSet Name="FK_ContentGalleries_Galleries" Association="CuteCMSDBModel.FK_ContentGalleries_Galleries">
             <End Role="Gallery" EntitySet="Galleries" />
             <End Role="ContentGallery" EntitySet="ContentGalleries" />
@@ -1008,6 +982,52 @@
           <AssociationSet Name="FK_GalleryCategories_Galleries" Association="CuteCMSDBModel.FK_GalleryCategories_Galleries">
             <End Role="Gallery" EntitySet="Galleries" />
             <End Role="GalleryCategory" EntitySet="GalleryCategories" />
+          </AssociationSet>
+          <EntitySet Name="CategoryTerms" EntityType="CuteCMSDBModel.CategoryTerm" />
+          <EntitySet Name="CMSLanguages" EntityType="CuteCMSDBModel.CMSLanguage" />
+          <AssociationSet Name="FK_CategoryTerms_Categories" Association="CuteCMSDBModel.FK_CategoryTerms_Categories">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="CategoryTerm" EntitySet="CategoryTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CategoryTerms_Languages" Association="CuteCMSDBModel.FK_CategoryTerms_Languages">
+            <End Role="Language" EntitySet="CMSLanguages" />
+            <End Role="CategoryTerm" EntitySet="CategoryTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contents_Languages" Association="CuteCMSDBModel.FK_Contents_Languages">
+            <End Role="Language" EntitySet="CMSLanguages" />
+            <End Role="Content" EntitySet="Contents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContentTypeTerms_Languages" Association="CuteCMSDBModel.FK_ContentTypeTerms_Languages">
+            <End Role="Language" EntitySet="CMSLanguages" />
+            <End Role="ContentTypeTerm" EntitySet="ContentTypeTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DepartmentTerms_Languages" Association="CuteCMSDBModel.FK_DepartmentTerms_Languages">
+            <End Role="Language" EntitySet="CMSLanguages" />
+            <End Role="CMSDepartmentTerm" EntitySet="CMSDepartmentTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GalleryTerms_Languages" Association="CuteCMSDBModel.FK_GalleryTerms_Languages">
+            <End Role="Language" EntitySet="CMSLanguages" />
+            <End Role="GalleryTerm" EntitySet="GalleryTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ImageFileTerms_Languages" Association="CuteCMSDBModel.FK_ImageFileTerms_Languages">
+            <End Role="Language" EntitySet="CMSLanguages" />
+            <End Role="ImageFileTerm" EntitySet="ImageFileTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuItems_Languages" Association="CuteCMSDBModel.FK_MenuItems_Languages">
+            <End Role="Language" EntitySet="CMSLanguages" />
+            <End Role="MenuItem" EntitySet="MenuItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonalTitleTerms_Languages" Association="CuteCMSDBModel.FK_PersonalTitleTerms_Languages">
+            <End Role="Language" EntitySet="CMSLanguages" />
+            <End Role="CMSPersonalTitleTerm" EntitySet="CMSPersonalTitleTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusTerms_Languages" Association="CuteCMSDBModel.FK_StatusTerms_Languages">
+            <End Role="Language" EntitySet="CMSLanguages" />
+            <End Role="CMSStatusTerm" EntitySet="CMSStatusTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagTerms_Languages" Association="CuteCMSDBModel.FK_TagTerms_Languages">
+            <End Role="Language" EntitySet="CMSLanguages" />
+            <End Role="TagTerm" EntitySet="TagTerms" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="ContentType">
@@ -1149,8 +1169,8 @@
           <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="GalleryId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Language" Relationship="CuteCMSDBModel.FK_GalleryTerms_Languages" FromRole="GalleryTerm" ToRole="Language" />
           <NavigationProperty Name="Gallery" Relationship="CuteCMSDBModel.FK_GalleryTerms_Galleries" FromRole="GalleryTerm" ToRole="Gallery" />
+          <NavigationProperty Name="Language" Relationship="CuteCMSDBModel.FK_GalleryTerms_Languages" FromRole="GalleryTerm" ToRole="Language" />
         </EntityType>
         <EntityType Name="Menu">
           <Key>
@@ -1310,111 +1330,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="CMSLanguage">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="CultureName" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="FlagCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IsEnabled" Type="Boolean" Nullable="false" />
-          <Property Name="IsDefault" Type="Boolean" Nullable="false" />
-          <Property Name="Ordinal" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ContentTypeTerms" Relationship="CuteCMSDBModel.FK_ContentTypeTerms_Languages" FromRole="Language" ToRole="ContentTypeTerm" />
-          <NavigationProperty Name="DepartmentTerms" Relationship="CuteCMSDBModel.FK_DepartmentTerms_Languages" FromRole="Language" ToRole="CMSDepartmentTerm" />
-          <NavigationProperty Name="GalleryTerms" Relationship="CuteCMSDBModel.FK_GalleryTerms_Languages" FromRole="Language" ToRole="GalleryTerm" />
-          <NavigationProperty Name="ImageFileTerms" Relationship="CuteCMSDBModel.FK_ImageFileTerms_Languages" FromRole="Language" ToRole="ImageFileTerm" />
-          <NavigationProperty Name="PersonalTitleTerms" Relationship="CuteCMSDBModel.FK_PersonalTitleTerms_Languages" FromRole="Language" ToRole="CMSPersonalTitleTerm" />
-          <NavigationProperty Name="StatusTerms" Relationship="CuteCMSDBModel.FK_StatusTerms_Languages" FromRole="Language" ToRole="CMSStatusTerm" />
-          <NavigationProperty Name="TagTerms" Relationship="CuteCMSDBModel.FK_TagTerms_Languages" FromRole="Language" ToRole="TagTerm" />
-          <NavigationProperty Name="MenuItems" Relationship="CuteCMSDBModel.FK_MenuItems_Languages" FromRole="CMSLanguage" ToRole="MenuItem" />
-          <NavigationProperty Name="Contents" Relationship="CuteCMSDBModel.FK_Contents_Languages" FromRole="CMSLanguage" ToRole="Content" />
-        </EntityType>
-        <Association Name="FK_ContentTypeTerms_Languages">
-          <End Type="CuteCMSDBModel.CMSLanguage" Role="Language" Multiplicity="1" />
-          <End Type="CuteCMSDBModel.ContentTypeTerm" Role="ContentTypeTerm" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Language">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ContentTypeTerm">
-              <PropertyRef Name="LanguageId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_DepartmentTerms_Languages">
-          <End Type="CuteCMSDBModel.CMSLanguage" Role="Language" Multiplicity="1" />
-          <End Type="CuteCMSDBModel.CMSDepartmentTerm" Role="CMSDepartmentTerm" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Language">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="CMSDepartmentTerm">
-              <PropertyRef Name="LanguageId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_GalleryTerms_Languages">
-          <End Type="CuteCMSDBModel.CMSLanguage" Role="Language" Multiplicity="1" />
-          <End Type="CuteCMSDBModel.GalleryTerm" Role="GalleryTerm" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Language">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="GalleryTerm">
-              <PropertyRef Name="LanguageId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ImageFileTerms_Languages">
-          <End Type="CuteCMSDBModel.CMSLanguage" Role="Language" Multiplicity="1" />
-          <End Type="CuteCMSDBModel.ImageFileTerm" Role="ImageFileTerm" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Language">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ImageFileTerm">
-              <PropertyRef Name="LanguageId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PersonalTitleTerms_Languages">
-          <End Type="CuteCMSDBModel.CMSLanguage" Role="Language" Multiplicity="1" />
-          <End Type="CuteCMSDBModel.CMSPersonalTitleTerm" Role="CMSPersonalTitleTerm" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Language">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="CMSPersonalTitleTerm">
-              <PropertyRef Name="LanguageId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_StatusTerms_Languages">
-          <End Type="CuteCMSDBModel.CMSLanguage" Role="Language" Multiplicity="1" />
-          <End Type="CuteCMSDBModel.CMSStatusTerm" Role="CMSStatusTerm" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Language">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="CMSStatusTerm">
-              <PropertyRef Name="LanguageId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TagTerms_Languages">
-          <End Type="CuteCMSDBModel.CMSLanguage" Role="Language" Multiplicity="1" />
-          <End Type="CuteCMSDBModel.TagTerm" Role="TagTerm" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Language">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TagTerm">
-              <PropertyRef Name="LanguageId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="MenuItem">
           <Key>
             <PropertyRef Name="Id" />
@@ -1433,25 +1348,13 @@
           <Property Name="LanguageId" Type="Int32" Nullable="false" />
           <Property Name="StatusId" Type="Int32" Nullable="false" />
           <Property Name="ContentId" Type="Int32" />
-          <NavigationProperty Name="Language" Relationship="CuteCMSDBModel.FK_MenuItems_Languages" FromRole="MenuItem" ToRole="CMSLanguage" />
           <NavigationProperty Name="MenuItems1" Relationship="CuteCMSDBModel.FK_MenuItems_MenuItems1" FromRole="MenuItem" ToRole="MenuItem1" />
           <NavigationProperty Name="MenuItem1" Relationship="CuteCMSDBModel.FK_MenuItems_MenuItems1" FromRole="MenuItem1" ToRole="MenuItem" />
           <NavigationProperty Name="Menu" Relationship="CuteCMSDBModel.FK_MenuItems_Menus" FromRole="MenuItem" ToRole="Menu" />
           <NavigationProperty Name="Status" Relationship="CuteCMSDBModel.FK_MenuItems_Statuses" FromRole="MenuItem" ToRole="CMSStatus" />
           <NavigationProperty Name="Contents" Relationship="CuteCMSDBModel.FK_Contents_MenuItems" FromRole="MenuItem" ToRole="Content" />
+          <NavigationProperty Name="Language" Relationship="CuteCMSDBModel.FK_MenuItems_Languages" FromRole="MenuItem" ToRole="Language" />
         </EntityType>
-        <Association Name="FK_MenuItems_Languages">
-          <End Type="CuteCMSDBModel.CMSLanguage" Role="CMSLanguage" Multiplicity="1" />
-          <End Type="CuteCMSDBModel.MenuItem" Role="MenuItem" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CMSLanguage">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="MenuItem">
-              <PropertyRef Name="LanguageId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_MenuItems_MenuItems1">
           <End Type="CuteCMSDBModel.MenuItem" Role="MenuItem" Multiplicity="0..1" />
           <End Type="CuteCMSDBModel.MenuItem" Role="MenuItem1" Multiplicity="*" />
@@ -1524,12 +1427,12 @@
           <Property Name="ParentMenuItemId" Type="Int32" />
           <Property Name="StatusId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ContentType" Relationship="CuteCMSDBModel.FK_Contents_ContentTypes" FromRole="Content" ToRole="ContentType" />
-          <NavigationProperty Name="Language" Relationship="CuteCMSDBModel.FK_Contents_Languages" FromRole="Content" ToRole="CMSLanguage" />
           <NavigationProperty Name="MenuItem" Relationship="CuteCMSDBModel.FK_Contents_MenuItems" FromRole="Content" ToRole="MenuItem" />
           <NavigationProperty Name="Status" Relationship="CuteCMSDBModel.FK_Contents_Statuses" FromRole="Content" ToRole="CMSStatus" />
           <NavigationProperty Name="ContentLists" Relationship="CuteCMSDBModel.FK_ContentLists_Contents" FromRole="Content" ToRole="ContentList" />
           <NavigationProperty Name="ContentGalleries" Relationship="CuteCMSDBModel.FK_ContentGalleries_Contents" FromRole="Content" ToRole="ContentGallery" />
           <Property Name="TenantId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Language" Relationship="CuteCMSDBModel.FK_Contents_Languages" FromRole="Content" ToRole="Language" />
         </EntityType>
         <Association Name="FK_Contents_ContentTypes">
           <End Type="CuteCMSDBModel.ContentType" Role="ContentType" Multiplicity="1" />
@@ -1540,18 +1443,6 @@
             </Principal>
             <Dependent Role="Content">
               <PropertyRef Name="ContentTypeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Contents_Languages">
-          <End Type="CuteCMSDBModel.CMSLanguage" Role="CMSLanguage" Multiplicity="1" />
-          <End Type="CuteCMSDBModel.Content" Role="Content" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CMSLanguage">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Content">
-              <PropertyRef Name="LanguageId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1648,18 +1539,8 @@
           <Property Name="Code" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Visible" Type="Boolean" Nullable="false" />
           <Property Name="Ordinal" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="CategoryTerms" Relationship="CuteCMSDBModel.FK_CategoryTerms_Categories" FromRole="Category" ToRole="CategoryTerm" />
           <NavigationProperty Name="GalleryCategories" Relationship="CuteCMSDBModel.FK_GalleryCategories_Categories" FromRole="Category" ToRole="GalleryCategory" />
-        </EntityType>
-        <EntityType Name="CategoryTerm">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="LanguageId" Type="Int32" Nullable="false" />
-          <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="CategoryId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Category" Relationship="CuteCMSDBModel.FK_CategoryTerms_Categories" FromRole="CategoryTerm" ToRole="Category" />
+          <NavigationProperty Name="CategoryTerms" Relationship="CuteCMSDBModel.FK_CategoryTerms_Categories" FromRole="Category" ToRole="CategoryTerm" />
         </EntityType>
         <EntityType Name="Gallery">
           <Key>
@@ -1676,18 +1557,6 @@
           <NavigationProperty Name="ImageFiles" Relationship="CuteCMSDBModel.FK_ImageFiles_Galleries" FromRole="Gallery" ToRole="ImageFile" />
           <NavigationProperty Name="GalleryCategories" Relationship="CuteCMSDBModel.FK_GalleryCategories_Galleries" FromRole="Gallery" ToRole="GalleryCategory" />
         </EntityType>
-        <Association Name="FK_CategoryTerms_Categories">
-          <End Type="CuteCMSDBModel.Category" Role="Category" Multiplicity="1" />
-          <End Type="CuteCMSDBModel.CategoryTerm" Role="CategoryTerm" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Category">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="CategoryTerm">
-              <PropertyRef Name="CategoryId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ContentGalleries_Galleries">
           <End Type="CuteCMSDBModel.Gallery" Role="Gallery" Multiplicity="1" />
           <End Type="CuteCMSDBModel.ContentGallery" Role="ContentGallery" Multiplicity="*" />
@@ -1756,6 +1625,171 @@
             </Principal>
             <Dependent Role="GalleryCategory">
               <PropertyRef Name="GalleryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CategoryTerm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageId" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CategoryId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="CuteCMSDBModel.FK_CategoryTerms_Categories" FromRole="CategoryTerm" ToRole="Category" />
+          <NavigationProperty Name="Language" Relationship="CuteCMSDBModel.FK_CategoryTerms_Languages" FromRole="CategoryTerm" ToRole="Language" />
+        </EntityType>
+        <EntityType Name="CMSLanguage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CultureName" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="FlagCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="IsDefault" Type="Boolean" Nullable="false" />
+          <Property Name="Ordinal" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CategoryTerms" Relationship="CuteCMSDBModel.FK_CategoryTerms_Languages" FromRole="Language" ToRole="CategoryTerm" />
+          <NavigationProperty Name="Contents" Relationship="CuteCMSDBModel.FK_Contents_Languages" FromRole="Language" ToRole="Content" />
+          <NavigationProperty Name="ContentTypeTerms" Relationship="CuteCMSDBModel.FK_ContentTypeTerms_Languages" FromRole="Language" ToRole="ContentTypeTerm" />
+          <NavigationProperty Name="DepartmentTerms" Relationship="CuteCMSDBModel.FK_DepartmentTerms_Languages" FromRole="Language" ToRole="CMSDepartmentTerm" />
+          <NavigationProperty Name="GalleryTerms" Relationship="CuteCMSDBModel.FK_GalleryTerms_Languages" FromRole="Language" ToRole="GalleryTerm" />
+          <NavigationProperty Name="ImageFileTerms" Relationship="CuteCMSDBModel.FK_ImageFileTerms_Languages" FromRole="Language" ToRole="ImageFileTerm" />
+          <NavigationProperty Name="MenuItems" Relationship="CuteCMSDBModel.FK_MenuItems_Languages" FromRole="Language" ToRole="MenuItem" />
+          <NavigationProperty Name="PersonalTitleTerms" Relationship="CuteCMSDBModel.FK_PersonalTitleTerms_Languages" FromRole="Language" ToRole="CMSPersonalTitleTerm" />
+          <NavigationProperty Name="StatusTerms" Relationship="CuteCMSDBModel.FK_StatusTerms_Languages" FromRole="Language" ToRole="CMSStatusTerm" />
+          <NavigationProperty Name="TagTerms" Relationship="CuteCMSDBModel.FK_TagTerms_Languages" FromRole="Language" ToRole="TagTerm" />
+        </EntityType>
+        <Association Name="FK_CategoryTerms_Categories">
+          <End Type="CuteCMSDBModel.Category" Role="Category" Multiplicity="1" />
+          <End Type="CuteCMSDBModel.CategoryTerm" Role="CategoryTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CategoryTerm">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CategoryTerms_Languages">
+          <End Type="CuteCMSDBModel.CMSLanguage" Role="Language" Multiplicity="1" />
+          <End Type="CuteCMSDBModel.CategoryTerm" Role="CategoryTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CategoryTerm">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contents_Languages">
+          <End Type="CuteCMSDBModel.CMSLanguage" Role="Language" Multiplicity="1" />
+          <End Type="CuteCMSDBModel.Content" Role="Content" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Content">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContentTypeTerms_Languages">
+          <End Type="CuteCMSDBModel.CMSLanguage" Role="Language" Multiplicity="1" />
+          <End Type="CuteCMSDBModel.ContentTypeTerm" Role="ContentTypeTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentTypeTerm">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DepartmentTerms_Languages">
+          <End Type="CuteCMSDBModel.CMSLanguage" Role="Language" Multiplicity="1" />
+          <End Type="CuteCMSDBModel.CMSDepartmentTerm" Role="CMSDepartmentTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CMSDepartmentTerm">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GalleryTerms_Languages">
+          <End Type="CuteCMSDBModel.CMSLanguage" Role="Language" Multiplicity="1" />
+          <End Type="CuteCMSDBModel.GalleryTerm" Role="GalleryTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GalleryTerm">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ImageFileTerms_Languages">
+          <End Type="CuteCMSDBModel.CMSLanguage" Role="Language" Multiplicity="1" />
+          <End Type="CuteCMSDBModel.ImageFileTerm" Role="ImageFileTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ImageFileTerm">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuItems_Languages">
+          <End Type="CuteCMSDBModel.CMSLanguage" Role="Language" Multiplicity="1" />
+          <End Type="CuteCMSDBModel.MenuItem" Role="MenuItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MenuItem">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonalTitleTerms_Languages">
+          <End Type="CuteCMSDBModel.CMSLanguage" Role="Language" Multiplicity="1" />
+          <End Type="CuteCMSDBModel.CMSPersonalTitleTerm" Role="CMSPersonalTitleTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CMSPersonalTitleTerm">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusTerms_Languages">
+          <End Type="CuteCMSDBModel.CMSLanguage" Role="Language" Multiplicity="1" />
+          <End Type="CuteCMSDBModel.CMSStatusTerm" Role="CMSStatusTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CMSStatusTerm">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagTerms_Languages">
+          <End Type="CuteCMSDBModel.CMSLanguage" Role="Language" Multiplicity="1" />
+          <End Type="CuteCMSDBModel.TagTerm" Role="TagTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TagTerm">
+              <PropertyRef Name="LanguageId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1941,19 +1975,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="CMSLanguages">
-            <EntityTypeMapping TypeName="CuteCMSDBModel.CMSLanguage">
-              <MappingFragment StoreEntitySet="Languages">
-                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
-                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
-                <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
-                <ScalarProperty Name="FlagCode" ColumnName="FlagCode" />
-                <ScalarProperty Name="CultureName" ColumnName="CultureName" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="MenuItems">
             <EntityTypeMapping TypeName="CuteCMSDBModel.MenuItem">
               <MappingFragment StoreEntitySet="MenuItems">
@@ -2045,16 +2066,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="CategoryTerms">
-            <EntityTypeMapping TypeName="CuteCMSDBModel.CategoryTerm">
-              <MappingFragment StoreEntitySet="CategoryTerms">
-                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
-                <ScalarProperty Name="Value" ColumnName="Value" />
-                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Galleries">
             <EntityTypeMapping TypeName="CuteCMSDBModel.Gallery">
               <MappingFragment StoreEntitySet="Galleries">
@@ -2073,6 +2084,29 @@
                 <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
                 <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
                 <ScalarProperty Name="GalleryId" ColumnName="GalleryId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CategoryTerms">
+            <EntityTypeMapping TypeName="CuteCMSDBModel.CategoryTerm">
+              <MappingFragment StoreEntitySet="CategoryTerms">
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMSLanguages">
+            <EntityTypeMapping TypeName="CuteCMSDBModel.CMSLanguage">
+              <MappingFragment StoreEntitySet="Languages">
+                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+                <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+                <ScalarProperty Name="FlagCode" ColumnName="FlagCode" />
+                <ScalarProperty Name="CultureName" ColumnName="CultureName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

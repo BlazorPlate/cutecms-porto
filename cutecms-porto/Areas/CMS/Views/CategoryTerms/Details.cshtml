@@ -1,42 +1,31 @@
 ﻿@model cutecms_porto.Areas.CMS.Models.DBModel.CategoryTerm
-
 @{
-    ViewBag.Title = "Details";
+    ViewBag.MainTitle = Resources.Resources.Term;
+    ViewBag.Title = Resources.Resources.Details;
 }
-
-<h2>Details</h2>
-
 <div>
-    <h4>CategoryTerm</h4>
-    <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.Code)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Category.Code)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.LanguageId)
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.LanguageId)
+            @Html.DisplayFor(model => model.Language.Name)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Value)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Value)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Category.TenantId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Category.TenantId)
-        </dd>
-
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink(Resources.Resources.Edit, "Edit", new { id = Model.Id }) |
+    @Html.ActionLink(Resources.Resources.BackToList, "Index", new { id = Model.CategoryId })
 </p>

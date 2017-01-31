@@ -1482,4 +1482,16 @@
   <data name="CategoryId" xml:space="preserve">
     <value>Thể loại</value>
   </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Thể loại</value>
+  </data>
+  <data name="ChooseCategory" xml:space="preserve">
+    <value>--Chọn chuyên mục--</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>Thư viện ảnh thể loại</value>
+  </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>Thư viện ảnh thể loại</value>
+  </data>
 </root>

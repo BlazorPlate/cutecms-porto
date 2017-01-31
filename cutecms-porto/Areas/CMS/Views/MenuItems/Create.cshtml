@@ -7,6 +7,7 @@
 {
     @Html.AntiForgeryToken()
     @Html.HiddenFor(model => model.MenuId)
+    @Html.HiddenFor(model => model.StatusId)
     <div class="form-horizontal">
         <div class="form-group">
             @Html.LabelFor(model => model.MenuId, new { @class = "control-label col-md-2" })

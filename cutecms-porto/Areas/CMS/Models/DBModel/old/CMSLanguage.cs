@@ -17,6 +17,7 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CMSLanguage()
         {
+            this.CategoryTerms = new HashSet<CategoryTerm>();
             this.Contents = new HashSet<Content>();
             this.ContentTypeTerms = new HashSet<ContentTypeTerm>();
             this.DepartmentTerms = new HashSet<CMSDepartmentTerm>();
@@ -49,6 +50,8 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
         {
             get { return FlagCode + ".png"; }
         }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CategoryTerm> CategoryTerms { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Content> Contents { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -26,12 +26,12 @@ namespace cutecms_porto.Areas.Config.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                throw new HttpException(400, "Bad Request");
             }
             ConfigStatus configStatus = db.Statuses.Find(id);
             if (configStatus == null)
             {
-                return HttpNotFound();
+                throw new HttpException(404, "Page Not Found");
             }
             return View(configStatus);
         }
@@ -41,12 +41,12 @@ namespace cutecms_porto.Areas.Config.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                throw new HttpException(400, "Bad Request");
             }
             ConfigStatus configStatus = db.Statuses.Find(id);
             if (configStatus == null)
             {
-                return HttpNotFound();
+                throw new HttpException(404, "Page Not Found");
             }
             return View(configStatus);
         }
@@ -72,12 +72,12 @@ namespace cutecms_porto.Areas.Config.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                throw new HttpException(400, "Bad Request");
             }
             ConfigStatus configStatus = db.Statuses.Find(id);
             if (configStatus == null)
             {
-                return HttpNotFound();
+                throw new HttpException(404, "Page Not Found");
             }
             return View(configStatus);
         }

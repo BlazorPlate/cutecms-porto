@@ -16,10 +16,10 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
     {
         public int Id { get; set; }
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
-        [Display(Name = "GalleryId", ResourceType = typeof(Resources.Resources))]
+        [Display(Name = "Gallery", ResourceType = typeof(Resources.Resources))]
         public int GalleryId { get; set; }
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
-        [Display(Name = "CategoryId", ResourceType = typeof(Resources.Resources))]
+        [Display(Name = "Category", ResourceType = typeof(Resources.Resources))]
         public int CategoryId { get; set; }
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
         [Display(Name = "Ordinal", ResourceType = typeof(Resources.Resources))]

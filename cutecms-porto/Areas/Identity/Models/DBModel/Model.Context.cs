@@ -12,19 +12,19 @@ namespace cutecms_porto.Areas.Identity.Models.DBModel
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-
+    
     public partial class IdentityEntities : DbContext
     {
         public IdentityEntities()
             : base("name=IdentityEntities")
         {
         }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-
+    
         public virtual DbSet<IdentityDegree> IdentityDegrees { get; set; }
         public virtual DbSet<IdentityDegreeTerm> IdentityDegreeTerms { get; set; }
         public virtual DbSet<Occupation> Occupations { get; set; }

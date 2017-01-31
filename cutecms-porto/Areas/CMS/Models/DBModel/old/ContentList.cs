@@ -12,37 +12,33 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    public partial class Gallery
+    using System.Web.Mvc;
+    public partial class ContentList
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Gallery()
+        public ContentList()
         {
-            this.Categories = new HashSet<Category>();
-            this.ContentGalleries = new HashSet<ContentGallery>();
-            this.GalleryTerms = new HashSet<GalleryTerm>();
-            this.ImageFiles = new HashSet<ImageFile>();
+            this.ListItems = new HashSet<ListItem>();
         }
 
         public int Id { get; set; }
-	    public string TenantId { get; set; }
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
         [Display(Name = "Code", ResourceType = typeof(Resources.Resources))]
         public string Code { get; set; }
-        [Display(Name = "HomeVisible", ResourceType = typeof(Resources.Resources))]
-        public bool HomeVisible { get; set; }
-        [Display(Name = "Visible", ResourceType = typeof(Resources.Resources))]
-        public bool Visible { get; set; }
+        [AllowHtml]
+        [Display(Name = "MainContent", ResourceType = typeof(Resources.Resources))]
+        public string MainContent { get; set; }
+        [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
+        [Display(Name = "Name", ResourceType = typeof(Resources.Resources))]
+        public string Name { get; set; }
+        [Display(Name = "Content", ResourceType = typeof(Resources.Resources))]
+        public int ContentId { get; set; }
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
         [Display(Name = "Ordinal", ResourceType = typeof(Resources.Resources))]
         public int Ordinal { get; set; }
 
+        public virtual Content Content { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Category> Categories { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ContentGallery> ContentGalleries { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GalleryTerm> GalleryTerms { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ImageFile> ImageFiles { get; set; }
+        public virtual ICollection<ListItem> ListItems { get; set; }
     }
 }

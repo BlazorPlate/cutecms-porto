@@ -12,20 +12,19 @@ namespace cutecms_porto.Areas.RMS.Models.DBModel
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-
+    
     public partial class RMSEntities : DbContext
     {
         public RMSEntities()
             : base("name=RMSEntities")
         {
-            Configuration.LazyLoadingEnabled = false;
         }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-
+    
         public virtual DbSet<Attachment> Attachments { get; set; }
         public virtual DbSet<RMSDegree> RMSDegrees { get; set; }
         public virtual DbSet<RMSDegreeTerm> RMSDegreeTerms { get; set; }

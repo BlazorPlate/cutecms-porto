@@ -7,29 +7,24 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace cutecms_porto.Areas.CMS.Models.DBModel
+namespace cutecms_porto.Areas.RMS.Models.DBModel
 {
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    public partial class Gallery
+    public partial class Gender
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Gallery()
+        public Gender()
         {
-            this.Categories = new HashSet<Category>();
-            this.ContentGalleries = new HashSet<ContentGallery>();
-            this.GalleryTerms = new HashSet<GalleryTerm>();
-            this.ImageFiles = new HashSet<ImageFile>();
+            this.Applicants = new HashSet<Applicant>();
+            this.GenderTerms = new HashSet<GenderTerm>();
         }
 
         public int Id { get; set; }
-	    public string TenantId { get; set; }
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
         [Display(Name = "Code", ResourceType = typeof(Resources.Resources))]
         public string Code { get; set; }
-        [Display(Name = "HomeVisible", ResourceType = typeof(Resources.Resources))]
-        public bool HomeVisible { get; set; }
         [Display(Name = "Visible", ResourceType = typeof(Resources.Resources))]
         public bool Visible { get; set; }
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
@@ -37,12 +32,8 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
         public int Ordinal { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Category> Categories { get; set; }
+        public virtual ICollection<Applicant> Applicants { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ContentGallery> ContentGalleries { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GalleryTerm> GalleryTerms { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ImageFile> ImageFiles { get; set; }
+        public virtual ICollection<GenderTerm> GenderTerms { get; set; }
     }
 }

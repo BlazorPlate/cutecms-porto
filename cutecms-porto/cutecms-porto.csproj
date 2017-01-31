@@ -422,6 +422,12 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\CMS\CMSAreaRegistration.cs" />
     <Compile Include="Areas\CMS\Controllers\ContentGalleriesController.cs" />
+    <Compile Include="Areas\CMS\Models\DBModel\Category.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\CMS\Models\DBModel\CategoryTerm.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Areas\CMS\Models\DBModel\ContentGallery.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

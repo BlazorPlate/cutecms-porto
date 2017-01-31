@@ -12,20 +12,19 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-
+    
     public partial class CMSEntities : DbContext
     {
         public CMSEntities()
             : base("name=CMSEntities")
         {
-            Configuration.LazyLoadingEnabled = false;
         }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-
+    
         public virtual DbSet<ContentType> ContentTypes { get; set; }
         public virtual DbSet<ContentTypeTerm> ContentTypeTerms { get; set; }
         public virtual DbSet<ListItem> ListItems { get; set; }
@@ -43,10 +42,12 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
         public virtual DbSet<CMSDepartment> CMSDepartments { get; set; }
         public virtual DbSet<CMSDepartmentTerm> CMSDepartmentTerms { get; set; }
         public virtual DbSet<CMSLanguage> CMSLanguages { get; set; }
-        public virtual DbSet<Gallery> Galleries { get; set; }
         public virtual DbSet<MenuItem> MenuItems { get; set; }
         public virtual DbSet<Content> Contents { get; set; }
         public virtual DbSet<ContentList> ContentLists { get; set; }
         public virtual DbSet<ContentGallery> ContentGalleries { get; set; }
+        public virtual DbSet<CategoryTerm> CategoryTerms { get; set; }
+        public virtual DbSet<Gallery> Galleries { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
     }
 }

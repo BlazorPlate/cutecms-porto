@@ -12,20 +12,19 @@ namespace cutecms_porto.Areas.Config.Models.DBModel
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-
+    
     public partial class ConfigEntities : DbContext
     {
         public ConfigEntities()
             : base("name=ConfigEntities")
         {
-            Configuration.LazyLoadingEnabled = false;
         }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-
+    
         public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<Organization> Organizations { get; set; }
         public virtual DbSet<PhoneNumber> PhoneNumbers { get; set; }

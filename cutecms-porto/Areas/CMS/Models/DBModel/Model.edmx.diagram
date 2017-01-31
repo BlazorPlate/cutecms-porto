@@ -38,9 +38,6 @@
         <AssociationConnector Association="CuteCMSDBModel.FK_PersonalTitleTerms_Languages" />
         <AssociationConnector Association="CuteCMSDBModel.FK_StatusTerms_Languages" />
         <AssociationConnector Association="CuteCMSDBModel.FK_TagTerms_Languages" />
-        <EntityTypeShape EntityType="CuteCMSDBModel.Gallery" Width="1.5" PointX="1.5" PointY="4.875" />
-        <AssociationConnector Association="CuteCMSDBModel.FK_GalleryTerms_Galleries" />
-        <AssociationConnector Association="CuteCMSDBModel.FK_ImageFiles_Galleries" />
         <EntityTypeShape EntityType="CuteCMSDBModel.MenuItem" Width="1.5" PointX="9" PointY="18.75" />
         <AssociationConnector Association="CuteCMSDBModel.FK_MenuItems_Languages" />
         <AssociationConnector Association="CuteCMSDBModel.FK_MenuItems_MenuItems1" />
@@ -56,7 +53,14 @@
         <AssociationConnector Association="CuteCMSDBModel.FK_ListItems_ContentLists" />
         <EntityTypeShape EntityType="CuteCMSDBModel.ContentGallery" Width="1.5" PointX="15.5" PointY="14.625" />
         <AssociationConnector Association="CuteCMSDBModel.FK_ContentGalleries_Contents" />
+        <EntityTypeShape EntityType="CuteCMSDBModel.CategoryTerm" Width="1.5" PointX="5.25" PointY="2" />
+        <EntityTypeShape EntityType="CuteCMSDBModel.Gallery" Width="1.5" PointX="0.75" PointY="14.5" />
         <AssociationConnector Association="CuteCMSDBModel.FK_ContentGalleries_Galleries" />
+        <AssociationConnector Association="CuteCMSDBModel.FK_GalleryTerms_Galleries" />
+        <AssociationConnector Association="CuteCMSDBModel.FK_ImageFiles_Galleries" />
+        <EntityTypeShape EntityType="CuteCMSDBModel.Category" Width="1.5" PointX="3" PointY="1.75" />
+        <AssociationConnector Association="CuteCMSDBModel.FK_Categories_Galleries" />
+        <AssociationConnector Association="CuteCMSDBModel.FK_CategoryTerms_Categories" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

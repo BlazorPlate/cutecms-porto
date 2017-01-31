@@ -21,6 +21,8 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
         [Display(Name = "Value", ResourceType = typeof(Resources.Resources))]
         public string Value { get; set; }
+        [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
+        [Display(Name = "CategoryId", ResourceType = typeof(Resources.Resources))]
         public int CategoryId { get; set; }
     
         public virtual Category Category { get; set; }

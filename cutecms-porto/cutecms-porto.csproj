@@ -421,7 +421,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\CMS\CMSAreaRegistration.cs" />
+    <Compile Include="Areas\CMS\Controllers\CategoriesController.cs" />
+    <Compile Include="Areas\CMS\Controllers\CategoryTermsController.cs" />
     <Compile Include="Areas\CMS\Controllers\ContentGalleriesController.cs" />
+    <Compile Include="Areas\CMS\Controllers\GalleryCategoriesController.cs" />
     <Compile Include="Areas\CMS\Models\DBModel\Category.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -429,6 +432,12 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\CMS\Models\DBModel\ContentGallery.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\CMS\Models\DBModel\Gallery.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\CMS\Models\DBModel\GalleryCategory.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Config\Controllers\ConfigStatusController.cs" />
@@ -490,9 +499,6 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\CMS\Models\DBModel\ContentTypeTerm.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Models\DBModel\Gallery.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\CMS\Models\DBModel\GalleryTerm.cs">
@@ -4789,6 +4795,21 @@
     <Content Include="assets\porto\vendor\simple-line-icons\README.md" />
     <Content Include="assets\porto\vendor\simple-line-icons\scss\simple-line-icons.scss" />
     <Content Include="assets\porto\vendor\jquery-ui-1.12.1.custom\package.json" />
+    <Content Include="Areas\CMS\Views\Categories\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\Categories\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\Categories\Details.cshtml" />
+    <Content Include="Areas\CMS\Views\Categories\Edit.cshtml" />
+    <Content Include="Areas\CMS\Views\Categories\Index.cshtml" />
+    <Content Include="Areas\CMS\Views\GalleryCategories\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\GalleryCategories\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\GalleryCategories\Details.cshtml" />
+    <Content Include="Areas\CMS\Views\GalleryCategories\Edit.cshtml" />
+    <Content Include="Areas\CMS\Views\GalleryCategories\Index.cshtml" />
+    <Content Include="Areas\CMS\Views\CategoryTerms\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\CategoryTerms\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\CategoryTerms\Details.cshtml" />
+    <Content Include="Areas\CMS\Views\CategoryTerms\Edit.cshtml" />
+    <Content Include="Areas\CMS\Views\CategoryTerms\Index.cshtml" />
     <None Include="assets\porto\vendor\validation\jquery.validate-vsdoc.js" />
     <Content Include="assets\porto\vendor\validation\jquery.validate.js" />
     <Content Include="assets\porto\vendor\validation\jquery.validate.min.js" />

@@ -1479,4 +1479,7 @@
   <data name="Dimensions" xml:space="preserve">
     <value>寸法</value>
   </data>
+  <data name="CategoryId" xml:space="preserve">
+    <value>カテゴリ</value>
+  </data>
 </root>

@@ -1479,4 +1479,7 @@
   <data name="Dimensions" xml:space="preserve">
     <value>ابعاد</value>
   </data>
+  <data name="CategoryId" xml:space="preserve">
+    <value>رده</value>
+  </data>
 </root>

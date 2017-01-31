@@ -1479,4 +1479,7 @@
   <data name="Dimensions" xml:space="preserve">
     <value>Wymiary</value>
   </data>
+  <data name="CategoryId" xml:space="preserve">
+    <value>Kategorii</value>
+  </data>
 </root>

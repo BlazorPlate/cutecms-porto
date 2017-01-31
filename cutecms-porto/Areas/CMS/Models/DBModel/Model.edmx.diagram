@@ -15,12 +15,12 @@
         <AssociationConnector Association="CuteCMSDBModel.FK_ContentTypeTerms_ContentTypes" />
         <AssociationConnector Association="CuteCMSDBModel.FK_PersonalTitleTerms_PersonalTitles" />
         <AssociationConnector Association="CuteCMSDBModel.FK_StatusTerms_Statuses" />
-        <EntityTypeShape EntityType="CuteCMSDBModel.TagTerm" Width="1.5" PointX="6" PointY="10" />
+        <EntityTypeShape EntityType="CuteCMSDBModel.TagTerm" Width="1.5" PointX="8.375" PointY="8.25" />
         <EntityTypeShape EntityType="CuteCMSDBModel.GalleryTerm" Width="1.5" PointX="3" PointY="21" />
         <EntityTypeShape EntityType="CuteCMSDBModel.Menu" Width="1.5" PointX="3.75" PointY="24.125" />
-        <EntityTypeShape EntityType="CuteCMSDBModel.Tag" Width="1.5" PointX="3.75" PointY="5" />
+        <EntityTypeShape EntityType="CuteCMSDBModel.Tag" Width="1.5" PointX="1.375" PointY="5" />
         <AssociationConnector Association="CuteCMSDBModel.FK_TagTerms_Tags" />
-        <EntityTypeShape EntityType="CuteCMSDBModel.ImageTag" Width="1.5" PointX="6" PointY="6.375" />
+        <EntityTypeShape EntityType="CuteCMSDBModel.ImageTag" Width="1.5" PointX="3.375" PointY="5.125" />
         <AssociationConnector Association="CuteCMSDBModel.FK_ImageTags_Tags" />
         <EntityTypeShape EntityType="CuteCMSDBModel.ImageFile" Width="1.5" PointX="0.75" PointY="8.5" />
         <EntityTypeShape EntityType="CuteCMSDBModel.ImageFileTerm" Width="1.5" PointX="3" PointY="9" />
@@ -53,14 +53,16 @@
         <AssociationConnector Association="CuteCMSDBModel.FK_ListItems_ContentLists" />
         <EntityTypeShape EntityType="CuteCMSDBModel.ContentGallery" Width="1.5" PointX="15.5" PointY="14.625" />
         <AssociationConnector Association="CuteCMSDBModel.FK_ContentGalleries_Contents" />
-        <EntityTypeShape EntityType="CuteCMSDBModel.CategoryTerm" Width="1.5" PointX="5.25" PointY="2" />
+        <EntityTypeShape EntityType="CuteCMSDBModel.Category" Width="1.5" PointX="5.75" PointY="1.75" />
+        <EntityTypeShape EntityType="CuteCMSDBModel.CategoryTerm" Width="1.5" PointX="8" PointY="2" />
         <EntityTypeShape EntityType="CuteCMSDBModel.Gallery" Width="1.5" PointX="0.75" PointY="14.5" />
+        <EntityTypeShape EntityType="CuteCMSDBModel.GalleryCategory" Width="1.5" PointX="8" PointY="15" />
+        <AssociationConnector Association="CuteCMSDBModel.FK_CategoryTerms_Categories" />
+        <AssociationConnector Association="CuteCMSDBModel.FK_GalleryCategories_Categories" />
         <AssociationConnector Association="CuteCMSDBModel.FK_ContentGalleries_Galleries" />
+        <AssociationConnector Association="CuteCMSDBModel.FK_GalleryCategories_Galleries" />
         <AssociationConnector Association="CuteCMSDBModel.FK_GalleryTerms_Galleries" />
         <AssociationConnector Association="CuteCMSDBModel.FK_ImageFiles_Galleries" />
-        <EntityTypeShape EntityType="CuteCMSDBModel.Category" Width="1.5" PointX="3" PointY="1.75" />
-        <AssociationConnector Association="CuteCMSDBModel.FK_Categories_Galleries" />
-        <AssociationConnector Association="CuteCMSDBModel.FK_CategoryTerms_Categories" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

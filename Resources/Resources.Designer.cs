@@ -421,6 +421,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Category.
+        /// </summary>
+        public static string CategoryId {
+            get {
+                return ResourceManager.GetString("CategoryId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change your account settings..
         /// </summary>
         public static string ChangeAccountSettings {

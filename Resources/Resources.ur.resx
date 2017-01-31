@@ -1479,4 +1479,7 @@
   <data name="Dimensions" xml:space="preserve">
     <value>طول و عرض</value>
   </data>
+  <data name="CategoryId" xml:space="preserve">
+    <value>زمرہ</value>
+  </data>
 </root>

@@ -18,6 +18,7 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
         public Category()
         {
             this.CategoryTerms = new HashSet<CategoryTerm>();
+            this.GalleryCategories = new HashSet<GalleryCategory>();
         }
     
         public int Id { get; set; }
@@ -30,10 +31,10 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
         [Display(Name = "Ordinal", ResourceType = typeof(Resources.Resources))]
         public int Ordinal { get; set; }
-        public int GalleryId { get; set; }
-    
-        public virtual Gallery Gallery { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CategoryTerm> CategoryTerms { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<GalleryCategory> GalleryCategories { get; set; }
     }
 }

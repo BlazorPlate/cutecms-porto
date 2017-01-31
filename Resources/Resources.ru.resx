@@ -1479,4 +1479,7 @@
   <data name="Dimensions" xml:space="preserve">
     <value>Размеры</value>
   </data>
+  <data name="CategoryId" xml:space="preserve">
+    <value>Категория</value>
+  </data>
 </root>

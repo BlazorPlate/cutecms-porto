@@ -1479,4 +1479,7 @@
   <data name="Dimensions" xml:space="preserve">
     <value>치수</value>
   </data>
+  <data name="CategoryId" xml:space="preserve">
+    <value>카테고리</value>
+  </data>
 </root>

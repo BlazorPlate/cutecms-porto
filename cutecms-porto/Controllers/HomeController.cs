@@ -93,7 +93,7 @@ namespace cutecms_porto.Controllers
         public ActionResult Galleries(int? page)
         {
             var pageNumber = page ?? 1;
-            var galleries = cmsDb.Galleries.Include("GalleryTerms").Include("GalleryTerms.Language").Include("ImageFiles").Where(g => g.TenantId.Trim().Equals(Tenant.TenantId) && !g.Code.Equals("home-gallery") && g.Visible == true && g.ImageFiles.Count != 0).OrderBy(g => g.Ordinal).ToPagedList(pageNumber, 4);
+            var galleries = cmsDb.Galleries.Include("GalleryTerms").Include("GalleryTerms.Language").Include("ImageFiles").Include("GalleryCategories").Include("GalleryCategories.Category").Include("GalleryCategories.Category.CategoryTerms").Include("GalleryCategories.Category.CategoryTerms.Language").Where(g => g.TenantId.Trim().Equals(Tenant.TenantId) && !g.Code.Equals("home-gallery") && g.Visible == true && g.ImageFiles.Count != 0).OrderBy(g => g.Ordinal).ToPagedList(pageNumber, 4);
             return View(galleries);
         }
         public ActionResult ImageFiles(int? id, int? page, int tagIdFilter = 0, string returnUrl = null)

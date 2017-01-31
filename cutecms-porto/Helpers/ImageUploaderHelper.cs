@@ -23,19 +23,17 @@ namespace cutecms_porto.Helpers
 
             return finalSize;
         }
-
         public static void SaveImageToFolder(Image img, string extension, Size newSize, string pathToSave)
         {
-            using (System.Drawing.Image newImg = ImageHelper.ResizeImage(img, newSize.Width, newSize.Height))
+            using (Image newImg = ImageHelper.ResizeImage(img, newSize.Width, newSize.Height))
             {
                 newImg.Save(System.Web.Hosting.HostingEnvironment.MapPath(pathToSave), img.RawFormat);
             }
         }
-
         public static void SaveThumbToFolder(Image img, string extension, Size newSize, string pathToSave)
         {
             Size imgSize = NewImageSize(img.Size, newSize);// Get new resolution
-            using (System.Drawing.Image newImg = ImageHelper.ResizeImage(img, imgSize.Width, imgSize.Height))
+            using (Image newImg = ImageHelper.ResizeImage(img, imgSize.Width, imgSize.Height))
             {
                 newImg.Save(System.Web.Hosting.HostingEnvironment.MapPath(pathToSave), img.RawFormat);
             }

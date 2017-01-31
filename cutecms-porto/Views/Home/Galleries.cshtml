@@ -2,10 +2,11 @@
 @using PagedList.Mvc;
 @using PagedList;
 @using System.Threading;
+@using cutecms_porto.Areas.CMS.Models.DBModel
 @{
     List<string> categoryList = new List<string>();
     ViewBag.Title = @Resources.Resources.PhotoGallery;
-    string categories = "";
+    CMSEntities cmsDb = new CMSEntities();
 }
 @section PageHeader
 {
@@ -31,12 +32,13 @@
                     foreach (var galleryCategory in galleryCategories)
                     {
                         categoryList.Add(galleryCategory);
-                        categoryList.Distinct();
                     }
                 }
-                @foreach (var category in categoryList)
+                @{ var uniqueItems = new HashSet<string>(categoryList);}
+                @foreach (var category in uniqueItems)
                 {
-                    <li data-option-value=".@category"><a href="#">@category</a></li>
+                    string categoryCode = cmsDb.CategoryTerms.Where(c => c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && c.Category.Code.Equals(category)).FirstOrDefault()?.Value;
+                    <li data-option-value=".@category"><a href="#">@(categoryCode ?? category)</a></li>
                 }
             </ul>
             <hr>
@@ -45,9 +47,11 @@
 
                 <div class="sort-destination-loader sort-destination-loader-showing">
                     <ul class="image-gallery sort-destination lightbox" data-sort-id="portfolio" data-plugin-options='{"delegate": "a.lightbox-portfolio", "type": "image", "gallery": {"enabled": true}}'>
+
                         @foreach (var item in Model)
                         {
-                            <li class="col-md-3 col-sm-6 col-xs-12 isotope-item websites">
+                            string categoryFilters = string.Join(" ", item.GalleryCategories.Select(g => g.Category.Code).ToList());
+                            <li class="col-md-3 col-sm-6 col-xs-12 isotope-item @categoryFilters">
                                 <div class="image-gallery-item">
                                     <a href="~/assets/porto/img/projects/project.jpg" class="lightbox-portfolio">
                                         <span class="thumb-info">
@@ -77,48 +81,4 @@
         </div>
     </div>
 </section>
-
-
-@*<section>
-        <div class="container">
-            <div class="portfolio-gutter pajinate" id="portfolio" data-pajinate-container=".pajinate-container" data-pajinante-items-per-page="8">
-                <div class="row">
-                    @foreach (var item in Model)
-                    {
-                        <div class="col-md-3 col-sm-6" style="display: block">
-                            <!-- item -->
-                            <div class="item-box">
-                                <figure>
-                                    <!-- carousel -->
-                                    <div class="flexslider">
-                                        <ul class="slides" style="width: 1000%; transform: translate3d(-789px, 0px, 0px); transition-duration: 0.6s;">
-                                            @foreach (var image in item.ImageFiles.Take(10))
-                                            {
-                                                <!-- Slide 1 -->
-                                                string description = (image.ImageFileTerms.Where(i => i.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && i.ImageFileId == item.Id).FirstOrDefault() != null) ? image.ImageFileTerms.Where(i => i.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && i.ImageFileId == item.Id).FirstOrDefault().Description : image.Code;
-                                                <li style="width: 263px; display: block; float: left;">
-                                                    <a href="@Url.Action( "ImageFiles", "Home", new { id = item.Id, returnUrl = Request.Url.AbsoluteUri, area = "" }, null)">
-                                                        <img width="600" height="399" class="img-responsive" draggable="false" alt="@description" src="@image.FilePath">
-                                                    </a>
-                                                </li>
-                                            }
-                                        </ul>
-                                    </div>
-                                    <!-- /carousel -->
-                                    <div>
-                                        @{
-                                            string gallery = item.GalleryTerms.Where(g => g.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && g.GalleryId == item.Id).FirstOrDefault()?.Value;
-                                            string galleryDescription = item.GalleryTerms.Where(g => g.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && g.GalleryId == item.Id).FirstOrDefault()?.Description;
-                                        }
-                                        <h3 class="margin-bottom-3">@Html.ActionLink(gallery ?? Resources.Resources.View, "ImageFiles", new { id = item.Id, returnUrl = Request.Url.AbsoluteUri, area = "" })</h3>
-                                        <p class="margin-top-0">@galleryDescription</p>
-                                    </div>
-                                </figure>
-                            </div>
-                        </div>
-                                            }
-                </div>
-            </div>
-        </div>
-        @Html.PagedListPager((IPagedList)Model, page => Url.Action("Galleries", new { page }))
-    </section>*@
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Galleries", new { page }))

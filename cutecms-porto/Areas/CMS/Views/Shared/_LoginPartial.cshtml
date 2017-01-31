@@ -7,7 +7,7 @@
 @if (Request.IsAuthenticated)
 {
     <li class="dropdown">
-        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="@(string.IsNullOrEmpty(ViewBag.PersonalPhotoPath) ? "/assets/admin/plugins/images/users/user-icon.png" : @ViewBag.PersonalPhotoPath)" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">@ViewBag.Username</b> </a>
+        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="@(!ViewBag.IsExist ? "/assets/admin/plugins/images/users/user-icon.png" : @ViewBag.PersonalPhotoPath)" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">@ViewBag.Username</b> </a>
         <ul class="dropdown-menu dropdown-user scale-up">
             <li><a href="@Url.Action("Index", "MyProfile", new { area = "" })"><i class="ti-user"></i> @Resources.Resources.MyProfile</a></li>
             <li role="separator" class="divider"></li>
@@ -47,3 +47,9 @@ else
         }
     </ul>
 </li>
+<script type="text/javascript">
+    function changeImage(altImage) {
+        alert(message);
+        $(this).attr('src',altImage.toString());
+    }
+</script>

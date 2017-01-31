@@ -55,14 +55,14 @@
         <AssociationConnector Association="CuteCMSDBModel.FK_ContentGalleries_Contents" />
         <EntityTypeShape EntityType="CuteCMSDBModel.Category" Width="1.5" PointX="5.75" PointY="1.75" />
         <EntityTypeShape EntityType="CuteCMSDBModel.CategoryTerm" Width="1.5" PointX="8" PointY="2" />
-        <EntityTypeShape EntityType="CuteCMSDBModel.Gallery" Width="1.5" PointX="0.75" PointY="14.5" />
-        <EntityTypeShape EntityType="CuteCMSDBModel.GalleryCategory" Width="1.5" PointX="8" PointY="15" />
+        <EntityTypeShape EntityType="CuteCMSDBModel.Gallery" Width="1.5" PointX="6.375" PointY="15" />
         <AssociationConnector Association="CuteCMSDBModel.FK_CategoryTerms_Categories" />
-        <AssociationConnector Association="CuteCMSDBModel.FK_GalleryCategories_Categories" />
         <AssociationConnector Association="CuteCMSDBModel.FK_ContentGalleries_Galleries" />
-        <AssociationConnector Association="CuteCMSDBModel.FK_GalleryCategories_Galleries" />
         <AssociationConnector Association="CuteCMSDBModel.FK_GalleryTerms_Galleries" />
         <AssociationConnector Association="CuteCMSDBModel.FK_ImageFiles_Galleries" />
+        <EntityTypeShape EntityType="CuteCMSDBModel.GalleryCategory" Width="1.5" PointX="8" PointY="11.5" />
+        <AssociationConnector Association="CuteCMSDBModel.FK_GalleryCategories_Categories" />
+        <AssociationConnector Association="CuteCMSDBModel.FK_GalleryCategories_Galleries" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

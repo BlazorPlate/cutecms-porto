@@ -984,22 +984,13 @@
           <EntitySet Name="Categories" EntityType="CuteCMSDBModel.Category" />
           <EntitySet Name="CategoryTerms" EntityType="CuteCMSDBModel.CategoryTerm" />
           <EntitySet Name="Galleries" EntityType="CuteCMSDBModel.Gallery" />
-          <EntitySet Name="GalleryCategories" EntityType="CuteCMSDBModel.GalleryCategory" />
           <AssociationSet Name="FK_CategoryTerms_Categories" Association="CuteCMSDBModel.FK_CategoryTerms_Categories">
             <End Role="Category" EntitySet="Categories" />
             <End Role="CategoryTerm" EntitySet="CategoryTerms" />
           </AssociationSet>
-          <AssociationSet Name="FK_GalleryCategories_Categories" Association="CuteCMSDBModel.FK_GalleryCategories_Categories">
-            <End Role="Category" EntitySet="Categories" />
-            <End Role="GalleryCategory" EntitySet="GalleryCategories" />
-          </AssociationSet>
           <AssociationSet Name="FK_ContentGalleries_Galleries" Association="CuteCMSDBModel.FK_ContentGalleries_Galleries">
             <End Role="Gallery" EntitySet="Galleries" />
             <End Role="ContentGallery" EntitySet="ContentGalleries" />
-          </AssociationSet>
-          <AssociationSet Name="FK_GalleryCategories_Galleries" Association="CuteCMSDBModel.FK_GalleryCategories_Galleries">
-            <End Role="Gallery" EntitySet="Galleries" />
-            <End Role="GalleryCategory" EntitySet="GalleryCategories" />
           </AssociationSet>
           <AssociationSet Name="FK_GalleryTerms_Galleries" Association="CuteCMSDBModel.FK_GalleryTerms_Galleries">
             <End Role="Gallery" EntitySet="Galleries" />
@@ -1008,6 +999,15 @@
           <AssociationSet Name="FK_ImageFiles_Galleries" Association="CuteCMSDBModel.FK_ImageFiles_Galleries">
             <End Role="Gallery" EntitySet="Galleries" />
             <End Role="ImageFile" EntitySet="ImageFiles" />
+          </AssociationSet>
+          <EntitySet Name="GalleryCategories" EntityType="CuteCMSDBModel.GalleryCategory" />
+          <AssociationSet Name="FK_GalleryCategories_Categories" Association="CuteCMSDBModel.FK_GalleryCategories_Categories">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="GalleryCategory" EntitySet="GalleryCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GalleryCategories_Galleries" Association="CuteCMSDBModel.FK_GalleryCategories_Galleries">
+            <End Role="Gallery" EntitySet="Galleries" />
+            <End Role="GalleryCategory" EntitySet="GalleryCategories" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="ContentType">
@@ -1672,19 +1672,9 @@
           <Property Name="Visible" Type="Boolean" Nullable="false" />
           <Property Name="Ordinal" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ContentGalleries" Relationship="CuteCMSDBModel.FK_ContentGalleries_Galleries" FromRole="Gallery" ToRole="ContentGallery" />
-          <NavigationProperty Name="GalleryCategories" Relationship="CuteCMSDBModel.FK_GalleryCategories_Galleries" FromRole="Gallery" ToRole="GalleryCategory" />
           <NavigationProperty Name="GalleryTerms" Relationship="CuteCMSDBModel.FK_GalleryTerms_Galleries" FromRole="Gallery" ToRole="GalleryTerm" />
           <NavigationProperty Name="ImageFiles" Relationship="CuteCMSDBModel.FK_ImageFiles_Galleries" FromRole="Gallery" ToRole="ImageFile" />
-        </EntityType>
-        <EntityType Name="GalleryCategory">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="GalleryId" Type="Int32" Nullable="false" />
-          <Property Name="CategoryId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Category" Relationship="CuteCMSDBModel.FK_GalleryCategories_Categories" FromRole="GalleryCategory" ToRole="Category" />
-          <NavigationProperty Name="Gallery" Relationship="CuteCMSDBModel.FK_GalleryCategories_Galleries" FromRole="GalleryCategory" ToRole="Gallery" />
+          <NavigationProperty Name="GalleryCategories" Relationship="CuteCMSDBModel.FK_GalleryCategories_Galleries" FromRole="Gallery" ToRole="GalleryCategory" />
         </EntityType>
         <Association Name="FK_CategoryTerms_Categories">
           <End Type="CuteCMSDBModel.Category" Role="Category" Multiplicity="1" />
@@ -1698,18 +1688,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_GalleryCategories_Categories">
-          <End Type="CuteCMSDBModel.Category" Role="Category" Multiplicity="1" />
-          <End Type="CuteCMSDBModel.GalleryCategory" Role="GalleryCategory" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Category">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="GalleryCategory">
-              <PropertyRef Name="CategoryId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ContentGalleries_Galleries">
           <End Type="CuteCMSDBModel.Gallery" Role="Gallery" Multiplicity="1" />
           <End Type="CuteCMSDBModel.ContentGallery" Role="ContentGallery" Multiplicity="*" />
@@ -1718,18 +1696,6 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="ContentGallery">
-              <PropertyRef Name="GalleryId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_GalleryCategories_Galleries">
-          <End Type="CuteCMSDBModel.Gallery" Role="Gallery" Multiplicity="1" />
-          <End Type="CuteCMSDBModel.GalleryCategory" Role="GalleryCategory" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Gallery">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="GalleryCategory">
               <PropertyRef Name="GalleryId" />
             </Dependent>
           </ReferentialConstraint>
@@ -1754,6 +1720,41 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="ImageFile">
+              <PropertyRef Name="GalleryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="GalleryCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GalleryId" Type="Int32" Nullable="false" />
+          <Property Name="CategoryId" Type="Int32" Nullable="false" />
+          <Property Name="Ordinal" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="CuteCMSDBModel.FK_GalleryCategories_Categories" FromRole="GalleryCategory" ToRole="Category" />
+          <NavigationProperty Name="Gallery" Relationship="CuteCMSDBModel.FK_GalleryCategories_Galleries" FromRole="GalleryCategory" ToRole="Gallery" />
+        </EntityType>
+        <Association Name="FK_GalleryCategories_Categories">
+          <End Type="CuteCMSDBModel.Category" Role="Category" Multiplicity="1" />
+          <End Type="CuteCMSDBModel.GalleryCategory" Role="GalleryCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GalleryCategory">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GalleryCategories_Galleries">
+          <End Type="CuteCMSDBModel.Gallery" Role="Gallery" Multiplicity="1" />
+          <End Type="CuteCMSDBModel.GalleryCategory" Role="GalleryCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gallery">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GalleryCategory">
               <PropertyRef Name="GalleryId" />
             </Dependent>
           </ReferentialConstraint>

@@ -11,13 +11,19 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class GalleryCategory
     {
         public int Id { get; set; }
+        [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
+        [Display(Name = "GalleryId", ResourceType = typeof(Resources.Resources))]
         public int GalleryId { get; set; }
+        [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
+        [Display(Name = "CategoryId", ResourceType = typeof(Resources.Resources))]
         public int CategoryId { get; set; }
-    
+        [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
+        [Display(Name = "Ordinal", ResourceType = typeof(Resources.Resources))]
+        public int Ordinal { get; set; }
         public virtual Category Category { get; set; }
         public virtual Gallery Gallery { get; set; }
     }

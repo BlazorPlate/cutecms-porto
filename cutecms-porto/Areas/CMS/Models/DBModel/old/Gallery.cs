@@ -11,7 +11,7 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class Gallery
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -25,11 +25,17 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
     
         public int Id { get; set; }
         public string TenantId { get; set; }
+        [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
+        [Display(Name = "Code", ResourceType = typeof(Resources.Resources))]
         public string Code { get; set; }
+        [Display(Name = "HomeVisible", ResourceType = typeof(Resources.Resources))]
         public bool HomeVisible { get; set; }
+        [Display(Name = "Visible", ResourceType = typeof(Resources.Resources))]
         public bool Visible { get; set; }
+        [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
+        [Display(Name = "Ordinal", ResourceType = typeof(Resources.Resources))]
         public int Ordinal { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ContentGallery> ContentGalleries { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

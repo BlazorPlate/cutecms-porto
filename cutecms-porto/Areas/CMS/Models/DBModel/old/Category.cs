@@ -20,7 +20,7 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
             this.CategoryTerms = new HashSet<CategoryTerm>();
             this.GalleryCategories = new HashSet<GalleryCategory>();
         }
-
+    
         public int Id { get; set; }
         public string TenantId { get; set; }
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]

@@ -5,6 +5,7 @@
 @{
     ViewBag.Title = Resources.Resources.Images;
 }
+
 @section Styles{
 <link href="~/assets/porto/vendor/blueimp-gallery/css/bootstrap-blueimp-gallery.css" rel="stylesheet" />
 }
@@ -22,7 +23,7 @@
 }
 <section>
     <div class="container">
-        @using (Html.BeginForm("ImageFiles", "Home", new { returnUrl = ViewBag.ReturnUrl }))
+        @using (Html.BeginForm("ImageFiles", "Home"))
         {
             Html.Hidden("GalleryId");
             <div class="form-horizontal">

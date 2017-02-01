@@ -6,7 +6,7 @@
     ViewBag.Title = Resources.Resources.Images;
 }
 @section Styles{
-    <link href="~/assets/plugins/blueimp-gallery/css/bootstrap-blueimp-gallery.css" rel="stylesheet" />
+<link href="~/assets/porto/vendor/blueimp-gallery/css/bootstrap-blueimp-gallery.css" rel="stylesheet" />
 }
 @section PageHeader
 {
@@ -86,12 +86,12 @@
                 </a>
             }
         </div>
-        @Html.PagedListPager((IPagedList)Model, page => Url.Action("ImageFiles", new { page, tagIdFilter = ViewBag.TagId, returnUrl = ViewBag.ReturnUrl }))
+        @Html.PagedListPager((IPagedList)Model, page => Url.Action("ImageFiles", new { page, tagIdFilter = ViewBag.TagId}))
         <div>
-            @Html.ActionLink(Resources.Resources.BackToList, "ReturnUrl", new { returnUrl = ViewBag.ReturnUrl })
+            @Html.ActionLink(Resources.Resources.BackToList, "Galleries")
         </div>
     </div>
 </section>
 @section Scripts{
-<script src="~/assets/plugins/blueimp-gallery/js/jquery.blueimp-gallery.min.js"></script>
+<script src="~/assets/porto/vendor/blueimp-gallery/js/jquery.blueimp-gallery.min.js"></script>
 }

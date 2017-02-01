@@ -4390,6 +4390,8 @@
     <Content Include="assets\porto\js\views\view.contact.js" />
     <Content Include="assets\porto\js\views\view.home.js" />
     <Content Include="assets\porto\vendor\animate\animate.min.css" />
+    <Content Include="assets\porto\vendor\blueimp-gallery\css\bootstrap-blueimp-gallery.css" />
+    <Content Include="assets\porto\vendor\blueimp-gallery\js\jquery.blueimp-gallery.min.js" />
     <Content Include="assets\porto\vendor\bootpag\bootpag.js" />
     <Content Include="assets\porto\vendor\bootstrap-datepicker\bootstrap-datepicker.min.js" />
     <Content Include="assets\porto\vendor\bootstrap-datepicker\bootstrap-datepicker3.css" />
@@ -5536,6 +5538,7 @@
     <Content Include="Views\Home\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Home\ResetPassword.cshtml" />
     <Content Include="Views\Home\Welcome.cshtml" />
+    <Content Include="Views\Error\InvalidToken.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />

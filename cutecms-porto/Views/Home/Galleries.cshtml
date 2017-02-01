@@ -53,10 +53,9 @@
                             string categoryFilters = string.Join(" ", item.GalleryCategories.Select(g => g.Category.Code).ToList());
                             <li class="col-md-3 col-sm-6 col-xs-12 isotope-item @categoryFilters">
                                 <div class="image-gallery-item">
-                                    <a href="~/assets/porto/img/projects/project.jpg" class="lightbox-portfolio">
+                                    <a href="@Url.Action("ImageFiles","Home", new { id = item.Id, area = "" })">
                                         <span class="thumb-info">
                                             <span class="thumb-info-wrapper">
-
                                                 <img src="@item.ImageFiles.OrderBy(i=>i.Ordinal).FirstOrDefault().ThumbPath" class="img-responsive" alt="">
                                                 <span class="thumb-info-title">
                                                     @{

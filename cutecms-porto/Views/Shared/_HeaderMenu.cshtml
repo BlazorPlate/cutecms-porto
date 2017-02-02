@@ -4,7 +4,7 @@
 @{
     int count = 0;
     CMSEntities db = new CMSEntities();
-    IEnumerable<MenuItem> menuItems = db.MenuItems.Include("Status").Include("Menu").Include("Language").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name));
+    IEnumerable<MenuItem> menuItems = db.MenuItems.Include("Status").Include("Menu").Include("Language").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Menu.Code.Trim().Equals("header") && m.Visible && m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name));
     count = menuItems.Count();
 }
 
@@ -32,10 +32,9 @@
                                         @Resources.Resources.Home
                                     </a>
                                 </li>
-                                @{var headerItems = menuItems.Where(m => m.Menu.Code.Trim().Equals("header")); }
-                                @if (headerItems != null && count > 0)
+                                @if (menuItems != null && count > 0)
                                         {
-                                        @GetTreeView(headerItems, null)
+                                        @GetTreeView(menuItems, null)
                                         }
                                 @{Html.RenderPartial("~/Views/Shared/Account.cshtml");}
                             </ul>

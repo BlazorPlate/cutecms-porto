@@ -1494,4 +1494,19 @@
   <data name="GalleryCategory" xml:space="preserve">
     <value>Galeria-Categoria</value>
   </data>
+  <data name="State" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>Código postal</value>
+  </data>
+  <data name="Telephone" xml:space="preserve">
+    <value>Telefone</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>Linha de endereço 1</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>Linha de endereço 2</value>
+  </data>
 </root>

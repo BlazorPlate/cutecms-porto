@@ -26,7 +26,7 @@ namespace cutecms_porto.Areas.Config.Models.DBModel
         public int CodeId { get; set; }
         [Display(Name = "SMTP", ResourceType = typeof(Resources.Resources))]
         public Nullable<int> SMTPId { get; set; }
-        [Display(Name = "NotificationCode", ResourceType = typeof(Resources.Resources))]
+
         public virtual NotificationCode NotificationCode { get; set; }
         public virtual SMTPSetting SMTPSetting { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

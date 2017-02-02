@@ -26,7 +26,6 @@ namespace cutecms_porto.Areas.Config.Models.DBModel
         }
     
         public virtual DbSet<Contact> Contacts { get; set; }
-        public virtual DbSet<Organization> Organizations { get; set; }
         public virtual DbSet<PhoneNumber> PhoneNumbers { get; set; }
         public virtual DbSet<Statistic> Statistics { get; set; }
         public virtual DbSet<ConfigDepartment> ConfigDepartments { get; set; }
@@ -40,5 +39,6 @@ namespace cutecms_porto.Areas.Config.Models.DBModel
         public virtual DbSet<Notification> Notifications { get; set; }
         public virtual DbSet<ConfigStatus> Statuses { get; set; }
         public virtual DbSet<ConfigStatusTerm> ConfigStatusTerms { get; set; }
+        public virtual DbSet<Organization> Organizations { get; set; }
     }
 }

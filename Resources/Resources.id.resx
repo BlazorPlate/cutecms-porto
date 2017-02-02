@@ -1494,4 +1494,19 @@
   <data name="GalleryCategory" xml:space="preserve">
     <value>Kategori Galeri</value>
   </data>
+  <data name="State" xml:space="preserve">
+    <value>Negara</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>Kode pos</value>
+  </data>
+  <data name="Telephone" xml:space="preserve">
+    <value>Telepon</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>Baris alamat 1</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>Alamat baris 2</value>
+  </data>
 </root>

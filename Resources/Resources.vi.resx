@@ -1494,4 +1494,19 @@
   <data name="GalleryCategory" xml:space="preserve">
     <value>Thư viện ảnh thể loại</value>
   </data>
+  <data name="State" xml:space="preserve">
+    <value>Nhà nước</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>Mã bưu chính</value>
+  </data>
+  <data name="Telephone" xml:space="preserve">
+    <value>Điện thoại</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>Địa chỉ Line 1</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>Dòng địa chỉ 2</value>
+  </data>
 </root>

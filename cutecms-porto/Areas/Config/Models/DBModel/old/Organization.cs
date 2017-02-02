@@ -38,31 +38,23 @@ namespace cutecms_porto.Areas.Config.Models.DBModel
         public string Name { get; set; }
         [Display(Name = "Description", ResourceType = typeof(Resources.Resources))]
         public string Description { get; set; }
-        [Display(Name = "Email", ResourceType = typeof(Resources.Resources))]
-        public string Email { get; set; }
-        [Display(Name = "Telephone_1", ResourceType = typeof(Resources.Resources))]
-        public string Telephone_1 { get; set; }
-        [Display(Name = "Telephone_2", ResourceType = typeof(Resources.Resources))]
-        public string Telephone_2 { get; set; }
-        [Display(Name = "Telephone_3", ResourceType = typeof(Resources.Resources))]
-        public string Telephone_3 { get; set; }
-        [Display(Name = "Fax", ResourceType = typeof(Resources.Resources))]
-        public string Fax { get; set; }
-        [Display(Name = "Country", ResourceType = typeof(Resources.Resources))]
-        public string Country { get; set; }
-        [Display(Name = "Province", ResourceType = typeof(Resources.Resources))]
-        public string Province { get; set; }
+        [Display(Name = "AddressLine1", ResourceType = typeof(Resources.Resources))]
+        public string AddressLine1 { get; set; }
+        [Display(Name = "AddressLine2", ResourceType = typeof(Resources.Resources))]
+        public string AddressLine2 { get; set; }
         [Display(Name = "City", ResourceType = typeof(Resources.Resources))]
         public string City { get; set; }
-        [Display(Name = "District", ResourceType = typeof(Resources.Resources))]
-        public string District { get; set; }
-        [Display(Name = "Street", ResourceType = typeof(Resources.Resources))]
-        public string Street { get; set; }
-        [Display(Name = "Building", ResourceType = typeof(Resources.Resources))]
-        public string Building { get; set; }
-        [Display(Name = "PostalCode", ResourceType = typeof(Resources.Resources))]
-        public string PostalCode { get; set; }
-        public string POBox { get; set; }
+        [Display(Name = "State", ResourceType = typeof(Resources.Resources))]
+        public string State { get; set; }
+        [Display(Name = "ZIP", ResourceType = typeof(Resources.Resources))]
+        public string ZIP { get; set; }
+        [Display(Name = "Country", ResourceType = typeof(Resources.Resources))]
+        public string Country { get; set; }
+        [Display(Name = "Telephone", ResourceType = typeof(Resources.Resources))]
+        public string Telephone { get; set; }
+        public string Fax { get; set; }
+        [Display(Name = "Email", ResourceType = typeof(Resources.Resources))]
+        public string Email { get; set; }
         [Display(Name = "Longitude", ResourceType = typeof(Resources.Resources))]
         public Nullable<decimal> Longitude { get; set; }
         [Display(Name = "Latitude", ResourceType = typeof(Resources.Resources))]
@@ -85,29 +77,23 @@ namespace cutecms_porto.Areas.Config.Models.DBModel
         public string Developer { get; set; }
         [Display(Name = "DeveloperURL", ResourceType = typeof(Resources.Resources))]
         public string DeveloperURL { get; set; }
-
         [Display(Name = "PrimaryLogoPath", ResourceType = typeof(Resources.Resources))]
         public string PrimaryLogoPath { get; set; }
-
         [Display(Name = "PrimaryLogoName", ResourceType = typeof(Resources.Resources))]
         public string PrimaryLogoName { get; set; }
-
         [Display(Name = "SecondaryLogoPath", ResourceType = typeof(Resources.Resources))]
         public string SecondaryLogoPath { get; set; }
-
         [Display(Name = "SecondaryLogoName", ResourceType = typeof(Resources.Resources))]
         public string SecondaryLogoName { get; set; }
-
         [ValidateImage]
         [Display(Name = "PrimaryLogoPath", ResourceType = typeof(Resources.Resources))]
         public HttpPostedFileBase PrimaryLogo { get; set; }
-
         [ValidateImage]
         [Display(Name = "SecondaryLogoPath", ResourceType = typeof(Resources.Resources))]
         public HttpPostedFileBase SecondaryLogo { get; set; }
-
         [Display(Name = "IsDefault", ResourceType = typeof(Resources.Resources))]
         public bool IsDefault { get; set; }
+
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Contact> Contacts { get; set; }

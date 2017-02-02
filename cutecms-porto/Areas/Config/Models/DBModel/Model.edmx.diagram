@@ -6,10 +6,8 @@
     <edmx:Diagrams>
       <Diagram DiagramId="d70151a775a0465f9182c388e7e659e6" Name="Diagram1" ZoomLevel="68">
         <EntityTypeShape EntityType="ConfigDBModel.Contact" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConfigDBModel.Organization" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ConfigDBModel.PhoneNumber" Width="1.5" PointX="7.5" PointY="4.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ConfigDBModel.Statistic" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
-        <AssociationConnector Association="ConfigDBModel.FK_Contacts_Organization" ManuallyRouted="false" />
         <AssociationConnector Association="ConfigDBModel.FK_PhoneNumbers_Contacts" ManuallyRouted="false" />
         <EntityTypeShape EntityType="ConfigDBModel.ConfigDepartment" Width="1.5" PointX="8.375" PointY="8" />
         <AssociationConnector Association="ConfigDBModel.FK_Contacts_Departments" />
@@ -22,7 +20,6 @@
         <AssociationConnector Association="ConfigDBModel.FK_PersonalTitleTerms_PersonalTitles" />
         <EntityTypeShape EntityType="ConfigDBModel.ConfigLanguage" Width="1.5" PointX="0.75" PointY="3.625" />
         <AssociationConnector Association="ConfigDBModel.FK_DepartmentTerms_Languages" />
-        <AssociationConnector Association="ConfigDBModel.FK_Organization_Languages" />
         <AssociationConnector Association="ConfigDBModel.FK_PersonalTitleTerms_Languages" />
         <EntityTypeShape EntityType="ConfigDBModel.NotificationTerm" Width="1.5" PointX="15.875" PointY="5.5" />
         <AssociationConnector Association="ConfigDBModel.FK_NotificationTerms_Languages" />
@@ -36,6 +33,9 @@
         <EntityTypeShape EntityType="ConfigDBModel.ConfigStatusTerm" Width="1.5" PointX="6.75" PointY="2.75" />
         <AssociationConnector Association="ConfigDBModel.FK_StatusTerms_Languages" />
         <AssociationConnector Association="ConfigDBModel.FK_StatusTerms_Statuses" />
+        <EntityTypeShape EntityType="ConfigDBModel.Organization" Width="1.5" PointX="3" PointY="1.375" />
+        <AssociationConnector Association="ConfigDBModel.FK_Contacts_Organization" />
+        <AssociationConnector Association="ConfigDBModel.FK_Organization_Languages" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

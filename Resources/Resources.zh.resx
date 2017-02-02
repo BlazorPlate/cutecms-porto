@@ -1494,4 +1494,19 @@
   <data name="GalleryCategory" xml:space="preserve">
     <value>库类别</value>
   </data>
+  <data name="State" xml:space="preserve">
+    <value>状态</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>邮政编码</value>
+  </data>
+  <data name="Telephone" xml:space="preserve">
+    <value>电话</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>地址行 1</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>地址行 2</value>
+  </data>
 </root>

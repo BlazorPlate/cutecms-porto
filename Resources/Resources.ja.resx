@@ -1494,4 +1494,19 @@
   <data name="GalleryCategory" xml:space="preserve">
     <value>ギャラリーのカテゴリ</value>
   </data>
+  <data name="State" xml:space="preserve">
+    <value>状態</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>郵便番号</value>
+  </data>
+  <data name="Telephone" xml:space="preserve">
+    <value>電話</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>住所行 1</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>住所 2 行目</value>
+  </data>
 </root>

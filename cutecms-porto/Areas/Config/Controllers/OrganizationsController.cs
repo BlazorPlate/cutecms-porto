@@ -71,7 +71,7 @@ namespace cutecms_porto.Areas.Config.Controllers
         // specific properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,LanguageId,IsTranslated,TranslationId,Code,Name,Description,Email,Telephone_1,Telephone_2,Telephone_3,Fax,Country,Province,City,District,Street,Building,PostalCode,POBox,Longitude,Latitude,MetaDescription,FacebookUrl,TwitterUrl,YouTubeUrl,GooglePlusUrl,LinkedInUrl,RSS,Developer,DeveloperURL,PrimaryLogo,SecondaryLogo,PrimaryLogoPath,SeconaryLogoPath,PrimaryLogoName,SeconaryLogoName,IsDefault")] Organization organization, int? sWidth, int? sHeight, int? pWidth, int? pHeight)
+        public ActionResult Create([Bind(Include = "Id,TenantId,LanguageId,IsTranslated,TranslationId,Code,Name,Description,AddressLine1,AddressLine2,City,State,ZIP,Country,Telephone,Fax,Email,Longitude,Latitude,MetaDescription,FacebookUrl,TwitterUrl,YouTubeUrl,GooglePlusUrl,LinkedInUrl,RSS,Developer,DeveloperURL,PrimaryLogoPath,PrimaryLogoName,SecondaryLogoPath,SecondaryLogoName,IsDefault")] Organization organization, int? sWidth, int? sHeight, int? pWidth, int? pHeight)
         {
             if (ModelState.IsValid)
             {
@@ -94,13 +94,13 @@ namespace cutecms_porto.Areas.Config.Controllers
                 }
                 if (organization.SecondaryLogo != null && organization.SecondaryLogo.ContentLength > 0)
                 {
-                    var extension = Path.GetExtension(organization.SecondaryLogo.FileName);
-                    var newFileName = Helpers.StringHelper.CleanFileName(organization.Code + "-secondary" + extension);
+                    var extension = Path.GetExtension(organization.  SecondaryLogo.FileName);
+                    var newFileName = StringHelper.CleanFileName(organization.Code + "-secondary" + extension);
                     //var newFileName = organization.Name + extension;
                     var path = String.Format("/fileman/Uploads/Images/Config/Organizations/{0}", newFileName);
                     organization.SecondaryLogoPath = path;
                     organization.SecondaryLogoName = newFileName;
-                    using (var img = System.Drawing.Image.FromStream(organization.SecondaryLogo.InputStream))
+                    using (var img = Image.FromStream(organization.SecondaryLogo.InputStream))
                     {
                         if (sWidth == null)
                             sWidth = img.Width;
@@ -159,7 +159,7 @@ namespace cutecms_porto.Areas.Config.Controllers
         // specific properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,LanguageId,IsTranslated,TranslationId,Code,Name,Description,Email,Telephone_1,Telephone_2,Telephone_3,Fax,Country,Province,City,District,Street,Building,PostalCode,POBox,Longitude,Latitude,MetaDescription,FacebookUrl,TwitterUrl,YouTubeUrl,GooglePlusUrl,LinkedInUrl,RSS,Developer,DeveloperURL,PrimaryLogo,SecondaryLogo,PrimaryLogoPath,SecondaryLogoPath,PrimaryLogoName,SeconaryLogoName,IsDefault")] Organization organization, int? sWidth, int? sHeight, int? pWidth, int? pHeight)
+        public ActionResult Edit([Bind(Include = "Id,TenantId,LanguageId,IsTranslated,TranslationId,Code,Name,Description,AddressLine1,AddressLine2,City,State,ZIP,Country,Telephone,Fax,Email,Longitude,Latitude,MetaDescription,FacebookUrl,TwitterUrl,YouTubeUrl,GooglePlusUrl,LinkedInUrl,RSS,Developer,DeveloperURL,PrimaryLogoPath,PrimaryLogoName,SecondaryLogoPath,SecondaryLogoName,IsDefault")] Organization organization, int? sWidth, int? sHeight, int? pWidth, int? pHeight)
         {
             if (ModelState.IsValid)
             {
@@ -167,11 +167,11 @@ namespace cutecms_porto.Areas.Config.Controllers
                 {
                     var extension = Path.GetExtension(organization.PrimaryLogo.FileName);
                     //var newFileName = Helpers.StringHelper.CleanFileName(listItem.Title + extension);
-                    var newFileName = Helpers.StringHelper.CleanFileName(organization.Code + "-primary-logo" + extension);
+                    var newFileName = StringHelper.CleanFileName(organization.Code + "-primary-logo" + extension);
                     var path = String.Format("/fileman/Uploads/Images/Config/Organizations/{0}", newFileName);
                     organization.PrimaryLogoPath = path;
                     organization.PrimaryLogoName = newFileName;
-                    using (var img = System.Drawing.Image.FromStream(organization.PrimaryLogo.InputStream))
+                    using (var img = Image.FromStream(organization.PrimaryLogo.InputStream))
                     {
                         if (pWidth == null)
                             pWidth = img.Width;
@@ -183,12 +183,12 @@ namespace cutecms_porto.Areas.Config.Controllers
                 if (organization.SecondaryLogo != null && organization.SecondaryLogo.ContentLength > 0)
                 {
                     var extension = Path.GetExtension(organization.SecondaryLogo.FileName);
-                    var newFileName = Helpers.StringHelper.CleanFileName(organization.Code + "-secondary" + extension);
+                    var newFileName = StringHelper.CleanFileName(organization.Code + "-secondary" + extension);
                     //var newFileName = organization.Name + extension;
                     var path = String.Format("/fileman/Uploads/Images/Config/Organizations/{0}", newFileName);
                     organization.SecondaryLogoPath = path;
                     organization.SecondaryLogoName = newFileName;
-                    using (var img = System.Drawing.Image.FromStream(organization.SecondaryLogo.InputStream))
+                    using (var img = Image.FromStream(organization.SecondaryLogo.InputStream))
                     {
                         if (sWidth == null)
                             sWidth = img.Width;

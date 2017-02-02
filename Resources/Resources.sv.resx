@@ -1494,4 +1494,19 @@
   <data name="GalleryCategory" xml:space="preserve">
     <value>Galleri-kategori</value>
   </data>
+  <data name="State" xml:space="preserve">
+    <value>Statliga</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>Postnummer</value>
+  </data>
+  <data name="Telephone" xml:space="preserve">
+    <value>Telefon</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>Adress linje 1</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>Adressrad 2</value>
+  </data>
 </root>

@@ -11,7 +11,7 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
 {
     using System;
     using System.Collections.Generic;
-
+    using System.ComponentModel.DataAnnotations;
     public partial class CategoryTerm
     {
         public int Id { get; set; }
@@ -26,6 +26,6 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
         public int CategoryId { get; set; }
 
         public virtual Category Category { get; set; }
-        public virtual Language Language { get; set; }
+        public virtual CMSLanguage Language { get; set; }
     }
 }

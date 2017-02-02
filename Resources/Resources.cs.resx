@@ -1494,4 +1494,19 @@
   <data name="GalleryCategory" xml:space="preserve">
     <value>Galerie kategorie</value>
   </data>
+  <data name="State" xml:space="preserve">
+    <value>Stát</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>Poštovní směrovací číslo</value>
+  </data>
+  <data name="Telephone" xml:space="preserve">
+    <value>Telefon</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>1. řádek adresy</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>2. řádek adresy</value>
+  </data>
 </root>

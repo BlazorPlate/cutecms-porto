@@ -464,6 +464,7 @@
     <Compile Include="Areas\CMS\Controllers\MenusController.cs" />
     <Compile Include="Areas\Config\Controllers\NotificationsController.cs" />
     <Compile Include="Areas\Config\Controllers\NotificationTermsController.cs" />
+    <Compile Include="Areas\Config\Controllers\Organizations1Controller.cs" />
     <Compile Include="Areas\Config\Controllers\OrganizationsController.cs" />
     <Compile Include="Areas\Config\Controllers\PhoneNumbersController.cs" />
     <Compile Include="Areas\Config\Controllers\SMTPSettingsController.cs" />
@@ -4812,6 +4813,11 @@
     <Content Include="Areas\CMS\Views\CategoryTerms\Details.cshtml" />
     <Content Include="Areas\CMS\Views\CategoryTerms\Edit.cshtml" />
     <Content Include="Areas\CMS\Views\CategoryTerms\Index.cshtml" />
+    <Content Include="Areas\Config\Views\Organizations1\Create.cshtml" />
+    <Content Include="Areas\Config\Views\Organizations1\Delete.cshtml" />
+    <Content Include="Areas\Config\Views\Organizations1\Details.cshtml" />
+    <Content Include="Areas\Config\Views\Organizations1\Edit.cshtml" />
+    <Content Include="Areas\Config\Views\Organizations1\Index.cshtml" />
     <None Include="assets\porto\vendor\validation\jquery.validate-vsdoc.js" />
     <Content Include="assets\porto\vendor\validation\jquery.validate.js" />
     <Content Include="assets\porto\vendor\validation\jquery.validate.min.js" />

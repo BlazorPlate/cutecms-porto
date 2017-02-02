@@ -87,21 +87,17 @@
           <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" />
-          <Property Name="Email" Type="nvarchar" MaxLength="50" />
-          <Property Name="Telephone_1" Type="nvarchar" MaxLength="20" />
-          <Property Name="Telephone_2" Type="nvarchar" MaxLength="20" />
-          <Property Name="Telephone_3" Type="nvarchar" MaxLength="20" />
+          <Property Name="AddressLine1" Type="nvarchar(max)" />
+          <Property Name="AddressLine2" Type="nvarchar(max)" />
+          <Property Name="City" Type="nvarchar(max)" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="ZIP" Type="nvarchar" MaxLength="20" />
+          <Property Name="Country" Type="nvarchar(max)" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="20" />
           <Property Name="Fax" Type="nvarchar" MaxLength="20" />
-          <Property Name="Country" Type="nvarchar" MaxLength="50" />
-          <Property Name="Province" Type="nvarchar" MaxLength="50" />
-          <Property Name="City" Type="nvarchar" MaxLength="50" />
-          <Property Name="District" Type="nvarchar" MaxLength="50" />
-          <Property Name="Street" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar(max)" />
           <Property Name="Longitude" Type="decimal" Precision="12" Scale="9" />
           <Property Name="Latitude" Type="decimal" Precision="12" Scale="9" />
-          <Property Name="Building" Type="nvarchar" MaxLength="50" />
-          <Property Name="PostalCode" Type="nvarchar" MaxLength="10" />
-          <Property Name="POBox" Type="nvarchar" MaxLength="20" />
           <Property Name="MetaDescription" Type="nvarchar" MaxLength="1000" />
           <Property Name="FacebookUrl" Type="nvarchar(max)" />
           <Property Name="TwitterUrl" Type="nvarchar(max)" />
@@ -483,54 +479,10 @@
           <Property Name="Office" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="OrganizationId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Organization" Relationship="Self.FK_Contacts_Organization" FromRole="Contacts" ToRole="Organization" />
           <NavigationProperty Name="PhoneNumbers" Relationship="Self.FK_PhoneNumbers_Contacts" FromRole="Contacts" ToRole="PhoneNumbers" />
           <NavigationProperty Name="Department" Relationship="ConfigDBModel.FK_Contacts_Departments" FromRole="Contact" ToRole="Department" />
           <NavigationProperty Name="PersonalTitle" Relationship="ConfigDBModel.FK_Contacts_PersonalTitles" FromRole="Contact" ToRole="PersonalTitle" />
-        </EntityType>
-        <EntityType Name="Organization">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="LanguageId" Type="Int32" Nullable="false" />
-          <Property Name="IsTranslated" Type="Boolean" />
-          <Property Name="TranslationId" Type="Int32" />
-          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Telephone_1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Telephone_2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Telephone_3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Province" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="District" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Longitude" Type="Decimal" Precision="12" Scale="9" />
-          <Property Name="Latitude" Type="Decimal" Precision="12" Scale="9" />
-          <Property Name="Building" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="POBox" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="MetaDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="FacebookUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="TwitterUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="YouTubeUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="GooglePlusUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="LinkedInUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="RSS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Developer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="DeveloperURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="PrimaryLogoPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="PrimaryLogoName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="SecondaryLogoPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="SecondaryLogoName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="IsDefault" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Contacts" Relationship="Self.FK_Contacts_Organization" FromRole="Organization" ToRole="Contacts" />
-          <NavigationProperty Name="Language" Relationship="ConfigDBModel.FK_Organization_Languages" FromRole="Organization" ToRole="Language" />
-          <Property Name="TenantId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Organization" Relationship="ConfigDBModel.FK_Contacts_Organization" FromRole="Contact" ToRole="Organization" />
         </EntityType>
         <EntityType Name="PhoneNumber">
           <Key>
@@ -559,18 +511,6 @@
           <Property Name="MetroCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="RequestDate" Type="DateTime" Nullable="false" Precision="7" />
         </EntityType>
-        <Association Name="FK_Contacts_Organization">
-          <End Role="Organization" Type="Self.Organization" Multiplicity="1" />
-          <End Role="Contacts" Type="Self.Contact" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Organization">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Contacts">
-              <PropertyRef Name="OrganizationId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_PhoneNumbers_Contacts">
           <End Role="Contacts" Type="Self.Contact" Multiplicity="1" />
           <End Role="PhoneNumbers" Type="Self.PhoneNumber" Multiplicity="*" />
@@ -585,13 +525,8 @@
         </Association>
         <EntityContainer Name="ConfigEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Contacts" EntityType="Self.Contact" />
-          <EntitySet Name="Organizations" EntityType="Self.Organization" />
           <EntitySet Name="PhoneNumbers" EntityType="Self.PhoneNumber" />
           <EntitySet Name="Statistics" EntityType="Self.Statistic" />
-          <AssociationSet Name="FK_Contacts_Organization" Association="Self.FK_Contacts_Organization">
-            <End Role="Organization" EntitySet="Organizations" />
-            <End Role="Contacts" EntitySet="Contacts" />
-          </AssociationSet>
           <AssociationSet Name="FK_PhoneNumbers_Contacts" Association="Self.FK_PhoneNumbers_Contacts">
             <End Role="Contacts" EntitySet="Contacts" />
             <End Role="PhoneNumbers" EntitySet="PhoneNumbers" />
@@ -624,10 +559,6 @@
           <AssociationSet Name="FK_DepartmentTerms_Languages" Association="ConfigDBModel.FK_DepartmentTerms_Languages">
             <End Role="Language" EntitySet="ConfigLanguages" />
             <End Role="ConfigDepartmentTerm" EntitySet="ConfigDepartmentTerms" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Organization_Languages" Association="ConfigDBModel.FK_Organization_Languages">
-            <End Role="Language" EntitySet="ConfigLanguages" />
-            <End Role="Organization" EntitySet="Organizations" />
           </AssociationSet>
           <AssociationSet Name="FK_PersonalTitleTerms_Languages" Association="ConfigDBModel.FK_PersonalTitleTerms_Languages">
             <End Role="Language" EntitySet="ConfigLanguages" />
@@ -663,7 +594,16 @@
             <End Role="Status" EntitySet="Statuses" />
             <End Role="StatusTerm" EntitySet="ConfigStatusTerms" />
           </AssociationSet>
-        </EntityContainer>
+          <EntitySet Name="Organizations" EntityType="ConfigDBModel.Organization" />
+          <AssociationSet Name="FK_Contacts_Organization" Association="ConfigDBModel.FK_Contacts_Organization">
+            <End Role="Organization" EntitySet="Organizations" />
+            <End Role="Contact" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Organization_Languages" Association="ConfigDBModel.FK_Organization_Languages">
+            <End Role="ConfigLanguage" EntitySet="ConfigLanguages" />
+            <End Role="Organization" EntitySet="Organizations" />
+          </AssociationSet>
+          </EntityContainer>
         <EntityType Name="ConfigDepartment">
           <Key>
             <PropertyRef Name="Id" />
@@ -783,10 +723,10 @@
           <Property Name="IsDefault" Type="Boolean" Nullable="false" />
           <Property Name="Ordinal" Type="Int32" Nullable="false" />
           <NavigationProperty Name="DepartmentTerms" Relationship="ConfigDBModel.FK_DepartmentTerms_Languages" FromRole="Language" ToRole="ConfigDepartmentTerm" />
-          <NavigationProperty Name="Organizations" Relationship="ConfigDBModel.FK_Organization_Languages" FromRole="Language" ToRole="Organization" />
           <NavigationProperty Name="PersonalTitleTerms" Relationship="ConfigDBModel.FK_PersonalTitleTerms_Languages" FromRole="Language" ToRole="ConfigPersonalTitleTerm" />
           <NavigationProperty Name="NotificationTerms" Relationship="ConfigDBModel.FK_NotificationTerms_Languages" FromRole="ConfigLanguage" ToRole="NotificationTerm" />
           <NavigationProperty Name="StatusTerms" Relationship="ConfigDBModel.FK_StatusTerms_Languages" FromRole="ConfigLanguage" ToRole="StatusTerm" />
+          <NavigationProperty Name="Organizations" Relationship="ConfigDBModel.FK_Organization_Languages" FromRole="ConfigLanguage" ToRole="Organization" />
         </EntityType>
         <Association Name="FK_DepartmentTerms_Languages">
           <End Type="ConfigDBModel.ConfigLanguage" Role="Language" Multiplicity="1" />
@@ -796,18 +736,6 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="ConfigDepartmentTerm">
-              <PropertyRef Name="LanguageId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Organization_Languages">
-          <End Type="ConfigDBModel.ConfigLanguage" Role="Language" Multiplicity="1" />
-          <End Type="ConfigDBModel.Organization" Role="Organization" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Language">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Organization">
               <PropertyRef Name="LanguageId" />
             </Dependent>
           </ReferentialConstraint>
@@ -965,7 +893,71 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        <EntityType Name="Organization">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenantId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LanguageId" Type="Int32" Nullable="false" />
+          <Property Name="IsTranslated" Type="Boolean" />
+          <Property Name="TranslationId" Type="Int32" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddressLine1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddressLine2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ZIP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Longitude" Type="Decimal" Precision="12" Scale="9" />
+          <Property Name="Latitude" Type="Decimal" Precision="12" Scale="9" />
+          <Property Name="MetaDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="FacebookUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TwitterUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="YouTubeUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GooglePlusUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LinkedInUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RSS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Developer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DeveloperURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PrimaryLogoPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PrimaryLogoName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecondaryLogoPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecondaryLogoName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsDefault" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Contacts" Relationship="ConfigDBModel.FK_Contacts_Organization" FromRole="Organization" ToRole="Contact" />
+          <NavigationProperty Name="Language" Relationship="ConfigDBModel.FK_Organization_Languages" FromRole="Organization" ToRole="ConfigLanguage" />
+        </EntityType>
+        <Association Name="FK_Contacts_Organization">
+          <End Type="ConfigDBModel.Organization" Role="Organization" Multiplicity="1" />
+          <End Type="ConfigDBModel.Contact" Role="Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organization">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contact">
+              <PropertyRef Name="OrganizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Organization_Languages">
+          <End Type="ConfigDBModel.ConfigLanguage" Role="ConfigLanguage" Multiplicity="1" />
+          <End Type="ConfigDBModel.Organization" Role="Organization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConfigLanguage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Organization">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -982,49 +974,6 @@
                 <ScalarProperty Name="Office" ColumnName="Office" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Organizations">
-            <EntityTypeMapping TypeName="ConfigDBModel.Organization">
-              <MappingFragment StoreEntitySet="Organization">
-                <ScalarProperty Name="TenantId" ColumnName="TenantId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
-                <ScalarProperty Name="IsTranslated" ColumnName="IsTranslated" />
-                <ScalarProperty Name="TranslationId" ColumnName="TranslationId" />
-                <ScalarProperty Name="Code" ColumnName="Code" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Telephone_1" ColumnName="Telephone_1" />
-                <ScalarProperty Name="Telephone_2" ColumnName="Telephone_2" />
-                <ScalarProperty Name="Telephone_3" ColumnName="Telephone_3" />
-                <ScalarProperty Name="Fax" ColumnName="Fax" />
-                <ScalarProperty Name="Country" ColumnName="Country" />
-                <ScalarProperty Name="Province" ColumnName="Province" />
-                <ScalarProperty Name="City" ColumnName="City" />
-                <ScalarProperty Name="District" ColumnName="District" />
-                <ScalarProperty Name="Street" ColumnName="Street" />
-                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
-                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
-                <ScalarProperty Name="Building" ColumnName="Building" />
-                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
-                <ScalarProperty Name="POBox" ColumnName="POBox" />
-                <ScalarProperty Name="MetaDescription" ColumnName="MetaDescription" />
-                <ScalarProperty Name="FacebookUrl" ColumnName="FacebookUrl" />
-                <ScalarProperty Name="TwitterUrl" ColumnName="TwitterUrl" />
-                <ScalarProperty Name="YouTubeUrl" ColumnName="YouTubeUrl" />
-                <ScalarProperty Name="GooglePlusUrl" ColumnName="GooglePlusUrl" />
-                <ScalarProperty Name="LinkedInUrl" ColumnName="LinkedInUrl" />
-                <ScalarProperty Name="RSS" ColumnName="RSS" />
-                <ScalarProperty Name="Developer" ColumnName="Developer" />
-                <ScalarProperty Name="DeveloperURL" ColumnName="DeveloperURL" />
-                <ScalarProperty Name="PrimaryLogoPath" ColumnName="PrimaryLogoPath" />
-                <ScalarProperty Name="PrimaryLogoName" ColumnName="PrimaryLogoName" />
-                <ScalarProperty Name="SecondaryLogoPath" ColumnName="SecondaryLogoPath" />
-                <ScalarProperty Name="SecondaryLogoName" ColumnName="SecondaryLogoName" />
-                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1171,6 +1120,45 @@
                 <ScalarProperty Name="StatusId" ColumnName="StatusId" />
                 <ScalarProperty Name="Value" ColumnName="Value" />
                 <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Organizations">
+            <EntityTypeMapping TypeName="ConfigDBModel.Organization">
+              <MappingFragment StoreEntitySet="Organization">
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+                <ScalarProperty Name="SecondaryLogoName" ColumnName="SecondaryLogoName" />
+                <ScalarProperty Name="SecondaryLogoPath" ColumnName="SecondaryLogoPath" />
+                <ScalarProperty Name="PrimaryLogoName" ColumnName="PrimaryLogoName" />
+                <ScalarProperty Name="PrimaryLogoPath" ColumnName="PrimaryLogoPath" />
+                <ScalarProperty Name="DeveloperURL" ColumnName="DeveloperURL" />
+                <ScalarProperty Name="Developer" ColumnName="Developer" />
+                <ScalarProperty Name="RSS" ColumnName="RSS" />
+                <ScalarProperty Name="LinkedInUrl" ColumnName="LinkedInUrl" />
+                <ScalarProperty Name="GooglePlusUrl" ColumnName="GooglePlusUrl" />
+                <ScalarProperty Name="YouTubeUrl" ColumnName="YouTubeUrl" />
+                <ScalarProperty Name="TwitterUrl" ColumnName="TwitterUrl" />
+                <ScalarProperty Name="FacebookUrl" ColumnName="FacebookUrl" />
+                <ScalarProperty Name="MetaDescription" ColumnName="MetaDescription" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+                <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="TranslationId" ColumnName="TranslationId" />
+                <ScalarProperty Name="IsTranslated" ColumnName="IsTranslated" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="TenantId" ColumnName="TenantId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

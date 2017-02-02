@@ -1494,4 +1494,19 @@
   <data name="GalleryCategory" xml:space="preserve">
     <value>گیلری، نگارخانہ زمرہ</value>
   </data>
+  <data name="State" xml:space="preserve">
+    <value>ریاست</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>پوسٹ کوڈ</value>
+  </data>
+  <data name="Telephone" xml:space="preserve">
+    <value>ٹیلی فون</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>پتہ کی لائن 1</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>پتہ کی لائن 2</value>
+  </data>
 </root>

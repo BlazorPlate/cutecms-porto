@@ -160,6 +160,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Address Line 1.
+        /// </summary>
+        public static string AddressLine1 {
+            get {
+                return ResourceManager.GetString("AddressLine1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address Line 2.
+        /// </summary>
+        public static string AddressLine2 {
+            get {
+                return ResourceManager.GetString("AddressLine2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add Translation.
         /// </summary>
         public static string AddTranslation {
@@ -3589,6 +3607,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to State.
+        /// </summary>
+        public static string State {
+            get {
+                return ResourceManager.GetString("State", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Statistics.
         /// </summary>
         public static string Statistic {
@@ -3747,6 +3774,15 @@ namespace Resources {
         public static string TakeTour {
             get {
                 return ResourceManager.GetString("TakeTour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telephone.
+        /// </summary>
+        public static string Telephone {
+            get {
+                return ResourceManager.GetString("Telephone", resourceCulture);
             }
         }
         
@@ -4188,6 +4224,15 @@ namespace Resources {
         public static string YouTubeUrl {
             get {
                 return ResourceManager.GetString("YouTubeUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Postal Code.
+        /// </summary>
+        public static string ZIP {
+            get {
+                return ResourceManager.GetString("ZIP", resourceCulture);
             }
         }
     }

@@ -1494,4 +1494,19 @@
   <data name="GalleryCategory" xml:space="preserve">
     <value>गैलरी श्रेणी</value>
   </data>
+  <data name="State" xml:space="preserve">
+    <value>राज्य</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>पोस्टल कोड</value>
+  </data>
+  <data name="Telephone" xml:space="preserve">
+    <value>टेलीफोन</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>पता पंक्ति 1</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>पता पंक्ति 2</value>
+  </data>
 </root>

@@ -1494,4 +1494,19 @@
   <data name="GalleryCategory" xml:space="preserve">
     <value>갤러리 카테고리</value>
   </data>
+  <data name="State" xml:space="preserve">
+    <value>상태</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>우편 번호</value>
+  </data>
+  <data name="Telephone" xml:space="preserve">
+    <value>전화</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>주소 입력란 1</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>주소 입력란 2</value>
+  </data>
 </root>

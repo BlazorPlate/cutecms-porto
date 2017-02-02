@@ -1494,4 +1494,19 @@
   <data name="GalleryCategory" xml:space="preserve">
     <value>בקטגוריה גלריה</value>
   </data>
+  <data name="State" xml:space="preserve">
+    <value>המדינה</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>מיקוד</value>
+  </data>
+  <data name="Telephone" xml:space="preserve">
+    <value>טלפון</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>שורת כתובת 1</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>שורת כתובת 2</value>
+  </data>
 </root>

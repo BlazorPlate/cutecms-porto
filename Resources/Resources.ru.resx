@@ -1494,4 +1494,19 @@
   <data name="GalleryCategory" xml:space="preserve">
     <value>Категории галереи</value>
   </data>
+  <data name="State" xml:space="preserve">
+    <value>Государство</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>Почтовый код</value>
+  </data>
+  <data name="Telephone" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>Строка адреса 1</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>Строка адреса 2</value>
+  </data>
 </root>

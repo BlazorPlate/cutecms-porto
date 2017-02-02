@@ -1494,4 +1494,19 @@
   <data name="GalleryCategory" xml:space="preserve">
     <value>Galeriju kategorijas</value>
   </data>
+  <data name="State" xml:space="preserve">
+    <value>Valsts</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>Pasta indekss</value>
+  </data>
+  <data name="Telephone" xml:space="preserve">
+    <value>Telefons</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>Adreses rindiņa 1</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>Adreses rindiņa 2</value>
+  </data>
 </root>

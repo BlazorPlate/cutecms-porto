@@ -62,7 +62,7 @@
                                                     <li><a href="@Url.Action("Index", "Home", new { area="CMS"})"><i class="fa fa-arrow-circle-left"></i> @Resources.Resources.Backend</a></li>
 
                                                 }
-                                                @using (Html.BeginForm("LogOff", "Account", new { area = "Identity", returnUrl = HttpContext.Current.Request.Url.AbsolutePath }, FormMethod.Post, new { id = "logoutForm", style = "margin:0" }))
+                                                @using (Html.BeginForm("LogOff", "Account", new { area = "" }, FormMethod.Post, new { id = "logoutForm", style = "margin:0" }))
                                                 {
                                                     @Html.AntiForgeryToken()
                                                     <li><a href="javascript:document.getElementById('logoutForm').submit()"><i class="glyphicon glyphicon-off"></i> @Resources.Resources.LogOff</a></li>

@@ -11,18 +11,18 @@ namespace cutecms_porto.Helpers
         #region Methods
         public static void ExpiryValidator()
         {
-            using (CMSEntities cmdDb = new CMSEntities())
+            using (CMSEntities cmsDb = new CMSEntities())
             {
-                var contents = cmdDb.Contents.Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && !c.Status.Code.Trim().Equals("archived") && !c.Status.Code.Equals("unpublished"));
+                var contents = cmsDb.Contents.Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && !c.Status.Code.Trim().Equals("archived") && !c.Status.Code.Equals("unpublished"));
                 foreach (var content in contents)
                 {
                     if (content.PublishedOn <= DateTime.Now && (DateTime.Now <= content.ExpiredOn || content.ExpiredOn == null))
                     {
-                        content.StatusId = cmdDb.CMSStatuses.Where(s => s.Code.Equals("published")).Single().Id;
+                        content.StatusId = cmsDb.CMSStatuses.Where(s => s.Code.Equals("published")).Single().Id;
                     }
                     else if (content.PublishedOn <= DateTime.Now && DateTime.Now >= content.ExpiredOn)
                     {
-                        content.StatusId = cmdDb.CMSStatuses.Where(s => s.Code.Equals("archived")).Single().Id;
+                        content.StatusId = cmsDb.CMSStatuses.Where(s => s.Code.Equals("archived")).Single().Id;
                         content.PublishedOn = null;
                         content.ExpiredOn = null;
                     }
@@ -30,15 +30,15 @@ namespace cutecms_porto.Helpers
                     {
                         content.IsUrgent = false;
                     }
-                    var menuItem = cmdDb.MenuItems.Include("Menu").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.ContentId == content.Id).FirstOrDefault();
+                    var menuItem = cmsDb.MenuItems.Include("Menu").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.ContentId == content.Id).FirstOrDefault();
                     if (menuItem != null)
                     {
                         menuItem.StatusId = content.StatusId;
-                        cmdDb.Entry(menuItem).State = EntityState.Modified;
+                        cmsDb.Entry(menuItem).State = EntityState.Modified;
                     }
-                    cmdDb.Entry(content).State = EntityState.Modified;
+                    cmsDb.Entry(content).State = EntityState.Modified;
                 }
-                cmdDb.SaveChanges();
+                cmsDb.SaveChanges();
             }
             using (RMSEntities rmsDb = new RMSEntities())
             {

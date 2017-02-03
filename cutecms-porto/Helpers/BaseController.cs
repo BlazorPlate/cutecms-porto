@@ -29,8 +29,7 @@ namespace cutecms_porto.Helpers
                 cultureName = Request.UserLanguages != null && Request.UserLanguages.Length > 0 ? Request.UserLanguages[0] : null; // obtain it from HTTP header AcceptLanguages
 
             // Validate culture name
-            cultureName = CultureHelper.GetImplementedCulture(cultureName); // This is safe
-
+            cultureName = CultureHelper.GetImplementedCulture(cultureName);
             if (RouteData.Values["culture"] as string != cultureName)
             {
                 // Force a valid culture in the URL
@@ -42,21 +41,7 @@ namespace cutecms_porto.Helpers
             Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
             if (HttpRuntime.Cache["Organization"] == null)
                 OrganizationData.Organization = configDb.Organizations.Where(o => o.TenantId.Trim().Equals(Tenant.TenantId) && o.IsDefault == true && o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
-            //if (HttpRuntime.Cache["MenuItems"] == null)
-            //    MenuBuilder();
             return base.BeginExecuteCore(callback, state);
-        }
-        public void MenuBuilder()
-        {
-            lock (MenuBuilderLock)
-            {
-                ExpiryHelper.ExpiryValidator();
-                var dbContext = ((IObjectContextAdapter)cmsDb).ObjectContext;//Resolve Caching
-                var refreshableObjects = cmsDb.ChangeTracker.Entries().Select(c => c.Entity).ToList();//Resolve Caching
-                dbContext.Refresh(RefreshMode.StoreWins, refreshableObjects);//Resolve Caching
-                var menuItems = cmsDb.MenuItems.Include("Status").Include("Menu").Include("Language").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Status.Code.Trim().Equals("published") && m.Visible).OrderBy(m => m.Ordinal).ToList();
-                HttpRuntime.Cache.Insert("MenuItems", menuItems, null, DateTime.Now.AddDays(1), Cache.NoSlidingExpiration);
-            }
         }
         #endregion Methods
     }

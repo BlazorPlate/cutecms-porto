@@ -1,7 +1,7 @@
 ﻿@model cutecms_porto.Areas.Identity.Models.DBModel.Employee
 
 <!-- PERSONAL INFO TAB -->
-@using (Html.BeginForm("Manage", "MyProfile", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+@using (Html.BeginForm("Manage", "MyProfile", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     if (Model != null)

@@ -103,11 +103,6 @@ namespace cutecms_porto.Areas.Identity.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
-            //if (returnUrl != null && returnUrl.ToLowerInvariant().Contains("/logoff"))
-            //{
-            //    returnUrl = null;
-            //    return RedirectToAction("Login"); // Redirect to your default account page
-            //}
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
@@ -143,7 +138,6 @@ namespace cutecms_porto.Areas.Identity.Controllers
                         return View(model);
                     }
                     return RedirectToLocal(returnUrl, user.Id);
-
                 case SignInStatus.LockedOut:
                     return View("Lockout");
 
@@ -611,13 +605,8 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 }
             }
             if (Url.IsLocalUrl(returnUrl))
-            {
                 return Redirect(returnUrl);
-            }
-            else
-            {
-                return RedirectToAction("Index", "Home");
-            }
+            return RedirectToAction("Index", "Home");
         }
         #endregion Methods
 

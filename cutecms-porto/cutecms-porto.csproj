@@ -464,7 +464,6 @@
     <Compile Include="Areas\CMS\Controllers\MenusController.cs" />
     <Compile Include="Areas\Config\Controllers\NotificationsController.cs" />
     <Compile Include="Areas\Config\Controllers\NotificationTermsController.cs" />
-    <Compile Include="Areas\Config\Controllers\Organizations1Controller.cs" />
     <Compile Include="Areas\Config\Controllers\OrganizationsController.cs" />
     <Compile Include="Areas\Config\Controllers\PhoneNumbersController.cs" />
     <Compile Include="Areas\Config\Controllers\SMTPSettingsController.cs" />
@@ -4813,11 +4812,6 @@
     <Content Include="Areas\CMS\Views\CategoryTerms\Details.cshtml" />
     <Content Include="Areas\CMS\Views\CategoryTerms\Edit.cshtml" />
     <Content Include="Areas\CMS\Views\CategoryTerms\Index.cshtml" />
-    <Content Include="Areas\Config\Views\Organizations1\Create.cshtml" />
-    <Content Include="Areas\Config\Views\Organizations1\Delete.cshtml" />
-    <Content Include="Areas\Config\Views\Organizations1\Details.cshtml" />
-    <Content Include="Areas\Config\Views\Organizations1\Edit.cshtml" />
-    <Content Include="Areas\Config\Views\Organizations1\Index.cshtml" />
     <None Include="assets\porto\vendor\validation\jquery.validate-vsdoc.js" />
     <Content Include="assets\porto\vendor\validation\jquery.validate.js" />
     <Content Include="assets\porto\vendor\validation\jquery.validate.min.js" />
@@ -5467,7 +5461,6 @@
     <Content Include="Areas\Identity\Views\Manage\SetPassword.cshtml" />
     <Content Include="Areas\Identity\Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Areas\Identity\Views\Account\Index.cshtml" />
     <Content Include="Areas\Identity\Views\Groups\Create.cshtml" />
     <Content Include="Areas\Identity\Views\Groups\Delete.cshtml" />
@@ -5493,7 +5486,6 @@
     <Content Include="Views\Shared\_Breadcrumb.cshtml" />
     <Content Include="Views\Shared\_ShareButtons.cshtml" />
     <Content Include="Views\Shared\_SocialButtons.cshtml" />
-    <Content Include="Views\Shared\_MegaMenu.cshtml" />
     <Content Include="Views\MyProfile\Index.cshtml" />
     <Content Include="Views\MyProfile\PersonalInfo.cshtml" />
     <Content Include="Views\MyProfile\AcademicInfo.cshtml" />

@@ -28,7 +28,7 @@
         ViewBag.PersonalPhotoPath = personalPhotoPath;
         ViewBag.Username = username;
     }
-    ViewBag.IsExist = File.Exists(Server.MapPath(ViewBag.PersonalPhotoPath));
+    ViewBag.IsUserImageExist = File.Exists(Server.MapPath(ViewBag.PersonalPhotoPath));
 }
 <!DOCTYPE html>
 <html lang="en">

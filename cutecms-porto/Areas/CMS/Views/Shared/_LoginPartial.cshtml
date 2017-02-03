@@ -7,14 +7,14 @@
 @if (Request.IsAuthenticated)
 {
     <li class="dropdown">
-        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="@(!ViewBag.IsExist ? "/assets/admin/plugins/images/users/user-icon.png" : @ViewBag.PersonalPhotoPath)" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">@ViewBag.Username</b> </a>
-        <ul class="dropdown-menu dropdown-user scale-up">
+        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="@(!ViewBag.IsUserImageExist ? "/assets/admin/plugins/images/users/user-icon.png" : @ViewBag.PersonalPhotoPath)" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">@ViewBag.Username</b> </a>
+        <ul class="dropdown-menu dropdown-user animated flipInY">
             <li><a href="@Url.Action("Index", "MyProfile", new { area = "" })"><i class="ti-user"></i> @Resources.Resources.MyProfile</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="@Url.Action("Index", "Manage", new { area = "Identity" })"><i class="ti-settings"></i> @Resources.Resources.AccountSettings</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="javascript:document.getElementById('logoutForm').submit()"><i class="ti-power-off"></i> @Resources.Resources.LogOff</a></li>
-            @using (Html.BeginForm("LogOff", "Account", new { area = "Identity", returnUrl = HttpContext.Current.Request.Url.AbsolutePath }, FormMethod.Post, new { id = "logoutForm", style = "margin:0" }))
+            @using (Html.BeginForm("LogOff", "Account", new { area = "Identity" }, FormMethod.Post, new { id = "logoutForm", style = "margin:0" }))
             {
                 @Html.AntiForgeryToken()
             }
@@ -27,7 +27,7 @@ else
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <i class="ti-user"></i>
         </a>
-        <ul class="dropdown-menu dropdown-user scale-up">
+        <ul class="dropdown-menu dropdown-user animated flipInY">
             <li><a href="@Url.Action("Login", "Account", new { area = "Identity" })"><i class="ti-key"></i> @Resources.Resources.LogOn</a></li>
             <li class="divider"></li>
             <li><a href="@Url.Action("Register", "Account", new { area = "Identity" })"><i class="ti-user"></i> @Resources.Resources.Register</a></li>
@@ -38,7 +38,7 @@ else
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
         <i class="ti-world"></i>
     </a>
-    <ul class="dropdown-menu scale-up">
+    <ul class="dropdown-menu animated flipInY">
         @foreach (var item in cmsDb.CMSLanguages.Where(l => l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal))
         {
             CultureInfo itemCultureInfo = CultureInfo.CreateSpecificCulture(item.CultureName.Trim());
@@ -47,9 +47,3 @@ else
         }
     </ul>
 </li>
-<script type="text/javascript">
-    function changeImage(altImage) {
-        alert(message);
-        $(this).attr('src',altImage.toString());
-    }
-</script>

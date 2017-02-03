@@ -1,5 +1,5 @@
 ﻿@model cutecms_porto.Areas.Identity.Models.LoginViewModel
-@using (Html.BeginForm("Login", "Account", new { returnUrl = Request.Url.AbsolutePath }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Login", "Account", new { returnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     <div class="container max-width-400" id="LoginAjax">

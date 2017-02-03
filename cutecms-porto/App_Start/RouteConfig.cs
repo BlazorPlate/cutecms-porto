@@ -11,20 +11,15 @@ namespace cutecms_porto
         {
             routes.LowercaseUrls = true;
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            //routes.IgnoreRoute("{file}.js");
-            //routes.IgnoreRoute("{file}.html");
-            //routes.IgnoreRoute("{*favicon}", new { favicon = @"(.*/)?favicon.ico(/.*)?" });
+            routes.IgnoreRoute("{file}.js");
+            routes.IgnoreRoute("{file}.css");
+            routes.IgnoreRoute("{*favicon}", new { favicon = @"(.*/)?favicon.ico(/.*)?" });
             routes.MapRoute(name: "Content", url: "{culture}/content/pages/{*slug}",
             defaults: new { culture = CultureHelper.GetDefaultCulture(), controller = "Pages", action = "Content", id = UrlParameter.Optional, tenant = UrlParameter.Optional },
             constraints: new { TenantAccess = new TenantRouteConstraint() },
             namespaces: new[] { "cutecms_porto.Controllers" });
 
             routes.MapRoute(name: "Default", url: "{culture}/{controller}/{action}/{id}",
-            defaults: new { culture = CultureHelper.GetDefaultCulture(), controller = "Home", action = "Index", id = UrlParameter.Optional, tenant = UrlParameter.Optional },
-            constraints: new { TenantAccess = new TenantRouteConstraint() },
-            namespaces: new[] { "cutecms_porto.Controllers" });
-
-            routes.MapRoute(name: "NoCultureDefault", url: "{controller}/{action}/{id}",
             defaults: new { culture = CultureHelper.GetDefaultCulture(), controller = "Home", action = "Index", id = UrlParameter.Optional, tenant = UrlParameter.Optional },
             constraints: new { TenantAccess = new TenantRouteConstraint() },
             namespaces: new[] { "cutecms_porto.Controllers" });

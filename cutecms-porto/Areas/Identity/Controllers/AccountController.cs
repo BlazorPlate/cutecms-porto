@@ -450,7 +450,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             OutputCacheAttribute.ChildActionCache = new MemoryCache("NewDefault");
-            return RedirectToLocal(returnUrl, null);
+            return RedirectToAction("Login");
         }
 
         // GET: /Account/ExternalLoginFailure

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -1479,34 +1479,7 @@
   <data name="Dimensions" xml:space="preserve">
     <value>आयाम</value>
   </data>
-  <data name="CategoryId" xml:space="preserve">
-    <value>श्रेणी</value>
-  </data>
-  <data name="Categories" xml:space="preserve">
-    <value>श्रेणियाँ</value>
-  </data>
-  <data name="ChooseCategory" xml:space="preserve">
-    <value>-- चुनें श्रेणी-</value>
-  </data>
-  <data name="GalleryCategories" xml:space="preserve">
-    <value>गैलरी श्रेणियाँ</value>
-  </data>
-  <data name="GalleryCategory" xml:space="preserve">
-    <value>गैलरी श्रेणी</value>
-  </data>
-  <data name="State" xml:space="preserve">
-    <value>राज्य</value>
-  </data>
-  <data name="ZIP" xml:space="preserve">
-    <value>पोस्टल कोड</value>
-  </data>
-  <data name="Telephone" xml:space="preserve">
-    <value>टेलीफोन</value>
-  </data>
-  <data name="AddressLine1" xml:space="preserve">
-    <value>पता पंक्ति 1</value>
-  </data>
-  <data name="AddressLine2" xml:space="preserve">
-    <value>पता पंक्ति 2</value>
+  <data name=" GetInTouch" xml:space="preserve">
+    <value>संपर्क में रहो</value>
   </data>
 </root>

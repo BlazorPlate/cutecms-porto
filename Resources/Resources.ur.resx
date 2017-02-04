@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -1479,34 +1479,7 @@
   <data name="Dimensions" xml:space="preserve">
     <value>طول و عرض</value>
   </data>
-  <data name="CategoryId" xml:space="preserve">
-    <value>زمرہ</value>
-  </data>
-  <data name="Categories" xml:space="preserve">
-    <value>زمرہ جات</value>
-  </data>
-  <data name="ChooseCategory" xml:space="preserve">
-    <value>-زمرہ – کا انتخاب کریں</value>
-  </data>
-  <data name="GalleryCategories" xml:space="preserve">
-    <value>گیلری، نگارخانہ زمرہ جات</value>
-  </data>
-  <data name="GalleryCategory" xml:space="preserve">
-    <value>گیلری، نگارخانہ زمرہ</value>
-  </data>
-  <data name="State" xml:space="preserve">
-    <value>ریاست</value>
-  </data>
-  <data name="ZIP" xml:space="preserve">
-    <value>پوسٹ کوڈ</value>
-  </data>
-  <data name="Telephone" xml:space="preserve">
-    <value>ٹیلی فون</value>
-  </data>
-  <data name="AddressLine1" xml:space="preserve">
-    <value>پتہ کی لائن 1</value>
-  </data>
-  <data name="AddressLine2" xml:space="preserve">
-    <value>پتہ کی لائن 2</value>
+  <data name=" GetInTouch" xml:space="preserve">
+    <value>رابطے میں رہنا</value>
   </data>
 </root>

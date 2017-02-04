@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -1479,34 +1479,7 @@
   <data name="Dimensions" xml:space="preserve">
     <value>Dimensioner</value>
   </data>
-  <data name="CategoryId" xml:space="preserve">
-    <value>Kategori</value>
-  </data>
-  <data name="Categories" xml:space="preserve">
-    <value>Kategorier</value>
-  </data>
-  <data name="ChooseCategory" xml:space="preserve">
-    <value>--Välj kategori--</value>
-  </data>
-  <data name="GalleryCategories" xml:space="preserve">
-    <value>Gallery-kategorier</value>
-  </data>
-  <data name="GalleryCategory" xml:space="preserve">
-    <value>Galleri-kategori</value>
-  </data>
-  <data name="State" xml:space="preserve">
-    <value>Statliga</value>
-  </data>
-  <data name="ZIP" xml:space="preserve">
-    <value>Postnummer</value>
-  </data>
-  <data name="Telephone" xml:space="preserve">
-    <value>Telefon</value>
-  </data>
-  <data name="AddressLine1" xml:space="preserve">
-    <value>Adress linje 1</value>
-  </data>
-  <data name="AddressLine2" xml:space="preserve">
-    <value>Adressrad 2</value>
+  <data name=" GetInTouch" xml:space="preserve">
+    <value>Håll kontakten</value>
   </data>
 </root>

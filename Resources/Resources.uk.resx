@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -1479,34 +1479,7 @@
   <data name="Dimensions" xml:space="preserve">
     <value>Розміри</value>
   </data>
-  <data name="CategoryId" xml:space="preserve">
-    <value>Категорія</value>
-  </data>
-  <data name="Categories" xml:space="preserve">
-    <value>Категорії</value>
-  </data>
-  <data name="ChooseCategory" xml:space="preserve">
-    <value>-- Оберіть категорію-</value>
-  </data>
-  <data name="GalleryCategories" xml:space="preserve">
-    <value>Галерея категорії</value>
-  </data>
-  <data name="GalleryCategory" xml:space="preserve">
-    <value>Галерея-Категорія</value>
-  </data>
-  <data name="State" xml:space="preserve">
-    <value>Держава</value>
-  </data>
-  <data name="ZIP" xml:space="preserve">
-    <value>Поштовий індекс</value>
-  </data>
-  <data name="Telephone" xml:space="preserve">
-    <value>Телефон</value>
-  </data>
-  <data name="AddressLine1" xml:space="preserve">
-    <value>Адреса лінія 1</value>
-  </data>
-  <data name="AddressLine2" xml:space="preserve">
-    <value>Адреса, рядок 2</value>
+  <data name=" GetInTouch" xml:space="preserve">
+    <value>Залишайтеся на зв'язку</value>
   </data>
 </root>

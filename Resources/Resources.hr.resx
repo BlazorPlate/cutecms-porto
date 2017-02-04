@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -1479,34 +1479,7 @@
   <data name="Dimensions" xml:space="preserve">
     <value>Dimenzije</value>
   </data>
-  <data name="CategoryId" xml:space="preserve">
-    <value>Kategorija</value>
-  </data>
-  <data name="Categories" xml:space="preserve">
-    <value>Kategorije</value>
-  </data>
-  <data name="ChooseCategory" xml:space="preserve">
-    <value>--Odaberite kategoriju...</value>
-  </data>
-  <data name="GalleryCategories" xml:space="preserve">
-    <value>Galerija kategorije</value>
-  </data>
-  <data name="GalleryCategory" xml:space="preserve">
-    <value>Galerija Kategorija</value>
-  </data>
-  <data name="State" xml:space="preserve">
-    <value>Država</value>
-  </data>
-  <data name="ZIP" xml:space="preserve">
-    <value>Poštanski broj</value>
-  </data>
-  <data name="Telephone" xml:space="preserve">
-    <value>Telefon</value>
-  </data>
-  <data name="AddressLine1" xml:space="preserve">
-    <value>Adresa, redak 1</value>
-  </data>
-  <data name="AddressLine2" xml:space="preserve">
-    <value>Adresa, redak 2</value>
+  <data name=" GetInTouch" xml:space="preserve">
+    <value>Ostanite u kontaktu</value>
   </data>
 </root>

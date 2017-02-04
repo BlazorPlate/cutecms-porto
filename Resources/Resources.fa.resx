@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -1479,34 +1479,7 @@
   <data name="Dimensions" xml:space="preserve">
     <value>ابعاد</value>
   </data>
-  <data name="CategoryId" xml:space="preserve">
-    <value>رده</value>
-  </data>
-  <data name="Categories" xml:space="preserve">
-    <value>ردههای صفحه</value>
-  </data>
-  <data name="ChooseCategory" xml:space="preserve">
-    <value>--رده--را انتخاب کنید</value>
-  </data>
-  <data name="GalleryCategories" xml:space="preserve">
-    <value>دسته گالری</value>
-  </data>
-  <data name="GalleryCategory" xml:space="preserve">
-    <value>دسته گالری</value>
-  </data>
-  <data name="State" xml:space="preserve">
-    <value>دولت</value>
-  </data>
-  <data name="ZIP" xml:space="preserve">
-    <value>کد پستی</value>
-  </data>
-  <data name="Telephone" xml:space="preserve">
-    <value>تلفن</value>
-  </data>
-  <data name="AddressLine1" xml:space="preserve">
-    <value>آدرس</value>
-  </data>
-  <data name="AddressLine2" xml:space="preserve">
-    <value>خط آدرس 2</value>
+  <data name=" GetInTouch" xml:space="preserve">
+    <value>در تماس باشید</value>
   </data>
 </root>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -1479,34 +1479,7 @@
   <data name="Dimensions" xml:space="preserve">
     <value>מידות</value>
   </data>
-  <data name="CategoryId" xml:space="preserve">
-    <value>קטגוריה</value>
-  </data>
-  <data name="Categories" xml:space="preserve">
-    <value>קטגוריות</value>
-  </data>
-  <data name="ChooseCategory" xml:space="preserve">
-    <value>-- בחר קטגוריה...</value>
-  </data>
-  <data name="GalleryCategories" xml:space="preserve">
-    <value>גלריה קטגוריות</value>
-  </data>
-  <data name="GalleryCategory" xml:space="preserve">
-    <value>בקטגוריה גלריה</value>
-  </data>
-  <data name="State" xml:space="preserve">
-    <value>המדינה</value>
-  </data>
-  <data name="ZIP" xml:space="preserve">
-    <value>מיקוד</value>
-  </data>
-  <data name="Telephone" xml:space="preserve">
-    <value>טלפון</value>
-  </data>
-  <data name="AddressLine1" xml:space="preserve">
-    <value>שורת כתובת 1</value>
-  </data>
-  <data name="AddressLine2" xml:space="preserve">
-    <value>שורת כתובת 2</value>
+  <data name=" GetInTouch" xml:space="preserve">
+    <value>. תשאר בקשר</value>
   </data>
 </root>

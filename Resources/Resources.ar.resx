@@ -1479,34 +1479,7 @@
   <data name="Dimensions" xml:space="preserve">
     <value>أبعاد</value>
   </data>
-  <data name="CategoryId" xml:space="preserve">
-    <value>التصنيف</value>
-  </data>
-  <data name="Categories" xml:space="preserve">
-    <value>التصنيفات</value>
-  </data>
-  <data name="ChooseCategory" xml:space="preserve">
-    <value>--اختر الفئة-</value>
-  </data>
-  <data name="GalleryCategories" xml:space="preserve">
-    <value>تصنيفات المعارض</value>
-  </data>
-  <data name="GalleryCategory" xml:space="preserve">
-    <value>تصنيف المعارض</value>
-  </data>
-  <data name="State" xml:space="preserve">
-    <value>الدولة</value>
-  </data>
-  <data name="ZIP" xml:space="preserve">
-    <value>الرمز البريدي</value>
-  </data>
-  <data name="Telephone" xml:space="preserve">
-    <value>الهاتف</value>
-  </data>
-  <data name="AddressLine1" xml:space="preserve">
-    <value>سطر العنوان 1</value>
-  </data>
-  <data name="AddressLine2" xml:space="preserve">
-    <value>سطر العنوان 2</value>
+  <data name=" GetInTouch" xml:space="preserve">
+    <value>ابقى على تواصل</value>
   </data>
 </root>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -1479,34 +1479,7 @@
   <data name="Dimensions" xml:space="preserve">
     <value>치수</value>
   </data>
-  <data name="CategoryId" xml:space="preserve">
-    <value>카테고리</value>
-  </data>
-  <data name="Categories" xml:space="preserve">
-    <value>카테고리</value>
-  </data>
-  <data name="ChooseCategory" xml:space="preserve">
-    <value>-선택 카테고리-</value>
-  </data>
-  <data name="GalleryCategories" xml:space="preserve">
-    <value>갤러리 카테고리</value>
-  </data>
-  <data name="GalleryCategory" xml:space="preserve">
-    <value>갤러리 카테고리</value>
-  </data>
-  <data name="State" xml:space="preserve">
-    <value>상태</value>
-  </data>
-  <data name="ZIP" xml:space="preserve">
-    <value>우편 번호</value>
-  </data>
-  <data name="Telephone" xml:space="preserve">
-    <value>전화</value>
-  </data>
-  <data name="AddressLine1" xml:space="preserve">
-    <value>주소 입력란 1</value>
-  </data>
-  <data name="AddressLine2" xml:space="preserve">
-    <value>주소 입력란 2</value>
+  <data name=" GetInTouch" xml:space="preserve">
+    <value>터치에 머물</value>
   </data>
 </root>

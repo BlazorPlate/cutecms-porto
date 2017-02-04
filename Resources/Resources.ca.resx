@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -1479,34 +1479,7 @@
   <data name="Dimensions" xml:space="preserve">
     <value>Dimensions</value>
   </data>
-  <data name="CategoryId" xml:space="preserve">
-    <value>Categoria</value>
-  </data>
-  <data name="Categories" xml:space="preserve">
-    <value>Categories</value>
-  </data>
-  <data name="ChooseCategory" xml:space="preserve">
-    <value>-- Selecciona categoria-</value>
-  </data>
-  <data name="GalleryCategories" xml:space="preserve">
-    <value>Categories de la galeria</value>
-  </data>
-  <data name="GalleryCategory" xml:space="preserve">
-    <value>Galeria categoria</value>
-  </data>
-  <data name="State" xml:space="preserve">
-    <value>Estat</value>
-  </data>
-  <data name="ZIP" xml:space="preserve">
-    <value>Codi postal</value>
-  </data>
-  <data name="Telephone" xml:space="preserve">
-    <value>Telèfon</value>
-  </data>
-  <data name="AddressLine1" xml:space="preserve">
-    <value>Adreça línia 1</value>
-  </data>
-  <data name="AddressLine2" xml:space="preserve">
-    <value>Adreça línia 2</value>
+  <data name=" GetInTouch" xml:space="preserve">
+    <value>Estar en contacte</value>
   </data>
 </root>

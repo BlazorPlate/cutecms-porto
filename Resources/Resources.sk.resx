@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -1479,34 +1479,7 @@
   <data name="Dimensions" xml:space="preserve">
     <value>Rozmery</value>
   </data>
-  <data name="CategoryId" xml:space="preserve">
-    <value>Kategória</value>
-  </data>
-  <data name="Categories" xml:space="preserve">
-    <value>Kategórie</value>
-  </data>
-  <data name="ChooseCategory" xml:space="preserve">
-    <value>--Vyberte kategóriu--</value>
-  </data>
-  <data name="GalleryCategories" xml:space="preserve">
-    <value>Fotogaléria kategórií</value>
-  </data>
-  <data name="GalleryCategory" xml:space="preserve">
-    <value>Galéria kategórie</value>
-  </data>
-  <data name="State" xml:space="preserve">
-    <value>Štát</value>
-  </data>
-  <data name="ZIP" xml:space="preserve">
-    <value>PSČ</value>
-  </data>
-  <data name="Telephone" xml:space="preserve">
-    <value>Telefón</value>
-  </data>
-  <data name="AddressLine1" xml:space="preserve">
-    <value>1. riadok adresy</value>
-  </data>
-  <data name="AddressLine2" xml:space="preserve">
-    <value>2. riadok adresy</value>
+  <data name=" GetInTouch" xml:space="preserve">
+    <value>Zostaňte v kontakte</value>
   </data>
 </root>

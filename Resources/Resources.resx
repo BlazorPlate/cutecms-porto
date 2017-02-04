@@ -1479,34 +1479,7 @@
   <data name="Dimensions" xml:space="preserve">
     <value>Dimensions</value>
   </data>
-  <data name="CategoryId" xml:space="preserve">
-    <value>Category</value>
-  </data>
-  <data name="Categories" xml:space="preserve">
-    <value>Categories</value>
-  </data>
-  <data name="ChooseCategory" xml:space="preserve">
-    <value>--Choose category--</value>
-  </data>
-  <data name="GalleryCategories" xml:space="preserve">
-    <value>Gallery Categories</value>
-  </data>
-  <data name="GalleryCategory" xml:space="preserve">
-    <value>Gallery Category</value>
-  </data>
-  <data name="State" xml:space="preserve">
-    <value>State</value>
-  </data>
-  <data name="ZIP" xml:space="preserve">
-    <value>Postal Code</value>
-  </data>
-  <data name="Telephone" xml:space="preserve">
-    <value>Telephone</value>
-  </data>
-  <data name="AddressLine1" xml:space="preserve">
-    <value>Address Line 1</value>
-  </data>
-  <data name="AddressLine2" xml:space="preserve">
-    <value>Address Line 2</value>
+  <data name=" GetInTouch" xml:space="preserve">
+    <value>Get in touch</value>
   </data>
 </root>

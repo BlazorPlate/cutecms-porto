@@ -36,22 +36,9 @@
                                     }
                                     else
                                     {
-                                        string username = null;
-                                        ApplicationDbContext _db = new ApplicationDbContext();
-                                        IdentityEntities identityDb = new IdentityEntities();
-                                        var email = _db.Users.Find(User.Identity.GetUserId()).UserName;
-                                        var userId = User.Identity.GetUserId();
-                                        if (identityDb.Employees.Where(e => e.LoginId.Equals(userId) && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null)
-                                        {
-                                            username = identityDb.Employees.Where(e => e.LoginId.Equals(userId) && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().FullName;
-                                        }
-                                        else
-                                        {
-                                            username = email.Substring(0, email.LastIndexOf("@"));
-                                        }
+
                                         <li class="dropdown active pull-right width-100">
-                                            @*<a href="#" class="dropdown-toggle">content</a>*@
-                                            <a class="dropdown-toggle" href="#">@Resources.Resources.Hello @username!</a>
+                                            <a class="dropdown-toggle" href="#">@Resources.Resources.Hello @User.Identity.GetUserName().Substring(0, User.Identity.GetUserName().LastIndexOf("@")) !</a>
                                             <ul class="dropdown-menu">
                                                 <li><a href="@Url.Action("Index", "MyProfile")"><i class="fa fa-user"></i> @Resources.Resources.MyProfile</a></li>
 
@@ -62,7 +49,7 @@
                                                     <li><a href="@Url.Action("Index", "Home", new { area="CMS"})"><i class="fa fa-arrow-circle-left"></i> @Resources.Resources.Backend</a></li>
 
                                                 }
-                                                @using (Html.BeginForm("LogOff", "Account", new { area = "Identity" }, FormMethod.Post, new { id = "logoutForm" }))
+                                                @using (Html.BeginForm("LogOff", "Account", new { area = "Identity", returnUrl = Request.Url.AbsolutePath }, FormMethod.Post, new { id = "logoutForm" }))
                                                 {
                                                     @Html.AntiForgeryToken()
                                                     <li><a href="javascript:document.getElementById('logoutForm').submit()"><i class="glyphicon glyphicon-off"></i> @Resources.Resources.LogOff</a></li>

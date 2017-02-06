@@ -114,6 +114,10 @@ namespace cutecms_porto.Areas.Identity.Controllers
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
             OutputCacheAttribute.ChildActionCache = new MemoryCache("NewDefault");
+            AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            Session.Clear();
+            Session.RemoveAll();
+            Session.Abandon();
             if (!ModelState.IsValid)
             {
                 if (RouteData.DataTokens["area"] == null)
@@ -131,10 +135,6 @@ namespace cutecms_porto.Areas.Identity.Controllers
                     if (!await UserManager.IsEmailConfirmedAsync(user.Id))
                     {
                         ModelState.AddModelError("", @Resources.Resources.EmailConfirmationCheck);
-                        AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-                        Session.Clear();
-                        Session.RemoveAll();
-                        Session.Abandon();
                         return View(model);
                     }
                     return RedirectToLocal(returnUrl, user.Id);
@@ -450,7 +450,16 @@ namespace cutecms_porto.Areas.Identity.Controllers
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             OutputCacheAttribute.ChildActionCache = new MemoryCache("NewDefault");
-            return RedirectToAction("Login");
+            returnUrl = HttpUtility.UrlDecode(returnUrl);
+            if ((returnUrl != null) && Url.IsLocalUrl(returnUrl) && returnUrl.StartsWith("/")
+                && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
+            {
+                return RedirectToAction("Login", new { returnUrl = returnUrl });
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         // GET: /Account/ExternalLoginFailure

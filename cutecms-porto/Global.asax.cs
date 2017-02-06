@@ -1,6 +1,9 @@
 ﻿using cutecms_porto.Areas.CMS.Models.DBModel;
 using cutecms_porto.Areas.Config.Models.DBModel;
+using cutecms_porto.Areas.Identity.Models;
+using cutecms_porto.Areas.Identity.Models.DBModel;
 using cutecms_porto.Helpers;
+using Microsoft.AspNet.Identity;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Data;

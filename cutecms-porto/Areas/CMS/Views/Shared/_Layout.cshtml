@@ -1,33 +1,7 @@
-﻿@using Microsoft.AspNet.Identity
-@using cutecms_porto.Areas.Identity.Models.DBModel
-@using cutecms_porto.Areas.Identity.Models
-@using cutecms_porto.Helpers
-@using cutecms_porto.Areas.CMS.Models.DBModel
-@using System.Threading
+﻿@using cutecms_porto.Areas.CMS.Models.DBModel
+@using Microsoft.AspNet.Identity
 @{
-    ApplicationDbContext _db = new ApplicationDbContext();
-    IdentityEntities identityDb = new IdentityEntities();
     CMSEntities cmsDb = new CMSEntities();
-    string username = null;
-    string loginId = null;
-    string email = null;
-    string personalPhotoPath = null;
-    if (Request.IsAuthenticated)
-    {
-        loginId = User.Identity.GetUserId();
-        email = _db.Users.Find(User.Identity.GetUserId()).UserName;
-        if (identityDb.Employees.Where(e => e.LoginId.Equals(loginId) && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null)
-        {
-            username = identityDb.Employees.Where(e => e.LoginId.Equals(loginId) && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().FullName;
-            personalPhotoPath = identityDb.Employees.Where(e => e.LoginId.Equals(loginId) && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().PersonalPhotoPath;
-        }
-        else
-        {
-            username = email.Substring(0, email.LastIndexOf("@"));
-        }
-        ViewBag.PersonalPhotoPath = personalPhotoPath;
-        ViewBag.Username = username;
-    }
     ViewBag.IsUserImageExist = File.Exists(Server.MapPath(ViewBag.PersonalPhotoPath));
 }
 <!DOCTYPE html>
@@ -292,7 +266,7 @@
                     @if (Request.IsAuthenticated)
                     {
                         <li class="user-pro">
-                            <a href="#" class="waves-effect"><img src="@(!ViewBag.IsExist ? "/assets/admin/plugins/images/users/user-icon.png" : @ViewBag.PersonalPhotoPath)" alt="user-img" class="img-circle"> <span class="hide-menu"> @ViewBag.Username<span class="fa arrow"></span></span></a>
+                            <a href="#" class="waves-effect"><img src="@((ViewBag.IsExist==null || false) ? "/assets/admin/plugins/images/users/user-icon.png" : @ViewBag.PersonalPhotoPath)" alt="user-img" class="img-circle"> <span class="hide-menu"> @User.Identity.GetUserName().Substring(0, User.Identity.GetUserName().LastIndexOf("@")).ToUpper()<span class="fa arrow"></span></span></a>
                             <ul class="nav nav-second-level">
                                 <li><a href="@Url.Action("Index", "MyProfile", new { area = "" })"><i class="ti-user"></i> @Resources.Resources.MyProfile</a></li>
                                 <li role="separator" class="divider"></li>

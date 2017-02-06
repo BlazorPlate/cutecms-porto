@@ -1,4 +1,5 @@
 ﻿@using System.Globalization
+@using Microsoft.AspNet.Identity
 @using cutecms_porto.Areas.CMS.Models.DBModel
 @{
     CMSEntities cmsDb = new CMSEntities();
@@ -7,14 +8,14 @@
 @if (Request.IsAuthenticated)
 {
     <li class="dropdown">
-        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="@(!ViewBag.IsUserImageExist ? "/assets/admin/plugins/images/users/user-icon.png" : @ViewBag.PersonalPhotoPath)" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">@ViewBag.Username</b> </a>
+        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="@(!ViewBag.IsUserImageExist ? "/assets/admin/plugins/images/users/user-icon.png" : @ViewBag.PersonalPhotoPath)" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">@User.Identity.GetUserName().Substring(0, User.Identity.GetUserName().LastIndexOf("@")).ToUpper()</b> </a>
         <ul class="dropdown-menu dropdown-user animated flipInY">
             <li><a href="@Url.Action("Index", "MyProfile", new { area = "" })"><i class="ti-user"></i> @Resources.Resources.MyProfile</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="@Url.Action("Index", "Manage", new { area = "Identity" })"><i class="ti-settings"></i> @Resources.Resources.AccountSettings</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="javascript:document.getElementById('logoutForm').submit()"><i class="ti-power-off"></i> @Resources.Resources.LogOff</a></li>
-            @using (Html.BeginForm("LogOff", "Account", new { area = "Identity" }, FormMethod.Post, new { id = "logoutForm", style = "margin:0" }))
+            @using (Html.BeginForm("LogOff", "Account", new { area = "Identity", returnUrl = Request.Url.AbsolutePath }, FormMethod.Post, new { id = "logoutForm", style = "margin:0" }))
             {
                 @Html.AntiForgeryToken()
             }

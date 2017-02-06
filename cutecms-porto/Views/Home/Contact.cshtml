@@ -18,7 +18,10 @@
             </div>
         </div>
     </section>
+    <div id="googlemaps" class="google-map"></div>
 }
+<!-- Google Maps - Go to the bottom of the page to change settings and map location. -->
+
 <div class="container">
     <div class="row">
         <div class="col-md-6">
@@ -86,12 +89,13 @@
                 var query = from p in configDb.ConfigDepartments
                             join c in configDb.Contacts
                             on p.Id equals c.DepartmentId
+                            where p.Contacts.Where(c => c.Organization.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).Any()
                             select p;
             }
             @foreach (var item in query)
             {
-                <h4 class="heading-primary">@item.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && d.DepartmentId == item.Id).FirstOrDefault().Value</h4>
-                foreach (var contact in configDb.Contacts.Where(c => c.DepartmentId == item.Id))
+                <h4 class="heading-primary">@(item.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && d.DepartmentId == item.Id).FirstOrDefault()?.Value ?? item.Code)</h4>
+                foreach (var contact in item.Contacts)
                 {
                     <ul class="list list-icons list-icons-style-3 mt-xlg">
                         <li><i class="fa fa-user"></i><span> @string.Format(contact.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.PersonalTitleId == contact.PersonalTitleId).FirstOrDefault().Value + " " + "{0}", @contact.Name), @contact.Position</span></li>
@@ -102,35 +106,67 @@
                         <li><i class="fa fa-map-marker"></i><span>@contact.Office</span></li>
                         <li><i class="fa fa-envelope"></i> <a href="mailto:@Model.Email">@(contact.Email ?? Resources.Resources.NotAvailable)</a></li>
                     </ul>
-
                 }
             }
         </div>
 
     </div>
 </div>
-<!-- Google Maps - Go to the bottom of the page to change settings and map location. -->
-<div id="googlemaps" class="google-map"></div>
 @section Scripts{
-    <script type="text/javascript">
-        $(document).ready(function () {
-            initialize();
-        });
-        function initialize() {
-            var mapOptions = {
-                center: new google.maps.LatLng(@Model.Longitude,@Model.Latitude),
-                zoom: 17,
-                mapTypeId: google.maps.MapTypeId.HYBRID
-            };
-            var map = new google.maps.Map(document.getElementById("googlemaps"),
-              mapOptions);
-            // create a marker
-            var latlng = new google.maps.LatLng(@Model.Longitude,@Model.Latitude);;
-            var marker = new google.maps.Marker({
-                position: latlng,
-                map: map,
-                title: '@Model.Name'
-            });
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <script>
+
+        /*
+        Map Settings
+
+            Find the Latitude and Longitude of your address:
+                - http://universimmedia.pagesperso-orange.fr/geo/loc.htm
+                - http://www.findlatitudeandlongitude.com/find-address-from-latitude-and-longitude/
+
+        */
+
+        // Map Markers
+        var mapMarkers = [{
+            address: "New York, NY 10017",
+            html: "<strong>New York Office</strong><br>New York, NY 10017",
+            icon: {
+                image: "assets/porto/img/pin.png",
+                iconsize: [26, 46],
+                iconanchor: [12, 46]
+            },
+            popup: true
+        }];
+
+        // Map Initial Location
+        var initLatitude = 40.75198;
+        var initLongitude = -73.96978;
+
+        // Map Extended Settings
+        var mapSettings = {
+            controls: {
+                draggable: (($.browser.mobile) ? false : true),
+                panControl: true,
+                zoomControl: true,
+                mapTypeControl: true,
+                scaleControl: true,
+                streetViewControl: true,
+                overviewMapControl: true
+            },
+            scrollwheel: false,
+            markers: mapMarkers,
+            latitude: initLatitude,
+            longitude: initLongitude,
+            zoom: 16
+        };
+
+        var map = $('#googlemaps').gMap(mapSettings);
+
+        // Map Center At
+        var mapCenterAt = function (options, e) {
+            e.preventDefault();
+            $('#googlemaps').gMap("centerAt", options);
         }
+
     </script>
 }

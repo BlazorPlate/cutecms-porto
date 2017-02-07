@@ -1482,4 +1482,7 @@
   <data name=" GetInTouch" xml:space="preserve">
     <value>保持联系</value>
   </data>
+  <data name="Categories" xml:space="preserve">
+    <value>类别</value>
+  </data>
 </root>

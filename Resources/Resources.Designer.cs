@@ -61,6 +61,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Get in touch.
+        /// </summary>
+        public static string _GetInTouch {
+            get {
+                return ResourceManager.GetString(" GetInTouch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
         public static string About {
@@ -156,24 +165,6 @@ namespace Resources {
         public static string Address {
             get {
                 return ResourceManager.GetString("Address", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Address Line 1.
-        /// </summary>
-        public static string AddressLine1 {
-            get {
-                return ResourceManager.GetString("AddressLine1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Address Line 2.
-        /// </summary>
-        public static string AddressLine2 {
-            get {
-                return ResourceManager.GetString("AddressLine2", resourceCulture);
             }
         }
         
@@ -448,15 +439,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Category.
-        /// </summary>
-        public static string CategoryId {
-            get {
-                return ResourceManager.GetString("CategoryId", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Change your account settings..
         /// </summary>
         public static string ChangeAccountSettings {
@@ -498,15 +480,6 @@ namespace Resources {
         public static string ChooseAuthor {
             get {
                 return ResourceManager.GetString("ChooseAuthor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to --Choose category--.
-        /// </summary>
-        public static string ChooseCategory {
-            get {
-                return ResourceManager.GetString("ChooseCategory", resourceCulture);
             }
         }
         
@@ -1614,24 +1587,6 @@ namespace Resources {
         public static string Gallery {
             get {
                 return ResourceManager.GetString("Gallery", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Gallery Categories.
-        /// </summary>
-        public static string GalleryCategories {
-            get {
-                return ResourceManager.GetString("GalleryCategories", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Gallery Category.
-        /// </summary>
-        public static string GalleryCategory {
-            get {
-                return ResourceManager.GetString("GalleryCategory", resourceCulture);
             }
         }
         
@@ -3607,15 +3562,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to State.
-        /// </summary>
-        public static string State {
-            get {
-                return ResourceManager.GetString("State", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Statistics.
         /// </summary>
         public static string Statistic {
@@ -3774,15 +3720,6 @@ namespace Resources {
         public static string TakeTour {
             get {
                 return ResourceManager.GetString("TakeTour", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Telephone.
-        /// </summary>
-        public static string Telephone {
-            get {
-                return ResourceManager.GetString("Telephone", resourceCulture);
             }
         }
         
@@ -4224,15 +4161,6 @@ namespace Resources {
         public static string YouTubeUrl {
             get {
                 return ResourceManager.GetString("YouTubeUrl", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Postal Code.
-        /// </summary>
-        public static string ZIP {
-            get {
-                return ResourceManager.GetString("ZIP", resourceCulture);
             }
         }
     }

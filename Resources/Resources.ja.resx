@@ -1482,4 +1482,7 @@
   <data name=" GetInTouch" xml:space="preserve">
     <value>取り合う</value>
   </data>
+  <data name="Categories" xml:space="preserve">
+    <value>カテゴリ</value>
+  </data>
 </root>

@@ -37,8 +37,8 @@
                 @{ var uniqueItems = new HashSet<string>(categoryList);}
                 @foreach (var category in uniqueItems)
                 {
-                    string categoryCode = cmsDb.CategoryTerms.Where(c => c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && c.Category.Code.Equals(category)).FirstOrDefault()?.Value;
-                    <li data-option-value=".@category"><a href="#">@(categoryCode ?? category)</a></li>
+                    string categoryName = cmsDb.CategoryTerms.Where(c => c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && c.Category.Code.Equals(category)).FirstOrDefault()?.Value;
+                    <li data-option-value=".@category"><a href="#">@(categoryName ?? category)</a></li>
                 }
             </ul>
             <hr>
@@ -59,7 +59,7 @@
                                                 <img src="@item.ImageFiles.OrderBy(i=>i.Ordinal).FirstOrDefault().ThumbPath" class="img-responsive" alt="">
                                                 <span class="thumb-info-title">
                                                     @{
-                                                        string gallery = item.GalleryTerms.Where(g => g.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && g.GalleryId == item.Id).FirstOrDefault()?.Value;
+                                                        string gallery = item.GalleryTerms.Where(g => g.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && g.GalleryId == item.Id).FirstOrDefault()?.Value ?? item.Code;
                                                         string galleryDescription = item.GalleryTerms.Where(g => g.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && g.GalleryId == item.Id).FirstOrDefault()?.Description;
                                                     }
                                                     <span class="thumb-info-inner">@galleryDescription</span>

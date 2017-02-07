@@ -87,6 +87,16 @@ namespace cutecms_porto.Helpers
                         select c);
             return tags;
         }
+        public static IEnumerable<TagTerm> Tags(int? galaryId)
+        {
+            var relatedTags = from t in cmsDb.Tags join it in cmsDb.ImageTags on t.Id equals it.TagId where it.ImageFile.GalleryId == galaryId select t;
+            var tags = (from p in relatedTags
+                        join c in cmsDb.TagTerms on p.Id equals c.TagId
+                        where p.TenantId == Tenant.TenantId && c != null && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.Visible
+                        orderby p.Ordinal
+                        select c);
+            return tags;
+        }
         #endregion
         #region RMSDB
         public static IEnumerable<GenderTerm> Genders()

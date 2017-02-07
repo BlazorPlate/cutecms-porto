@@ -1482,4 +1482,7 @@
   <data name=" GetInTouch" xml:space="preserve">
     <value>터치에 머물</value>
   </data>
+  <data name="Categories" xml:space="preserve">
+    <value>카테고리</value>
+  </data>
 </root>

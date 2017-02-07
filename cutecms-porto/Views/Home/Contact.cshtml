@@ -25,43 +25,34 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-
-            <div class="alert alert-success hidden mt-lg" id="contactSuccess">
-                <strong>Success!</strong> Your message has been sent to us.
-            </div>
-
-            <div class="alert alert-danger hidden mt-lg" id="contactError">
-                <strong>Error!</strong> There was an error sending your message.
-                <span class="font-size-xs mt-sm display-block" id="mailErrorMessage"></span>
-            </div>
-
-            <h2 class="mb-sm mt-sm"><strong>Contact</strong> Us</h2>
-            <form id="contactForm" action="php/contact-form.php" method="POST">
+            <h2 class="mb-sm mt-sm"><strong>@Resources.Resources.ContactUs</strong></h2>
+            @using (Html.BeginForm("Create", "Contents", FormMethod.Post))
+            {
                 <div class="row">
                     <div class="form-group">
                         <div class="col-md-6">
-                            <label>Your name *</label>
-                            <input type="text" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control" name="name" id="name" required>
+                            @Html.Label("Your name *")
+                            @Html.TextBox("FullName","", new { @class = "form-control" })
                         </div>
                         <div class="col-md-6">
-                            <label>Your email address *</label>
-                            <input type="email" value="" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control" name="email" id="email" required>
+                            @Html.Label("Your email address *")
+                            @Html.TextBox("Email", "", new { @class = "form-control" ,@maxlength="100" , @name="email" ,@id="email", @required="required", type = "email", placeholder = "example@mail.com" })
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group">
                         <div class="col-md-12">
-                            <label>Subject</label>
-                            <input type="text" value="" data-msg-required="Please enter the subject." maxlength="100" class="form-control" name="subject" id="subject" required>
+                            @Html.Label("Subject")
+                            @Html.TextBox("Subject", "", new { @class = "form-control", @maxlength = "100", name = "email", @id = "email", @required = "required" })
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group">
                         <div class="col-md-12">
-                            <label>Message *</label>
-                            <textarea maxlength="5000" data-msg-required="Please enter your message." rows="10" class="form-control" name="message" id="message" required></textarea>
+                            @Html.Label("Message *")
+                            @Html.TextArea("Subject", "", new { @class = "form-control", @maxlength = "5000", @name = "email", @id = "email", @required = "required", @rows = 14 })
                         </div>
                     </div>
                 </div>
@@ -70,7 +61,7 @@
                         <input type="submit" value="Send Message" class="btn btn-primary btn-lg mb-xlg" data-loading-text="Loading...">
                     </div>
                 </div>
-            </form>
+            }
         </div>
         <div class="col-md-6">
 

@@ -103,8 +103,8 @@ namespace cutecms_porto.Controllers
                 throw new HttpException(400, "Bad Request");
             }
             var pageNumber = page ?? 1;// if no page was specified in the querystring, default to the first page (1)
-            ViewBag.TagIdFilter = new SelectList(Helpers.TermsHelper.Tags(), "TagId", "Value", tagIdFilter);
-            ViewBag.TagId = tagIdFilter;
+            ViewBag.TagIdFilter = new SelectList(TermsHelper.Tags(id), "TagId", "Value", tagIdFilter);
+            ViewBag.TagId = tagIdFilter; 
             var imageFiles = cmsDb.ImageFiles.Where(i => i.TenantId.Trim().Equals(Tenant.TenantId) && i.GalleryId == id && (i.ImageTags.Any(t => t.Tag.Id == tagIdFilter) || tagIdFilter == 0)).OrderBy(i => i.CreatedOn).ToPagedList(pageNumber, 10);
             if (imageFiles == null)
             {

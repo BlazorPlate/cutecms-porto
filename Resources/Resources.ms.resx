@@ -1482,4 +1482,7 @@
   <data name=" GetInTouch" xml:space="preserve">
     <value>Sentiasa berhubung</value>
   </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Kategori</value>
+  </data>
 </root>

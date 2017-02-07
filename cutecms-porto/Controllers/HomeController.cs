@@ -56,8 +56,15 @@ namespace cutecms_porto.Controllers
             {
                 throw new HttpException(404, "Page Not Found");
             }
-            return View(organization);
+            OrganizationViewModel organiztionVM = new OrganizationViewModel();
+            organiztionVM.Organization = organization;
+            return View(organiztionVM);
         }
+        //[HttpPost]
+        //public ActionResult Contact()
+        //{
+
+        //}
         public ActionResult Calendar()
         {
             var upcomingEvents = cmsDb.Contents.Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && c.ContentType.Code.Equals("event") && c.Status.Code.Trim().Equals("published") && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && System.Data.Entity.DbFunctions.TruncateTime(c.StartDate.Value) >= System.Data.Entity.DbFunctions.TruncateTime(DateTime.Now)).OrderBy(c => c.StartDate).Take(5);

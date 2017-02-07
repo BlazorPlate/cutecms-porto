@@ -828,6 +828,7 @@
     <Compile Include="Areas\Identity\Models\IdentityManager.cs" />
     <Compile Include="Areas\Identity\Models\IdentityModels.cs" />
     <Compile Include="Areas\Identity\Models\ManageViewModels.cs" />
+    <Compile Include="Models\OrganizationViewModel.cs" />
     <Compile Include="Models\StaffViewModel.cs" />
     <Compile Include="Models\SubscriberViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Net.Mail;
 using System.Threading;
 using System.Web;
 using System.Web.Mvc;
@@ -60,11 +61,12 @@ namespace cutecms_porto.Controllers
             organiztionVM.Organization = organization;
             return View(organiztionVM);
         }
-        //[HttpPost]
-        //public ActionResult Contact()
-        //{
-
-        //}
+        [HttpPost]
+        public ActionResult Contact(OrganizationViewModel organiztionVM)
+        {
+            SendMessage(organiztionVM.SenderName, organiztionVM.Email, organiztionVM.Phone, organiztionVM.Subject, organiztionVM.Message);
+            return RedirectToAction("Index");
+        }
         public ActionResult Calendar()
         {
             var upcomingEvents = cmsDb.Contents.Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && c.ContentType.Code.Equals("event") && c.Status.Code.Trim().Equals("published") && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && System.Data.Entity.DbFunctions.TruncateTime(c.StartDate.Value) >= System.Data.Entity.DbFunctions.TruncateTime(DateTime.Now)).OrderBy(c => c.StartDate).Take(5);
@@ -75,7 +77,7 @@ namespace cutecms_porto.Controllers
             CultureInfo provider = Thread.CurrentThread.CurrentCulture;    // Arabic - United Arab Emirates
             DateTime startDate;
             DateTime endDate;
-            if (Helpers.CultureHelper.GetCurrentNeutralCulture().Trim().Equals("ar"))
+            if (CultureHelper.GetCurrentNeutralCulture().Trim().Equals("ar"))
             {
                 start = ReplaceArabicNumerals(start);
                 end = ReplaceArabicNumerals(end);
@@ -111,7 +113,7 @@ namespace cutecms_porto.Controllers
             }
             var pageNumber = page ?? 1;// if no page was specified in the querystring, default to the first page (1)
             ViewBag.TagIdFilter = new SelectList(TermsHelper.Tags(id), "TagId", "Value", tagIdFilter);
-            ViewBag.TagId = tagIdFilter; 
+            ViewBag.TagId = tagIdFilter;
             var imageFiles = cmsDb.ImageFiles.Where(i => i.TenantId.Trim().Equals(Tenant.TenantId) && i.GalleryId == id && (i.ImageTags.Any(t => t.Tag.Id == tagIdFilter) || tagIdFilter == 0)).OrderBy(i => i.CreatedOn).ToPagedList(pageNumber, 10);
             if (imageFiles == null)
             {
@@ -174,6 +176,56 @@ namespace cutecms_porto.Controllers
             }
             return output;
         }
+        private void SendMessage(string senderName, string senderEmail, string senderPhone, string subject, string messageBody)
+        {
+            Notification notification = configDb.Notifications.Include("SMTPSetting").Where(c => c.NotificationCode.Code.Trim().Equals("CONTACT")).FirstOrDefault();
+
+            if (notification != null)
+            {
+                // Send: Configure the client:
+                using (var client = new SmtpClient(notification.SMTPSetting.SMTP))
+                {
+                    client.Port = notification.SMTPSetting.Port;//587
+                    client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    client.UseDefaultCredentials = false;
+                    // Create the credentials:
+                    System.Net.NetworkCredential credentials = new System.Net.NetworkCredential(notification.SMTPSetting.SenderEmail, notification.SMTPSetting.SenderPasswordHash);
+                    client.EnableSsl = notification.SMTPSetting.EnableSsl;
+                    client.Credentials = credentials;
+                    // Create the message:
+                    MailMessage message = new MailMessage(notification.SMTPSetting.SenderEmail, notification.SMTPSetting.RecipientEmail);
+                    message.From = new MailAddress(notification.SMTPSetting.SenderEmail, senderName);
+                    message.Subject = subject;
+                    message.Body = CultureHelper.IsRighToLeft() ? @"<p dir=RTL>" + messageBody + "<br /><br />" + Resources.Resources.Phone + ":" + senderPhone + "<br />" + Resources.Resources.Email + ":" + senderEmail + "</p><br />" : @"<p dir=LTR>" + messageBody + "<br /><br />" + Resources.Resources.Phone + ":" + senderPhone + "<br />" + Resources.Resources.Email + ":" + senderEmail + "</p><br />";
+                    message.IsBodyHtml = true;
+                    message.Priority = MailPriority.High;
+                    try
+                    {
+                        client.Send(message);
+                    }
+                    catch (SmtpFailedRecipientsException ex)
+                    {
+                        for (int i = 0; i < ex.InnerExceptions.Length; i++)
+                        {
+                            SmtpStatusCode status = ex.InnerExceptions[i].StatusCode;
+                            if (status == SmtpStatusCode.MailboxBusy ||
+                                status == SmtpStatusCode.MailboxUnavailable)
+                            {
+                                Console.WriteLine("Delivery failed - retrying in 5 seconds.");
+                                Thread.Sleep(5000);
+                                client.Send(message);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Failed to deliver message to {0}",
+                                    ex.InnerExceptions[i].FailedRecipient);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         #endregion Methods
     }
 }

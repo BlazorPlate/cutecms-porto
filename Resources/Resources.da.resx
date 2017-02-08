@@ -1479,10 +1479,25 @@
   <data name="Dimensions" xml:space="preserve">
     <value>Dimensioner</value>
   </data>
-  <data name=" GetInTouch" xml:space="preserve">
+  <data name="GetInTouch" xml:space="preserve">
     <value>Holde kontakten</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Kategorier</value>
+  </data>
+  <data name="YourName" xml:space="preserve">
+    <value>Dit navn</value>
+  </data>
+  <data name="YourEmail" xml:space="preserve">
+    <value>Din e-mail</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>Send besked</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Besked</value>
+  </data>
+  <data name="SenderName" xml:space="preserve">
+    <value>Dit navn</value>
   </data>
 </root>

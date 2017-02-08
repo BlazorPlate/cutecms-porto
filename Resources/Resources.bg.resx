@@ -1479,10 +1479,25 @@
   <data name="Dimensions" xml:space="preserve">
     <value>Размери</value>
   </data>
-  <data name=" GetInTouch" xml:space="preserve">
+  <data name="GetInTouch" xml:space="preserve">
     <value>Поддържайте връзка</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Категории</value>
+  </data>
+  <data name="YourName" xml:space="preserve">
+    <value>Твоето име</value>
+  </data>
+  <data name="YourEmail" xml:space="preserve">
+    <value>Вашият имейл</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>Изпрати съобщение</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Съобщение</value>
+  </data>
+  <data name="SenderName" xml:space="preserve">
+    <value>Твоето име</value>
   </data>
 </root>

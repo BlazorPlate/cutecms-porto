@@ -43,6 +43,17 @@ namespace cutecms_porto.Helpers
                 OrganizationData.Organization = configDb.Organizations.Where(o => o.TenantId.Trim().Equals(Tenant.TenantId) && o.IsDefault == true && o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
             return base.BeginExecuteCore(callback, state);
         }
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            var fullAddress = filterContext.HttpContext.Request.Headers["Host"].Split('.');
+            //if (fullAddress.Length < 2)
+            //    filterContext.Result = new HttpStatusCodeResult(404); //or redirect filterContext.Result = new RedirectToRouteResult(..);
+
+            //Tenant.TenantId = fullAddress[0];
+            //filterContext.RouteData.Values.Add("tenant", tenantSubdomain);
+            Tenant.TenantId = "demo";
+            base.OnActionExecuting(filterContext);
+        }
         #endregion Methods
     }
 }

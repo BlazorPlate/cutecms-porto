@@ -19,7 +19,6 @@ namespace cutecms_porto.Areas.Config
                 "Config_default",
                 "{culture}/Config/{controller}/{action}/{id}",
                  new { culture = CultureHelper.GetDefaultCulture(), action = "Index", id = UrlParameter.Optional },
-                       constraints: new { TenantAccess = new TenantRouteConstraint() },
                        namespaces: new[] { "cutecms_porto.Areas.Config.Controllers" });
         }
     }

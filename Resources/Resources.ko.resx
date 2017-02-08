@@ -1479,10 +1479,25 @@
   <data name="Dimensions" xml:space="preserve">
     <value>치수</value>
   </data>
-  <data name=" GetInTouch" xml:space="preserve">
+  <data name="GetInTouch" xml:space="preserve">
     <value>터치에 머물</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>카테고리</value>
+  </data>
+  <data name="YourName" xml:space="preserve">
+    <value>사용자 이름</value>
+  </data>
+  <data name="YourEmail" xml:space="preserve">
+    <value>귀하의 이메일</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>메시지 보내기</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>메시지</value>
+  </data>
+  <data name="SenderName" xml:space="preserve">
+    <value>사용자 이름</value>
   </data>
 </root>

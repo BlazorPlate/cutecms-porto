@@ -1479,10 +1479,25 @@
   <data name="Dimensions" xml:space="preserve">
     <value>Dimensi</value>
   </data>
-  <data name=" GetInTouch" xml:space="preserve">
+  <data name="GetInTouch" xml:space="preserve">
     <value>Sentiasa berhubung</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Kategori</value>
+  </data>
+  <data name="YourName" xml:space="preserve">
+    <value>nama awak</value>
+  </data>
+  <data name="YourEmail" xml:space="preserve">
+    <value>E-mel anda</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>Menghantar mesej</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Mesej</value>
+  </data>
+  <data name="SenderName" xml:space="preserve">
+    <value>nama awak</value>
   </data>
 </root>

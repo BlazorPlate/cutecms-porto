@@ -1479,10 +1479,25 @@
   <data name="Dimensions" xml:space="preserve">
     <value>尺寸</value>
   </data>
-  <data name=" GetInTouch" xml:space="preserve">
+  <data name="GetInTouch" xml:space="preserve">
     <value>保持联系</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>类别</value>
+  </data>
+  <data name="YourName" xml:space="preserve">
+    <value>您的姓名</value>
+  </data>
+  <data name="YourEmail" xml:space="preserve">
+    <value>您的电子邮件</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>发送消息</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>消息</value>
+  </data>
+  <data name="SenderName" xml:space="preserve">
+    <value>您的姓名</value>
   </data>
 </root>

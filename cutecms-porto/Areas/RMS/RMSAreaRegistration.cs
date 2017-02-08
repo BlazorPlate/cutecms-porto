@@ -21,8 +21,7 @@ namespace cutecms_porto.Areas.RMS
             context.MapRoute(
                 "RMS_default",
                 "{culture}/RMS/{controller}/{action}/{id}",
-                 new { culture = CultureHelper.GetDefaultCulture(), action = "Index", id = UrlParameter.Optional },
-                       constraints: new { TenantAccess = new TenantRouteConstraint() },
+                 new { culture = CultureHelper.GetDefaultCulture(), action = "Index", id = UrlParameter.Optional },                       
                        namespaces: new[] { "cutecms_porto.Areas.RMS.Controllers" }
             );
         }

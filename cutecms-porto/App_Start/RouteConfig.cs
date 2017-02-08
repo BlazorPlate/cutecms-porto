@@ -14,25 +14,23 @@ namespace cutecms_porto
             routes.IgnoreRoute("{file}.js");
             routes.IgnoreRoute("{file}.css");
             routes.IgnoreRoute("{*favicon}", new { favicon = @"(.*/)?favicon.ico(/.*)?" });
+
             routes.MapRoute(name: "Content", url: "{culture}/content/pages/{*slug}",
-            defaults: new { culture = CultureHelper.GetDefaultCulture(), controller = "Pages", action = "Content", id = UrlParameter.Optional, tenant = UrlParameter.Optional },
-            constraints: new { TenantAccess = new TenantRouteConstraint() },
+            defaults: new { culture = CultureHelper.GetDefaultCulture(), controller = "Pages", action = "Content", id = UrlParameter.Optional, tenant = UrlParameter.Optional },            
             namespaces: new[] { "cutecms_porto.Controllers" });
 
             routes.MapRoute(name: "Default", url: "{culture}/{controller}/{action}/{id}",
             defaults: new { culture = CultureHelper.GetDefaultCulture(), controller = "Home", action = "Index", id = UrlParameter.Optional, tenant = UrlParameter.Optional },
-            constraints: new { TenantAccess = new TenantRouteConstraint() },
             namespaces: new[] { "cutecms_porto.Controllers" });
 
             routes.MapRoute(name: "MyProfile", url: "{culture}/MyProfile",
-            defaults: new { culture = CultureHelper.GetDefaultCulture(), controller = "MyProfile", action = "Index", id = UrlParameter.Optional, tenant = UrlParameter.Optional },
-            constraints: new { TenantAccess = new TenantRouteConstraint() },
+            defaults: new { culture = CultureHelper.GetDefaultCulture(), controller = "MyProfile", action = "Index", id = UrlParameter.Optional, tenant = UrlParameter.Optional },          
             namespaces: new[] { "cutecms_porto.Controllers" });
 
             // This will handle any non-existing urls
             routes.MapRoute(name: "404-PageNotFound", url: "{*url}",
             defaults: new { culture = CultureHelper.GetDefaultCulture(), controller = "Error", action = "CatchAll" },
-            constraints: new { TenantAccess = new TenantRouteConstraint() },
+            
             namespaces: new[] { "cutecms_porto.Controllers" });
         }
 

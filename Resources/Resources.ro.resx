@@ -1479,10 +1479,25 @@
   <data name="Dimensions" xml:space="preserve">
     <value>Dimensiuni</value>
   </data>
-  <data name=" GetInTouch" xml:space="preserve">
+  <data name="GetInTouch" xml:space="preserve">
     <value>Păstraţi legătura</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Categorii</value>
+  </data>
+  <data name="YourName" xml:space="preserve">
+    <value>numele tău</value>
+  </data>
+  <data name="YourEmail" xml:space="preserve">
+    <value>Adresa de email</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>Trimite mesaj</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Mesaj</value>
+  </data>
+  <data name="SenderName" xml:space="preserve">
+    <value>numele tău</value>
   </data>
 </root>

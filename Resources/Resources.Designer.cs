@@ -61,15 +61,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Get in touch.
-        /// </summary>
-        public static string _GetInTouch {
-            get {
-                return ResourceManager.GetString(" GetInTouch", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
         public static string About {
@@ -1618,6 +1609,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Get in touch.
+        /// </summary>
+        public static string GetInTouch {
+            get {
+                return ResourceManager.GetString("GetInTouch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to glyphicon-menu-right.
         /// </summary>
         public static string GlyphiconMenu {
@@ -2388,6 +2388,15 @@ namespace Resources {
         public static string Menus {
             get {
                 return ResourceManager.GetString("Menus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Message.
+        /// </summary>
+        public static string Message {
+            get {
+                return ResourceManager.GetString("Message", resourceCulture);
             }
         }
         
@@ -3463,6 +3472,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your name.
+        /// </summary>
+        public static string SenderName {
+            get {
+                return ResourceManager.GetString("SenderName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send message.
+        /// </summary>
+        public static string SendMessage {
+            get {
+                return ResourceManager.GetString("SendMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Set password.
         /// </summary>
         public static string SetPassword {
@@ -4152,6 +4179,24 @@ namespace Resources {
         public static string YourAppNumber {
             get {
                 return ResourceManager.GetString("YourAppNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your email.
+        /// </summary>
+        public static string YourEmail {
+            get {
+                return ResourceManager.GetString("YourEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your name.
+        /// </summary>
+        public static string YourName {
+            get {
+                return ResourceManager.GetString("YourName", resourceCulture);
             }
         }
         

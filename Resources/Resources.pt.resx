@@ -1479,10 +1479,25 @@
   <data name="Dimensions" xml:space="preserve">
     <value>Dimensões</value>
   </data>
-  <data name=" GetInTouch" xml:space="preserve">
+  <data name="GetInTouch" xml:space="preserve">
     <value>Fique em contato</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Categorias</value>
+  </data>
+  <data name="YourName" xml:space="preserve">
+    <value>Seu nome</value>
+  </data>
+  <data name="YourEmail" xml:space="preserve">
+    <value>Seu e-mail</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>Enviar mensagem</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Mensagem</value>
+  </data>
+  <data name="SenderName" xml:space="preserve">
+    <value>Seu nome</value>
   </data>
 </root>

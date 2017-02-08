@@ -21,8 +21,7 @@ namespace cutecms_porto.Areas.Identity
             context.MapRoute(
                 "Identity_default",
                 "{culture}/Identity/{controller}/{action}/{id}",
-                 new { culture = CultureHelper.GetDefaultCulture(), action = "Index", id = UrlParameter.Optional },
-                       constraints: new { TenantAccess = new TenantRouteConstraint() },
+                 new { culture = CultureHelper.GetDefaultCulture(), action = "Index", id = UrlParameter.Optional },                       
                        namespaces: new[] { "cutecms_porto.Areas.Identity.Controllers" }
             );
         }

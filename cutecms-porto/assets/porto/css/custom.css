@@ -42,3 +42,6 @@
 .page-header {
     padding: 10px 0 !important;
 }
+.thumb-info .thumb-info-title{
+    font-weight:600;
+}

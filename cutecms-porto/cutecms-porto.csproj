@@ -3164,6 +3164,7 @@
     <Content Include="assets\porto\img\custom-header-bg-3.jpg" />
     <Content Include="assets\porto\img\custom-header-bg.jpg" />
     <Content Include="assets\porto\img\custom-header.png" />
+    <Content Include="assets\porto\img\custom-team-header-bg.jpg" />
     <Content Include="assets\porto\img\custom-underline.png" />
     <Content Include="assets\porto\img\dark-and-light.jpg" />
     <Content Include="assets\porto\img\demos\business-consulting\blog\blog-1.jpg" />

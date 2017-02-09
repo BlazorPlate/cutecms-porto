@@ -27,7 +27,7 @@ namespace cutecms_porto.Controllers
             }
             ViewBag.EmpTypeId = new SelectList(Helpers.TermsHelper.EmployeeTypes(), "EmployeeTypeId", "Value");
             var departments = db.IdentityDepartments.Include(d => d.Department1).Include(d => d.Employee);
-            return View(departments.ToList());
+            return View(departments);
         }
 
         // GET: Identity/Employees
@@ -88,7 +88,7 @@ namespace cutecms_porto.Controllers
                 throw new HttpException(404, "Page Not Found");
             }
             var pageNumber = page ?? 1;
-            var departments = TreeHelper.Traversal(department, x => x.Departments1).ToPagedList(pageNumber, 5);
+            var departments = TreeHelper.Traversal(department, x => x.Departments1.Where(d => d.EmpInDepts.Count() > 0)).ToPagedList(pageNumber, 5);
             return View(departments);
         }
 

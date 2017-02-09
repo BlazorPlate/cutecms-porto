@@ -19,21 +19,39 @@
         </div>
     </section>
 }
-
 <div class="container">
     @foreach (var dept in Model)
     {
-        string childDepartment = (dept.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? dept.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : dept.Code;
         if (dept.ParentId != null)
         {
-            string parentDepartment = (dept.Department1.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? dept.Department1.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : dept.Department1.Code;
-            <h3>@parentDepartment / @childDepartment</h3>
+            string parentDepartmentName = dept.Department1.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value ?? dept.Department1.Code;
+            string departmentName = dept.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? dept.Code;
+            <section class="section section-text-light section-background section-center section-overlay-opacity section-overlay-opacity-scale-2" style="background-image: url(/assets/porto/img/custom-team-header-bg.jpg);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="mb-none">@parentDepartmentName</h4>
+                            <h5>@departmentName</h5>
+                        </div>
+                    </div>
+                </div>
+            </section>
         }
         else
         {
-            <h3>@childDepartment</h3>
+            string departmentName = dept.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? dept.Code;
+            <section class="section section-text-light section-background section-center section-overlay-opacity section-overlay-opacity-scale-2" style="background-image: url(/assets/porto/img/custom-team-header-bg.jpg);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="mb-none">@departmentName</h4>
+                        </div>
+                    </div>
+                </div>
+            </section>
         }
-        <hr />
+
+
         if (dept.Employee != null)//If the department has manager
         {
             string personalTitle = (dept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? dept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : dept.Employee.PersonalTitle.Code;
@@ -157,89 +175,11 @@
                                 </span>
                             </span>
                         </li>
-
-
-                        @*<div class="col-md-3 col-sm-6">
-                                <div class="box-flip box-color box-icon box-icon-center box-icon-round box-icon-large text-center" style="min-height: 436px;">
-                                    <div class="front">
-                                        <div class="box1 box-default" style="min-height: 436px;">
-                                            @if (employee.PersonalPhotoPath != null)
-                                    {
-                                    <img class="img-responsive" alt="@employee.PersonalPhotoName" src="@employee.PersonalPhotoPath">
-                                    }
-                                    else
-                                    {
-                                    <i class="icon-user fa-5x"></i>
-                                    }
-                                            <div class="box-icon-title">
-                                                <h2>@personalTitle @employee.FullName</h2>
-                                                @foreach (var empInDept1 in empInDept.Employee.EmpInDepts)
-                                        {
-                                            string occupation = (empInDept1.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? empInDept1.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : empInDept1.Occupation.Code;
-                                            string department = (empInDept1.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? empInDept1.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : empInDept1.Department.Code;
-                                        <small>@occupation &#64; @department</small>
-                                        <br />
-                                        }
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="back">
-                                        <div class="box2 box-blue" style="min-height: 436px;">
-                                            <h4 class="nomargin">@personalTitle @employee.FullName</h4>
-                                            @foreach (var empInDept2 in empInDept.Employee.EmpInDepts)
-                                    {
-                                        string occupation = (empInDept2.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? empInDept2.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : empInDept2.Occupation.Code;
-                                        string department = (empInDept2.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? empInDept2.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : empInDept2.Department.Code;
-                                    <small>@occupation &#64; @department</small>
-                                    <br />
-                                    }
-                                            <hr>
-                                            <p>@Html.Raw(empInDept.Employee.Biography.StripHtml().Chop(290))</p>
-                                            <hr>
-                                            <a class="btn btn-translucid btn-lg btn-block" href="@Url.Action("MemberProfile", new { id = empInDept.Employee.Id })">@Resources.Resources.ViewProfile.ToUpper()</a>
-                                            @if (!string.IsNullOrEmpty(@empInDept.Employee.FacebookUrl))
-                                    {
-                                    <a class="social-icon social-icon-sm social-facebook" href="@empInDept.Employee.FacebookUrl">
-                                        <i class="fa fa-facebook"></i>
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                    }
-                                            @if (!string.IsNullOrEmpty(@empInDept.Employee.TwitterUrl))
-                                    {
-                                    <a class="social-icon social-icon-sm social-facebook" href="@empInDept.Employee.FacebookUrl">
-                                        <i class="fa fa-twitter"></i>
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                    }
-                                            @if (!string.IsNullOrEmpty(@empInDept.Employee.LinkedInUrl))
-                                    {
-                                    <a class="social-icon social-icon-sm social-facebook" href="@empInDept.Employee.FacebookUrl">
-                                        <i class="fa fa-linkedin"></i>
-                                        <i class="fa fa-linkedin"></i>
-                                    </a>
-                                    }
-                                            @if (!string.IsNullOrEmpty(@empInDept.Employee.GooglePlusUrl))
-                                    {
-                                    <a class="social-icon social-icon-sm social-facebook" href="@empInDept.Employee.FacebookUrl">
-                                        <i class="fa fa-google-plus"></i>
-                                        <i class="fa fa-google-plus"></i>
-                                    </a>
-                                    }
-                                            @if (!string.IsNullOrEmpty(@empInDept.Employee.YouTubeUrl))
-                                    {
-                                    <a class="social-icon social-icon-sm social-facebook" href="@empInDept.Employee.FacebookUrl">
-                                        <i class="fa fa-youtube"></i>
-                                        <i class="fa fa-youtube"></i>
-                                    </a>
-                                    }
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>*@
                     }
                 }
             </ul>
         </div>
+        <hr />
                 }
 </div>
 @Html.PagedListPager((IPagedList)Model, page => Url.Action("EmpsInDept", new { page }))

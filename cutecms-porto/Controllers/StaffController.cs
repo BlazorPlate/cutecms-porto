@@ -19,19 +19,21 @@ namespace cutecms_porto.Controllers
 
         #region Methods
         // GET: Identity/Employees
-        public ActionResult Index(string EmpName, int? EmpTypeId)
+        public ActionResult Index()
         {
-            if (!string.IsNullOrEmpty(EmpName) || EmpTypeId != null)
-            {
-                return RedirectToAction("Result", new { empName = EmpName, EmpTypeId = EmpTypeId });
-            }
             ViewBag.EmpTypeId = new SelectList(Helpers.TermsHelper.EmployeeTypes(), "EmployeeTypeId", "Value");
             var departments = db.IdentityDepartments.Include(d => d.Department1).Include(d => d.Employee);
             return View(departments);
         }
+        [HttpGet]
+        public ActionResult Search()
+        {
+            return View();
+        }
 
-        // GET: Identity/Employees
-        public ActionResult Result(int? page, string EmpName, int? EmpTypeId)
+        // POST: Identity/Employees
+        [HttpPost]
+        public ActionResult Search(int? page, string EmpName, int? EmpTypeId)
         {
             var pageNumber = page ?? 1;
             var query = (from employees in db.Employees

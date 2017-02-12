@@ -4,7 +4,7 @@
 @using PagedList.Mvc;
 @using PagedList;
 @{
-    ViewBag.Title = @Resources.Resources.DepartmentStaffList;
+    ViewBag.Title = Resources.Resources.DepartmentStaffList;
     IdentityEntities db = new IdentityEntities();
 }
 @section PageHeader
@@ -50,8 +50,6 @@
                 </div>
             </section>
         }
-
-
         if (dept.Employee != null)//If the department has manager
         {
             string personalTitle = (dept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? dept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : dept.Employee.PersonalTitle.Code;
@@ -62,7 +60,6 @@
                     {
                         string managerPersonalTitle = dept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? dept.Employee.PersonalTitle.Code;
                         var employee = db.Employees.Where(e => e.Language.CultureName.Equals(Thread.CurrentThread.CurrentCulture.Name) && e.TranslationId == dept.Employee.TranslationId).FirstOrDefault();
-
                         <li class="col-md-3 col-sm-6 isotope-item">
                             <span class="thumb-info thumb-info-hide-wrapper-bg mb-xlg">
                                 <span class="thumb-info-wrapper">
@@ -72,8 +69,8 @@
                                             <span class="thumb-info-inner">@personalTitle @employee.FullName</span>
                                             @foreach (var empInDept in dept.Employee.EmpInDepts)
                                             {
-                                                string occupation = (empInDept.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? empInDept.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : empInDept.Occupation.Code;
-                                                string department = (empInDept.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? empInDept.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : empInDept.Department.Code;
+                                                string occupation = empInDept.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? empInDept.Occupation.Code;
+                                                string department = empInDept.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? empInDept.Department.Code;
                                                 <span class="thumb-info-type">@occupation &#64; @department</span>
                                             }
                                         </span>
@@ -118,63 +115,60 @@
             @{
                 var empInDepts = dept.EmpInDepts.OrderBy(e => e.Employee.Ordinal);
             }
-
             <ul class="team-list sort-destination">
-
-
                 @foreach (var empInDept in empInDepts)
                 {
                     string personalTitle = (empInDept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? empInDept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : empInDept.Employee.PersonalTitle.Code;
                     var employee = db.Employees.Where(e => e.Language.CultureName.Equals(Thread.CurrentThread.CurrentCulture.Name) && e.TranslationId == empInDept.Employee.TranslationId).FirstOrDefault();
                     if (employee != null)
                     {
-                        <li class="col-md-3 col-sm-6 isotope-item">
-                            <span class="thumb-info thumb-info-hide-wrapper-bg mb-xlg">
-                                <span class="thumb-info-wrapper">
-                                    <a href="@Url.Action("MemberProfile", new { id = empInDept.Employee.Id })">
-                                        <img alt="@employee.PersonalPhotoName" src="@(!File.Exists(Server.MapPath(employee.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : @employee.PersonalPhotoPath)">
-                                        <span class="thumb-info-title">
-                                            <span class="thumb-info-inner">@personalTitle @employee.FullName</span>
-                                            @foreach (var empInDept1 in empInDept.Employee.EmpInDepts)
+                <li class="col-md-3 col-sm-6 isotope-item">
+                    <span class="thumb-info thumb-info-hide-wrapper-bg mb-xlg">
+                        <span class="thumb-info-wrapper">
+                            <a href="@Url.Action("MemberProfile", new { id = empInDept.Employee.Id })">
+                                <img alt="@employee.PersonalPhotoName" src="@(!File.Exists(Server.MapPath(employee.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : @employee.PersonalPhotoPath)">
+                                <span class="thumb-info-title">
+                                    <span class="thumb-info-inner">@personalTitle @employee.FullName</span>
+                                    @foreach (var empInDept1 in empInDept.Employee.EmpInDepts)
                                             {
                                                 string occupation = (empInDept1.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? empInDept1.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : empInDept1.Occupation.Code;
                                                 string department = (empInDept1.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? empInDept1.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : empInDept1.Department.Code;
-                                                <span class="thumb-info-type">@occupation &#64; @department</span>
+                                            <span class="thumb-info-type">@occupation &#64; @department</span>
                                             }
-                                        </span>
-                                    </a>
                                 </span>
-                                <span class="thumb-info-caption">
-                                    <span class="thumb-info-caption-text text-justify">
-                                        @Html.Raw(empInDept.Employee.Biography.StripHtml().Chop(100))
-                                        <a class="btn btn-xs" href="@Url.Action("MemberProfile", new { id = empInDept.Employee.Id })">@Resources.Resources.ReadMore</a>
-                                    </span>
-                                    <span class="thumb-info-social-icons center">
-                                        @if (!string.IsNullOrEmpty(@empInDept.Employee.FacebookUrl))
+                            </a>
+                        </span>
+                        <span class="thumb-info-caption">
+                            <span class="thumb-info-caption-text text-justify">
+                                @Html.Raw(empInDept.Employee.Biography.StripHtml().Chop(100))
+                                <a class="btn btn-xs" href="@Url.Action("MemberProfile", new { id = empInDept.Employee.Id })">@Resources.Resources.ReadMore</a>
+                            </span>
+                            <span class="thumb-info-social-icons center">
+                                @if (!string.IsNullOrEmpty(@empInDept.Employee.FacebookUrl))
                                         {
-                                            <a target="_blank" href="@empInDept.Employee.FacebookUrl"><i class="fa fa-facebook"></i><span>Facebook</span></a>
+                                        <a target="_blank" href="@empInDept.Employee.FacebookUrl"><i class="fa fa-facebook"></i><span>Facebook</span></a>
                                         }
 
-                                        @if (!string.IsNullOrEmpty(empInDept.Employee.TwitterUrl))
+                                @if (!string.IsNullOrEmpty(empInDept.Employee.TwitterUrl))
                                         {
-                                            <a target="_blank" href="@empInDept.Employee.TwitterUrl"><i class="fa fa-twitter"></i><span>Twitter</span></a>
+                                        <a target="_blank" href="@empInDept.Employee.TwitterUrl"><i class="fa fa-twitter"></i><span>Twitter</span></a>
                                         }
-                                        @if (!string.IsNullOrEmpty(@empInDept.Employee.LinkedInUrl))
+                                @if (!string.IsNullOrEmpty(@empInDept.Employee.LinkedInUrl))
                                         {
-                                            <a target="_blank" href="@empInDept.Employee.LinkedInUrl"><i class="fa fa-linkedin"></i><span>Linkedin</span></a>
+                                        <a target="_blank" href="@empInDept.Employee.LinkedInUrl"><i class="fa fa-linkedin"></i><span>Linkedin</span></a>
                                         }
-                                        @if (!string.IsNullOrEmpty(@empInDept.Employee.GooglePlusUrl))
+                                @if (!string.IsNullOrEmpty(@empInDept.Employee.GooglePlusUrl))
                                         {
-                                            <a target="_blank" href="@empInDept.Employee.GooglePlusUrl"><i class="fa fa-google-plus"></i><span>Google Plus</span></a>
+                                        <a target="_blank" href="@empInDept.Employee.GooglePlusUrl"><i class="fa fa-google-plus"></i><span>Google Plus</span></a>
                                         }
-                                        @if (!string.IsNullOrEmpty(@empInDept.Employee.YouTubeUrl))
+                                @if (!string.IsNullOrEmpty(@empInDept.Employee.YouTubeUrl))
                                         {
-                                            <a target="_blank" href="@empInDept.Employee.YouTubeUrl"><i class="fa fa-youtube"></i><span>YouTube</span></a>
+                                        <a target="_blank" href="@empInDept.Employee.YouTubeUrl"><i class="fa fa-youtube"></i><span>YouTube</span></a>
                                         }
-                                    </span>
-                                </span>
                             </span>
-                        </li>
+                        </span>
+                    </span>
+                </li>
                     }
                 }
             </ul>

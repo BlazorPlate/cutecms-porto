@@ -5521,7 +5521,7 @@
     <Content Include="Views\Publications\Edit.cshtml" />
     <Content Include="Views\Publications\Index.cshtml" />
     <Content Include="Views\Staff\MemberProfile.cshtml" />
-    <Content Include="Views\Staff\Result.cshtml" />
+    <Content Include="Views\Staff\Search.cshtml" />
     <Content Include="Views\Staff\Index.cshtml" />
     <Content Include="Views\Shared\_Profile.cshtml" />
     <Content Include="Views\Staff\AcademicInfo.cshtml" />

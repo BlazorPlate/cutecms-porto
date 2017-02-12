@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*
 Name: 			theme-elements.css
 Written by: 	Okler Themes - (http://www.okler.net)
@@ -897,7 +897,7 @@ html.boxed .nav-secondary.sticky-active {
 
 /* Forms */
 form label {
-	font-weight: normal;
+	font-weight: bold;
 }
 
 textarea {

@@ -43,22 +43,15 @@
             <div class="row">
                 <div class="col-md-3 col-sm-4">
                     <div class="thumbnail">
-                        @if (Model != null)
-                        {
-                            <img class="img-responsive" alt="" src="@Model.PersonalPhotoPath">
-                        }
+                        <img class="img-responsive" alt="" src="@(!File.Exists(Server.MapPath(Model.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : Model.PersonalPhotoPath)">
                     </div>
                 </div>
                 <div class="col-md-9 col-sm-8">
                     <div class="sky-form nomargin">
-
-                        <label class="input input-file" for="image">
-                            <div class="button">
-                                @Html.TextBoxFor(model => model.Image, new { @class = "form-control", type = "file", multiple = "false", placeholder = "upload files", onchange = "this.parentNode.nextSibling.value = this.value" })
-                                @Resources.Resources.Browse
-                            </div><input id="imagePath" type="text" readonly="">
+                        <div class="button">
+                            @Html.TextBoxFor(model => model.Image, new { @class = "form-control", type = "file", multiple = "false", placeholder = "upload files", onchange = "this.parentNode.nextSibling.value = this.value" })
                             @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
-                        </label>
+                        </div>
                     </div>
                     <a id="removeImagePathBtn" class="btn btn-danger btn-xs noradius" href="#"><i class="fa fa-times"></i>@Resources.Resources.Remove</a>
                     <div class="clearfix margin-top-20">
@@ -90,7 +83,6 @@
         $("#removeImagePathBtn").click(function (event) {
             event.preventDefault();
             //alert("clicked");
-            $("#imagePath").val(null);
             $("#Image").val(null);
         }
         );

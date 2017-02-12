@@ -6,7 +6,6 @@
 @{
     IdentityEntities db = new IdentityEntities();
     Employee employee = (Employee)ViewBag.Employee;
-    var percentage = ProfileCompletion(employee);
     ApplicationDbContext _db = new ApplicationDbContext();
     var empEmail = _db.Users.Find(employee.LoginId).Email;
 }
@@ -14,75 +13,67 @@
     <div class="thumbnail text-center">
         @if (employee != null)
         {
-            if (employee.PersonalPhotoPath != null)
-
-            {
-                <img class="img-responsive" alt="" src="@employee.PersonalPhotoPath">
-            }
-            else
-            {
-                <i class="fa fa-user fa-5x"></i>
-            }
+            <img class="img-responsive" alt="" src="@(!File.Exists(Server.MapPath(employee.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : employee.PersonalPhotoPath)">
             string personalTitle = (employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : employee.PersonalTitle.Code;
-            <h2 class="size-18 margin-top-10 margin-bottom-0">@personalTitle @employee.FullName</h2>
+            <h4>@personalTitle @employee.FullName</h4>
             foreach (var item in employee.EmpInDepts)
             {
-                string occupation = (item.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? item.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : item.Occupation.Code;
-                string department = (item.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? item.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : item.Department.Code;
-                <h3 class="size-11 margin-top-0 margin-bottom-10 text-muted uppercase">@occupation &#64; @department</h3>
+                string occupation = item.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? item.Occupation.Code;
+                string department = item.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? item.Department.Code;
+                <h5 class="text-muted">@occupation</h5>
+                <h6 class="text-muted">@department</h6>
+                <hr />
             }
-        }
-        else
-        {
-            <i class="fa fa-user fa-5x"></i>
+            if (employee.Publications.Count() != 0)
+            {
+                var percentage = ProfileCompletion(employee);
+             <!-- completed -->
+                <div>
+                    <label>@percentage% @Resources.Resources.CompletedProfile</label>
+                    <div class="progress">
+                        @if (percentage <= 50)
+                        {
+                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="@percentage" aria-valuemin="0" aria-valuemax="100" style="width: @percentage%; min-width: 2em;"></div>
+                        }
+                        @if (percentage > 50 && percentage < 75)
+                        {
+                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="@percentage" aria-valuemin="0" aria-valuemax="100" style="width: @percentage%; min-width: 2em;"></div>
+                        }
+                        @if (percentage >= 75)
+                        {
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="@percentage" aria-valuemin="0" aria-valuemax="100" style="width: @percentage%; min-width: 2em;"></div>
+                        }
+                    </div>
+                </div>
+    <!-- /completed -->
+            }
         }
     </div>
     @if (employee != null)
     {
-    <!-- completed -->
-        <div class="margin-bottom-30">
-            <label>@percentage% @Resources.Resources.CompletedProfile</label>
-            <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="@percentage" aria-valuemin="0" aria-valuemax="100" style="width: @percentage%; min-width: 2em;"></div>
-            </div>
-        </div>
-    <!-- /completed -->
             <!-- info -->
-        <div class="box-light margin-bottom-30">
-            <!-- .box-light OR .box-light -->
-            @if (employee.Publications.Count() != 0)
-            {
-                <div class="row box-dark radius-8">
-                    <div>
-                        <p class="countTo text-center size-20 font-raleway" data-speed="3000">@employee.Publications.Count()</p>
-                        <p class="size-14 text-center text-info">@Resources.Resources.RnC.ToUpper()</p>
-                    </div>
-                </div>
-            }
-            <!-- info -->
-            <div class="text-muted">
-                <h5 class="margin-bottom-6"><b>@Resources.Resources.About @employee.FullName,</b></h5>
-                <p class="justify">@employee.Biography.StripHtml().Chop(190)</p>
-                <ul class="list-unstyled nomargin">
-                    <li class="margin-bottom-10"><i class="fa fa-2x fa-envelope-square width-20 hidden-xs hidden-sm"></i> <a href="@empEmail">@empEmail</a></li>
-                    @if (!string.IsNullOrEmpty(employee.FacebookUrl))
-                    {
-                        <li class="margin-bottom-10"><i class="fa fa-2x fa-facebook-square width-20 hidden-xs hidden-sm"></i> <a href="@employee.FacebookUrl">@Resources.Resources.ViewMySocialNetwork</a></li>
-                    }
-                    @if (!string.IsNullOrEmpty(employee.TwitterUrl))
-                    {
-                        <li class="margin-bottom-10"><i class="fa fa-2x fa-twitter-square width-20 hidden-xs hidden-sm"></i> <a href="@employee.TwitterUrl">@Resources.Resources.ViewMySocialNetwork</a></li>
-                    }
-                    @if (!string.IsNullOrEmpty(employee.LinkedInUrl))
-                    {
-                        <li class="margin-bottom-10"><i class="fa fa-2x fa-linkedin-square width-20 hidden-xs hidden-sm"></i> <a href="@employee.LinkedInUrl">@Resources.Resources.ViewMySocialNetwork</li>
-                    }
-                    @if (!string.IsNullOrEmpty(employee.GooglePlusUrl))
-                    {
-                        <li class="margin-bottom-10"><i class="fa fa-2x  fa-google-plus-square width-20 hidden-xs hidden-sm"></i> <a href="@employee.GooglePlusUrl">@Resources.Resources.ViewMySocialNetwork</a></li>
-                    }
-                </ul>
-            </div>
+        <div class="text-muted">
+            <h5><b>@Resources.Resources.About @employee.FullName,</b></h5>
+            <p class="justify">@employee.Biography.StripHtml().Chop(190)</p>
+            <ul class="list-unstyled nomargin">
+                <li><i class="fa fa-2x fa-envelope-square width-20 hidden-xs hidden-sm"></i> <a href="@empEmail">@empEmail</a></li>
+                @if (!string.IsNullOrEmpty(employee.FacebookUrl))
+                {
+                    <li><i class="fa fa-2x fa-facebook-square width-20 hidden-xs hidden-sm"></i> <a href="@employee.FacebookUrl">@Resources.Resources.ViewMySocialNetwork</a></li>
+                }
+                @if (!string.IsNullOrEmpty(employee.TwitterUrl))
+                {
+                    <li><i class="fa fa-2x fa-twitter-square width-20 hidden-xs hidden-sm"></i> <a href="@employee.TwitterUrl">@Resources.Resources.ViewMySocialNetwork</a></li>
+                }
+                @if (!string.IsNullOrEmpty(employee.LinkedInUrl))
+                {
+                    <li><i class="fa fa-2x fa-linkedin-square width-20 hidden-xs hidden-sm"></i> <a href="@employee.LinkedInUrl">@Resources.Resources.ViewMySocialNetwork</li>
+                }
+                @if (!string.IsNullOrEmpty(employee.GooglePlusUrl))
+                {
+                    <li><i class="fa fa-2x  fa-google-plus-square width-20 hidden-xs hidden-sm"></i> <a href="@employee.GooglePlusUrl">@Resources.Resources.ViewMySocialNetwork</a></li>
+                }
+            </ul>
         </div>
     }
 </div>
@@ -92,7 +83,7 @@
     {
         var percentage = 100;
         List<string> values = new List<string>();
-        var properties = emp.GetType().GetProperties().Where(p => !p.GetGetMethod().IsVirtual && p.Name != "Id" && p.Name != "LoginId" && p.Name != "Image" && p.Name != "File" && p.Name != "Mobile" && p.Name != "MiddleName" && p.Name != "MiddleName_Ar" && p.Name != "FacebookUrl" && p.Name != "TwitterUrl" && p.Name != "YouTubeUrl" && p.Name != "GooglePlusUrl" && p.Name != "LinkedInUrl" && p.Name != "Ordinal");
+        var properties = emp.GetType().GetProperties().Where(p => !p.GetGetMethod().IsVirtual && p.Name != "Id" && p.Name != "LoginId" && p.Name != "Image" && p.Name != "File" && p.Name != "Mobile" && p.Name != "MiddleName" && p.Name != "FacebookUrl" && p.Name != "TwitterUrl" && p.Name != "YouTubeUrl" && p.Name != "GooglePlusUrl" && p.Name != "LinkedInUrl" && p.Name != "Ordinal");
         foreach (PropertyInfo propInfo in properties)
         {
             if (propInfo.GetValue(emp, null) == null)

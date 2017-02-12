@@ -6,52 +6,67 @@
     var loginId = User.Identity.GetUserId();
     IdentityEntities db = new IdentityEntities();
     var employee = db.Employees.Where(e => e.LoginId.Equals(loginId) && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
-    var percentage = new object();
-    if (employee != null)
-    {
-        percentage = ProfileCompletion(employee);
-    }
 }
 @if (employee != null)
 {
-    string personalTitle = (employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : employee.PersonalTitle.Code;
+    var percentage = ProfileCompletion(employee);
     <div class="col-lg-3 col-md-3 col-sm-4 col-lg-pull-9 col-md-pull-9 col-sm-pull-8">
         <div class="thumbnail text-center">
-
-            @if (employee.PersonalPhotoPath != null)
+            @if (employee != null)
             {
-                <img class="img-responsive" alt="@employee.PersonalPhotoName" src="@employee.PersonalPhotoPath">
+                <img class="img-responsive" alt="" src="@(!File.Exists(Server.MapPath(employee.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : employee.PersonalPhotoPath)">
+                string personalTitle = (employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : employee.PersonalTitle.Code;
+                <h4>@personalTitle @employee.FullName</h4>
+                foreach (var item in employee.EmpInDepts)
+                {
+                    string occupation = item.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? item.Occupation.Code;
+                    string department = item.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? item.Department.Code;
+                    <h5 class="text-muted">@occupation</h5>
+                    <h6 class="text-muted">@department</h6>
+                    <hr />
+                }
+                if (employee.Publications.Count() != 0)
+                {
+                    <div class="counters">
+                        <div class="counter">
+                            <label style="font-weight:600" data-to="@employee.Publications.Count()" data-append="+">0</label>
+                            <label>@Resources.Resources.RnC</label>
+                        </div>
+                    </div>
+                }
+                            <!-- completed -->
+                <div>
+
+                    <label>@percentage% @Resources.Resources.CompletedProfile</label>
+                    <div class="progress">
+                        @if (percentage <= 50)
+                        {
+                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="@percentage" aria-valuemin="0" aria-valuemax="100" style="width: @percentage%; "></div>
+                        }
+                        @if (percentage > 50 && percentage < 75)
+                        {
+                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="@percentage" aria-valuemin="0" aria-valuemax="100" style="width: @percentage%; "></div>
+                        }
+                        @if (percentage >= 75)
+                        {
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="@percentage" aria-valuemin="0" aria-valuemax="100" style="width: @percentage%; "></div>
+                        }
+                    </div>
+                </div>
+        <!-- /completed -->
             }
             else
             {
-                <i class="fa icon-user fa-5x"></i>
-            }
-
-            <h2 class="size-18 margin-top-10 margin-bottom-0">@personalTitle @employee.FullName</h2>
-            @foreach (var item in employee.EmpInDepts)
-            {
-                string occupation = (item.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? item.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : item.Occupation.Code;
-                string department = (item.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? item.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : item.Department.Code;
-                <p><small>@occupation &#64; @department</small></p>
+                <img class="img-responsive" alt="" src="/assets/admin/plugins/images/users/user-icon.png">
             }
         </div>
-
-        <!-- completed -->
-
-        <div class="margin-bottom-30">
-            <label>@percentage% @Resources.Resources.CompletedProfile</label>
-            <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="@percentage" aria-valuemin="0" aria-valuemax="100" style="width: @percentage%; min-width: 2em;"></div>
-            </div>
-        </div>
-        <!-- /completed -->
         <!-- SIDE NAV -->
-        <ul class="side-nav list-group margin-bottom-60" id="sidebar-nav">
-            <li class="list-group-item"><a href=@Url.Action("Index", "MyProfile")><i class="fa fa-user"></i><span class="uppercase">@Resources.Resources.MyProfile</span></a></li>
-            <li id="Publications" class="list-group-item"><a href=@Url.Action("Index", "Publications", new { id = employee.TranslationId })><i class="fa fa-file-text"></i><span class="uppercase">@Resources.Resources.Publications</span></a></li>
-            <li id="EmpInDepts" class="list-group-item"><a href=@Url.Action("Index", "EmpInDepts", new { id = employee.TranslationId })><i class="fa fa-building"></i><span class="uppercase">@Resources.Resources.Departments</span></a></li>
-            <li id="Translations" class="list-group-item"><a href=@Url.Action("Translations", "MyProfile", new { id = employee.TranslationId})><i class="fa fa-globe"></i><span class="uppercase">@Resources.Resources.Translations</span></a></li>
-            <li class="list-group-item"><a href=@Url.Action("Index", "Manage", new { area = "Identity" })><i class="fa fa-gears"></i><span class="uppercase">@Resources.Resources.AccountSettings</span></a></li>
+        <ul class="list list-icons list-icons-style-3 mt-xlg" id="sidebar-nav">
+            <li><a href=@Url.Action("Index", "MyProfile")><i class="fa fa-user"></i><span class="uppercase">@Resources.Resources.MyProfile</span></a></li>
+            <li><a href=@Url.Action("Index", "Publications", new { id = employee.TranslationId })><i class="fa fa-file-text"></i><span class="uppercase">@Resources.Resources.Publications</span></a></li>
+            <li><a href=@Url.Action("Index", "EmpInDepts", new { id = employee.TranslationId })><i class="fa fa-building"></i><span class="uppercase">@Resources.Resources.Departments</span></a></li>
+            <li><a href=@Url.Action("Translations", "MyProfile", new { id = employee.TranslationId})><i class="fa fa-globe"></i><span class="uppercase">@Resources.Resources.Translations</span></a></li>
+            <li><a href=@Url.Action("Index", "Manage", new { area = "Identity" })><i class="fa fa-gears"></i><span class="uppercase">@Resources.Resources.AccountSettings</span></a></li>
         </ul>
 
     </div>

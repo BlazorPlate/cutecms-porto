@@ -52,7 +52,7 @@
         }
         if (dept.Employee != null)//If the department has manager
         {
-            string personalTitle = (dept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? dept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : dept.Employee.PersonalTitle.Code;
+            string personalTitle = dept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? dept.Employee.PersonalTitle.Code;
             var manager = db.Employees.Where(e => e.Language.CultureName.Equals(Thread.CurrentThread.CurrentCulture.Name) && e.TranslationId == dept.ManagerId).FirstOrDefault();
             <div class="row">
                 <ul class="team-list sort-destination">

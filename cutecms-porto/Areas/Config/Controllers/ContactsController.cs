@@ -39,7 +39,7 @@ namespace cutecms_porto.Areas.Config.Controllers
 
         public List<object> GetDepartmentsServerSide()
         {
-            foreach (var item in TermsHelper.DepartmentList())
+            foreach (var item in TermsHelper.Departments())
             {
                 DepartmentsList.Add(new
                 {

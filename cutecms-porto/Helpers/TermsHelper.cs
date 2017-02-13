@@ -138,7 +138,7 @@ namespace cutecms_porto.Helpers
                            select c);
             return degrees;
         }
-        public static List<IdentityDepartmentTerm> DepartmentList(int? languageId)
+        public static List<IdentityDepartmentTerm> Departments(int? languageId)
         {
             IdentityDb = new IdentityEntities();
             List<IdentityDepartmentTerm> departments = null;
@@ -160,7 +160,7 @@ namespace cutecms_porto.Helpers
             }
             return departments;
         }
-        public static IEnumerable<IdentityDepartment> DepartmentList()
+        public static IEnumerable<IdentityDepartment> Departments()
         {
             var departments = (from p in IdentityDb.IdentityDepartments
                                join c in IdentityDb.IdentityDepartmentTerms on p.Id equals c.DepartmentId
@@ -169,7 +169,19 @@ namespace cutecms_porto.Helpers
                                select p);
             return departments;
         }
-        public static IEnumerable<IdentityDepartmentTerm> Departments()
+
+
+        public static IEnumerable<RMSDepartment> VacanciesDepartments()
+        {
+            var departments = (from p in rmsDb.RMSDepartments
+                               join c in rmsDb.RMSDepartmentTerms on p.Id equals c.DepartmentId
+                               join v in rmsDb.Vacancies.Where(v => v.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)) on p.Id equals v.DeptId
+                               where c != null && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)
+                               orderby p.Ordinal
+                               select p);
+            return departments;
+        }
+        public static IEnumerable<IdentityDepartmentTerm> DepartmentTerms()
         {
             var departments = (from p in IdentityDb.IdentityDepartments
                                join c in IdentityDb.IdentityDepartmentTerms on p.Id equals c.DepartmentId

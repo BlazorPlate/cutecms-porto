@@ -18,6 +18,7 @@ namespace cutecms_porto.Areas.RMS.Models.DBModel
         public RMSEntities()
             : base("name=RMSEntities")
         {
+            Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -222,6 +222,7 @@ namespace cutecms_porto.Areas.RMS.Models
             this.Id = vacancy.Id;
             this.Code = vacancy.Code;
             this.Title = vacancy.Title;
+            this.Available = vacancy.Available;
             this.Description = vacancy.Description;
             this.Requirements = vacancy.Requirements;
             this.Skills = vacancy.Skills;

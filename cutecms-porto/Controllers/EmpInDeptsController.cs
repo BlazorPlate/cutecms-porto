@@ -37,7 +37,7 @@ namespace cutecms_porto.Controllers
         }
         public List<object> GetDepartmentsServerSide()
         {
-            foreach (var item in TermsHelper.DepartmentList(db.IdentityLanguages.Where(l => l.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Id))
+            foreach (var item in TermsHelper.Departments(db.IdentityLanguages.Where(l => l.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Id))
             {
                 DepartmentsList.Add(new
                 {

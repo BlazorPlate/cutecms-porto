@@ -5545,7 +5545,6 @@
     <Content Include="Views\MyProfile\Translations.cshtml" />
     <Content Include="Views\MyProfile\Delete.cshtml" />
     <Content Include="Views\Shared\Subscribe.cshtml" />
-    <Content Include="Views\Shared\_JobShareButtons.cshtml" />
     <Content Include="Views\Shared\LoginAjax.cshtml" />
     <Content Include="Views\Shared\RegisterAjax.cshtml" />
     <Content Include="Views\Shared\ForgotPassword.cshtml" />

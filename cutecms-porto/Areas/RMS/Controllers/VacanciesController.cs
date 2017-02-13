@@ -29,7 +29,6 @@ namespace cutecms_porto.Areas.RMS.Controllers
         private IdentityEntities IdentityDb = new IdentityEntities();
         private ApplicationDbContext _db = new ApplicationDbContext();
         private int? StatusId;
-        private CMSEntities cmsDb = new CMSEntities();
         private List<object> DepartmentsList = new List<object>();
         private string DepartmentPath = "";
         #endregion Fields
@@ -63,9 +62,9 @@ namespace cutecms_porto.Areas.RMS.Controllers
                     var vacancies = db.Vacancies.Include("Language").Include("Status").Include("JobType").Include("Department").Where(v => v.TenantId.Trim().Equals(Tenant.TenantId) && (roles.Any(r => v.RoleVID.Equals(r)) || v.RoleVID == null) || v.RoleVID == null).OrderBy(v => v.Title);
                     foreach (var item in vacancies)
                     {
-                        string departmentName = (TermsHelper.Departments().Where(d => d.DepartmentId == item.Department.Id).FirstOrDefault() == null) ?
+                        string departmentName = (TermsHelper.DepartmentTerms().Where(d => d.DepartmentId == item.Department.Id).FirstOrDefault() == null) ?
                                                  db.RMSDepartments.Include("Department").Where(d => d.Id == item.Department.Id).FirstOrDefault().Code :
-                                                 TermsHelper.Departments().Where(d => d.DepartmentId == item.Department.Id).FirstOrDefault().Value;
+                                                 TermsHelper.DepartmentTerms().Where(d => d.DepartmentId == item.Department.Id).FirstOrDefault().Value;
                         string jobTypeName = (TermsHelper.JobTypes().Where(d => d.JobTypeId == item.JobType.Id).FirstOrDefault() == null) ?
                                               db.JobTypes.Where(d => d.Id == item.JobType.Id).FirstOrDefault().Code :
                                               TermsHelper.JobTypes().Where(d => d.JobTypeId == item.JobType.Id).FirstOrDefault().Value;
@@ -155,7 +154,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                 if (vacancyStatus.Code.Trim().Equals("published"))
                     vacanyWithDR.PublishedOn = DateTime.Now;
                 var vacancy = new Vacancy();
-                vacancy.TenantId = RouteData.Values["tenant"].ToString();
+                vacancy.TenantId = Tenant.TenantId;
                 vacancy.Code = "0";
                 vacancy.Title = vacanyWithDR.Title;
                 vacancy.Description = vacanyWithDR.Description;
@@ -165,7 +164,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                 vacancy.DeptId = vacanyWithDR.DeptId;
                 vacancy.JobTypeId = vacanyWithDR.JobTypeId;
                 vacancy.ProgramId = vacanyWithDR.ProgramId;
-                vacancy.Available = vacanyWithDR.Available;
+                vacancy.Available = vacanyWithDR.Available == 0 ? 1 : vacanyWithDR.Available;
                 vacancy.Notes = vacanyWithDR.Notes;
                 vacancy.RoleVID = vacanyWithDR.RoleVID;
                 vacancy.Author = User.Identity.GetUserId();
@@ -257,7 +256,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                 var isVacancyPublished = (db.Vacancies.Find(vacanyWithDR.Id).Status.Code.ToLower().Equals("published")) ? true : false;
                 var vacancy = new Vacancy();
                 vacancy.Id = vacanyWithDR.Id;
-                vacancy.TenantId = RouteData.Values["tenant"].ToString();
+                vacancy.TenantId = Tenant.TenantId;
                 vacancy.Code = vacanyWithDR.Code;
                 vacancy.Title = vacanyWithDR.Title;
                 vacancy.Description = vacanyWithDR.Description;
@@ -267,7 +266,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                 vacancy.DeptId = vacanyWithDR.DeptId;
                 vacancy.JobTypeId = vacanyWithDR.JobTypeId;
                 vacancy.ProgramId = vacanyWithDR.ProgramId;
-                vacancy.Available = vacanyWithDR.Available;
+                vacancy.Available = vacanyWithDR.Available == 0 ? 1 : vacanyWithDR.Available;
                 vacancy.Notes = vacanyWithDR.Notes;
                 vacancy.RoleVID = vacanyWithDR.RoleVID;
                 vacancy.Author = User.Identity.GetUserId();
@@ -348,15 +347,9 @@ namespace cutecms_porto.Areas.RMS.Controllers
             }
             List<string> roles = GetUserRoles();
             Vacancy vacancy = db.Vacancies.Include("Language").Where(v => v.TenantId.Trim().Equals(Tenant.TenantId) && (roles.Any(r => v.RoleVID.Equals(r)) || v.RoleVID == null) && v.Id == id).FirstOrDefault();
-            ViewBag.IsDeletable = true;
             if (vacancy == null)
             {
                 throw new HttpException(404, "Page Not Found");
-            }
-            if (vacancy.Submissions.Count > 0)
-            {
-                ViewBag.IsDeletable = false;
-                ModelState.AddModelError("ERROR", Resources.Resources.VacancyUnableToDelete);
             }
             ViewBag.Author = _db.Users.Find(vacancy.Author).UserName;
             ViewBag.ModifiedBy = string.IsNullOrEmpty(vacancy.ModifiedBy) ? Resources.Resources.NotAvailable : ViewBag.ModifiedBy = _db.Users.Find(vacancy.ModifiedBy).UserName;
@@ -374,9 +367,14 @@ namespace cutecms_porto.Areas.RMS.Controllers
                     Vacancy vacancy = db.Vacancies.Include("VacancyRanks").Include("VacancyDegrees").Where(v => v.Id == id).FirstOrDefault();
                     try
                     {
+                        if (vacancy.Submissions.Count > 0)
+                        {
+                            ModelState.AddModelError("ERROR", Resources.Resources.VacancyUnableToDelete);
+                            return View(vacancy);
+                        }
                         foreach (var item in vacancy.VacancyRanks)
                         {
-                            db.Entry(item).State = System.Data.Entity.EntityState.Deleted;
+                            db.Entry(item).State = EntityState.Deleted;
                             db.VacancyRanks.Remove(item);
                         }
                         foreach (var item in vacancy.VacancyDegrees)
@@ -384,7 +382,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                             db.Entry(item).State = System.Data.Entity.EntityState.Deleted;
                             db.VacancyDegrees.Remove(item);
                         }
-                        db.Entry(vacancy).State = System.Data.Entity.EntityState.Deleted;
+                        db.Entry(vacancy).State = EntityState.Deleted;
                         db.Vacancies.Remove(vacancy);
                         db.SaveChanges();
                         Vacancy translatedContent = db.Vacancies.Where(c => c.TranslationId == vacancy.TranslationId).FirstOrDefault();
@@ -502,7 +500,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
         }
         private List<object> GetDepartmentsServerSide(string culture)
         {
-            foreach (var item in TermsHelper.DepartmentList())
+            foreach (var item in TermsHelper.Departments())
             {
                 DepartmentsList.Add(new
                 {

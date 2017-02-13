@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<Vacancy>
 @using cutecms_porto.Areas.RMS.Models.DBModel
+@using System.Threading
 @using PagedList.Mvc;
 @using PagedList;
 @{
@@ -18,67 +19,62 @@
         </div>
     </section>
 }
-<section>
+<section class="justify">
     <div class="container">
-        @using (Html.BeginForm("Index", "Vacancies", FormMethod.Post))
-        {
-            <div class="form-horizontal">
-                <div class="form-group">
-                    <div class="col-md-10">
-                        @Html.Label(Resources.Resources.Search)
-                    </div>
+        <div class="row">
+            <!-- LEFT COLUMNS -->
+            <div class="col-md-9 col-sm-9 col-md-push-3 col-sm-push-3">
+                <div class="toggle toggle-primary" data-plugin-toggle data-plugin-options="{ 'isAccordion': true }">
+                    @foreach (var item in Model)
+                    {
+                        <section class="toggle">
+                            <label>@item.Title.Trim() <span class="pull-right mr-md">@item.Available @Resources.Resources.Available</span> </label>
+                            <div class="toggle-content">
+                                <p><strong>@Resources.Resources.Code:</strong> @item.Code - <strong>@Resources.Resources.Department:</strong> @(item.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? item.Code)</p>
+                                <p>@Html.Raw(HttpUtility.HtmlDecode(item.Description.StripHtml()))</p>
+                                <p><a class="btn btn-primary mb-xl" href="@Url.Action("Details", "Vacancies", new { id = item.Id })">@Resources.Resources.Apply</a></p>
+                            </div>
+                        </section>
+                    }
                 </div>
-                <div class="form-group">
-                    <div class="col-md-10">
-                        @Html.TextBox("keywordFilter", ViewBag.KeywordFilter as string, new { @class = "form-control", @placeholder = Resources.Resources.Keywords })
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-10">
-                        @Html.DropDownList("jobTypeIdFilter", new SelectList(ViewBag.JobTypeIdFilter, "Value", "Text"), Resources.Resources.ChooseJobType, new { @class = "form-control" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-10">
-                        @Html.DropDownList("statusIdFilter", new SelectList(ViewBag.StatusIdFilter, "Value", "Text"), Resources.Resources.ChooseStatus, new { @class = "form-control" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-10">
-                        <input type="submit" value="@Resources.Resources.Search" class="btn btn-primary" />
-                    </div>
-                </div>
+                @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page, keywordFilter = ViewBag.KeywordFilter, deptIdFilter = ViewBag.DeptId, jobTypeIdFilter = ViewBag.JobTypeId, statusIdFilter = ViewBag.StatusId }))
             </div>
-        }
-        <section>
-            @if (Model.Count() != 0)
-            {
-                foreach (var item in Model)
+            <!-- /LEFT COLUMNS -->
+            <!-- RIGHT COLUMNS -->
+            <div class="col-md-3 col-sm-3 col-md-pull-9 col-sm-pull-9">
+                <h4>@Resources.Resources.Search</h4>
+                @using (Html.BeginForm("Index", "Vacancies", FormMethod.Post))
                 {
-                    <div class="heading-title heading-border-bottom heading-color">
-                        <h2 class="size-20 margin-top-1">@item.Title.ToUpperInvariant()</h2>
-                        <br />
-                        <small>@item.Code.ToUpperInvariant()</small>
-                        <span class="pull-right text-muted">@item.Available @Resources.Resources.Available</span>
-                    </div>
-                    <div class="margin-bottom-20">
-                        <p>@Html.Raw(HttpUtility.HtmlDecode(item.Description.StripHtml()))</p>
-
-                        @if (item.ExpiredOn != null)
-                        {
-                            <h5>@Resources.Resources.ExpiredOn.ToUpperInvariant()</h5>
-                            <p>@item.ExpiredOn</p>
-                        }
-                        <a href="@Url.Action("Details", "Vacancies", new { id = item.Id })" class="btn btn-3d btn-teal"><i class="fa fa-check"></i>@Resources.Resources.Apply</a>
-                        <hr />
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                @Html.TextBox("keywordFilter", ViewBag.KeywordFilter as string, new { @class = "form-control", @placeholder = Resources.Resources.Keywords })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                @Html.DropDownList("deptIdFilter", new SelectList(ViewBag.DeptIdFilter, "Value", "Text"), Resources.Resources.ChooseDepartment, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                @Html.DropDownList("jobTypeIdFilter", new SelectList(ViewBag.JobTypeIdFilter, "Value", "Text"), Resources.Resources.ChooseJobType, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                @Html.DropDownList("statusIdFilter", new SelectList(ViewBag.StatusIdFilter, "Value", "Text"), Resources.Resources.ChooseStatus, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <input type="submit" value="@Resources.Resources.Search" class="btn btn-primary" />
+                            </div>
+                        </div>
                     </div>
                 }
-            }
-            else
-            {
-                <p>@Resources.Resources.NoResult</p>
-            }
-            @Html.PagedListPager((IPagedList)Model, page => Url.Action("Contents", new { page, keywordFilter = ViewBag.KeywordFilter, contentTypeIdFilter = ViewBag.ContentTypeId, statusIdFilter = ViewBag.StatusId }))
-        </section>
+            </div>
+        </div>
     </div>
+    <!-- /RIGHT COLUMNS -->
 </section>

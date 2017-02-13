@@ -18,6 +18,7 @@ namespace cutecms_porto.Areas.Config.Models.DBModel
         public ConfigEntities()
             : base("name=ConfigEntities")
         {
+            Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

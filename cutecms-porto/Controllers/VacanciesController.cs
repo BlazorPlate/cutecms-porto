@@ -1,4 +1,5 @@
 ﻿using cutecms_porto.Areas.Config.Models.DBModel;
+using cutecms_porto.Areas.Identity.Models.DBModel;
 using cutecms_porto.Areas.RMS.Models;
 using cutecms_porto.Areas.RMS.Models.DBModel;
 using cutecms_porto.Helpers;
@@ -22,6 +23,8 @@ namespace cutecms_porto.Controllers
         #region Fields
         private static readonly Random random = new Random();
         private static readonly object syncLock = new object();
+        private List<object> DepartmentsList = new List<object>();
+        private string DepartmentPath = "";
         private RMSEntities db = new RMSEntities();
         private ConfigEntities configDb = new ConfigEntities();
         #endregion Fields
@@ -34,18 +37,20 @@ namespace cutecms_porto.Controllers
             }
         }
         // GET: /Vacancies/
-        public ActionResult Index(int? page, string keywordFilter = "", int jobTypeIdFilter = 0, int statusIdFilter = 0)
+        public ActionResult Index(int? page, string keywordFilter = "", int deptIdFilter = 0, int jobTypeIdFilter = 0, int statusIdFilter = 0)
         {
             var pageNumber = page ?? 1;
             keywordFilter.Trim();
             if (string.IsNullOrWhiteSpace(keywordFilter))
                 keywordFilter = "";
+            ViewBag.DeptIdFilter = new SelectList(GetDepartmentsServerSide(Thread.CurrentThread.CurrentCulture.Name), "Id", "Name", deptIdFilter);
             ViewBag.JobTypeIdFilter = new SelectList(TermsHelper.JobTypes(), "JobTypeId", "Value", jobTypeIdFilter);
             ViewBag.StatusIdFilter = new SelectList(TermsHelper.Statuses().Where(s => !s.Status.Code.Trim().Equals("scheduled")), "StatusId", "Value", statusIdFilter);
             ViewBag.KeywordFilter = keywordFilter;
+            ViewBag.DeptId = deptIdFilter;
             ViewBag.JobTypeId = jobTypeIdFilter;
             ViewBag.StatusId = statusIdFilter;
-            var vacancies = db.Vacancies.Where(v => v.TenantId.Trim().Equals(Tenant.TenantId) && v.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && (v.Title.Contains(keywordFilter.Trim()) || v.Description.Contains(keywordFilter.Trim()) || string.IsNullOrEmpty(keywordFilter)) && (v.JobTypeId == jobTypeIdFilter || jobTypeIdFilter == 0) && (v.StatusId == statusIdFilter || statusIdFilter == 0)).OrderBy(v => v.Department.Ordinal).ThenByDescending(v => v.PublishedOn).ToPagedList(pageNumber, 10);
+            var vacancies = db.Vacancies.Include("Department").Include("Department.DepartmentTerms").Include("Department.DepartmentTerms.Language").Where(v => v.TenantId.Trim().Equals(Tenant.TenantId) && v.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && (v.Title.Contains(keywordFilter.Trim()) || v.Description.Contains(keywordFilter.Trim()) || string.IsNullOrEmpty(keywordFilter)) && (v.DeptId == deptIdFilter || deptIdFilter == 0) && (v.JobTypeId == jobTypeIdFilter || jobTypeIdFilter == 0) && (v.StatusId == statusIdFilter || statusIdFilter == 0)).OrderBy(v => v.DeptId).OrderBy(v => v.Department.Ordinal).ThenByDescending(v => v.PublishedOn).ToPagedList(pageNumber, 10);
             return View(vacancies);
         }
         // GET: /Submission/Create
@@ -235,6 +240,34 @@ namespace cutecms_porto.Controllers
                     }
                 }
             }
+        }
+        private string GetParents(RMSDepartment element)
+        {
+            if (element.ParentId == null)
+            {
+                DepartmentPath = element.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && d.DepartmentId == element.Id).FirstOrDefault().Value + "/" + DepartmentPath;
+                return DepartmentPath;
+            }
+            RMSDepartment department = element;
+            DepartmentPath = db.RMSDepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && d.DepartmentId == department.Id).FirstOrDefault().Value + "/" + DepartmentPath;
+            db.Configuration.LazyLoadingEnabled = true;
+            GetParents(db.RMSDepartments.Find(department.ParentId));
+            db.Configuration.LazyLoadingEnabled = false;
+            return DepartmentPath;
+        }
+        private HashSet<object> GetDepartmentsServerSide(string culture)
+        {
+            foreach (var item in TermsHelper.VacanciesDepartments())
+            {
+                DepartmentsList.Add(new
+                {
+                    Id = item.Id,
+                    Name = GetParents(item)
+                });
+                DepartmentPath = "";
+            }
+            HashSet<object> Departments = new HashSet<object>(DepartmentsList);
+            return Departments;
         }
         protected override void Dispose(bool disposing)
         {

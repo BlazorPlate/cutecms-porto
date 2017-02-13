@@ -39,7 +39,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
 
         public List<object> GetDepartmentsServerSide(int? languageId)
         {
-            foreach (var item in TermsHelper.DepartmentList(languageId))
+            foreach (var item in TermsHelper.Departments(languageId))
             {
                 DepartmentsList.Add(new
                 {
@@ -56,7 +56,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         public ActionResult Index(int? languageId)
         {
             DepartmentsViewModel departments = new DepartmentsViewModel();
-            departments.DepartmentWithTerms = TermsHelper.DepartmentList(languageId);
+            departments.DepartmentWithTerms = TermsHelper.Departments(languageId);
             departments.Departments = db.IdentityDepartments.Where(i => i.DepartmentTerms.Where(d => d.LanguageId == languageId).Count() == 0).ToList();
             ViewBag.LanguageId = new SelectList(db.IdentityLanguages.Where(l => l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", languageId);
             ViewBag.CurrentLanguageId = languageId;

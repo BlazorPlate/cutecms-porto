@@ -1500,4 +1500,7 @@
   <data name="SenderName" xml:space="preserve">
     <value>Your name</value>
   </data>
+  <data name="Careers" xml:space="preserve">
+    <value></value>
+  </data>
 </root>

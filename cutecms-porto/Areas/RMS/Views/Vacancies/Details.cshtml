@@ -6,115 +6,113 @@
     ViewBag.Title = Resources.Resources.Details;
     RMSEntities rmsDb = new RMSEntities();
 }
-<div>
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Code)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Code)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Available)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Available)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd>
-            @Html.Raw(HttpUtility.HtmlDecode(Model.Description))
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Requirements)
-        </dt>
-        <dd>
-            @Html.Raw(HttpUtility.HtmlDecode(Model.Requirements))
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Skills)
-        </dt>
-        <dd>
-            @Html.Raw(HttpUtility.HtmlDecode(Model.Skills))
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Documents)
-        </dt>
-        <dd>
-            @Html.Raw(HttpUtility.HtmlDecode(Model.Documents))
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.JobTypeId)
-        </dt>
-        <dd>
-            @{ var jobType = rmsDb.JobTypeTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.JobTypeId == Model.JobTypeId).FirstOrDefault() != null ? rmsDb.JobTypeTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.JobTypeId == Model.JobTypeId).FirstOrDefault().Value : rmsDb.JobTypes.Where(i => i.Id == Model.JobTypeId).FirstOrDefault().Code;}
-            @jobType
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ProgramId)
-        </dt>
-        <dd>
-            @{ var program = rmsDb.RMSProgramTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.ProgramId == Model.ProgramId).FirstOrDefault() != null ? rmsDb.RMSProgramTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.ProgramId == Model.ProgramId).FirstOrDefault().Value : rmsDb.RMSPrograms.Where(i => i.Id == Model.ProgramId).FirstOrDefault().Code;}
-            @program
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.StatusId)
-        </dt>
-        <dd>
-            @{ var status = rmsDb.RMSStatusTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.StatusId == Model.StatusId).FirstOrDefault() != null ? rmsDb.RMSStatusTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.StatusId == Model.StatusId).FirstOrDefault().Value : rmsDb.Statuses.Where(i => i.Id == Model.StatusId).FirstOrDefault().Code;}
-            @status
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Author)
-        </dt>
-        <dd>
-            @Html.Display("Author")
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ModifiedBy)
-        </dt>
-        <dd>
-            @Html.Display("ModifiedBy")
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.CreatedOn)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.CreatedOn)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.PublishedOn)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.PublishedOn)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ExpiredOn)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ExpiredOn)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ModifiedOn)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ModifiedOn)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.IsTranslated)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.IsTranslated)
-        </dd>
-    </dl>
-</div>
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.Code)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Code)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Title)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Title)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Available)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Available)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Description)
+    </dt>
+    <dd>
+        @Html.Raw(HttpUtility.HtmlDecode(Model.Description))
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Requirements)
+    </dt>
+    <dd>
+        @Html.Raw(HttpUtility.HtmlDecode(Model.Requirements))
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Skills)
+    </dt>
+    <dd>
+        @Html.Raw(HttpUtility.HtmlDecode(Model.Skills))
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Documents)
+    </dt>
+    <dd>
+        @Html.Raw(HttpUtility.HtmlDecode(Model.Documents))
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.JobTypeId)
+    </dt>
+    <dd>
+        @{ var jobType = rmsDb.JobTypeTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.JobTypeId == Model.JobTypeId).FirstOrDefault()?.Value ?? rmsDb.JobTypes.Where(i => i.Id == Model.JobTypeId).FirstOrDefault().Code;}
+        @jobType
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.ProgramId)
+    </dt>
+    <dd>
+        @{ var program = rmsDb.RMSProgramTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.ProgramId == Model.ProgramId).FirstOrDefault()?.Value ?? rmsDb.RMSPrograms.Where(i => i.Id == Model.ProgramId).FirstOrDefault().Code;}
+        @program
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.StatusId)
+    </dt>
+    <dd>
+        @{ var status = rmsDb.RMSStatusTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.StatusId == Model.StatusId).FirstOrDefault()?.Value ?? rmsDb.Statuses.Where(i => i.Id == Model.StatusId).FirstOrDefault().Code;}
+        @status
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Author)
+    </dt>
+    <dd>
+        @Html.Display("Author")
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.ModifiedBy)
+    </dt>
+    <dd>
+        @Html.Display("ModifiedBy")
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.CreatedOn)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.CreatedOn)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.PublishedOn)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.PublishedOn)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.ExpiredOn)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.ExpiredOn)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.ModifiedOn)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.ModifiedOn)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.IsTranslated)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.IsTranslated)
+    </dd>
+</dl>
 <p>
     @Html.ActionLink(Resources.Resources.Edit, "Edit", new { id = Model.Id }) |
     @Html.ActionLink(Resources.Resources.BackToList, "Index")

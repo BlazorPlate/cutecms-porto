@@ -5554,6 +5554,7 @@
     <Content Include="Views\Home\ResetPassword.cshtml" />
     <Content Include="Views\Home\Welcome.cshtml" />
     <Content Include="Views\Error\InvalidToken.cshtml" />
+    <Content Include="Views\Shared\_TopMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />

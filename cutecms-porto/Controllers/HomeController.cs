@@ -124,6 +124,14 @@ namespace cutecms_porto.Controllers
         }
         [OutputCache(Duration = 9000, VaryByCustom = "culture")]
         [ChildActionOnly]
+        public PartialViewResult GetTopMenu()
+        {
+            return PartialView("_TopMenu");
+        }
+
+
+        [OutputCache(Duration = 9000, VaryByCustom = "culture")]
+        [ChildActionOnly]
         public PartialViewResult GetHeaderMenu()
         {
             return PartialView("_HeaderMenu");

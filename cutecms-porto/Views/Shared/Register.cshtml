@@ -2,12 +2,12 @@
 @using (Ajax.BeginForm("Register", "Account", new AjaxOptions { UpdateTargetId = "RegisterAjax" }))
 {
     @Html.AntiForgeryToken()
-    <div class="container max-width-400" id="RegisterAjax">
+    <div id="RegisterAjax">
         <h4 class="dropdown-mega-sub-title">@Resources.Resources.RegisterNewUser</h4>
         <div class="row">
             <div class="form-group">
                 <div class="col-md-12 p-none">
-                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = @Resources.Resources.Email + "..." })
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control input-lg", @placeholder = @Resources.Resources.Email + "..." })
                     @Html.ValidationMessageFor(model => model.Email)
                 </div>
             </div>
@@ -15,7 +15,7 @@
         <div class="row">
             <div class="form-group">
                 <div class="col-md-12 p-none">
-                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = @Resources.Resources.Password + "..." })
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control input-lg", @placeholder = @Resources.Resources.Password + "..." })
                     @Html.ValidationMessageFor(model => model.Password)
                 </div>
             </div>
@@ -23,7 +23,7 @@
         <div class="row">
             <div class="form-group">
                 <div class="col-md-12 p-none">
-                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", @placeholder = @Resources.Resources.ConfirmPassword + "..." })
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control input-lg", @placeholder = @Resources.Resources.ConfirmPassword + "..." })
                     @Html.ValidationMessageFor(model => model.ConfirmPassword)
                 </div>
             </div>

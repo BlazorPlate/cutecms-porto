@@ -1,6 +1,11 @@
 ﻿@using cutecms_porto.Areas.CMS.Models.DBModel
 @using System.Globalization
 @using System.Threading
+@{
+    CMSEntities db = new CMSEntities();
+    CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
+    RegionInfo regionInfo = new RegionInfo(cultureInfo.LCID);
+}
 <!DOCTYPE html>
 <html dir="@(CultureHelper.IsRighToLeft() ? "rtl" : "ltr")" class="boxed">
 <head>
@@ -101,7 +106,24 @@
             <div class="header-body">
                 <div class="header-top">
                     <div class="container">
-
+                        <nav class="header-nav-top" style="margin-left:0px;">
+                            <ul class="nav nav-pills">
+                                <li>
+                                    <a href="#" id="dropdownLanguage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img src="~/assets/porto/img/blank.gif" class="flag flag-@regionInfo.TwoLetterISORegionName.ToLower()" alt="@regionInfo.DisplayName"> @regionInfo.NativeName
+                                        <i class="fa fa-globe"></i>
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownLanguage">
+                                        @foreach (var item in db.CMSLanguages.Where(l => l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal))
+                                        {
+                                            CultureInfo itemCultureInfo = CultureInfo.CreateSpecificCulture(item.CultureName.Trim());
+                                            RegionInfo itemRegionInfo = new RegionInfo(itemCultureInfo.LCID);
+                                            <li><a href="@Url.RouteUrl(new RouteValueDictionary(ViewContext.RouteData.Values.ToDictionary(r => r.Key, r => r.Key == "culture" ? item.CultureName.Trim() : r.Value)))"><img src="~/assets/porto/img/blank.gif" class="flag flag-@item.FlagCode" alt="@itemRegionInfo.NativeName"> @itemRegionInfo.NativeName</a></li>
+                                        }
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
                         @{Html.RenderAction("GetTopMenu", "Home", new { area = "" });}
                         <div class="header-search hidden-xs">
                             @using (Html.BeginForm("Contents", "Home", new { area = "" }, FormMethod.Post))

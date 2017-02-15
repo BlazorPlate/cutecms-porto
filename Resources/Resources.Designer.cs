@@ -412,7 +412,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Careers.
         /// </summary>
         public static string Careers {
             get {
@@ -1830,15 +1830,6 @@ namespace Resources {
         public static string Instruction {
             get {
                 return ResourceManager.GetString("Instruction", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to InvalidDateFormat.
-        /// </summary>
-        public static string InvalidDateFormat {
-            get {
-                return ResourceManager.GetString("InvalidDateFormat", resourceCulture);
             }
         }
         

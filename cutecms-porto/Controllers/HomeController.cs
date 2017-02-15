@@ -123,7 +123,7 @@ namespace cutecms_porto.Controllers
             return View(imageFiles);
         }
         [OutputCache(Duration = 9000, VaryByCustom = "culture")]
-        [ChildActionOnly]
+
         public PartialViewResult GetTopMenu()
         {
             return PartialView("_TopMenu");

@@ -1407,9 +1407,6 @@
   <data name="UrgentExpiredOn" xml:space="preserve">
     <value>Термінові дійсна тільки до</value>
   </data>
-  <data name="InvalidDateFormat" xml:space="preserve">
-    <value>InvalidDateFormat</value>
-  </data>
   <data name="BackToHome" xml:space="preserve">
     <value>повернутися на головну сторінку зараз!</value>
   </data>
@@ -1499,5 +1496,8 @@
   </data>
   <data name="SenderName" xml:space="preserve">
     <value>Твоє ім'я</value>
+  </data>
+  <data name="Careers" xml:space="preserve">
+    <value>Кар'єра</value>
   </data>
 </root>

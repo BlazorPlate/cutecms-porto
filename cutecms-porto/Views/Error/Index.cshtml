@@ -1,7 +1,10 @@
-﻿@using System.Threading
+﻿@using cutecms_porto.Areas.CMS.Models.DBModel
+@using System.Threading
 @{
     ViewBag.Title = Resources.Resources.Error;
-    Layout = "";
+    CMSEntities db = new CMSEntities();
+    IEnumerable<MenuItem> usefulLinks = db.MenuItems.Include("Status").Include("Menu").Include("Language").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Menu.Code.Trim().Equals("useful-links") && m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).OrderBy(o => o.Ordinal);
+
 }
 @section PageHeader
 {
@@ -9,17 +12,33 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>@ViewBag.Title</h1>
+                    <h1>500 - @ViewBag.Title</h1>
                 </div>
             </div>
         </div>
     </section>
 }
-<section>
-    <div class="container">
-        <h1>@Resources.Resources.Oops</h1>
-        <h2>@Resources.Resources.GenericError</h2>
-        <p>@Resources.Resources.ErrorNotification</p>
-        <a class="size-20" href="~/@Thread.CurrentThread.CurrentCulture.Name"><i class="glyphicon glyphicon-menu-left margin-right-10 size-16"></i>@Resources.Resources.BackToHome</a>
+<section class="page-not-found">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1">
+            <div class="page-not-found-main">
+                <h2>500 <i class="fa fa-warning"></i></h2>
+                <h3>@Resources.Resources.GenericError</h3>
+                <p>@Resources.Resources.ErrorNotification</p>
+                <a class="size-20" href="~/@Thread.CurrentThread.CurrentCulture.Name"><i class="glyphicon glyphicon-menu-left"></i>@Resources.Resources.BackToHome</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h4 class="heading-primary">Here are some useful links</h4>
+            <ul class="nav nav-list">
+                @foreach (var item in usefulLinks)
+                {
+                    <li><a href="@item.Path">@item.Name</a></li>
+                }
+            </ul>
+        </div>
     </div>
 </section>
+
+
+

@@ -1,19 +1,17 @@
-﻿using cutecms_porto.Areas.CMS.Models.DBModel;
-using cutecms_porto.Areas.Config.Models.DBModel;
-using cutecms_porto.Areas.Identity.Models;
+﻿using cutecms_porto.Areas.Identity.Models;
 using cutecms_porto.Areas.Identity.Models.DBModel;
 using cutecms_porto.Helpers;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Runtime.Caching;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 
 namespace cutecms_porto.Areas.Identity.Controllers
 {
@@ -87,16 +85,21 @@ namespace cutecms_porto.Areas.Identity.Controllers
             return View();
         }
 
-        public ActionResult Index()
+        public ActionResult Index(int? page, string userNameFilter, string emailFilter, int? roleIdFilter = null, bool isEmailConfirmedFilter = true)
         {
-            var users = _db.Users;
+            var pageNumber = page ?? 1;// if no page was specified in the querystring, default to the first page (1)
+            ViewBag.IsEmailConfirmedFilter = isEmailConfirmedFilter;
+            ViewBag.UserNameFilter = userNameFilter;
+            ViewBag.EmailFilter = emailFilter;
+            ViewBag.RoleIdFilter = new SelectList(_db.Roles, "Id", "Name", roleIdFilter);
+            var users = _db.Users.Where(u => (u.UserName.Contains(userNameFilter) || string.IsNullOrEmpty(userNameFilter)) && (u.Email.Contains(emailFilter) || string.IsNullOrEmpty(emailFilter)) && u.EmailConfirmed == isEmailConfirmedFilter).ToList();
             var model = new List<UserViewModel>();
             foreach (var user in users)
             {
-                var u = new UserViewModel(user);
-                model.Add(u);
+                var userViewModel = new UserViewModel(user);
+                model.Add(userViewModel);
             }
-            return View(model);
+            return View(model.ToPagedList(pageNumber, 10));
         }
 
         // GET: /Account/Login

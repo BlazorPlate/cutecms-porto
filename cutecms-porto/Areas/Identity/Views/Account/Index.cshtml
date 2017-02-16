@@ -1,12 +1,49 @@
-﻿@using cutecms_porto.Helpers
+﻿@using PagedList.Mvc
+@using PagedList
 @model IEnumerable<cutecms_porto.Areas.Identity.Models.UserViewModel>
 @{
     ViewBag.Title = Resources.Resources.Index;
 }
 <h2>@Resources.Resources.Users</h2>
-<p>
+@*<p>
     @Html.ActionLink(Resources.Resources.Create, "Register")
-</p>
+</p>*@
+@using (Html.BeginForm("Index", "Account", FormMethod.Post))
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.Label(Resources.Resources.Search)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.TextBox("userNameFilter", ViewBag.UserNameFilter as string, new { @class = "form-control", @placeholder = Resources.Resources.Username })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.TextBox("emailFilter", ViewBag.EmailFilter as string, new { @class = "form-control", @placeholder = Resources.Resources.Email })
+            </div>
+        </div>
+        @*<div class="form-group">
+            <div class="col-md-10">
+                @Html.DropDownList("roleIdFilter", new SelectList(ViewBag.RoleIdFilter, "Value", "Text"), Resources.Resources.ChooseRole, new { @class = "form-control" })
+            </div>
+        </div>*@
+        <div class="form-group">
+            @Html.Label("Is Email Confirmed?", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.CheckBox("isEmailConfirmedFilter", (bool)ViewBag.IsEmailConfirmedFilter, new { @class = "js-switch" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                <input type="submit" value="@Resources.Resources.Search" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
 <table class="table">
     <tr>
         <th>
@@ -35,3 +72,6 @@
         </tr>
     }
 </table>
+<div>
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page, userNameFilter = ViewBag.UserNameFilter, emailFilter = ViewBag.EmailFilter, roleIdFilter = ViewBag.RoleIdFilter, isLockedOutFilter = ViewBag.IsLockedOutFilter}))
+</div>

@@ -1465,7 +1465,7 @@
     <value>أكمل النموذج أدناه لتلقي بريد إلكتروني يتصمن الرابط اللازم لإعادة تعيين كلمة المرور الخاصة بك.</value>
   </data>
   <data name="InvalidToken" xml:space="preserve">
-    <value>رمز اعادة ضبط كلمة السر غير صالح</value>
+    <value>رمز إعادة ضبط كلمة السر غير صالح</value>
   </data>
   <data name="ReadMore" xml:space="preserve">
     <value>اقرأ المزيد</value>

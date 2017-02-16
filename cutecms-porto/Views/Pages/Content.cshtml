@@ -46,7 +46,7 @@
         </div>
     </section>
 }
-<div class="container">
+<div class="container text-justify">
     @if (Model.ContentGalleries.Count != 0)
     {
         <div class="row">
@@ -84,58 +84,58 @@
                 </p>
             </div>
             <div class="row">
-                <div class="text-justify">
-                    @Html.Raw(HttpUtility.HtmlDecode(Model.MainContent))
-                </div>
-                <div>
-                    @foreach (var contentList in Model.ContentLists.OrderBy(c => c.Ordinal))
-                    {
-                        string active = "active";
-                        int count = 0;
-                        if (!contentList.Name.Equals(Model.Title))
+                <div class="col-md-12">
+                        @Html.Raw(HttpUtility.HtmlDecode(Model.MainContent))
+                    <div>
+                        @foreach (var contentList in Model.ContentLists.OrderBy(c => c.Ordinal))
                         {
-                            <h2>@contentList.Name</h2>
-                        }
-                        <div class="toggle toggle-quaternary" data-plugin-toggle>
-
-                            @foreach (var item in contentList.ListItems.OrderBy(l => l.Ordinal))
+                            string active = "active";
+                            int count = 0;
+                            if (!contentList.Name.Equals(Model.Title))
                             {
-                                if (count != 0)
-                                {
-                                    active = "";
-                                }
-                                <section class="toggle @active">
-                                    <label>@item.Title</label>
-                                    <div class="toggle-content">
-                                        <p>@Html.Raw(HttpUtility.HtmlDecode(item.Body))</p>
-
-                                        @if (item.Url != null)
-                                        {
-                                            <label>@Resources.Resources.Website</label>
-                                            <p class="text-justify"><a href="@item.Url" target="_blank">@item.Url</a></p>
-                                        }
-                                        @if (item.FilePath != null)
-                                        {
-                                            <label>@Resources.Resources.Attachments</label>
-                                            <a href="@Url.Content(item.FilePath)">@Resources.Resources.Download @item.Title</a>
-                                        }
-                                    </div>
-                                </section>
-                                count++;
+                                <h2>@contentList.Name</h2>
                             }
+                            <div class="toggle toggle-quaternary" data-plugin-toggle>
+
+                                @foreach (var item in contentList.ListItems.OrderBy(l => l.Ordinal))
+                                {
+                                    if (count != 0)
+                                    {
+                                        active = "";
+                                    }
+                                    <section class="toggle @active">
+                                        <label>@item.Title</label>
+                                        <div class="toggle-content">
+                                            @Html.Raw(HttpUtility.HtmlDecode(item.Body))
+
+                                            @if (item.Url != null)
+                                            {
+                                                <label>@Resources.Resources.Website:</label>
+                                                <a href="@item.Url" target="_blank">@item.Url</a>
+                                            }
+                                            @if (item.FilePath != null)
+                                            {
+                                                <label>@Resources.Resources.Attachments:</label>
+                                                <a href="@Url.Content(item.FilePath)">@Resources.Resources.Download @item.Title</a>
+                                            }
+                                        </div>
+                                    </section>
+                                    count++;
+                                }
+                            </div>
+                        }
+                    </div>
+                    @if (User.IsInRole("Admin"))
+            {
+                        <div>
+                            @Html.ActionLink(Resources.Resources.Edit, "Edit", "Contents", new { Area = "CMS", id = Model.Id }, null)
                         </div>
                     }
-                </div>
-                @if (User.IsInRole("Admin"))
-            {
-                    <div>
-                        @Html.ActionLink(Resources.Resources.Edit, "Edit", "Contents", new { Area = "CMS", id = Model.Id }, null)
-                    </div>
-                }
 
+                </div>
             </div>
         </div>
-     </div>
+    </div>
     <div class="post-block post-share">
         <h3 class="heading-primary"><i class="fa fa-share"></i>@Resources.Resources.Share</h3>
 

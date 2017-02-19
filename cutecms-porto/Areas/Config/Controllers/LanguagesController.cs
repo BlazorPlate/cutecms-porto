@@ -1,6 +1,7 @@
 ﻿using cutecms_porto.Areas.CMS.Models.DBModel;
 using cutecms_porto.Areas.Config.Models.DBModel;
 using cutecms_porto.Helpers;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -20,11 +21,15 @@ namespace cutecms_porto.Areas.Config.Controllers
 
         #region Methods
         // GET: CMS/ConfigLanguages
-        public ActionResult Index()
+        public ActionResult Index(int? page, string language, bool isEnabledFilter = false)
         {
-            return View(db.ConfigLanguages.ToList());
+            var pageNumber = page ?? 1;
+            ViewBag.LanguageFilter = language;
+            ViewBag.IsEnabledFilter = isEnabledFilter;
+            ViewBag.IsEnabled = isEnabledFilter;
+            var languages = db.ConfigLanguages.Where(l => ((l.CultureName.Contains(language) || string.IsNullOrEmpty(language)) || (l.Name.Contains(language) || string.IsNullOrEmpty(language))) &&  l.IsEnabled == isEnabledFilter).OrderBy(l => l.Ordinal);
+            return View(languages.ToPagedList(pageNumber, 1));
         }
-
         // GET: CMS/ConfigLanguages/Details/5
         public ActionResult Details(int? id)
         {

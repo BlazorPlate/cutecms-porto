@@ -12,6 +12,9 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using PagedList;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System.Web.Security;
+using System.Data.Entity;
 
 namespace cutecms_porto.Areas.Identity.Controllers
 {
@@ -31,6 +34,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
         private ApplicationDbContext _db = new ApplicationDbContext();
+        private IdentityDbContext db = new IdentityDbContext();
         #endregion Fields
 
         #region Constructors
@@ -85,21 +89,19 @@ namespace cutecms_porto.Areas.Identity.Controllers
             return View();
         }
 
-        public ActionResult Index(int? page, string userNameFilter, string emailFilter, int? roleIdFilter = null, bool isEmailConfirmedFilter = true)
+        public ActionResult Index(int? page, string userNameFilter, string emailFilter, string roleIdFilter, bool isEmailConfirmedFilter = true)
         {
-            var pageNumber = page ?? 1;// if no page was specified in the querystring, default to the first page (1)
+            var pageNumber = page ?? 1;
             ViewBag.IsEmailConfirmedFilter = isEmailConfirmedFilter;
             ViewBag.UserNameFilter = userNameFilter;
             ViewBag.EmailFilter = emailFilter;
             ViewBag.RoleIdFilter = new SelectList(_db.Roles, "Id", "Name", roleIdFilter);
-            var users = _db.Users.Where(u => (u.UserName.Contains(userNameFilter) || string.IsNullOrEmpty(userNameFilter)) && (u.Email.Contains(emailFilter) || string.IsNullOrEmpty(emailFilter)) && u.EmailConfirmed == isEmailConfirmedFilter).ToList();
-            var model = new List<UserViewModel>();
-            foreach (var user in users)
-            {
-                var userViewModel = new UserViewModel(user);
-                model.Add(userViewModel);
-            }
-            return View(model.ToPagedList(pageNumber, 10));
+            ViewBag.RoleId = roleIdFilter;
+            ViewBag.IsEmailConfirmed = isEmailConfirmedFilter;
+            List<ApplicationUser> users = (from u in db.Users.Where(u => (u.UserName.Contains(userNameFilter) || string.IsNullOrEmpty(userNameFilter)) && (u.Email.Contains(emailFilter) || string.IsNullOrEmpty(emailFilter)) && u.EmailConfirmed == isEmailConfirmedFilter)
+                                           where (u.Roles.Any(r => r.RoleId == roleIdFilter) || string.IsNullOrEmpty(roleIdFilter))
+                                           select new ApplicationUser { Id = u.Id, Email = u.Email }).ToList();
+            return View(users.ToPagedList(pageNumber, 10));
         }
 
         // GET: /Account/Login

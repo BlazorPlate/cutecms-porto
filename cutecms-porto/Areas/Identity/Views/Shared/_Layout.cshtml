@@ -1,5 +1,8 @@
 ﻿@using cutecms_porto.Areas.Config.Models.DBModel
 @using cutecms_porto.Helpers
+@{ 
+    var organization = (Organization)HttpRuntime.Cache["Organization"];
+}
 <!DOCTYPE html>
 <html lang="@cutecms_porto.Helpers.CultureHelper.GetCurrentNeutralCulture()" dir="@(cutecms_porto.Helpers.CultureHelper.IsRighToLeft() ? "rtl" : "ltr")">
 <head>
@@ -7,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow" />
-    <title>@ViewBag.Title - @(OrganizationData.Organization?.Name)</title>
+    <title>@ViewBag.Title - @(organization?.Name)</title>
     <!-- CSS -->
     <link href="~/assets/admin/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     @*@Styles.Render("~/bundles/root-css" + (cutecms_porto.Helpers.CultureHelper.IsRighToLeft() ? "-rtl" : ""))*@
@@ -81,22 +84,22 @@
                         <ul class="nav navbar-nav  @(CultureHelper.IsRighToLeft() ? "navbar-left" : "navbar-right")">
                             <li>
                                 <span class="li-social">
-                                    <a href="@(OrganizationData.Organization?.FacebookUrl)"><i class="fa fa-facebook-square"></i></a>
+                                    <a href="@(organization?.FacebookUrl)"><i class="fa fa-facebook-square"></i></a>
                                 </span>
                             </li>
                             <li>
                                 <span class="li-social">
-                                    <a href="@(OrganizationData.Organization?.TwitterUrl)"><i class="fa fa-twitter-square"></i></a>
+                                    <a href="@(organization?.TwitterUrl)"><i class="fa fa-twitter-square"></i></a>
                                 </span>
                             </li>
                             <li>
                                 <span class="li-social">
-                                    <a href="@(OrganizationData.Organization?.GooglePlusUrl)"><i class="fa fa-google-plus-square"></i></a>
+                                    <a href="@(organization?.GooglePlusUrl)"><i class="fa fa-google-plus-square"></i></a>
                                 </span>
                             </li>
                             <li>
                                 <span class="li-social">
-                                    <a href="@(OrganizationData.Organization?.LinkedInUrl)"><i class="fa fa-linkedin-square"></i></a>
+                                    <a href="@(organization?.LinkedInUrl)"><i class="fa fa-linkedin-square"></i></a>
                                 </span>
                             </li>
                         </ul>

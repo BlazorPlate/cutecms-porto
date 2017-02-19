@@ -5502,8 +5502,6 @@
     <Content Include="Views\Home\Calendar.cshtml" />
     <Content Include="Views\Shared\_PageFooter.cshtml" />
     <Content Include="Views\Shared\_Breadcrumb.cshtml" />
-    <Content Include="Views\Shared\_ShareButtons.cshtml" />
-    <Content Include="Views\Shared\_SocialButtons.cshtml" />
     <Content Include="Views\MyProfile\Index.cshtml" />
     <Content Include="Views\MyProfile\PersonalInfo.cshtml" />
     <Content Include="Views\MyProfile\AcademicInfo.cshtml" />

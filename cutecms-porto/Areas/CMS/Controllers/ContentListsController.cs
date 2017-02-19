@@ -68,6 +68,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             {
                 db.ContentLists.Add(contentList);
                 db.SaveChanges();
+                CacheHelper.ClearCache();
                 return RedirectToAction("Index", new { id = contentList.ContentId });
             }
             ViewBag.ContentId = contentList.ContentId;
@@ -102,6 +103,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             {
                 db.Entry(contentList).State = EntityState.Modified;
                 db.SaveChanges();
+                CacheHelper.ClearCache();
                 return RedirectToAction("Index", new { id = contentList.ContentId });
             }
             ViewBag.ContentId = contentList.ContentId;
@@ -132,6 +134,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             ContentList contentList = db.ContentLists.Find(id);
             db.ContentLists.Remove(contentList);
             db.SaveChanges();
+            CacheHelper.ClearCache();
             return RedirectToAction("Index", new { id = contentList.ContentId });
         }
 

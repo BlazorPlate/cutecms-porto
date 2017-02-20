@@ -15,10 +15,13 @@
             @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Ordinal)
+            @Html.DisplayNameFor(model => model.ContentId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ContentId)
+            @Html.DisplayNameFor(model => model.Visible)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ordinal)
         </th>
         <th></th>
     </tr>
@@ -31,11 +34,15 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ordinal)
-            </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.Content.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Visible)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ordinal)
             </td>
             <td>
                 @Html.ActionLink(Resources.Resources.ListItems, "Index", "ListItems", new { id = item.Id }, null) |

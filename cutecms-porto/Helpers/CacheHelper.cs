@@ -19,6 +19,7 @@ namespace cutecms_porto.Helpers
                 cacheItems.Add(enumerator.Key.ToString(), enumerator.Value);
             foreach (string key in cacheItems.Keys)
                 HttpRuntime.Cache.Remove(key);
+
             OutputCacheAttribute.ChildActionCache = new MemoryCache("NewDefault");
         }
         #endregion Methods

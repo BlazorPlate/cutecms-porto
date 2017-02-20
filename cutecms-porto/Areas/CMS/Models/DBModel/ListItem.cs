@@ -41,6 +41,8 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
         [Display(Name = "Ordinal", ResourceType = typeof(Resources.Resources))]
         public int Ordinal { get; set; }
+        [Display(Name = "Visible", ResourceType = typeof(Resources.Resources))]
+        public bool Visible { get; set; }
         [ValidateFile]
         [Display(Name = "FilePath", ResourceType = typeof(Resources.Resources))]
         [NotMapped]

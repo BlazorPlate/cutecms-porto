@@ -39,11 +39,7 @@ namespace cutecms_porto.Helpers
             // Modify current thread's cultures
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cultureName);
             Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
-            if (HttpRuntime.Cache["Organization"] == null)
-            {
-                var organization = configDb.Organizations.Where(o => o.TenantId.Trim().Equals(Tenant.TenantId) && o.IsDefault == true && o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
-                HttpRuntime.Cache.Insert("Organization", organization, null, DateTime.Now.AddYears(1), Cache.NoSlidingExpiration);
-            }
+
             return base.BeginExecuteCore(callback, state);
         }
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
@@ -55,6 +51,11 @@ namespace cutecms_porto.Helpers
             //Tenant.TenantId = fullAddress[0];
             //filterContext.RouteData.Values.Add("tenant", tenantSubdomain);
             Tenant.TenantId = "demo";
+            if (HttpRuntime.Cache["Organization"] == null)
+            {
+                var organization = configDb.Organizations.Where(o => o.TenantId.Trim().Equals(Tenant.TenantId) && o.IsDefault == true && o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
+                HttpRuntime.Cache.Insert("Organization", organization, null, DateTime.Now.AddYears(1), Cache.NoSlidingExpiration);
+            }
             base.OnActionExecuting(filterContext);
         }
         #endregion Methods

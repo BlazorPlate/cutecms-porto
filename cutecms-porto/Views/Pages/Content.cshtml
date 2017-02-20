@@ -87,7 +87,7 @@
                 <div class="col-md-12">
                         @Html.Raw(HttpUtility.HtmlDecode(Model.MainContent))
                     <div>
-                        @foreach (var contentList in Model.ContentLists.OrderBy(c => c.Ordinal))
+                        @foreach (var contentList in Model.ContentLists.Where(c=>c.Visible).OrderBy(c => c.Ordinal))
                         {
                             string active = "active";
                             int count = 0;
@@ -97,7 +97,7 @@
                             }
                             <div class="toggle toggle-quaternary" data-plugin-toggle>
 
-                                @foreach (var item in contentList.ListItems.OrderBy(l => l.Ordinal))
+                                @foreach (var item in contentList.ListItems.Where(l => l.Visible).OrderBy(l => l.Ordinal))
                                 {
                                     if (count != 0)
                                     {

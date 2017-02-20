@@ -4725,13 +4725,11 @@
     <Content Include="assets\porto\vendor\rs-plugin\css\settings.css" />
     <Content Include="assets\porto\vendor\rs-plugin\fonts\font-awesome\css\font-awesome.css" />
     <Content Include="assets\porto\vendor\rs-plugin\fonts\font-awesome\css\font-awesome.min.css" />
-    <Content Include="assets\porto\vendor\rs-plugin\fonts\font-awesome\css\index.php" />
     <Content Include="assets\porto\vendor\rs-plugin\fonts\font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="assets\porto\vendor\rs-plugin\fonts\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="assets\porto\vendor\rs-plugin\fonts\font-awesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="assets\porto\vendor\rs-plugin\fonts\font-awesome\fonts\fontawesome-webfont.woff" />
     <Content Include="assets\porto\vendor\rs-plugin\fonts\font-awesome\fonts\FontAwesome.otf" />
-    <Content Include="assets\porto\vendor\rs-plugin\fonts\font-awesome\fonts\index.php" />
     <Content Include="assets\porto\vendor\rs-plugin\fonts\font-awesome\index.php" />
     <Content Include="assets\porto\vendor\rs-plugin\fonts\index.php" />
     <Content Include="assets\porto\vendor\rs-plugin\fonts\pe-icon-7-stroke\css\helper.css" />
@@ -5553,6 +5551,7 @@
     <Content Include="Views\Home\Welcome.cshtml" />
     <Content Include="Views\Error\InvalidToken.cshtml" />
     <Content Include="Views\Shared\_TopMenu.cshtml" />
+    <None Include="Properties\PublishProfiles\cutecms-porto.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
@@ -6709,7 +6708,6 @@
     <Content Include="assets\porto\vendor\simple-line-icons\LICENSE.md" />
     <Content Include="assets\porto\vendor\simple-line-icons\yarn.lock" />
     <None Include="Project_Readme.html" />
-    <None Include="Properties\PublishProfiles\cutecms.pubxml" />
     <Content Include="Views\Home\Index.old3.cshtml" />
     <Content Include="Views\Home\Ad.cshtml" />
     <Content Include="Views\Error\CatchAll.cshtml" />

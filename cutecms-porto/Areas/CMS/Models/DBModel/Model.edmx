@@ -43,6 +43,7 @@
           <Property Name="MainContent" Type="nvarchar(max)" />
           <Property Name="ContentId" Type="int" Nullable="false" />
           <Property Name="Ordinal" Type="int" Nullable="false" />
+          <Property Name="Visible" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Contents">
           <Key>
@@ -206,6 +207,7 @@
           <Property Name="ThumbName" Type="nvarchar(max)" />
           <Property Name="ThumbPath" Type="nvarchar(max)" />
           <Property Name="Ordinal" Type="int" Nullable="false" />
+          <Property Name="Visible" Type="bit" Nullable="false" />
           <Property Name="ContentListId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="MenuItems">
@@ -870,7 +872,6 @@
         <EntityContainer Name="CMSEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ContentTypes" EntityType="CuteCMSDBModel.ContentType" />
           <EntitySet Name="ContentTypeTerms" EntityType="CuteCMSDBModel.ContentTypeTerm" />
-          <EntitySet Name="ListItems" EntityType="CuteCMSDBModel.ListItem" />
           <EntitySet Name="CMSPersonalTitles" EntityType="CuteCMSDBModel.CMSPersonalTitle" />
           <EntitySet Name="CMSPersonalTitleTerms" EntityType="CuteCMSDBModel.CMSPersonalTitleTerm" />
           <EntitySet Name="CMSStatuses" EntityType="CuteCMSDBModel.CMSStatus" />
@@ -946,15 +947,6 @@
             <End Role="CMSStatus" EntitySet="CMSStatuses" />
             <End Role="Content" EntitySet="Contents" />
           </AssociationSet>
-          <EntitySet Name="ContentLists" EntityType="CuteCMSDBModel.ContentList" />
-          <AssociationSet Name="FK_ContentLists_Contents" Association="CuteCMSDBModel.FK_ContentLists_Contents">
-            <End Role="Content" EntitySet="Contents" />
-            <End Role="ContentList" EntitySet="ContentLists" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ListItems_ContentLists" Association="CuteCMSDBModel.FK_ListItems_ContentLists">
-            <End Role="ContentList" EntitySet="ContentLists" />
-            <End Role="ListItem" EntitySet="ListItems" />
-          </AssociationSet>
           <EntitySet Name="ContentGalleries" EntityType="CuteCMSDBModel.ContentGallery" />
           <AssociationSet Name="FK_ContentGalleries_Contents" Association="CuteCMSDBModel.FK_ContentGalleries_Contents">
             <End Role="Content" EntitySet="Contents" />
@@ -1029,6 +1021,16 @@
             <End Role="Language" EntitySet="CMSLanguages" />
             <End Role="TagTerm" EntitySet="TagTerms" />
           </AssociationSet>
+          <EntitySet Name="ContentLists" EntityType="CuteCMSDBModel.ContentList" />
+          <EntitySet Name="ListItems" EntityType="CuteCMSDBModel.ListItem" />
+          <AssociationSet Name="FK_ContentLists_Contents" Association="CuteCMSDBModel.FK_ContentLists_Contents">
+            <End Role="Content" EntitySet="Contents" />
+            <End Role="ContentList" EntitySet="ContentLists" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ListItems_ContentLists" Association="CuteCMSDBModel.FK_ListItems_ContentLists">
+            <End Role="ContentList" EntitySet="ContentLists" />
+            <End Role="ListItem" EntitySet="ListItems" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="ContentType">
           <Key>
@@ -1051,23 +1053,6 @@
           <Property Name="ContentTypeId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ContentType" Relationship="CuteCMSDBModel.FK_ContentTypeTerms_ContentTypes" FromRole="ContentTypeTerm" ToRole="ContentType" />
           <NavigationProperty Name="Language" Relationship="CuteCMSDBModel.FK_ContentTypeTerms_Languages" FromRole="ContentTypeTerm" ToRole="Language" />
-        </EntityType>
-        <EntityType Name="ListItem">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-          <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Class" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="FileName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="FilePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ThumbName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ThumbPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Ordinal" Type="Int32" Nullable="false" />
-          <Property Name="ContentListId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ContentList" Relationship="CuteCMSDBModel.FK_ListItems_ContentLists" FromRole="ListItem" ToRole="ContentList" />
         </EntityType>
         <EntityType Name="CMSPersonalTitle">
           <Key>
@@ -1429,10 +1414,10 @@
           <NavigationProperty Name="ContentType" Relationship="CuteCMSDBModel.FK_Contents_ContentTypes" FromRole="Content" ToRole="ContentType" />
           <NavigationProperty Name="MenuItem" Relationship="CuteCMSDBModel.FK_Contents_MenuItems" FromRole="Content" ToRole="MenuItem" />
           <NavigationProperty Name="Status" Relationship="CuteCMSDBModel.FK_Contents_Statuses" FromRole="Content" ToRole="CMSStatus" />
-          <NavigationProperty Name="ContentLists" Relationship="CuteCMSDBModel.FK_ContentLists_Contents" FromRole="Content" ToRole="ContentList" />
           <NavigationProperty Name="ContentGalleries" Relationship="CuteCMSDBModel.FK_ContentGalleries_Contents" FromRole="Content" ToRole="ContentGallery" />
           <Property Name="TenantId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Language" Relationship="CuteCMSDBModel.FK_Contents_Languages" FromRole="Content" ToRole="Language" />
+          <NavigationProperty Name="ContentLists" Relationship="CuteCMSDBModel.FK_ContentLists_Contents" FromRole="Content" ToRole="ContentList" />
         </EntityType>
         <Association Name="FK_Contents_ContentTypes">
           <End Type="CuteCMSDBModel.ContentType" Role="ContentType" Multiplicity="1" />
@@ -1467,43 +1452,6 @@
             </Principal>
             <Dependent Role="Content">
               <PropertyRef Name="StatusId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="ContentList">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-          <Property Name="MainContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ContentId" Type="Int32" Nullable="false" />
-          <Property Name="Ordinal" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Content" Relationship="CuteCMSDBModel.FK_ContentLists_Contents" FromRole="ContentList" ToRole="Content" />
-          <NavigationProperty Name="ListItems" Relationship="CuteCMSDBModel.FK_ListItems_ContentLists" FromRole="ContentList" ToRole="ListItem" />
-        </EntityType>
-        <Association Name="FK_ContentLists_Contents">
-          <End Type="CuteCMSDBModel.Content" Role="Content" Multiplicity="1" />
-          <End Type="CuteCMSDBModel.ContentList" Role="ContentList" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Content">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ContentList">
-              <PropertyRef Name="ContentId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ListItems_ContentLists">
-          <End Type="CuteCMSDBModel.ContentList" Role="ContentList" Multiplicity="1" />
-          <End Type="CuteCMSDBModel.ListItem" Role="ListItem" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ContentList">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ListItem">
-              <PropertyRef Name="ContentListId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1793,6 +1741,62 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="ContentList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="MainContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContentId" Type="Int32" Nullable="false" />
+          <Property Name="Ordinal" Type="Int32" Nullable="false" />
+          <Property Name="Visible" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Content" Relationship="CuteCMSDBModel.FK_ContentLists_Contents" FromRole="ContentList" ToRole="Content" />
+          <NavigationProperty Name="ListItems" Relationship="CuteCMSDBModel.FK_ListItems_ContentLists" FromRole="ContentList" ToRole="ListItem" />
+        </EntityType>
+        <EntityType Name="ListItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Class" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FileName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FilePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ThumbName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ThumbPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ordinal" Type="Int32" Nullable="false" />
+          <Property Name="Visible" Type="Boolean" Nullable="false" />
+          <Property Name="ContentListId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ContentList" Relationship="CuteCMSDBModel.FK_ListItems_ContentLists" FromRole="ListItem" ToRole="ContentList" />
+        </EntityType>
+        <Association Name="FK_ContentLists_Contents">
+          <End Type="CuteCMSDBModel.Content" Role="Content" Multiplicity="1" />
+          <End Type="CuteCMSDBModel.ContentList" Role="ContentList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Content">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentList">
+              <PropertyRef Name="ContentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ListItems_ContentLists">
+          <End Type="CuteCMSDBModel.ContentList" Role="ContentList" Multiplicity="1" />
+          <End Type="CuteCMSDBModel.ListItem" Role="ListItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentList">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ListItem">
+              <PropertyRef Name="ContentListId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1815,23 +1819,6 @@
                 <ScalarProperty Name="ContentTypeId" ColumnName="ContentTypeId" />
                 <ScalarProperty Name="Value" ColumnName="Value" />
                 <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ListItems">
-            <EntityTypeMapping TypeName="CuteCMSDBModel.ListItem">
-              <MappingFragment StoreEntitySet="ListItems">
-                <ScalarProperty Name="ContentListId" ColumnName="ContentListId" />
-                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
-                <ScalarProperty Name="ThumbPath" ColumnName="ThumbPath" />
-                <ScalarProperty Name="ThumbName" ColumnName="ThumbName" />
-                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
-                <ScalarProperty Name="FileName" ColumnName="FileName" />
-                <ScalarProperty Name="Class" ColumnName="Class" />
-                <ScalarProperty Name="Url" ColumnName="Url" />
-                <ScalarProperty Name="Body" ColumnName="Body" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -2033,18 +2020,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ContentLists">
-            <EntityTypeMapping TypeName="CuteCMSDBModel.ContentList">
-              <MappingFragment StoreEntitySet="ContentLists">
-                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
-                <ScalarProperty Name="ContentId" ColumnName="ContentId" />
-                <ScalarProperty Name="MainContent" ColumnName="MainContent" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Code" ColumnName="Code" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ContentGalleries">
             <EntityTypeMapping TypeName="CuteCMSDBModel.ContentGallery">
               <MappingFragment StoreEntitySet="ContentGalleries">
@@ -2107,6 +2082,37 @@
                 <ScalarProperty Name="FlagCode" ColumnName="FlagCode" />
                 <ScalarProperty Name="CultureName" ColumnName="CultureName" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContentLists">
+            <EntityTypeMapping TypeName="CuteCMSDBModel.ContentList">
+              <MappingFragment StoreEntitySet="ContentLists">
+                <ScalarProperty Name="Visible" ColumnName="Visible" />
+                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+                <ScalarProperty Name="ContentId" ColumnName="ContentId" />
+                <ScalarProperty Name="MainContent" ColumnName="MainContent" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ListItems">
+            <EntityTypeMapping TypeName="CuteCMSDBModel.ListItem">
+              <MappingFragment StoreEntitySet="ListItems">
+                <ScalarProperty Name="ContentListId" ColumnName="ContentListId" />
+                <ScalarProperty Name="Visible" ColumnName="Visible" />
+                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+                <ScalarProperty Name="ThumbPath" ColumnName="ThumbPath" />
+                <ScalarProperty Name="ThumbName" ColumnName="ThumbName" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

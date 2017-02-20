@@ -36,7 +36,8 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
         [Display(Name = "Ordinal", ResourceType = typeof(Resources.Resources))]
         public int Ordinal { get; set; }
-
+        [Display(Name = "Visible", ResourceType = typeof(Resources.Resources))]
+        public bool Visible { get; set; }
         public virtual Content Content { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ListItem> ListItems { get; set; }

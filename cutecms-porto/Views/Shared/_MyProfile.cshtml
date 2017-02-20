@@ -14,7 +14,7 @@
         <div class="thumbnail text-center">
             @if (employee != null)
             {
-                <img class="img-responsive" alt="" src="@(!File.Exists(Server.MapPath(employee.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : employee.PersonalPhotoPath)">
+                <img class="img-responsive" alt="" src="@(!File.Exists(Server.MapPath(employee?.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : employee.PersonalPhotoPath)">
                 string personalTitle = (employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : employee.PersonalTitle.Code;
                 <h4>@personalTitle @employee.FullName</h4>
                 foreach (var item in employee.EmpInDepts)

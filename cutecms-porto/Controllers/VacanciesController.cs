@@ -1,5 +1,4 @@
 ﻿using cutecms_porto.Areas.Config.Models.DBModel;
-using cutecms_porto.Areas.Identity.Models.DBModel;
 using cutecms_porto.Areas.RMS.Models;
 using cutecms_porto.Areas.RMS.Models.DBModel;
 using cutecms_porto.Helpers;

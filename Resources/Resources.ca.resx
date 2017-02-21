@@ -876,9 +876,6 @@
   <data name="MarginDirClass" xml:space="preserve">
     <value>marge-esquerra-10</value>
   </data>
-  <data name="GlyphiconMenu" xml:space="preserve">
-    <value>glyphicon-menú-dret</value>
-  </data>
   <data name="AllowedAttachmentExtensions" xml:space="preserve">
     <value>Un o més attachmetns no són vàlids: només. PDF. DOCX. DOCUMENT. PNG. JPG. S'admeten fitxers JPEG.</value>
   </data>

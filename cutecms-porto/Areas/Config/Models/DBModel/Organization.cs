@@ -20,6 +20,7 @@ namespace cutecms_porto.Areas.Config.Models.DBModel
         public Organization()
         {
             this.Contacts = new HashSet<Contact>();
+            this.SocialNetworks = new HashSet<SocialNetwork>();
         }
 
         public int Id { get; set; }
@@ -61,18 +62,6 @@ namespace cutecms_porto.Areas.Config.Models.DBModel
         public Nullable<decimal> Latitude { get; set; }
         [Display(Name = "MetaDescription", ResourceType = typeof(Resources.Resources))]
         public string MetaDescription { get; set; }
-        [Display(Name = "FacebookUrl", ResourceType = typeof(Resources.Resources))]
-        public string FacebookUrl { get; set; }
-        [Display(Name = "TwitterUrl", ResourceType = typeof(Resources.Resources))]
-        public string TwitterUrl { get; set; }
-        [Display(Name = "YouTubeUrl", ResourceType = typeof(Resources.Resources))]
-        public string YouTubeUrl { get; set; }
-        [Display(Name = "GooglePlusUrl", ResourceType = typeof(Resources.Resources))]
-        public string GooglePlusUrl { get; set; }
-        [Display(Name = "LinkedInUrl", ResourceType = typeof(Resources.Resources))]
-        public string LinkedInUrl { get; set; }
-        [Display(Name = "RSS", ResourceType = typeof(Resources.Resources))]
-        public string RSS { get; set; }
         [Display(Name = "WebDevelopedBy", ResourceType = typeof(Resources.Resources))]
         public string Developer { get; set; }
         [Display(Name = "DeveloperURL", ResourceType = typeof(Resources.Resources))]
@@ -98,5 +87,7 @@ namespace cutecms_porto.Areas.Config.Models.DBModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Contact> Contacts { get; set; }
         public virtual ConfigLanguage Language { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SocialNetwork> SocialNetworks { get; set; }
     }
 }

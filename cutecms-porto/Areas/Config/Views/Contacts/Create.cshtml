@@ -58,7 +58,7 @@
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value=@Resources.Resources.Create class="btn btn-default"/>
+                <input type="submit" value=@Resources.Resources.Create class="btn btn-default" />
             </div>
         </div>
         <div class="form-group">
@@ -69,10 +69,7 @@
     </div>
 }
 <div>
-    @Html.ActionLink(Resources.Resources.BackToList, "Index", new
-{
-    organizationId = ViewBag.OrganizationId
-})
+    @Html.ActionLink(Resources.Resources.BackToList, "Index", new { id = ViewBag.OrganizationId })
 </div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

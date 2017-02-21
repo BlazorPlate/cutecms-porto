@@ -53,7 +53,7 @@ namespace cutecms_porto.Helpers
             Tenant.TenantId = "demo";
             if (HttpRuntime.Cache["Organization"] == null)
             {
-                var organization = configDb.Organizations.Where(o => o.TenantId.Trim().Equals(Tenant.TenantId) && o.IsDefault == true && o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
+                var organization = configDb.Organizations.Include("SocialNetworks").Where(o => o.TenantId.Trim().Equals(Tenant.TenantId) && o.IsDefault == true && o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
                 HttpRuntime.Cache.Insert("Organization", organization, null, DateTime.Now.AddYears(1), Cache.NoSlidingExpiration);
             }
             base.OnActionExecuting(filterContext);

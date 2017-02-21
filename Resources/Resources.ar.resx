@@ -456,9 +456,6 @@
   <data name="Gender" xml:space="preserve">
     <value>الجنس</value>
   </data>
-  <data name="GlyphiconMenu" xml:space="preserve">
-    <value>glyphicon-menu-left</value>
-  </data>
   <data name="GooglePlusUrl" xml:space="preserve">
     <value>رابط جوجل بلص</value>
   </data>
@@ -1499,5 +1496,11 @@
   </data>
   <data name="Careers" xml:space="preserve">
     <value>الوظائف</value>
+  </data>
+  <data name="SocialNetwork" xml:space="preserve">
+    <value>شبكة اجتماعية</value>
+  </data>
+  <data name="SocialNetworks" xml:space="preserve">
+    <value>الشبكات الاجتماعية</value>
   </data>
 </root>

@@ -1,12 +1,10 @@
 ﻿@model cutecms_porto.Areas.Identity.Models.DBModel.Employee
 @using cutecms_porto.Areas.Identity.Models;
-@using cutecms_porto.Areas.Identity.Models.DBModel
 @using System.Threading;
 @{
     ViewBag.MainTitle = Resources.Resources.Employee;
     ViewBag.Title = Resources.Resources.Delete;
     ApplicationDbContext _db = new ApplicationDbContext();
-    IdentityEntities identityDb = new IdentityEntities();
 }
 <h3>@Resources.Resources.DeleteConfirmation</h3>
 <div>
@@ -44,7 +42,7 @@
                 @Html.DisplayNameFor(model => model.PersonalTitleId)
             </dt>
             <dd>
-                @{ var personalTitle = identityDb.IdentityPersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.PersonalTitleId == Model.PersonalTitleId).FirstOrDefault() != null ? identityDb.IdentityPersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.PersonalTitleId == Model.PersonalTitleId).FirstOrDefault().Value : identityDb.IdentityPersonalTitles.Where(i => i.Id == Model.PersonalTitleId).FirstOrDefault().Code;}
+                @{ var personalTitle = Model.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.PersonalTitleId == Model.PersonalTitleId).FirstOrDefault()?.Value ?? Model.PersonalTitle.Code;}
                 @personalTitle
             </dd>
             <dt>

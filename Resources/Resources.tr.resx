@@ -876,9 +876,6 @@
   <data name="MarginDirClass" xml:space="preserve">
     <value>kenar boşluğu-sol-10</value>
   </data>
-  <data name="GlyphiconMenu" xml:space="preserve">
-    <value>glyphicon-menü-sağ</value>
-  </data>
   <data name="AllowedAttachmentExtensions" xml:space="preserve">
     <value>Bir veya daha fazla attachmetns geçersiz: sadece. PDF. DOCX. DOKTOR. PNG. JPG. JPEG dosyalarına izin verilir.</value>
   </data>

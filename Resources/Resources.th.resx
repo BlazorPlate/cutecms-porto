@@ -876,9 +876,6 @@
   <data name="MarginDirClass" xml:space="preserve">
     <value>ขอบ-ซ้าย-10</value>
   </data>
-  <data name="GlyphiconMenu" xml:space="preserve">
-    <value>glyphicon เมนูขวา</value>
-  </data>
   <data name="AllowedAttachmentExtensions" xml:space="preserve">
     <value>Attachmetns อย่าง น้อยหนึ่งรายการไม่ถูกต้อง: เท่านั้น PDF DOCX เอกสาร PNG JPG ไฟล์ JPEG ได้</value>
   </data>

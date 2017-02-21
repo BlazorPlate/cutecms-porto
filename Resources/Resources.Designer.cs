@@ -1627,15 +1627,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to glyphicon-menu-right.
-        /// </summary>
-        public static string GlyphiconMenu {
-            get {
-                return ResourceManager.GetString("GlyphiconMenu", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Go to CuteCMS.
         /// </summary>
         public static string GoCuteCMS {
@@ -3576,6 +3567,24 @@ namespace Resources {
         public static string SMTPSettings {
             get {
                 return ResourceManager.GetString("SMTPSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Social network.
+        /// </summary>
+        public static string SocialNetwork {
+            get {
+                return ResourceManager.GetString("SocialNetwork", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Social networks.
+        /// </summary>
+        public static string SocialNetworks {
+            get {
+                return ResourceManager.GetString("SocialNetworks", resourceCulture);
             }
         }
         

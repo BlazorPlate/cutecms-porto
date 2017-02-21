@@ -315,7 +315,7 @@ namespace cutecms_porto.Areas.RMS.Models
         public int ProgramId { get; set; }
 
         [Display(Name = "Available", ResourceType = typeof(Resources.Resources))]
-        public int Available { get; set; }
+        public Nullable<int> Available { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
         [Display(Name = "Degree", ResourceType = typeof(Resources.Resources))]

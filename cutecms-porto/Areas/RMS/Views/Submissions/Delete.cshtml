@@ -1,4 +1,5 @@
-﻿@model cutecms_porto.Areas.RMS.Models.DBModel.Submission
+﻿@using System.Threading
+@model cutecms_porto.Areas.RMS.Models.DBModel.Submission
 @{
     ViewBag.MainTitle = Resources.Resources.Submission;
     ViewBag.Title = Resources.Resources.Delete;
@@ -7,28 +8,29 @@
 <div>
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Vacancy.Id)
+            @Html.DisplayNameFor(model => model.Id)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Vacancy.Id)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.CoverLetter)
-        </dt>
-        <dd>
-            @Html.Raw(HttpUtility.HtmlDecode(Model.CoverLetter))
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.SubmissionDate)
-        </dt>
-        <dd>
-            @Html.DisplayNameFor(model => model.SubmissionDate)
+            @Html.DisplayFor(model => model.Id)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Applicant.FullName)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Applicant.FullName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Applicant.GenderId)
+        </dt>
+        <dd>
+            @{ var gender = Model.Applicant.Gender.GenderTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.GenderId == Model.Applicant.GenderId).FirstOrDefault()?.Value ?? Model.Applicant.Gender.Code;}
+            @gender
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Applicant.DOB)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Applicant.DOB)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Applicant.Mobile)
@@ -43,17 +45,42 @@
             @Html.DisplayFor(model => model.Applicant.Email)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Applicant.DOB)
+            @Html.DisplayNameFor(model => model.CoverLetter)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Applicant.DOB)
+            @Html.Raw(HttpUtility.HtmlDecode(Model.CoverLetter))
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SubmissionDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SubmissionDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Applicant.ResumeFilePath)
+        </dt>
+        <dd>
+            @Html.ActionLink(Resources.Resources.Download, "Download", new { FilePath = Model.Applicant.ResumeFilePath, FileName = Model.Applicant.ResumeFileName })
+        </dd>
+        <dd>
+            <br />
+        </dd>
+        <dt>
+            @Resources.Resources.Attachments
+        </dt>
+        <dd>
+            @foreach (var item in Model.Applicant.Attachments)
+            {
+                @Html.ActionLink(Resources.Resources.Download, "Download", new { FilePath = item.FilePath, FileName = @item.FileName })
+                <br />
+            }
         </dd>
     </dl>
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
         <div class="form-actions no-color">
-             <input type="submit" value=@Resources.Resources.Delete class="btn btn-primary" /> |
+            <input type="submit" value=@Resources.Resources.Delete class="btn btn-primary" /> |
             @Html.ActionLink(Resources.Resources.BackToList, "Index")
         </div>
     }

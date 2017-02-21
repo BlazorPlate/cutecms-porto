@@ -876,9 +876,6 @@
   <data name="MarginDirClass" xml:space="preserve">
     <value>缘-左-10</value>
   </data>
-  <data name="GlyphiconMenu" xml:space="preserve">
-    <value>glyphicon-菜单-向右</value>
-  </data>
   <data name="AllowedAttachmentExtensions" xml:space="preserve">
     <value>一个或多个 attachmetns 是无效︰ 只。PDF。DOCX。DOC。PNG。JPG。允许 JPEG 文件。</value>
   </data>

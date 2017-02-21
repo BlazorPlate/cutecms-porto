@@ -161,7 +161,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                 throw new HttpException(400, "Bad Request");
             }
             List<string> roles = GetUserRoles();
-            Content content = db.Contents.Include("Language").Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && (roles.Any(r => c.RoleVID.Equals(r)) || c.RoleVID == null) && c.Id == id).FirstOrDefault();
+            Content content = db.Contents.Include("Language").Include("Status.StatusTerms.Language").Include("Status.StatusTerms").Include("Status.StatusTerms.Language").Include("ContentType").Include("ContentType.ContentTypeTerms").Include("ContentType.ContentTypeTerms.Language").Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && (roles.Any(r => c.RoleVID.Equals(r)) || c.RoleVID == null) && c.Id == id).FirstOrDefault();
             if (content == null)
             {
                 throw new HttpException(404, "Page Not Found");
@@ -452,7 +452,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                 throw new HttpException(400, "Bad Request");
             }
             List<string> roles = GetUserRoles();
-            Content content = db.Contents.Include("Language").Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && (roles.Any(r => c.RoleVID.Equals(r)) || c.RoleVID == null) && c.Id == id).FirstOrDefault();
+            Content content = db.Contents.Include("Language").Include("Status.StatusTerms.Language").Include("Status.StatusTerms").Include("Status.StatusTerms.Language").Include("ContentType").Include("ContentType.ContentTypeTerms").Include("ContentType.ContentTypeTerms.Language").Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && (roles.Any(r => c.RoleVID.Equals(r)) || c.RoleVID == null) && c.Id == id).FirstOrDefault();
             if (content == null)
             {
                 throw new HttpException(404, "Page Not Found");

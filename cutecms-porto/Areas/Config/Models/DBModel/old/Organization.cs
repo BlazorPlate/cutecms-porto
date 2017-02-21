@@ -20,6 +20,7 @@ namespace cutecms_porto.Areas.Config.Models.DBModel
         public Organization()
         {
             this.Contacts = new HashSet<Contact>();
+            this.SocialNetworks = new HashSet<SocialNetwork>();
         }
 
         public int Id { get; set; }
@@ -98,5 +99,7 @@ namespace cutecms_porto.Areas.Config.Models.DBModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Contact> Contacts { get; set; }
         public virtual ConfigLanguage Language { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SocialNetwork> SocialNetworks { get; set; }
     }
 }

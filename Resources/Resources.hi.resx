@@ -876,9 +876,6 @@
   <data name="MarginDirClass" xml:space="preserve">
     <value>मार्जिन-बाएँ-10</value>
   </data>
-  <data name="GlyphiconMenu" xml:space="preserve">
-    <value>glyphicon-मेनू-दाएँ</value>
-  </data>
   <data name="AllowedAttachmentExtensions" xml:space="preserve">
     <value>Attachmetns एक या अधिक अमान्य हैं: केवल। PDF. DOCX. डॉक्टर। PNG. JPG. JPEG फ़ाइलों को अनुमति है।</value>
   </data>

@@ -1,12 +1,16 @@
 ﻿@model cutecms_porto.Areas.RMS.Models.DBModel.Vacancy
-@using cutecms_porto.Areas.RMS.Models.DBModel
 @using System.Threading
 @{
     ViewBag.MainTitle = Resources.Resources.Vacancy;
     ViewBag.Title = Resources.Resources.Details;
-    RMSEntities rmsDb = new RMSEntities();
 }
 <dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.LanguageId)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Language.Name)
+    </dd>
     <dt>
         @Html.DisplayNameFor(model => model.Code)
     </dt>
@@ -53,21 +57,21 @@
         @Html.DisplayNameFor(model => model.JobTypeId)
     </dt>
     <dd>
-        @{ var jobType = rmsDb.JobTypeTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.JobTypeId == Model.JobTypeId).FirstOrDefault()?.Value ?? rmsDb.JobTypes.Where(i => i.Id == Model.JobTypeId).FirstOrDefault().Code;}
+        @{ var jobType = Model.JobType.JobTypeTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.JobTypeId == Model.JobTypeId).FirstOrDefault()?.Value ?? Model.JobType.Code;}
         @jobType
     </dd>
     <dt>
         @Html.DisplayNameFor(model => model.ProgramId)
     </dt>
     <dd>
-        @{ var program = rmsDb.RMSProgramTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.ProgramId == Model.ProgramId).FirstOrDefault()?.Value ?? rmsDb.RMSPrograms.Where(i => i.Id == Model.ProgramId).FirstOrDefault().Code;}
+        @{ var program = Model.Program.ProgramTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.ProgramId == Model.ProgramId).FirstOrDefault()?.Value ?? Model.Program.Code;}
         @program
     </dd>
     <dt>
         @Html.DisplayNameFor(model => model.StatusId)
     </dt>
     <dd>
-        @{ var status = rmsDb.RMSStatusTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.StatusId == Model.StatusId).FirstOrDefault()?.Value ?? rmsDb.Statuses.Where(i => i.Id == Model.StatusId).FirstOrDefault().Code;}
+        @{ var status = Model.Status.StatusTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.StatusId == Model.StatusId).FirstOrDefault()?.Value ?? Model.Status.Code;}
         @status
     </dd>
     <dt>

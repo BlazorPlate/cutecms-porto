@@ -876,9 +876,6 @@
   <data name="MarginDirClass" xml:space="preserve">
     <value>margem esquerda-10</value>
   </data>
-  <data name="GlyphiconMenu" xml:space="preserve">
-    <value>glyphicon-menu-direito</value>
-  </data>
   <data name="AllowedAttachmentExtensions" xml:space="preserve">
     <value>Um ou mais attachmetns são inválidos: somente. PDF. DOCX. DOUTOR. PNG. JPG. Arquivos JPEG são permitidos.</value>
   </data>

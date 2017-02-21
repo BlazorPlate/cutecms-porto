@@ -876,9 +876,6 @@
   <data name="MarginDirClass" xml:space="preserve">
     <value>Margin-left-10</value>
   </data>
-  <data name="GlyphiconMenu" xml:space="preserve">
-    <value>glyphicon-menu pravý</value>
-  </data>
   <data name="AllowedAttachmentExtensions" xml:space="preserve">
     <value>Jeden nebo více attachmetns jsou neplatné: pouze. PDF. DOCX. DOKTORE. PNG. JPG. Soubory JPEG jsou povoleny.</value>
   </data>

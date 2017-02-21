@@ -876,9 +876,6 @@
   <data name="MarginDirClass" xml:space="preserve">
     <value>margin-left-10</value>
   </data>
-  <data name="GlyphiconMenu" xml:space="preserve">
-    <value>glyphicon-menu-phải</value>
-  </data>
   <data name="AllowedAttachmentExtensions" xml:space="preserve">
     <value>Một hoặc nhiều attachmetns là không hợp lệ: chỉ. PDF. DOCX. BÁC SĨ. PNG. JPG. JPEG tập tin được phép.</value>
   </data>

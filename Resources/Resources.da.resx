@@ -876,9 +876,6 @@
   <data name="MarginDirClass" xml:space="preserve">
     <value>margin-venstre-10</value>
   </data>
-  <data name="GlyphiconMenu" xml:space="preserve">
-    <value>glyphicon-menu-højre</value>
-  </data>
   <data name="AllowedAttachmentExtensions" xml:space="preserve">
     <value>En eller flere attachmetns er ugyldige: kun. PDF. DOCX. DOC. PNG. JPG. JPEG-filer er tilladt.</value>
   </data>

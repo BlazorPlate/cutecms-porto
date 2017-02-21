@@ -7,29 +7,12 @@
 <div>
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.TenantId)
+            @Html.DisplayNameFor(model => model.LanguageId)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TenantId)
+            @Html.DisplayFor(model => model.Language.Name)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsTranslated)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsTranslated)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TranslationId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TranslationId)
-        </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Code)
         </dt>
@@ -143,62 +126,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.MetaDescription)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MetaDescription)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FacebookUrl)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FacebookUrl)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TwitterUrl)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TwitterUrl)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.YouTubeUrl)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.YouTubeUrl)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.GooglePlusUrl)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.GooglePlusUrl)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LinkedInUrl)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LinkedInUrl)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RSS)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RSS)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Developer)
         </dt>
 
@@ -253,15 +180,6 @@
         <dd>
             @Html.DisplayFor(model => model.IsDefault)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Language.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Language.Name)
-        </dd>
-
     </dl>
 </div>
 <p>

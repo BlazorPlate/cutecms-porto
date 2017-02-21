@@ -876,9 +876,6 @@
   <data name="MarginDirClass" xml:space="preserve">
     <value>حاشیه چپ 10</value>
   </data>
-  <data name="GlyphiconMenu" xml:space="preserve">
-    <value>glyphicon منوی راست</value>
-  </data>
   <data name="AllowedAttachmentExtensions" xml:space="preserve">
     <value>یک یا چند attachmetns نامعتبر هستند: تنها. PDF. DOCX. توضیحات. فعلی،. JPG،. فایل های JPEG مجاز است.</value>
   </data>

@@ -53,10 +53,10 @@ namespace cutecms_porto.Areas.Config.Controllers
         }
 
         // GET: CMS/Contacts
-        public ActionResult Index(int? organizationId)
+        public ActionResult Index(int? id)
         {
-            var contacts = db.Contacts.Include(c => c.PersonalTitle).Include(c => c.Organization).Where(c => c.OrganizationId == organizationId);
-            ViewBag.OrganizationId = organizationId;
+            var contacts = db.Contacts.Include(c => c.PersonalTitle).Include(c => c.Organization).Where(c => c.OrganizationId == id);
+            ViewBag.OrganizationId = id;
             return View(contacts.ToList());
         }
 
@@ -67,7 +67,7 @@ namespace cutecms_porto.Areas.Config.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            Contact contact = db.Contacts.Find(id);
+            Contact contact = db.Contacts.Include("Department").Include("Department.DepartmentTerms").Include("Department.DepartmentTerms.Language").Where(c => c.Id == id).FirstOrDefault();
             if (contact == null)
             {
                 throw new HttpException(404, "Page Not Found");
@@ -77,16 +77,16 @@ namespace cutecms_porto.Areas.Config.Controllers
         }
 
         // GET: CMS/Contacts/Create
-        public ActionResult Create(int? organizationId)
+        public ActionResult Create(int? id)
         {
-            if (organizationId == null)
+            if (id == null)
             {
                 throw new HttpException(400, "Bad Request");
             }
             ViewBag.PersonalTitleId = new SelectList(TermsHelper.PersonalTitles(), "PersonalTitleId", "Value");
             ViewBag.DepartmentId = new SelectList(GetDepartmentsServerSide(), "Id", "Name");
-            ViewBag.OrganizationId = organizationId;
-            ViewBag.OrganizationName = db.Organizations.Find(organizationId).Name;
+            ViewBag.OrganizationId = id;
+            ViewBag.OrganizationName = db.Organizations.Find(id).Name;
             return View();
         }
 
@@ -100,7 +100,7 @@ namespace cutecms_porto.Areas.Config.Controllers
             {
                 db.Contacts.Add(contact);
                 db.SaveChanges();
-                return RedirectToAction("Index", new { organizationId = contact.OrganizationId });
+                return RedirectToAction("Index", new { id = contact.OrganizationId });
             }
             ViewBag.PersonalTitleId = new SelectList(TermsHelper.PersonalTitles(), "PersonalTitleId", "Value", contact.PersonalTitleId);
             ViewBag.DepartmentId = new SelectList(GetDepartmentsServerSide(), "Id", "Name", contact.DepartmentId);
@@ -138,7 +138,7 @@ namespace cutecms_porto.Areas.Config.Controllers
             {
                 db.Entry(contact).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index", new { organizationId = contact.OrganizationId });
+                return RedirectToAction("Index", new { id = contact.OrganizationId });
             }
             ViewBag.PersonalTitleId = new SelectList(TermsHelper.PersonalTitles(), "PersonalTitleId", "Value", contact.PersonalTitleId);
             ViewBag.DepartmentId = new SelectList(GetDepartmentsServerSide(), "Id", "Name", contact.DepartmentId);
@@ -154,7 +154,7 @@ namespace cutecms_porto.Areas.Config.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            Contact contact = db.Contacts.Find(id);
+            Contact contact = db.Contacts.Include("Department").Include("Department.DepartmentTerms").Include("Department.DepartmentTerms.Language").Where(c => c.Id == id).FirstOrDefault();
             if (contact == null)
             {
                 throw new HttpException(404, "Page Not Found");
@@ -171,7 +171,7 @@ namespace cutecms_porto.Areas.Config.Controllers
             Contact contact = db.Contacts.Find(id);
             db.Contacts.Remove(contact);
             db.SaveChanges();
-            return RedirectToAction("Index", new { organizationId = contact.OrganizationId });
+            return RedirectToAction("Index", new { id = contact.OrganizationId });
         }
 
         protected override void Dispose(bool disposing)

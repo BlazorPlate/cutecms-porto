@@ -876,9 +876,6 @@
   <data name="MarginDirClass" xml:space="preserve">
     <value>margin-kiri-10</value>
   </data>
-  <data name="GlyphiconMenu" xml:space="preserve">
-    <value>kanan glyphicon menu</value>
-  </data>
   <data name="AllowedAttachmentExtensions" xml:space="preserve">
     <value>Attachmetns satu atau lebih adalah tidak sah: sahaja. PDF. DOCX. DOC. PNG. JPG. Fail JPEG dibenarkan.</value>
   </data>

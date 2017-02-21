@@ -1,5 +1,5 @@
-﻿@model cutecms_porto.Areas.RMS.Models.DBModel.Submission
-@using System.Threading
+﻿@using System.Threading
+@model cutecms_porto.Areas.RMS.Models.DBModel.Submission
 @{
     ViewBag.MainTitle = Resources.Resources.Submission;
     ViewBag.Title = Resources.Resources.Details;
@@ -22,7 +22,8 @@
             @Html.DisplayNameFor(model => model.Applicant.GenderId)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Applicant.Gender.GenderTerms.Where(g => g.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && g.GenderId == Model.Applicant.GenderId).FirstOrDefault().Value)
+            @{ var gender = Model.Applicant.Gender.GenderTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.GenderId == Model.Applicant.GenderId).FirstOrDefault()?.Value ?? Model.Applicant.Gender.Code;}
+            @gender
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Applicant.DOB)

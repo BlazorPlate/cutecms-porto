@@ -467,6 +467,7 @@
     <Compile Include="Areas\Config\Controllers\OrganizationsController.cs" />
     <Compile Include="Areas\Config\Controllers\PhoneNumbersController.cs" />
     <Compile Include="Areas\Config\Controllers\SMTPSettingsController.cs" />
+    <Compile Include="Areas\Config\Controllers\SocialNetworksController.cs" />
     <Compile Include="Areas\Config\Controllers\StatisticsController.cs" />
     <Compile Include="Areas\CMS\Controllers\TagsController.cs" />
     <Compile Include="Areas\CMS\Controllers\TagTermsController.cs" />
@@ -601,6 +602,9 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Config\Models\DBModel\SMTPSetting.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Config\Models\DBModel\SocialNetwork.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Config\Models\DBModel\Statistic.cs">
@@ -4814,6 +4818,11 @@
     <Content Include="Areas\CMS\Views\CategoryTerms\Index.cshtml" />
     <Content Include="assets\porto\vendor\style-switcher\bootstrap-colorpicker\css\bootstrap-colorpicker.css.map" />
     <Content Include="assets\porto\vendor\style-switcher\bootstrap-colorpicker\css\bootstrap-colorpicker.min.css.map" />
+    <Content Include="Areas\Config\Views\SocialNetworks\Create.cshtml" />
+    <Content Include="Areas\Config\Views\SocialNetworks\Delete.cshtml" />
+    <Content Include="Areas\Config\Views\SocialNetworks\Details.cshtml" />
+    <Content Include="Areas\Config\Views\SocialNetworks\Edit.cshtml" />
+    <Content Include="Areas\Config\Views\SocialNetworks\Index.cshtml" />
     <None Include="assets\porto\vendor\validation\jquery.validate-vsdoc.js" />
     <Content Include="assets\porto\vendor\style-switcher\bootstrap-colorpicker\css\bootstrap-colorpicker.css" />
     <Content Include="assets\porto\vendor\style-switcher\bootstrap-colorpicker\css\bootstrap-colorpicker.min.css" />

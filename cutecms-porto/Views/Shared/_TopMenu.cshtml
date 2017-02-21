@@ -29,8 +29,8 @@
     </ul>
 </nav>
 <ul class="header-social-icons social-icons hidden-xs">
-    <li class="social-icons-facebook"><a href="@(organization?.FacebookUrl)" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-    <li class="social-icons-twitter"><a href="@(organization?.TwitterUrl)" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-    <li class="social-icons-googleplus"><a href="@(organization?.LinkedInUrl)" target="_blank" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
-    <li class="social-icons-linkedin"><a href="@(organization?.GooglePlusUrl)" target="_blank" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+    @foreach (var item in organization.SocialNetworks)
+    {
+        <li class="social-icons-linkedin"><a href="@item.Url" target="_blank" title="@item.Name"><i class="fa @item.CssClass"></i></a></li>
+    }
 </ul>

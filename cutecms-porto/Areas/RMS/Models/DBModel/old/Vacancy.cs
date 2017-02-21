@@ -49,7 +49,7 @@ namespace cutecms_porto.Areas.RMS.Models.DBModel
         [Display(Name = "Program", ResourceType = typeof(Resources.Resources))]
         public int ProgramId { get; set; }
         [Display(Name = "Available", ResourceType = typeof(Resources.Resources))]
-        public int Available { get; set; }
+        public Nullable<int> Available { get; set; }
         [Display(Name = "Notes", ResourceType = typeof(Resources.Resources))]
         public string Notes { get; set; }
         [Display(Name = "Role", ResourceType = typeof(Resources.Resources))]

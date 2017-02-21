@@ -876,9 +876,6 @@
   <data name="MarginDirClass" xml:space="preserve">
     <value>margin-left-10</value>
   </data>
-  <data name="GlyphiconMenu" xml:space="preserve">
-    <value>glyphicon-menu-right</value>
-  </data>
   <data name="AllowedAttachmentExtensions" xml:space="preserve">
     <value>One or more attachmetns are invalid: Only .PDF, .DOCX, .DOC, .PNG, .JPG, .JPEG files are allowed.</value>
   </data>
@@ -1499,5 +1496,11 @@
   </data>
   <data name="Careers" xml:space="preserve">
     <value>Careers</value>
+  </data>
+  <data name="SocialNetwork" xml:space="preserve">
+    <value>Social network</value>
+  </data>
+  <data name="SocialNetworks" xml:space="preserve">
+    <value>Social networks</value>
   </data>
 </root>

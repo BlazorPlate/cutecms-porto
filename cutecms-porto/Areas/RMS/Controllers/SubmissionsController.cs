@@ -91,7 +91,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            Submission submission = db.Submissions.Include("Applicant").Include("Applicant.Attachments").Where(s => s.Id == id).FirstOrDefault();
+            Submission submission = db.Submissions.Include("Applicant").Include("Applicant.Gender").Include("Applicant.Gender.GenderTerms").Include("Applicant.Gender.GenderTerms.Language").Include("Applicant.Attachments").Where(s => s.Id == id).FirstOrDefault();
             if (submission == null)
             {
                 throw new HttpException(404, "Page Not Found");
@@ -107,7 +107,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            Submission submission = db.Submissions.Include("Applicant").Include("Applicant.Attachments").Where(s => s.Id == id).FirstOrDefault();
+            Submission submission = db.Submissions.Include("Applicant").Include("Applicant.Gender").Include("Applicant.Gender.GenderTerms").Include("Applicant.Gender.GenderTerms.Language").Include("Applicant.Attachments").Where(s => s.Id == id).FirstOrDefault();
             if (submission == null)
             {
                 throw new HttpException(404, "Page Not Found");

@@ -23,7 +23,7 @@ namespace cutecms_porto.Areas.Config.Controllers
         {
             ViewBag.TranslationId = id;
             ViewBag.IsDefault = isDefault;
-            var organizations = db.Organizations.Include(o => o.Language).Where(o => o.TenantId.Trim().Equals(Tenant.TenantId) && o.TranslationId == id).OrderBy(o => o.TranslationId);
+            var organizations = db.Organizations.Include("Language").Where(o => o.TenantId.Trim().Equals(Tenant.TenantId) && o.TranslationId == id).OrderBy(o => o.TranslationId);
             return View(organizations.ToList());
         }
 
@@ -31,7 +31,7 @@ namespace cutecms_porto.Areas.Config.Controllers
         public ActionResult Index(string statusMessage)
         {
             ViewBag.Message = statusMessage;
-            var organizations = db.Organizations.Include(o => o.Language).Where(o => o.TenantId.Trim().Equals(Tenant.TenantId));
+            var organizations = db.Organizations.Include("Language").Where(o => o.TenantId.Trim().Equals(Tenant.TenantId));
             return View(organizations.ToList());
         }
 
@@ -71,7 +71,7 @@ namespace cutecms_porto.Areas.Config.Controllers
         // specific properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,TenantId,LanguageId,IsTranslated,TranslationId,Code,Name,Description,AddressLine1,AddressLine2,City,State,ZIP,Country,Telephone,Fax,Email,Longitude,Latitude,MetaDescription,FacebookUrl,TwitterUrl,YouTubeUrl,GooglePlusUrl,LinkedInUrl,RSS,Developer,DeveloperURL,PrimaryLogoPath,PrimaryLogoName,SecondaryLogoPath,SecondaryLogoName,IsDefault")] Organization organization, int? sWidth, int? sHeight, int? pWidth, int? pHeight)
+        public ActionResult Create([Bind(Include = "Id,TenantId,LanguageId,IsTranslated,TranslationId,Code,Name,Description,AddressLine1,AddressLine2,City,State,ZIP,Country,Telephone,Fax,Email,Longitude,Latitude,MetaDescription,Developer,DeveloperURL,PrimaryLogoPath,PrimaryLogoName,SecondaryLogoPath,SecondaryLogoName,IsDefault")] Organization organization, int? sWidth, int? sHeight, int? pWidth, int? pHeight)
         {
             if (ModelState.IsValid)
             {
@@ -159,7 +159,7 @@ namespace cutecms_porto.Areas.Config.Controllers
         // specific properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,TenantId,LanguageId,IsTranslated,TranslationId,Code,Name,Description,AddressLine1,AddressLine2,City,State,ZIP,Country,Telephone,Fax,Email,Longitude,Latitude,MetaDescription,FacebookUrl,TwitterUrl,YouTubeUrl,GooglePlusUrl,LinkedInUrl,RSS,Developer,DeveloperURL,PrimaryLogoPath,PrimaryLogoName,SecondaryLogoPath,SecondaryLogoName,IsDefault")] Organization organization, int? sWidth, int? sHeight, int? pWidth, int? pHeight)
+        public ActionResult Edit([Bind(Include = "Id,TenantId,LanguageId,IsTranslated,TranslationId,Code,Name,Description,AddressLine1,AddressLine2,City,State,ZIP,Country,Telephone,Fax,Email,Longitude,Latitude,MetaDescription,Developer,DeveloperURL,PrimaryLogoPath,PrimaryLogoName,SecondaryLogoPath,SecondaryLogoName,IsDefault")] Organization organization, int? sWidth, int? sHeight, int? pWidth, int? pHeight)
         {
             if (ModelState.IsValid)
             {

@@ -876,9 +876,6 @@
   <data name="MarginDirClass" xml:space="preserve">
     <value>Rand-links-10</value>
   </data>
-  <data name="GlyphiconMenu" xml:space="preserve">
-    <value>Glyphicon-Menü-rechts</value>
-  </data>
   <data name="AllowedAttachmentExtensions" xml:space="preserve">
     <value>Eine oder mehrere Attachmetns sind ungültig: nur. PDF. DOCX. DOC. PNG. JPG. JPEG-Dateien sind erlaubt.</value>
   </data>

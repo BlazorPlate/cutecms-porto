@@ -1,89 +1,85 @@
 ﻿@using System.Threading
-@using cutecms_porto.Areas.CMS.Models.DBModel
 @model cutecms_porto.Areas.CMS.Models.DBModel.Content
 @{
     ViewBag.MainTitle = Resources.Resources.Content;
     ViewBag.Title = Resources.Resources.Details;
-    CMSEntities db = new CMSEntities();
 }
-<div>
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.LanguageId)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Language.Name)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Code)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Code)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ContentTypeId)
-        </dt>
-        <dd>
-            @{ var contentType = db.ContentTypeTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.ContentTypeId == Model.ContentTypeId).FirstOrDefault() != null ? db.ContentTypeTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.ContentTypeId == Model.ContentTypeId).FirstOrDefault().Value : db.ContentTypes.Where(i => i.Id == Model.ContentTypeId).FirstOrDefault().Code;}
-            @contentType
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.UrlSlug)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.UrlSlug)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Author)
-        </dt>
-        <dd>
-            @Html.Display("Author")
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ModifiedBy)
-        </dt>
-        <dd>
-            @Html.Display("ModifiedBy")
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.CreatedOn)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.CreatedOn)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.PublishedOn)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.PublishedOn)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ModifiedOn)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ModifiedOn)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.IsTranslated)
-        </dt>
-        <dd>
-            @Html.CheckBoxFor(model => model.IsTranslated, new { htmlAttributes = new { @class = "js-switch", @disabled = "disabled" } })
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.StatusId)
-        </dt>
-        <dd>
-            @{ var status = db.CMSStatusTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.StatusId == Model.StatusId).FirstOrDefault() != null ? db.CMSStatusTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.StatusId == Model.StatusId).FirstOrDefault().Value : db.CMSStatuses.Where(i => i.Id == Model.StatusId).FirstOrDefault().Code;}
-            @status
-        </dd>
-    </dl>
-</div>
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.LanguageId)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Language.Name)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Code)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Code)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Title)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Title)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.ContentTypeId)
+    </dt>
+    <dd>
+        @{ var contentType = Model.ContentType.ContentTypeTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.ContentTypeId == Model.ContentTypeId).FirstOrDefault()?.Value ?? Model.ContentType.Code;}
+        @contentType
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.UrlSlug)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.UrlSlug)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Author)
+    </dt>
+    <dd>
+        @Html.Display("Author")
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.ModifiedBy)
+    </dt>
+    <dd>
+        @Html.Display("ModifiedBy")
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.CreatedOn)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.CreatedOn)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.PublishedOn)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.PublishedOn)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.ModifiedOn)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.ModifiedOn)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.IsTranslated)
+    </dt>
+    <dd>
+        @Html.CheckBoxFor(model => model.IsTranslated, new { htmlAttributes = new { @class = "js-switch", @disabled = "disabled" } })
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.StatusId)
+    </dt>
+    <dd>
+        @{ var status = Model.Status.StatusTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.StatusId == Model.StatusId).FirstOrDefault()?.Value ?? Model.Status.Code;}
+        @status
+    </dd>
+</dl>
 <p>
     @Html.ActionLink(Resources.Resources.Edit, "Edit", new { id = Model.Id }) |
     @Html.ActionLink(Resources.Resources.BackToList, "Index")

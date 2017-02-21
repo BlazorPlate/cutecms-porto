@@ -876,9 +876,6 @@
   <data name="MarginDirClass" xml:space="preserve">
     <value>starpība-pa kreisi-10</value>
   </data>
-  <data name="GlyphiconMenu" xml:space="preserve">
-    <value>glyphicon izvēlnes labajā</value>
-  </data>
   <data name="AllowedAttachmentExtensions" xml:space="preserve">
     <value>Vienu vai vairākus attachmetns nav derīgi: tikai. PDF FAILU. DOCX. DOC. PNG. JPG. JPEG faili ir atļauti.</value>
   </data>

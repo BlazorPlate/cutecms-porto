@@ -876,9 +876,6 @@
   <data name="MarginDirClass" xml:space="preserve">
     <value>حاشیہ-بائیں-10</value>
   </data>
-  <data name="GlyphiconMenu" xml:space="preserve">
-    <value>گلیفاکاون-فہرست-دائیں</value>
-  </data>
   <data name="AllowedAttachmentExtensions" xml:space="preserve">
     <value>ایک یا زائد اٹاچمیٹنس ناجائز ہیں: صرف ۔ پی ڈی ایف، ۔ DOCX کی وصولی ۔ ڈاکٹر، ۔ PNG، ۔ JPG. JPEG فائلوں کی اجازت ہے ۔</value>
   </data>

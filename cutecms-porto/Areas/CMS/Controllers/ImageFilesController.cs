@@ -28,7 +28,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
         {
             var pageNumber = page ?? 1; // if no page was specified in the querystring, default to the first page (1)
             var imageFiles = db.ImageFiles.Include("Gallery").Where(i => i.TenantId.Trim().Equals(Tenant.TenantId) && (i.GalleryId == id || id == 0)).OrderBy(i => i.GalleryId).ThenBy(i => i.CreatedOn).ToPagedList(pageNumber, 10); // will only contain 25 products max because of the pageSize
-            ViewBag.GalleryIdFilter = new SelectList(db.Galleries, "Id", "Code");
+            ViewBag.GalleryIdFilter = new SelectList(db.Galleries.Where(g => g.TenantId.Trim().Equals(Tenant.TenantId)), "Id", "Code");
             ViewBag.GalleryId = id;
             return View(imageFiles);
         }
@@ -37,7 +37,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
         public ActionResult Create()
         {
             var imageWithTags = new CreateImageWithTagsViewModel();
-            ViewBag.GalleryId = new SelectList(db.Galleries, "Id", "Code");
+            ViewBag.GalleryId = new SelectList(db.Galleries.Where(g => g.TenantId.Trim().Equals(Tenant.TenantId)), "Id", "Code");
             return View(imageWithTags);
         }
 
@@ -52,7 +52,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                 if (imageWithTagsVM.ImageFiles.Where(file => file != null).Count() == 0)
                 {
                     ModelState.AddModelError("ERROR", Resources.Resources.PleaseUploadImageOfType);
-                    ViewBag.GalleryId = new SelectList(db.Galleries, "Id", "Code", imageWithTagsVM.GalleryId);
+                    ViewBag.GalleryId = new SelectList(db.Galleries.Where(g => g.TenantId.Trim().Equals(Tenant.TenantId)), "Id", "Code", imageWithTagsVM.GalleryId);
                     return View(imageWithTagsVM);
                 }
                 foreach (var file in imageWithTagsVM.ImageFiles)
@@ -97,7 +97,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                 }
                 return RedirectToAction("Index");
             }
-            ViewBag.GalleryId = new SelectList(db.Galleries, "Id", "Code", imageWithTagsVM.GalleryId);
+            ViewBag.GalleryId = new SelectList(db.Galleries.Where(g => g.TenantId.Trim().Equals(Tenant.TenantId)), "Id", "Code", imageWithTagsVM.GalleryId);
             return View(imageWithTagsVM);
         }
 
@@ -114,7 +114,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             {
                 throw new HttpException(404, "Page Not Found");
             }
-            ViewBag.GalleryId = new SelectList(db.Galleries, "Id", "Code", model.ImageFile.GalleryId);
+            ViewBag.GalleryId = new SelectList(db.Galleries.Where(g => g.TenantId.Trim().Equals(Tenant.TenantId)), "Id", "Code", model.ImageFile.GalleryId);
             return View(model);
         }
 
@@ -140,7 +140,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                 }
                 return RedirectToAction("Index");
             }
-            ViewBag.GalleryId = new SelectList(db.Galleries, "Id", "Code", imageWithTagsVM.ImageFile.GalleryId);
+            ViewBag.GalleryId = new SelectList(db.Galleries.Where(g => g.TenantId.Trim().Equals(Tenant.TenantId)), "Id", "Code", imageWithTagsVM.ImageFile.GalleryId);
             return View(imageWithTagsVM);
         }
 

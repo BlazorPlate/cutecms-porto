@@ -82,26 +82,14 @@
                     </div>
                     <div>
                         <ul class="nav navbar-nav  @(CultureHelper.IsRighToLeft() ? "navbar-left" : "navbar-right")">
-                            <li>
-                                <span class="li-social">
-                                    <a href="@(organization?.FacebookUrl)"><i class="fa fa-facebook-square"></i></a>
-                                </span>
-                            </li>
-                            <li>
-                                <span class="li-social">
-                                    <a href="@(organization?.TwitterUrl)"><i class="fa fa-twitter-square"></i></a>
-                                </span>
-                            </li>
-                            <li>
-                                <span class="li-social">
-                                    <a href="@(organization?.GooglePlusUrl)"><i class="fa fa-google-plus-square"></i></a>
-                                </span>
-                            </li>
-                            <li>
-                                <span class="li-social">
-                                    <a href="@(organization?.LinkedInUrl)"><i class="fa fa-linkedin-square"></i></a>
-                                </span>
-                            </li>
+                            @foreach (var item in organization.SocialNetworks)
+                            {
+                                <li>
+                                    <span class="li-social">
+                                        <a href="@item.Url"><i class="fa @item.CssClass"></i></a>
+                                    </span>
+                                </li>
+                            }
                         </ul>
                     </div>
                 </div>

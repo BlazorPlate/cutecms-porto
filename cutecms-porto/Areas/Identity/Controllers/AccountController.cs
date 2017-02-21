@@ -456,8 +456,12 @@ namespace cutecms_porto.Areas.Identity.Controllers
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             OutputCacheAttribute.ChildActionCache = new MemoryCache("NewDefault");
             returnUrl = HttpUtility.UrlDecode(returnUrl);
-            if ((returnUrl != null) && Url.IsLocalUrl(returnUrl) && returnUrl.StartsWith("/")
-                && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
+
+            if (returnUrl.Equals("/"))
+            {
+                return RedirectToAction("Index", "Home", new { area = "" });
+            }
+            else if ((returnUrl != null) && Url.IsLocalUrl(returnUrl) && returnUrl.StartsWith("/") && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
             {
                 return RedirectToAction("Login", new { returnUrl = returnUrl });
             }

@@ -16,7 +16,7 @@
         <div class="row">
             <div class="form-group">
                 <div class="col-md-12 p-none">
-                    <a class="pull-right mt-none p-none" id="headerRecover" href="#">(@Resources.Resources.ForgetPassword)</a>
+                    <a class="mt-none p-none" id="headerRecover" href="#">(@Resources.Resources.ForgetPassword)</a>
                     @Html.PasswordFor(m => m.Password, new { @class = "form-control input-lg", @placeholder = @Resources.Resources.Password + "..." })
                     @Html.ValidationMessageFor(m => m.Password)
                 </div>
@@ -34,7 +34,7 @@
 
         <div class="row">
             <div class="col-md-12 p-none">
-                <input type="submit" value="@Resources.Resources.LogIn" class="btn btn-primary pull-right mb-xl" data-loading-text="Loading...">
+                <input type="submit" value="@Resources.Resources.LogIn" class="btn btn-primary mb-xl" data-loading-text="Loading...">
             </div>
         </div>
         <div class="row">

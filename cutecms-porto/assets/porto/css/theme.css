@@ -1276,6 +1276,7 @@ html:not(.sticky-header-active) #header.header-transparent-sticky-deactive .head
 @media (max-width: 991px) {
 	#header .header-nav-main nav > ul > li.dropdown-mega.dropdown-mega-signin {
 		margin-right: 0;
+        float:none !important;
 	}
 
 	#header .header-nav-main nav > ul > li.dropdown-mega.dropdown-mega-signin .dropdown-toggle {

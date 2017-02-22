@@ -23,9 +23,8 @@
 <section>
     <div class="row">
         <div class="col-md-12">
-            <h4>Default</h4>
             <ul class="nav nav-pills sort-source" data-sort-id="portfolio" data-option-key="filter">
-                <li data-option-value="*" class="active"><a href="#">Show All</a></li>
+                <li data-option-value="*" class="active"><a href="#">@Resources.Resources.ShowAll</a></li>
                 @foreach (var item in Model)
                 {
                     var galleryCategories = item.GalleryCategories.Select(g => g.Category.Code).ToList();

@@ -1,0 +1,138 @@
+﻿@model cutecms_porto.Areas.RMS.Models.DBModel.Submission
+@using System.Threading
+@{
+    ViewBag.Title = Resources.Resources.Apply;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section PageHeader
+{
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>@ViewBag.Title</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+<section>
+    <div class="container">
+        @using (Html.BeginForm("Apply", "Vacancies", FormMethod.Post, new { id = "apply", enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <h3 class="heading-primary">@ViewBag.VacancyTitle</h3>
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Applicant.FirstName, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Applicant.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Applicant.FirstName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Applicant.MiddleName, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Applicant.MiddleName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Applicant.MiddleName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Applicant.LastName, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Applicant.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Applicant.LastName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Applicant.GenderId, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(m => m.Applicant.GenderId, new SelectList(TermsHelper.Genders(), "GenderId", "Value"), htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Applicant.Gender, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Applicant.DOB, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Applicant.DOB, new { htmlAttributes = new { @id = "date1", @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Applicant.DOB, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Applicant.Mobile, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Applicant.Mobile, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Applicant.Mobile, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Applicant.Email, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Applicant.Email, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Applicant.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CoverLetter, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.CoverLetter, new { @class = "mceEditor", htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.CoverLetter, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Applicant.File, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10" style="width:auto">
+                        @Html.TextBoxFor(model => model.Applicant.File, new { @class = "form-control", type = "file", multiple = "false", placeholder = "upload files" })
+                        @Html.ValidationMessageFor(model => model.Applicant.File, "", new { @class = "text-danger" })
+                        <small class="text-muted block">@Resources.Resources.CVNotes</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.Label(@Resources.Resources.Attachments, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10" style="width:auto">
+                        <div>
+                            @Html.Raw(FileUpload.GetHtml(
+            name: "attachmentFiles",
+            initialNumberOfFiles: 1,
+            allowMoreFilesToBeAdded: true,
+            includeFormTag: false,
+            addText: @Resources.Resources.AddAttachments,
+            uploadText: "").ToString().Replace("<input value\"\" type=\"submit\" />", ""))
+                        </div>
+                        <small class="text-muted block">@Resources.Resources.AttachmentsNotes</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input id="submitBtn" type="submit" value="@Resources.Resources.Submit" class="btn btn-primary mb-xl" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div>
+                @Html.ActionLink(Resources.Resources.BackToList, "Index", "Vacancies")
+            </div>
+        }
+    </div>
+</section>
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).on('invalid-form.validate', 'form', function () {
+            var button = $(this).find('input[type="submit"]');
+            setTimeout(function () {
+                button.removeAttr('disabled');
+            }, 1);
+        });
+        $(document).on('submit', 'form', function () {
+            var button = $(this).find('input[type="submit"]');
+            setTimeout(function () {
+                button.attr('disabled', 'disabled');
+            }, 0);
+        });
+    </script>
+}

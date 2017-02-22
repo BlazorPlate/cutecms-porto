@@ -3,8 +3,9 @@
 @using System.Threading
 @{
     CMSEntities db = new CMSEntities();
-    IEnumerable<MenuItem> topMenuItems = db.MenuItems.Include("Status").Include("Menu").Include("Language").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Menu.Code.Trim().Equals("top-menu") && m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).OrderBy(o => o.Ordinal);
-    var organization = (Organization)HttpRuntime.Cache["Organization"];
+    IEnumerable<MenuItem> topMenuItems = db.MenuItems.Include("Status").Include("Menu").Include("Language").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Menu.Code.Trim().Equals("top-menu") && m.Status.Code.Trim().Equals("published") && m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).OrderBy(o => o.Ordinal);
+    var organizations = (List<Organization>)HttpRuntime.Cache["Organizations"];
+    var organization = organizations.Where(o => o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
 }
 <nav class="header-nav-top" style="margin-left:0px;">
     <ul class="nav nav-pills">

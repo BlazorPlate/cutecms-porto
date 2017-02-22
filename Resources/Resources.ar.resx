@@ -1503,4 +1503,7 @@
   <data name="SocialNetworks" xml:space="preserve">
     <value>الشبكات الاجتماعية</value>
   </data>
+  <data name="ShowAll" xml:space="preserve">
+    <value>عرض الكل</value>
+  </data>
 </root>

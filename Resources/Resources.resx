@@ -1503,4 +1503,7 @@
   <data name="SocialNetworks" xml:space="preserve">
     <value>Social networks</value>
   </data>
+  <data name="ShowAll" xml:space="preserve">
+    <value>Show All</value>
+  </data>
 </root>

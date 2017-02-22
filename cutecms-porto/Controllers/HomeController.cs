@@ -136,10 +136,21 @@ namespace cutecms_porto.Controllers
         {
             return PartialView("_HeaderMenu");
         }
-        [HttpPost]
-        public ActionResult Subscribe(SubscriberViewModel subscriber, string returnUrl)
+
+        [OutputCache(Duration = 9000, VaryByCustom = "culture")]
+        [ChildActionOnly]
+        public PartialViewResult GetFooter()
         {
-            return Redirect(returnUrl);
+            return PartialView("_Footer");
+        }
+        [HttpPost]
+        public ActionResult Subscribe(SubscriberViewModel subscriber)
+        {
+            return RedirectToAction("Subscribed");
+        }
+        public ActionResult Subscribed()
+        {
+            return View();
         }
         public ActionResult ReturnUrl(string returnUrl)
         {

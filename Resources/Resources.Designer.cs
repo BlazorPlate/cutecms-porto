@@ -3508,6 +3508,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show All.
+        /// </summary>
+        public static string ShowAll {
+            get {
+                return ResourceManager.GetString("ShowAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show Dates.
         /// </summary>
         public static string ShowHeaderDate {

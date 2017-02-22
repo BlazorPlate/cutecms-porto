@@ -1,5 +1,5 @@
 ﻿@model cutecms_porto.Models.SubscriberViewModel
-@using (Html.BeginForm("Subscribe", "Home", new { returnUrl = Request.Url.AbsoluteUri }))
+@using (Html.BeginForm("Subscribe", "Home"))
 {
     @Html.AntiForgeryToken()
     <div class="input-group">

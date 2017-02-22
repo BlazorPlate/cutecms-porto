@@ -799,7 +799,7 @@
     <Compile Include="Areas\Identity\Controllers\RolesController.cs" />
     <Compile Include="Controllers\MyProfileController.cs" />
     <Compile Include="Controllers\PublicationsController.cs" />
-    <Compile Include="Controllers\VacanciesController.cs" />
+    <Compile Include="Controllers\CareersController.cs" />
     <Compile Include="Helpers\ActionFilters.cs" />
     <Compile Include="Helpers\BaseController.cs" />
     <Compile Include="Areas\Identity\Controllers\GroupsController.cs" />
@@ -5507,7 +5507,6 @@
     <Content Include="Views\Pages\Content.cshtml" />
     <Content Include="Views\Home\Contents.cshtml" />
     <Content Include="Views\Home\Calendar.cshtml" />
-    <Content Include="Views\Shared\_PageFooter.cshtml" />
     <Content Include="Views\Shared\_Breadcrumb.cshtml" />
     <Content Include="Views\MyProfile\Index.cshtml" />
     <Content Include="Views\MyProfile\PersonalInfo.cshtml" />
@@ -5535,10 +5534,10 @@
     <Content Include="Views\Staff\Publications.cshtml" />
     <Content Include="Views\Staff\EmpInDepts.cshtml" />
     <Content Include="Views\Staff\EmpsInDept.cshtml" />
-    <Content Include="Views\Vacancies\Details.cshtml" />
-    <Content Include="Views\Vacancies\Index.cshtml" />
-    <Content Include="Views\Vacancies\Apply.cshtml" />
-    <Content Include="Views\Vacancies\Acknowledgement.cshtml" />
+    <Content Include="Views\Careers\Details.cshtml" />
+    <Content Include="Views\Careers\Index.cshtml" />
+    <Content Include="Views\Careers\Apply.cshtml" />
+    <Content Include="Views\Careers\Acknowledgement.cshtml" />
     <Content Include="Views\EmpInDepts\Create.cshtml" />
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
@@ -5561,6 +5560,8 @@
     <Content Include="Views\Error\InvalidToken.cshtml" />
     <Content Include="Views\Shared\_TopMenu.cshtml" />
     <None Include="Properties\PublishProfiles\cutecms-porto.pubxml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Home\Subscribed.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />

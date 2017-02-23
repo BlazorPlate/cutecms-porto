@@ -444,14 +444,8 @@
   <data name="Street" xml:space="preserve">
     <value>רחוב</value>
   </data>
-  <data name="Telephone_1" xml:space="preserve">
-    <value>טלפון 1</value>
-  </data>
-  <data name="Telephone_2" xml:space="preserve">
-    <value>טלפון 2</value>
-  </data>
-  <data name="Telephone_3" xml:space="preserve">
-    <value>טלפון 3</value>
+  <data name="Telephone" xml:space="preserve">
+    <value>טלפון</value>
   </data>
   <data name="EnterCredentials" xml:space="preserve">
     <value>הזן את שם המשתמש והסיסמה שלך כדי להיכנס למערכת.</value>

@@ -160,6 +160,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Address Line 1.
+        /// </summary>
+        public static string AddressLine1 {
+            get {
+                return ResourceManager.GetString("AddressLine1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address Line 2.
+        /// </summary>
+        public static string AddressLine2 {
+            get {
+                return ResourceManager.GetString("AddressLine2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add Translation.
         /// </summary>
         public static string AddTranslation {
@@ -3634,6 +3652,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to State.
+        /// </summary>
+        public static string State {
+            get {
+                return ResourceManager.GetString("State", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Statistics.
         /// </summary>
         public static string Statistic {
@@ -3796,29 +3823,11 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Telephone 1.
+        ///   Looks up a localized string similar to Telephone.
         /// </summary>
-        public static string Telephone_1 {
+        public static string Telephone {
             get {
-                return ResourceManager.GetString("Telephone_1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Telephone 2.
-        /// </summary>
-        public static string Telephone_2 {
-            get {
-                return ResourceManager.GetString("Telephone_2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Telephone 3.
-        /// </summary>
-        public static string Telephone_3 {
-            get {
-                return ResourceManager.GetString("Telephone_3", resourceCulture);
+                return ResourceManager.GetString("Telephone", resourceCulture);
             }
         }
         
@@ -4251,6 +4260,15 @@ namespace Resources {
         public static string YouTubeUrl {
             get {
                 return ResourceManager.GetString("YouTubeUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ZIP Code.
+        /// </summary>
+        public static string ZIP {
+            get {
+                return ResourceManager.GetString("ZIP", resourceCulture);
             }
         }
     }

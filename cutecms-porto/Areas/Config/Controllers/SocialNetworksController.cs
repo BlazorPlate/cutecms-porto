@@ -11,7 +11,7 @@ using cutecms_porto.Helpers;
 
 namespace cutecms_porto.Areas.Config.Controllers
 {
-    public class SocialNetworksController : Controller
+    public class SocialNetworksController : BaseController
     {
         private ConfigEntities db = new ConfigEntities();
 

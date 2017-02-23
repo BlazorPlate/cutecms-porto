@@ -921,14 +921,8 @@
   <data name="Tags" xml:space="preserve">
     <value>الأوسمة</value>
   </data>
-  <data name="Telephone_1" xml:space="preserve">
-    <value>هاتف 1</value>
-  </data>
-  <data name="Telephone_2" xml:space="preserve">
-    <value>هاتف 2</value>
-  </data>
-  <data name="Telephone_3" xml:space="preserve">
-    <value>هاتف 3</value>
+  <data name="Telephone" xml:space="preserve">
+    <value>هاتف</value>
   </data>
   <data name="Terms" xml:space="preserve">
     <value>الترجمات</value>
@@ -1514,5 +1508,17 @@
   </data>
   <data name="GalleryCategories" xml:space="preserve">
     <value>تصنيفات المعرض</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>العنوان الرئيسي</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>العنوان الفرعي</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>الولاية</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>الرمز البريدي</value>
   </data>
 </root>

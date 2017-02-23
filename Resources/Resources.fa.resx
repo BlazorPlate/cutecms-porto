@@ -444,14 +444,8 @@
   <data name="Street" xml:space="preserve">
     <value>خیابان</value>
   </data>
-  <data name="Telephone_1" xml:space="preserve">
-    <value>تلفن 1</value>
-  </data>
-  <data name="Telephone_2" xml:space="preserve">
-    <value>تلفن 2</value>
-  </data>
-  <data name="Telephone_3" xml:space="preserve">
-    <value>تلفن 3</value>
+  <data name="Telephone" xml:space="preserve">
+    <value>تلفن</value>
   </data>
   <data name="EnterCredentials" xml:space="preserve">
     <value>نام کاربری و رمز عبور برای ورود خود را وارد کنید.</value>

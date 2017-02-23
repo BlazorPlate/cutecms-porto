@@ -44,14 +44,6 @@
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.AddressLine1, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.AddressLine1, new { htmlAttributes = new { @class = "form-control" } })
@@ -159,7 +151,7 @@
             </div>
         </div>
         <div class="form-group">
-            @Html.Label("Dimensions", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label(Resources.Resources.Dimensions, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.TextBox("pWidth", null, new { @placeholder = @Resources.Resources.Width })
                 @Html.TextBox("pHeight", null, new { @placeholder = @Resources.Resources.Height })
@@ -173,17 +165,10 @@
             </div>
         </div>
         <div class="form-group">
-            @Html.Label("Dimensions", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label(Resources.Resources.Dimensions, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.TextBox("sWidth", null, new { @placeholder = @Resources.Resources.Width })
                 @Html.TextBox("sHeight", null, new { @placeholder = @Resources.Resources.Height })
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.Label("Dimensions", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.Editor("sWidth")
-                @Html.Editor("sHeight")
             </div>
         </div>
         <div class="form-group">

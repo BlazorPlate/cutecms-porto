@@ -28,7 +28,7 @@ namespace cutecms_porto.Areas.Config.Controllers
             ViewBag.IsEnabledFilter = isEnabledFilter;
             ViewBag.IsEnabled = isEnabledFilter;
             var languages = db.ConfigLanguages.Where(l => ((l.CultureName.Contains(language) || string.IsNullOrEmpty(language)) || (l.Name.Contains(language) || string.IsNullOrEmpty(language))) &&  l.IsEnabled == isEnabledFilter).OrderBy(l => l.Ordinal);
-            return View(languages.ToPagedList(pageNumber, 1));
+            return View(languages.ToPagedList(pageNumber, 10));
         }
         // GET: CMS/ConfigLanguages/Details/5
         public ActionResult Details(int? id)

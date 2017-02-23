@@ -444,14 +444,8 @@
   <data name="Street" xml:space="preserve">
     <value>Sokak</value>
   </data>
-  <data name="Telephone_1" xml:space="preserve">
-    <value>Telefon 1</value>
-  </data>
-  <data name="Telephone_2" xml:space="preserve">
-    <value>Telefon 2</value>
-  </data>
-  <data name="Telephone_3" xml:space="preserve">
-    <value>Telefon 3</value>
+  <data name="Telephone" xml:space="preserve">
+    <value>Telefon</value>
   </data>
   <data name="EnterCredentials" xml:space="preserve">
     <value>Kullanıcı adı ve oturum açma için parola girin.</value>

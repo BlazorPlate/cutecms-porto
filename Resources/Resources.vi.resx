@@ -444,14 +444,8 @@
   <data name="Street" xml:space="preserve">
     <value>Street</value>
   </data>
-  <data name="Telephone_1" xml:space="preserve">
-    <value>Điện thoại 1</value>
-  </data>
-  <data name="Telephone_2" xml:space="preserve">
-    <value>Điện thoại 2</value>
-  </data>
-  <data name="Telephone_3" xml:space="preserve">
-    <value>Điện thoại 3</value>
+  <data name="Telephone" xml:space="preserve">
+    <value>Điện thoại</value>
   </data>
   <data name="EnterCredentials" xml:space="preserve">
     <value>Nhập tên người dùng và mật khẩu để đăng nhập.</value>

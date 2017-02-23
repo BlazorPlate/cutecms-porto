@@ -444,14 +444,8 @@
   <data name="Street" xml:space="preserve">
     <value>Straat</value>
   </data>
-  <data name="Telephone_1" xml:space="preserve">
-    <value>Telefoon 1</value>
-  </data>
-  <data name="Telephone_2" xml:space="preserve">
-    <value>Telefoon 2</value>
-  </data>
-  <data name="Telephone_3" xml:space="preserve">
-    <value>Telefoon 3</value>
+  <data name="Telephone" xml:space="preserve">
+    <value>Telefoon</value>
   </data>
   <data name="EnterCredentials" xml:space="preserve">
     <value>Voer uw gebruikersnaam en wachtwoord aanmelden.</value>

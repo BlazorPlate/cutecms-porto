@@ -444,14 +444,8 @@
   <data name="Street" xml:space="preserve">
     <value>Улица</value>
   </data>
-  <data name="Telephone_1" xml:space="preserve">
-    <value>Телефон 1</value>
-  </data>
-  <data name="Telephone_2" xml:space="preserve">
-    <value>Телефон 2</value>
-  </data>
-  <data name="Telephone_3" xml:space="preserve">
-    <value>Телефонен номер 3</value>
+  <data name="Telephone" xml:space="preserve">
+    <value>Телефон</value>
   </data>
   <data name="EnterCredentials" xml:space="preserve">
     <value>Въведете вашето потребителско име и парола за да влезете.</value>

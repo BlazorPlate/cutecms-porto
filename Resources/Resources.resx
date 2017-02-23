@@ -444,14 +444,8 @@
   <data name="Street" xml:space="preserve">
     <value>Street</value>
   </data>
-  <data name="Telephone_1" xml:space="preserve">
-    <value>Telephone 1</value>
-  </data>
-  <data name="Telephone_2" xml:space="preserve">
-    <value>Telephone 2</value>
-  </data>
-  <data name="Telephone_3" xml:space="preserve">
-    <value>Telephone 3</value>
+  <data name="Telephone" xml:space="preserve">
+    <value>Telephone</value>
   </data>
   <data name="EnterCredentials" xml:space="preserve">
     <value>Enter your username and password to log on.</value>
@@ -1514,5 +1508,17 @@
   </data>
   <data name="GalleryCategories" xml:space="preserve">
     <value>Gallery Categories</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>Address Line 1</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>Address Line 2</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>ZIP Code</value>
   </data>
 </root>

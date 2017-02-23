@@ -53,6 +53,7 @@ namespace cutecms_porto.Areas.Config.Models.DBModel
         public string Country { get; set; }
         [Display(Name = "Telephone", ResourceType = typeof(Resources.Resources))]
         public string Telephone { get; set; }
+        [Display(Name = "Fax", ResourceType = typeof(Resources.Resources))]
         public string Fax { get; set; }
         [Display(Name = "Email", ResourceType = typeof(Resources.Resources))]
         public string Email { get; set; }

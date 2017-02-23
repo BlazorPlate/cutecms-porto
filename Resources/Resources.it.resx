@@ -444,14 +444,8 @@
   <data name="Street" xml:space="preserve">
     <value>Via</value>
   </data>
-  <data name="Telephone_1" xml:space="preserve">
-    <value>Telefono 1</value>
-  </data>
-  <data name="Telephone_2" xml:space="preserve">
-    <value>Telefono 2</value>
-  </data>
-  <data name="Telephone_3" xml:space="preserve">
-    <value>Telefono 3</value>
+  <data name="Telephone" xml:space="preserve">
+    <value>Telefono</value>
   </data>
   <data name="EnterCredentials" xml:space="preserve">
     <value>Inserisci username e password per accedere.</value>

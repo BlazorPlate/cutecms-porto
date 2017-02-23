@@ -1506,4 +1506,13 @@
   <data name="ShowAll" xml:space="preserve">
     <value>Show All</value>
   </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>Gallery Category</value>
+  </data>
+  <data name="ChooseCategory" xml:space="preserve">
+    <value>--Choose category--</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>Gallery Categories</value>
+  </data>
 </root>

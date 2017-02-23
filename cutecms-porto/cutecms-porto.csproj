@@ -6718,8 +6718,6 @@
     <Content Include="assets\porto\vendor\simple-line-icons\LICENSE.md" />
     <Content Include="assets\porto\vendor\simple-line-icons\yarn.lock" />
     <None Include="Project_Readme.html" />
-    <Content Include="Views\Home\Index.old3.cshtml" />
-    <Content Include="Views\Home\Ad.cshtml" />
     <Content Include="Views\Error\CatchAll.cshtml" />
     <Content Include="Views\Shared\Account.cshtml" />
     <Content Include="Views\Shared\Login.cshtml" />

@@ -1506,4 +1506,13 @@
   <data name="ShowAll" xml:space="preserve">
     <value>عرض الكل</value>
   </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>تصنيف المعرض</value>
+  </data>
+  <data name="ChooseCategory" xml:space="preserve">
+    <value>--اختر التصنيف--</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>تصنيفات المعرض</value>
+  </data>
 </root>

@@ -1521,4 +1521,16 @@
   <data name="ZIP" xml:space="preserve">
     <value>الرمز البريدي</value>
   </data>
+  <data name="Newsletter" xml:space="preserve">
+    <value>النشرة البريدية</value>
+  </data>
+  <data name="LatestTweets" xml:space="preserve">
+    <value>آخر التغريدات</value>
+  </data>
+  <data name="FollowUs" xml:space="preserve">
+    <value>تابعنا</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>يرجى الانتظار...</value>
+  </data>
 </root>

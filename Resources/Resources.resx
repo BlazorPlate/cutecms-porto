@@ -1521,4 +1521,16 @@
   <data name="ZIP" xml:space="preserve">
     <value>ZIP Code</value>
   </data>
+  <data name="Newsletter" xml:space="preserve">
+    <value>Newsletter</value>
+  </data>
+  <data name="LatestTweets" xml:space="preserve">
+    <value>Latest Tweets</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>Please wait...</value>
+  </data>
+  <data name="FollowUs" xml:space="preserve">
+    <value>Follow Us</value>
+  </data>
 </root>

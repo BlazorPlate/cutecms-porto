@@ -821,6 +821,341 @@
     <Compile Include="Models\SubscriberViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Views\Careers\Acknowledgement.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Acknowledgement.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Careers\Details.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Details.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Careers\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmpInDepts\Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmpInDepts\Delete.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Delete.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmpInDepts\Details.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Details.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmpInDepts\Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmpInDepts\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Error\CatchAll.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CatchAll.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Error\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Error\InvalidToken.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvalidToken.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Error\NotFound.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotFound.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Error\NotPublished.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotPublished.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Error\NotTranslated.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotTranslated.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\Calendar.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Calendar.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\Contact.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Contact.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\Contents.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Contents.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\ForgotPasswordConfirmation.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ForgotPasswordConfirmation.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\Galleries.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Galleries.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\ImageFiles.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImageFiles.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\ResetPassword.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResetPassword.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\ResetPasswordConfirmation.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResetPasswordConfirmation.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\Subscribed.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Subscribed.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\Welcome.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Welcome.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyProfile\AcademicInfo.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AcademicInfo.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyProfile\Biography.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Biography.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyProfile\ContactInfo.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContactInfo.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyProfile\Delete.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Delete.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyProfile\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyProfile\PersonalInfo.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PersonalInfo.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyProfile\PersonalPhoto.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PersonalPhoto.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyProfile\Translations.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Translations.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Content.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Content.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Publications\Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Publications\Delete.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Delete.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Publications\Details.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Details.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Publications\Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Publications\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Account.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Account.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\EditorTemplates\SelectTagEditorViewModel.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SelectTagEditorViewModel.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\ForgotPassword.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ForgotPassword.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\ForgotPasswordAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ForgotPasswordAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Lockout.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lockout.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Login.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Login.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\LoginAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Register.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Register.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\RegisterAjax.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegisterAjax.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Subscribe.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Subscribe.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\_Breadcrumb.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Breadcrumb.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\_Footer.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Footer.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\_HeaderMenu.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_HeaderMenu.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\_Layout.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Layout.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\_MyProfile.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_MyProfile.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\_NewsBar.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_NewsBar.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\_Profile.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Profile.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\_TopMenu.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_TopMenu.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\AcademicInfo.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AcademicInfo.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\Biography.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Biography.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\ContactInfo.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContactInfo.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\Departments.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Departments.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\EmpInDepts.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmpInDepts.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\EmpsInDept.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmpsInDept.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\MemberProfile.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MemberProfile.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\Publications.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Publications.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\Search.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Search.cshtml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\CuteCMSDB.mdf" />
@@ -4005,6 +4340,7 @@
     <Content Include="assets\porto\img\dotted-line-angle.png" />
     <Content Include="assets\porto\img\favicon.ico" />
     <Content Include="assets\porto\img\flags.png" />
+    <Content Include="assets\porto\img\footer-logo.png" />
     <Content Include="assets\porto\img\gallery\gallery-1.jpg" />
     <Content Include="assets\porto\img\gallery\gallery-10.jpg" />
     <Content Include="assets\porto\img\gallery\gallery-11.jpg" />
@@ -4016,6 +4352,7 @@
     <Content Include="assets\porto\img\gallery\gallery-7.jpg" />
     <Content Include="assets\porto\img\gallery\gallery-8.jpg" />
     <Content Include="assets\porto\img\gallery\gallery-9.jpg" />
+    <Content Include="assets\porto\img\header-logo.png" />
     <Content Include="assets\porto\img\history-thumb-dark.png" />
     <Content Include="assets\porto\img\history-thumb.png" />
     <Content Include="assets\porto\img\holder.png" />
@@ -4056,7 +4393,6 @@
     <Content Include="assets\porto\img\logo-footer-dark.png" />
     <Content Include="assets\porto\img\logo-footer-small.png" />
     <Content Include="assets\porto\img\logo-footer.png" />
-    <Content Include="assets\porto\img\logo.png" />
     <Content Include="assets\porto\img\logos\logo-1.png" />
     <Content Include="assets\porto\img\logos\logo-2.png" />
     <Content Include="assets\porto\img\logos\logo-3.png" />
@@ -5448,9 +5784,18 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Layout.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\Contact.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Contact.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
     <Content Include="Areas\Identity\Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Areas\Identity\Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Areas\Identity\Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -5469,7 +5814,10 @@
     <Content Include="Areas\Identity\Views\Manage\ManageLogins.cshtml" />
     <Content Include="Areas\Identity\Views\Manage\SetPassword.cshtml" />
     <Content Include="Areas\Identity\Views\Manage\VerifyPhoneNumber.cshtml" />
-    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Lockout.generated.cs</LastGenOutput>
+    </Content>
     <Content Include="Areas\Identity\Views\Account\Index.cshtml" />
     <Content Include="Areas\Identity\Views\Groups\Create.cshtml" />
     <Content Include="Areas\Identity\Views\Groups\Delete.cshtml" />
@@ -5483,69 +5831,246 @@
     <Content Include="Areas\Identity\Views\Roles\Index.cshtml" />
     <Content Include="Areas\Identity\Views\Account\UserGroups.cshtml" />
     <Content Include="Areas\Identity\Views\Account\UserRoles.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\SelectTagEditorViewModel.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\SelectTagEditorViewModel.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SelectTagEditorViewModel.generated.cs</LastGenOutput>
+    </Content>
     <Content Include="Areas\Identity\Views\Account\Delete.cshtml" />
     <Content Include="Areas\Identity\Views\Account\Edit.cshtml" />
-    <Content Include="Views\Shared\_HeaderMenu.cshtml" />
-    <Content Include="Views\Shared\_NewsBar.cshtml" />
-    <Content Include="Views\Pages\Content.cshtml" />
-    <Content Include="Views\Home\Contents.cshtml" />
-    <Content Include="Views\Home\Calendar.cshtml" />
-    <Content Include="Views\Shared\_Breadcrumb.cshtml" />
-    <Content Include="Views\MyProfile\Index.cshtml" />
-    <Content Include="Views\MyProfile\PersonalInfo.cshtml" />
-    <Content Include="Views\MyProfile\AcademicInfo.cshtml" />
-    <Content Include="Views\MyProfile\Biography.cshtml" />
-    <Content Include="Views\MyProfile\ContactInfo.cshtml" />
-    <Content Include="Views\MyProfile\PersonalPhoto.cshtml" />
-    <Content Include="Views\EmpInDepts\Delete.cshtml" />
-    <Content Include="Views\EmpInDepts\Details.cshtml" />
-    <Content Include="Views\EmpInDepts\Edit.cshtml" />
-    <Content Include="Views\EmpInDepts\Index.cshtml" />
-    <Content Include="Views\Shared\_MyProfile.cshtml" />
-    <Content Include="Views\Publications\Create.cshtml" />
-    <Content Include="Views\Publications\Delete.cshtml" />
-    <Content Include="Views\Publications\Details.cshtml" />
-    <Content Include="Views\Publications\Edit.cshtml" />
-    <Content Include="Views\Publications\Index.cshtml" />
-    <Content Include="Views\Staff\MemberProfile.cshtml" />
-    <Content Include="Views\Staff\Search.cshtml" />
-    <Content Include="Views\Staff\Index.cshtml" />
-    <Content Include="Views\Shared\_Profile.cshtml" />
-    <Content Include="Views\Staff\AcademicInfo.cshtml" />
-    <Content Include="Views\Staff\ContactInfo.cshtml" />
-    <Content Include="Views\Staff\Biography.cshtml" />
-    <Content Include="Views\Staff\Publications.cshtml" />
-    <Content Include="Views\Staff\EmpInDepts.cshtml" />
-    <Content Include="Views\Staff\EmpsInDept.cshtml" />
-    <Content Include="Views\Careers\Details.cshtml" />
-    <Content Include="Views\Careers\Index.cshtml" />
+    <Content Include="Views\Shared\_HeaderMenu.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_HeaderMenu.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\_NewsBar.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_NewsBar.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Pages\Content.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Content.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\Contents.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Contents.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\Calendar.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Calendar.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\_Breadcrumb.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Breadcrumb.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\MyProfile\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\MyProfile\PersonalInfo.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>PersonalInfo.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\MyProfile\AcademicInfo.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>AcademicInfo.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\MyProfile\Biography.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Biography.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\MyProfile\ContactInfo.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ContactInfo.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\MyProfile\PersonalPhoto.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>PersonalPhoto.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\EmpInDepts\Delete.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Delete.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\EmpInDepts\Details.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Details.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\EmpInDepts\Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\EmpInDepts\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\_MyProfile.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_MyProfile.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Publications\Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Publications\Delete.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Delete.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Publications\Details.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Details.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Publications\Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Edit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Publications\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Staff\MemberProfile.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>MemberProfile.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Staff\Search.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Search.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Staff\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\_Profile.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Profile.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Staff\AcademicInfo.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>AcademicInfo.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Staff\ContactInfo.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ContactInfo.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Staff\Biography.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Biography.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Staff\Publications.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Publications.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Staff\EmpInDepts.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>EmpInDepts.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Staff\EmpsInDept.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>EmpsInDept.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Careers\Details.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Details.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Careers\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
     <Content Include="Views\Careers\Apply.cshtml" />
-    <Content Include="Views\Careers\Acknowledgement.cshtml" />
-    <Content Include="Views\EmpInDepts\Create.cshtml" />
-    <Content Include="Views\Error\Index.cshtml" />
-    <Content Include="Views\Error\NotFound.cshtml" />
-    <Content Include="Views\Error\NotTranslated.cshtml" />
-    <Content Include="Views\Error\NotPublished.cshtml" />
-    <Content Include="Views\Staff\Departments.cshtml" />
-    <Content Include="Views\Home\Galleries.cshtml" />
-    <Content Include="Views\Home\ImageFiles.cshtml" />
-    <Content Include="Views\MyProfile\Translations.cshtml" />
-    <Content Include="Views\MyProfile\Delete.cshtml" />
-    <Content Include="Views\Shared\Subscribe.cshtml" />
-    <Content Include="Views\Shared\LoginAjax.cshtml" />
-    <Content Include="Views\Shared\RegisterAjax.cshtml" />
-    <Content Include="Views\Shared\ForgotPassword.cshtml" />
-    <Content Include="Views\Shared\ForgotPasswordAjax.cshtml" />
-    <Content Include="Views\Home\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Home\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Home\ResetPassword.cshtml" />
-    <Content Include="Views\Home\Welcome.cshtml" />
-    <Content Include="Views\Error\InvalidToken.cshtml" />
-    <Content Include="Views\Shared\_TopMenu.cshtml" />
+    <Content Include="Views\Careers\Acknowledgement.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Acknowledgement.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\EmpInDepts\Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Create.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Error\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Error\NotFound.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>NotFound.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Error\NotTranslated.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>NotTranslated.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Error\NotPublished.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>NotPublished.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Staff\Departments.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Departments.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\Galleries.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Galleries.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\ImageFiles.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ImageFiles.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\MyProfile\Translations.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Translations.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\MyProfile\Delete.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Delete.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\Subscribe.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Subscribe.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\LoginAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>LoginAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\RegisterAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>RegisterAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\ForgotPassword.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ForgotPassword.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\ForgotPasswordAjax.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ForgotPasswordAjax.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\ForgotPasswordConfirmation.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ForgotPasswordConfirmation.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\ResetPasswordConfirmation.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ResetPasswordConfirmation.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\ResetPassword.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ResetPassword.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\Welcome.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Welcome.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Error\InvalidToken.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>InvalidToken.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\_TopMenu.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_TopMenu.generated.cs</LastGenOutput>
+    </Content>
     <None Include="Properties\PublishProfiles\cutecms-porto.pubxml" />
-    <Content Include="Views\Shared\_Footer.cshtml" />
-    <Content Include="Views\Home\Subscribed.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Footer.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\Subscribed.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Subscribed.generated.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
@@ -6702,10 +7227,22 @@
     <Content Include="assets\porto\vendor\simple-line-icons\LICENSE.md" />
     <Content Include="assets\porto\vendor\simple-line-icons\yarn.lock" />
     <None Include="Project_Readme.html" />
-    <Content Include="Views\Error\CatchAll.cshtml" />
-    <Content Include="Views\Shared\Account.cshtml" />
-    <Content Include="Views\Shared\Login.cshtml" />
-    <Content Include="Views\Shared\Register.cshtml" />
+    <Content Include="Views\Error\CatchAll.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>CatchAll.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\Account.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Account.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\Login.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Login.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\Register.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Register.generated.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

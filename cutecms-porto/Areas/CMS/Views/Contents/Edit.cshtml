@@ -218,7 +218,7 @@
                 {
                     @Html.ActionLink(Resources.Resources.ViewTranslation, "Edit", new { id = Model.Id, translationId = Model.TranslationId, lang = Model.Language.CultureName }, new { @class = "btn btn-info" })
                 }
-                @Html.ActionLink(Resources.Resources.ManageLists, "Index", "ContentLists", new { id = Model.Id }, new { @class = "btn btn-info" })
+                @Html.ActionLink(Resources.Resources.ContentLists, "Index", "ContentLists", new { id = Model.Id }, new { @class = "btn btn-info" })
                 @Html.ActionLink(Resources.Resources.Galleries, "Index", "ContentGalleries", new { id = Model.Id }, new { @class = "btn btn-info" })
                 @Html.ActionLink(Resources.Resources.Delete, "Delete", new { id = Model.Id }, new { @class = "btn btn-danger" })
             </div>

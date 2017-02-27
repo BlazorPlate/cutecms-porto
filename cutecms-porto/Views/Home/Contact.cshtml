@@ -85,7 +85,7 @@
                 <li><i class="fa fa-envelope"></i> <a href="mailto:@Model.Organization.Email">@(Model.Organization.Email ?? Resources.Resources.NotAvailable)</a></li>
             </ul>
             @{
-                var query = from p in configDb.ConfigDepartments
+                var query = from p in configDb.ConfigDepartments.Include("Contacts").Include("DepartmentTerms.Language")
                             join c in configDb.Contacts
                             on p.Id equals c.DepartmentId
                             where p.Contacts.Where(c => c.Organization.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).Any()

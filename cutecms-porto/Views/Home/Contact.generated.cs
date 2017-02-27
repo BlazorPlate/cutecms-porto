@@ -539,7 +539,7 @@ WriteLiteral("</a></li>\r\n            </ul>\r\n");
             
             #line 87 "..\..\Views\Home\Contact.cshtml"
               
-                var query = from p in configDb.ConfigDepartments
+                var query = from p in configDb.ConfigDepartments.Include("Contacts").Include("DepartmentTerms.Language")
                             join c in configDb.Contacts
                             on p.Id equals c.DepartmentId
                             where p.Contacts.Where(c => c.Organization.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).Any()
@@ -688,15 +688,15 @@ WriteLiteral(" class=\"fa fa-envelope\"");
 
 WriteLiteral("></i> <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 6408), Tuple.Create("\"", 6447)
-, Tuple.Create(Tuple.Create("", 6415), Tuple.Create("mailto:", 6415), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 6464), Tuple.Create("\"", 6503)
+, Tuple.Create(Tuple.Create("", 6471), Tuple.Create("mailto:", 6471), true)
             
             #line 106 "..\..\Views\Home\Contact.cshtml"
-, Tuple.Create(Tuple.Create("", 6422), Tuple.Create<System.Object, System.Int32>(Model.Organization.Email
+, Tuple.Create(Tuple.Create("", 6478), Tuple.Create<System.Object, System.Int32>(Model.Organization.Email
             
             #line default
             #line hidden
-, 6422), false)
+, 6478), false)
 );
 
 WriteLiteral(">");

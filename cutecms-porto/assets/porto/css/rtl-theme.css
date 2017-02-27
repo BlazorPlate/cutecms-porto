@@ -3150,7 +3150,7 @@ html.dark .text-muted {
 #footer .footer-ribbon span {
 	color: #FFF;
 	font-size: 1.6em;
-	font-family: "Shadows Into Light", cursive;
+	/*font-family: "Shadows Into Light", cursive;*/
 }
 
 #footer .newsletter form {

@@ -47,7 +47,7 @@ namespace cutecms_porto.Controllers
             ViewBag.KeywordFilter = keywordFilter;
             ViewBag.ContentTypeId = contentTypeIdFilter;
             ViewBag.StatusId = statusIdFilter;
-            var contents = cmsDb.Contents.Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && (c.Title.Contains(keywordFilter.Trim()) || c.MainContent.Contains(keywordFilter.Trim()) || c.ContentLists.Any(cl => cl.MainContent.Contains(keywordFilter.Trim())) || string.IsNullOrEmpty(keywordFilter)) && (c.ContentTypeId == contentTypeIdFilter || contentTypeIdFilter == 0) && (c.StatusId == statusIdFilter || statusIdFilter == 0)).OrderByDescending(c => c.PublishedOn).ThenByDescending(c => c.StartDate);
+            var contents = cmsDb.Contents.Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && (c.Title.Contains(keywordFilter.Trim()) || c.MainContent.Contains(keywordFilter.Trim()) || c.ContentLists.Any(cl => cl.MainContent.Contains(keywordFilter.Trim())) || string.IsNullOrEmpty(keywordFilter)) && (c.ContentTypeId == contentTypeIdFilter || contentTypeIdFilter == 0) && (c.StatusId == statusIdFilter || statusIdFilter == 0)).OrderBy(c => c.StartDate).ThenByDescending(c => c.PublishedOn);
             return View(contents.ToPagedList(pageNumber, 10));
         }
         public ActionResult Contact()
@@ -69,7 +69,7 @@ namespace cutecms_porto.Controllers
         }
         public ActionResult Calendar()
         {
-            var upcomingEvents = cmsDb.Contents.Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && c.ContentType.Code.Equals("event") && c.Status.Code.Trim().Equals("published") && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && System.Data.Entity.DbFunctions.TruncateTime(c.StartDate.Value) >= System.Data.Entity.DbFunctions.TruncateTime(DateTime.Now)).OrderBy(c => c.StartDate).Take(5);
+            var upcomingEvents = cmsDb.Contents.Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && c.ContentType.Code.Equals("event") && c.Status.Code.Trim().Equals("published") && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && System.Data.Entity.DbFunctions.TruncateTime(c.StartDate.Value) >= System.Data.Entity.DbFunctions.TruncateTime(DateTime.Now)).OrderBy(c => c.StartDate).Take(3);
             return View(upcomingEvents);
         }
         public ActionResult ListEvents(string start, string end)

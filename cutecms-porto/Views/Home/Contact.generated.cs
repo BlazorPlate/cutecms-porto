@@ -421,10 +421,9 @@ WriteLiteral("><strong>");
             
             #line default
             #line hidden
-WriteLiteral(@"</strong></h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <hr>
-            <h4");
+WriteLiteral("</strong></h4>\r\n            ");
+
+WriteLiteral("\r\n            <hr>\r\n            <h4");
 
 WriteLiteral(" class=\"heading-primary\"");
 
@@ -509,15 +508,15 @@ WriteLiteral(" class=\"fa fa-envelope\"");
 
 WriteLiteral("></i> <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4642), Tuple.Create("\"", 4681)
-, Tuple.Create(Tuple.Create("", 4649), Tuple.Create("mailto:", 4649), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 4646), Tuple.Create("\"", 4685)
+, Tuple.Create(Tuple.Create("", 4653), Tuple.Create("mailto:", 4653), true)
             
             #line 85 "..\..\Views\Home\Contact.cshtml"
-, Tuple.Create(Tuple.Create("", 4656), Tuple.Create<System.Object, System.Int32>(Model.Organization.Email
+, Tuple.Create(Tuple.Create("", 4660), Tuple.Create<System.Object, System.Int32>(Model.Organization.Email
             
             #line default
             #line hidden
-, 4656), false)
+, 4660), false)
 );
 
 WriteLiteral(">");
@@ -689,15 +688,15 @@ WriteLiteral(" class=\"fa fa-envelope\"");
 
 WriteLiteral("></i> <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 6404), Tuple.Create("\"", 6443)
-, Tuple.Create(Tuple.Create("", 6411), Tuple.Create("mailto:", 6411), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 6408), Tuple.Create("\"", 6447)
+, Tuple.Create(Tuple.Create("", 6415), Tuple.Create("mailto:", 6415), true)
             
             #line 106 "..\..\Views\Home\Contact.cshtml"
-, Tuple.Create(Tuple.Create("", 6418), Tuple.Create<System.Object, System.Int32>(Model.Organization.Email
+, Tuple.Create(Tuple.Create("", 6422), Tuple.Create<System.Object, System.Int32>(Model.Organization.Email
             
             #line default
             #line hidden
-, 6418), false)
+, 6422), false)
 );
 
 WriteLiteral(">");

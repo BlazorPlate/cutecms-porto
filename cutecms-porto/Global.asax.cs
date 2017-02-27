@@ -125,7 +125,7 @@ namespace cutecms_porto
                 httpContext.ClearError();
                 httpContext.Response.Clear();
                 httpContext.Response.TrySkipIisCustomErrors = true;
-                string culture = HttpContext.Current.Request.RequestContext.RouteData.Values["culture"].ToString();
+                string culture = HttpContext.Current.Request.RequestContext.RouteData?.Values["culture"]?.ToString();
                 ShowCustomErrorPage(exception, httpContext, culture, currentArea.ToString(), currentController, currentAction);
             }
         }

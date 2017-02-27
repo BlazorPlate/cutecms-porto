@@ -1162,6 +1162,10 @@
     <Content Include="App_Data\CuteCMSDB_log.ldf">
       <DependentUpon>CuteCMSDB.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data_PSUT\CuteCMSDB.mdf" />
+    <Content Include="App_Data_PSUT\CuteCMSDB_log.ldf">
+      <DependentUpon>CuteCMSDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Areas\Config\Models\DBModel\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>

@@ -37,7 +37,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            TagTerm tagTerm = db.TagTerms.Include("Language").Include("Tag").Where(t => t.Tag.TenantId.Trim().Equals(Tenant.TenantId) && t.TagId == id).FirstOrDefault();
+            TagTerm tagTerm = db.TagTerms.Include("Language").Include("Tag").Where(t => t.Tag.TenantId.Trim().Equals(Tenant.TenantId) && t.Id == id).FirstOrDefault();
             if (tagTerm == null)
             {
                 throw new HttpException(404, "Page Not Found");
@@ -85,11 +85,12 @@ namespace cutecms_porto.Areas.CMS.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            TagTerm tagTerm = db.TagTerms.Where(t => t.Tag.TenantId.Trim().Equals(Tenant.TenantId) && t.TagId == id).FirstOrDefault();
+            TagTerm tagTerm = db.TagTerms.Where(t => t.Tag.TenantId.Trim().Equals(Tenant.TenantId) && t.Id == id).FirstOrDefault();
             if (tagTerm == null)
             {
                 throw new HttpException(404, "Page Not Found");
             }
+            ViewBag.TagCode = db.Tags.Find(tagTerm.TagId).Code;
             int[] assignedLanguages = db.TagTerms.Where(t => t.TagId == tagTerm.TagId && t.LanguageId != tagTerm.LanguageId).Select(t => t.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.CMSLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", tagTerm.LanguageId);
             return View(tagTerm);
@@ -107,6 +108,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index", new { id = tagTerm.TagId });
             }
+            ViewBag.TagCode = db.Tags.Find(tagTerm.TagId).Code;
             int[] assignedLanguages = db.TagTerms.Where(t => t.TagId == tagTerm.TagId && t.LanguageId != tagTerm.LanguageId).Select(t => t.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.CMSLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", tagTerm.LanguageId);
             return View(tagTerm);
@@ -119,7 +121,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            TagTerm tagTerm = db.TagTerms.Include("Language").Include("Tag").Where(t => t.Tag.TenantId.Trim().Equals(Tenant.TenantId) && t.TagId == id).FirstOrDefault();
+            TagTerm tagTerm = db.TagTerms.Include("Language").Include("Tag").Where(t => t.Tag.TenantId.Trim().Equals(Tenant.TenantId) && t.Id == id).FirstOrDefault();
             if (tagTerm == null)
             {
                 throw new HttpException(404, "Page Not Found");

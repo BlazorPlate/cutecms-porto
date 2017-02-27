@@ -90,6 +90,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
             {
                 throw new HttpException(404, "Page Not Found");
             }
+            ViewBag.JobTypeCode = db.JobTypes.Find(jobTypeTerm.JobTypeId).Code;
             int[] assignedLanguages = db.JobTypeTerms.Where(t => t.JobTypeId == jobTypeTerm.JobTypeId && t.LanguageId != jobTypeTerm.LanguageId).Select(rt => rt.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.RMSLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", jobTypeTerm.LanguageId);
             return View(jobTypeTerm);
@@ -107,6 +108,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index", new { id = jobTypeTerm.JobTypeId });
             }
+            ViewBag.JobTypeCode = db.JobTypes.Find(jobTypeTerm.JobTypeId).Code;
             int[] assignedLanguages = db.JobTypeTerms.Where(t => t.JobTypeId == jobTypeTerm.JobTypeId && t.LanguageId != jobTypeTerm.LanguageId).Select(rt => rt.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.RMSLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", jobTypeTerm.LanguageId);
             return View(jobTypeTerm);

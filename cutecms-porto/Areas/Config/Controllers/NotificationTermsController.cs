@@ -90,6 +90,7 @@ namespace cutecms_porto.Areas.Config.Controllers
             {
                 throw new HttpException(404, "Page Not Found");
             }
+            ViewBag.NotificationCode = db.NotificationCodes.Find(notificationTerm.NotificationId).Code;
             int[] assignedLanguages = db.NotificationTerms.Where(t => t.NotificationId == notificationTerm.NotificationId && t.LanguageId != notificationTerm.LanguageId).Select(t => t.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.ConfigLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", notificationTerm.LanguageId);
             return View(notificationTerm);
@@ -107,6 +108,7 @@ namespace cutecms_porto.Areas.Config.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index", new { id = notificationTerm.NotificationId });
             }
+            ViewBag.NotificationCode = db.NotificationCodes.Find(notificationTerm.NotificationId).Code;
             int[] assignedLanguages = db.NotificationTerms.Where(t => t.NotificationId == notificationTerm.NotificationId && t.LanguageId != notificationTerm.LanguageId).Select(t => t.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.ConfigLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", notificationTerm.LanguageId);
             return View(notificationTerm);

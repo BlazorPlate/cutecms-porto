@@ -52,7 +52,7 @@ namespace cutecms_porto.Areas.Config.Controllers
                 throw new HttpException(400, "Bad Request");
             }
             ViewBag.StatusId = id;
-            ViewBag.ConfigStatusCode = db.Statuses.Find(id).Code;
+            ViewBag.StatusCode = db.Statuses.Find(id).Code;
             int[] assignedLanguages = db.ConfigStatusTerms.Where(t => t.StatusId == id).Select(t => t.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.ConfigLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name");
             return View();
@@ -71,7 +71,7 @@ namespace cutecms_porto.Areas.Config.Controllers
                 return RedirectToAction("Index", new { id = configStatusTerm.StatusId });
             }
             ViewBag.StatusId = configStatusTerm.StatusId;
-            ViewBag.ConfigStatusCode = db.Statuses.Find(configStatusTerm.StatusId).Code;
+            ViewBag.StatusCode = db.Statuses.Find(configStatusTerm.StatusId).Code;
             int[] assignedLanguages = db.ConfigStatusTerms.Where(t => t.StatusId == configStatusTerm.StatusId && t.LanguageId != configStatusTerm.LanguageId).Select(t => t.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.ConfigLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", configStatusTerm.LanguageId);
             return View(configStatusTerm);
@@ -89,6 +89,7 @@ namespace cutecms_porto.Areas.Config.Controllers
             {
                 throw new HttpException(404, "Page Not Found");
             }
+            ViewBag.StatusCode = db.Statuses.Find(configStatusTerm.StatusId).Code;
             int[] assignedLanguages = db.ConfigStatusTerms.Where(t => t.StatusId == configStatusTerm.StatusId && t.LanguageId != configStatusTerm.LanguageId).Select(t => t.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.ConfigLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", configStatusTerm.LanguageId);
             return View(configStatusTerm);
@@ -106,6 +107,7 @@ namespace cutecms_porto.Areas.Config.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index", new { id = configStatusTerm.StatusId });
             }
+            ViewBag.StatusCode = db.Statuses.Find(configStatusTerm.StatusId).Code;
             int[] assignedLanguages = db.ConfigStatusTerms.Where(t => t.StatusId == configStatusTerm.StatusId && t.LanguageId != configStatusTerm.LanguageId).Select(t => t.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.ConfigLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", configStatusTerm.LanguageId);
             return View(configStatusTerm);

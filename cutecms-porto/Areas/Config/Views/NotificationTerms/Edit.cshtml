@@ -10,7 +10,7 @@
         @Html.HiddenFor(model => model.Id)
         @Html.HiddenFor(model => model.NotificationId)
         <div class="form-group">
-            @Html.LabelFor(model => model.Notification.NotificationCode.Code, "GenderId", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Notification.NotificationCode.Code, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.TextBox("NotificationCode", null, htmlAttributes: new { @class = "form-control", @disabled = "disabled" })
                 @Html.ValidationMessageFor(model => model.Notification.NotificationCode.Code, "", new { @class = "text-danger" })

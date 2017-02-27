@@ -90,6 +90,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             {
                 throw new HttpException(404, "Page Not Found");
             }
+            ViewBag.ContentTypeCode = db.ContentTypes.Find(contentTypeTerm.ContentTypeId).Code;
             int[] assignedLanguages = db.ContentTypeTerms.Where(t => t.ContentTypeId == contentTypeTerm.ContentTypeId && t.LanguageId != contentTypeTerm.LanguageId).Select(t => t.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.CMSLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", contentTypeTerm.LanguageId);
             return View(contentTypeTerm);
@@ -107,6 +108,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index", new { id = contentTypeTerm.ContentTypeId });
             }
+            ViewBag.ContentTypeCode = db.ContentTypes.Find(contentTypeTerm.ContentTypeId).Code;
             int[] assignedLanguages = db.ContentTypeTerms.Where(t => t.ContentTypeId == contentTypeTerm.ContentTypeId && t.LanguageId != contentTypeTerm.LanguageId).Select(t => t.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.CMSLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", contentTypeTerm.LanguageId);
             return View(contentTypeTerm);

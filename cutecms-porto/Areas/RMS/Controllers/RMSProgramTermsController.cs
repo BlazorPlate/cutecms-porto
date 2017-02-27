@@ -90,6 +90,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
             {
                 throw new HttpException(404, "Page Not Found");
             }
+            ViewBag.ProgramCode = db.RMSPrograms.Find(rmsProgramTerm.ProgramId).Code;
             int[] assignedLanguages = db.RMSProgramTerms.Where(t => t.ProgramId == rmsProgramTerm.ProgramId && t.LanguageId != rmsProgramTerm.LanguageId).Select(t => t.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.RMSLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", rmsProgramTerm.LanguageId);
             return View(rmsProgramTerm);
@@ -107,6 +108,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index", new { id = rmsProgramTerm.ProgramId });
             }
+            ViewBag.ProgramCode = db.RMSPrograms.Find(rmsProgramTerm.ProgramId).Code;
             int[] assignedLanguages = db.RMSProgramTerms.Where(t => t.ProgramId == rmsProgramTerm.ProgramId && t.LanguageId != rmsProgramTerm.LanguageId).Select(t => t.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.RMSLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", rmsProgramTerm.LanguageId);
             return View(rmsProgramTerm);

@@ -90,6 +90,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             {
                 throw new HttpException(404, "Page Not Found");
             }
+            ViewBag.CategoryCode = db.Categories.Find(categoryTerm.CategoryId).Code;
             int[] assignedLanguages = db.CategoryTerms.Where(t => t.CategoryId == categoryTerm.CategoryId && t.LanguageId != categoryTerm.LanguageId).Select(t => t.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.CMSLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", categoryTerm.LanguageId);
             return View(categoryTerm);

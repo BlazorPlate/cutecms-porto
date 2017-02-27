@@ -90,6 +90,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
             {
                 throw new HttpException(404, "Page Not Found");
             }
+            ViewBag.GenderCode = db.Genders.Find(genderTerm.GenderId).Code;
             int[] assignedLanguages = db.GenderTerms.Where(t => t.GenderId == genderTerm.GenderId && t.LanguageId != genderTerm.LanguageId).Select(t => t.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.RMSLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", genderTerm.LanguageId);
             return View(genderTerm);
@@ -107,6 +108,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index", new { id = genderTerm.GenderId });
             }
+            ViewBag.GenderCode = db.Genders.Find(genderTerm.GenderId).Code;
             int[] assignedLanguages = db.GenderTerms.Where(t => t.GenderId == genderTerm.GenderId && t.LanguageId != genderTerm.LanguageId).Select(t => t.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.RMSLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", genderTerm.LanguageId);
             return View(genderTerm);

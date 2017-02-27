@@ -90,6 +90,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             {
                 throw new HttpException(404, "Page Not Found");
             }
+            ViewBag.GalleryCode = db.Galleries.Find(galleryTerm.GalleryId).Code;
             int[] assignedLanguages = db.GalleryTerms.Where(t => t.GalleryId == galleryTerm.GalleryId && t.LanguageId != galleryTerm.LanguageId).Select(t => t.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.CMSLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", galleryTerm.LanguageId);
             return View(galleryTerm);
@@ -107,6 +108,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index", new { id = galleryTerm.GalleryId });
             }
+            ViewBag.GalleryCode = db.Galleries.Find(galleryTerm.GalleryId).Code;
             int[] assignedLanguages = db.GalleryTerms.Where(t => t.GalleryId == galleryTerm.GalleryId && t.LanguageId != galleryTerm.LanguageId).Select(t => t.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.CMSLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", galleryTerm.LanguageId);
             return View(galleryTerm);

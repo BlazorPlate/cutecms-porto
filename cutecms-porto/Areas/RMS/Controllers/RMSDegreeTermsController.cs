@@ -87,6 +87,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
             {
                 throw new HttpException(404, "Page Not Found");
             }
+            ViewBag.DegreeCode = db.RMSDegrees.Find(rmsDegreeTerm.DegreeId).Code;
             int[] assignedLanguages = db.RMSDegreeTerms.Where(t => t.DegreeId == rmsDegreeTerm.DegreeId && t.LanguageId != rmsDegreeTerm.LanguageId).Select(t => t.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.RMSLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", rmsDegreeTerm.LanguageId);
             return View(rmsDegreeTerm);
@@ -104,6 +105,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index", new { id = rmsDegreeTerm.DegreeId });
             }
+            ViewBag.DegreeCode = db.RMSDegrees.Find(rmsDegreeTerm.DegreeId).Code;
             int[] assignedLanguages = db.RMSDegreeTerms.Where(t => t.DegreeId == rmsDegreeTerm.DegreeId && t.LanguageId != rmsDegreeTerm.LanguageId).Select(t => t.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.RMSLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", rmsDegreeTerm.LanguageId);
             return View(rmsDegreeTerm);

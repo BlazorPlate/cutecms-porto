@@ -90,6 +90,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             {
                 throw new HttpException(404, "Page Not Found");
             }
+            ViewBag.ImageFileCode = db.ImageFiles.Find(imageFileTerm.ImageFileId).Code;
             int[] assignedLanguages = db.ImageFileTerms.Where(t => t.ImageFileId == imageFileTerm.ImageFileId && t.LanguageId != imageFileTerm.LanguageId).Select(t => t.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.CMSLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", imageFileTerm.LanguageId);
             return View(imageFileTerm);
@@ -107,6 +108,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index", new { id = imageFileTerm.ImageFileId });
             }
+            ViewBag.ImageFileCode = db.ImageFiles.Find(imageFileTerm.ImageFileId).Code;
             int[] assignedLanguages = db.ImageFileTerms.Where(t => t.ImageFileId == imageFileTerm.ImageFileId && t.LanguageId != imageFileTerm.LanguageId).Select(t => t.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.CMSLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", imageFileTerm.LanguageId);
             return View(imageFileTerm);

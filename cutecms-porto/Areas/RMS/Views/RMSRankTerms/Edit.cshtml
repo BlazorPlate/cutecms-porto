@@ -12,7 +12,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Rank.Code, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.Rank.Code, new { @disabled = "disabled", @class = "form-control" })
+                @Html.TextBox("RankCode", null, htmlAttributes: new { @class = "form-control", @disabled = "disabled" })
                 @Html.ValidationMessageFor(model => model.Rank.Code, "", new { @class = "text-danger" })
             </div>
         </div>

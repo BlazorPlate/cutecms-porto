@@ -90,6 +90,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
             {
                 throw new HttpException(404, "Page Not Found");
             }
+            ViewBag.PersonalTitleCode = db.IdentityPersonalTitles.Find(identityPersonalTitleTerm.PersonalTitleId).Code;
             int[] assignedLanguages = db.IdentityPersonalTitleTerms.Where(t => t.PersonalTitleId == identityPersonalTitleTerm.PersonalTitleId && t.LanguageId != identityPersonalTitleTerm.LanguageId).Select(t => t.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.IdentityLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", identityPersonalTitleTerm.LanguageId);
             return View(identityPersonalTitleTerm);
@@ -107,6 +108,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index", new { id = identityPersonalTitleTerm.PersonalTitleId });
             }
+            ViewBag.PersonalTitleCode = db.IdentityPersonalTitles.Find(identityPersonalTitleTerm.PersonalTitleId).Code;
             int[] assignedLanguages = db.IdentityPersonalTitleTerms.Where(t => t.PersonalTitleId == identityPersonalTitleTerm.PersonalTitleId && t.LanguageId != identityPersonalTitleTerm.LanguageId).Select(t => t.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.IdentityLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", identityPersonalTitleTerm.LanguageId);
             return View(identityPersonalTitleTerm);

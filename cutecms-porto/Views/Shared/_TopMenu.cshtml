@@ -29,9 +29,12 @@
         }
     </ul>
 </nav>
-<ul class="header-social-icons social-icons hidden-xs">
-    @foreach (var item in organization.SocialNetworks)
-    {
-        <li class="social-icons-@item.Code"><a href="@item.Url" target="_blank" title="@item.Name"><i class="fa @item.CssClass"></i></a></li>
-    }
-</ul>
+@if (organization != null)
+{
+    <ul class="header-social-icons social-icons hidden-xs">
+        @foreach (var item in organization.SocialNetworks)
+        {
+            <li class="social-icons-@item.Code"><a href="@item.Url" target="_blank" title="@item.Name"><i class="fa @item.CssClass"></i></a></li>
+        }
+    </ul>
+}

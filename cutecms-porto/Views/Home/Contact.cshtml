@@ -1,5 +1,6 @@
 ﻿@model OrganizationViewModel
 @using System.Threading;
+@using System.Data.Entity.Core.Objects;
 @using cutecms_porto.Areas.Identity.Models.DBModel;
 @using cutecms_porto.Models
 @using cutecms_porto.Areas.Config.Models.DBModel;
@@ -67,46 +68,47 @@
                         </div>
                     </div>
                 </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <input type="submit" value="@Resources.Resources.Send" class="btn btn-primary btn-lg mb-xlg" data-loading-text="Loading...">
-                        </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="submit" value="@Resources.Resources.Send" class="btn btn-primary btn-lg mb-xlg" data-loading-text="Loading...">
                     </div>
+                </div>
             }
         </div>
         <div class="col-md-6">
             <h4 class="heading-primary mt-lg"><strong>@Resources.Resources.GetInTouch</strong></h4>
-            @*<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>*@
+            @*<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>*@<p></p><p></p><p></p><p></p>
             <hr>
             <h4 class="heading-primary">@Model.Organization.Name</h4>
-            <ul class="list list-icons list-icons-style-3 mt-xlg">
+            <ul class="list list-icons list-icons-style-3 mb-xlg">
                 <li><i class="fa fa-map-marker"></i> @Model.Organization.AddressLine1<br />@Model.Organization.City, @Model.Organization.State, @Model.Organization.ZIP, @Model.Organization.Country</li>
                 <li><i class="fa fa-phone"></i><span> @(Model.Organization.Telephone ?? Resources.Resources.NotAvailable)</span></li>
                 <li><i class="fa fa-envelope"></i> <a href="mailto:@Model.Organization.Email">@(Model.Organization.Email ?? Resources.Resources.NotAvailable)</a></li>
             </ul>
             @{
-                var query = from p in configDb.ConfigDepartments.Include("Contacts").Include("DepartmentTerms.Language")
-                            join c in configDb.Contacts
-                            on p.Id equals c.DepartmentId
-                            where p.Contacts.Where(c => c.Organization.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).Any()
-                            select p;
+                configDb.Configuration.LazyLoadingEnabled = true;
+                var query = (from p in configDb.ConfigDepartments
+                             join c in configDb.Contacts on p.Id equals c.DepartmentId
+                             where p.Contacts.Where(c => c.Organization.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).Any() && p.Contacts.Where(c => c.Organization.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && c.Organization.IsDefault && c.Organization.TenantId.Equals(Tenant.TenantId)).Any()
+                             select p).Distinct().OrderBy(p => p.Ordinal);
             }
             @foreach (var item in query)
             {
                 <h4 class="heading-primary">@(item.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && d.DepartmentId == item.Id).FirstOrDefault()?.Value ?? item.Code)</h4>
-                foreach (var contact in item.Contacts)
+                foreach (var contact in item.Contacts.Where(c => c.Organization.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)))
                 {
-                    <ul class="list list-icons list-icons-style-3 mt-xlg">
+                    <ul class="list list-icons list-icons-style-3 mb-xlg">
                         <li><i class="fa fa-user"></i><span> @string.Format(contact.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.PersonalTitleId == contact.PersonalTitleId).FirstOrDefault().Value + " " + "{0}", @contact.Name), @contact.Position</span></li>
                         @foreach (var phoneNumber in contact.PhoneNumbers)
                         {
-                            <li><i class="fa fa-phone"></i><span>@phoneNumber.Number, @Resources.Resources.Extension: @phoneNumber.Extension</span></li>
+                            <li><i class="fa fa-phone"></i><span>@(phoneNumber.Number ?? Resources.Resources.NotAvailable), @Resources.Resources.Extension: @(phoneNumber.Extension ?? Resources.Resources.NotAvailable)</span></li>
                         }
                         <li><i class="fa fa-map-marker"></i><span>@contact.Office</span></li>
-                        <li><i class="fa fa-envelope"></i> <a href="mailto:@Model.Organization.Email">@(contact.Email ?? Resources.Resources.NotAvailable)</a></li>
+                        <li><i class="fa fa-envelope"></i> <a href="mailto:@(contact.Email)">@(contact.Email ?? Resources.Resources.NotAvailable)</a></li>
                     </ul>
                 }
             }
+            @{configDb.Configuration.LazyLoadingEnabled = false; }
         </div>
 
     </div>

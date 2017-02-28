@@ -19,10 +19,10 @@
                     <p>@Resources.Resources.SubscriptionMessage</p>
 
                     @*<div class="alert alert-success hidden" id="newsletterSuccess">
-                        <strong>Success!</strong> You've been added to our email list.
-                    </div>
+                            <strong>Success!</strong> You've been added to our email list.
+                        </div>
 
-                    <div class="alert alert-danger hidden" id="newsletterError"></div>*@
+                        <div class="alert alert-danger hidden" id="newsletterError"></div>*@
                     @{
                         cutecms_porto.Models.SubscriberViewModel subscriber = new cutecms_porto.Models.SubscriberViewModel();
                     }
@@ -38,21 +38,28 @@
             <div class="col-md-4">
                 <div class="contact-details">
                     <h4>@Resources.Resources.ContactUs</h4>
-                    <ul class="contact">
-                        <li><p><i class="fa fa-map-marker"></i> <strong>@Resources.Resources.Address:</strong> @organization.AddressLine1, @organization.City, @organization.Country</p></li>
-                        <li><p><i class="fa fa-phone"></i> <strong>@Resources.Resources.Phone:</strong> @organization.Telephone</p></li>
-                        <li><p><i class="fa fa-envelope"></i> <strong>@Resources.Resources.Email:</strong> <a href="mailto:@organization.Email">@organization.Email</a></p></li>
-                    </ul>
+                    @if (organization != null)
+                    {
+                        <ul class="contact">
+                            <li><p><i class="fa fa-map-marker"></i> <strong>@Resources.Resources.Address:</strong> @organization.AddressLine1, @organization.City, @organization.Country</p></li>
+                            <li><p><i class="fa fa-phone"></i> <strong>@Resources.Resources.Phone:</strong> @organization.Telephone</p></li>
+                            <li><p><i class="fa fa-envelope"></i> <strong>@Resources.Resources.Email:</strong> <a href="mailto:@organization.Email">@organization.Email</a></p></li>
+                        </ul>
+                    }
                 </div>
             </div>
             <div class="col-md-2">
                 <h4>@Resources.Resources.FollowUs</h4>
-                <ul class="social-icons">
-                    @foreach (var item in organization.SocialNetworks)
-                    {
-                        <li class="social-icons-@item.Code"><a href="@item.Url" target="_blank" title="@item.Name"><i class="fa @item.CssClass"></i></a></li>
-                    }
-                </ul>
+
+                @if (organization != null)
+                {
+                    <ul class="social-icons">
+                        @foreach (var item in organization.SocialNetworks)
+                        {
+                            <li class="social-icons-@item.Code"><a href="@item.Url" target="_blank" title="@item.Name"><i class="fa @item.CssClass"></i></a></li>
+                        }
+                    </ul>
+                }
             </div>
         </div>
     </div>
@@ -65,7 +72,7 @@
                     </a>
                 </div>
                 <div class="col-md-7">
-                    <p>© @DateTime.Now.Year @organization.Name - @Resources.Resources.CopyRights</p>
+                    <p>© @DateTime.Now.Year @(organization?.Name) - @Resources.Resources.CopyRights</p>
                 </div>
                 <div class="col-md-4">
                     <nav id="sub-menu">

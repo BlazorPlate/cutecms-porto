@@ -8,11 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace App_GlobalResources
-{
+namespace App_GlobalResources {
     using System;
-
-
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -23,103 +22,85 @@ namespace App_GlobalResources
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class ValidationResources
-    {
-
+    public class ValidationResources {
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ValidationResources()
-        {
+        internal ValidationResources() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager
-        {
-            get
-            {
-                if (object.ReferenceEquals(resourceMan, null))
-                {
+        public static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("cutecms_porto.App_GlobalResources.ValidationResources", typeof(ValidationResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture
-        {
-            get
-            {
+        public static global::System.Globalization.CultureInfo Culture {
+            get {
                 return resourceCulture;
             }
-            set
-            {
+            set {
                 resourceCulture = value;
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to The field {0} must be a date..
         /// </summary>
-        public static string FieldMustBeDate
-        {
-            get
-            {
+        public static string FieldMustBeDate {
+            get {
                 return ResourceManager.GetString("FieldMustBeDate", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to The field {0} must be a number..
         /// </summary>
-        public static string FieldMustBeNumeric
-        {
-            get
-            {
+        public static string FieldMustBeNumeric {
+            get {
                 return ResourceManager.GetString("FieldMustBeNumeric", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to The field {0} is invalid..
         /// </summary>
-        public static string InvalidPropertyValue
-        {
-            get
-            {
+        public static string InvalidPropertyValue {
+            get {
                 return ResourceManager.GetString("InvalidPropertyValue", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to The value ‘{0}’ is not valid for {1}..
         /// </summary>
-        public static string PropertyValueInvalid
-        {
-            get
-            {
+        public static string PropertyValueInvalid {
+            get {
                 return ResourceManager.GetString("PropertyValueInvalid", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to The field {0} is required..
         /// </summary>
-        public static string PropertyValueRequired
-        {
-            get
-            {
+        public static string PropertyValueRequired {
+            get {
                 return ResourceManager.GetString("PropertyValueRequired", resourceCulture);
             }
         }

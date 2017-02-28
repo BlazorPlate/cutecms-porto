@@ -219,26 +219,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                             }
                             else if (menuItem.IsParent)
                             {
-                                menuItem = db.MenuItems.Include(m => m.MenuItems1).Where(m => m.Id == menuItem.Id).First();
-                                var menuItems = TreeHelper.Traversal(menuItem, x => x.MenuItems1);
-                                foreach (var item in menuItems)
-                                {
-                                    StringHelper.MenuItemsList.Clear();
-                                    StringHelper.ParentMenuItemPath = string.Empty;
-                                    Content content = new Content();
-                                    content = db.Contents.Find(item.ContentId);
-                                    if (content != null)
-                                    {
-                                        string parentMenuItemPath = StringHelper.GetParentMenuItemPath(content.ParentMenuItemId, content.LanguageId);
-                                        var link = StringHelper.BuildUrlSlug(content.UrlCode, content.LanguageId, content.ContentTypeId, parentMenuItemPath, content.Title.Trim(), true);
-                                        content.UrlSlug = link.Item1;
-                                        content.AbsolutePath = link.Item2;
-                                        item.Path = link.Item2;
-                                        db.Entry(content).State = EntityState.Modified;
-                                        db.Entry(item).State = EntityState.Modified;
-                                        db.SaveChanges();
-                                    }
-                                }
+                                UpdatePath(menuItem);
                             }
                             dbContextTransaction.Commit();
                         }
@@ -263,6 +244,37 @@ namespace cutecms_porto.Areas.CMS.Controllers
             ViewBag.LanguageName = db.CMSLanguages.Find(menuItem.LanguageId).Name;
             ViewBag.ParentId = new SelectList(GetMenuItemsServerSide(menuItem.LanguageId, menuItem.MenuId), "Id", "Name", menuItem.ParentId);
             return View(menuItem);
+        }
+
+        private void UpdatePath(MenuItem menuItem)
+        {
+            menuItem = db.MenuItems.Include(m => m.MenuItems1).Where(m => m.Id == menuItem.Id).First();
+            var menuItems = TreeHelper.Traversal(menuItem, x => x.MenuItems1);
+            foreach (var item in menuItems)
+            {
+                StringHelper.MenuItemsList.Clear();
+                StringHelper.ParentMenuItemPath = string.Empty;
+                Content content = new Content();
+                content = db.Contents.Find(item.ContentId);
+                if (content != null)
+                {
+                    string parentMenuItemPath = StringHelper.GetParentMenuItemPath(content.ParentMenuItemId, content.LanguageId);
+                    var link = StringHelper.BuildUrlSlug(content.UrlCode, content.LanguageId, content.ContentTypeId, parentMenuItemPath, content.Title.Trim(), true);
+                    content.UrlSlug = link.Item1;
+                    content.AbsolutePath = link.Item2;
+                    item.Path = link.Item2;
+                    db.Entry(content).State = EntityState.Modified;
+                    db.Entry(item).State = EntityState.Modified;
+                    db.SaveChanges();
+                }
+                if (item.MenuItems1.Any())
+                {
+                    foreach (var nestedItem in item.MenuItems1)
+                    {
+                        UpdatePath(nestedItem);
+                    }             
+                }
+            }
         }
 
         // GET: CMS/MenuItems/Delete/5

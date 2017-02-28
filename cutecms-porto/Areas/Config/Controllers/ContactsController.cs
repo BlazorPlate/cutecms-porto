@@ -67,7 +67,7 @@ namespace cutecms_porto.Areas.Config.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            Contact contact = db.Contacts.Include("Department").Include("Department.DepartmentTerms").Include("Department.DepartmentTerms.Language").Where(c => c.Id == id).FirstOrDefault();
+            Contact contact = db.Contacts.Include("PersonalTitle").Include("PersonalTitle.PersonalTitleTerms").Include("PersonalTitle.PersonalTitleTerms.Language").Include("Department").Include("Department.DepartmentTerms").Include("Department.DepartmentTerms.Language").Where(c => c.Id == id).FirstOrDefault();
             if (contact == null)
             {
                 throw new HttpException(404, "Page Not Found");
@@ -154,7 +154,7 @@ namespace cutecms_porto.Areas.Config.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            Contact contact = db.Contacts.Include("Department").Include("Department.DepartmentTerms").Include("Department.DepartmentTerms.Language").Where(c => c.Id == id).FirstOrDefault();
+            Contact contact = db.Contacts.Include("PersonalTitle").Include("PersonalTitle.PersonalTitleTerms").Include("PersonalTitle.PersonalTitleTerms.Language").Include("Department").Include("Department.DepartmentTerms").Include("Department.DepartmentTerms.Language").Where(c => c.Id == id).FirstOrDefault();
             if (contact == null)
             {
                 throw new HttpException(404, "Page Not Found");

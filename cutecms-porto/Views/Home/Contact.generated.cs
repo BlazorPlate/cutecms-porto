@@ -13,6 +13,12 @@ namespace ASP
 {
     using System;
     using System.Collections.Generic;
+    
+    #line 3 "..\..\Views\Home\Contact.cshtml"
+    using System.Data.Entity.Core.Objects;
+    
+    #line default
+    #line hidden
     using System.IO;
     using System.Linq;
     using System.Net;
@@ -35,20 +41,20 @@ namespace ASP
     using System.Web.WebPages;
     using cutecms_porto;
     
-    #line 5 "..\..\Views\Home\Contact.cshtml"
+    #line 6 "..\..\Views\Home\Contact.cshtml"
     using cutecms_porto.Areas.Config.Models.DBModel;
     
     #line default
     #line hidden
     
-    #line 3 "..\..\Views\Home\Contact.cshtml"
+    #line 4 "..\..\Views\Home\Contact.cshtml"
     using cutecms_porto.Areas.Identity.Models.DBModel;
     
     #line default
     #line hidden
     using cutecms_porto.Helpers;
     
-    #line 4 "..\..\Views\Home\Contact.cshtml"
+    #line 5 "..\..\Views\Home\Contact.cshtml"
     using cutecms_porto.Models;
     
     #line default
@@ -64,7 +70,7 @@ namespace ASP
         public override void Execute()
         {
             
-            #line 6 "..\..\Views\Home\Contact.cshtml"
+            #line 7 "..\..\Views\Home\Contact.cshtml"
   
     ViewBag.Title = Resources.Resources.ContactUs;
     IdentityEntities identityDb = new IdentityEntities();
@@ -96,7 +102,7 @@ WriteLiteral(" class=\"col-md-12\"");
 WriteLiteral(">\r\n                    <h1>");
 
             
-            #line 17 "..\..\Views\Home\Contact.cshtml"
+            #line 18 "..\..\Views\Home\Contact.cshtml"
                    Write(ViewBag.Title);
 
             
@@ -133,7 +139,7 @@ WriteLiteral(" class=\"mb-sm mt-sm\"");
 WriteLiteral("><strong>");
 
             
-            #line 29 "..\..\Views\Home\Contact.cshtml"
+            #line 30 "..\..\Views\Home\Contact.cshtml"
                                        Write(Resources.Resources.ContactUs);
 
             
@@ -142,13 +148,13 @@ WriteLiteral("><strong>");
 WriteLiteral("</strong></h2>\r\n");
 
             
-            #line 30 "..\..\Views\Home\Contact.cshtml"
+            #line 31 "..\..\Views\Home\Contact.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 30 "..\..\Views\Home\Contact.cshtml"
+            #line 31 "..\..\Views\Home\Contact.cshtml"
              using (Html.BeginForm("Contact", "Home", FormMethod.Post))
             {
 
@@ -172,7 +178,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 35 "..\..\Views\Home\Contact.cshtml"
+            #line 36 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.LabelFor(model => model.SenderName));
 
             
@@ -183,7 +189,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 36 "..\..\Views\Home\Contact.cshtml"
+            #line 37 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.TextBoxFor(model => model.SenderName, "", new { @class = "form-control" }));
 
             
@@ -194,7 +200,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 37 "..\..\Views\Home\Contact.cshtml"
+            #line 38 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.ValidationMessageFor(model => model.SenderName, "", new { @class = "text-danger" }));
 
             
@@ -209,7 +215,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 40 "..\..\Views\Home\Contact.cshtml"
+            #line 41 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.LabelFor(model => model.Email));
 
             
@@ -220,7 +226,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 41 "..\..\Views\Home\Contact.cshtml"
+            #line 42 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.TextBoxFor(model => model.Email, "", new { @class = "form-control", @maxlength = "100", placeholder = "example@mail.com" }));
 
             
@@ -231,7 +237,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 42 "..\..\Views\Home\Contact.cshtml"
+            #line 43 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" }));
 
             
@@ -251,7 +257,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 47 "..\..\Views\Home\Contact.cshtml"
+            #line 48 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.LabelFor(model => model.Phone));
 
             
@@ -262,7 +268,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 48 "..\..\Views\Home\Contact.cshtml"
+            #line 49 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.TextBoxFor(model => model.Phone, "", new { @class = "form-control", @maxlength = "100" }));
 
             
@@ -288,7 +294,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 55 "..\..\Views\Home\Contact.cshtml"
+            #line 56 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.LabelFor(model => model.Subject));
 
             
@@ -299,7 +305,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 56 "..\..\Views\Home\Contact.cshtml"
+            #line 57 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.TextBoxFor(model => model.Subject, "", new { @class = "form-control", @maxlength = "100" }));
 
             
@@ -312,7 +318,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 57 "..\..\Views\Home\Contact.cshtml"
+            #line 58 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" }));
 
             
@@ -338,7 +344,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 64 "..\..\Views\Home\Contact.cshtml"
+            #line 65 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.LabelFor(model => model.Message));
 
             
@@ -349,7 +355,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 65 "..\..\Views\Home\Contact.cshtml"
+            #line 66 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.TextAreaFor(model => model.Message, new { @class = "form-control", @maxlength = "100", @rows = 14 }));
 
             
@@ -360,7 +366,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 66 "..\..\Views\Home\Contact.cshtml"
+            #line 67 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" }));
 
             
@@ -369,36 +375,36 @@ WriteLiteral("                            ");
 WriteLiteral("\r\n                        </div>\r\n                    </div>\r\n                </d" +
 "iv>\r\n");
 
-WriteLiteral("                    <div");
+WriteLiteral("                <div");
 
 WriteLiteral(" class=\"row\"");
 
-WriteLiteral(">\r\n                        <div");
+WriteLiteral(">\r\n                    <div");
 
 WriteLiteral(" class=\"col-md-12\"");
 
-WriteLiteral(">\r\n                            <input");
+WriteLiteral(">\r\n                        <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 3529), Tuple.Create("\"", 3562)
+WriteAttribute("value", Tuple.Create(" value=\"", 3558), Tuple.Create("\"", 3591)
             
-            #line 72 "..\..\Views\Home\Contact.cshtml"
-, Tuple.Create(Tuple.Create("", 3537), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Send
+            #line 73 "..\..\Views\Home\Contact.cshtml"
+, Tuple.Create(Tuple.Create("", 3566), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Send
             
             #line default
             #line hidden
-, 3537), false)
+, 3566), false)
 );
 
 WriteLiteral(" class=\"btn btn-primary btn-lg mb-xlg\"");
 
 WriteLiteral(" data-loading-text=\"Loading...\"");
 
-WriteLiteral(">\r\n                        </div>\r\n                    </div>\r\n");
+WriteLiteral(">\r\n                    </div>\r\n                </div>\r\n");
 
             
-            #line 75 "..\..\Views\Home\Contact.cshtml"
+            #line 76 "..\..\Views\Home\Contact.cshtml"
             }
 
             
@@ -415,7 +421,7 @@ WriteLiteral(" class=\"heading-primary mt-lg\"");
 WriteLiteral("><strong>");
 
             
-            #line 78 "..\..\Views\Home\Contact.cshtml"
+            #line 79 "..\..\Views\Home\Contact.cshtml"
                                                  Write(Resources.Resources.GetInTouch);
 
             
@@ -423,14 +429,14 @@ WriteLiteral("><strong>");
             #line hidden
 WriteLiteral("</strong></h4>\r\n            ");
 
-WriteLiteral("\r\n            <hr>\r\n            <h4");
+WriteLiteral("<p></p><p></p><p></p><p></p>\r\n            <hr>\r\n            <h4");
 
 WriteLiteral(" class=\"heading-primary\"");
 
 WriteLiteral(">");
 
             
-            #line 81 "..\..\Views\Home\Contact.cshtml"
+            #line 82 "..\..\Views\Home\Contact.cshtml"
                                    Write(Model.Organization.Name);
 
             
@@ -438,7 +444,7 @@ WriteLiteral(">");
             #line hidden
 WriteLiteral("</h4>\r\n            <ul");
 
-WriteLiteral(" class=\"list list-icons list-icons-style-3 mt-xlg\"");
+WriteLiteral(" class=\"list list-icons list-icons-style-3 mb-xlg\"");
 
 WriteLiteral(">\r\n                <li><i");
 
@@ -447,7 +453,7 @@ WriteLiteral(" class=\"fa fa-map-marker\"");
 WriteLiteral("></i> ");
 
             
-            #line 83 "..\..\Views\Home\Contact.cshtml"
+            #line 84 "..\..\Views\Home\Contact.cshtml"
                                                 Write(Model.Organization.AddressLine1);
 
             
@@ -456,7 +462,7 @@ WriteLiteral("></i> ");
 WriteLiteral("<br />");
 
             
-            #line 83 "..\..\Views\Home\Contact.cshtml"
+            #line 84 "..\..\Views\Home\Contact.cshtml"
                                                                                       Write(Model.Organization.City);
 
             
@@ -465,7 +471,7 @@ WriteLiteral("<br />");
 WriteLiteral(", ");
 
             
-            #line 83 "..\..\Views\Home\Contact.cshtml"
+            #line 84 "..\..\Views\Home\Contact.cshtml"
                                                                                                                 Write(Model.Organization.State);
 
             
@@ -474,7 +480,7 @@ WriteLiteral(", ");
 WriteLiteral(", ");
 
             
-            #line 83 "..\..\Views\Home\Contact.cshtml"
+            #line 84 "..\..\Views\Home\Contact.cshtml"
                                                                                                                                            Write(Model.Organization.ZIP);
 
             
@@ -483,7 +489,7 @@ WriteLiteral(", ");
 WriteLiteral(", ");
 
             
-            #line 83 "..\..\Views\Home\Contact.cshtml"
+            #line 84 "..\..\Views\Home\Contact.cshtml"
                                                                                                                                                                     Write(Model.Organization.Country);
 
             
@@ -496,7 +502,7 @@ WriteLiteral(" class=\"fa fa-phone\"");
 WriteLiteral("></i><span> ");
 
             
-            #line 84 "..\..\Views\Home\Contact.cshtml"
+            #line 85 "..\..\Views\Home\Contact.cshtml"
                                                   Write(Model.Organization.Telephone ?? Resources.Resources.NotAvailable);
 
             
@@ -508,21 +514,21 @@ WriteLiteral(" class=\"fa fa-envelope\"");
 
 WriteLiteral("></i> <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4646), Tuple.Create("\"", 4685)
-, Tuple.Create(Tuple.Create("", 4653), Tuple.Create("mailto:", 4653), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 4695), Tuple.Create("\"", 4734)
+, Tuple.Create(Tuple.Create("", 4702), Tuple.Create("mailto:", 4702), true)
             
-            #line 85 "..\..\Views\Home\Contact.cshtml"
-, Tuple.Create(Tuple.Create("", 4660), Tuple.Create<System.Object, System.Int32>(Model.Organization.Email
+            #line 86 "..\..\Views\Home\Contact.cshtml"
+, Tuple.Create(Tuple.Create("", 4709), Tuple.Create<System.Object, System.Int32>(Model.Organization.Email
             
             #line default
             #line hidden
-, 4660), false)
+, 4709), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 85 "..\..\Views\Home\Contact.cshtml"
+            #line 86 "..\..\Views\Home\Contact.cshtml"
                                                                                           Write(Model.Organization.Email ?? Resources.Resources.NotAvailable);
 
             
@@ -531,19 +537,19 @@ WriteLiteral(">");
 WriteLiteral("</a></li>\r\n            </ul>\r\n");
 
             
-            #line 87 "..\..\Views\Home\Contact.cshtml"
+            #line 88 "..\..\Views\Home\Contact.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 87 "..\..\Views\Home\Contact.cshtml"
+            #line 88 "..\..\Views\Home\Contact.cshtml"
               
-                var query = from p in configDb.ConfigDepartments.Include("Contacts").Include("DepartmentTerms.Language")
-                            join c in configDb.Contacts
-                            on p.Id equals c.DepartmentId
-                            where p.Contacts.Where(c => c.Organization.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).Any()
-                            select p;
+                configDb.Configuration.LazyLoadingEnabled = true;
+                var query = (from p in configDb.ConfigDepartments
+                             join c in configDb.Contacts on p.Id equals c.DepartmentId
+                             where p.Contacts.Where(c => c.Organization.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).Any() && p.Contacts.Where(c => c.Organization.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && c.Organization.IsDefault && c.Organization.TenantId.Equals(Tenant.TenantId)).Any()
+                             select p).Distinct().OrderBy(p => p.Ordinal);
             
             
             #line default
@@ -551,13 +557,13 @@ WriteLiteral("</a></li>\r\n            </ul>\r\n");
 WriteLiteral("\r\n");
 
             
-            #line 94 "..\..\Views\Home\Contact.cshtml"
+            #line 95 "..\..\Views\Home\Contact.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 94 "..\..\Views\Home\Contact.cshtml"
+            #line 95 "..\..\Views\Home\Contact.cshtml"
              foreach (var item in query)
             {
 
@@ -571,7 +577,7 @@ WriteLiteral(" class=\"heading-primary\"");
 WriteLiteral(">");
 
             
-            #line 96 "..\..\Views\Home\Contact.cshtml"
+            #line 97 "..\..\Views\Home\Contact.cshtml"
                                         Write(item.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && d.DepartmentId == item.Id).FirstOrDefault()?.Value ?? item.Code);
 
             
@@ -580,8 +586,8 @@ WriteLiteral(">");
 WriteLiteral("</h4>\r\n");
 
             
-            #line 97 "..\..\Views\Home\Contact.cshtml"
-                foreach (var contact in item.Contacts)
+            #line 98 "..\..\Views\Home\Contact.cshtml"
+                foreach (var contact in item.Contacts.Where(c => c.Organization.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)))
                 {
 
             
@@ -589,7 +595,7 @@ WriteLiteral("</h4>\r\n");
             #line hidden
 WriteLiteral("                    <ul");
 
-WriteLiteral(" class=\"list list-icons list-icons-style-3 mt-xlg\"");
+WriteLiteral(" class=\"list list-icons list-icons-style-3 mb-xlg\"");
 
 WriteLiteral(">\r\n                        <li><i");
 
@@ -598,7 +604,7 @@ WriteLiteral(" class=\"fa fa-user\"");
 WriteLiteral("></i><span> ");
 
             
-            #line 100 "..\..\Views\Home\Contact.cshtml"
+            #line 101 "..\..\Views\Home\Contact.cshtml"
                                                         Write(string.Format(contact.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.PersonalTitleId == contact.PersonalTitleId).FirstOrDefault().Value + " " + "{0}", @contact.Name));
 
             
@@ -607,7 +613,7 @@ WriteLiteral("></i><span> ");
 WriteLiteral(", ");
 
             
-            #line 100 "..\..\Views\Home\Contact.cshtml"
+            #line 101 "..\..\Views\Home\Contact.cshtml"
                                                                                                                                                                                                                                                                                                                  Write(contact.Position);
 
             
@@ -616,13 +622,13 @@ WriteLiteral(", ");
 WriteLiteral("</span></li>\r\n");
 
             
-            #line 101 "..\..\Views\Home\Contact.cshtml"
+            #line 102 "..\..\Views\Home\Contact.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 101 "..\..\Views\Home\Contact.cshtml"
+            #line 102 "..\..\Views\Home\Contact.cshtml"
                          foreach (var phoneNumber in contact.PhoneNumbers)
                         {
 
@@ -636,8 +642,8 @@ WriteLiteral(" class=\"fa fa-phone\"");
 WriteLiteral("></i><span>");
 
             
-            #line 103 "..\..\Views\Home\Contact.cshtml"
-                                                            Write(phoneNumber.Number);
+            #line 104 "..\..\Views\Home\Contact.cshtml"
+                                                             Write(phoneNumber.Number ?? Resources.Resources.NotAvailable);
 
             
             #line default
@@ -645,8 +651,8 @@ WriteLiteral("></i><span>");
 WriteLiteral(", ");
 
             
-            #line 103 "..\..\Views\Home\Contact.cshtml"
-                                                                                 Write(Resources.Resources.Extension);
+            #line 104 "..\..\Views\Home\Contact.cshtml"
+                                                                                                                       Write(Resources.Resources.Extension);
 
             
             #line default
@@ -654,8 +660,8 @@ WriteLiteral(", ");
 WriteLiteral(": ");
 
             
-            #line 103 "..\..\Views\Home\Contact.cshtml"
-                                                                                                                 Write(phoneNumber.Extension);
+            #line 104 "..\..\Views\Home\Contact.cshtml"
+                                                                                                                                                        Write(phoneNumber.Extension ?? Resources.Resources.NotAvailable);
 
             
             #line default
@@ -663,7 +669,7 @@ WriteLiteral(": ");
 WriteLiteral("</span></li>\r\n");
 
             
-            #line 104 "..\..\Views\Home\Contact.cshtml"
+            #line 105 "..\..\Views\Home\Contact.cshtml"
                         }
 
             
@@ -676,7 +682,7 @@ WriteLiteral(" class=\"fa fa-map-marker\"");
 WriteLiteral("></i><span>");
 
             
-            #line 105 "..\..\Views\Home\Contact.cshtml"
+            #line 106 "..\..\Views\Home\Contact.cshtml"
                                                              Write(contact.Office);
 
             
@@ -688,22 +694,22 @@ WriteLiteral(" class=\"fa fa-envelope\"");
 
 WriteLiteral("></i> <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 6464), Tuple.Create("\"", 6503)
-, Tuple.Create(Tuple.Create("", 6471), Tuple.Create("mailto:", 6471), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 6918), Tuple.Create("\"", 6948)
+, Tuple.Create(Tuple.Create("", 6925), Tuple.Create("mailto:", 6925), true)
             
-            #line 106 "..\..\Views\Home\Contact.cshtml"
-, Tuple.Create(Tuple.Create("", 6478), Tuple.Create<System.Object, System.Int32>(Model.Organization.Email
+            #line 107 "..\..\Views\Home\Contact.cshtml"
+, Tuple.Create(Tuple.Create("", 6932), Tuple.Create<System.Object, System.Int32>(contact.Email
             
             #line default
             #line hidden
-, 6478), false)
+, 6932), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 106 "..\..\Views\Home\Contact.cshtml"
-                                                                                                  Write(contact.Email ?? Resources.Resources.NotAvailable);
+            #line 107 "..\..\Views\Home\Contact.cshtml"
+                                                                                         Write(contact.Email ?? Resources.Resources.NotAvailable);
 
             
             #line default
@@ -711,14 +717,22 @@ WriteLiteral(">");
 WriteLiteral("</a></li>\r\n                    </ul>\r\n");
 
             
-            #line 108 "..\..\Views\Home\Contact.cshtml"
+            #line 109 "..\..\Views\Home\Contact.cshtml"
                 }
             }
 
             
             #line default
             #line hidden
-WriteLiteral("        </div>\r\n\r\n    </div>\r\n</div>\r\n");
+WriteLiteral("            ");
+
+            
+            #line 111 "..\..\Views\Home\Contact.cshtml"
+              configDb.Configuration.LazyLoadingEnabled = false; 
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </div>\r\n\r\n    </div>\r\n</div>\r\n");
 
 DefineSection("Scripts", () => {
 

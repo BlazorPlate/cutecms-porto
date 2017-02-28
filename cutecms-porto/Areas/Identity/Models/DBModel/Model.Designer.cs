@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Home\Source\Repos\cutecms_porto\cutecms_porto\Areas\Identity\Models\DBModel\Model.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Admin\Source\Repos\cutecms-porto\cutecms-porto\Areas\Identity\Models\DBModel\Model.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

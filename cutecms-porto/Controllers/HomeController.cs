@@ -52,11 +52,11 @@ namespace cutecms_porto.Controllers
         }
         public ActionResult Contact()
         {
-            var organization = configDb.Organizations.Where(o => o.TenantId.Trim().Equals(Tenant.TenantId) && o.IsDefault == true && o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
-            if (organization == null)
-            {
-                throw new HttpException(404, "Page Not Found");
-            }
+            var organization = configDb.Organizations.Where(o => o.TenantId.Trim().Equals(Tenant.TenantId) && o.IsDefault && o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
+            //if (organization == null)
+            //{
+            //    throw new HttpException(404, "Page Not Found");
+            //}
             OrganizationViewModel organiztionVM = new OrganizationViewModel();
             organiztionVM.Organization = organization;
             return View(organiztionVM);

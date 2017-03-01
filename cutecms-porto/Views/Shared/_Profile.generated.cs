@@ -65,7 +65,7 @@ namespace ASP
     public partial class _Views_Shared__Profile_cshtml : System.Web.Mvc.WebViewPage<dynamic>
     {
         
-        #line 81 "..\..\Views\Shared\_Profile.cshtml"
+        #line 83 "..\..\Views\Shared\_Profile.cshtml"
            
     public int ProfileCompletion(Employee emp)
     {
@@ -104,7 +104,7 @@ namespace ASP
     IdentityEntities db = new IdentityEntities();
     Employee employee = (Employee)ViewBag.Employee;
     ApplicationDbContext _db = new ApplicationDbContext();
-    var empEmail = _db.Users.Find(employee.LoginId).Email;
+    var empEmail = _db.Users.Find(employee.LoginId)?.Email;
 
             
             #line default
@@ -139,14 +139,14 @@ WriteLiteral(" class=\"img-responsive\"");
 
 WriteLiteral(" alt=\"\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 629), Tuple.Create("\"", 776)
+WriteAttribute("src", Tuple.Create(" src=\"", 630), Tuple.Create("\"", 777)
             
             #line 16 "..\..\Views\Shared\_Profile.cshtml"
-, Tuple.Create(Tuple.Create("", 635), Tuple.Create<System.Object, System.Int32>(!File.Exists(Server.MapPath(employee.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : employee.PersonalPhotoPath
+, Tuple.Create(Tuple.Create("", 636), Tuple.Create<System.Object, System.Int32>(!File.Exists(Server.MapPath(employee.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : employee.PersonalPhotoPath
             
             #line default
             #line hidden
-, 635), false)
+, 636), false)
 );
 
 WriteLiteral(">\r\n");
@@ -188,7 +188,7 @@ WriteLiteral("</h4>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("                <h5");
+WriteLiteral("                <small");
 
 WriteLiteral(" class=\"text-muted\"");
 
@@ -196,32 +196,26 @@ WriteLiteral(">");
 
             
             #line 23 "..\..\Views\Shared\_Profile.cshtml"
-                                  Write(occupation);
+                                     Write(occupation);
 
             
             #line default
             #line hidden
-WriteLiteral("</h5>\r\n");
-
-WriteLiteral("                <h6");
-
-WriteLiteral(" class=\"text-muted\"");
-
-WriteLiteral(">");
+WriteLiteral(" &#64; ");
 
             
-            #line 24 "..\..\Views\Shared\_Profile.cshtml"
-                                  Write(department);
+            #line 23 "..\..\Views\Shared\_Profile.cshtml"
+                                                       Write(department);
 
             
             #line default
             #line hidden
-WriteLiteral("</h6>\r\n");
+WriteLiteral("</small>\r\n");
 
 WriteLiteral("                <hr />\r\n");
 
             
-            #line 26 "..\..\Views\Shared\_Profile.cshtml"
+            #line 25 "..\..\Views\Shared\_Profile.cshtml"
             }
             if (employee.Publications.Count() != 0)
             {
@@ -235,7 +229,7 @@ WriteLiteral("             <!-- completed -->\r\n");
 WriteLiteral("                <div>\r\n                    <label>");
 
             
-            #line 32 "..\..\Views\Shared\_Profile.cshtml"
+            #line 31 "..\..\Views\Shared\_Profile.cshtml"
                       Write(percentage);
 
             
@@ -244,7 +238,7 @@ WriteLiteral("                <div>\r\n                    <label>");
 WriteLiteral("% ");
 
             
-            #line 32 "..\..\Views\Shared\_Profile.cshtml"
+            #line 31 "..\..\Views\Shared\_Profile.cshtml"
                                    Write(Resources.Resources.CompletedProfile);
 
             
@@ -257,13 +251,13 @@ WriteLiteral(" class=\"progress\"");
 WriteLiteral(">\r\n");
 
             
-            #line 34 "..\..\Views\Shared\_Profile.cshtml"
+            #line 33 "..\..\Views\Shared\_Profile.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 34 "..\..\Views\Shared\_Profile.cshtml"
+            #line 33 "..\..\Views\Shared\_Profile.cshtml"
                          if (percentage <= 50)
                         {
 
@@ -276,38 +270,38 @@ WriteLiteral(" class=\"progress-bar progress-bar-danger\"");
 
 WriteLiteral(" role=\"progressbar\"");
 
-WriteAttribute("aria-valuenow", Tuple.Create(" aria-valuenow=\"", 2347), Tuple.Create("\"", 2374)
+WriteAttribute("aria-valuenow", Tuple.Create(" aria-valuenow=\"", 2315), Tuple.Create("\"", 2342)
             
-            #line 36 "..\..\Views\Shared\_Profile.cshtml"
-                            , Tuple.Create(Tuple.Create("", 2363), Tuple.Create<System.Object, System.Int32>(percentage
+            #line 35 "..\..\Views\Shared\_Profile.cshtml"
+                            , Tuple.Create(Tuple.Create("", 2331), Tuple.Create<System.Object, System.Int32>(percentage
             
             #line default
             #line hidden
-, 2363), false)
+, 2331), false)
 );
 
 WriteLiteral(" aria-valuemin=\"0\"");
 
 WriteLiteral(" aria-valuemax=\"100\"");
 
-WriteAttribute("style", Tuple.Create(" style=\"", 2413), Tuple.Create("\"", 2457)
-, Tuple.Create(Tuple.Create("", 2421), Tuple.Create("width:", 2421), true)
+WriteAttribute("style", Tuple.Create(" style=\"", 2381), Tuple.Create("\"", 2425)
+, Tuple.Create(Tuple.Create("", 2389), Tuple.Create("width:", 2389), true)
             
-            #line 36 "..\..\Views\Shared\_Profile.cshtml"
-                                                                                            , Tuple.Create(Tuple.Create(" ", 2427), Tuple.Create<System.Object, System.Int32>(percentage
+            #line 35 "..\..\Views\Shared\_Profile.cshtml"
+                                                                                            , Tuple.Create(Tuple.Create(" ", 2395), Tuple.Create<System.Object, System.Int32>(percentage
             
             #line default
             #line hidden
-, 2428), false)
-, Tuple.Create(Tuple.Create("", 2439), Tuple.Create("%;", 2439), true)
-, Tuple.Create(Tuple.Create(" ", 2441), Tuple.Create("min-width:", 2442), true)
-, Tuple.Create(Tuple.Create(" ", 2452), Tuple.Create("2em;", 2453), true)
+, 2396), false)
+, Tuple.Create(Tuple.Create("", 2407), Tuple.Create("%;", 2407), true)
+, Tuple.Create(Tuple.Create(" ", 2409), Tuple.Create("min-width:", 2410), true)
+, Tuple.Create(Tuple.Create(" ", 2420), Tuple.Create("2em;", 2421), true)
 );
 
 WriteLiteral("></div>\r\n");
 
             
-            #line 37 "..\..\Views\Shared\_Profile.cshtml"
+            #line 36 "..\..\Views\Shared\_Profile.cshtml"
                         }
 
             
@@ -316,7 +310,7 @@ WriteLiteral("></div>\r\n");
 WriteLiteral("                        ");
 
             
-            #line 38 "..\..\Views\Shared\_Profile.cshtml"
+            #line 37 "..\..\Views\Shared\_Profile.cshtml"
                          if (percentage > 50 && percentage < 75)
                         {
 
@@ -329,38 +323,38 @@ WriteLiteral(" class=\"progress-bar progress-bar-warning\"");
 
 WriteLiteral(" role=\"progressbar\"");
 
-WriteAttribute("aria-valuenow", Tuple.Create(" aria-valuenow=\"", 2680), Tuple.Create("\"", 2707)
+WriteAttribute("aria-valuenow", Tuple.Create(" aria-valuenow=\"", 2648), Tuple.Create("\"", 2675)
             
-            #line 40 "..\..\Views\Shared\_Profile.cshtml"
-                             , Tuple.Create(Tuple.Create("", 2696), Tuple.Create<System.Object, System.Int32>(percentage
+            #line 39 "..\..\Views\Shared\_Profile.cshtml"
+                             , Tuple.Create(Tuple.Create("", 2664), Tuple.Create<System.Object, System.Int32>(percentage
             
             #line default
             #line hidden
-, 2696), false)
+, 2664), false)
 );
 
 WriteLiteral(" aria-valuemin=\"0\"");
 
 WriteLiteral(" aria-valuemax=\"100\"");
 
-WriteAttribute("style", Tuple.Create(" style=\"", 2746), Tuple.Create("\"", 2790)
-, Tuple.Create(Tuple.Create("", 2754), Tuple.Create("width:", 2754), true)
+WriteAttribute("style", Tuple.Create(" style=\"", 2714), Tuple.Create("\"", 2758)
+, Tuple.Create(Tuple.Create("", 2722), Tuple.Create("width:", 2722), true)
             
-            #line 40 "..\..\Views\Shared\_Profile.cshtml"
-                                                                                             , Tuple.Create(Tuple.Create(" ", 2760), Tuple.Create<System.Object, System.Int32>(percentage
+            #line 39 "..\..\Views\Shared\_Profile.cshtml"
+                                                                                             , Tuple.Create(Tuple.Create(" ", 2728), Tuple.Create<System.Object, System.Int32>(percentage
             
             #line default
             #line hidden
-, 2761), false)
-, Tuple.Create(Tuple.Create("", 2772), Tuple.Create("%;", 2772), true)
-, Tuple.Create(Tuple.Create(" ", 2774), Tuple.Create("min-width:", 2775), true)
-, Tuple.Create(Tuple.Create(" ", 2785), Tuple.Create("2em;", 2786), true)
+, 2729), false)
+, Tuple.Create(Tuple.Create("", 2740), Tuple.Create("%;", 2740), true)
+, Tuple.Create(Tuple.Create(" ", 2742), Tuple.Create("min-width:", 2743), true)
+, Tuple.Create(Tuple.Create(" ", 2753), Tuple.Create("2em;", 2754), true)
 );
 
 WriteLiteral("></div>\r\n");
 
             
-            #line 41 "..\..\Views\Shared\_Profile.cshtml"
+            #line 40 "..\..\Views\Shared\_Profile.cshtml"
                         }
 
             
@@ -369,7 +363,7 @@ WriteLiteral("></div>\r\n");
 WriteLiteral("                        ");
 
             
-            #line 42 "..\..\Views\Shared\_Profile.cshtml"
+            #line 41 "..\..\Views\Shared\_Profile.cshtml"
                          if (percentage >= 75)
                         {
 
@@ -382,38 +376,38 @@ WriteLiteral(" class=\"progress-bar progress-bar-success\"");
 
 WriteLiteral(" role=\"progressbar\"");
 
-WriteAttribute("aria-valuenow", Tuple.Create(" aria-valuenow=\"", 2995), Tuple.Create("\"", 3022)
+WriteAttribute("aria-valuenow", Tuple.Create(" aria-valuenow=\"", 2963), Tuple.Create("\"", 2990)
             
-            #line 44 "..\..\Views\Shared\_Profile.cshtml"
-                             , Tuple.Create(Tuple.Create("", 3011), Tuple.Create<System.Object, System.Int32>(percentage
+            #line 43 "..\..\Views\Shared\_Profile.cshtml"
+                             , Tuple.Create(Tuple.Create("", 2979), Tuple.Create<System.Object, System.Int32>(percentage
             
             #line default
             #line hidden
-, 3011), false)
+, 2979), false)
 );
 
 WriteLiteral(" aria-valuemin=\"0\"");
 
 WriteLiteral(" aria-valuemax=\"100\"");
 
-WriteAttribute("style", Tuple.Create(" style=\"", 3061), Tuple.Create("\"", 3105)
-, Tuple.Create(Tuple.Create("", 3069), Tuple.Create("width:", 3069), true)
+WriteAttribute("style", Tuple.Create(" style=\"", 3029), Tuple.Create("\"", 3073)
+, Tuple.Create(Tuple.Create("", 3037), Tuple.Create("width:", 3037), true)
             
-            #line 44 "..\..\Views\Shared\_Profile.cshtml"
-                                                                                             , Tuple.Create(Tuple.Create(" ", 3075), Tuple.Create<System.Object, System.Int32>(percentage
+            #line 43 "..\..\Views\Shared\_Profile.cshtml"
+                                                                                             , Tuple.Create(Tuple.Create(" ", 3043), Tuple.Create<System.Object, System.Int32>(percentage
             
             #line default
             #line hidden
-, 3076), false)
-, Tuple.Create(Tuple.Create("", 3087), Tuple.Create("%;", 3087), true)
-, Tuple.Create(Tuple.Create(" ", 3089), Tuple.Create("min-width:", 3090), true)
-, Tuple.Create(Tuple.Create(" ", 3100), Tuple.Create("2em;", 3101), true)
+, 3044), false)
+, Tuple.Create(Tuple.Create("", 3055), Tuple.Create("%;", 3055), true)
+, Tuple.Create(Tuple.Create(" ", 3057), Tuple.Create("min-width:", 3058), true)
+, Tuple.Create(Tuple.Create(" ", 3068), Tuple.Create("2em;", 3069), true)
 );
 
 WriteLiteral("></div>\r\n");
 
             
-            #line 45 "..\..\Views\Shared\_Profile.cshtml"
+            #line 44 "..\..\Views\Shared\_Profile.cshtml"
                         }
 
             
@@ -424,7 +418,7 @@ WriteLiteral("                    </div>\r\n                </div>\r\n");
 WriteLiteral("    <!-- /completed -->\r\n");
 
             
-            #line 49 "..\..\Views\Shared\_Profile.cshtml"
+            #line 48 "..\..\Views\Shared\_Profile.cshtml"
             }
         }
 
@@ -434,13 +428,13 @@ WriteLiteral("    <!-- /completed -->\r\n");
 WriteLiteral("    </div>\r\n");
 
             
-            #line 52 "..\..\Views\Shared\_Profile.cshtml"
+            #line 51 "..\..\Views\Shared\_Profile.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 52 "..\..\Views\Shared\_Profile.cshtml"
+            #line 51 "..\..\Views\Shared\_Profile.cshtml"
      if (employee != null)
     {
 
@@ -456,7 +450,7 @@ WriteLiteral(" class=\"text-muted\"");
 WriteLiteral(">\r\n            <h5><b>");
 
             
-            #line 56 "..\..\Views\Shared\_Profile.cshtml"
+            #line 55 "..\..\Views\Shared\_Profile.cshtml"
               Write(Resources.Resources.About);
 
             
@@ -465,7 +459,7 @@ WriteLiteral(">\r\n            <h5><b>");
 WriteLiteral(" ");
 
             
-            #line 56 "..\..\Views\Shared\_Profile.cshtml"
+            #line 55 "..\..\Views\Shared\_Profile.cshtml"
                                          Write(employee.FullName);
 
             
@@ -473,13 +467,13 @@ WriteLiteral(" ");
             #line hidden
 WriteLiteral(",</b></h5>\r\n            <p");
 
-WriteLiteral(" class=\"justify\"");
+WriteLiteral(" class=\"text-justify\"");
 
 WriteLiteral(">");
 
             
-            #line 57 "..\..\Views\Shared\_Profile.cshtml"
-                          Write(employee.Biography.StripHtml().Chop(190));
+            #line 56 "..\..\Views\Shared\_Profile.cshtml"
+                               Write(employee.Biography.StripHtml().Chop(190));
 
             
             #line default
@@ -488,27 +482,43 @@ WriteLiteral("</p>\r\n            <ul");
 
 WriteLiteral(" class=\"list-unstyled nomargin\"");
 
-WriteLiteral(">\r\n                <li><i");
+WriteLiteral(">\r\n");
+
+            
+            #line 58 "..\..\Views\Shared\_Profile.cshtml"
+                
+            
+            #line default
+            #line hidden
+            
+            #line 58 "..\..\Views\Shared\_Profile.cshtml"
+                 if (!string.IsNullOrEmpty(empEmail))
+                {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                    <li><i");
 
 WriteLiteral(" class=\"fa fa-2x fa-envelope-square width-20 hidden-xs hidden-sm\"");
 
 WriteLiteral("></i> <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3651), Tuple.Create("\"", 3667)
+WriteAttribute("href", Tuple.Create(" href=\"", 3702), Tuple.Create("\"", 3718)
             
-            #line 59 "..\..\Views\Shared\_Profile.cshtml"
-                      , Tuple.Create(Tuple.Create("", 3658), Tuple.Create<System.Object, System.Int32>(empEmail
+            #line 60 "..\..\Views\Shared\_Profile.cshtml"
+                          , Tuple.Create(Tuple.Create("", 3709), Tuple.Create<System.Object, System.Int32>(empEmail
             
             #line default
             #line hidden
-, 3658), false)
+, 3709), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 59 "..\..\Views\Shared\_Profile.cshtml"
-                                                                                                            Write(empEmail);
+            #line 60 "..\..\Views\Shared\_Profile.cshtml"
+                                                                                                                Write(empEmail);
 
             
             #line default
@@ -516,13 +526,16 @@ WriteLiteral(">");
 WriteLiteral("</a></li>\r\n");
 
             
-            #line 60 "..\..\Views\Shared\_Profile.cshtml"
-                
+            #line 61 "..\..\Views\Shared\_Profile.cshtml"
+                }
+
             
             #line default
             #line hidden
+WriteLiteral("                ");
+
             
-            #line 60 "..\..\Views\Shared\_Profile.cshtml"
+            #line 62 "..\..\Views\Shared\_Profile.cshtml"
                  if (!string.IsNullOrEmpty(employee.FacebookUrl))
                 {
 
@@ -535,20 +548,20 @@ WriteLiteral(" class=\"fa fa-2x fa-facebook-square width-20 hidden-xs hidden-sm\
 
 WriteLiteral("></i> <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3874), Tuple.Create("\"", 3902)
+WriteAttribute("href", Tuple.Create(" href=\"", 3944), Tuple.Create("\"", 3972)
             
-            #line 62 "..\..\Views\Shared\_Profile.cshtml"
-                          , Tuple.Create(Tuple.Create("", 3881), Tuple.Create<System.Object, System.Int32>(employee.FacebookUrl
+            #line 64 "..\..\Views\Shared\_Profile.cshtml"
+                          , Tuple.Create(Tuple.Create("", 3951), Tuple.Create<System.Object, System.Int32>(employee.FacebookUrl
             
             #line default
             #line hidden
-, 3881), false)
+, 3951), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 62 "..\..\Views\Shared\_Profile.cshtml"
+            #line 64 "..\..\Views\Shared\_Profile.cshtml"
                                                                                                                             Write(Resources.Resources.ViewMySocialNetwork);
 
             
@@ -557,7 +570,7 @@ WriteLiteral(">");
 WriteLiteral("</a></li>\r\n");
 
             
-            #line 63 "..\..\Views\Shared\_Profile.cshtml"
+            #line 65 "..\..\Views\Shared\_Profile.cshtml"
                 }
 
             
@@ -566,7 +579,7 @@ WriteLiteral("</a></li>\r\n");
 WriteLiteral("                ");
 
             
-            #line 64 "..\..\Views\Shared\_Profile.cshtml"
+            #line 66 "..\..\Views\Shared\_Profile.cshtml"
                  if (!string.IsNullOrEmpty(employee.TwitterUrl))
                 {
 
@@ -579,20 +592,20 @@ WriteLiteral(" class=\"fa fa-2x fa-twitter-square width-20 hidden-xs hidden-sm\"
 
 WriteLiteral("></i> <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4157), Tuple.Create("\"", 4184)
+WriteAttribute("href", Tuple.Create(" href=\"", 4227), Tuple.Create("\"", 4254)
             
-            #line 66 "..\..\Views\Shared\_Profile.cshtml"
-                         , Tuple.Create(Tuple.Create("", 4164), Tuple.Create<System.Object, System.Int32>(employee.TwitterUrl
+            #line 68 "..\..\Views\Shared\_Profile.cshtml"
+                         , Tuple.Create(Tuple.Create("", 4234), Tuple.Create<System.Object, System.Int32>(employee.TwitterUrl
             
             #line default
             #line hidden
-, 4164), false)
+, 4234), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 66 "..\..\Views\Shared\_Profile.cshtml"
+            #line 68 "..\..\Views\Shared\_Profile.cshtml"
                                                                                                                           Write(Resources.Resources.ViewMySocialNetwork);
 
             
@@ -601,7 +614,7 @@ WriteLiteral(">");
 WriteLiteral("</a></li>\r\n");
 
             
-            #line 67 "..\..\Views\Shared\_Profile.cshtml"
+            #line 69 "..\..\Views\Shared\_Profile.cshtml"
                 }
 
             
@@ -610,7 +623,7 @@ WriteLiteral("</a></li>\r\n");
 WriteLiteral("                ");
 
             
-            #line 68 "..\..\Views\Shared\_Profile.cshtml"
+            #line 70 "..\..\Views\Shared\_Profile.cshtml"
                  if (!string.IsNullOrEmpty(employee.LinkedInUrl))
                 {
 
@@ -623,20 +636,20 @@ WriteLiteral(" class=\"fa fa-2x fa-linkedin-square width-20 hidden-xs hidden-sm\
 
 WriteLiteral("></i> <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4441), Tuple.Create("\"", 4469)
+WriteAttribute("href", Tuple.Create(" href=\"", 4511), Tuple.Create("\"", 4539)
             
-            #line 70 "..\..\Views\Shared\_Profile.cshtml"
-                          , Tuple.Create(Tuple.Create("", 4448), Tuple.Create<System.Object, System.Int32>(employee.LinkedInUrl
+            #line 72 "..\..\Views\Shared\_Profile.cshtml"
+                          , Tuple.Create(Tuple.Create("", 4518), Tuple.Create<System.Object, System.Int32>(employee.LinkedInUrl
             
             #line default
             #line hidden
-, 4448), false)
+, 4518), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 70 "..\..\Views\Shared\_Profile.cshtml"
+            #line 72 "..\..\Views\Shared\_Profile.cshtml"
                                                                                                                             Write(Resources.Resources.ViewMySocialNetwork);
 
             
@@ -645,7 +658,7 @@ WriteLiteral(">");
 WriteLiteral("</li>\r\n");
 
             
-            #line 71 "..\..\Views\Shared\_Profile.cshtml"
+            #line 73 "..\..\Views\Shared\_Profile.cshtml"
                 }
 
             
@@ -654,7 +667,7 @@ WriteLiteral("</li>\r\n");
 WriteLiteral("                ");
 
             
-            #line 72 "..\..\Views\Shared\_Profile.cshtml"
+            #line 74 "..\..\Views\Shared\_Profile.cshtml"
                  if (!string.IsNullOrEmpty(employee.GooglePlusUrl))
                 {
 
@@ -667,20 +680,20 @@ WriteLiteral(" class=\"fa fa-2x  fa-google-plus-square width-20 hidden-xs hidden
 
 WriteLiteral("></i> <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4728), Tuple.Create("\"", 4758)
+WriteAttribute("href", Tuple.Create(" href=\"", 4798), Tuple.Create("\"", 4828)
             
-            #line 74 "..\..\Views\Shared\_Profile.cshtml"
-                              , Tuple.Create(Tuple.Create("", 4735), Tuple.Create<System.Object, System.Int32>(employee.GooglePlusUrl
+            #line 76 "..\..\Views\Shared\_Profile.cshtml"
+                              , Tuple.Create(Tuple.Create("", 4805), Tuple.Create<System.Object, System.Int32>(employee.GooglePlusUrl
             
             #line default
             #line hidden
-, 4735), false)
+, 4805), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 74 "..\..\Views\Shared\_Profile.cshtml"
+            #line 76 "..\..\Views\Shared\_Profile.cshtml"
                                                                                                                                   Write(Resources.Resources.ViewMySocialNetwork);
 
             
@@ -689,7 +702,7 @@ WriteLiteral(">");
 WriteLiteral("</a></li>\r\n");
 
             
-            #line 75 "..\..\Views\Shared\_Profile.cshtml"
+            #line 77 "..\..\Views\Shared\_Profile.cshtml"
                 }
 
             
@@ -698,7 +711,7 @@ WriteLiteral("</a></li>\r\n");
 WriteLiteral("            </ul>\r\n        </div>\r\n");
 
             
-            #line 78 "..\..\Views\Shared\_Profile.cshtml"
+            #line 80 "..\..\Views\Shared\_Profile.cshtml"
     }
 
             

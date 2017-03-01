@@ -56,7 +56,7 @@ namespace cutecms_porto.Controllers
                 throw new HttpException(404, "Page Not Found");
             Employee employee = db.Employees.Where(e => e.TranslationId == id && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
             if (employee == null)
-                throw new HttpException(602, "Page Not Translated");
+                throw new HttpException(404, "Page Not Found");
             ViewBag.Employee = employee;
             return View(employee);
         }

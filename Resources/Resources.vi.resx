@@ -1491,4 +1491,58 @@
   <data name="Careers" xml:space="preserve">
     <value>Tuyển dụng</value>
   </data>
+  <data name="SocialNetwork" xml:space="preserve">
+    <value>Mạng xã hội</value>
+  </data>
+  <data name="SocialNetworks" xml:space="preserve">
+    <value>Mạng xã hội</value>
+  </data>
+  <data name="ShowAll" xml:space="preserve">
+    <value>Hiển thị tất cả</value>
+  </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>Thư viện ảnh thể loại</value>
+  </data>
+  <data name="ChooseCategory" xml:space="preserve">
+    <value>--Chọn chuyên mục--</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>Thư viện ảnh thể loại</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>Địa chỉ Line 1</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>Dòng địa chỉ 2</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Nhà nước</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>Mã bưu điện</value>
+  </data>
+  <data name="Newsletter" xml:space="preserve">
+    <value>Bản tin</value>
+  </data>
+  <data name="LatestTweets" xml:space="preserve">
+    <value>Mới nhất Tweets</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>Hãy chờ...</value>
+  </data>
+  <data name="FollowUs" xml:space="preserve">
+    <value>Theo chúng tôi</value>
+  </data>
+  <data name="ChooseEmployeeType" xml:space="preserve">
+    <value>--Chọn nhân viên kiểu...</value>
+  </data>
+  <data name="HasAccount" xml:space="preserve">
+    <value>Đã có tài khoản?</value>
+  </data>
+  <data name="EmailConfirmed" xml:space="preserve">
+    <value>Email xác nhận?</value>
+  </data>
+  <data name="UsefulLinks" xml:space="preserve">
+    <value>Dưới đây là một số liên kết hữu ích</value>
+  </data>
 </root>

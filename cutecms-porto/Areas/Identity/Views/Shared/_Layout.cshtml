@@ -1,7 +1,10 @@
 ﻿@using cutecms_porto.Areas.Config.Models.DBModel
 @using cutecms_porto.Helpers
-@{ 
-    var organization = (Organization)HttpRuntime.Cache["Organization"];
+@using System.Threading
+@{
+    var organizations = (List<Organization>)HttpRuntime.Cache["Organizations"];
+    var organization = organizations.Where(o => o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
+
 }
 <!DOCTYPE html>
 <html lang="@cutecms_porto.Helpers.CultureHelper.GetCurrentNeutralCulture()" dir="@(cutecms_porto.Helpers.CultureHelper.IsRighToLeft() ? "rtl" : "ltr")">
@@ -44,7 +47,7 @@
 
             .form-top-right {
                 float: left;
-                 width: 10%; 
+                width: 10%;
                 padding-top: 5px;
                 font-size: 66px;
                 color: #fff;

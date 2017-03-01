@@ -1491,4 +1491,58 @@
   <data name="Careers" xml:space="preserve">
     <value>Kariyer</value>
   </data>
+  <data name="SocialNetwork" xml:space="preserve">
+    <value>Sosyal ağ</value>
+  </data>
+  <data name="SocialNetworks" xml:space="preserve">
+    <value>Sosyal ağlar</value>
+  </data>
+  <data name="ShowAll" xml:space="preserve">
+    <value>Tümünü göster</value>
+  </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>Galeri kategorisi</value>
+  </data>
+  <data name="ChooseCategory" xml:space="preserve">
+    <value>--Seçin Kategori...</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>Galeri Kategoriler</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>Adres satırı 1</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>Adres satırı 2</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Devlet</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>Posta Kodu</value>
+  </data>
+  <data name="Newsletter" xml:space="preserve">
+    <value>Haber bülteni</value>
+  </data>
+  <data name="LatestTweets" xml:space="preserve">
+    <value>En son Tweets</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>Lütfen bekleyin...</value>
+  </data>
+  <data name="FollowUs" xml:space="preserve">
+    <value>Bizi takip edin</value>
+  </data>
+  <data name="ChooseEmployeeType" xml:space="preserve">
+    <value>--Seçin çalışan türü...</value>
+  </data>
+  <data name="HasAccount" xml:space="preserve">
+    <value>Hesabı var mı?</value>
+  </data>
+  <data name="EmailConfirmed" xml:space="preserve">
+    <value>E-posta doğruladı?</value>
+  </data>
+  <data name="UsefulLinks" xml:space="preserve">
+    <value>İşte bazı yararlı bağlantılar</value>
+  </data>
 </root>

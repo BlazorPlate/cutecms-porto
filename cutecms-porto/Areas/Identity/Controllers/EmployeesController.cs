@@ -11,7 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using PagedList;
 namespace cutecms_porto.Areas.Identity.Controllers
 {
     [Authorize(Roles = "Admin")]
@@ -30,13 +30,34 @@ namespace cutecms_porto.Areas.Identity.Controllers
             return View(employees.ToList());
         }
         // GET: Identity/Employees
-        public ActionResult Index(string statusMessage)
+        public ActionResult Index(string statusMessage, int? page, string employeeNameFilter, int? employeeTypeIdFilter, bool hasAccountFilter = true)
         {
-            var employees = db.Employees.Include(e => e.Degree).Include(e => e.PersonalTitle).Include(e => e.Program).Include(e => e.Rank).OrderBy(e => e.LanguageId).ThenBy(e => e.Ordinal);
+            var pageNumber = page ?? 1;
+            ViewBag.EmployeeNameFilter = employeeNameFilter;
+            ViewBag.EmployeeTypeIdFilter = new SelectList(TermsHelper.EmployeeTypes(), "EmployeeTypeId", "Value", employeeTypeIdFilter);
+            ViewBag.EmployeeTypeId = employeeTypeIdFilter;
+            ViewBag.HasAccountFilter = hasAccountFilter;
+            ViewBag.HasAccount = hasAccountFilter;
+            IQueryable<Employee> employees;
+            if (employeeTypeIdFilter.HasValue)
+            {
+                employees = (from e in db.Employees
+                             join ed in db.EmpInDepts on e.Id equals ed.EmpId
+                             join et in db.EmployeeTypes on ed.EmployeeTypeId equals et.Id
+                             where et.Id == employeeTypeIdFilter && (e.FirstName.Trim().Contains(employeeNameFilter.Trim()) || e.MiddleName.Trim().Contains(employeeNameFilter.Trim()) || e.LastName.Trim().Contains(employeeNameFilter.Trim()) || string.IsNullOrEmpty(employeeNameFilter)) && (!string.IsNullOrEmpty(e.LoginId)) == hasAccountFilter
+                             orderby e.LanguageId, e.Ordinal
+                             select e);
+            }
+            else
+            {
+                employees = (from e in db.Employees
+                             where e.FirstName.Trim().Contains(employeeNameFilter.Trim()) || e.MiddleName.Trim().Contains(employeeNameFilter.Trim()) || e.LastName.Trim().Contains(employeeNameFilter.Trim()) || string.IsNullOrEmpty(employeeNameFilter) && (!string.IsNullOrEmpty(e.LoginId)) == hasAccountFilter
+                             orderby e.LanguageId, e.Ordinal
+                             select e);
+            }
             ViewBag.Message = statusMessage;
-            return View(employees.ToList());
+            return View(employees.ToPagedList(pageNumber, 10));
         }
-
         // GET: Identity/Employees/Details/5
         public ActionResult Details(int? id)
         {

@@ -529,6 +529,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to --Choose employee type--.
+        /// </summary>
+        public static string ChooseEmployeeType {
+            get {
+                return ResourceManager.GetString("ChooseEmployeeType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to --Choose gallery--.
         /// </summary>
         public static string ChooseGallery {
@@ -1195,6 +1204,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email confirmed?.
+        /// </summary>
+        public static string EmailConfirmed {
+            get {
+                return ResourceManager.GetString("EmailConfirmed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The email address is not valid..
         /// </summary>
         public static string EmailInvalid {
@@ -1731,6 +1749,15 @@ namespace Resources {
         public static string GroupsAssignment {
             get {
                 return ResourceManager.GetString("GroupsAssignment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Has account?.
+        /// </summary>
+        public static string HasAccount {
+            get {
+                return ResourceManager.GetString("HasAccount", resourceCulture);
             }
         }
         
@@ -4044,6 +4071,15 @@ namespace Resources {
         public static string UrlSlug {
             get {
                 return ResourceManager.GetString("UrlSlug", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Here are some useful links.
+        /// </summary>
+        public static string UsefulLinks {
+            get {
+                return ResourceManager.GetString("UsefulLinks", resourceCulture);
             }
         }
         

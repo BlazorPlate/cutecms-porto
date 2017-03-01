@@ -1,9 +1,42 @@
-﻿@model IEnumerable<cutecms_porto.Areas.Identity.Models.DBModel.Employee>
+﻿@using PagedList.Mvc
+@using PagedList
+@model IEnumerable<cutecms_porto.Areas.Identity.Models.DBModel.Employee>
 @using cutecms_porto.Areas.Identity.Models;
 @{
     ViewBag.MainTitle = Resources.Resources.Employees;
-    ViewBag.Title = @Resources.Resources.Index;
+    ViewBag.Title = Resources.Resources.Index;
     ApplicationDbContext _db = new ApplicationDbContext();
+}
+@using (Html.BeginForm("Index", "Employees", FormMethod.Post))
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.Label(Resources.Resources.Search)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.TextBox("employeeNameFilter", ViewBag.EmployeeNameFilter as string, new { @class = "form-control", @placeholder = Resources.Resources.Name })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.DropDownList("employeeTypeIdFilter", new SelectList(ViewBag.EmployeeTypeIdFilter, "Value", "Text"), Resources.Resources.ChooseEmployeeType, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label(Resources.Resources.HasAccount, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.CheckBox("hasAccountFilter", (bool)ViewBag.HasAccountFilter, new { @class = "js-switch" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                <input type="submit" value="@Resources.Resources.Search" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
 }
 <p>
     @Html.ActionLink(Resources.Resources.Create, "Create")
@@ -73,3 +106,6 @@
         </tr>
     }
 </table>
+<div>
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page, employeeNameFilter = ViewBag.EmployeeNameFilter, employeeTypeIdFilter = ViewBag.EmployeeTypeId, hasAccountFilter = ViewBag.HasAccount }))
+</div>

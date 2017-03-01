@@ -1491,4 +1491,58 @@
   <data name="Careers" xml:space="preserve">
     <value>Posao</value>
   </data>
+  <data name="SocialNetwork" xml:space="preserve">
+    <value>Društvena mreža</value>
+  </data>
+  <data name="SocialNetworks" xml:space="preserve">
+    <value>Društvene mreže</value>
+  </data>
+  <data name="ShowAll" xml:space="preserve">
+    <value>Pokaži sve</value>
+  </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>Galerija Kategorija</value>
+  </data>
+  <data name="ChooseCategory" xml:space="preserve">
+    <value>--Odaberite kategoriju...</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>Galerija kategorije</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>Adresa, redak 1</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>Adresa, redak 2</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Država</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>poštanski broj</value>
+  </data>
+  <data name="Newsletter" xml:space="preserve">
+    <value>Bilten</value>
+  </data>
+  <data name="LatestTweets" xml:space="preserve">
+    <value>Najnoviji Tweets</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>molim te čekaj...</value>
+  </data>
+  <data name="FollowUs" xml:space="preserve">
+    <value>Pratite nas</value>
+  </data>
+  <data name="ChooseEmployeeType" xml:space="preserve">
+    <value>--Odaberite zaposlenika tip...</value>
+  </data>
+  <data name="HasAccount" xml:space="preserve">
+    <value>Ima račun?</value>
+  </data>
+  <data name="EmailConfirmed" xml:space="preserve">
+    <value>E potvrdio?</value>
+  </data>
+  <data name="UsefulLinks" xml:space="preserve">
+    <value>Ovdje su neki korisni linkovi</value>
+  </data>
 </root>

@@ -1491,4 +1491,58 @@
   <data name="Careers" xml:space="preserve">
     <value>Karriere</value>
   </data>
+  <data name="SocialNetwork" xml:space="preserve">
+    <value>Sociale netværk</value>
+  </data>
+  <data name="SocialNetworks" xml:space="preserve">
+    <value>Sociale netværk</value>
+  </data>
+  <data name="ShowAll" xml:space="preserve">
+    <value>Vis alle</value>
+  </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>Galleri Kategori</value>
+  </data>
+  <data name="ChooseCategory" xml:space="preserve">
+    <value>--Vælg kategori-</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>Galleri kategorier</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>Adresselinje 1</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>Adresselinje 2</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Staten</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>Postnummer</value>
+  </data>
+  <data name="Newsletter" xml:space="preserve">
+    <value>Nyhedsbrev</value>
+  </data>
+  <data name="LatestTweets" xml:space="preserve">
+    <value>Seneste Tweets</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>Vent venligst...</value>
+  </data>
+  <data name="FollowUs" xml:space="preserve">
+    <value>Følg os</value>
+  </data>
+  <data name="ChooseEmployeeType" xml:space="preserve">
+    <value>--Vælg medarbejder type--</value>
+  </data>
+  <data name="HasAccount" xml:space="preserve">
+    <value>Har konto?</value>
+  </data>
+  <data name="EmailConfirmed" xml:space="preserve">
+    <value>Email bekræftet?</value>
+  </data>
+  <data name="UsefulLinks" xml:space="preserve">
+    <value>Her er nogle nyttige links</value>
+  </data>
 </root>

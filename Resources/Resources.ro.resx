@@ -1488,4 +1488,61 @@
   <data name="SenderName" xml:space="preserve">
     <value>numele tău</value>
   </data>
+  <data name="Careers" xml:space="preserve">
+    <value>Cariere</value>
+  </data>
+  <data name="SocialNetwork" xml:space="preserve">
+    <value>Reţea socială</value>
+  </data>
+  <data name="SocialNetworks" xml:space="preserve">
+    <value>Reţelele sociale</value>
+  </data>
+  <data name="ShowAll" xml:space="preserve">
+    <value>Arată toate</value>
+  </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>Categoria Galerie</value>
+  </data>
+  <data name="ChooseCategory" xml:space="preserve">
+    <value>--Alege categoria--</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>Categorii Galerie</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>Adresa linia 1</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>Adresa linia 2</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Stat</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>cod poştal</value>
+  </data>
+  <data name="Newsletter" xml:space="preserve">
+    <value>Newsletter-ul</value>
+  </data>
+  <data name="LatestTweets" xml:space="preserve">
+    <value>Ultimele Tweets</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>te rog să aştepţi...</value>
+  </data>
+  <data name="FollowUs" xml:space="preserve">
+    <value>Urmaţi-ne</value>
+  </data>
+  <data name="ChooseEmployeeType" xml:space="preserve">
+    <value>--Alege tip angajat--</value>
+  </data>
+  <data name="HasAccount" xml:space="preserve">
+    <value>A contul?</value>
+  </data>
+  <data name="EmailConfirmed" xml:space="preserve">
+    <value>E-mail confirmată?</value>
+  </data>
+  <data name="UsefulLinks" xml:space="preserve">
+    <value>Aici sunt cateva link-uri utile</value>
+  </data>
 </root>

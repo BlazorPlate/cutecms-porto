@@ -1491,4 +1491,58 @@
   <data name="Careers" xml:space="preserve">
     <value>Empleo</value>
   </data>
+  <data name="SocialNetwork" xml:space="preserve">
+    <value>Red social</value>
+  </data>
+  <data name="SocialNetworks" xml:space="preserve">
+    <value>Redes sociales</value>
+  </data>
+  <data name="ShowAll" xml:space="preserve">
+    <value>Mostrar todos</value>
+  </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>Categoría de la galería</value>
+  </data>
+  <data name="ChooseCategory" xml:space="preserve">
+    <value>--Elegir categoría--</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>Categorías de la galería</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>Dirección línea 1</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>Dirección línea 2</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>Código postal</value>
+  </data>
+  <data name="Newsletter" xml:space="preserve">
+    <value>Boletín de noticias</value>
+  </data>
+  <data name="LatestTweets" xml:space="preserve">
+    <value>Últimos Tweets</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>Espera...</value>
+  </data>
+  <data name="FollowUs" xml:space="preserve">
+    <value>Siga con nosotros</value>
+  </data>
+  <data name="ChooseEmployeeType" xml:space="preserve">
+    <value>--Elegir tipo de empleado-</value>
+  </data>
+  <data name="HasAccount" xml:space="preserve">
+    <value>¿Tiene cuenta?</value>
+  </data>
+  <data name="EmailConfirmed" xml:space="preserve">
+    <value>¿Correo electrónico confirmado?</value>
+  </data>
+  <data name="UsefulLinks" xml:space="preserve">
+    <value>Aquí están algunos enlaces útiles</value>
+  </data>
 </root>

@@ -49,7 +49,6 @@ namespace ASP
             #line 3 "..\..\Views\Staff\MemberProfile.cshtml"
   
     ViewBag.Title = @Resources.Resources.Profile;
-    ApplicationDbContext dbIdentity = new ApplicationDbContext();
 
             
             #line default
@@ -77,7 +76,7 @@ WriteLiteral(" class=\"col-md-12\"");
 WriteLiteral(">\r\n                    <h1>");
 
             
-            #line 13 "..\..\Views\Staff\MemberProfile.cshtml"
+            #line 12 "..\..\Views\Staff\MemberProfile.cshtml"
                    Write(ViewBag.Title);
 
             
@@ -116,7 +115,7 @@ WriteLiteral(" data-toggle=\"tab\"");
 WriteLiteral(">");
 
             
-            #line 24 "..\..\Views\Staff\MemberProfile.cshtml"
+            #line 23 "..\..\Views\Staff\MemberProfile.cshtml"
                                                                                            Write(Resources.Resources.AcademicInfo);
 
             
@@ -135,7 +134,7 @@ WriteLiteral(" data-toggle=\"tab\"");
 WriteLiteral(">");
 
             
-            #line 25 "..\..\Views\Staff\MemberProfile.cshtml"
+            #line 24 "..\..\Views\Staff\MemberProfile.cshtml"
                                                                      Write(Resources.Resources.Biography);
 
             
@@ -154,7 +153,7 @@ WriteLiteral(" data-toggle=\"tab\"");
 WriteLiteral(">");
 
             
-            #line 26 "..\..\Views\Staff\MemberProfile.cshtml"
+            #line 25 "..\..\Views\Staff\MemberProfile.cshtml"
                                                                           Write(Resources.Resources.ContactInfo);
 
             
@@ -173,7 +172,7 @@ WriteLiteral(" data-toggle=\"tab\"");
 WriteLiteral(">");
 
             
-            #line 27 "..\..\Views\Staff\MemberProfile.cshtml"
+            #line 26 "..\..\Views\Staff\MemberProfile.cshtml"
                                                                          Write(Resources.Resources.Departments);
 
             
@@ -192,7 +191,7 @@ WriteLiteral(" data-toggle=\"tab\"");
 WriteLiteral(">");
 
             
-            #line 28 "..\..\Views\Staff\MemberProfile.cshtml"
+            #line 27 "..\..\Views\Staff\MemberProfile.cshtml"
                                                                            Write(Resources.Resources.Publications);
 
             
@@ -213,7 +212,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 33 "..\..\Views\Staff\MemberProfile.cshtml"
+            #line 32 "..\..\Views\Staff\MemberProfile.cshtml"
                Write(Html.Partial("AcademicInfo", Model));
 
             
@@ -231,7 +230,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 38 "..\..\Views\Staff\MemberProfile.cshtml"
+            #line 37 "..\..\Views\Staff\MemberProfile.cshtml"
                Write(Html.Partial("Biography", Model));
 
             
@@ -249,7 +248,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 43 "..\..\Views\Staff\MemberProfile.cshtml"
+            #line 42 "..\..\Views\Staff\MemberProfile.cshtml"
                Write(Html.Partial("ContactInfo", Model));
 
             
@@ -267,7 +266,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 48 "..\..\Views\Staff\MemberProfile.cshtml"
+            #line 47 "..\..\Views\Staff\MemberProfile.cshtml"
                Write(Html.Partial("Departments", Model));
 
             
@@ -285,7 +284,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 53 "..\..\Views\Staff\MemberProfile.cshtml"
+            #line 52 "..\..\Views\Staff\MemberProfile.cshtml"
                Write(Html.Partial("Publications", Model));
 
             
@@ -297,7 +296,7 @@ WriteLiteral("\r\n                </div>\r\n                <!-- /Publications T
 WriteLiteral("        ");
 
             
-            #line 59 "..\..\Views\Staff\MemberProfile.cshtml"
+            #line 58 "..\..\Views\Staff\MemberProfile.cshtml"
    Write(Html.Partial("_Profile"));
 
             

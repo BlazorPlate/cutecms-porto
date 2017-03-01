@@ -1491,4 +1491,58 @@
   <data name="Careers" xml:space="preserve">
     <value>करियर</value>
   </data>
+  <data name="SocialNetwork" xml:space="preserve">
+    <value>सामाजिक नेटवर्क</value>
+  </data>
+  <data name="SocialNetworks" xml:space="preserve">
+    <value>सामाजिक नेटवर्क</value>
+  </data>
+  <data name="ShowAll" xml:space="preserve">
+    <value>सभी दिखाएँ</value>
+  </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>गैलरी श्रेणी</value>
+  </data>
+  <data name="ChooseCategory" xml:space="preserve">
+    <value>-- चुनें श्रेणी-</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>गैलरी श्रेणियाँ</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>पता पंक्ति 1</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>पता पंक्ति 2</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>राज्य</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>ज़िप कोड</value>
+  </data>
+  <data name="Newsletter" xml:space="preserve">
+    <value>न्यूज़लैटर</value>
+  </data>
+  <data name="LatestTweets" xml:space="preserve">
+    <value>नवीनतम Tweets</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>कृपया प्रतीक्षा करो...</value>
+  </data>
+  <data name="FollowUs" xml:space="preserve">
+    <value>हमें का पालन करें</value>
+  </data>
+  <data name="ChooseEmployeeType" xml:space="preserve">
+    <value>-- चुनें कर्मचारी प्रकार-</value>
+  </data>
+  <data name="HasAccount" xml:space="preserve">
+    <value>खाता है?</value>
+  </data>
+  <data name="EmailConfirmed" xml:space="preserve">
+    <value>ईमेल की पुष्टि की है?</value>
+  </data>
+  <data name="UsefulLinks" xml:space="preserve">
+    <value>यहाँ कुछ उपयोगी लिंक कर रहे हैं</value>
+  </data>
 </root>

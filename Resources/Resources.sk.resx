@@ -1491,4 +1491,58 @@
   <data name="Careers" xml:space="preserve">
     <value>Kariéra</value>
   </data>
+  <data name="SocialNetwork" xml:space="preserve">
+    <value>Sociálne siete</value>
+  </data>
+  <data name="SocialNetworks" xml:space="preserve">
+    <value>Sociálne siete</value>
+  </data>
+  <data name="ShowAll" xml:space="preserve">
+    <value>Zobraziť všetky</value>
+  </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>Galéria kategórie</value>
+  </data>
+  <data name="ChooseCategory" xml:space="preserve">
+    <value>--Vyberte kategóriu--</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>Fotogaléria kategórií</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>1. riadok adresy</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>2. riadok adresy</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Štát</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>smerovacie číslo</value>
+  </data>
+  <data name="Newsletter" xml:space="preserve">
+    <value>Newsletter</value>
+  </data>
+  <data name="LatestTweets" xml:space="preserve">
+    <value>Najnovšie tweety</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>prosím počkajte...</value>
+  </data>
+  <data name="FollowUs" xml:space="preserve">
+    <value>Sledujte nás</value>
+  </data>
+  <data name="ChooseEmployeeType" xml:space="preserve">
+    <value>--Vyberte typ zamestnanca--</value>
+  </data>
+  <data name="HasAccount" xml:space="preserve">
+    <value>Má účet?</value>
+  </data>
+  <data name="EmailConfirmed" xml:space="preserve">
+    <value>E-mailom potvrdené?</value>
+  </data>
+  <data name="UsefulLinks" xml:space="preserve">
+    <value>Tu sú niektoré užitočné odkazy</value>
+  </data>
 </root>

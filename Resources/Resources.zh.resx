@@ -1491,4 +1491,58 @@
   <data name="Careers" xml:space="preserve">
     <value>职业</value>
   </data>
+  <data name="SocialNetwork" xml:space="preserve">
+    <value>社会网络</value>
+  </data>
+  <data name="SocialNetworks" xml:space="preserve">
+    <value>社交网络</value>
+  </data>
+  <data name="ShowAll" xml:space="preserve">
+    <value>全部显示</value>
+  </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>库类别</value>
+  </data>
+  <data name="ChooseCategory" xml:space="preserve">
+    <value>--选择类别 — —</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>库类别</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>地址行 1</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>地址行 2</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>状态</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>邮政编码</value>
+  </data>
+  <data name="Newsletter" xml:space="preserve">
+    <value>新闻稿</value>
+  </data>
+  <data name="LatestTweets" xml:space="preserve">
+    <value>最新的鸣叫</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>请稍候。。。</value>
+  </data>
+  <data name="FollowUs" xml:space="preserve">
+    <value>跟随我们</value>
+  </data>
+  <data name="ChooseEmployeeType" xml:space="preserve">
+    <value>--选择员工类型 — —</value>
+  </data>
+  <data name="HasAccount" xml:space="preserve">
+    <value>有帐户吗？</value>
+  </data>
+  <data name="EmailConfirmed" xml:space="preserve">
+    <value>确认的电子邮件吗？</value>
+  </data>
+  <data name="UsefulLinks" xml:space="preserve">
+    <value>这里有一些有用的链接</value>
+  </data>
 </root>

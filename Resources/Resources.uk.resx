@@ -1491,4 +1491,58 @@
   <data name="Careers" xml:space="preserve">
     <value>Кар'єра</value>
   </data>
+  <data name="SocialNetwork" xml:space="preserve">
+    <value>Соціальна мережа</value>
+  </data>
+  <data name="SocialNetworks" xml:space="preserve">
+    <value>Соціальні мережі</value>
+  </data>
+  <data name="ShowAll" xml:space="preserve">
+    <value>Показати все</value>
+  </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>Галерея-Категорія</value>
+  </data>
+  <data name="ChooseCategory" xml:space="preserve">
+    <value>-- Оберіть категорію-</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>Галерея категорії</value>
+  </data>
+  <data name="AddressLine1" xml:space="preserve">
+    <value>Адреса лінія 1</value>
+  </data>
+  <data name="AddressLine2" xml:space="preserve">
+    <value>Адреса, рядок 2</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Держава</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>Поштовий індекс</value>
+  </data>
+  <data name="Newsletter" xml:space="preserve">
+    <value>Інформаційний бюлетень</value>
+  </data>
+  <data name="LatestTweets" xml:space="preserve">
+    <value>Останні твіти</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>Будь ласка, зачекай...</value>
+  </data>
+  <data name="FollowUs" xml:space="preserve">
+    <value>Слідуйте за нами</value>
+  </data>
+  <data name="ChooseEmployeeType" xml:space="preserve">
+    <value>-- Оберіть тип працівника-</value>
+  </data>
+  <data name="HasAccount" xml:space="preserve">
+    <value>Має обліковий запис?</value>
+  </data>
+  <data name="EmailConfirmed" xml:space="preserve">
+    <value>Електронної пошти підтверджено?</value>
+  </data>
+  <data name="UsefulLinks" xml:space="preserve">
+    <value>Ось деякі корисні посилання</value>
+  </data>
 </root>

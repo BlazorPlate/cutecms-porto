@@ -92,11 +92,11 @@ namespace cutecms_porto.Areas.Identity.Controllers
         public ActionResult Index(int? page, string userNameFilter, string emailFilter, string roleIdFilter, bool isEmailConfirmedFilter = true)
         {
             var pageNumber = page ?? 1;
-            ViewBag.IsEmailConfirmedFilter = isEmailConfirmedFilter;
             ViewBag.UserNameFilter = userNameFilter;
             ViewBag.EmailFilter = emailFilter;
             ViewBag.RoleIdFilter = new SelectList(_db.Roles, "Id", "Name", roleIdFilter);
             ViewBag.RoleId = roleIdFilter;
+            ViewBag.IsEmailConfirmedFilter = isEmailConfirmedFilter;
             ViewBag.IsEmailConfirmed = isEmailConfirmedFilter;
             List<ApplicationUser> users = (from u in db.Users.Where(u => (u.UserName.Contains(userNameFilter) || string.IsNullOrEmpty(userNameFilter)) && (u.Email.Contains(emailFilter) || string.IsNullOrEmpty(emailFilter)) && u.EmailConfirmed == isEmailConfirmedFilter)
                                            where (u.Roles.Any(r => r.RoleId == roleIdFilter) || string.IsNullOrEmpty(roleIdFilter))

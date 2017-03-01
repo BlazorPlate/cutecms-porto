@@ -7,7 +7,7 @@
     IdentityEntities db = new IdentityEntities();
     Employee employee = (Employee)ViewBag.Employee;
     ApplicationDbContext _db = new ApplicationDbContext();
-    var empEmail = _db.Users.Find(employee.LoginId).Email;
+    var empEmail = _db.Users.Find(employee.LoginId)?.Email;
 }
 <div class="col-lg-3 col-md-3 col-sm-4 col-lg-pull-9 col-md-pull-9 col-sm-pull-8">
     <div class="thumbnail text-center">
@@ -20,8 +20,7 @@
             {
                 string occupation = item.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? item.Occupation.Code;
                 string department = item.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? item.Department.Code;
-                <h5 class="text-muted">@occupation</h5>
-                <h6 class="text-muted">@department</h6>
+                <small class="text-muted">@occupation &#64; @department</small>
                 <hr />
             }
             if (employee.Publications.Count() != 0)
@@ -54,9 +53,12 @@
             <!-- info -->
         <div class="text-muted">
             <h5><b>@Resources.Resources.About @employee.FullName,</b></h5>
-            <p class="justify">@employee.Biography.StripHtml().Chop(190)</p>
+            <p class="text-justify">@employee.Biography.StripHtml().Chop(190)</p>
             <ul class="list-unstyled nomargin">
-                <li><i class="fa fa-2x fa-envelope-square width-20 hidden-xs hidden-sm"></i> <a href="@empEmail">@empEmail</a></li>
+                @if (!string.IsNullOrEmpty(empEmail))
+                {
+                    <li><i class="fa fa-2x fa-envelope-square width-20 hidden-xs hidden-sm"></i> <a href="@empEmail">@empEmail</a></li>
+                }
                 @if (!string.IsNullOrEmpty(employee.FacebookUrl))
                 {
                     <li><i class="fa fa-2x fa-facebook-square width-20 hidden-xs hidden-sm"></i> <a href="@employee.FacebookUrl">@Resources.Resources.ViewMySocialNetwork</a></li>

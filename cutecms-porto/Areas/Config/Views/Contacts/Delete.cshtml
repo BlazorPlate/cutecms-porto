@@ -1,6 +1,6 @@
 ﻿@model cutecms_porto.Areas.Config.Models.DBModel.Contact
 @using System.Threading
-@{ 
+@{
     ViewBag.MainTitle = Resources.Resources.Contact;
     ViewBag.Title = Resources.Resources.Delete;
 }
@@ -12,6 +12,13 @@
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Organization.Code)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonalTitleId)
+        </dt>
+        <dd>
+            @{ var personalTitle = Model.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.PersonalTitleId == Model.PersonalTitleId).FirstOrDefault()?.Value ?? Model.PersonalTitle.Code;}
+            @personalTitle
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Name)
@@ -45,11 +52,10 @@
             @Html.DisplayFor(model => model.Email)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.PersonalTitleId)
+            @Html.DisplayNameFor(model => model.Ordinal)
         </dt>
         <dd>
-            @{ var personalTitle = Model.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.PersonalTitleId == Model.PersonalTitleId).FirstOrDefault()?.Value ?? Model.PersonalTitle.Code;}
-            @personalTitle
+            @Html.DisplayFor(model => model.Ordinal)
         </dd>
     </dl>
     @using (Html.BeginForm())

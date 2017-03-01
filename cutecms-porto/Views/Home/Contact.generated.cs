@@ -587,7 +587,7 @@ WriteLiteral("</h4>\r\n");
 
             
             #line 98 "..\..\Views\Home\Contact.cshtml"
-                foreach (var contact in item.Contacts.Where(c => c.Organization.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)))
+                foreach (var contact in item.Contacts.Where(c => c.Organization.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).OrderBy(c=>c.Ordinal))
                 {
 
             
@@ -694,15 +694,15 @@ WriteLiteral(" class=\"fa fa-envelope\"");
 
 WriteLiteral("></i> <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 6918), Tuple.Create("\"", 6948)
-, Tuple.Create(Tuple.Create("", 6925), Tuple.Create("mailto:", 6925), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 6940), Tuple.Create("\"", 6970)
+, Tuple.Create(Tuple.Create("", 6947), Tuple.Create("mailto:", 6947), true)
             
             #line 107 "..\..\Views\Home\Contact.cshtml"
-, Tuple.Create(Tuple.Create("", 6932), Tuple.Create<System.Object, System.Int32>(contact.Email
+, Tuple.Create(Tuple.Create("", 6954), Tuple.Create<System.Object, System.Int32>(contact.Email
             
             #line default
             #line hidden
-, 6932), false)
+, 6954), false)
 );
 
 WriteLiteral(">");

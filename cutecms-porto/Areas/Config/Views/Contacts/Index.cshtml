@@ -10,7 +10,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Organization.Code)
+            @Html.DisplayNameFor(model => model.OrganizationId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.PersonalTitleId)
@@ -28,7 +28,7 @@
             @Html.DisplayNameFor(model => model.Office)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Email)
+            @Html.DisplayNameFor(model => model.Ordinal)
         </th>
         <th></th>
     </tr>
@@ -36,10 +36,10 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Organization.Code)
+                @Html.DisplayFor(modelItem => item.Organization.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.PersonalTitleId == item.PersonalTitleId).FirstOrDefault().Value)
+                @(item.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.PersonalTitleId == item.PersonalTitleId).FirstOrDefault()?.Value ?? item.PersonalTitle.Code)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
@@ -48,13 +48,13 @@
                 @Html.DisplayFor(modelItem => item.Position)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Department.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && d.DepartmentId == item.DepartmentId).FirstOrDefault().Value)
+                @(item.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.DepartmentId == item.DepartmentId).FirstOrDefault()?.Value ?? item.Department.Code)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Office)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Email)
+                @Html.DisplayFor(modelItem => item.Ordinal)
             </td>
             <td>
                 @Html.ActionLink(" ", "Index", "PhoneNumbers", new { contactId = item.Id }, new { @class = "fa fa-phone-square", @style = "color:black;text-decoration:none", @title = "Manage Contacts" }) |

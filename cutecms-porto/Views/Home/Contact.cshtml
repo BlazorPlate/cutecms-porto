@@ -95,7 +95,7 @@
             @foreach (var item in query)
             {
                 <h4 class="heading-primary">@(item.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && d.DepartmentId == item.Id).FirstOrDefault()?.Value ?? item.Code)</h4>
-                foreach (var contact in item.Contacts.Where(c => c.Organization.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)))
+                foreach (var contact in item.Contacts.Where(c => c.Organization.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).OrderBy(c=>c.Ordinal))
                 {
                     <ul class="list list-icons list-icons-style-3 mb-xlg">
                         <li><i class="fa fa-user"></i><span> @string.Format(contact.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.PersonalTitleId == contact.PersonalTitleId).FirstOrDefault().Value + " " + "{0}", @contact.Name), @contact.Position</span></li>

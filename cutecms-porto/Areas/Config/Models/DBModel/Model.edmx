@@ -16,6 +16,7 @@
           <Property Name="DepartmentId" Type="int" Nullable="false" />
           <Property Name="Office" Type="nvarchar" MaxLength="100" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ordinal" Type="int" Nullable="false" />
           <Property Name="OrganizationId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Departments">
@@ -502,6 +503,7 @@
           <Property Name="DepartmentId" Type="Int32" Nullable="false" />
           <Property Name="Office" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ordinal" Type="Int32" Nullable="false" />
           <Property Name="OrganizationId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="PhoneNumbers" Relationship="Self.FK_PhoneNumbers_Contacts" FromRole="Contacts" ToRole="PhoneNumbers" />
           <NavigationProperty Name="Department" Relationship="ConfigDBModel.FK_Contacts_Departments" FromRole="Contact" ToRole="Department" />
@@ -1023,6 +1025,7 @@
                 <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
                 <ScalarProperty Name="Office" ColumnName="Office" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
                 <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
               </MappingFragment>
             </EntityTypeMapping>

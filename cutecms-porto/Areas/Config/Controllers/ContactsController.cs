@@ -55,7 +55,7 @@ namespace cutecms_porto.Areas.Config.Controllers
         // GET: CMS/Contacts
         public ActionResult Index(int? id)
         {
-            var contacts = db.Contacts.Include(c => c.PersonalTitle).Include(c => c.Organization).Where(c => c.OrganizationId == id);
+            var contacts = db.Contacts.Include("PersonalTitle").Include("PersonalTitle.PersonalTitleTerms").Include("PersonalTitle.PersonalTitleTerms.Language").Include("Department").Include("Department.DepartmentTerms").Include("Department.DepartmentTerms.Language").Include("Organization").Where(c => c.OrganizationId == id);
             ViewBag.OrganizationId = id;
             return View(contacts.ToList());
         }
@@ -94,7 +94,7 @@ namespace cutecms_porto.Areas.Config.Controllers
         // properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,PersonalTitleId,Name,Position,DepartmentId,Office,Email,OrganizationId")] Contact contact)
+        public ActionResult Create([Bind(Include = "Id,PersonalTitleId,Name,Position,DepartmentId,Office,Email,Ordinal,OrganizationId")] Contact contact)
         {
             if (ModelState.IsValid)
             {
@@ -132,7 +132,7 @@ namespace cutecms_porto.Areas.Config.Controllers
         // properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,PersonalTitleId,Name,Position,DepartmentId,Office,Email,OrganizationId")] Contact contact)
+        public ActionResult Edit([Bind(Include = "Id,PersonalTitleId,Name,Position,DepartmentId,Office,Email,Ordinal,OrganizationId")] Contact contact)
         {
             if (ModelState.IsValid)
             {

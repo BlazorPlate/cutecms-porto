@@ -29,8 +29,6 @@ namespace cutecms_porto.Areas.RMS.Controllers
         private IdentityEntities IdentityDb = new IdentityEntities();
         private ApplicationDbContext _db = new ApplicationDbContext();
         private int? StatusId;
-        private List<object> DepartmentsList = new List<object>();
-        private string DepartmentPath = "";
         #endregion Fields
         #region Methods
         public ActionResult Translations(int? id)
@@ -138,7 +136,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
             ViewBag.StatusId = new SelectList(TermsHelper.Statuses(), "StatusId", "Value");
             int[] assignedLanguages = db.Vacancies.Where(v => v.TranslationId == id).Select(v => v.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.RMSLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name");
-            ViewBag.DeptId = new SelectList(GetDepartmentsServerSide(Thread.CurrentThread.CurrentCulture.Name), "Id", "Name");
+            ViewBag.DeptId = new SelectList(TermsHelper.GetDepartmentTree(Thread.CurrentThread.CurrentCulture.Name), "Id", "Name");
             vacanyWithDR.TranslationId = id;
             return View(vacanyWithDR);
         }
@@ -212,7 +210,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
             ViewBag.StatusId = new SelectList(TermsHelper.Statuses(), "StatusId", "Value", vacanyWithDR.StatusId);
             int[] assignedLanguages = db.Vacancies.Where(v => v.TranslationId == vacanyWithDR.TranslationId).Select(v => v.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.RMSLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name");
-            ViewBag.DeptId = new SelectList(GetDepartmentsServerSide(Thread.CurrentThread.CurrentCulture.Name), "Id", "Name", vacanyWithDR.DeptId);
+            ViewBag.DeptId = new SelectList(TermsHelper.GetDepartmentTree(Thread.CurrentThread.CurrentCulture.Name), "Id", "Name", vacanyWithDR.DeptId);
             return View(vacanyWithDR);
         }
         // GET: /Vacancies/Edit/5
@@ -234,7 +232,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
             ViewBag.ProgramId = new SelectList(TermsHelper.Programs(), "ProgramId", "Value", vacanyWithDR.ProgramId);
             ViewBag.StatusId = new SelectList(TermsHelper.Statuses(), "StatusId", "Value", vacanyWithDR.StatusId);
             ViewBag.LanguageId = vacancy.Language.Name;
-            ViewBag.DeptId = new SelectList(GetDepartmentsServerSide(Thread.CurrentThread.CurrentCulture.Name), "Id", "Name", vacanyWithDR.DeptId);
+            ViewBag.DeptId = new SelectList(TermsHelper.GetDepartmentTree(Thread.CurrentThread.CurrentCulture.Name), "Id", "Name", vacanyWithDR.DeptId);
             ViewBag.RoleVID = new SelectList(_db.Roles, "Id", "Name", vacanyWithDR.RoleVID);
             ViewBag.Author = _db.Users.Find(vacanyWithDR.Author).UserName;
             ViewBag.ModifiedBy = string.IsNullOrEmpty(vacanyWithDR.ModifiedBy) ? Resources.Resources.NotAvailable : ViewBag.ModifiedBy = _db.Users.Find(vacanyWithDR.ModifiedBy).UserName;
@@ -332,7 +330,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
             ViewBag.StatusId = new SelectList(TermsHelper.Statuses(), "StatusId", "Value", vacanyWithDR.StatusId);
             ViewBag.LanguageId = new SelectList(db.RMSLanguages.Where(l => l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", vacanyWithDR.LanguageId);
 
-            ViewBag.DeptId = new SelectList(GetDepartmentsServerSide(Thread.CurrentThread.CurrentCulture.Name), "Id", "Name", vacanyWithDR.DeptId);
+            ViewBag.DeptId = new SelectList(TermsHelper.GetDepartmentTree(Thread.CurrentThread.CurrentCulture.Name), "Id", "Name", vacanyWithDR.DeptId);
             ViewBag.RoleVID = new SelectList(_db.Roles, "Name", "Name", vacanyWithDR.RoleVID);
             ViewBag.Author = _db.Users.Find(vacanyWithDR.Author).UserName;
             ViewBag.ModifiedBy = string.IsNullOrEmpty(vacanyWithDR.ModifiedBy) ? Resources.Resources.NotAvailable : ViewBag.ModifiedBy = _db.Users.Find(vacanyWithDR.ModifiedBy).UserName;
@@ -486,31 +484,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
             }
             base.Dispose(disposing);
         }
-        private string GetParents(IdentityDepartment element)
-        {
-            if (element.ParentId == null)
-            {
-                DepartmentPath = element.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && d.DepartmentId == element.Id).FirstOrDefault().Value + "/" + DepartmentPath;
-                return DepartmentPath;
-            }
-            IdentityDepartment department = element;
-            DepartmentPath = IdentityDb.IdentityDepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && d.DepartmentId == department.Id).FirstOrDefault().Value + "/" + DepartmentPath;
-            GetParents(IdentityDb.IdentityDepartments.Find(department.ParentId));
-            return DepartmentPath;
-        }
-        private List<object> GetDepartmentsServerSide(string culture)
-        {
-            foreach (var item in TermsHelper.Departments())
-            {
-                DepartmentsList.Add(new
-                {
-                    Id = item.Id,
-                    Name = GetParents(item)
-                });
-                DepartmentPath = "";
-            }
-            return DepartmentsList;
-        }
+
         private List<string> GetUserRoles()
         {
             var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));

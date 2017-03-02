@@ -20,6 +20,8 @@ namespace cutecms_porto.Helpers
         private static CMSEntities cmsDb = new CMSEntities();
         private static RMSEntities rmsDb = new RMSEntities();
         private static ConfigEntities configDb = new ConfigEntities();
+        private static List<object> DepartmentsList = new List<object>();
+        private static string departmentPath = "";
         #endregion Fields
         #region Methods
         #region CMSDB
@@ -160,15 +162,6 @@ namespace cutecms_porto.Helpers
             }
             return departments;
         }
-        public static IEnumerable<IdentityDepartment> Departments()
-        {
-            var departments = (from p in IdentityDb.IdentityDepartments
-                               join c in IdentityDb.IdentityDepartmentTerms on p.Id equals c.DepartmentId
-                               where c != null && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)
-                               orderby p.Ordinal
-                               select p);
-            return departments;
-        }
 
 
         public static IEnumerable<RMSDepartment> VacanciesDepartments()
@@ -228,6 +221,37 @@ namespace cutecms_porto.Helpers
                                  select c);
             return employeeTypes;
         }
+
+        public static List<object> GetDepartmentTree(string cultureName)
+        {
+            DepartmentsList.Clear();
+            foreach (var item in IdentityDb.IdentityDepartments.Where(d => d.ParentId == null))
+            {
+                foreach (var item2 in TreeHelper.Traversal(item, i => i.Departments1))
+                {
+
+                    if (item2.ParentId == null)
+                    {
+                        DepartmentsList.Add(new
+                        {
+                            Id = item2.Id,
+                            Name = item2.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(cultureName)).FirstOrDefault()?.Value ?? item2.Code
+                        });
+                    }
+                    else
+                    {
+                        DepartmentsList.Add(new
+                        {
+                            Id = item2.Id,
+                            Name = (item2.Department1.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(cultureName)).FirstOrDefault()?.Value ?? item2.Department1.Code) + "/" + item2.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(cultureName)).FirstOrDefault()?.Value ?? item2.Code
+                        });
+                    }
+                }
+                departmentPath = "";
+            }
+            return DepartmentsList;
+        }
+
         #endregion
         #endregion Methods
     }

@@ -3,8 +3,7 @@
 @{
     ViewBag.Title = Resources.Resources.Error;
     CMSEntities db = new CMSEntities();
-    IEnumerable<MenuItem> usefulLinks = db.MenuItems.Include("Status").Include("Menu").Include("Language").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Menu.Code.Trim().Equals("useful-links") && m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).OrderBy(o => o.Ordinal);
-
+    IEnumerable<MenuItem> usefulLinks = db.MenuItems.Include("Status").Include("Menu").Include("Language").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Menu.Code.Trim().Equals("useful-links") &&m.Status.Code.Trim().Equals("published") && m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).OrderBy(o => o.Ordinal);
 }
 @section PageHeader
 {

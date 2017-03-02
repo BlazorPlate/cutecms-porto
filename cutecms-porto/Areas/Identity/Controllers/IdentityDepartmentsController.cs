@@ -1,5 +1,4 @@
-﻿using cutecms_porto.Areas.CMS.Models.DBModel;
-using cutecms_porto.Areas.Identity.Models;
+﻿using cutecms_porto.Areas.Identity.Models;
 using cutecms_porto.Areas.Identity.Models.DBModel;
 using cutecms_porto.Helpers;
 using System;
@@ -19,52 +18,22 @@ namespace cutecms_porto.Areas.Identity.Controllers
     {
         #region Fields
         private IdentityEntities db = new IdentityEntities();
-        private List<object> DepartmentsList = new List<object>();
-        private string departmentPath = "";
+
         #endregion Fields
 
         #region Methods
-        public string GetParents(IdentityDepartment element, int? languageId)
-        {
-            if (element.ParentId == null)
-            {
-                departmentPath = element.DepartmentTerms.Where(d => d.DepartmentId == element.Id && d.LanguageId == languageId).FirstOrDefault().Value + "/" + departmentPath;
-                return departmentPath;
-            }
-            IdentityDepartment department = element;
-            departmentPath = db.IdentityDepartmentTerms.Where(d => d.DepartmentId == element.Id && d.LanguageId == languageId).FirstOrDefault().Value + "/" + departmentPath;
-            GetParents(db.IdentityDepartments.Find(department.ParentId), languageId);
-            return departmentPath;
-        }
-
-        public List<object> GetDepartmentsServerSide(int? languageId)
-        {
-            foreach (var item in TermsHelper.Departments(languageId))
-            {
-                DepartmentsList.Add(new
-                {
-                    Id = item.DepartmentId,
-                    Name = GetParents(item.Department, languageId)
-                }
-                 );
-                departmentPath = "";
-            }
-            return DepartmentsList;
-        }
 
         // GET: Identity/Departments
-        public ActionResult Index(int? languageId)
+        public ActionResult Index()
         {
             DepartmentsViewModel departments = new DepartmentsViewModel();
-            departments.DepartmentWithTerms = TermsHelper.Departments(languageId);
-            departments.Departments = db.IdentityDepartments.Where(i => i.DepartmentTerms.Where(d => d.LanguageId == languageId).Count() == 0).ToList();
-            ViewBag.LanguageId = new SelectList(db.IdentityLanguages.Where(l => l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", languageId);
-            ViewBag.CurrentLanguageId = languageId;
+            departments.DepartmentTerms = TermsHelper.Departments(null);
+            departments.Departments = db.IdentityDepartments.Where(i => i.DepartmentTerms.Count() == 0);
             return View(departments);
         }
 
         // GET: Identity/Departments/Details/5
-        public ActionResult Details(int? id, int? languageId)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -75,20 +44,15 @@ namespace cutecms_porto.Areas.Identity.Controllers
             {
                 throw new HttpException(404, "Page Not Found");
             }
-            ViewBag.LanguageId = languageId;
+
             return View(department);
         }
 
         // GET: Identity/Departments/Create
-        public ActionResult Create(int? languageId)
+        public ActionResult Create()
         {
-            if (languageId == null)
-            {
-                throw new HttpException(400, "Bad Request");
-            }
-            ViewBag.LanguageId = languageId;
-            ViewBag.ManagerId = new SelectList(db.Employees.Where(e => e.LanguageId == languageId), "TranslationId", "FullName");
-            ViewBag.ParentId = new SelectList(GetDepartmentsServerSide(languageId), "Id", "Name");
+            ViewBag.ManagerId = new SelectList(db.Employees.Where(e => e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)), "TranslationId", "FullName");
+            ViewBag.ParentId = new SelectList(TermsHelper.GetDepartmentTree(Thread.CurrentThread.CurrentCulture.Name), "Id", "Name");
             return View();
         }
 
@@ -96,7 +60,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         // specific properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Code,ManagerId,TypeId,ParentId,Ordinal")] IdentityDepartment department, int? languageId)
+        public ActionResult Create([Bind(Include = "Id,Code,ManagerId,TypeId,ParentId,Ordinal")] IdentityDepartment department)
         {
             if (ModelState.IsValid)
             {
@@ -104,14 +68,13 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.LanguageId = languageId;
-            ViewBag.ManagerId = new SelectList(db.Employees.Where(e => e.LanguageId == languageId), "TranslationId", "FullName", department.ManagerId);
-            ViewBag.ParentId = new SelectList(GetDepartmentsServerSide(languageId), "Id", "Name", department.ParentId);
+            ViewBag.ManagerId = new SelectList(db.Employees.Where(e => e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)), "TranslationId", "FullName", department.ManagerId);
+            ViewBag.ParentId = new SelectList(TermsHelper.GetDepartmentTree(Thread.CurrentThread.CurrentCulture.Name), "Id", "Name", department.ParentId);
             return View(department);
         }
 
         // GET: Identity/Departments/Edit/5
-        public ActionResult Edit(int? id, int? languageId)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
@@ -122,9 +85,8 @@ namespace cutecms_porto.Areas.Identity.Controllers
             {
                 throw new HttpException(404, "Page Not Found");
             }
-            ViewBag.LanguageId = languageId;
-            ViewBag.ManagerId = new SelectList(db.Employees.Where(e => e.LanguageId == languageId), "TranslationId", "FullName", department.ManagerId);
-            ViewBag.ParentId = new SelectList(GetDepartmentsServerSide(languageId), "Id", "Name", department.ParentId);
+            ViewBag.ManagerId = new SelectList(db.Employees.Where(e => e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)), "TranslationId", "FullName", department.ManagerId);
+            ViewBag.ParentId = new SelectList(TermsHelper.GetDepartmentTree(Thread.CurrentThread.CurrentCulture.Name), "Id", "Name", department.ParentId);
             return View(department);
         }
 
@@ -132,7 +94,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         // specific properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Code,ManagerId,TypeId,ParentId,Ordinal")] IdentityDepartment department, int? languageId)
+        public ActionResult Edit([Bind(Include = "Id,Code,ManagerId,TypeId,ParentId,Ordinal")] IdentityDepartment department)
         {
             if (ModelState.IsValid)
             {
@@ -140,9 +102,8 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.LanguageId = languageId;
-            ViewBag.ManagerId = new SelectList(db.Employees.Where(e => e.LanguageId == languageId), "TranslationId", "FullName", department.ManagerId);
-            ViewBag.ParentId = new SelectList(GetDepartmentsServerSide(languageId), "Id", "Name", department.ParentId);
+            ViewBag.ManagerId = new SelectList(db.Employees.Where(e => e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)), "TranslationId", "FullName", department.ManagerId);
+            ViewBag.ParentId = new SelectList(TermsHelper.GetDepartmentTree(Thread.CurrentThread.CurrentCulture.Name), "Id", "Name", department.ParentId);
             return View(department);
         }
 

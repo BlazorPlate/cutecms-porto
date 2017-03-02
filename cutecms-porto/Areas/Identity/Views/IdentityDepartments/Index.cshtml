@@ -11,50 +11,32 @@
         .glyphicon-folder-open {
             margin-right: 10px !important;
         }
+
         .glyphicon-folder-close {
             margin-right: 10px !important;
         }
+
         .glyphicon-user {
             margin-right: 10px !important;
         }
+
         ul {
             margin-bottom: -8px !important;
         }
+
         .wheat-color {
             background-color: wheat;
         }
     </style>
 </head>
-@using (Html.BeginForm("Index", "IdentityDepartments", FormMethod.Get))
+@if (Model != null && Model.Departments.Count() > 0)
 {
-    <div class="form-horizontal">
-        <div class="form-group">
-            <div class="col-md-10">
-                @Html.Label(Resources.Resources.Search)
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-10">
-                @Html.DropDownList("LanguageId", null, Resources.Resources.ChooseLanguage, htmlAttributes: new { @class = "form-control" })
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-10">
-                <input type="submit" value="@Resources.Resources.Search" class="btn btn-primary" />
-            </div>
-        </div>
-    </div>
-}
-@if (ViewBag.CurrentLanguageId != null)
-{
-    if (Model != null && Model.Departments.Count() > 0)
-    {
-        <div class="tree well">
-            <a class="glyphicon glyphicon-plus" href="@Url.Action("Create", "IdentityDepartments", new { languageId = ViewBag.CurrentLanguageId })"></a>
-            <ul>
-                @GetDepartments(Model.Departments, null)
-            </ul>
-            @helper GetDepartments(IEnumerable<IdentityDepartment> departments, int? parentId)
+    <div class="tree well">
+        <a class="glyphicon glyphicon-plus" href="@Url.Action("Create", "IdentityDepartments")"></a>
+        <ul>
+            @GetDepartments(Model.Departments, null)
+        </ul>
+        @helper GetDepartments(IEnumerable<IdentityDepartment> departments, int? parentId)
         {
 IdentityEntities db = new IdentityEntities();
 var departmentLists = departments.OrderBy(d => d.Ordinal);
@@ -63,64 +45,61 @@ foreach (var item in departmentLists)
         <li>
             <span><i class="glyphicon glyphicon-folder-open"></i>@item.Code</span>
             <span>@item.Ordinal</span>
-            <a class="glyphicon glyphicon-edit" href="@Url.Action("Edit", "IdentityDepartments", new { id = item.Id, languageId = ViewBag.CurrentLanguageId })"></a>
-            <a class="glyphicon glyphicon-list" href="@Url.Action("Details", "IdentityDepartments", new { id = item.Id, languageId = ViewBag.CurrentLanguageId })"></a>
+            <a class="glyphicon glyphicon-edit" href="@Url.Action("Edit", "IdentityDepartments", new { id = item.Id})"></a>
+            <a class="glyphicon glyphicon-list" href="@Url.Action("Details", "IdentityDepartments", new { id = item.Id})"></a>
             <a class="glyphicon glyphicon-globe" href="@Url.Action("Index", "IdentityDepartmentTerms",new { id = item.Id })"></a>
             <a class="glyphicon glyphicon-remove" href="@Url.Action("Delete", "IdentityDepartments",new { id = item.Id })"></a>
         </li>
 }
 }
-        </div>
+    </div>
+}
+<div class="tree well">
+    <a class="glyphicon glyphicon-plus" href="@Url.Action("Create", "IdentityDepartments")"></a>
+    @if (Model != null && Model.DepartmentTerms.Count() > 0)
+    {
+        <ul>
+            @GetDepartmentWithTerms(Model.DepartmentTerms, null)
+        </ul>
     }
-    <div class="tree well">
-        <a class="glyphicon glyphicon-plus" href="@Url.Action("Create", "IdentityDepartments",new { languageId=ViewBag.CurrentLanguageId})"></a>
-        @if (Model != null && Model.DepartmentWithTerms.Count() > 0)
-        {
-            <ul>
-                @GetDepartmentWithTerms(Model.DepartmentWithTerms, null)
-            </ul>
-        }
-        @helper GetDepartmentWithTerms(List<IdentityDepartmentTerm> departments, int? parentId)
-        {
-string languageName = null;
+    @helper GetDepartmentWithTerms(IEnumerable<IdentityDepartmentTerm> departments, int? parentId)
+    {
 IdentityEntities db = new IdentityEntities();
-int languageId = (int)(ViewBag.CurrentLanguageId);
-languageName = db.IdentityLanguages.Where(l => l.Id == languageId).SingleOrDefault().CultureName.Trim();
-List<IdentityDepartmentTerm> departmentLists = departments.Where(d => d.Department.ParentId.Equals(parentId) && d.LanguageId == languageId).OrderBy(d => d.Department.Ordinal).ToList();
+IEnumerable<IdentityDepartmentTerm> departmentLists = departments.Where(d => d.Department.ParentId.Equals(parentId) && d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).OrderBy(d => d.Department.Ordinal).ToList();
 foreach (var item in departmentLists)
 {
         <li>
             @{
                 var submenu = departments.Where(d => d.Department.ParentId.Equals(parentId)).Count();
             }
-            @if (languageId != 0)
+
+            <span><i class="glyphicon glyphicon-folder-open"></i>@item.Department.DepartmentTerms.Where(d => d.DepartmentId == item.DepartmentId && d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value</span>
+            <span>@item.Department.Ordinal</span>
+            <a class="fa fa-users" href="@Url.Action("Index", "EmpInDepts", new { id = item.DepartmentId }, null)"></a>
+            <a clas></a>
+            <a class="glyphicon glyphicon-edit" href="@Url.Action("Edit", "IdentityDepartments", new { id = item.DepartmentId })"></a>
+            <a clas></a>
+            <a class="glyphicon glyphicon-globe" href="@Url.Action("Index", "IdentityDepartmentTerms",new { id = item.DepartmentId })"></a>
+            <a class="glyphicon glyphicon-remove" href="@Url.Action("Delete", "IdentityDepartments",new { id = item.DepartmentId })"></a>
+            @if (item.Department.EmpInDepts != null)
             {
-                <span><i class="glyphicon glyphicon-folder-open"></i>@item.Department.DepartmentTerms.Where(d => d.DepartmentId == item.DepartmentId && d.LanguageId == languageId).FirstOrDefault().Value</span>
-                <span>@item.Department.Ordinal</span>
-                <a class="fa fa-users" href="@Url.Action("Index", "EmpInDepts", new { deptId = item.DepartmentId, languageId = item.LanguageId }, null)"></a>
-                <a class="glyphicon glyphicon-edit" href="@Url.Action("Edit", "IdentityDepartments", new { id = item.DepartmentId, languageId = item.LanguageId })"></a>
-                <a class="glyphicon glyphicon-globe" href="@Url.Action("Index", "IdentityDepartmentTerms",new { id = item.DepartmentId })"></a>
-                <a class="glyphicon glyphicon-remove" href="@Url.Action("Delete", "IdentityDepartments",new { id = item.DepartmentId })"></a>
-                if (item.Department.EmpInDepts != null)
+            <ul>
+                @if (item.Department.Employee != null && db.Employees.Where(e => e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && e.TranslationId == item.Department.ManagerId).FirstOrDefault() != null)
                 {
-                    <ul>
-                        @if (item.Department.Employee != null && db.Employees.Where(e => e.LanguageId == languageId && e.TranslationId == item.Department.ManagerId).FirstOrDefault() != null)
-                        {
-                            string personalTitle = (item.Department.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.LanguageId == languageId).FirstOrDefault() == null) ? item.Department.Employee.PersonalTitle.Code : item.Department.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.LanguageId == languageId).FirstOrDefault().Value;
-                            Employee employee = db.Employees.Where(e => e.LanguageId == languageId && e.TranslationId == item.Department.ManagerId).FirstOrDefault();
-                            <li><span class="wheat-color"><i class="glyphicon glyphicon-user"></i><a href="@Url.Action("Details", "Employees",new { id = employee.Id })">@personalTitle  @employee.FullName</a></span></li>
-                        }
-                        @foreach (var empInDept in item.Department.EmpInDepts.Where(e => e.Employee.TranslationId != e.Department.ManagerId).OrderBy(e => e.Employee.Ordinal))
-                        {
-                            if (db.Employees.Where(e => e.TranslationId == empInDept.EmpId && e.LanguageId == languageId).FirstOrDefault() != null)
-                            {
-                                string personalTitle = (empInDept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.LanguageId == languageId).FirstOrDefault() == null) ? empInDept.Employee.PersonalTitle.Code : empInDept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.LanguageId == languageId).FirstOrDefault().Value;
-                                Employee employee = db.Employees.Where(e => e.TranslationId == empInDept.EmpId && e.LanguageId == languageId).FirstOrDefault();
-                                <li><span><i class="glyphicon glyphicon-user"></i><a href="@Url.Action("Details", "Employees",new { id = employee.Id })">@personalTitle @employee.FullName</a></span></li>
-                            }
-                        }
-                    </ul>
+                    string personalTitle = item.Department.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? item.Department.Employee.PersonalTitle.Code;
+                    Employee employee = db.Employees.Where(e => e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && e.TranslationId == item.Department.ManagerId).FirstOrDefault();
+                    <li><span class="wheat-color"><i class="glyphicon glyphicon-user"></i><a href="@Url.Action("Details", "Employees",new { id = employee.Id })">@personalTitle  @employee.FullName</a></span></li>
                 }
+                @foreach (var empInDept in item.Department.EmpInDepts.Where(e => e.Employee.TranslationId != e.Department.ManagerId).OrderBy(e => e.Employee.Ordinal))
+                {
+                    if (db.Employees.Where(e => e.TranslationId == empInDept.EmpId && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null)
+                    {
+                        string personalTitle = empInDept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? empInDept.Employee.PersonalTitle.Code;
+                        Employee employee = db.Employees.Where(e => e.TranslationId == empInDept.EmpId && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
+                        <li><span><i class="glyphicon glyphicon-user"></i><a href="@Url.Action("Details", "Employees",new { id = employee.Id })">@personalTitle @employee.FullName</a></span></li>
+                    }
+                }
+            </ul>
             }
             @if (submenu > 0)
             {
@@ -132,5 +111,4 @@ foreach (var item in departmentLists)
         </li>
                 }
 }
-    </div>
-}
+</div>

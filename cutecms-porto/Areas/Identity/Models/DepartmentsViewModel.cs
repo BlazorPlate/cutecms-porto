@@ -8,7 +8,7 @@ namespace cutecms_porto.Areas.Identity.Models
 {
     public class DepartmentsViewModel
     {
-        public List<IdentityDepartment> Departments { get; set; }
-        public List<IdentityDepartmentTerm> DepartmentWithTerms { get; set; }
+        public IEnumerable<IdentityDepartment> Departments { get; set; }
+        public IEnumerable<IdentityDepartmentTerm> DepartmentTerms { get; set; }
     }
 }

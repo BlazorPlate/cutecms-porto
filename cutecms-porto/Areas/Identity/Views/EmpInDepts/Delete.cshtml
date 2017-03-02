@@ -47,7 +47,7 @@
         @Html.Hidden("LanguageId")
         <div class="form-actions no-color">
             <input type="submit" value=@Resources.Resources.Delete class="btn btn-primary" /> |
-            @Html.ActionLink(Resources.Resources.BackToList, "Index", new { deptId = Model.DeptId, languageId = ViewBag.LanguageId })
+            @Html.ActionLink(Resources.Resources.BackToList, "Index", new { id = Model.DeptId, languageId = ViewBag.LanguageId })
         </div>
     }
 </div>

@@ -26,25 +26,24 @@ namespace cutecms_porto.Areas.Identity.Controllers
         #region Methods
 
         // GET: Identity/EmpInDepts
-        public ActionResult Index(int? deptId, int? languageId)
+        public ActionResult Index(int? id)
         {
-            if (deptId == null)
+            if (id == null)
             {
                 throw new HttpException(400, "Bad Request");
             }
             var empInDepts = (from p in db.EmpInDepts.Include(e => e.Department).Include(e => e.Occupation)
                               join c in db.Employees on p.EmpId equals c.TranslationId
-                              where p.DeptId == deptId && c.LanguageId == languageId
+                              where p.DeptId == id && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)
                               orderby p.Ordinal
                               orderby p.DeptId
                               select p);
-            ViewBag.DeptId = deptId;
-            ViewBag.LanguageId = languageId;
+            ViewBag.DeptId = id.Value;
             return View(empInDepts.ToList());
         }
 
         // GET: Identity/EmpInDepts/Details/5
-        public ActionResult Details(int? id, int? languageId)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -55,25 +54,23 @@ namespace cutecms_porto.Areas.Identity.Controllers
             {
                 throw new HttpException(404, "Page Not Found");
             }
-            ViewBag.LanguageId = languageId;
             return View(empInDept);
         }
 
         // GET: Identity/EmpInDepts/Create
-        public ActionResult Create(int? deptId, int? languageId)
+        public ActionResult Create(int? id)
         {
-            if (deptId == null || languageId == null)
+            if (id == null)
             {
                 throw new HttpException(400, "Bad Request");
             }
             ViewBag.EmpId = new SelectList(db.Employees, "TranslationId", "FullName");
             ViewBag.OccupationId = new SelectList(TermsHelper.Occupations(), "OccupationId", "Value");
             ViewBag.EmployeeTypeId = new SelectList(TermsHelper.EmployeeTypes(), "EmployeeTypeId", "Value");
-            ViewBag.DeptId = deptId;
-            ViewBag.DepartmentName = db.IdentityDepartmentTerms.Where(d => d.DepartmentId == deptId && d.LanguageId == languageId).FirstOrDefault().Value;
+            ViewBag.DeptId = id;
+            ViewBag.DepartmentName = db.IdentityDepartmentTerms.Where(d => d.DepartmentId == id && d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value;
             EmpInDept empInDept = new EmpInDept();
-            empInDept.DeptId = deptId.Value;
-            ViewBag.LanguageId = languageId;
+            empInDept.DeptId = id.Value;
             return View(empInDept);
         }
 
@@ -81,25 +78,24 @@ namespace cutecms_porto.Areas.Identity.Controllers
         // specific properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,EmpId,DeptId,OccupationId,EmployeeTypeId,Ordinal")] EmpInDept empInDept, int? languageId)
+        public ActionResult Create([Bind(Include = "Id,EmpId,DeptId,OccupationId,EmployeeTypeId,Ordinal")] EmpInDept empInDept)
         {
             if (ModelState.IsValid)
             {
                 db.EmpInDepts.Add(empInDept);
                 db.SaveChanges();
-                return RedirectToAction("Index", new { deptId = empInDept.DeptId, languageId = languageId });
+                return RedirectToAction("Index", new { id = empInDept.DeptId });
             }
             ViewBag.EmpId = new SelectList(db.Employees, "TranslationId", "FullName", empInDept.EmpId);
             ViewBag.DeptId = empInDept.DeptId;
             ViewBag.OccupationId = new SelectList(TermsHelper.Occupations(), "OccupationId", "Value", empInDept.OccupationId);
-            ViewBag.DepartmentName = db.IdentityDepartmentTerms.Where(d => d.DepartmentId == empInDept.DeptId && d.LanguageId == languageId).FirstOrDefault().Value;
+            ViewBag.DepartmentName = db.IdentityDepartmentTerms.Where(d => d.DepartmentId == empInDept.DeptId && d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value;
             ViewBag.EmployeeTypeId = new SelectList(TermsHelper.EmployeeTypes(), "EmployeeTypeId", "Value", empInDept.EmployeeTypeId);
-            ViewBag.LanguageId = languageId;
             return View(empInDept);
         }
 
         // GET: Identity/EmpInDepts/Edit/5
-        public ActionResult Edit(int? id, int? languageId)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
@@ -111,10 +107,9 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 throw new HttpException(404, "Page Not Found");
             }
             ViewBag.EmpId = new SelectList(db.Employees, "TranslationId", "FullName", empInDept.EmpId);
-            ViewBag.DepartmentName = db.IdentityDepartmentTerms.Where(d => d.DepartmentId == empInDept.DeptId && d.LanguageId == languageId).FirstOrDefault().Value;
+            ViewBag.DepartmentName = db.IdentityDepartmentTerms.Where(d => d.DepartmentId == empInDept.DeptId && d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value;
             ViewBag.OccupationId = new SelectList(TermsHelper.Occupations(), "OccupationId", "Value", empInDept.OccupationId);
             ViewBag.EmployeeTypeId = new SelectList(TermsHelper.EmployeeTypes(), "EmployeeTypeId", "Value", empInDept.EmployeeTypeId);
-            ViewBag.LanguageId = languageId;
             return View(empInDept);
         }
 
@@ -122,24 +117,23 @@ namespace cutecms_porto.Areas.Identity.Controllers
         // specific properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,EmpId,DeptId,OccupationId,EmployeeTypeId,Ordinal")] EmpInDept empInDept, int? languageId)
+        public ActionResult Edit([Bind(Include = "Id,EmpId,DeptId,OccupationId,EmployeeTypeId,Ordinal")] EmpInDept empInDept)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(empInDept).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index", new { deptId = empInDept.DeptId, languageId = languageId });
+                return RedirectToAction("Index", new { id = empInDept.DeptId });
             }
             ViewBag.EmpId = new SelectList(db.Employees, "TranslationId", "FullName", empInDept.EmpId);
-            ViewBag.DepartmentName = db.IdentityDepartmentTerms.Where(d => d.DepartmentId == empInDept.DeptId && d.LanguageId == languageId).FirstOrDefault().Value;
+            ViewBag.DepartmentName = db.IdentityDepartmentTerms.Where(d => d.DepartmentId == empInDept.DeptId && d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value;
             ViewBag.OccupationId = new SelectList(TermsHelper.Occupations(), "OccupationId", "Value", empInDept.OccupationId);
             ViewBag.EmployeeTypeId = new SelectList(TermsHelper.EmployeeTypes(), "EmployeeTypeId", "Value", empInDept.EmployeeTypeId);
-            ViewBag.LanguageId = languageId;
             return View(empInDept);
         }
 
         // GET: Identity/EmpInDepts/Delete/5
-        public ActionResult Delete(int? id, int? languageId)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
@@ -150,19 +144,18 @@ namespace cutecms_porto.Areas.Identity.Controllers
             {
                 throw new HttpException(404, "Page Not Found");
             }
-            ViewBag.LanguageId = languageId;
             return View(empInDept);
         }
 
         // POST: Identity/EmpInDepts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id, int? languageId)
+        public ActionResult DeleteConfirmed(int id)
         {
             EmpInDept empInDept = db.EmpInDepts.Find(id);
             db.EmpInDepts.Remove(empInDept);
             db.SaveChanges();
-            return RedirectToAction("Index", new { deptId = empInDept.DeptId, languageId = languageId });
+            return RedirectToAction("Index", new { id = empInDept.DeptId});
         }
         protected override void Dispose(bool disposing)
         {

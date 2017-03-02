@@ -162,7 +162,16 @@ WriteLiteral(">\r\n            <h4");
 
 WriteLiteral(" class=\"heading-primary\"");
 
-WriteLiteral(">Here are some useful links</h4>\r\n            <ul");
+WriteLiteral(">");
+
+            
+            #line 31 "..\..\Views\Error\NotPublished.cshtml"
+                                   Write(Resources.Resources.UsefulLinks);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</h4>\r\n            <ul");
 
 WriteLiteral(" class=\"nav nav-list\"");
 
@@ -184,14 +193,14 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                    <li><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1509), Tuple.Create("\"", 1526)
+WriteAttribute("href", Tuple.Create(" href=\"", 1515), Tuple.Create("\"", 1532)
             
             #line 35 "..\..\Views\Error\NotPublished.cshtml"
-, Tuple.Create(Tuple.Create("", 1516), Tuple.Create<System.Object, System.Int32>(item.Path
+, Tuple.Create(Tuple.Create("", 1522), Tuple.Create<System.Object, System.Int32>(item.Path
             
             #line default
             #line hidden
-, 1516), false)
+, 1522), false)
 );
 
 WriteLiteral(">");

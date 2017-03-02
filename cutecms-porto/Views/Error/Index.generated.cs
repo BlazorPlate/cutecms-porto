@@ -56,8 +56,7 @@ namespace ASP
   
     ViewBag.Title = Resources.Resources.Error;
     CMSEntities db = new CMSEntities();
-    IEnumerable<MenuItem> usefulLinks = db.MenuItems.Include("Status").Include("Menu").Include("Language").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Menu.Code.Trim().Equals("useful-links") && m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).OrderBy(o => o.Ordinal);
-
+    IEnumerable<MenuItem> usefulLinks = db.MenuItems.Include("Status").Include("Menu").Include("Language").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Menu.Code.Trim().Equals("useful-links") &&m.Status.Code.Trim().Equals("published") && m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).OrderBy(o => o.Ordinal);
 
             
             #line default
@@ -85,7 +84,7 @@ WriteLiteral(" class=\"col-md-12\"");
 WriteLiteral(">\r\n                    <h1>500 - ");
 
             
-            #line 15 "..\..\Views\Error\Index.cshtml"
+            #line 14 "..\..\Views\Error\Index.cshtml"
                          Write(ViewBag.Title);
 
             
@@ -119,7 +118,7 @@ WriteLiteral(" class=\"fa fa-warning\"");
 WriteLiteral("></i></h2>\r\n                <h3>");
 
             
-            #line 26 "..\..\Views\Error\Index.cshtml"
+            #line 25 "..\..\Views\Error\Index.cshtml"
                Write(Resources.Resources.GenericError);
 
             
@@ -128,7 +127,7 @@ WriteLiteral("></i></h2>\r\n                <h3>");
 WriteLiteral("</h3>\r\n                <p>");
 
             
-            #line 27 "..\..\Views\Error\Index.cshtml"
+            #line 26 "..\..\Views\Error\Index.cshtml"
               Write(Resources.Resources.ErrorNotification);
 
             
@@ -138,16 +137,16 @@ WriteLiteral("</p>\r\n                <a");
 
 WriteLiteral(" class=\"size-20\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1152), Tuple.Create("\"", 1202)
-, Tuple.Create(Tuple.Create("", 1159), Tuple.Create<System.Object, System.Int32>(Href("~/")
-, 1159), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 1193), Tuple.Create("\"", 1243)
+, Tuple.Create(Tuple.Create("", 1200), Tuple.Create<System.Object, System.Int32>(Href("~/")
+, 1200), false)
             
-            #line 28 "..\..\Views\Error\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 1161), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture.Name
+            #line 27 "..\..\Views\Error\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 1202), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture.Name
             
             #line default
             #line hidden
-, 1161), false)
+, 1202), false)
 );
 
 WriteLiteral("><i");
@@ -157,7 +156,7 @@ WriteLiteral(" class=\"glyphicon glyphicon-menu-left\"");
 WriteLiteral("></i>");
 
             
-            #line 28 "..\..\Views\Error\Index.cshtml"
+            #line 27 "..\..\Views\Error\Index.cshtml"
                                                                                                                               Write(Resources.Resources.BackToHome);
 
             
@@ -174,7 +173,7 @@ WriteLiteral(" class=\"heading-primary\"");
 WriteLiteral(">");
 
             
-            #line 32 "..\..\Views\Error\Index.cshtml"
+            #line 31 "..\..\Views\Error\Index.cshtml"
                                    Write(Resources.Resources.UsefulLinks);
 
             
@@ -187,13 +186,13 @@ WriteLiteral(" class=\"nav nav-list\"");
 WriteLiteral(">\r\n");
 
             
-            #line 34 "..\..\Views\Error\Index.cshtml"
+            #line 33 "..\..\Views\Error\Index.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 34 "..\..\Views\Error\Index.cshtml"
+            #line 33 "..\..\Views\Error\Index.cshtml"
                  foreach (var item in usefulLinks)
                 {
 
@@ -202,20 +201,20 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                    <li><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1569), Tuple.Create("\"", 1586)
+WriteAttribute("href", Tuple.Create(" href=\"", 1610), Tuple.Create("\"", 1627)
             
-            #line 36 "..\..\Views\Error\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 1576), Tuple.Create<System.Object, System.Int32>(item.Path
+            #line 35 "..\..\Views\Error\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 1617), Tuple.Create<System.Object, System.Int32>(item.Path
             
             #line default
             #line hidden
-, 1576), false)
+, 1617), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 36 "..\..\Views\Error\Index.cshtml"
+            #line 35 "..\..\Views\Error\Index.cshtml"
                                         Write(item.Name);
 
             
@@ -224,7 +223,7 @@ WriteLiteral(">");
 WriteLiteral("</a></li>\r\n");
 
             
-            #line 37 "..\..\Views\Error\Index.cshtml"
+            #line 36 "..\..\Views\Error\Index.cshtml"
                 }
 
             

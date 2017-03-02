@@ -24,33 +24,6 @@ namespace cutecms_porto.Areas.Config.Controllers
         #endregion Fields
 
         #region Methods
-        public string GetParents(IdentityDepartment element)
-        {
-            if (element.ParentId == null)
-            {
-                departmentPath = element.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && d.DepartmentId == element.Id).FirstOrDefault().Value + "/" + departmentPath;
-                return departmentPath;
-            }
-            IdentityDepartment department = element;
-            departmentPath = identityDb.IdentityDepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && d.DepartmentId == element.Id).FirstOrDefault().Value + "/" + departmentPath;
-            GetParents(identityDb.IdentityDepartments.Find(department.ParentId));
-            return departmentPath;
-        }
-
-        public List<object> GetDepartmentsServerSide()
-        {
-            foreach (var item in TermsHelper.Departments())
-            {
-                DepartmentsList.Add(new
-                {
-                    Id = item.Id,
-                    Name = GetParents(item)
-                }
-                 );
-                departmentPath = "";
-            }
-            return DepartmentsList;
-        }
 
         // GET: CMS/Contacts
         public ActionResult Index(int? id)
@@ -84,7 +57,7 @@ namespace cutecms_porto.Areas.Config.Controllers
                 throw new HttpException(400, "Bad Request");
             }
             ViewBag.PersonalTitleId = new SelectList(TermsHelper.PersonalTitles(), "PersonalTitleId", "Value");
-            ViewBag.DepartmentId = new SelectList(GetDepartmentsServerSide(), "Id", "Name");
+            ViewBag.DepartmentId = new SelectList(TermsHelper.GetDepartmentTree(Thread.CurrentThread.CurrentCulture.Name), "Id", "Name");
             ViewBag.OrganizationId = id;
             ViewBag.OrganizationName = db.Organizations.Find(id).Name;
             return View();
@@ -103,7 +76,7 @@ namespace cutecms_porto.Areas.Config.Controllers
                 return RedirectToAction("Index", new { id = contact.OrganizationId });
             }
             ViewBag.PersonalTitleId = new SelectList(TermsHelper.PersonalTitles(), "PersonalTitleId", "Value", contact.PersonalTitleId);
-            ViewBag.DepartmentId = new SelectList(GetDepartmentsServerSide(), "Id", "Name", contact.DepartmentId);
+            ViewBag.DepartmentId = new SelectList(TermsHelper.GetDepartmentTree(Thread.CurrentThread.CurrentCulture.Name), "Id", "Name", contact.DepartmentId);
             ViewBag.OrganizationId = contact.OrganizationId;
             ViewBag.OrganizationName = db.Organizations.Find(contact.OrganizationId).Name;
             return View(contact);
@@ -122,7 +95,7 @@ namespace cutecms_porto.Areas.Config.Controllers
                 throw new HttpException(404, "Page Not Found");
             }
             ViewBag.PersonalTitleId = new SelectList(TermsHelper.PersonalTitles(), "PersonalTitleId", "Value", contact.PersonalTitleId);
-            ViewBag.DepartmentId = new SelectList(GetDepartmentsServerSide(), "Id", "Name", contact.DepartmentId);
+            ViewBag.DepartmentId = new SelectList(TermsHelper.GetDepartmentTree(Thread.CurrentThread.CurrentCulture.Name), "Id", "Name", contact.DepartmentId);
             ViewBag.OrganizationId = contact.OrganizationId;
             ViewBag.OrganizationName = db.Organizations.Find(contact.OrganizationId).Name;
             return View(contact);
@@ -141,7 +114,7 @@ namespace cutecms_porto.Areas.Config.Controllers
                 return RedirectToAction("Index", new { id = contact.OrganizationId });
             }
             ViewBag.PersonalTitleId = new SelectList(TermsHelper.PersonalTitles(), "PersonalTitleId", "Value", contact.PersonalTitleId);
-            ViewBag.DepartmentId = new SelectList(GetDepartmentsServerSide(), "Id", "Name", contact.DepartmentId);
+            ViewBag.DepartmentId = new SelectList(TermsHelper.GetDepartmentTree(Thread.CurrentThread.CurrentCulture.Name), "Id", "Name", contact.DepartmentId);
             ViewBag.OrganizationId = contact.OrganizationId;
             ViewBag.OrganizationName = db.Organizations.Find(contact.OrganizationId).Name;
             return View(contact);

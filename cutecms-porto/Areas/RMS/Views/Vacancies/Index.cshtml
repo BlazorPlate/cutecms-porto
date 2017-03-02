@@ -174,12 +174,12 @@
                    "data": null,
                    "sortable": false,
                    "render": function (data, type, col) {
-                       return '<a class=\'btn\' href=\'' + '@Url.Action("Index", "Submissions")?id=' + col["Id"] + '\'>@Resources.Resources.Submissions</a>'
-                           + '|<a class=\'btn\' href=\'' + '@Url.Action("Translations", "Vacancies")?id=' + col["TranslationId"] + '\'>@Resources.Resources.Translations</a>'
-                           + '|<a class=\'btn\' href=\'' + '@Url.Action("Edit", "Vacancies")?id=' + col["Id"] + '\'>@Resources.Resources.Edit</a>'
-                           + '|<a class=\'btn\' href=\'' + '@Url.Action("Details", "Vacancies")?id=' + col["Id"] + '\'>@Resources.Resources.Details</a>'
-                           + '|<a class=\'btn\' href=\'' + '@Url.Action("Delete", "Vacancies")?id=' + col["Id"] + '\'>@Resources.Resources.Delete</a>';
-                       @*+ '<a class=\'btn\' href=\'' + '@Url.Action("Delete", "Vacancies")?Id=' + col["Id"] + '\'>Delete</a>';*@
+                       return '<a class=\'btn\' href=\'' + '@Url.Action("Index", "Submissions")/' + col["Id"] + '\'>@Resources.Resources.Submissions</a>'
+                           + '|<a class=\'btn\' href=\'' + '@Url.Action("Translations", "Vacancies")/' + col["TranslationId"] + '\'>@Resources.Resources.Translations</a>'
+                           + '|<a class=\'btn\' href=\'' + '@Url.Action("Edit", "Vacancies")/' + col["Id"] + '\'>@Resources.Resources.Edit</a>'
+                           + '|<a class=\'btn\' href=\'' + '@Url.Action("Details", "Vacancies")/' + col["Id"] + '\'>@Resources.Resources.Details</a>'
+                           + '|<a class=\'btn\' href=\'' + '@Url.Action("Delete", "Vacancies")/' + col["Id"] + '\'>@Resources.Resources.Delete</a>';
+                       @*+ '<a class=\'btn\' href=\'' + '@Url.Action("Delete", "Vacancies")/' + col["Id"] + '\'>Delete</a>';*@
                    }
                    //"render": function (o) { return '<i class="ui-tooltip fa fa-pencil" style="font-size: 22px;" data-original-title="Edit"></i><i class="ui-tooltip fa fa-trash-o" style="font-size: 22px;" data-original-title="Delete"></i>'; }
                },

@@ -19,37 +19,9 @@ namespace cutecms_porto.Controllers
         #region Fields
         private IdentityEntities db = new IdentityEntities();
         private List<object> DepartmentsList = new List<object>();
-        private string departmentPath = "";
         #endregion Fields
 
         #region Methods
-        public string GetParents(IdentityDepartment element)
-        {
-            if (element.ParentId == null)
-            {
-                departmentPath = element.DepartmentTerms.Where(d => d.DepartmentId == element.Id && d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value + "/" + departmentPath;
-                return departmentPath;
-            }
-            IdentityDepartment department = element;
-            departmentPath = db.IdentityDepartmentTerms.Where(d => d.DepartmentId == element.Id && d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value + "/" + departmentPath;
-            GetParents(db.IdentityDepartments.Find(department.ParentId));
-            return departmentPath;
-        }
-        public List<object> GetDepartmentsServerSide()
-        {
-            foreach (var item in TermsHelper.Departments(db.IdentityLanguages.Where(l => l.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Id))
-            {
-                DepartmentsList.Add(new
-                {
-                    Id = item.DepartmentId,
-                    Name = GetParents(item.Department)
-                }
-                 );
-                departmentPath = "";
-            }
-            return DepartmentsList;
-        }
-
         // GET: Identity/EmpInDepts
         public ActionResult Index(int? id)
         {
@@ -57,8 +29,8 @@ namespace cutecms_porto.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            var empTranslationId = db.Employees.Where(e => e.TranslationId == id && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().TranslationId;
-            if (empTranslationId == 0)
+            var empTranslationId = db.Employees.Where(e => e.TranslationId == id && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.TranslationId;
+            if (empTranslationId == null)
                 throw new HttpException(602, "Page Not Translated");
             ViewBag.EmpId = id;
             var empInDepts = db.EmpInDepts.Include(e => e.Employee).Where(e => e.Employee.TranslationId == empTranslationId);
@@ -89,7 +61,7 @@ namespace cutecms_porto.Controllers
             }
             ViewBag.OccupationId = new SelectList(TermsHelper.Occupations(), "OccupationId", "Value");
             ViewBag.EmployeeTypeId = new SelectList(TermsHelper.EmployeeTypes(), "EmployeeTypeId", "Value");
-            ViewBag.DeptId = new SelectList(GetDepartmentsServerSide(), "Id", "Name");
+            ViewBag.DeptId = new SelectList(TermsHelper.GetDepartmentTree(Thread.CurrentThread.CurrentCulture.Name), "Id", "Name");
             EmpInDept empInDept = new EmpInDept();
             empInDept.EmpId = id.Value;
             ViewBag.TranslationId = db.Employees.Find(id).TranslationId;
@@ -114,7 +86,7 @@ namespace cutecms_porto.Controllers
                     ModelState.AddModelError("ERROR", ex.InnerException.ToString());
                     ViewBag.OccupationId = new SelectList(TermsHelper.Occupations(), "OccupationId", "Value", empInDept.OccupationId);
                     ViewBag.EmployeeTypeId = new SelectList(TermsHelper.EmployeeTypes(), "EmployeeTypeId", "Value", empInDept.EmployeeTypeId);
-                    ViewBag.DeptId = new SelectList(GetDepartmentsServerSide(), "Id", "Name", empInDept.DeptId);
+                    ViewBag.DeptId = new SelectList(TermsHelper.GetDepartmentTree(Thread.CurrentThread.CurrentCulture.Name), "Id", "Name", empInDept.DeptId);
                     ViewBag.TranslationId = db.Employees.Find(empInDept.EmpId).TranslationId;
                     return View(empInDept);
                 }
@@ -122,7 +94,7 @@ namespace cutecms_porto.Controllers
             }
             ViewBag.OccupationId = new SelectList(TermsHelper.Occupations(), "OccupationId", "Value", empInDept.OccupationId);
             ViewBag.EmployeeTypeId = new SelectList(TermsHelper.EmployeeTypes(), "EmployeeTypeId", "Value", empInDept.EmployeeTypeId);
-            ViewBag.DeptId = new SelectList(GetDepartmentsServerSide(), "Id", "Name", empInDept.DeptId);
+            ViewBag.DeptId = new SelectList(TermsHelper.GetDepartmentTree(Thread.CurrentThread.CurrentCulture.Name), "Id", "Name", empInDept.DeptId);
             ViewBag.TranslationId = db.Employees.Find(empInDept.EmpId).TranslationId;
             return View(empInDept);
         }
@@ -141,7 +113,7 @@ namespace cutecms_porto.Controllers
             }
             ViewBag.OccupationId = new SelectList(TermsHelper.Occupations(), "OccupationId", "Value", empInDept.OccupationId);
             ViewBag.EmployeeTypeId = new SelectList(TermsHelper.EmployeeTypes(), "EmployeeTypeId", "Value", empInDept.EmployeeTypeId);
-            ViewBag.DeptId = new SelectList(GetDepartmentsServerSide(), "Id", "Name", empInDept.DeptId);
+            ViewBag.DeptId = new SelectList(TermsHelper.GetDepartmentTree(Thread.CurrentThread.CurrentCulture.Name), "Id", "Name", empInDept.DeptId);
             return View(empInDept);
         }
 
@@ -164,14 +136,14 @@ namespace cutecms_porto.Controllers
                     ModelState.AddModelError("ERROR", ex.InnerException.ToString());
                     ViewBag.OccupationId = new SelectList(TermsHelper.Occupations(), "OccupationId", "Value", empInDept.OccupationId);
                     ViewBag.EmployeeTypeId = new SelectList(TermsHelper.EmployeeTypes(), "EmployeeTypeId", "Value", empInDept.EmployeeTypeId);
-                    ViewBag.DeptId = new SelectList(GetDepartmentsServerSide(), "Id", "Name", empInDept.DeptId);
+                    ViewBag.DeptId = new SelectList(TermsHelper.GetDepartmentTree(Thread.CurrentThread.CurrentCulture.Name), "Id", "Name", empInDept.DeptId);
                     return View(empInDept);
                 }
                 return RedirectToAction("Index", new { id = db.Employees.Find(empInDept.EmpId).TranslationId });
             }
             ViewBag.OccupationId = new SelectList(TermsHelper.Occupations(), "OccupationId", "Value", empInDept.OccupationId);
             ViewBag.EmployeeTypeId = new SelectList(TermsHelper.EmployeeTypes(), "EmployeeTypeId", "Value", empInDept.EmployeeTypeId);
-            ViewBag.DeptId = new SelectList(GetDepartmentsServerSide(), "Id", "Name", empInDept.DeptId);
+            ViewBag.DeptId = new SelectList(TermsHelper.GetDepartmentTree(Thread.CurrentThread.CurrentCulture.Name), "Id", "Name", empInDept.DeptId);
             return View(empInDept);
         }
 

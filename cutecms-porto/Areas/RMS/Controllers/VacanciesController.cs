@@ -57,18 +57,12 @@ namespace cutecms_porto.Areas.RMS.Controllers
                 using (RMSEntities db = new RMSEntities())
                 {
                     List<string> roles = GetUserRoles();
-                    var vacancies = db.Vacancies.Include("Language").Include("Status").Include("JobType").Include("Department").Where(v => v.TenantId.Trim().Equals(Tenant.TenantId) && (roles.Any(r => v.RoleVID.Equals(r)) || v.RoleVID == null) || v.RoleVID == null).OrderBy(v => v.Title);
+                    var vacancies = db.Vacancies.Include("Language").Include("Department").Include("Department.DepartmentTerms").Include("Department.DepartmentTerms.Language").Include("JobType").Include("JobType.JobTypeTerms").Include("JobType.JobTypeTerms.Language").Include("Status").Include("Status.StatusTerms").Include("Status.StatusTerms.Language").Where(v => v.TenantId.Trim().Equals(Tenant.TenantId) && (roles.Any(r => v.RoleVID.Equals(r)) || v.RoleVID == null) || v.RoleVID == null).OrderBy(v => v.Title);
                     foreach (var item in vacancies)
                     {
-                        string departmentName = (TermsHelper.DepartmentTerms().Where(d => d.DepartmentId == item.Department.Id).FirstOrDefault() == null) ?
-                                                 db.RMSDepartments.Include("Department").Where(d => d.Id == item.Department.Id).FirstOrDefault().Code :
-                                                 TermsHelper.DepartmentTerms().Where(d => d.DepartmentId == item.Department.Id).FirstOrDefault().Value;
-                        string jobTypeName = (TermsHelper.JobTypes().Where(d => d.JobTypeId == item.JobType.Id).FirstOrDefault() == null) ?
-                                              db.JobTypes.Where(d => d.Id == item.JobType.Id).FirstOrDefault().Code :
-                                              TermsHelper.JobTypes().Where(d => d.JobTypeId == item.JobType.Id).FirstOrDefault().Value;
-                        string statusName = (TermsHelper.Statuses().Where(d => d.StatusId == item.Status.Id).FirstOrDefault() == null) ?
-                                             db.Statuses.Where(d => d.Id == item.Status.Id).FirstOrDefault().Code :
-                                             TermsHelper.Statuses().Where(d => d.StatusId == item.Status.Id).FirstOrDefault().Value;
+                        string departmentName = item.Department.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture)).FirstOrDefault()?.Value ?? item.Department.Code;
+                        string jobTypeName = item.JobType.JobTypeTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture)).FirstOrDefault()?.Value ?? item.JobType.Code;
+                        string statusName = item.Status.StatusTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture)).FirstOrDefault()?.Value ?? item.Status.Code;
                         VacancyViewModel vacancyViewModel = new VacancyViewModel();
                         vacancyViewModel.Id = item.Id;
                         vacancyViewModel.Code = item.Code;
@@ -365,7 +359,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                     Vacancy vacancy = db.Vacancies.Include("Language").Include("Program").Include("Program.ProgramTerms").Include("Program.ProgramTerms.Language").Include("Status").Include("Status.StatusTerms").Include("Status.StatusTerms.Language").Include("JobType").Include("JobType.JobTypeTerms").Include("JobType.JobTypeTerms.Language").Include("VacancyRanks").Include("VacancyDegrees").Where(v => v.TenantId.Trim().Equals(Tenant.TenantId) && v.Id == id).FirstOrDefault();
                     try
                     {
-                        if (vacancy.Submissions.Count > 0)
+                        if (vacancy.Submissions.Count() > 0)
                         {
                             ModelState.AddModelError("ERROR", Resources.Resources.VacancyUnableToDelete);
                             return View(vacancy);

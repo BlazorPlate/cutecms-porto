@@ -1545,4 +1545,10 @@
   <data name="UsefulLinks" xml:space="preserve">
     <value>Šeit ir dažas noderīgas saites</value>
   </data>
+  <data name="AwaitingTranslation" xml:space="preserve">
+    <value>Gaida translation...</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Atpakaļ</value>
+  </data>
 </root>

@@ -174,7 +174,7 @@
                    "data": null,
                    "sortable": false,
                    "render": function (data, type, col) {
-                       return '<a class=\'btn\' href=\'' + '@Url.Action("Index", "Submissions")/' + col["Id"] + '\'>@Resources.Resources.Submissions</a>'
+                       return '<a class=\'btn\' href=\'' + '@Url.Action("Index", "Submissions")/' + "index/" + col["Id"] + '\'>@Resources.Resources.Submissions</a>'
                            + '|<a class=\'btn\' href=\'' + '@Url.Action("Translations", "Vacancies")/' + col["TranslationId"] + '\'>@Resources.Resources.Translations</a>'
                            + '|<a class=\'btn\' href=\'' + '@Url.Action("Edit", "Vacancies")/' + col["Id"] + '\'>@Resources.Resources.Edit</a>'
                            + '|<a class=\'btn\' href=\'' + '@Url.Action("Details", "Vacancies")/' + col["Id"] + '\'>@Resources.Resources.Details</a>'

@@ -28,7 +28,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         {
             DepartmentsViewModel departments = new DepartmentsViewModel();
             departments.DepartmentTerms = TermsHelper.Departments(null);
-            departments.Departments = db.IdentityDepartments.Where(i => i.DepartmentTerms.Count() == 0);
+            departments.Departments = db.IdentityDepartments.Where(d => !d.DepartmentTerms.Where(dt => dt.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).Any());
             return View(departments);
         }
 

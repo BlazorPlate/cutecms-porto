@@ -28,10 +28,10 @@ namespace cutecms_porto.Areas.RMS.Controllers
         // GET: /Submission/
         public ActionResult Index(int? id)
         {
-            TempData["vacancyId"] = id;
+            ViewBag.VacancyId = id;
             return View();
         }
-        public JsonResult DataHandler(DTParameters param)
+        public JsonResult DataHandler(DTParameters param,int? id)
         {
             try
             {
@@ -39,7 +39,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                 List<int> submissionIds = new List<int>();
                 using (RMSEntities db = new RMSEntities())
                 {
-                    var vacancyId = (int?)TempData["vacancyId"];
+                    var vacancyId = id;
                     List<string> roles = GetUserRoles();
                     var submissions = db.Submissions.Include("Vacancy").Include("Applicant").Include("Vacancy.Department").Include("Vacancy.Department.DepartmentTerms").Include("Vacancy.Department.DepartmentTerms.Language").Where(s => roles.Any(r => s.Vacancy.TenantId.Trim().Equals(Tenant.TenantId) && s.Vacancy.RoleVID.Equals(r)) && ((s.VacancyId.Equals(vacancyId.Value)) || vacancyId == null));
                     foreach (var item in submissions)
@@ -51,7 +51,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                         submissionViewModel.VacancyTitle = item.Vacancy.Title;
                         submissionViewModel.ResumeFilePath = item.Applicant.ResumeFilePath;
                         submissionViewModel.ResumeFileName = item.Applicant.ResumeFileName;
-                        submissionViewModel.Department = item.Vacancy.Department.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && d.DepartmentId == item.Vacancy.DeptId).FirstOrDefault().Value;
+                        submissionViewModel.Department = item.Vacancy.Department.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && d.DepartmentId == item.Vacancy.DeptId).FirstOrDefault()?.Value ?? item.Vacancy.Department.Code;
                         submissionDT.Add(submissionViewModel);
                     }
                 }
@@ -69,12 +69,10 @@ namespace cutecms_porto.Areas.RMS.Controllers
                     recordsFiltered = count,
                     recordsTotal = count
                 };
-                TempData.Keep();
                 foreach (var item in data)
                 {
                     submissionIds.Add(Convert.ToInt32(item.Id));
                 }
-
                 TempData["submissionIds"] = submissionIds;
                 TempData.Keep();
                 return Json(result);

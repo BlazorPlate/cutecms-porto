@@ -26,7 +26,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         {
             ViewBag.TranslationId = id;
             ViewBag.LoginId = loginId;
-            var employees = db.Employees.Include(o => o.Language).Where(o => o.TranslationId == id).OrderBy(o => o.Ordinal);
+            var employees = db.Employees.Where(o => o.TranslationId == id).OrderBy(o => o.Ordinal);
             return View(employees.ToList());
         }
         // GET: Identity/Employees
@@ -65,7 +65,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            Employee employee = db.Employees.Include("Language").Where(e => e.Id == id).FirstOrDefault();
+            Employee employee = db.Employees.Where(e => e.Id == id).FirstOrDefault();
             if (employee == null)
             {
                 throw new HttpException(404, "Page Not Found");
@@ -240,7 +240,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            Employee employee = db.Employees.Include("Language").Where(e => e.Id == id).FirstOrDefault();
+            Employee employee = db.Employees.Where(e => e.Id == id).FirstOrDefault();
             if (employee == null)
             {
                 throw new HttpException(404, "Page Not Found");

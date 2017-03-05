@@ -33,6 +33,7 @@
 {
     <div class="tree well">
         <a class="glyphicon glyphicon-plus" href="@Url.Action("Create", "IdentityDepartments")"></a>
+        <h5>@Resources.Resources.AwaitingTranslation</h5>
         <ul>
             @GetDepartments(Model.Departments, null)
         </ul>
@@ -83,23 +84,23 @@ foreach (var item in departmentLists)
             <a class="glyphicon glyphicon-remove" href="@Url.Action("Delete", "IdentityDepartments",new { id = item.DepartmentId })"></a>
             @if (item.Department.EmpInDepts != null)
             {
-            <ul>
-                @if (item.Department.Employee != null && db.Employees.Where(e => e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && e.TranslationId == item.Department.ManagerId).FirstOrDefault() != null)
-                {
-                    string personalTitle = item.Department.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? item.Department.Employee.PersonalTitle.Code;
-                    Employee employee = db.Employees.Where(e => e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && e.TranslationId == item.Department.ManagerId).FirstOrDefault();
-                    <li><span class="wheat-color"><i class="glyphicon glyphicon-user"></i><a href="@Url.Action("Details", "Employees",new { id = employee.Id })">@personalTitle  @employee.FullName</a></span></li>
-                }
-                @foreach (var empInDept in item.Department.EmpInDepts.Where(e => e.Employee.TranslationId != e.Department.ManagerId).OrderBy(e => e.Employee.Ordinal))
-                {
-                    if (db.Employees.Where(e => e.TranslationId == empInDept.EmpId && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null)
+                <ul>
+                    @if (item.Department.Employee != null && db.Employees.Where(e => e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && e.TranslationId == item.Department.ManagerId).FirstOrDefault() != null)
                     {
-                        string personalTitle = empInDept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? empInDept.Employee.PersonalTitle.Code;
-                        Employee employee = db.Employees.Where(e => e.TranslationId == empInDept.EmpId && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
-                        <li><span><i class="glyphicon glyphicon-user"></i><a href="@Url.Action("Details", "Employees",new { id = employee.Id })">@personalTitle @employee.FullName</a></span></li>
+                        string personalTitle = item.Department.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? item.Department.Employee.PersonalTitle.Code;
+                        Employee employee = db.Employees.Where(e => e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && e.TranslationId == item.Department.ManagerId).FirstOrDefault();
+                        <li><span class="wheat-color"><i class="glyphicon glyphicon-user"></i><a href="@Url.Action("Details", "Employees",new { id = employee.Id })">@personalTitle  @employee.FullName</a></span></li>
                     }
-                }
-            </ul>
+                    @foreach (var empInDept in item.Department.EmpInDepts.Where(e => e.Employee.TranslationId != e.Department.ManagerId).OrderBy(e => e.Employee.Ordinal))
+                    {
+                        if (db.Employees.Where(e => e.TranslationId == empInDept.EmpId && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null)
+                        {
+                            string personalTitle = empInDept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? empInDept.Employee.PersonalTitle.Code;
+                            Employee employee = db.Employees.Where(e => e.TranslationId == empInDept.EmpId && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
+                            <li><span><i class="glyphicon glyphicon-user"></i><a href="@Url.Action("Details", "Employees",new { id = employee.Id })">@personalTitle @employee.FullName</a></span></li>
+                        }
+                    }
+                </ul>
             }
             @if (submenu > 0)
             {

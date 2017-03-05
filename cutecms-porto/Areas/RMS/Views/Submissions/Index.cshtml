@@ -4,9 +4,9 @@
     ViewBag.Title = Resources.Resources.Index;
 }
 <div>@Html.ActionLink(Resources.Resources.DownloadApplications, "ExportApplicants", null, new { @class = "btn btn-danger" })</div>
-@section styles{ 
-<link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="https://cdn.datatables.net/buttons/1.2.1/css/buttons.dataTables.min.css" rel="stylesheet" />
+@section styles{
+    <link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/buttons/1.2.1/css/buttons.dataTables.min.css" rel="stylesheet" />
 }
 <div style="margin-top:25px;">
     <table id="submissionsTable" class="table table-bordered table-hover nowrap">
@@ -100,7 +100,7 @@
                 },
                 "ajax": {
                     "type": "POST",
-                    "url": "@Url.Action("DataHandler", "Submissions", new { area = "RMS" })",
+                    "url": "@Url.Action("DataHandler", "Submissions", new {id=ViewBag.VacancyId, area = "RMS" })",
                     "contentType": 'application/json; charset=utf-8',
                     'data': function (data) {
                         return data = JSON.stringify(data);
@@ -119,9 +119,9 @@
                    "data": "Action",
                    "sortable": false,
                    "render": function (data, type, col) {
-                    return '<a class=\'btn\' href=\'' + '@Url.Action("Details", "Submissions")?id=' + col["Id"] + '\'>@Resources.Resources.View</a>'
-                    + '|<a class=\'btn\' href=\'' + '@Url.Action("ExportCV", "Submissions")?id=' + col["Id"] + '\'>@Resources.Resources.CurriculumVitae</a>'
-                    + '|<a class=\'btn\' href=\'' + '@Url.Action("ExportApplicant", "Submissions")?id=' + col["Id"] + '\'>@Resources.Resources.Export</a>';
+                       return '<a class=\'btn\' href=\'' + '@Url.Action("Details", "Submissions")?id=' + col["Id"] + '\'>@Resources.Resources.View</a>'
+                       + '|<a class=\'btn\' href=\'' + '@Url.Action("ExportCV", "Submissions")?id=' + col["Id"] + '\'>@Resources.Resources.CurriculumVitae</a>'
+                       + '|<a class=\'btn\' href=\'' + '@Url.Action("ExportApplicant", "Submissions")?id=' + col["Id"] + '\'>@Resources.Resources.Export</a>';
                        @*+ '<a class=\'btn\' href=\'' + '@Url.Action("Delete", "Vacancies")?Id=' + col["Id"] + '\'>Delete</a>';*@
                    }
                    //"render": function (o) { return '<i class="ui-tooltip fa fa-pencil" style="font-size: 22px;" data-original-title="Edit"></i><i class="ui-tooltip fa fa-trash-o" style="font-size: 22px;" data-original-title="Delete"></i>'; }

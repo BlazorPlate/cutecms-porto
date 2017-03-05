@@ -1545,4 +1545,10 @@
   <data name="UsefulLinks" xml:space="preserve">
     <value>Ecco alcuni link utili</value>
   </data>
+  <data name="AwaitingTranslation" xml:space="preserve">
+    <value>In attesa per la traduzione...</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Indietro</value>
+  </data>
 </root>

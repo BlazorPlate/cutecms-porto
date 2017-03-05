@@ -349,6 +349,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Awaiting for translation....
+        /// </summary>
+        public static string AwaitingTranslation {
+            get {
+                return ResourceManager.GetString("AwaitingTranslation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        public static string Back {
+            get {
+                return ResourceManager.GetString("Back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Backend.
         /// </summary>
         public static string Backend {

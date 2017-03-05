@@ -59,7 +59,7 @@ namespace ASP
     public partial class _Views_Staff_EmpsInDept_cshtml : System.Web.Mvc.WebViewPage<IEnumerable<IdentityDepartment>>
     {
         
-        #line 181 "..\..\Views\Staff\EmpsInDept.cshtml"
+        #line 186 "..\..\Views\Staff\EmpsInDept.cshtml"
  
     public List<IdentityDepartment> GetChildren(IdentityDepartment parentNode)
     {
@@ -73,7 +73,7 @@ namespace ASP
     {
         if (parentNode.Departments1 != null)
         {
-            foreach (var childNode in parentNode.Departments1)
+            foreach (var childNode in parentNode.Departments1.OrderBy(d => d.Ordinal))
             {
                 if (childNode.EmpInDepts.Count != 0 || childNode.Employee != null)
                     nodes.Add(childNode);
@@ -133,126 +133,535 @@ WriteLiteral("</h1>\r\n                </div>\r\n            </div>\r\n        <
 
 });
 
-WriteLiteral("<div");
+WriteLiteral("<section>\r\n    <div");
 
 WriteLiteral(" class=\"container\"");
 
 WriteLiteral(">\r\n");
 
             
-            #line 23 "..\..\Views\Staff\EmpsInDept.cshtml"
-    
+            #line 24 "..\..\Views\Staff\EmpsInDept.cshtml"
+        
             
             #line default
             #line hidden
             
-            #line 23 "..\..\Views\Staff\EmpsInDept.cshtml"
-     foreach (var dept in Model)
-    {
-        if (dept.ParentId != null)
+            #line 24 "..\..\Views\Staff\EmpsInDept.cshtml"
+         foreach (var dept in Model)
         {
-            string parentDepartmentName = dept.Department1.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value ?? dept.Department1.Code;
-            string departmentName = dept.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? dept.Code;
+            if (dept.ParentId != null)
+            {
+                string parentDepartmentName = dept.Department1?.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? dept.Department1?.Code;
+                string departmentName = dept.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? dept.Code;
 
             
             #line default
             #line hidden
-WriteLiteral("            <section");
+WriteLiteral("                <section");
 
 WriteLiteral(" class=\"section section-text-light section-background section-center section-over" +
 "lay-opacity section-overlay-opacity-scale-2\"");
 
 WriteLiteral(" style=\"background-image: url(/assets/porto/img/custom-team-header-bg.jpg);\"");
 
-WriteLiteral(">\r\n                <div");
+WriteLiteral(">\r\n                    <div");
 
 WriteLiteral(" class=\"container\"");
 
-WriteLiteral(">\r\n                    <div");
+WriteLiteral(">\r\n                        <div");
 
 WriteLiteral(" class=\"row\"");
 
-WriteLiteral(">\r\n                        <div");
+WriteLiteral(">\r\n                            <div");
 
 WriteLiteral(" class=\"col-md-12\"");
 
-WriteLiteral(">\r\n                            <h4");
+WriteLiteral(">\r\n                                <h4");
 
 WriteLiteral(" class=\"mb-none\"");
 
 WriteLiteral(">");
-
-            
-            #line 33 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                           Write(parentDepartmentName);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</h4>\r\n                            <h5>");
 
             
             #line 34 "..\..\Views\Staff\EmpsInDept.cshtml"
-                           Write(departmentName);
+                                               Write(parentDepartmentName);
 
             
             #line default
             #line hidden
-WriteLiteral("</h5>\r\n                        </div>\r\n                    </div>\r\n              " +
-"  </div>\r\n            </section>\r\n");
+WriteLiteral("</h4>\r\n                                <h5>");
 
             
-            #line 39 "..\..\Views\Staff\EmpsInDept.cshtml"
-        }
-        else
-        {
-            string departmentName = dept.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? dept.Code;
+            #line 35 "..\..\Views\Staff\EmpsInDept.cshtml"
+                               Write(departmentName);
 
             
             #line default
             #line hidden
-WriteLiteral("            <section");
+WriteLiteral("</h5>\r\n                            </div>\r\n                        </div>\r\n      " +
+"              </div>\r\n                </section>\r\n");
+
+            
+            #line 40 "..\..\Views\Staff\EmpsInDept.cshtml"
+            }
+            else
+            {
+                string departmentName = dept.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? dept.Code;
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                <section");
 
 WriteLiteral(" class=\"section section-text-light section-background section-center section-over" +
 "lay-opacity section-overlay-opacity-scale-2\"");
 
 WriteLiteral(" style=\"background-image: url(/assets/porto/img/custom-team-header-bg.jpg);\"");
 
-WriteLiteral(">\r\n                <div");
+WriteLiteral(">\r\n                    <div");
 
 WriteLiteral(" class=\"container\"");
 
-WriteLiteral(">\r\n                    <div");
+WriteLiteral(">\r\n                        <div");
 
 WriteLiteral(" class=\"row\"");
 
-WriteLiteral(">\r\n                        <div");
+WriteLiteral(">\r\n                            <div");
 
 WriteLiteral(" class=\"col-md-12\"");
 
-WriteLiteral(">\r\n                            <h4");
+WriteLiteral(">\r\n                                <h4");
 
 WriteLiteral(" class=\"mb-none\"");
 
 WriteLiteral(">");
 
             
-            #line 47 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                           Write(departmentName);
+            #line 48 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                               Write(departmentName);
 
             
             #line default
             #line hidden
-WriteLiteral("</h4>\r\n                        </div>\r\n                    </div>\r\n              " +
-"  </div>\r\n            </section>\r\n");
+WriteLiteral("</h4>\r\n                            </div>\r\n                        </div>\r\n      " +
+"              </div>\r\n                </section>\r\n");
 
             
-            #line 52 "..\..\Views\Staff\EmpsInDept.cshtml"
-        }
-        if (dept.Employee != null)//If the department has manager
-        {
-            string personalTitle = dept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? dept.Employee.PersonalTitle.Code;
-            var manager = db.Employees.Where(e => e.Language.CultureName.Equals(Thread.CurrentThread.CurrentCulture.Name) && e.TranslationId == dept.ManagerId).FirstOrDefault();
+            #line 53 "..\..\Views\Staff\EmpsInDept.cshtml"
+            }
+            if (dept.Employee != null)//If the department has manager
+            {
+                string personalTitle = dept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? dept.Employee.PersonalTitle.Code;
+                var manager = db.Employees.Where(e => e.Language.CultureName.Equals(Thread.CurrentThread.CurrentCulture.Name) && e.TranslationId == dept.ManagerId).FirstOrDefault();
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                <div");
+
+WriteLiteral(" class=\"row\"");
+
+WriteLiteral(">\r\n                    <ul");
+
+WriteLiteral(" class=\"team-list sort-destination\"");
+
+WriteLiteral(">\r\n");
+
+            
+            #line 60 "..\..\Views\Staff\EmpsInDept.cshtml"
+                        
+            
+            #line default
+            #line hidden
+            
+            #line 60 "..\..\Views\Staff\EmpsInDept.cshtml"
+                         if (dept.Employee != null)
+                    {
+                        string managerPersonalTitle = dept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? dept.Employee.PersonalTitle.Code;
+                        var employee = db.Employees.Where(e => e.Language.CultureName.Equals(Thread.CurrentThread.CurrentCulture.Name) && e.TranslationId == dept.Employee.TranslationId).FirstOrDefault();
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                            <li");
+
+WriteLiteral(" class=\"col-md-3 col-sm-6 isotope-item\"");
+
+WriteLiteral(">\r\n                                <span");
+
+WriteLiteral(" class=\"thumb-info thumb-info-hide-wrapper-bg mb-xlg\"");
+
+WriteLiteral(">\r\n                                    <span");
+
+WriteLiteral(" class=\"thumb-info-wrapper\"");
+
+WriteLiteral(">\r\n                                        <a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 3995), Tuple.Create("\"", 4056)
+            
+            #line 67 "..\..\Views\Staff\EmpsInDept.cshtml"
+, Tuple.Create(Tuple.Create("", 4002), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", new { id = employee.Id })
+            
+            #line default
+            #line hidden
+, 4002), false)
+);
+
+WriteLiteral(">\r\n                                            <img");
+
+WriteAttribute("alt", Tuple.Create(" alt=\"", 4108), Tuple.Create("\"", 4141)
+            
+            #line 68 "..\..\Views\Staff\EmpsInDept.cshtml"
+, Tuple.Create(Tuple.Create("", 4114), Tuple.Create<System.Object, System.Int32>(employee.PersonalPhotoName
+            
+            #line default
+            #line hidden
+, 4114), false)
+);
+
+WriteAttribute("src", Tuple.Create(" src=\"", 4142), Tuple.Create("\"", 4290)
+            
+            #line 68 "..\..\Views\Staff\EmpsInDept.cshtml"
+         , Tuple.Create(Tuple.Create("", 4148), Tuple.Create<System.Object, System.Int32>(!File.Exists(Server.MapPath(employee.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : @employee.PersonalPhotoPath
+            
+            #line default
+            #line hidden
+, 4148), false)
+);
+
+WriteLiteral(">\r\n                                            <span");
+
+WriteLiteral(" class=\"thumb-info-title\"");
+
+WriteLiteral(">\r\n                                                <span");
+
+WriteLiteral(" class=\"thumb-info-inner\"");
+
+WriteLiteral(">");
+
+            
+            #line 70 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                                                          Write(personalTitle);
+
+            
+            #line default
+            #line hidden
+WriteLiteral(" ");
+
+            
+            #line 70 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                                                                         Write(employee.FullName);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</span>\r\n");
+
+            
+            #line 71 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                                
+            
+            #line default
+            #line hidden
+            
+            #line 71 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                                 foreach (var empInDept in dept.Employee.EmpInDepts.OrderBy(e => e.Ordinal))
+                                                {
+                                                    string occupation = empInDept.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? empInDept.Occupation.Code;
+                                                    string department = empInDept.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? empInDept.Department.Code;
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                                    <span");
+
+WriteLiteral(" class=\"thumb-info-type\"");
+
+WriteLiteral(">");
+
+            
+            #line 75 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                                                             Write(occupation);
+
+            
+            #line default
+            #line hidden
+WriteLiteral(" &#64; ");
+
+            
+            #line 75 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                                                                               Write(department);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</span>\r\n");
+
+            
+            #line 76 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                                }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                            </span>\r\n                            " +
+"            </a>\r\n                                    </span>\r\n                 " +
+"                   <span");
+
+WriteLiteral(" class=\"thumb-info-caption\"");
+
+WriteLiteral(">\r\n                                        <span");
+
+WriteLiteral(" class=\"thumb-info-caption-text text-justify\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                                            ");
+
+            
+            #line 82 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                       Write(Html.Raw(manager.Biography.StripHtml().Chop(100)));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                                            <a");
+
+WriteLiteral(" class=\"btn btn-xs\"");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 5819), Tuple.Create("\"", 5879)
+            
+            #line 83 "..\..\Views\Staff\EmpsInDept.cshtml"
+, Tuple.Create(Tuple.Create("", 5826), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", new { id = manager.Id })
+            
+            #line default
+            #line hidden
+, 5826), false)
+);
+
+WriteLiteral(">");
+
+            
+            #line 83 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                                                                                                          Write(Resources.Resources.ReadMore);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</a>\r\n                                        </span>\r\n                          " +
+"              <span");
+
+WriteLiteral(" class=\"thumb-info-social-icons center\"");
+
+WriteLiteral(">\r\n");
+
+            
+            #line 86 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                            
+            
+            #line default
+            #line hidden
+            
+            #line 86 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                             if (!string.IsNullOrEmpty(manager.FacebookUrl))
+                                            {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                                <a");
+
+WriteLiteral(" target=\"_blank\"");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 6259), Tuple.Create("\"", 6286)
+            
+            #line 88 "..\..\Views\Staff\EmpsInDept.cshtml"
+, Tuple.Create(Tuple.Create("", 6266), Tuple.Create<System.Object, System.Int32>(manager.FacebookUrl
+            
+            #line default
+            #line hidden
+, 6266), false)
+);
+
+WriteLiteral("><i");
+
+WriteLiteral(" class=\"fa fa-facebook\"");
+
+WriteLiteral("></i><span>Facebook</span></a>\r\n");
+
+            
+            #line 89 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                            }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                            ");
+
+            
+            #line 90 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                             if (!string.IsNullOrEmpty(manager.TwitterUrl))
+                                            {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                                <a");
+
+WriteLiteral(" target=\"_blank\"");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 6598), Tuple.Create("\"", 6624)
+            
+            #line 92 "..\..\Views\Staff\EmpsInDept.cshtml"
+, Tuple.Create(Tuple.Create("", 6605), Tuple.Create<System.Object, System.Int32>(manager.TwitterUrl
+            
+            #line default
+            #line hidden
+, 6605), false)
+);
+
+WriteLiteral("><i");
+
+WriteLiteral(" class=\"fa fa-twitter\"");
+
+WriteLiteral("></i><span>Twitter</span></a>\r\n");
+
+            
+            #line 93 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                            }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                            ");
+
+            
+            #line 94 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                             if (!string.IsNullOrEmpty(manager.LinkedInUrl))
+                                            {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                                <a");
+
+WriteLiteral(" target=\"_blank\"");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 6935), Tuple.Create("\"", 6962)
+            
+            #line 96 "..\..\Views\Staff\EmpsInDept.cshtml"
+, Tuple.Create(Tuple.Create("", 6942), Tuple.Create<System.Object, System.Int32>(manager.LinkedInUrl
+            
+            #line default
+            #line hidden
+, 6942), false)
+);
+
+WriteLiteral("><i");
+
+WriteLiteral(" class=\"fa fa-linkedin\"");
+
+WriteLiteral("></i><span>Linkedin</span></a>\r\n");
+
+            
+            #line 97 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                            }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                            ");
+
+            
+            #line 98 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                             if (!string.IsNullOrEmpty(manager.GooglePlusUrl))
+                                            {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                                <a");
+
+WriteLiteral(" target=\"_blank\"");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 7277), Tuple.Create("\"", 7306)
+            
+            #line 100 "..\..\Views\Staff\EmpsInDept.cshtml"
+, Tuple.Create(Tuple.Create("", 7284), Tuple.Create<System.Object, System.Int32>(manager.GooglePlusUrl
+            
+            #line default
+            #line hidden
+, 7284), false)
+);
+
+WriteLiteral("><i");
+
+WriteLiteral(" class=\"fa fa-google-plus\"");
+
+WriteLiteral("></i><span>Google Plus</span></a>\r\n");
+
+            
+            #line 101 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                            }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                            ");
+
+            
+            #line 102 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                             if (!string.IsNullOrEmpty(manager.YouTubeUrl))
+                                            {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                                <a");
+
+WriteLiteral(" target=\"_blank\"");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 7624), Tuple.Create("\"", 7650)
+            
+            #line 104 "..\..\Views\Staff\EmpsInDept.cshtml"
+, Tuple.Create(Tuple.Create("", 7631), Tuple.Create<System.Object, System.Int32>(manager.YouTubeUrl
+            
+            #line default
+            #line hidden
+, 7631), false)
+);
+
+WriteLiteral("><i");
+
+WriteLiteral(" class=\"fa fa-youtube\"");
+
+WriteLiteral("></i><span>YouTube</span></a>\r\n");
+
+            
+            #line 105 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                            }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                        </span>\r\n                                " +
+"    </span>\r\n                                </span>\r\n                          " +
+"  </li>\r\n");
+
+            
+            #line 110 "..\..\Views\Staff\EmpsInDept.cshtml"
+                        }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                    </ul>\r\n                </div>\r\n");
+
+WriteLiteral("                <br />\r\n");
+
+            
+            #line 114 "..\..\Views\Staff\EmpsInDept.cshtml"
+            }
 
             
             #line default
@@ -261,87 +670,105 @@ WriteLiteral("            <div");
 
 WriteLiteral(" class=\"row\"");
 
-WriteLiteral(">\r\n                <ul");
+WriteLiteral(">\r\n");
+
+            
+            #line 116 "..\..\Views\Staff\EmpsInDept.cshtml"
+                
+            
+            #line default
+            #line hidden
+            
+            #line 116 "..\..\Views\Staff\EmpsInDept.cshtml"
+                  
+                    var empInDepts = dept.EmpInDepts.Where(e => e.Department.ManagerId != e.EmpId).OrderBy(e => e.Employee.Ordinal);
+                
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                <ul");
 
 WriteLiteral(" class=\"team-list sort-destination\"");
 
 WriteLiteral(">\r\n");
 
             
-            #line 59 "..\..\Views\Staff\EmpsInDept.cshtml"
+            #line 120 "..\..\Views\Staff\EmpsInDept.cshtml"
                     
             
             #line default
             #line hidden
             
-            #line 59 "..\..\Views\Staff\EmpsInDept.cshtml"
-                     if (dept.Employee != null)
+            #line 120 "..\..\Views\Staff\EmpsInDept.cshtml"
+                     foreach (var empInDept in empInDepts)
                     {
-                        string managerPersonalTitle = dept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? dept.Employee.PersonalTitle.Code;
-                        var employee = db.Employees.Where(e => e.Language.CultureName.Equals(Thread.CurrentThread.CurrentCulture.Name) && e.TranslationId == dept.Employee.TranslationId).FirstOrDefault();
+                        string personalTitle = (empInDept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? empInDept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : empInDept.Employee.PersonalTitle.Code;
+                        var employee = db.Employees.Where(e => e.Language.CultureName.Equals(Thread.CurrentThread.CurrentCulture.Name) && e.TranslationId == empInDept.Employee.TranslationId).FirstOrDefault();
+                        if (employee != null)
+                        {
 
             
             #line default
             #line hidden
-WriteLiteral("                        <li");
+WriteLiteral("                            <li");
 
 WriteLiteral(" class=\"col-md-3 col-sm-6 isotope-item\"");
 
-WriteLiteral(">\r\n                            <span");
+WriteLiteral(">\r\n                                <span");
 
 WriteLiteral(" class=\"thumb-info thumb-info-hide-wrapper-bg mb-xlg\"");
 
-WriteLiteral(">\r\n                                <span");
+WriteLiteral(">\r\n                                    <span");
 
 WriteLiteral(" class=\"thumb-info-wrapper\"");
 
-WriteLiteral(">\r\n                                    <a");
+WriteLiteral(">\r\n                                        <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3813), Tuple.Create("\"", 3874)
+WriteAttribute("href", Tuple.Create(" href=\"", 9375), Tuple.Create("\"", 9446)
             
-            #line 66 "..\..\Views\Staff\EmpsInDept.cshtml"
-, Tuple.Create(Tuple.Create("", 3820), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", new { id = employee.Id })
+            #line 129 "..\..\Views\Staff\EmpsInDept.cshtml"
+, Tuple.Create(Tuple.Create("", 9382), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", new { id = empInDept.Employee.Id })
             
             #line default
             #line hidden
-, 3820), false)
+, 9382), false)
 );
 
-WriteLiteral(">\r\n                                        <img");
+WriteLiteral(">\r\n                                            <img");
 
-WriteAttribute("alt", Tuple.Create(" alt=\"", 3922), Tuple.Create("\"", 3955)
+WriteAttribute("alt", Tuple.Create(" alt=\"", 9498), Tuple.Create("\"", 9531)
             
-            #line 67 "..\..\Views\Staff\EmpsInDept.cshtml"
-, Tuple.Create(Tuple.Create("", 3928), Tuple.Create<System.Object, System.Int32>(employee.PersonalPhotoName
+            #line 130 "..\..\Views\Staff\EmpsInDept.cshtml"
+, Tuple.Create(Tuple.Create("", 9504), Tuple.Create<System.Object, System.Int32>(employee.PersonalPhotoName
             
             #line default
             #line hidden
-, 3928), false)
+, 9504), false)
 );
 
-WriteAttribute("src", Tuple.Create(" src=\"", 3956), Tuple.Create("\"", 4104)
+WriteAttribute("src", Tuple.Create(" src=\"", 9532), Tuple.Create("\"", 9680)
             
-            #line 67 "..\..\Views\Staff\EmpsInDept.cshtml"
-     , Tuple.Create(Tuple.Create("", 3962), Tuple.Create<System.Object, System.Int32>(!File.Exists(Server.MapPath(employee.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : @employee.PersonalPhotoPath
+            #line 130 "..\..\Views\Staff\EmpsInDept.cshtml"
+         , Tuple.Create(Tuple.Create("", 9538), Tuple.Create<System.Object, System.Int32>(!File.Exists(Server.MapPath(employee.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : @employee.PersonalPhotoPath
             
             #line default
             #line hidden
-, 3962), false)
+, 9538), false)
 );
 
-WriteLiteral(">\r\n                                        <span");
+WriteLiteral(">\r\n                                            <span");
 
 WriteLiteral(" class=\"thumb-info-title\"");
 
-WriteLiteral(">\r\n                                            <span");
+WriteLiteral(">\r\n                                                <span");
 
 WriteLiteral(" class=\"thumb-info-inner\"");
 
 WriteLiteral(">");
 
             
-            #line 69 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                                                      Write(personalTitle);
+            #line 132 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                                                          Write(personalTitle);
 
             
             #line default
@@ -349,8 +776,8 @@ WriteLiteral(">");
 WriteLiteral(" ");
 
             
-            #line 69 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                                                                     Write(employee.FullName);
+            #line 132 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                                                                         Write(employee.FullName);
 
             
             #line default
@@ -358,30 +785,30 @@ WriteLiteral(" ");
 WriteLiteral("</span>\r\n");
 
             
-            #line 70 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                            
+            #line 133 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                                
             
             #line default
             #line hidden
             
-            #line 70 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                             foreach (var empInDept in dept.Employee.EmpInDepts)
-                                            {
-                                                string occupation = empInDept.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? empInDept.Occupation.Code;
-                                                string department = empInDept.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? empInDept.Department.Code;
+            #line 133 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                                 foreach (var empInDept1 in empInDept.Employee.EmpInDepts.OrderBy(e => e.Ordinal))
+                                                {
+                                                    string occupation = (empInDept1.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? empInDept1.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : empInDept1.Occupation.Code;
+                                                    string department = (empInDept1.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? empInDept1.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : empInDept1.Department.Code;
 
             
             #line default
             #line hidden
-WriteLiteral("                                                <span");
+WriteLiteral("                                                    <span");
 
 WriteLiteral(" class=\"thumb-info-type\"");
 
 WriteLiteral(">");
 
             
-            #line 74 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                                                         Write(occupation);
+            #line 137 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                                                             Write(occupation);
 
             
             #line default
@@ -389,8 +816,8 @@ WriteLiteral(">");
 WriteLiteral(" &#64; ");
 
             
-            #line 74 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                                                                           Write(department);
+            #line 137 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                                                                               Write(department);
 
             
             #line default
@@ -398,89 +825,89 @@ WriteLiteral(" &#64; ");
 WriteLiteral("</span>\r\n");
 
             
-            #line 75 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                            }
+            #line 138 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                                }
 
             
             #line default
             #line hidden
-WriteLiteral("                                        </span>\r\n                                " +
-"    </a>\r\n                                </span>\r\n                             " +
-"   <span");
+WriteLiteral("                                            </span>\r\n                            " +
+"            </a>\r\n                                    </span>\r\n                 " +
+"                   <span");
 
 WriteLiteral(" class=\"thumb-info-caption\"");
 
-WriteLiteral(">\r\n                                    <span");
+WriteLiteral(">\r\n                                        <span");
 
 WriteLiteral(" class=\"thumb-info-caption-text text-justify\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("                                        ");
+WriteLiteral("                                            ");
 
             
-            #line 81 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                   Write(Html.Raw(manager.Biography.StripHtml().Chop(100)));
+            #line 144 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                       Write(Html.Raw(empInDept.Employee.Biography.StripHtml().Chop(100)));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n                                        <a");
+WriteLiteral("\r\n                                            <a");
 
 WriteLiteral(" class=\"btn btn-xs\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 5549), Tuple.Create("\"", 5609)
+WriteAttribute("href", Tuple.Create(" href=\"", 11542), Tuple.Create("\"", 11613)
             
-            #line 82 "..\..\Views\Staff\EmpsInDept.cshtml"
-, Tuple.Create(Tuple.Create("", 5556), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", new { id = manager.Id })
+            #line 145 "..\..\Views\Staff\EmpsInDept.cshtml"
+, Tuple.Create(Tuple.Create("", 11549), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", new { id = empInDept.Employee.Id })
             
             #line default
             #line hidden
-, 5556), false)
+, 11549), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 82 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                                                                                                      Write(Resources.Resources.ReadMore);
+            #line 145 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                                                                                                                     Write(Resources.Resources.ReadMore);
 
             
             #line default
             #line hidden
-WriteLiteral("</a>\r\n                                    </span>\r\n                              " +
-"      <span");
+WriteLiteral("</a>\r\n                                        </span>\r\n                          " +
+"              <span");
 
 WriteLiteral(" class=\"thumb-info-social-icons center\"");
 
 WriteLiteral(">\r\n");
 
             
-            #line 85 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                        
+            #line 148 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                            
             
             #line default
             #line hidden
             
-            #line 85 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                         if (!string.IsNullOrEmpty(manager.FacebookUrl))
-                                        {
+            #line 148 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                             if (!string.IsNullOrEmpty(@empInDept.Employee.FacebookUrl))
+                                            {
 
             
             #line default
             #line hidden
-WriteLiteral("                                            <a");
+WriteLiteral("                                                <a");
 
 WriteLiteral(" target=\"_blank\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 5969), Tuple.Create("\"", 5996)
+WriteAttribute("href", Tuple.Create(" href=\"", 12005), Tuple.Create("\"", 12043)
             
-            #line 87 "..\..\Views\Staff\EmpsInDept.cshtml"
-, Tuple.Create(Tuple.Create("", 5976), Tuple.Create<System.Object, System.Int32>(manager.FacebookUrl
+            #line 150 "..\..\Views\Staff\EmpsInDept.cshtml"
+, Tuple.Create(Tuple.Create("", 12012), Tuple.Create<System.Object, System.Int32>(empInDept.Employee.FacebookUrl
             
             #line default
             #line hidden
-, 5976), false)
+, 12012), false)
 );
 
 WriteLiteral("><i");
@@ -490,34 +917,40 @@ WriteLiteral(" class=\"fa fa-facebook\"");
 WriteLiteral("></i><span>Facebook</span></a>\r\n");
 
             
-            #line 88 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                        }
+            #line 151 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                            }
 
             
             #line default
             #line hidden
-WriteLiteral("                                        ");
+WriteLiteral("\r\n");
 
             
-            #line 89 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                         if (!string.IsNullOrEmpty(manager.TwitterUrl))
-                                        {
+            #line 153 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                            
+            
+            #line default
+            #line hidden
+            
+            #line 153 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                             if (!string.IsNullOrEmpty(empInDept.Employee.TwitterUrl))
+                                            {
 
             
             #line default
             #line hidden
-WriteLiteral("                                            <a");
+WriteLiteral("                                                <a");
 
 WriteLiteral(" target=\"_blank\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 6292), Tuple.Create("\"", 6318)
+WriteAttribute("href", Tuple.Create(" href=\"", 12368), Tuple.Create("\"", 12405)
             
-            #line 91 "..\..\Views\Staff\EmpsInDept.cshtml"
-, Tuple.Create(Tuple.Create("", 6299), Tuple.Create<System.Object, System.Int32>(manager.TwitterUrl
+            #line 155 "..\..\Views\Staff\EmpsInDept.cshtml"
+, Tuple.Create(Tuple.Create("", 12375), Tuple.Create<System.Object, System.Int32>(empInDept.Employee.TwitterUrl
             
             #line default
             #line hidden
-, 6299), false)
+, 12375), false)
 );
 
 WriteLiteral("><i");
@@ -527,34 +960,34 @@ WriteLiteral(" class=\"fa fa-twitter\"");
 WriteLiteral("></i><span>Twitter</span></a>\r\n");
 
             
-            #line 92 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                        }
+            #line 156 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                            }
 
             
             #line default
             #line hidden
-WriteLiteral("                                        ");
+WriteLiteral("                                            ");
 
             
-            #line 93 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                         if (!string.IsNullOrEmpty(manager.LinkedInUrl))
-                                        {
+            #line 157 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                             if (!string.IsNullOrEmpty(@empInDept.Employee.LinkedInUrl))
+                                            {
 
             
             #line default
             #line hidden
-WriteLiteral("                                            <a");
+WriteLiteral("                                                <a");
 
 WriteLiteral(" target=\"_blank\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 6613), Tuple.Create("\"", 6640)
+WriteAttribute("href", Tuple.Create(" href=\"", 12728), Tuple.Create("\"", 12766)
             
-            #line 95 "..\..\Views\Staff\EmpsInDept.cshtml"
-, Tuple.Create(Tuple.Create("", 6620), Tuple.Create<System.Object, System.Int32>(manager.LinkedInUrl
+            #line 159 "..\..\Views\Staff\EmpsInDept.cshtml"
+, Tuple.Create(Tuple.Create("", 12735), Tuple.Create<System.Object, System.Int32>(empInDept.Employee.LinkedInUrl
             
             #line default
             #line hidden
-, 6620), false)
+, 12735), false)
 );
 
 WriteLiteral("><i");
@@ -564,34 +997,34 @@ WriteLiteral(" class=\"fa fa-linkedin\"");
 WriteLiteral("></i><span>Linkedin</span></a>\r\n");
 
             
-            #line 96 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                        }
+            #line 160 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                            }
 
             
             #line default
             #line hidden
-WriteLiteral("                                        ");
+WriteLiteral("                                            ");
 
             
-            #line 97 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                         if (!string.IsNullOrEmpty(manager.GooglePlusUrl))
-                                        {
+            #line 161 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                             if (!string.IsNullOrEmpty(@empInDept.Employee.GooglePlusUrl))
+                                            {
 
             
             #line default
             #line hidden
-WriteLiteral("                                            <a");
+WriteLiteral("                                                <a");
 
 WriteLiteral(" target=\"_blank\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 6939), Tuple.Create("\"", 6968)
+WriteAttribute("href", Tuple.Create(" href=\"", 13093), Tuple.Create("\"", 13133)
             
-            #line 99 "..\..\Views\Staff\EmpsInDept.cshtml"
-, Tuple.Create(Tuple.Create("", 6946), Tuple.Create<System.Object, System.Int32>(manager.GooglePlusUrl
+            #line 163 "..\..\Views\Staff\EmpsInDept.cshtml"
+, Tuple.Create(Tuple.Create("", 13100), Tuple.Create<System.Object, System.Int32>(empInDept.Employee.GooglePlusUrl
             
             #line default
             #line hidden
-, 6946), false)
+, 13100), false)
 );
 
 WriteLiteral("><i");
@@ -601,34 +1034,34 @@ WriteLiteral(" class=\"fa fa-google-plus\"");
 WriteLiteral("></i><span>Google Plus</span></a>\r\n");
 
             
-            #line 100 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                        }
+            #line 164 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                            }
 
             
             #line default
             #line hidden
-WriteLiteral("                                        ");
+WriteLiteral("                                            ");
 
             
-            #line 101 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                         if (!string.IsNullOrEmpty(manager.YouTubeUrl))
-                                        {
+            #line 165 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                             if (!string.IsNullOrEmpty(@empInDept.Employee.YouTubeUrl))
+                                            {
 
             
             #line default
             #line hidden
-WriteLiteral("                                            <a");
+WriteLiteral("                                                <a");
 
 WriteLiteral(" target=\"_blank\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 7270), Tuple.Create("\"", 7296)
+WriteAttribute("href", Tuple.Create(" href=\"", 13463), Tuple.Create("\"", 13500)
             
-            #line 103 "..\..\Views\Staff\EmpsInDept.cshtml"
-, Tuple.Create(Tuple.Create("", 7277), Tuple.Create<System.Object, System.Int32>(manager.YouTubeUrl
+            #line 167 "..\..\Views\Staff\EmpsInDept.cshtml"
+, Tuple.Create(Tuple.Create("", 13470), Tuple.Create<System.Object, System.Int32>(empInDept.Employee.YouTubeUrl
             
             #line default
             #line hidden
-, 7277), false)
+, 13470), false)
 );
 
 WriteLiteral("><i");
@@ -638,17 +1071,19 @@ WriteLiteral(" class=\"fa fa-youtube\"");
 WriteLiteral("></i><span>YouTube</span></a>\r\n");
 
             
-            #line 104 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                        }
+            #line 168 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                            }
 
             
             #line default
             #line hidden
-WriteLiteral("                                    </span>\r\n                                </sp" +
-"an>\r\n                            </span>\r\n                        </li>\r\n");
+WriteLiteral("                                        </span>\r\n                                " +
+"    </span>\r\n                                </span>\r\n                          " +
+"  </li>\r\n");
 
             
-            #line 109 "..\..\Views\Staff\EmpsInDept.cshtml"
+            #line 173 "..\..\Views\Staff\EmpsInDept.cshtml"
+                        }
                     }
 
             
@@ -656,456 +1091,52 @@ WriteLiteral("                                    </span>\r\n                   
             #line hidden
 WriteLiteral("                </ul>\r\n            </div>\r\n");
 
-WriteLiteral("            <br />\r\n");
+WriteLiteral("            <hr />\r\n");
 
             
-            #line 113 "..\..\Views\Staff\EmpsInDept.cshtml"
-        }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("        <div");
-
-WriteLiteral(" class=\"row\"");
-
-WriteLiteral(">\r\n");
-
-            
-            #line 115 "..\..\Views\Staff\EmpsInDept.cshtml"
-            
-            
-            #line default
-            #line hidden
-            
-            #line 115 "..\..\Views\Staff\EmpsInDept.cshtml"
-              
-                var empInDepts = dept.EmpInDepts.OrderBy(e => e.Employee.Ordinal);
-            
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n            <ul");
-
-WriteLiteral(" class=\"team-list sort-destination\"");
-
-WriteLiteral(">\r\n");
-
-            
-            #line 119 "..\..\Views\Staff\EmpsInDept.cshtml"
-                
-            
-            #line default
-            #line hidden
-            
-            #line 119 "..\..\Views\Staff\EmpsInDept.cshtml"
-                 foreach (var empInDept in empInDepts)
-                {
-                    string personalTitle = (empInDept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? empInDept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : empInDept.Employee.PersonalTitle.Code;
-                    var employee = db.Employees.Where(e => e.Language.CultureName.Equals(Thread.CurrentThread.CurrentCulture.Name) && e.TranslationId == empInDept.Employee.TranslationId).FirstOrDefault();
-                    if (employee != null)
-                    {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                <li");
-
-WriteLiteral(" class=\"col-md-3 col-sm-6 isotope-item\"");
-
-WriteLiteral(">\r\n                    <span");
-
-WriteLiteral(" class=\"thumb-info thumb-info-hide-wrapper-bg mb-xlg\"");
-
-WriteLiteral(">\r\n                        <span");
-
-WriteLiteral(" class=\"thumb-info-wrapper\"");
-
-WriteLiteral(">\r\n                            <a");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 8843), Tuple.Create("\"", 8914)
-            
-            #line 128 "..\..\Views\Staff\EmpsInDept.cshtml"
-, Tuple.Create(Tuple.Create("", 8850), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", new { id = empInDept.Employee.Id })
-            
-            #line default
-            #line hidden
-, 8850), false)
-);
-
-WriteLiteral(">\r\n                                <img");
-
-WriteAttribute("alt", Tuple.Create(" alt=\"", 8954), Tuple.Create("\"", 8987)
-            
-            #line 129 "..\..\Views\Staff\EmpsInDept.cshtml"
-, Tuple.Create(Tuple.Create("", 8960), Tuple.Create<System.Object, System.Int32>(employee.PersonalPhotoName
-            
-            #line default
-            #line hidden
-, 8960), false)
-);
-
-WriteAttribute("src", Tuple.Create(" src=\"", 8988), Tuple.Create("\"", 9136)
-            
-            #line 129 "..\..\Views\Staff\EmpsInDept.cshtml"
-, Tuple.Create(Tuple.Create("", 8994), Tuple.Create<System.Object, System.Int32>(!File.Exists(Server.MapPath(employee.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : @employee.PersonalPhotoPath
-            
-            #line default
-            #line hidden
-, 8994), false)
-);
-
-WriteLiteral(">\r\n                                <span");
-
-WriteLiteral(" class=\"thumb-info-title\"");
-
-WriteLiteral(">\r\n                                    <span");
-
-WriteLiteral(" class=\"thumb-info-inner\"");
-
-WriteLiteral(">");
-
-            
-            #line 131 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                                              Write(personalTitle);
-
-            
-            #line default
-            #line hidden
-WriteLiteral(" ");
-
-            
-            #line 131 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                                                             Write(employee.FullName);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</span>\r\n");
-
-            
-            #line 132 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                    
-            
-            #line default
-            #line hidden
-            
-            #line 132 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                     foreach (var empInDept1 in empInDept.Employee.EmpInDepts)
-                                            {
-                                                string occupation = (empInDept1.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? empInDept1.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : empInDept1.Occupation.Code;
-                                                string department = (empInDept1.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? empInDept1.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : empInDept1.Department.Code;
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                            <span");
-
-WriteLiteral(" class=\"thumb-info-type\"");
-
-WriteLiteral(">");
-
-            
-            #line 136 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                                                     Write(occupation);
-
-            
-            #line default
-            #line hidden
-WriteLiteral(" &#64; ");
-
-            
-            #line 136 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                                                                       Write(department);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</span>\r\n");
-
-            
-            #line 137 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                            }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                </span>\r\n                            </a>\r\n      " +
-"                  </span>\r\n                        <span");
-
-WriteLiteral(" class=\"thumb-info-caption\"");
-
-WriteLiteral(">\r\n                            <span");
-
-WriteLiteral(" class=\"thumb-info-caption-text text-justify\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                                ");
-
-            
-            #line 143 "..\..\Views\Staff\EmpsInDept.cshtml"
-                           Write(Html.Raw(empInDept.Employee.Biography.StripHtml().Chop(100)));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                                <a");
-
-WriteLiteral(" class=\"btn btn-xs\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 10830), Tuple.Create("\"", 10901)
-            
-            #line 144 "..\..\Views\Staff\EmpsInDept.cshtml"
-, Tuple.Create(Tuple.Create("", 10837), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", new { id = empInDept.Employee.Id })
-            
-            #line default
-            #line hidden
-, 10837), false)
-);
-
-WriteLiteral(">");
-
-            
-            #line 144 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                                                                                                         Write(Resources.Resources.ReadMore);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</a>\r\n                            </span>\r\n                            <span");
-
-WriteLiteral(" class=\"thumb-info-social-icons center\"");
-
-WriteLiteral(">\r\n");
-
-            
-            #line 147 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                
-            
-            #line default
-            #line hidden
-            
-            #line 147 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                 if (!string.IsNullOrEmpty(@empInDept.Employee.FacebookUrl))
-                                        {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                        <a");
-
-WriteLiteral(" target=\"_blank\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 11245), Tuple.Create("\"", 11283)
-            
-            #line 149 "..\..\Views\Staff\EmpsInDept.cshtml"
-, Tuple.Create(Tuple.Create("", 11252), Tuple.Create<System.Object, System.Int32>(empInDept.Employee.FacebookUrl
-            
-            #line default
-            #line hidden
-, 11252), false)
-);
-
-WriteLiteral("><i");
-
-WriteLiteral(" class=\"fa fa-facebook\"");
-
-WriteLiteral("></i><span>Facebook</span></a>\r\n");
-
-            
-            #line 150 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                        }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-            
-            #line 152 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                
-            
-            #line default
-            #line hidden
-            
-            #line 152 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                 if (!string.IsNullOrEmpty(empInDept.Employee.TwitterUrl))
-                                        {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                        <a");
-
-WriteLiteral(" target=\"_blank\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 11580), Tuple.Create("\"", 11617)
-            
-            #line 154 "..\..\Views\Staff\EmpsInDept.cshtml"
-, Tuple.Create(Tuple.Create("", 11587), Tuple.Create<System.Object, System.Int32>(empInDept.Employee.TwitterUrl
-            
-            #line default
-            #line hidden
-, 11587), false)
-);
-
-WriteLiteral("><i");
-
-WriteLiteral(" class=\"fa fa-twitter\"");
-
-WriteLiteral("></i><span>Twitter</span></a>\r\n");
-
-            
-            #line 155 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                        }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                ");
-
-            
-            #line 156 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                 if (!string.IsNullOrEmpty(@empInDept.Employee.LinkedInUrl))
-                                        {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                        <a");
-
-WriteLiteral(" target=\"_blank\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 11912), Tuple.Create("\"", 11950)
-            
-            #line 158 "..\..\Views\Staff\EmpsInDept.cshtml"
-, Tuple.Create(Tuple.Create("", 11919), Tuple.Create<System.Object, System.Int32>(empInDept.Employee.LinkedInUrl
-            
-            #line default
-            #line hidden
-, 11919), false)
-);
-
-WriteLiteral("><i");
-
-WriteLiteral(" class=\"fa fa-linkedin\"");
-
-WriteLiteral("></i><span>Linkedin</span></a>\r\n");
-
-            
-            #line 159 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                        }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                ");
-
-            
-            #line 160 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                 if (!string.IsNullOrEmpty(@empInDept.Employee.GooglePlusUrl))
-                                        {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                        <a");
-
-WriteLiteral(" target=\"_blank\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 12249), Tuple.Create("\"", 12289)
-            
-            #line 162 "..\..\Views\Staff\EmpsInDept.cshtml"
-, Tuple.Create(Tuple.Create("", 12256), Tuple.Create<System.Object, System.Int32>(empInDept.Employee.GooglePlusUrl
-            
-            #line default
-            #line hidden
-, 12256), false)
-);
-
-WriteLiteral("><i");
-
-WriteLiteral(" class=\"fa fa-google-plus\"");
-
-WriteLiteral("></i><span>Google Plus</span></a>\r\n");
-
-            
-            #line 163 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                        }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                ");
-
-            
-            #line 164 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                 if (!string.IsNullOrEmpty(@empInDept.Employee.YouTubeUrl))
-                                        {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                        <a");
-
-WriteLiteral(" target=\"_blank\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 12591), Tuple.Create("\"", 12628)
-            
-            #line 166 "..\..\Views\Staff\EmpsInDept.cshtml"
-, Tuple.Create(Tuple.Create("", 12598), Tuple.Create<System.Object, System.Int32>(empInDept.Employee.YouTubeUrl
-            
-            #line default
-            #line hidden
-, 12598), false)
-);
-
-WriteLiteral("><i");
-
-WriteLiteral(" class=\"fa fa-youtube\"");
-
-WriteLiteral("></i><span>YouTube</span></a>\r\n");
-
-            
-            #line 167 "..\..\Views\Staff\EmpsInDept.cshtml"
-                                        }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                            </span>\r\n                        </span>\r\n           " +
-"         </span>\r\n                </li>\r\n");
-
-            
-            #line 172 "..\..\Views\Staff\EmpsInDept.cshtml"
+            #line 178 "..\..\Views\Staff\EmpsInDept.cshtml"
                     }
-                }
 
             
             #line default
             #line hidden
-WriteLiteral("            </ul>\r\n        </div>\r\n");
-
-WriteLiteral("        <hr />\r\n");
-
-            
-            #line 177 "..\..\Views\Staff\EmpsInDept.cshtml"
-                }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</div>\r\n");
+WriteLiteral("        ");
 
             
             #line 179 "..\..\Views\Staff\EmpsInDept.cshtml"
-Write(Html.PagedListPager((IPagedList)Model, page => Url.Action("EmpsInDept", new { page })));
+   Write(Html.PagedListPager((IPagedList)Model, page => Url.Action("EmpsInDept", new { page })));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n");
+WriteLiteral("\r\n        <div>\r\n            <a");
+
+WriteLiteral(" class=\"text-blue\"");
+
+WriteAttribute("href", Tuple.Create(" href=", 14054), Tuple.Create("", 14080)
+            
+            #line 181 "..\..\Views\Staff\EmpsInDept.cshtml"
+, Tuple.Create(Tuple.Create("", 14060), Tuple.Create<System.Object, System.Int32>(Url.Action("Index")
+            
+            #line default
+            #line hidden
+, 14060), false)
+);
+
+WriteLiteral("><i");
+
+WriteLiteral(" class=\"glyphicon glyphicon-menu-left margin-right-10 size-16\"");
+
+WriteLiteral("></i>");
+
+            
+            #line 181 "..\..\Views\Staff\EmpsInDept.cshtml"
+                                                                                                                           Write(Resources.Resources.Back);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</a>\r\n        </div>\r\n    </div>\r\n</section>\r\n");
 
         }
     }

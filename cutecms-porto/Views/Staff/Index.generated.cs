@@ -97,14 +97,14 @@ WriteLiteralTo(__razor_helper_writer, "</span>\r\n            <a");
 
 WriteLiteralTo(__razor_helper_writer, " class=\"fa fa-users fa-1x\"");
 
-WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 6137), Tuple.Create("\"", 6200)
+WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 6138), Tuple.Create("\"", 6201)
 
 #line 151 "..\..\Views\Staff\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 6144), Tuple.Create<System.Object, System.Int32>(Url.Action("EmpsInDept", "Staff", new { id = item.Id })
+, Tuple.Create(Tuple.Create("", 6145), Tuple.Create<System.Object, System.Int32>(Url.Action("EmpsInDept", "Staff", new { id = item.Id })
 
 #line default
 #line hidden
-, 6144), false)
+, 6145), false)
 );
 
 WriteLiteralTo(__razor_helper_writer, "></a>\r\n");
@@ -135,7 +135,7 @@ WriteLiteralTo(__razor_helper_writer, "                <ul>\r\n");
 #line 155 "..\..\Views\Staff\Index.cshtml"
                      if (item.Employee != null)
                     {
-                        string personalTitle =  item.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? item.Employee.PersonalTitle.Code;
+                        string personalTitle = item.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? item.Employee.PersonalTitle.Code;
                         var employee = db.Employees.Where(e => e.Language.CultureName.Equals(Thread.CurrentThread.CurrentCulture.Name) && e.TranslationId == item.ManagerId).FirstOrDefault();
 
 
@@ -194,7 +194,7 @@ WriteLiteralTo(__razor_helper_writer, "                    ");
 #line 161 "..\..\Views\Staff\Index.cshtml"
                      foreach (var empInDept in item.EmpInDepts.Where(e => e.EmpId != e.Department.ManagerId).OrderBy(ed => ed.Employee.Ordinal))
                     {
-                        string personalTitle =  empInDept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? empInDept.Employee.PersonalTitle.Code;
+                        string personalTitle = empInDept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? empInDept.Employee.PersonalTitle.Code;
                         var employee = db.Employees.Where(e => e.TranslationId == empInDept.Employee.TranslationId && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
                         if (employee != null)
                         {
@@ -208,14 +208,14 @@ WriteLiteralTo(__razor_helper_writer, " class=\"glyphicon glyphicon-user\"");
 
 WriteLiteralTo(__razor_helper_writer, "></i><a");
 
-WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 7851), Tuple.Create("\"", 7942)
+WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 7850), Tuple.Create("\"", 7941)
 
 #line 167 "..\..\Views\Staff\Index.cshtml"
-       , Tuple.Create(Tuple.Create("", 7858), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", "Staff", new { id = empInDept.Employee.TranslationId })
+       , Tuple.Create(Tuple.Create("", 7857), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", "Staff", new { id = empInDept.Employee.TranslationId })
 
 #line default
 #line hidden
-, 7858), false)
+, 7857), false)
 );
 
 WriteLiteralTo(__razor_helper_writer, ">");
@@ -516,7 +516,7 @@ WriteAttribute("value", Tuple.Create(" value=\"", 4382), Tuple.Create("\"", 4417
 
 WriteLiteral(" class=\"btn btn-primary\"");
 
-WriteLiteral("/>\r\n                    </div>\r\n");
+WriteLiteral(" />\r\n                    </div>\r\n");
 
             
             #line 124 "..\..\Views\Staff\Index.cshtml"

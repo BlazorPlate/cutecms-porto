@@ -22,7 +22,7 @@ namespace cutecms_porto.Controllers
         public ActionResult Index()
         {
             ViewBag.EmpTypeId = new SelectList(Helpers.TermsHelper.EmployeeTypes(), "EmployeeTypeId", "Value");
-            var departments = db.IdentityDepartments.Include(d => d.Department1).Include(d => d.Employee);
+            var departments = db.IdentityDepartments;
             return View(departments);
         }
         [HttpGet]
@@ -43,10 +43,10 @@ namespace cutecms_porto.Controllers
                          (employees.FirstName.ToLower().Trim().Contains(EmpName.ToLower().Trim()) || employees.LastName.ToLower().Trim().Contains(EmpName.ToLower().Trim()) || string.IsNullOrEmpty(EmpName.Trim()) &&
                          (empInDept.EmployeeTypeId == EmpTypeId || EmpTypeId == null))
                          select employees).Distinct();
-            query.Include(q => q.PersonalTitle).Include(q => q.EmpInDepts).Include(q => q.PersonalTitle.PersonalTitleTerms).Include(q => q.PersonalTitle.PersonalTitleTerms.Select(p => p.Language)).Include(q => q.Departments).Include(q => q.Language).Include(q => q.EmpInDepts.Select(o => o.Occupation)).OrderBy(e => e.FirstName);
+            query.OrderBy(e => e.FirstName);
             ViewBag.EmpName = EmpName;
             ViewBag.EmpTypeId = EmpTypeId;
-            return View(query.OrderBy(e => e.FirstName).ToPagedList(pageNumber, 8));
+            return View(query.OrderBy(e => e.FirstName).ToPagedList(pageNumber, 10));
         }
 
         // GET: Identity/Employees/Details/5
@@ -90,7 +90,7 @@ namespace cutecms_porto.Controllers
                 throw new HttpException(404, "Page Not Found");
             }
             var pageNumber = page ?? 1;
-            var departments = TreeHelper.Traversal(department, x => x.Departments1.Where(d => d.EmpInDepts.Count() > 0)).ToPagedList(pageNumber, 5);
+            var departments = TreeHelper.Traversal(department, x => x.Departments1).Where(p => p.EmpInDepts.Count() > 0).ToPagedList(pageNumber, 5);
             return View(departments);
         }
 

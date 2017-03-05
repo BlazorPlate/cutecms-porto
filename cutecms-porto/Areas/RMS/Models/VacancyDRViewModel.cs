@@ -299,7 +299,7 @@ namespace cutecms_porto.Areas.RMS.Models
         [Display(Name = "Documents", ResourceType = typeof(Resources.Resources))]
         public string Documents { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "DepartmentId")]
+        [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
         [Display(Name = "Department", ResourceType = typeof(Resources.Resources))]
         public int DeptId { get; set; }
 

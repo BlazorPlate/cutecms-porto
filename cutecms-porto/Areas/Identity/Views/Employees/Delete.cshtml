@@ -30,7 +30,7 @@
             </dt>
             <dd>
                 @if (@_db.Users.Find(Model.LoginId) != null)
-                {
+            {
                     @_db.Users.Find(Model.LoginId).UserName
                 }
                 else
@@ -61,19 +61,22 @@
                 @Html.DisplayNameFor(model => model.DegreeId)
             </dt>
             <dd>
-                @Html.DisplayFor(model => model.Degree.Code)
+                @{ var degree = Model.Degree?.DegreeTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.DegreeId == Model.DegreeId).FirstOrDefault()?.Value ?? Model.Degree?.Code;}
+                @degree
             </dd>
             <dt>
                 @Html.DisplayNameFor(model => model.ProgramId)
             </dt>
             <dd>
-                @Html.DisplayFor(model => model.Program.Code)
+                @{ var program = Model.Program?.ProgramTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.ProgramId == Model.ProgramId).FirstOrDefault()?.Value ?? Model.Program?.Code;}
+                @program
             </dd>
             <dt>
                 @Html.DisplayNameFor(model => model.RankId)
             </dt>
             <dd>
-                @Html.DisplayFor(model => model.Rank.Code)
+                @{ var rank = Model.Rank?.RankTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.RankId == Model.RankId).FirstOrDefault()?.Value ?? Model.Rank?.Code;}
+                @rank
             </dd>
             <dt>
                 @Html.DisplayName(Resources.Resources.ViewCV)

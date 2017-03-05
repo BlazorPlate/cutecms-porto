@@ -69,3 +69,5 @@ foreach (OrderIDsToProcess orderID in orderIDsToProcess)
     var order = orderBO.Context.Orders.FirstOrDefault(o=> o.OrderID == orderID.OrderID); 
     orderID.CustomerID = order.CustomerID; 
 }
+
+Employee employee = db.Employees.Include("Rank").Include("Rank.RankTerms").Include("Rank.RankTerms.Language").Include("Program").Include("Program.ProgramTerms").Include("Program.ProgramTerms.Language").Include("Degree").Include("Degree.DegreeTerms").Include("Degree.DegreeTerms.Language").Include("Language").Where(e => e.Id == id).FirstOrDefault();

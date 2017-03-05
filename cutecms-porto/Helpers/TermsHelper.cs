@@ -227,23 +227,23 @@ namespace cutecms_porto.Helpers
             DepartmentsList.Clear();
             foreach (var item in IdentityDb.IdentityDepartments.Where(d => d.ParentId == null))
             {
-                foreach (var item2 in TreeHelper.Traversal(item, i => i.Departments1))
+                foreach (var nestedItem in TreeHelper.Traversal(item, i => i.Departments1))
                 {
 
-                    if (item2.ParentId == null)
+                    if (nestedItem.ParentId == null)
                     {
                         DepartmentsList.Add(new
                         {
-                            Id = item2.Id,
-                            Name = item2.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(cultureName)).FirstOrDefault()?.Value ?? item2.Code
+                            Id = nestedItem.Id,
+                            Name = nestedItem.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(cultureName)).FirstOrDefault()?.Value ?? nestedItem.Code
                         });
                     }
                     else
                     {
                         DepartmentsList.Add(new
                         {
-                            Id = item2.Id,
-                            Name = (item2.Department1.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(cultureName)).FirstOrDefault()?.Value ?? item2.Department1.Code) + "/" + item2.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(cultureName)).FirstOrDefault()?.Value ?? item2.Code
+                            Id = nestedItem.Id,
+                            Name = (nestedItem.Department1.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(cultureName)).FirstOrDefault()?.Value ?? nestedItem.Department1.Code) + "/" + (nestedItem.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(cultureName)).FirstOrDefault()?.Value ?? nestedItem.Code)
                         });
                     }
                 }

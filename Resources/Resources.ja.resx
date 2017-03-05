@@ -1545,4 +1545,10 @@
   <data name="UsefulLinks" xml:space="preserve">
     <value>ここではいくつかの有用なリンク</value>
   </data>
+  <data name="AwaitingTranslation" xml:space="preserve">
+    <value>翻訳を待っている.</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>戻る</value>
+  </data>
 </root>

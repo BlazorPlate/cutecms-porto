@@ -133,10 +133,23 @@ WriteLiteralTo(__razor_helper_writer, "                <ul>\r\n");
 #line hidden
 
 #line 155 "..\..\Views\Staff\Index.cshtml"
-                     if (item.Employee != null)
+                      var manager = db.Employees.Where(e => e.Language.CultureName.Equals(Thread.CurrentThread.CurrentCulture.Name) && e.TranslationId == item.ManagerId).FirstOrDefault(); 
+
+#line default
+#line hidden
+WriteLiteralTo(__razor_helper_writer, "             \r\n");
+
+
+#line 156 "..\..\Views\Staff\Index.cshtml"
+                    
+
+#line default
+#line hidden
+
+#line 156 "..\..\Views\Staff\Index.cshtml"
+                     if (manager != null)
                     {
                         string personalTitle = item.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? item.Employee.PersonalTitle.Code;
-                        var employee = db.Employees.Where(e => e.Language.CultureName.Equals(Thread.CurrentThread.CurrentCulture.Name) && e.TranslationId == item.ManagerId).FirstOrDefault();
 
 
 #line default
@@ -151,21 +164,21 @@ WriteLiteralTo(__razor_helper_writer, " class=\"glyphicon glyphicon-user\"");
 
 WriteLiteralTo(__razor_helper_writer, "></i><a");
 
-WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 6896), Tuple.Create("\"", 6977)
+WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 6902), Tuple.Create("\"", 6982)
 
 #line 159 "..\..\Views\Staff\Index.cshtml"
-                       , Tuple.Create(Tuple.Create("", 6903), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", "Staff", new { id = employee.TranslationId })
+                       , Tuple.Create(Tuple.Create("", 6909), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", "Staff", new { id = manager.TranslationId })
 
 #line default
 #line hidden
-, 6903), false)
+, 6909), false)
 );
 
 WriteLiteralTo(__razor_helper_writer, ">");
 
 
 #line 159 "..\..\Views\Staff\Index.cshtml"
-                                                                                                                                                     WriteTo(__razor_helper_writer, personalTitle);
+                                                                                                                                                    WriteTo(__razor_helper_writer, personalTitle);
 
 
 #line default
@@ -174,7 +187,7 @@ WriteLiteralTo(__razor_helper_writer, " ");
 
 
 #line 159 "..\..\Views\Staff\Index.cshtml"
-                                                                                                                                                                    WriteTo(__razor_helper_writer, employee.FullName);
+                                                                                                                                                                   WriteTo(__razor_helper_writer, manager.FullName);
 
 
 #line default
@@ -208,14 +221,14 @@ WriteLiteralTo(__razor_helper_writer, " class=\"glyphicon glyphicon-user\"");
 
 WriteLiteralTo(__razor_helper_writer, "></i><a");
 
-WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 7850), Tuple.Create("\"", 7941)
+WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 7854), Tuple.Create("\"", 7945)
 
 #line 167 "..\..\Views\Staff\Index.cshtml"
-       , Tuple.Create(Tuple.Create("", 7857), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", "Staff", new { id = empInDept.Employee.TranslationId })
+       , Tuple.Create(Tuple.Create("", 7861), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", "Staff", new { id = empInDept.Employee.TranslationId })
 
 #line default
 #line hidden
-, 7857), false)
+, 7861), false)
 );
 
 WriteLiteralTo(__razor_helper_writer, ">");

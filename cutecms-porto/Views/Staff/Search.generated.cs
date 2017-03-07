@@ -120,7 +120,7 @@ WriteLiteral(">\r\n");
             #line hidden
             
             #line 24 "..\..\Views\Staff\Search.cshtml"
-         if (Model != null)
+         if (Model.Count() > 0)
         {
 
             
@@ -152,57 +152,57 @@ WriteLiteral(">\r\n");
             
             #line default
             #line hidden
-WriteLiteral("                        <li");
+WriteLiteral("                    <li");
 
 WriteLiteral(" class=\"col-md-3 col-sm-6 isotope-item\"");
 
-WriteLiteral(">\r\n                            <span");
+WriteLiteral(">\r\n                        <span");
 
 WriteLiteral(" class=\"thumb-info thumb-info-hide-wrapper-bg mb-xlg\"");
 
-WriteLiteral(">\r\n                                <span");
+WriteLiteral(">\r\n                            <span");
 
 WriteLiteral(" class=\"thumb-info-wrapper\"");
 
-WriteLiteral(">\r\n                                    <a");
+WriteLiteral(">\r\n                                <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1383), Tuple.Create("\"", 1440)
+WriteAttribute("href", Tuple.Create(" href=\"", 1371), Tuple.Create("\"", 1428)
             
             #line 35 "..\..\Views\Staff\Search.cshtml"
-, Tuple.Create(Tuple.Create("", 1390), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", new { id = item.Id })
+, Tuple.Create(Tuple.Create("", 1378), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", new { id = item.Id })
             
             #line default
             #line hidden
-, 1390), false)
+, 1378), false)
 );
 
-WriteLiteral(">\r\n                                        <img");
+WriteLiteral(">\r\n                                    <img");
 
-WriteAttribute("alt", Tuple.Create(" alt=\"", 1488), Tuple.Create("\"", 1517)
+WriteAttribute("alt", Tuple.Create(" alt=\"", 1472), Tuple.Create("\"", 1501)
             
             #line 36 "..\..\Views\Staff\Search.cshtml"
-, Tuple.Create(Tuple.Create("", 1494), Tuple.Create<System.Object, System.Int32>(item.PersonalPhotoName
+, Tuple.Create(Tuple.Create("", 1478), Tuple.Create<System.Object, System.Int32>(item.PersonalPhotoName
             
             #line default
             #line hidden
-, 1494), false)
+, 1478), false)
 );
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1518), Tuple.Create("\"", 1657)
+WriteAttribute("src", Tuple.Create(" src=\"", 1502), Tuple.Create("\"", 1641)
             
             #line 36 "..\..\Views\Staff\Search.cshtml"
- , Tuple.Create(Tuple.Create("", 1524), Tuple.Create<System.Object, System.Int32>(!File.Exists(Server.MapPath(item.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : item.PersonalPhotoPath
+, Tuple.Create(Tuple.Create("", 1508), Tuple.Create<System.Object, System.Int32>(!File.Exists(Server.MapPath(item.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : item.PersonalPhotoPath
             
             #line default
             #line hidden
-, 1524), false)
+, 1508), false)
 );
 
-WriteLiteral(">\r\n                                        <span");
+WriteLiteral(">\r\n                                    <span");
 
 WriteLiteral(" class=\"thumb-info-title\"");
 
-WriteLiteral(">\r\n                                            <span");
+WriteLiteral(">\r\n                                        <span");
 
 WriteLiteral(" class=\"thumb-info-inner\"");
 
@@ -210,7 +210,7 @@ WriteLiteral(">");
 
             
             #line 38 "..\..\Views\Staff\Search.cshtml"
-                                                                      Write(personalTitle);
+                                                                  Write(personalTitle);
 
             
             #line default
@@ -219,7 +219,7 @@ WriteLiteral(" ");
 
             
             #line 38 "..\..\Views\Staff\Search.cshtml"
-                                                                                     Write(item.FullName);
+                                                                                 Write(item.FullName);
 
             
             #line default
@@ -228,13 +228,13 @@ WriteLiteral("</span>\r\n");
 
             
             #line 39 "..\..\Views\Staff\Search.cshtml"
-                                            
+                                        
             
             #line default
             #line hidden
             
             #line 39 "..\..\Views\Staff\Search.cshtml"
-                                             foreach (var empInDept1 in empInDepts)
+                                         foreach (var empInDept1 in empInDepts)
                                             {
                                                 string occupation = empInDept1.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? empInDept1.Occupation.Code;
                                                 string department = empInDept1.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? empInDept1.Department.Code;
@@ -242,7 +242,7 @@ WriteLiteral("</span>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("                                                <span");
+WriteLiteral("                                            <span");
 
 WriteLiteral(" class=\"thumb-info-type\"");
 
@@ -250,7 +250,7 @@ WriteLiteral(">");
 
             
             #line 43 "..\..\Views\Staff\Search.cshtml"
-                                                                         Write(occupation);
+                                                                     Write(occupation);
 
             
             #line default
@@ -259,7 +259,7 @@ WriteLiteral(" &#64; ");
 
             
             #line 43 "..\..\Views\Staff\Search.cshtml"
-                                                                                           Write(department);
+                                                                                       Write(department);
 
             
             #line default
@@ -273,52 +273,51 @@ WriteLiteral("</span>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("                                        </span>\r\n                                " +
-"    </a>\r\n                                </span>\r\n                             " +
-"   <span");
+WriteLiteral("                                    </span>\r\n                                </a>" +
+"\r\n                            </span>\r\n                            <span");
 
 WriteLiteral(" class=\"thumb-info-caption\"");
 
-WriteLiteral(">\r\n                                    <span");
+WriteLiteral(">\r\n                                <span");
 
 WriteLiteral(" class=\"thumb-info-caption-text text-justify\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("                                        ");
+WriteLiteral("                                    ");
 
             
             #line 50 "..\..\Views\Staff\Search.cshtml"
-                                   Write(Html.Raw(item.Biography.StripHtml().Chop(100)));
+                               Write(Html.Raw(item.Biography.StripHtml().Chop(100)));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n                                        <a");
+WriteLiteral("\r\n                                    <a");
 
 WriteLiteral(" class=\"btn btn-xs\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3086), Tuple.Create("\"", 3143)
+WriteAttribute("href", Tuple.Create(" href=\"", 3026), Tuple.Create("\"", 3083)
             
             #line 51 "..\..\Views\Staff\Search.cshtml"
-, Tuple.Create(Tuple.Create("", 3093), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", new { id = item.Id })
+, Tuple.Create(Tuple.Create("", 3033), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", new { id = item.Id })
             
             #line default
             #line hidden
-, 3093), false)
+, 3033), false)
 );
 
 WriteLiteral(">");
 
             
             #line 51 "..\..\Views\Staff\Search.cshtml"
-                                                                                                                   Write(Resources.Resources.ReadMore);
+                                                                                                               Write(Resources.Resources.ReadMore);
 
             
             #line default
             #line hidden
-WriteLiteral("</a>\r\n                                    </span>\r\n                              " +
-"      <span");
+WriteLiteral("</a>\r\n                                </span>\r\n                                <s" +
+"pan");
 
 WriteLiteral(" class=\"thumb-info-social-icons center\"");
 
@@ -326,30 +325,30 @@ WriteLiteral(">\r\n");
 
             
             #line 54 "..\..\Views\Staff\Search.cshtml"
-                                        
+                                    
             
             #line default
             #line hidden
             
             #line 54 "..\..\Views\Staff\Search.cshtml"
-                                         if (!string.IsNullOrEmpty(item.FacebookUrl))
+                                     if (!string.IsNullOrEmpty(item.FacebookUrl))
                                         {
 
             
             #line default
             #line hidden
-WriteLiteral("                                            <a");
+WriteLiteral("                                        <a");
 
 WriteLiteral(" target=\"_blank\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3500), Tuple.Create("\"", 3524)
+WriteAttribute("href", Tuple.Create(" href=\"", 3424), Tuple.Create("\"", 3448)
             
             #line 56 "..\..\Views\Staff\Search.cshtml"
-, Tuple.Create(Tuple.Create("", 3507), Tuple.Create<System.Object, System.Int32>(item.FacebookUrl
+, Tuple.Create(Tuple.Create("", 3431), Tuple.Create<System.Object, System.Int32>(item.FacebookUrl
             
             #line default
             #line hidden
-, 3507), false)
+, 3431), false)
 );
 
 WriteLiteral("><i");
@@ -369,30 +368,30 @@ WriteLiteral("\r\n");
 
             
             #line 59 "..\..\Views\Staff\Search.cshtml"
-                                        
+                                    
             
             #line default
             #line hidden
             
             #line 59 "..\..\Views\Staff\Search.cshtml"
-                                         if (!string.IsNullOrEmpty(item.TwitterUrl))
+                                     if (!string.IsNullOrEmpty(item.TwitterUrl))
                                         {
 
             
             #line default
             #line hidden
-WriteLiteral("                                            <a");
+WriteLiteral("                                        <a");
 
 WriteLiteral(" target=\"_blank\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3819), Tuple.Create("\"", 3842)
+WriteAttribute("href", Tuple.Create(" href=\"", 3735), Tuple.Create("\"", 3758)
             
             #line 61 "..\..\Views\Staff\Search.cshtml"
-, Tuple.Create(Tuple.Create("", 3826), Tuple.Create<System.Object, System.Int32>(item.TwitterUrl
+, Tuple.Create(Tuple.Create("", 3742), Tuple.Create<System.Object, System.Int32>(item.TwitterUrl
             
             #line default
             #line hidden
-, 3826), false)
+, 3742), false)
 );
 
 WriteLiteral("><i");
@@ -408,28 +407,28 @@ WriteLiteral("></i><span>Twitter</span></a>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("                                        ");
+WriteLiteral("                                    ");
 
             
             #line 63 "..\..\Views\Staff\Search.cshtml"
-                                         if (!string.IsNullOrEmpty(@item.LinkedInUrl))
+                                     if (!string.IsNullOrEmpty(@item.LinkedInUrl))
                                         {
 
             
             #line default
             #line hidden
-WriteLiteral("                                            <a");
+WriteLiteral("                                        <a");
 
 WriteLiteral(" target=\"_blank\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4135), Tuple.Create("\"", 4159)
+WriteAttribute("href", Tuple.Create(" href=\"", 4043), Tuple.Create("\"", 4067)
             
             #line 65 "..\..\Views\Staff\Search.cshtml"
-, Tuple.Create(Tuple.Create("", 4142), Tuple.Create<System.Object, System.Int32>(item.LinkedInUrl
+, Tuple.Create(Tuple.Create("", 4050), Tuple.Create<System.Object, System.Int32>(item.LinkedInUrl
             
             #line default
             #line hidden
-, 4142), false)
+, 4050), false)
 );
 
 WriteLiteral("><i");
@@ -445,28 +444,28 @@ WriteLiteral("></i><span>Linkedin</span></a>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("                                        ");
+WriteLiteral("                                    ");
 
             
             #line 67 "..\..\Views\Staff\Search.cshtml"
-                                         if (!string.IsNullOrEmpty(@item.GooglePlusUrl))
+                                     if (!string.IsNullOrEmpty(@item.GooglePlusUrl))
                                         {
 
             
             #line default
             #line hidden
-WriteLiteral("                                            <a");
+WriteLiteral("                                        <a");
 
 WriteLiteral(" target=\"_blank\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4456), Tuple.Create("\"", 4482)
+WriteAttribute("href", Tuple.Create(" href=\"", 4356), Tuple.Create("\"", 4382)
             
             #line 69 "..\..\Views\Staff\Search.cshtml"
-, Tuple.Create(Tuple.Create("", 4463), Tuple.Create<System.Object, System.Int32>(item.GooglePlusUrl
+, Tuple.Create(Tuple.Create("", 4363), Tuple.Create<System.Object, System.Int32>(item.GooglePlusUrl
             
             #line default
             #line hidden
-, 4463), false)
+, 4363), false)
 );
 
 WriteLiteral("><i");
@@ -482,28 +481,28 @@ WriteLiteral("></i><span>Google Plus</span></a>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("                                        ");
+WriteLiteral("                                    ");
 
             
             #line 71 "..\..\Views\Staff\Search.cshtml"
-                                         if (!string.IsNullOrEmpty(@item.YouTubeUrl))
+                                     if (!string.IsNullOrEmpty(@item.YouTubeUrl))
                                         {
 
             
             #line default
             #line hidden
-WriteLiteral("                                            <a");
+WriteLiteral("                                        <a");
 
 WriteLiteral(" target=\"_blank\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4782), Tuple.Create("\"", 4805)
+WriteAttribute("href", Tuple.Create(" href=\"", 4674), Tuple.Create("\"", 4697)
             
             #line 73 "..\..\Views\Staff\Search.cshtml"
-, Tuple.Create(Tuple.Create("", 4789), Tuple.Create<System.Object, System.Int32>(item.YouTubeUrl
+, Tuple.Create(Tuple.Create("", 4681), Tuple.Create<System.Object, System.Int32>(item.YouTubeUrl
             
             #line default
             #line hidden
-, 4789), false)
+, 4681), false)
 );
 
 WriteLiteral("><i");
@@ -519,8 +518,8 @@ WriteLiteral("></i><span>YouTube</span></a>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("                                    </span>\r\n                                </sp" +
-"an>\r\n                            </span>\r\n                        </li>\r\n");
+WriteLiteral("                                </span>\r\n                            </span>\r\n   " +
+"                     </span>\r\n                    </li>\r\n");
 
             
             #line 79 "..\..\Views\Staff\Search.cshtml"
@@ -539,7 +538,7 @@ WriteLiteral("                </ul>\r\n\r\n            </div>\r\n");
             #line hidden
             
             #line 83 "..\..\Views\Staff\Search.cshtml"
-       Write(Html.PagedListPager((IPagedList)Model, page => Url.Action("Result", new { page, empName = ViewBag.EmpName, empTypeId = ViewBag.EmpTypeId })));
+       Write(Html.PagedListPager((IPagedList)Model, page => Url.Action("Search", new { page, empName = ViewBag.EmpName, empTypeId = ViewBag.EmpTypeId })));
 
             
             #line default
@@ -571,20 +570,27 @@ WriteLiteral(">");
             
             #line default
             #line hidden
-WriteLiteral("</p>\r\n                <br />\r\n                <p><a");
+WriteLiteral("</p>\r\n                <br />\r\n            </div>\r\n");
 
-WriteLiteral(" class=\"text-blue\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 5494), Tuple.Create("\"", 5544)
-, Tuple.Create(Tuple.Create("", 5501), Tuple.Create<System.Object, System.Int32>(Href("~/")
-, 5501), false)
             
-            #line 90 "..\..\Views\Staff\Search.cshtml"
-, Tuple.Create(Tuple.Create("", 5503), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture.Name
+            #line 91 "..\..\Views\Staff\Search.cshtml"
+        }
+
             
             #line default
             #line hidden
-, 5503), false)
+WriteLiteral("        <div>\r\n            <a");
+
+WriteLiteral(" class=\"text-blue\"");
+
+WriteAttribute("href", Tuple.Create(" href=", 5409), Tuple.Create("", 5435)
+            
+            #line 93 "..\..\Views\Staff\Search.cshtml"
+, Tuple.Create(Tuple.Create("", 5415), Tuple.Create<System.Object, System.Int32>(Url.Action("Index")
+            
+            #line default
+            #line hidden
+, 5415), false)
 );
 
 WriteLiteral("><i");
@@ -594,22 +600,13 @@ WriteLiteral(" class=\"glyphicon glyphicon-menu-left margin-right-10 size-16\"")
 WriteLiteral("></i>");
 
             
-            #line 90 "..\..\Views\Staff\Search.cshtml"
-                                                                                                                                                           Write(Resources.Resources.BackToHome);
+            #line 93 "..\..\Views\Staff\Search.cshtml"
+                                                                                                                           Write(Resources.Resources.Back);
 
             
             #line default
             #line hidden
-WriteLiteral("</a></p>\r\n            </div>\r\n");
-
-            
-            #line 92 "..\..\Views\Staff\Search.cshtml"
-        }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("    </div>\r\n</section>");
+WriteLiteral("</a>\r\n        </div>\r\n    </div>\r\n</section>");
 
         }
     }

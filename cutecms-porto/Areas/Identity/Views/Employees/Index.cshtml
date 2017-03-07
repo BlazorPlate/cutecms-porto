@@ -22,6 +22,11 @@
         </div>
         <div class="form-group">
             <div class="col-md-10">
+                @Html.DropDownList("languageIdFilter", new SelectList(ViewBag.LanguageIdFilter, "Value", "Text"), Resources.Resources.ChooseLanguage, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
                 @Html.DropDownList("employeeTypeIdFilter", new SelectList(ViewBag.EmployeeTypeIdFilter, "Value", "Text"), Resources.Resources.ChooseEmployeeType, new { @class = "form-control" })
             </div>
         </div>
@@ -103,9 +108,10 @@
                 @Html.ActionLink(" ", "Details", new { id = item.Id }, new { @class = "fa fa-2x fa-file-text", @title = Resources.Resources.Details })
                 @Html.ActionLink(" ", "Delete", new { id = item.Id }, new { @class = "fa fa-2x fa-times", @title = Resources.Resources.Delete })
             </td>
+            
         </tr>
     }
 </table>
 <div>
-    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page, employeeNameFilter = ViewBag.EmployeeNameFilter, employeeTypeIdFilter = ViewBag.EmployeeTypeId, hasAccountFilter = ViewBag.HasAccount }))
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page, employeeNameFilter = ViewBag.EmployeeNameFilter, languageIdFilter = ViewBag.LanguageId, employeeTypeIdFilter = ViewBag.EmployeeTypeId, hasAccountFilter = ViewBag.HasAccount }))
 </div>

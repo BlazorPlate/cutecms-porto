@@ -25,28 +25,22 @@ namespace cutecms_porto.Controllers
             var departments = db.IdentityDepartments;
             return View(departments);
         }
-        [HttpGet]
-        public ActionResult Search()
-        {
-            return View();
-        }
-
-        // POST: Identity/Employees
-        [HttpPost]
         public ActionResult Search(int? page, string EmpName, int? EmpTypeId)
         {
             var pageNumber = page ?? 1;
-            var query = (from employees in db.Employees
-                         join empInDept in db.EmpInDepts
-                         on employees.TranslationId equals empInDept.EmpId
-                         where employees.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) &&
-                         (employees.FirstName.ToLower().Trim().Contains(EmpName.ToLower().Trim()) || employees.LastName.ToLower().Trim().Contains(EmpName.ToLower().Trim()) || string.IsNullOrEmpty(EmpName.Trim()) &&
-                         (empInDept.EmployeeTypeId == EmpTypeId || EmpTypeId == null))
-                         select employees).Distinct();
+
+            var query = (from e in db.Employees
+                         join ed in db.EmpInDepts
+                         on e.TranslationId equals ed.EmpId
+                         where e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) &&
+                         (e.FirstName.ToLower().Trim().Contains(EmpName.ToLower().Trim()) || e.LastName.ToLower().Trim().Contains(EmpName.ToLower().Trim()) || string.IsNullOrEmpty(EmpName.Trim()) &&
+                         (ed.EmployeeTypeId == EmpTypeId || EmpTypeId == null))
+                         select e).Distinct();
+
             query.OrderBy(e => e.FirstName);
             ViewBag.EmpName = EmpName;
             ViewBag.EmpTypeId = EmpTypeId;
-            return View(query.OrderBy(e => e.FirstName).ToPagedList(pageNumber, 10));
+            return View(query.OrderBy(e => e.FirstName).OrderBy(e => e.Ordinal).ToPagedList(pageNumber, 2));
         }
 
         // GET: Identity/Employees/Details/5
@@ -90,7 +84,7 @@ namespace cutecms_porto.Controllers
                 throw new HttpException(404, "Page Not Found");
             }
             var pageNumber = page ?? 1;
-            var departments = TreeHelper.Traversal(department, x => x.Departments1).Where(p => p.EmpInDepts.Count() > 0).ToPagedList(pageNumber, 5);
+            var departments = TreeHelper.Traversal(department, x => x.Departments1).Where(d => d.EmpInDepts.Any()).ToPagedList(pageNumber, 5);
             return View(departments);
         }
 

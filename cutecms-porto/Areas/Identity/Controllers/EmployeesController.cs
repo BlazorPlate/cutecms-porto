@@ -57,7 +57,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
                              select e).Distinct();
             }
             ViewBag.Message = statusMessage;
-            return View(employees.OrderBy(e => e.LanguageId).ThenBy(e => e.Ordinal).ToPagedList(pageNumber, 10));
+            return View(employees.OrderBy(e => e.TranslationId).ThenBy(e => e.LanguageId).ThenBy(e => e.Ordinal).ToPagedList(pageNumber, 10));
         }
         // GET: Identity/Employees/Details/5
         public ActionResult Details(int? id)

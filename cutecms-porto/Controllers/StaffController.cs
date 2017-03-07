@@ -84,7 +84,8 @@ namespace cutecms_porto.Controllers
                 throw new HttpException(404, "Page Not Found");
             }
             var pageNumber = page ?? 1;
-            var departments = TreeHelper.Traversal(department, x => x.Departments1).Where(d => d.EmpInDepts.Any()).ToPagedList(pageNumber, 5);
+            //var departments = TreeHelper.Traversal(department, x => x.Departments1).Where(d => d.EmpInDepts.Any()).OrderBy(d => d.Ordinal).ToPagedList(pageNumber, 5);
+            var departments = TreeHelper.Traversal(department, x => x.Departments1).OrderBy(d => d.Ordinal).ToPagedList(pageNumber, 5);
             return View(departments);
         }
 

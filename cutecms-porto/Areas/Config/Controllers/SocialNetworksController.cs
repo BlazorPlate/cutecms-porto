@@ -18,7 +18,7 @@ namespace cutecms_porto.Areas.Config.Controllers
         // GET: Config/SocialNetworks
         public ActionResult Index(int? id)
         {
-            var socialNetworks = db.SocialNetworks.Include(s => s.Organization);
+            var socialNetworks = db.SocialNetworks.Include(s => s.Organization).Where(s => s.OrganizationId == id).OrderBy(s => s.Ordinal);
             ViewBag.OrganizationId = id;
             return View(socialNetworks.ToList());
         }
@@ -30,7 +30,7 @@ namespace cutecms_porto.Areas.Config.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SocialNetwork socialNetwork = db.SocialNetworks.Find(id);
+            SocialNetwork socialNetwork = db.SocialNetworks.Include("Organization").Where(s => s.Id == id).FirstOrDefault();
             if (socialNetwork == null)
             {
                 return HttpNotFound();
@@ -110,7 +110,7 @@ namespace cutecms_porto.Areas.Config.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SocialNetwork socialNetwork = db.SocialNetworks.Find(id);
+            SocialNetwork socialNetwork = db.SocialNetworks.Include("Organization").Where(s => s.Id == id).FirstOrDefault();
             if (socialNetwork == null)
             {
                 return HttpNotFound();

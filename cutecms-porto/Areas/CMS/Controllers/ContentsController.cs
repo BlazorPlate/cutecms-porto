@@ -104,7 +104,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             return View(ContentsJoinUsersQuery);
         }
         // GET: /Contents/
-        public ActionResult Index(int? page, string pageTitleFilter, string statusMessage, int languageIdFilter = 0, int contentTypeIdFilter = 0, string authorIdFilter = null, int statusIdFilter = 0, int? statusId = null)
+        public ActionResult Index(int? page, string pageTitleFilter, string pathFilter, string statusMessage, int? languageIdFilter, int? contentTypeIdFilter, int? statusIdFilter, int? statusId, string authorIdFilter = null)
         {
             var pageNumber = page ?? 1;// if no page was specified in the querystring, default to the first page (1)
             if (string.IsNullOrWhiteSpace(pageTitleFilter))
@@ -124,6 +124,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             ViewBag.LanguageIdFilter = new SelectList(db.CMSLanguages.Where(l => l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", languageIdFilter);
             ViewBag.StatusIdFilter = new SelectList(TermsHelper.Statuses(), "StatusId", "Value", statusIdFilter);
             ViewBag.PageTitleFilter = pageTitleFilter;
+            ViewBag.PathFilter = pathFilter;
             ViewBag.ContentTypeId = contentTypeIdFilter;
             ViewBag.AuthorId = authorIdFilter;
             ViewBag.LanguageId = languageIdFilter;
@@ -131,7 +132,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
 
             List<string> roles = GetUserRoles();
             IEnumerable<ContentsViewModel> ContentsJoinUsersQuery =
-                (from c in db.Contents.Include("ContentType").Include("Language").Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && (roles.Any(r => c.RoleVID.Equals(r)) || c.RoleVID == null) && (c.Title.Contains(pageTitleFilter) || string.IsNullOrEmpty(pageTitleFilter)) && (c.LanguageId == languageIdFilter || languageIdFilter == 0) && (c.Author == authorIdFilter || authorIdFilter == null) && (c.ContentTypeId == contentTypeIdFilter || contentTypeIdFilter == 0) && (c.StatusId == statusIdFilter || statusIdFilter == 0)).ToList()
+                (from c in db.Contents.Include("ContentType").Include("Language").Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && (roles.Any(r => c.RoleVID.Equals(r)) || c.RoleVID == null) && (c.Title.Contains(pageTitleFilter) || string.IsNullOrEmpty(pageTitleFilter)) && (c.AbsolutePath.Contains(pathFilter) || string.IsNullOrEmpty(pathFilter)) && (c.LanguageId == languageIdFilter || languageIdFilter == null) && (c.Author == authorIdFilter || authorIdFilter == null) && (c.ContentTypeId == contentTypeIdFilter || contentTypeIdFilter == null) && (c.StatusId == statusIdFilter || statusIdFilter == null)).ToList()
                  join auu in _db.Users on c.Author equals auu.Id
                  orderby c.CreatedOn ascending
                  orderby c.LanguageId

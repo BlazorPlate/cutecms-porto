@@ -54,7 +54,7 @@
                 @if (organization != null)
                 {
                     <ul class="social-icons">
-                        @foreach (var item in organization.SocialNetworks)
+                        @foreach (var item in organization.SocialNetworks.OrderBy(s => s.Ordinal))
                         {
                             <li class="social-icons-@item.Code"><a href="@item.Url" target="_blank" title="@item.Name"><i class="fa @item.CssClass"></i></a></li>
                         }
@@ -91,4 +91,3 @@
         </div>
     </div>
 </footer>
-

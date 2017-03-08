@@ -32,6 +32,7 @@ namespace cutecms_porto.Areas.Config.Models.DBModel
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
         [Display(Name = "Ordinal", ResourceType = typeof(Resources.Resources))]
         public int Ordinal { get; set; }
+        [Display(Name = "Organization", ResourceType = typeof(Resources.Resources))]
         public int OrganizationId { get; set; }
     
         public virtual Organization Organization { get; set; }

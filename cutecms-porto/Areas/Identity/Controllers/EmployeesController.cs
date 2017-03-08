@@ -94,7 +94,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         // specific properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,LoginId,Image,PersonalTitleId,FirstName,MiddleName,LastName,Biography,File,RankId,DegreeId,ProgramId,OfficeNumber,Mobile,LandLine,Extension,FacebookUrl,TwitterUrl,YouTubeUrl,GooglePlusUrl,LinkedInUrl,Ordinal,LanguageId,TranslationId,Istranslated")] Employee employee)
+        public ActionResult Create([Bind(Include = "Id,LoginId,Image,PersonalTitleId,FirstName,MiddleName,LastName,Biography,CV,RankId,DegreeId,ProgramId,OfficeNumber,Mobile,LandLine,Extension,FacebookUrl,TwitterUrl,YouTubeUrl,GooglePlusUrl,LinkedInUrl,Ordinal,LanguageId,TranslationId,Istranslated")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -184,7 +184,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         // specific properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,LoginId,Image,PersonalPhotoName,PersonalPhotoPath,PersonalTitleId,FirstName,MiddleName,LastName,Biography,File,ResumeFileName,ResumeFilePath,RankId,DegreeId,ProgramId,OfficeNumber,Mobile,LandLine,Extension,FacebookUrl,TwitterUrl,YouTubeUrl,GooglePlusUrl,LinkedInUrl,Ordinal,LanguageId,TranslationId,Istranslated")] Employee employee)
+        public ActionResult Edit([Bind(Include = "Id,LoginId,Image,PersonalPhotoName,PersonalPhotoPath,PersonalTitleId,FirstName,MiddleName,LastName,Biography,CV,ResumeFileName,ResumeFilePath,RankId,DegreeId,ProgramId,OfficeNumber,Mobile,LandLine,Extension,FacebookUrl,TwitterUrl,YouTubeUrl,GooglePlusUrl,LinkedInUrl,Ordinal,LanguageId,TranslationId,Istranslated")] Employee employee)
         {
             if (ModelState.IsValid)
             {

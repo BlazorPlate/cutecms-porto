@@ -369,7 +369,7 @@ WriteLiteral(">\r\n");
             #line hidden
             
             #line 57 "..\..\Views\Shared\_Footer.cshtml"
-                         foreach (var item in organization.SocialNetworks)
+                         foreach (var item in organization.SocialNetworks.OrderBy(s => s.Ordinal))
                         {
 
             
@@ -377,52 +377,52 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                            <li");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 3329), Tuple.Create("\"", 3360)
-, Tuple.Create(Tuple.Create("", 3337), Tuple.Create("social-icons-", 3337), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 3353), Tuple.Create("\"", 3384)
+, Tuple.Create(Tuple.Create("", 3361), Tuple.Create("social-icons-", 3361), true)
             
             #line 59 "..\..\Views\Shared\_Footer.cshtml"
-, Tuple.Create(Tuple.Create("", 3350), Tuple.Create<System.Object, System.Int32>(item.Code
+, Tuple.Create(Tuple.Create("", 3374), Tuple.Create<System.Object, System.Int32>(item.Code
             
             #line default
             #line hidden
-, 3350), false)
+, 3374), false)
 );
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3364), Tuple.Create("\"", 3380)
+WriteAttribute("href", Tuple.Create(" href=\"", 3388), Tuple.Create("\"", 3404)
             
             #line 59 "..\..\Views\Shared\_Footer.cshtml"
-, Tuple.Create(Tuple.Create("", 3371), Tuple.Create<System.Object, System.Int32>(item.Url
+, Tuple.Create(Tuple.Create("", 3395), Tuple.Create<System.Object, System.Int32>(item.Url
             
             #line default
             #line hidden
-, 3371), false)
+, 3395), false)
 );
 
 WriteLiteral(" target=\"_blank\"");
 
-WriteAttribute("title", Tuple.Create(" title=\"", 3397), Tuple.Create("\"", 3415)
+WriteAttribute("title", Tuple.Create(" title=\"", 3421), Tuple.Create("\"", 3439)
             
             #line 59 "..\..\Views\Shared\_Footer.cshtml"
-                           , Tuple.Create(Tuple.Create("", 3405), Tuple.Create<System.Object, System.Int32>(item.Name
+                           , Tuple.Create(Tuple.Create("", 3429), Tuple.Create<System.Object, System.Int32>(item.Name
             
             #line default
             #line hidden
-, 3405), false)
+, 3429), false)
 );
 
 WriteLiteral("><i");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 3419), Tuple.Create("\"", 3444)
-, Tuple.Create(Tuple.Create("", 3427), Tuple.Create("fa", 3427), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 3443), Tuple.Create("\"", 3468)
+, Tuple.Create(Tuple.Create("", 3451), Tuple.Create("fa", 3451), true)
             
             #line 59 "..\..\Views\Shared\_Footer.cshtml"
-                                                   , Tuple.Create(Tuple.Create(" ", 3429), Tuple.Create<System.Object, System.Int32>(item.CssClass
+                                                   , Tuple.Create(Tuple.Create(" ", 3453), Tuple.Create<System.Object, System.Int32>(item.CssClass
             
             #line default
             #line hidden
-, 3430), false)
+, 3454), false)
 );
 
 WriteLiteral("></i></a></li>\r\n");
@@ -461,9 +461,9 @@ WriteLiteral(" class=\"col-md-1\"");
 
 WriteLiteral(">\r\n                    <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3744), Tuple.Create("\"", 3776)
-, Tuple.Create(Tuple.Create("", 3751), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/index.html")
-, 3751), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 3768), Tuple.Create("\"", 3800)
+, Tuple.Create(Tuple.Create("", 3775), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/index.html")
+, 3775), false)
 );
 
 WriteLiteral(" class=\"logo\"");
@@ -474,9 +474,9 @@ WriteLiteral(" alt=\"CuteCMS.NET\"");
 
 WriteLiteral(" class=\"img-responsive\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 3862), Tuple.Create("\"", 3902)
-, Tuple.Create(Tuple.Create("", 3868), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/footer-logo.png")
-, 3868), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 3886), Tuple.Create("\"", 3926)
+, Tuple.Create(Tuple.Create("", 3892), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/footer-logo.png")
+, 3892), false)
 );
 
 WriteLiteral(">\r\n                    </a>\r\n                </div>\r\n                <div");
@@ -536,14 +536,14 @@ WriteLiteral(">\r\n                        <ul>\r\n");
             #line hidden
 WriteLiteral("                                <li><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4373), Tuple.Create("\"", 4390)
+WriteAttribute("href", Tuple.Create(" href=\"", 4397), Tuple.Create("\"", 4414)
             
             #line 82 "..\..\Views\Shared\_Footer.cshtml"
-, Tuple.Create(Tuple.Create("", 4380), Tuple.Create<System.Object, System.Int32>(item.Path
+, Tuple.Create(Tuple.Create("", 4404), Tuple.Create<System.Object, System.Int32>(item.Path
             
             #line default
             #line hidden
-, 4380), false)
+, 4404), false)
 );
 
 WriteLiteral(">");
@@ -567,7 +567,7 @@ WriteLiteral("</a></li>\r\n");
 WriteLiteral("                            ");
 
 WriteLiteral("\r\n                        </ul>\r\n                    </nav>\r\n                </di" +
-"v>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</footer>\r\n\r\n");
+"v>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</footer>\r\n");
 
         }
     }

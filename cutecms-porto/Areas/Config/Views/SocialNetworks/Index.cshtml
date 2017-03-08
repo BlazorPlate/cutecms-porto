@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<cutecms_porto.Areas.Config.Models.DBModel.SocialNetwork>
 @{
-    ViewBag.MainTitle = Resources.Resources.SocialNetwork;
+    ViewBag.MainTitle = Resources.Resources.SocialNetworks;
     ViewBag.Title = Resources.Resources.Index;
 }
 <p>
@@ -8,6 +8,9 @@
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OrganizationId)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Code)
         </th>
@@ -20,15 +23,15 @@
         <th>
             @Html.DisplayNameFor(model => model.Ordinal)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Organization.TenantId)
-        </th>
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Organization.Name)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Code)
             </td>
@@ -40,9 +43,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Ordinal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Organization.TenantId)
             </td>
             <td>
                 @Html.ActionLink(Resources.Resources.Edit, "Edit", new { id = item.Id }) |

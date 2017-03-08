@@ -202,7 +202,7 @@ WriteLiteral(">\r\n");
             #line hidden
             
             #line 35 "..\..\Views\Shared\_TopMenu.cshtml"
-         foreach (var item in organization.SocialNetworks)
+         foreach (var item in organization.SocialNetworks.OrderBy(s => s.Ordinal))
         {
 
             
@@ -210,52 +210,52 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("            <li");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 1619), Tuple.Create("\"", 1650)
-, Tuple.Create(Tuple.Create("", 1627), Tuple.Create("social-icons-", 1627), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 1643), Tuple.Create("\"", 1674)
+, Tuple.Create(Tuple.Create("", 1651), Tuple.Create("social-icons-", 1651), true)
             
             #line 37 "..\..\Views\Shared\_TopMenu.cshtml"
-, Tuple.Create(Tuple.Create("", 1640), Tuple.Create<System.Object, System.Int32>(item.Code
+, Tuple.Create(Tuple.Create("", 1664), Tuple.Create<System.Object, System.Int32>(item.Code
             
             #line default
             #line hidden
-, 1640), false)
+, 1664), false)
 );
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1654), Tuple.Create("\"", 1670)
+WriteAttribute("href", Tuple.Create(" href=\"", 1678), Tuple.Create("\"", 1694)
             
             #line 37 "..\..\Views\Shared\_TopMenu.cshtml"
-, Tuple.Create(Tuple.Create("", 1661), Tuple.Create<System.Object, System.Int32>(item.Url
+, Tuple.Create(Tuple.Create("", 1685), Tuple.Create<System.Object, System.Int32>(item.Url
             
             #line default
             #line hidden
-, 1661), false)
+, 1685), false)
 );
 
 WriteLiteral(" target=\"_blank\"");
 
-WriteAttribute("title", Tuple.Create(" title=\"", 1687), Tuple.Create("\"", 1705)
+WriteAttribute("title", Tuple.Create(" title=\"", 1711), Tuple.Create("\"", 1729)
             
             #line 37 "..\..\Views\Shared\_TopMenu.cshtml"
-           , Tuple.Create(Tuple.Create("", 1695), Tuple.Create<System.Object, System.Int32>(item.Name
+           , Tuple.Create(Tuple.Create("", 1719), Tuple.Create<System.Object, System.Int32>(item.Name
             
             #line default
             #line hidden
-, 1695), false)
+, 1719), false)
 );
 
 WriteLiteral("><i");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 1709), Tuple.Create("\"", 1734)
-, Tuple.Create(Tuple.Create("", 1717), Tuple.Create("fa", 1717), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 1733), Tuple.Create("\"", 1758)
+, Tuple.Create(Tuple.Create("", 1741), Tuple.Create("fa", 1741), true)
             
             #line 37 "..\..\Views\Shared\_TopMenu.cshtml"
-                                   , Tuple.Create(Tuple.Create(" ", 1719), Tuple.Create<System.Object, System.Int32>(item.CssClass
+                                   , Tuple.Create(Tuple.Create(" ", 1743), Tuple.Create<System.Object, System.Int32>(item.CssClass
             
             #line default
             #line hidden
-, 1720), false)
+, 1744), false)
 );
 
 WriteLiteral("></i></a></li>\r\n");

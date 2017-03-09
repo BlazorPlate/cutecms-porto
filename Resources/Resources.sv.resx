@@ -1551,4 +1551,13 @@
   <data name="Back" xml:space="preserve">
     <value>Tillbaka</value>
   </data>
+  <data name="StaffDirectory" xml:space="preserve">
+    <value>Personalen katalog</value>
+  </data>
+  <data name="SubscribedToMailingList" xml:space="preserve">
+    <value> Du har lagts till vår mailinglista.</value>
+  </data>
+  <data name="ThankYouForInterest" xml:space="preserve">
+    <value>Tack för ditt intresse för våra senaste uppdateringar. Du får inom kort ett mail som bekräftar din prenumeration.</value>
+  </data>
 </root>

@@ -1551,4 +1551,13 @@
   <data name="Back" xml:space="preserve">
     <value>בחזרה</value>
   </data>
+  <data name="StaffDirectory" xml:space="preserve">
+    <value>צוות הספריה</value>
+  </data>
+  <data name="SubscribedToMailingList" xml:space="preserve">
+    <value> אתה כבר נוספה לרשימת התפוצה שלנו.</value>
+  </data>
+  <data name="ThankYouForInterest" xml:space="preserve">
+    <value>תודה לך על התעניינותך העדכונים האחרונים שלנו. זמן קצר תקבלו הודעת דוא ל המאשרת את המנוי שלך.</value>
+  </data>
 </root>

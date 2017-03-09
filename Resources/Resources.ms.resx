@@ -1551,4 +1551,13 @@
   <data name="Back" xml:space="preserve">
     <value>Belakang</value>
   </data>
+  <data name="StaffDirectory" xml:space="preserve">
+    <value>Direktori Kakitangan</value>
+  </data>
+  <data name="SubscribedToMailingList" xml:space="preserve">
+    <value> Anda telah ditambah ke senarai mel kami.</value>
+  </data>
+  <data name="ThankYouForInterest" xml:space="preserve">
+    <value>Terima kasih kerana minat anda untuk Kemaskini Terakhir kami. Anda tidak lama akan menerima emel mengesahkan langganan anda.</value>
+  </data>
 </root>

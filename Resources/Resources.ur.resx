@@ -1551,4 +1551,13 @@
   <data name="Back" xml:space="preserve">
     <value>پیٹھ</value>
   </data>
+  <data name="StaffDirectory" xml:space="preserve">
+    <value>سٹاف کی ڈائرکٹری</value>
+  </data>
+  <data name="SubscribedToMailingList" xml:space="preserve">
+    <value> آپ ہماری میلنگ لسٹ کو شامل کیا گیا ہے ۔</value>
+  </data>
+  <data name="ThankYouForInterest" xml:space="preserve">
+    <value>ہمارے تازہ ترین تازہ کاریوں میں آپ کی دلچسپی کے لئے آپ کا شکریہ. آپ کو جلد ہی آپ کی رکنیت کی تصدیق ایک ای میل موصول ہوگی ۔</value>
+  </data>
 </root>

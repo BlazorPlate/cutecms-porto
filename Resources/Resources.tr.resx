@@ -1551,4 +1551,13 @@
   <data name="Back" xml:space="preserve">
     <value>Geri</value>
   </data>
+  <data name="StaffDirectory" xml:space="preserve">
+    <value>Personel dizin</value>
+  </data>
+  <data name="SubscribedToMailingList" xml:space="preserve">
+    <value> Mail listemize ekledik.</value>
+  </data>
+  <data name="ThankYouForInterest" xml:space="preserve">
+    <value>Bizim en son güncelleştirmeleri gösterdiğiniz ilgi için teşekkür ederiz. Kısa bir süre aboneliğiniz onaylayan bir e-posta alacaksınız.</value>
+  </data>
 </root>

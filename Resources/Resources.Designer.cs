@@ -3724,6 +3724,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Staff Directory.
+        /// </summary>
+        public static string StaffDirectory {
+            get {
+                return ResourceManager.GetString("StaffDirectory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Activity Start Date.
         /// </summary>
         public static string StartDate {
@@ -3868,6 +3877,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to  You&apos;ve been added to our mailing list..
+        /// </summary>
+        public static string SubscribedToMailingList {
+            get {
+                return ResourceManager.GetString("SubscribedToMailingList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Subscribe to Our Newsletter to get Important News.
         /// </summary>
         public static string SubscriptionMessage {
@@ -3945,6 +3963,15 @@ namespace Resources {
         public static string ThankYouFor {
             get {
                 return ResourceManager.GetString("ThankYouFor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thank you for your interest in our latest updates. You will shortly receive an email confirming your subscription..
+        /// </summary>
+        public static string ThankYouForInterest {
+            get {
+                return ResourceManager.GetString("ThankYouForInterest", resourceCulture);
             }
         }
         

@@ -1551,4 +1551,13 @@
   <data name="Back" xml:space="preserve">
     <value>Esquena</value>
   </data>
+  <data name="StaffDirectory" xml:space="preserve">
+    <value>Directori de personal</value>
+  </data>
+  <data name="SubscribedToMailingList" xml:space="preserve">
+    <value> Que ha estat afegit a la nostra llista de correu.</value>
+  </data>
+  <data name="ThankYouForInterest" xml:space="preserve">
+    <value>Gràcies pel seu interès en les nostres últimes actualitzacions. En breu rebreu un email confirmant la vostra subscripció.</value>
+  </data>
 </root>

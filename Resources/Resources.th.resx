@@ -1551,4 +1551,13 @@
   <data name="Back" xml:space="preserve">
     <value>ย้อนกลับ</value>
   </data>
+  <data name="StaffDirectory" xml:space="preserve">
+    <value>พนักงานไดเรกทอรี</value>
+  </data>
+  <data name="SubscribedToMailingList" xml:space="preserve">
+    <value> คุณได้เพิ่มรายการจดหมายของเรา</value>
+  </data>
+  <data name="ThankYouForInterest" xml:space="preserve">
+    <value>ขอบคุณสำหรับความสนใจในการปรับปรุงล่าสุดของเรา คุณจะได้รับอีเมล์ยืนยันการสมัครใช้งานไม่นาน</value>
+  </data>
 </root>

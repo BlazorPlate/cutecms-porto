@@ -1551,4 +1551,13 @@
   <data name="Back" xml:space="preserve">
     <value>Spate</value>
   </data>
+  <data name="StaffDirectory" xml:space="preserve">
+    <value>Director de personal</value>
+  </data>
+  <data name="SubscribedToMailingList" xml:space="preserve">
+    <value> Aţi fost adăugat la lista noastră de difuzare.</value>
+  </data>
+  <data name="ThankYouForInterest" xml:space="preserve">
+    <value>Vă mulţumim pentru interesul dumneavoastră în cele mai recente actualizări noastre. La scurt timp veţi primi un e-mail de confirmare abonamentul.</value>
+  </data>
 </root>

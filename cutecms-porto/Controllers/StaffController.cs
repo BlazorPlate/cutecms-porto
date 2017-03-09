@@ -47,7 +47,7 @@ namespace cutecms_porto.Controllers
         public ActionResult MemberProfile(int? id)
         {
             if (id == null)
-                throw new HttpException(404, "Page Not Found");
+                throw new HttpException(400, "Bad Request");
             Employee employee = db.Employees.Where(e => e.TranslationId == id && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
             if (employee == null)
                 throw new HttpException(404, "Page Not Found");

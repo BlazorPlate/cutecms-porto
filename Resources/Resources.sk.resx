@@ -1551,4 +1551,13 @@
   <data name="Back" xml:space="preserve">
     <value>Späť</value>
   </data>
+  <data name="StaffDirectory" xml:space="preserve">
+    <value>Adresár zamestnancov</value>
+  </data>
+  <data name="SubscribedToMailingList" xml:space="preserve">
+    <value> Vy ste bol pridaný do nášho mailing listu.</value>
+  </data>
+  <data name="ThankYouForInterest" xml:space="preserve">
+    <value>Ďakujeme vám za váš záujem o naše najnovšie aktualizácie. Čoskoro dostanete e-mail s potvrdením vášho predplatného.</value>
+  </data>
 </root>

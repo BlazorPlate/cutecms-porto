@@ -1551,4 +1551,13 @@
   <data name="Back" xml:space="preserve">
     <value>Précédent</value>
   </data>
+  <data name="StaffDirectory" xml:space="preserve">
+    <value>Répertoire du personnel</value>
+  </data>
+  <data name="SubscribedToMailingList" xml:space="preserve">
+    <value> Vous avez été ajouté à notre liste d’envoi.</value>
+  </data>
+  <data name="ThankYouForInterest" xml:space="preserve">
+    <value>Je vous remercie de votre intérêt pour nos dernières mises à jour. Vous recevrez un courriel confirmant votre abonnement.</value>
+  </data>
 </root>

@@ -1551,4 +1551,13 @@
   <data name="Back" xml:space="preserve">
     <value>戻る</value>
   </data>
+  <data name="StaffDirectory" xml:space="preserve">
+    <value>スタッフ ディレクトリ</value>
+  </data>
+  <data name="SubscribedToMailingList" xml:space="preserve">
+    <value>あなたは私たちのメーリング リストに追加されたこと。</value>
+  </data>
+  <data name="ThankYouForInterest" xml:space="preserve">
+    <value>私たちの最新の更新プログラムにご関心いただきありがとうございます。まもなくあなたの購読を確認するメールが届きます。</value>
+  </data>
 </root>

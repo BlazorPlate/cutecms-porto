@@ -1551,4 +1551,13 @@
   <data name="Back" xml:space="preserve">
     <value>Natrag</value>
   </data>
+  <data name="StaffDirectory" xml:space="preserve">
+    <value>Osoblje Imenik</value>
+  </data>
+  <data name="SubscribedToMailingList" xml:space="preserve">
+    <value> Ste dodali na našu mailing listu.</value>
+  </data>
+  <data name="ThankYouForInterest" xml:space="preserve">
+    <value>Hvala vam na interesu za naš najnoviji obnove. Ubrzo ćete primiti e-poštu potvrde pretplatu.</value>
+  </data>
 </root>

@@ -4,7 +4,7 @@
 @using PagedList.Mvc;
 @using PagedList;
 @{
-    ViewBag.Title = Resources.Resources.DepartmentStaffList;
+    ViewBag.Title = Resources.Resources.StaffDirectory;
     IdentityEntities db = new IdentityEntities();
 }
 @section PageHeader
@@ -62,7 +62,7 @@
                             <li class="col-md-3 col-sm-6 isotope-item">
                                 <span class="thumb-info thumb-info-hide-wrapper-bg mb-xlg">
                                     <span class="thumb-info-wrapper">
-                                        <a href="@Url.Action("MemberProfile", new { id = manager.Id })">
+                                        <a href="@Url.Action("MemberProfile", new { id = manager.TranslationId })">
                                             <img alt="@manager.PersonalPhotoName" src="@(!File.Exists(Server.MapPath(manager.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : @manager.PersonalPhotoPath)">
                                             <span class="thumb-info-title">
                                                 <span class="thumb-info-inner">@personalTitle @manager.FullName</span>
@@ -78,7 +78,7 @@
                                     <span class="thumb-info-caption">
                                         <span class="thumb-info-caption-text text-justify">
                                             @Html.Raw(manager.Biography.StripHtml().Chop(100))
-                                            <a class="btn btn-xs" href="@Url.Action("MemberProfile", new { id = manager.Id })">@Resources.Resources.ReadMore</a>
+                                            <a class="btn btn-xs" href="@Url.Action("MemberProfile", new { id = manager.TranslationId })">@Resources.Resources.ReadMore</a>
                                         </span>
                                         <span class="thumb-info-social-icons center">
                                             @if (!string.IsNullOrEmpty(manager.FacebookUrl))
@@ -124,7 +124,7 @@
                             <li class="col-md-3 col-sm-6 isotope-item">
                                 <span class="thumb-info thumb-info-hide-wrapper-bg mb-xlg">
                                     <span class="thumb-info-wrapper">
-                                        <a href="@Url.Action("MemberProfile", new { id = empInDept.Employee.Id })">
+                                        <a href="@Url.Action("MemberProfile", new { id = empInDept.Employee.TranslationId })">
                                             <img alt="@employee.PersonalPhotoName" src="@(!File.Exists(Server.MapPath(employee.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : @employee.PersonalPhotoPath)">
                                             <span class="thumb-info-title">
                                                 <span class="thumb-info-inner">@personalTitle @employee.FullName</span>
@@ -139,8 +139,8 @@
                                     </span>
                                     <span class="thumb-info-caption">
                                         <span class="thumb-info-caption-text text-justify">
-                                            @Html.Raw(empInDept.Employee.Biography.StripHtml().Chop(100))
-                                            <a class="btn btn-xs" href="@Url.Action("MemberProfile", new { id = empInDept.Employee.Id })">@Resources.Resources.ReadMore</a>
+                                            @Html.Raw(employee.Biography.StripHtml().Chop(100))
+                                            <a class="btn btn-xs" href="@Url.Action("MemberProfile", new { id = empInDept.Employee.TranslationId })">@Resources.Resources.ReadMore</a>
                                         </span>
                                         <span class="thumb-info-social-icons center">
                                             @if (!string.IsNullOrEmpty(@empInDept.Employee.FacebookUrl))

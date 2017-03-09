@@ -1551,4 +1551,13 @@
   <data name="Back" xml:space="preserve">
     <value>Atpakaļ</value>
   </data>
+  <data name="StaffDirectory" xml:space="preserve">
+    <value>Darbinieku direktorijs</value>
+  </data>
+  <data name="SubscribedToMailingList" xml:space="preserve">
+    <value> Jūs esat pievienots mūsu adresātu sarakstu.</value>
+  </data>
+  <data name="ThankYouForInterest" xml:space="preserve">
+    <value>Paldies par jūsu interesi par mūsu jaunākos atjauninājumus. Drīzumā jūs saņemsiet e-pastu, apliecinot savu abonementu.</value>
+  </data>
 </root>

@@ -1551,4 +1551,13 @@
   <data name="Back" xml:space="preserve">
     <value>Trở lại</value>
   </data>
+  <data name="StaffDirectory" xml:space="preserve">
+    <value>Nhân viên phục vụ thư mục</value>
+  </data>
+  <data name="SubscribedToMailingList" xml:space="preserve">
+    <value> Bạn đã thêm vào danh sách gửi thư của chúng tôi.</value>
+  </data>
+  <data name="ThankYouForInterest" xml:space="preserve">
+    <value>Cảm ơn bạn đã quan tâm đến chúng tôi cập nhật mới nhất. Một thời gian ngắn, bạn sẽ nhận được một email xác nhận đăng ký của bạn.</value>
+  </data>
 </root>

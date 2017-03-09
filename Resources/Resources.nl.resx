@@ -1551,4 +1551,13 @@
   <data name="Back" xml:space="preserve">
     <value>Terug</value>
   </data>
+  <data name="StaffDirectory" xml:space="preserve">
+    <value>Personeel Directory</value>
+  </data>
+  <data name="SubscribedToMailingList" xml:space="preserve">
+    <value> Je hebt toegevoegd aan onze mailinglijst.</value>
+  </data>
+  <data name="ThankYouForInterest" xml:space="preserve">
+    <value>Dank u voor uw interesse in onze nieuwste updates. Binnenkort ontvangt u een e-mail ter bevestiging van uw abonnement.</value>
+  </data>
 </root>

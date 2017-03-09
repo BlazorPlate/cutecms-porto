@@ -39,10 +39,12 @@
                 @Html.DisplayFor(modelItem => item.Language.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.JobType.JobTypeTerms.Where(j => j.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && j.JobTypeId == item.JobTypeId).FirstOrDefault().Value)
+                @{ var jobType = item.JobType.JobTypeTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.JobTypeId == item.JobTypeId).FirstOrDefault()?.Value ?? item.JobType.Code;}
+                @jobType
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Status.StatusTerms.Where(s => s.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && s.StatusId == item.StatusId).FirstOrDefault().Value)
+                @{ var status = item.Status.StatusTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.StatusId == item.StatusId).FirstOrDefault()?.Value ?? item.Status.Code;}
+                @status
             </td>
             <td>
                 @Html.ActionLink(" ", "Edit", new { id = item.Id }, new { @class = "fa fa-2x fa-pencil", @title = Resources.Resources.Edit })
@@ -51,7 +53,7 @@
                 @Html.ActionLink(" ", "Delete", new { id = item.Id }, new { @class = "fa fa-2x fa-times", @title = Resources.Resources.Delete })
             </td>
         </tr>
-    }
+                    }
 </table>
 <div>
     @Html.ActionLink(Resources.Resources.BackToList, "Index")

@@ -1551,4 +1551,13 @@
   <data name="Back" xml:space="preserve">
     <value>뒤로</value>
   </data>
+  <data name="StaffDirectory" xml:space="preserve">
+    <value>직원 디렉토리</value>
+  </data>
+  <data name="SubscribedToMailingList" xml:space="preserve">
+    <value> 당신은 우리의 메일링리스트에 추가 되었습니다 했습니다.</value>
+  </data>
+  <data name="ThankYouForInterest" xml:space="preserve">
+    <value>우리의 최신 업데이 트에 관심을 가져 주셔서 감사 합니다. 곧 당신의 가입 확인 이메일을 받게 됩니다.</value>
+  </data>
 </root>

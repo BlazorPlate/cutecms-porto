@@ -1551,4 +1551,13 @@
   <data name="Back" xml:space="preserve">
     <value>Tilbage</value>
   </data>
+  <data name="StaffDirectory" xml:space="preserve">
+    <value>Personale Register</value>
+  </data>
+  <data name="SubscribedToMailingList" xml:space="preserve">
+    <value> Du har føjet til vores postliste.</value>
+  </data>
+  <data name="ThankYouForInterest" xml:space="preserve">
+    <value>Tak for din interesse i vores nyeste opdateringer. Du vil snarest modtage en e-mail, der bekræfter dit abonnement.</value>
+  </data>
 </root>

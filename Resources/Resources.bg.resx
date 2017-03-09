@@ -1551,4 +1551,13 @@
   <data name="Back" xml:space="preserve">
     <value>Назад</value>
   </data>
+  <data name="StaffDirectory" xml:space="preserve">
+    <value>Персонал директория</value>
+  </data>
+  <data name="SubscribedToMailingList" xml:space="preserve">
+    <value> Вие сте били добавени към нашия пощенски списък.</value>
+  </data>
+  <data name="ThankYouForInterest" xml:space="preserve">
+    <value>Благодарим ви за проявения интерес към нашите най-новите актуализации. Скоро ще получите имейл за потвърждение на вашия абонамент.</value>
+  </data>
 </root>

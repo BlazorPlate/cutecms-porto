@@ -1551,4 +1551,13 @@
   <data name="Back" xml:space="preserve">
     <value>Назад</value>
   </data>
+  <data name="StaffDirectory" xml:space="preserve">
+    <value>Довідник штату</value>
+  </data>
+  <data name="SubscribedToMailingList" xml:space="preserve">
+    <value> Ви додали до списку листування.</value>
+  </data>
+  <data name="ThankYouForInterest" xml:space="preserve">
+    <value>Дякуємо вам за інтерес, проявлений до наших останніх оновлень. Незабаром ви отримаєте лист з підтвердженням вашої підписки.</value>
+  </data>
 </root>

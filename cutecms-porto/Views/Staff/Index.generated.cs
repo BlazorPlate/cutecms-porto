@@ -97,14 +97,14 @@ WriteLiteralTo(__razor_helper_writer, "</span>\r\n            <a");
 
 WriteLiteralTo(__razor_helper_writer, " class=\"fa fa-users fa-1x\"");
 
-WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 6138), Tuple.Create("\"", 6201)
+WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 6135), Tuple.Create("\"", 6198)
 
 #line 151 "..\..\Views\Staff\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 6145), Tuple.Create<System.Object, System.Int32>(Url.Action("EmpsInDept", "Staff", new { id = item.Id })
+, Tuple.Create(Tuple.Create("", 6142), Tuple.Create<System.Object, System.Int32>(Url.Action("EmpsInDept", "Staff", new { id = item.Id })
 
 #line default
 #line hidden
-, 6145), false)
+, 6142), false)
 );
 
 WriteLiteralTo(__razor_helper_writer, "></a>\r\n");
@@ -164,14 +164,14 @@ WriteLiteralTo(__razor_helper_writer, " class=\"glyphicon glyphicon-user\"");
 
 WriteLiteralTo(__razor_helper_writer, "></i><a");
 
-WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 6902), Tuple.Create("\"", 6982)
+WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 6899), Tuple.Create("\"", 6979)
 
 #line 159 "..\..\Views\Staff\Index.cshtml"
-                       , Tuple.Create(Tuple.Create("", 6909), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", "Staff", new { id = manager.TranslationId })
+                       , Tuple.Create(Tuple.Create("", 6906), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", "Staff", new { id = manager.TranslationId })
 
 #line default
 #line hidden
-, 6909), false)
+, 6906), false)
 );
 
 WriteLiteralTo(__razor_helper_writer, ">");
@@ -221,14 +221,14 @@ WriteLiteralTo(__razor_helper_writer, " class=\"glyphicon glyphicon-user\"");
 
 WriteLiteralTo(__razor_helper_writer, "></i><a");
 
-WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 7854), Tuple.Create("\"", 7945)
+WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 7851), Tuple.Create("\"", 7942)
 
 #line 167 "..\..\Views\Staff\Index.cshtml"
-       , Tuple.Create(Tuple.Create("", 7861), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", "Staff", new { id = empInDept.Employee.TranslationId })
+       , Tuple.Create(Tuple.Create("", 7858), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", "Staff", new { id = empInDept.Employee.TranslationId })
 
 #line default
 #line hidden
-, 7861), false)
+, 7858), false)
 );
 
 WriteLiteralTo(__razor_helper_writer, ">");
@@ -324,7 +324,7 @@ WriteLiteralTo(__razor_helper_writer, "        </li>\r\n");
             
             #line 4 "..\..\Views\Staff\Index.cshtml"
   
-    ViewBag.Title = Resources.Resources.OurStaffDirectory;
+    ViewBag.Title = Resources.Resources.StaffDirectory;
 
             
             #line default
@@ -517,14 +517,14 @@ WriteLiteral(">\r\n                        <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 4382), Tuple.Create("\"", 4417)
+WriteAttribute("value", Tuple.Create(" value=\"", 4379), Tuple.Create("\"", 4414)
             
             #line 122 "..\..\Views\Staff\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 4390), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Search
+, Tuple.Create(Tuple.Create("", 4387), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Search
             
             #line default
             #line hidden
-, 4390), false)
+, 4387), false)
 );
 
 WriteLiteral(" class=\"btn btn-primary\"");

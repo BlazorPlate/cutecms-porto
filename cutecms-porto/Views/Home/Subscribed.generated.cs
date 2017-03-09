@@ -44,7 +44,7 @@ WriteLiteral("\r\n");
             
             #line 2 "..\..\Views\Home\Subscribed.cshtml"
   
-    ViewBag.Title = "Success!";
+    ViewBag.Title = Resources.Resources.ThankYou;
 
             
             #line default
@@ -73,7 +73,7 @@ WriteLiteral(">\r\n                    <h1>");
 
             
             #line 12 "..\..\Views\Home\Subscribed.cshtml"
-                   Write(ViewBag.Title);
+                   Write(Resources.Resources.SubscribedToMailingList);
 
             
             #line default
@@ -99,16 +99,20 @@ WriteLiteral(">\r\n            <div");
 
 WriteLiteral(" class=\"col-md-12\"");
 
-WriteLiteral(">\r\n                <h4");
+WriteLiteral(">\r\n                <p");
 
 WriteLiteral(" class=\"mb-none\"");
 
-WriteLiteral(">Success!</h4>\r\n                <p");
+WriteLiteral(">");
 
-WriteLiteral(" class=\"mb-none\"");
+            
+            #line 22 "..\..\Views\Home\Subscribed.cshtml"
+                              Write(Resources.Resources.ThankYouForInterest);
 
-WriteLiteral(">You\'ve been added to our mailing list.</p>\r\n            </div>\r\n        </div>\r\n" +
-"    </div>\r\n</section>\r\n");
+            
+            #line default
+            #line hidden
+WriteLiteral("</p>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</section>\r\n");
 
         }
     }

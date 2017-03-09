@@ -53,22 +53,47 @@ WriteLiteral(" action=\"#\"");
 
 WriteLiteral(" method=\"post\"");
 
-WriteLiteral(">\r\n    <div");
-
-WriteLiteral(" class=\"form-group\"");
-
 WriteLiteral(">\r\n");
 
-WriteLiteral("        ");
-
             
-            #line 5 "..\..\Views\Staff\Biography.cshtml"
-   Write(Html.ActionLink(Resources.Resources.ViewCV, "Download", new { FilePath = Model.ResumeFilePath, FileName = Model.ResumeFileName }));
+            #line 4 "..\..\Views\Staff\Biography.cshtml"
+    
+            
+            #line default
+            #line hidden
+            
+            #line 4 "..\..\Views\Staff\Biography.cshtml"
+     if (Model.ResumeFilePath != null)
+    {
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n    </div>\r\n    <div");
+WriteLiteral("        <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 7 "..\..\Views\Staff\Biography.cshtml"
+       Write(Html.ActionLink(Resources.Resources.ViewCV, "Download", new { FilePath = Model.ResumeFilePath, FileName = Model.ResumeFileName }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </div>\r\n");
+
+            
+            #line 9 "..\..\Views\Staff\Biography.cshtml"
+    }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("    <div");
 
 WriteLiteral(" class=\"form-group\"");
 
@@ -77,7 +102,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 8 "..\..\Views\Staff\Biography.cshtml"
+            #line 11 "..\..\Views\Staff\Biography.cshtml"
    Write(Html.Label(Resources.Resources.Biography));
 
             
@@ -88,7 +113,7 @@ WriteLiteral("\r\n");
 WriteLiteral("        ");
 
             
-            #line 9 "..\..\Views\Staff\Biography.cshtml"
+            #line 12 "..\..\Views\Staff\Biography.cshtml"
    Write(Html.Raw(Model.Biography));
 
             

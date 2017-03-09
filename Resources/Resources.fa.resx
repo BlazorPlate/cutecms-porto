@@ -1551,4 +1551,13 @@
   <data name="Back" xml:space="preserve">
     <value>پشت</value>
   </data>
+  <data name="StaffDirectory" xml:space="preserve">
+    <value>دایرکتوری کارکنان</value>
+  </data>
+  <data name="SubscribedToMailingList" xml:space="preserve">
+    <value> شما را به لیست پستی ما اضافه شده اید.</value>
+  </data>
+  <data name="ThankYouForInterest" xml:space="preserve">
+    <value>با تشکر از شما برای منافع خود را در ما آخرین به روز رسانی. شما یک ایمیل تایید عضویت شما را دريافت ميكيند.</value>
+  </data>
 </root>

@@ -10,6 +10,11 @@ namespace cutecms_porto
         {
             filters.Add(new HandleErrorAttribute());
         }
+        public static void RegisterGlobalCustomFilters(GlobalFilterCollection filters)
+        {
+            filters.Add(new LocalizedAuthorizeAttribute()); 
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+        }
         #endregion Methods
     }
 }

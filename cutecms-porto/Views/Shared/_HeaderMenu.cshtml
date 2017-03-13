@@ -14,7 +14,7 @@
 }
 @helper GetTreeView(IEnumerable<MenuItem> menuItems, int? parentID)
 {
-foreach (var item in menuItems.Where(m => m.ParentId.Equals(parentID)))
+foreach (var item in menuItems.Where(m => m.ParentId.Equals(parentID)).OrderBy(m => m.Ordinal))
 {
 
     var submenu = menuItems.Where(s => s.ParentId.Equals(item.Id)).Count();

@@ -26,12 +26,14 @@ namespace cutecms_porto
         {
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            FilterConfig.RegisterGlobalCustomFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             DataAnnotationsModelValidatorProvider.AddImplicitRequiredAttributeForValueTypes = false;
             DefaultModelBinder.ResourceClassKey = "ValidationResources";
             ClientDataTypeModelValidatorProvider.ResourceClassKey = "ValidationResources";
             ValidationExtensions.ResourceClassKey = "ValidationResources";
+
             // Removing all the view engines
             ViewEngines.Engines.Clear();
             //Add Razor Engine (which we are using)

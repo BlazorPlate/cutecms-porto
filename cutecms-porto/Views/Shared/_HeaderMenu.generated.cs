@@ -62,7 +62,7 @@ return new System.Web.WebPages.HelperResult(__razor_helper_writer => {
 
 #line 16 "..\..\Views\Shared\_HeaderMenu.cshtml"
  
-foreach (var item in menuItems.Where(m => m.ParentId.Equals(parentID)))
+foreach (var item in menuItems.Where(m => m.ParentId.Equals(parentID)).OrderBy(m => m.Ordinal))
 {
 
     var submenu = menuItems.Where(s => s.ParentId.Equals(item.Id)).Count();
@@ -82,14 +82,14 @@ WriteLiteralTo(__razor_helper_writer, ">\r\n                    <a");
 
 WriteLiteralTo(__razor_helper_writer, " class=\"dropdown-toggle\"");
 
-WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 988), Tuple.Create("\"", 1005)
+WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 1012), Tuple.Create("\"", 1029)
 
 #line 26 "..\..\Views\Shared\_HeaderMenu.cshtml"
-, Tuple.Create(Tuple.Create("", 995), Tuple.Create<System.Object, System.Int32>(item.Path
+, Tuple.Create(Tuple.Create("", 1019), Tuple.Create<System.Object, System.Int32>(item.Path
 
 #line default
 #line hidden
-, 995), false)
+, 1019), false)
 );
 
 WriteLiteralTo(__razor_helper_writer, ">");
@@ -161,14 +161,14 @@ WriteLiteralTo(__razor_helper_writer, " class=\"dropdown-submenu\"");
 
 WriteLiteralTo(__razor_helper_writer, ">\r\n                    <a");
 
-WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 1473), Tuple.Create("\"", 1490)
+WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 1497), Tuple.Create("\"", 1514)
 
 #line 40 "..\..\Views\Shared\_HeaderMenu.cshtml"
-, Tuple.Create(Tuple.Create("", 1480), Tuple.Create<System.Object, System.Int32>(item.Path
+, Tuple.Create(Tuple.Create("", 1504), Tuple.Create<System.Object, System.Int32>(item.Path
 
 #line default
 #line hidden
-, 1480), false)
+, 1504), false)
 );
 
 WriteLiteralTo(__razor_helper_writer, ">");
@@ -236,14 +236,14 @@ WriteLiteralTo(__razor_helper_writer, "                </li>\r\n");
 #line hidden
 WriteLiteralTo(__razor_helper_writer, "            <li>\r\n                <a");
 
-WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=", 1912), Tuple.Create("", 1928)
+WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=", 1936), Tuple.Create("", 1952)
 
 #line 55 "..\..\Views\Shared\_HeaderMenu.cshtml"
-, Tuple.Create(Tuple.Create("", 1918), Tuple.Create<System.Object, System.Int32>(item.Path
+, Tuple.Create(Tuple.Create("", 1942), Tuple.Create<System.Object, System.Int32>(item.Path
 
 #line default
 #line hidden
-, 1918), false)
+, 1942), false)
 );
 
 WriteLiteralTo(__razor_helper_writer, ">");

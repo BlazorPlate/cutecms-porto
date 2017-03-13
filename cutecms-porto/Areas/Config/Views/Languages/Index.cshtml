@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="form-group">
-            @Html.Label("Is Enabled?", new { @class = "control-label col-md-2" })
+            @Html.Label(Resources.Resources.IsEnabled, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.CheckBox("isEnabledFilter", (bool)ViewBag.IsEnabledFilter, new { @class = "js-switch" })
             </div>
@@ -91,5 +91,5 @@
 }
 </table>
 <div>
-    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page, laguageFilter = ViewBag.LanguageFilter, isEnabledFilter = ViewBag.IsEnabled }))
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page, language = ViewBag.LanguageFilter, isEnabledFilter = ViewBag.IsEnabled }))
 </div>

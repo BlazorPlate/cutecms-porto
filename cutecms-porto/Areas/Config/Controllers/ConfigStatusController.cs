@@ -11,6 +11,7 @@ using cutecms_porto.Helpers;
 
 namespace cutecms_porto.Areas.Config.Controllers
 {
+    [LocalizedAuthorize(Roles = "Admin")]
     public class ConfigStatusController : BaseController
     {
         private ConfigEntities db = new ConfigEntities();

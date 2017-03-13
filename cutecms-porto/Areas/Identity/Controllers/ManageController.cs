@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace cutecms_porto.Areas.Identity.Controllers
 {
-    [Authorize]
+    [LocalizedAuthorize]
     public class ManageController : BaseController
     {
         #region Fields

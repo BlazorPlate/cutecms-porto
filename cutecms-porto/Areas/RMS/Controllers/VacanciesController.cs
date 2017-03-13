@@ -21,7 +21,7 @@ using static cutecms_porto.Helpers.DatatableHelpers;
 namespace cutecms_porto.Areas.RMS.Controllers
 {
     [ValidateInput(false)]
-    [Authorize(Roles = "Admin, HR")]
+    [LocalizedAuthorize(Roles = "Admin, HR")]
     public class VacanciesController : BaseController
     {
         #region Fields
@@ -43,7 +43,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
             return View(vacancies.ToList());
         }
         // GET: /Vacancies/
-        [Authorize]
+        [LocalizedAuthorize]
         public ActionResult Index(int? statusId = null)
         {
             ViewBag.StatusMessageId = statusId;

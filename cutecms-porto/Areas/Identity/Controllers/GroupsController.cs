@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace cutecms_porto.Areas.Identity.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [LocalizedAuthorize(Roles = "Admin")]
     public class GroupsController : BaseController
     {
         #region Fields

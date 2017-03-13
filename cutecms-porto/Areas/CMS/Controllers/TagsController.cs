@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 namespace cutecms_porto.Areas.CMS.Controllers
 {
+    [LocalizedAuthorize(Roles = "Admin")]
     public class TagsController : BaseController
     {
         #region Fields

@@ -13,7 +13,7 @@ using System.Web.Mvc;
 
 namespace cutecms_porto.Areas.Config.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [LocalizedAuthorize(Roles = "Admin")]
     public class ContactsController : BaseController
     {
         #region Fields

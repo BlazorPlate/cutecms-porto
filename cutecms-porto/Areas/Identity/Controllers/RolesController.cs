@@ -3,13 +3,12 @@ using cutecms_porto.Helpers;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
 namespace cutecms_porto.Areas.Identity.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [LocalizedAuthorize(Roles = "Admin")]
     public class RolesController : BaseController
     {
         #region Fields

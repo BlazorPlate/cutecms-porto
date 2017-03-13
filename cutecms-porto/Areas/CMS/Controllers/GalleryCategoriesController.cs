@@ -11,6 +11,7 @@ using cutecms_porto.Helpers;
 
 namespace cutecms_porto.Areas.CMS.Controllers
 {
+    [LocalizedAuthorize(Roles = "Admin")]
     public class GalleryCategoriesController : BaseController
     {
         private CMSEntities db = new CMSEntities();

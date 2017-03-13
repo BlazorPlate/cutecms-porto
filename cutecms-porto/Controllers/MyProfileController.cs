@@ -19,7 +19,7 @@ using System.Web.Routing;
 
 namespace cutecms_porto.Controllers
 {
-    [Authorize]
+    [LocalizedAuthorize]
     public class MyProfileController : BaseController
     {
         #region Fields
@@ -88,7 +88,7 @@ namespace cutecms_porto.Controllers
             ViewBag.StatusMessage = statusMessage;
             return View("Index", employee);
         }
-        [Authorize]
+        [LocalizedAuthorize]
         public ActionResult Manage(int? translationId)
         {
             DefaultTab("");
@@ -118,7 +118,7 @@ namespace cutecms_porto.Controllers
             }
             return View("Index", employee);
         }
-        [Authorize]
+        [LocalizedAuthorize]
         [HttpPost, ValidateInput(false)]
         [ValidateAntiForgeryToken]
         public ActionResult Manage(Employee employee, string submit)

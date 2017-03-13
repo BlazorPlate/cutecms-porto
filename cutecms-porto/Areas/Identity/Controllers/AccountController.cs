@@ -139,7 +139,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 case SignInStatus.Success:
                     if (!await UserManager.IsEmailConfirmedAsync(user.Id))
                     {
-                        ModelState.AddModelError("", @Resources.Resources.EmailConfirmationCheck);
+                        ModelState.AddModelError("", Resources.Resources.EmailConfirmationCheck);
                         return View(model);
                     }
                     return RedirectToLocal(returnUrl, user.Id);
@@ -151,7 +151,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
 
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", @Resources.Resources.InvalidLoginAttempt);
+                    ModelState.AddModelError("", Resources.Resources.InvalidLoginAttempt);
                     if (RouteData.DataTokens["area"] == null)
                         return View("~/Views/Shared/LoginAjax.cshtml", model);
                     return View(model);
@@ -477,7 +477,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         {
             return View();
         }
-        [Authorize(Roles = "Admin")]
+        [LocalizedAuthorize(Roles = "Admin")]
         public ActionResult UserGroups(string id)
         {
             var user = _db.Users.Find(id);
@@ -486,7 +486,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Admin")]
+        [LocalizedAuthorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public ActionResult UserGroups(SelectUserGroupsViewModel model)
         {
@@ -506,7 +506,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
             }
             return View();
         }
-        [Authorize(Roles = "Admin")]
+        [LocalizedAuthorize(Roles = "Admin")]
         public ActionResult UserRoles(string id)
         {
             var user = _db.Users.Find(id);
@@ -514,7 +514,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
             return View(model);
         }
         [HttpPost]
-        [Authorize(Roles = "Admin")]
+        [LocalizedAuthorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public ActionResult UserRoles(SelectUserRolesViewModel model)
         {
@@ -533,7 +533,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
             }
             return View(model);
         }
-        [Authorize(Roles = "Admin")]
+        [LocalizedAuthorize(Roles = "Admin")]
         public ActionResult Edit(string id, ManageMessageId? Message = null)
         {
             var user = _db.Users.Find(id);
@@ -560,7 +560,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
             // If we got this far, something failed, redisplay form
             return View(model);
         }
-        [Authorize(Roles = "Admin")]
+        [LocalizedAuthorize(Roles = "Admin")]
         public ActionResult Delete(string id = null)
         {
             var user = _db.Users.Find(id);
@@ -573,7 +573,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         }
 
         [HttpPost, ActionName("Delete")]
-        [Authorize(Roles = "Admin")]
+        [LocalizedAuthorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
@@ -613,15 +613,15 @@ namespace cutecms_porto.Areas.Identity.Controllers
 
         private ActionResult RedirectToLocal(string returnUrl, string currentUserId)
         {
-            if (!string.IsNullOrEmpty(currentUserId))
-            {
-                IdentityEntities identityDB = new IdentityEntities();
-                var hasProfile = identityDB.Employees.Where(e => e.LoginId.Equals(currentUserId) && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).SingleOrDefault();
-                if (hasProfile == null)
-                {
-                    return RedirectToAction("Index", "MyProfile", new { area = "" });
-                }
-            }
+            //if (!string.IsNullOrEmpty(currentUserId))
+            //{
+            //    IdentityEntities identityDB = new IdentityEntities();
+            //    var hasProfile = identityDB.Employees.Where(e => e.LoginId.Equals(currentUserId) && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).SingleOrDefault();
+            //    if (hasProfile == null)
+            //    {
+            //        return RedirectToAction("Index", "MyProfile", new { area = "" });
+            //    }
+            //}
             if (Url.IsLocalUrl(returnUrl))
                 return Redirect(returnUrl);
             return RedirectToAction("Index", "Home");

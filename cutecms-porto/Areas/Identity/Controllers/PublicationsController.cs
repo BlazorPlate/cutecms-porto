@@ -1,18 +1,14 @@
 ﻿using cutecms_porto.Areas.Identity.Models.DBModel;
 using cutecms_porto.Helpers;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
-using System.Net;
-using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 
 namespace cutecms_porto.Areas.Identity.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [LocalizedAuthorize(Roles = "Admin")]
     public class PublicationsController : BaseController
     {
         #region Fields

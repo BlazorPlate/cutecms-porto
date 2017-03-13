@@ -14,7 +14,7 @@ using System.Web.Mvc;
 using PagedList;
 namespace cutecms_porto.Areas.Identity.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [LocalizedAuthorize(Roles = "Admin")]
     public class EmployeesController : BaseController
     {
         #region Fields

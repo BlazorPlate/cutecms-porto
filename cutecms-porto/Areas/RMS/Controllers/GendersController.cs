@@ -11,6 +11,7 @@ using cutecms_porto.Helpers;
 
 namespace cutecms_porto.Areas.RMS.Controllers
 {
+    [LocalizedAuthorize(Roles = "Admin")]
     public class GendersController : BaseController
     {
         private RMSEntities db = new RMSEntities();

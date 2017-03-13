@@ -16,7 +16,7 @@ using static cutecms_porto.Helpers.DatatableHelpers;
 
 namespace cutecms_porto.Areas.RMS.Controllers
 {
-    [Authorize(Roles = "Admin, HR, Dean")]
+    [LocalizedAuthorize(Roles = "Admin, HR, Dean")]
     public class SubmissionsController : BaseController
     {
         #region Fields
@@ -98,7 +98,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
         }
 
         // GET: /Default1/Delete/5
-        [Authorize(Roles = "Admin")]
+        [LocalizedAuthorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -114,7 +114,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
         }
 
         // POST: /Default1/Delete/5
-        [Authorize(Roles = "Admin")]
+        [LocalizedAuthorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int? id)

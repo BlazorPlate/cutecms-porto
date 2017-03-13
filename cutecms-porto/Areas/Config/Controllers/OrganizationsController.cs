@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace cutecms_porto.Areas.Config.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [LocalizedAuthorize(Roles = "Admin")]
     public class OrganizationsController : BaseController
     {
         #region Fields

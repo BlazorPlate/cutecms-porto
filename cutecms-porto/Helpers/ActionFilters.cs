@@ -11,14 +11,6 @@ using System.Web.Mvc;
 
 namespace cutecms_porto.Helpers
 {
-    public class SqlExceptionFilter : IExceptionFilter
-    {
-        public void OnException(ExceptionContext filterContext)
-        {
-            int x = new int();
-            var c = x;
-        }
-    }
     public class CompressAttribute : ActionFilterAttribute
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)

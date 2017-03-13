@@ -85,13 +85,16 @@
                     </div>
                     <div>
                         <ul class="nav navbar-nav  @(CultureHelper.IsRighToLeft() ? "navbar-left" : "navbar-right")">
-                            @foreach (var item in organization.SocialNetworks)
+                            @if (organization != null)
                             {
-                                <li>
-                                    <span class="li-social">
-                                        <a href="@item.Url"><i class="fa @item.CssClass"></i></a>
-                                    </span>
-                                </li>
+                                foreach (var item in organization.SocialNetworks)
+                                {
+                                    <li>
+                                        <span class="li-social">
+                                            <a href="@item.Url"><i class="fa @item.CssClass"></i></a>
+                                        </span>
+                                    </li>
+                                }
                             }
                         </ul>
                     </div>

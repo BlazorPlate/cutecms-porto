@@ -26,7 +26,7 @@ namespace cutecms_porto
         {
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            FilterConfig.RegisterGlobalCustomFilters(GlobalFilters.Filters);
+            //FilterConfig.RegisterGlobalCustomFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             DataAnnotationsModelValidatorProvider.AddImplicitRequiredAttributeForValueTypes = false;

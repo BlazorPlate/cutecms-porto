@@ -11,6 +11,7 @@ using cutecms_porto.Helpers;
 
 namespace cutecms_porto.Areas.Identity.Controllers
 {
+    [LocalizedAuthorize(Roles = "Admin")]
     public class IdentityDepartmentTermsController : BaseController
     {
         private IdentityEntities db = new IdentityEntities();

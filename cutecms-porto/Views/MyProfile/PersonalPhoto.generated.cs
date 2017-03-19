@@ -575,38 +575,7 @@ WriteLiteral(">");
             
             #line default
             #line hidden
-WriteLiteral("</button>\r\n");
-
-            
-            #line 70 "..\..\Views\MyProfile\PersonalPhoto.cshtml"
-            
-            
-            #line default
-            #line hidden
-            
-            #line 70 "..\..\Views\MyProfile\PersonalPhoto.cshtml"
-             if (Model != null)
-            {
-                
-            
-            #line default
-            #line hidden
-            
-            #line 72 "..\..\Views\MyProfile\PersonalPhoto.cshtml"
-           Write(Html.ActionLink(Resources.Resources.Delete, "Delete", new { id = Model.Id }, new { @class = "btn btn-danger" }));
-
-            
-            #line default
-            #line hidden
-            
-            #line 72 "..\..\Views\MyProfile\PersonalPhoto.cshtml"
-                                                                                                                                
-            }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("        </div>\r\n        <div");
+WriteLiteral("</button>\r\n        </div>\r\n        <div");
 
 WriteLiteral(" class=\"form-group\"");
 
@@ -615,7 +584,7 @@ WriteLiteral(">\r\n            <br />\r\n");
 WriteLiteral("            ");
 
             
-            #line 77 "..\..\Views\MyProfile\PersonalPhoto.cshtml"
+            #line 73 "..\..\Views\MyProfile\PersonalPhoto.cshtml"
        Write(Html.ValidationSummary(false, "", new { @class = "text-danger" }));
 
             
@@ -624,7 +593,7 @@ WriteLiteral("            ");
 WriteLiteral("\r\n        </div>\r\n    </form>\r\n");
 
             
-            #line 80 "..\..\Views\MyProfile\PersonalPhoto.cshtml"
+            #line 76 "..\..\Views\MyProfile\PersonalPhoto.cshtml"
 }
 
             

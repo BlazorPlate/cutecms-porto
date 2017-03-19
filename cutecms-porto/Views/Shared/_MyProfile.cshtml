@@ -67,6 +67,10 @@
             <li><a href=@Url.Action("Index", "EmpInDepts", new { id = employee.TranslationId })><i class="fa fa-building"></i><span class="uppercase">@Resources.Resources.Departments</span></a></li>
             <li><a href=@Url.Action("Translations", "MyProfile", new { id = employee.TranslationId})><i class="fa fa-globe"></i><span class="uppercase">@Resources.Resources.Translations</span></a></li>
             <li><a href=@Url.Action("Index", "Manage", new { area = "Identity" })><i class="fa fa-gears"></i><span class="uppercase">@Resources.Resources.AccountSettings</span></a></li>
+            @if (Model != null)
+            {
+                <li><a href=@Url.Action("Delete", "MyProfile",new {id = employee.Id })><i class="fa fa-remove"></i><span class="uppercase">@Resources.Resources.DeleteProfile</span></a></li>
+            }
         </ul>
 
     </div>

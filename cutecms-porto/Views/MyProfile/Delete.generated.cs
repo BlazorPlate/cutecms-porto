@@ -121,7 +121,7 @@ WriteLiteral(">");
 
             
             #line 25 "..\..\Views\MyProfile\Delete.cshtml"
-                                                   Write(Resources.Resources.Translations);
+                                                   Write(Resources.Resources.DeleteProfile);
 
             
             #line default
@@ -134,22 +134,13 @@ WriteLiteral(">\r\n                <h3>");
 
             
             #line 28 "..\..\Views\MyProfile\Delete.cshtml"
-               Write(Resources.Resources.DeleteConfirmation);
+               Write(Resources.Resources.DeleteProfileConfirmation);
 
             
             #line default
             #line hidden
-WriteLiteral("</h3>\r\n                <div>\r\n                    <h4>");
-
-            
-            #line 30 "..\..\Views\MyProfile\Delete.cshtml"
-                   Write(Resources.Resources.Employee);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</h4>\r\n                    <hr />\r\n                    <div>\r\n                   " +
-"     <dl");
+WriteLiteral("</h3>\r\n                <div>\r\n                    <div>\r\n                        " +
+"<dl");
 
 WriteLiteral(" class=\"dl-horizontal\"");
 
@@ -158,7 +149,7 @@ WriteLiteral(">\r\n                            <dt>\r\n");
 WriteLiteral("                                ");
 
             
-            #line 35 "..\..\Views\MyProfile\Delete.cshtml"
+            #line 33 "..\..\Views\MyProfile\Delete.cshtml"
                            Write(Html.DisplayNameFor(model => model.LanguageId));
 
             
@@ -169,7 +160,7 @@ WriteLiteral("\r\n                            </dt>\r\n                         
 WriteLiteral("                                ");
 
             
-            #line 38 "..\..\Views\MyProfile\Delete.cshtml"
+            #line 36 "..\..\Views\MyProfile\Delete.cshtml"
                            Write(Html.DisplayFor(model => model.Language.Name));
 
             
@@ -180,7 +171,7 @@ WriteLiteral("\r\n                            </dd>\r\n                         
 WriteLiteral("                                ");
 
             
-            #line 41 "..\..\Views\MyProfile\Delete.cshtml"
+            #line 39 "..\..\Views\MyProfile\Delete.cshtml"
                            Write(Html.DisplayNameFor(model => model.LoginId));
 
             
@@ -189,13 +180,13 @@ WriteLiteral("                                ");
 WriteLiteral("\r\n                            </dt>\r\n                            <dd>\r\n");
 
             
-            #line 44 "..\..\Views\MyProfile\Delete.cshtml"
+            #line 42 "..\..\Views\MyProfile\Delete.cshtml"
                                 
             
             #line default
             #line hidden
             
-            #line 44 "..\..\Views\MyProfile\Delete.cshtml"
+            #line 42 "..\..\Views\MyProfile\Delete.cshtml"
                                  if (@dbIdentity.Users.Find(Model.LoginId) != null)
                                 {
                                     
@@ -203,14 +194,14 @@ WriteLiteral("\r\n                            </dt>\r\n                         
             #line default
             #line hidden
             
-            #line 46 "..\..\Views\MyProfile\Delete.cshtml"
+            #line 44 "..\..\Views\MyProfile\Delete.cshtml"
                                Write(dbIdentity.Users.Find(Model.LoginId).UserName);
 
             
             #line default
             #line hidden
             
-            #line 46 "..\..\Views\MyProfile\Delete.cshtml"
+            #line 44 "..\..\Views\MyProfile\Delete.cshtml"
                                                                                   
                                 }
                                 else
@@ -220,14 +211,14 @@ WriteLiteral("\r\n                            </dt>\r\n                         
             #line default
             #line hidden
             
-            #line 50 "..\..\Views\MyProfile\Delete.cshtml"
+            #line 48 "..\..\Views\MyProfile\Delete.cshtml"
                                Write(Resources.Resources.NotAvailable);
 
             
             #line default
             #line hidden
             
-            #line 50 "..\..\Views\MyProfile\Delete.cshtml"
+            #line 48 "..\..\Views\MyProfile\Delete.cshtml"
                                                                      
                                 }
 
@@ -239,7 +230,7 @@ WriteLiteral("                            </dd>\r\n                            <
 WriteLiteral("                                ");
 
             
-            #line 54 "..\..\Views\MyProfile\Delete.cshtml"
+            #line 52 "..\..\Views\MyProfile\Delete.cshtml"
                            Write(Html.DisplayNameFor(model => model.FullName));
 
             
@@ -250,7 +241,7 @@ WriteLiteral("\r\n                            </dt>\r\n                         
 WriteLiteral("                                ");
 
             
-            #line 57 "..\..\Views\MyProfile\Delete.cshtml"
+            #line 55 "..\..\Views\MyProfile\Delete.cshtml"
                            Write(Html.DisplayFor(model => model.FullName));
 
             
@@ -260,13 +251,13 @@ WriteLiteral("\r\n                            </dd>\r\n                        <
 "       </div>\r\n");
 
             
-            #line 61 "..\..\Views\MyProfile\Delete.cshtml"
+            #line 59 "..\..\Views\MyProfile\Delete.cshtml"
                     
             
             #line default
             #line hidden
             
-            #line 61 "..\..\Views\MyProfile\Delete.cshtml"
+            #line 59 "..\..\Views\MyProfile\Delete.cshtml"
                      using (Html.BeginForm())
                     {
                         
@@ -274,14 +265,14 @@ WriteLiteral("\r\n                            </dd>\r\n                        <
             #line default
             #line hidden
             
-            #line 63 "..\..\Views\MyProfile\Delete.cshtml"
+            #line 61 "..\..\Views\MyProfile\Delete.cshtml"
                    Write(Html.AntiForgeryToken());
 
             
             #line default
             #line hidden
             
-            #line 63 "..\..\Views\MyProfile\Delete.cshtml"
+            #line 61 "..\..\Views\MyProfile\Delete.cshtml"
                                                 
 
             
@@ -295,14 +286,14 @@ WriteLiteral(">\r\n                            <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=", 2727), Tuple.Create("", 2761)
+WriteAttribute("value", Tuple.Create(" value=", 2647), Tuple.Create("", 2681)
             
-            #line 65 "..\..\Views\MyProfile\Delete.cshtml"
-, Tuple.Create(Tuple.Create("", 2734), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Delete
+            #line 63 "..\..\Views\MyProfile\Delete.cshtml"
+, Tuple.Create(Tuple.Create("", 2654), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Delete
             
             #line default
             #line hidden
-, 2734), false)
+, 2654), false)
 );
 
 WriteLiteral(" class=\"btn btn-primary\"");
@@ -312,7 +303,7 @@ WriteLiteral(" /> |\r\n");
 WriteLiteral("                            ");
 
             
-            #line 66 "..\..\Views\MyProfile\Delete.cshtml"
+            #line 64 "..\..\Views\MyProfile\Delete.cshtml"
                        Write(Html.ActionLink(Resources.Resources.BackToList, "Index"));
 
             
@@ -333,7 +324,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 70 "..\..\Views\MyProfile\Delete.cshtml"
+            #line 68 "..\..\Views\MyProfile\Delete.cshtml"
                            Write(Html.ValidationSummary(false, "", new { @class = "text-danger" }));
 
             
@@ -342,7 +333,7 @@ WriteLiteral("                                ");
 WriteLiteral("\r\n                            </div>\r\n                        </div>\r\n");
 
             
-            #line 73 "..\..\Views\MyProfile\Delete.cshtml"
+            #line 71 "..\..\Views\MyProfile\Delete.cshtml"
                     }
 
             
@@ -354,7 +345,7 @@ WriteLiteral("                </div>\r\n            </div>\r\n        </div>\r\n
 WriteLiteral("        ");
 
             
-            #line 78 "..\..\Views\MyProfile\Delete.cshtml"
+            #line 76 "..\..\Views\MyProfile\Delete.cshtml"
    Write(Html.Partial("_MyProfile"));
 
             

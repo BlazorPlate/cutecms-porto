@@ -1560,4 +1560,10 @@
   <data name="ThankYouForInterest" xml:space="preserve">
     <value>感谢您关注我们最新的更新。你很快就会收到一封电子邮件，确认您的订阅。</value>
   </data>
+  <data name="DeleteProfileConfirmation" xml:space="preserve">
+    <value>是否确实要删除您的个人资料？</value>
+  </data>
+  <data name="DeleteProfile" xml:space="preserve">
+    <value>删除我的配置文件</value>
+  </data>
 </root>

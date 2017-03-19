@@ -1560,4 +1560,10 @@
   <data name="ThankYouForInterest" xml:space="preserve">
     <value>Děkujeme vám za váš zájem o naše nejnovější aktualizace. Krátce poté obdržíte e-mail s potvrzením předplatného.</value>
   </data>
+  <data name="DeleteProfileConfirmation" xml:space="preserve">
+    <value>Opravdu že chcete odstranit svůj profil?</value>
+  </data>
+  <data name="DeleteProfile" xml:space="preserve">
+    <value>Smazat můj profil</value>
+  </data>
 </root>

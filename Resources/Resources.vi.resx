@@ -1560,4 +1560,10 @@
   <data name="ThankYouForInterest" xml:space="preserve">
     <value>Cảm ơn bạn đã quan tâm đến chúng tôi cập nhật mới nhất. Một thời gian ngắn, bạn sẽ nhận được một email xác nhận đăng ký của bạn.</value>
   </data>
+  <data name="DeleteProfileConfirmation" xml:space="preserve">
+    <value>Bạn có chắc bạn muốn xóa bỏ hồ sơ của bạn không?</value>
+  </data>
+  <data name="DeleteProfile" xml:space="preserve">
+    <value>Xóa tiểu sử của tôi</value>
+  </data>
 </root>

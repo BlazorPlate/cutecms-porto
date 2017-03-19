@@ -601,38 +601,7 @@ WriteLiteral(">");
             
             #line default
             #line hidden
-WriteLiteral("</button>\r\n");
-
-            
-            #line 71 "..\..\Views\MyProfile\PersonalInfo.cshtml"
-            
-            
-            #line default
-            #line hidden
-            
-            #line 71 "..\..\Views\MyProfile\PersonalInfo.cshtml"
-             if (Model != null)
-            {
-                
-            
-            #line default
-            #line hidden
-            
-            #line 73 "..\..\Views\MyProfile\PersonalInfo.cshtml"
-           Write(Html.ActionLink(Resources.Resources.Delete, "Delete", new { id = Model.Id }, new { @class = "btn btn-danger" }));
-
-            
-            #line default
-            #line hidden
-            
-            #line 73 "..\..\Views\MyProfile\PersonalInfo.cshtml"
-                                                                                                                                
-            }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("        </div>\r\n        <div");
+WriteLiteral("</button>\r\n        </div>\r\n        <div");
 
 WriteLiteral(" class=\"form-group\"");
 
@@ -641,7 +610,7 @@ WriteLiteral(">\r\n            <br />\r\n");
 WriteLiteral("            ");
 
             
-            #line 78 "..\..\Views\MyProfile\PersonalInfo.cshtml"
+            #line 74 "..\..\Views\MyProfile\PersonalInfo.cshtml"
        Write(Html.ValidationSummary(false, "", new { @class = "text-danger" }));
 
             
@@ -650,7 +619,7 @@ WriteLiteral("            ");
 WriteLiteral("\r\n        </div>\r\n    </form>\r\n");
 
             
-            #line 81 "..\..\Views\MyProfile\PersonalInfo.cshtml"
+            #line 77 "..\..\Views\MyProfile\PersonalInfo.cshtml"
 }
             
             #line default

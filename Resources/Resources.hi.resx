@@ -1560,4 +1560,10 @@
   <data name="ThankYouForInterest" xml:space="preserve">
     <value>आप हमारे नवीनतम अद्यतन में अपनी रुचि के लिए धन्यवाद। आप शीघ्र ही अपनी सदस्यता की पुष्टि ईमेल प्राप्त होगा।</value>
   </data>
+  <data name="DeleteProfileConfirmation" xml:space="preserve">
+    <value>आप सुनिश्चित करें कि आप अपनी प्रोफ़ाइल हटाना चाहते हैं?</value>
+  </data>
+  <data name="DeleteProfile" xml:space="preserve">
+    <value>मेरी प्रोफ़ाइल को हटाएँ</value>
+  </data>
 </root>

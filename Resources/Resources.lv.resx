@@ -1560,4 +1560,10 @@
   <data name="ThankYouForInterest" xml:space="preserve">
     <value>Paldies par jūsu interesi par mūsu jaunākos atjauninājumus. Drīzumā jūs saņemsiet e-pastu, apliecinot savu abonementu.</value>
   </data>
+  <data name="DeleteProfileConfirmation" xml:space="preserve">
+    <value>Vai tiešām vēlaties izdzēst savu profilu?</value>
+  </data>
+  <data name="DeleteProfile" xml:space="preserve">
+    <value>Dzēst manu profilu</value>
+  </data>
 </root>

@@ -59,7 +59,7 @@ namespace ASP
     public partial class _Views_Shared__MyProfile_cshtml : System.Web.Mvc.WebViewPage<dynamic>
     {
         
-        #line 74 "..\..\Views\Shared\_MyProfile.cshtml"
+        #line 78 "..\..\Views\Shared\_MyProfile.cshtml"
            
     public int ProfileCompletion(Employee emp)
     {
@@ -643,10 +643,64 @@ WriteLiteral(">");
             
             #line default
             #line hidden
-WriteLiteral("</span></a></li>\r\n        </ul>\r\n\r\n    </div>\r\n");
+WriteLiteral("</span></a></li>\r\n");
+
+            
+            #line 70 "..\..\Views\Shared\_MyProfile.cshtml"
+            
+            
+            #line default
+            #line hidden
+            
+            #line 70 "..\..\Views\Shared\_MyProfile.cshtml"
+             if (Model != null)
+            {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                <li><a");
+
+WriteAttribute("href", Tuple.Create(" href=", 4959), Tuple.Create("", 5023)
+            
+            #line 72 "..\..\Views\Shared\_MyProfile.cshtml"
+, Tuple.Create(Tuple.Create("", 4965), Tuple.Create<System.Object, System.Int32>(Url.Action("Delete", "MyProfile",new {id = employee.Id })
+            
+            #line default
+            #line hidden
+, 4965), false)
+);
+
+WriteLiteral("><i");
+
+WriteLiteral(" class=\"fa fa-remove\"");
+
+WriteLiteral("></i><span");
+
+WriteLiteral(" class=\"uppercase\"");
+
+WriteLiteral(">");
+
+            
+            #line 72 "..\..\Views\Shared\_MyProfile.cshtml"
+                                                                                                                                      Write(Resources.Resources.DeleteProfile);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</span></a></li>\r\n");
 
             
             #line 73 "..\..\Views\Shared\_MyProfile.cshtml"
+            }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("        </ul>\r\n\r\n    </div>\r\n");
+
+            
+            #line 77 "..\..\Views\Shared\_MyProfile.cshtml"
 }
 
             

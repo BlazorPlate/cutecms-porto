@@ -1051,6 +1051,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete My Profile.
+        /// </summary>
+        public static string DeleteProfile {
+            get {
+                return ResourceManager.GetString("DeleteProfile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete your profile?.
+        /// </summary>
+        public static string DeleteProfileConfirmation {
+            get {
+                return ResourceManager.GetString("DeleteProfileConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Department.
         /// </summary>
         public static string Department {

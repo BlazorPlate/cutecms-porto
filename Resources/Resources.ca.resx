@@ -1560,4 +1560,10 @@
   <data name="ThankYouForInterest" xml:space="preserve">
     <value>Gràcies pel seu interès en les nostres últimes actualitzacions. En breu rebreu un email confirmant la vostra subscripció.</value>
   </data>
+  <data name="DeleteProfileConfirmation" xml:space="preserve">
+    <value>Esteu segur que voleu suprimir el seu perfil?</value>
+  </data>
+  <data name="DeleteProfile" xml:space="preserve">
+    <value>Suprimir el meu perfil</value>
+  </data>
 </root>

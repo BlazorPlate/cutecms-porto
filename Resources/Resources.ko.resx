@@ -1560,4 +1560,10 @@
   <data name="ThankYouForInterest" xml:space="preserve">
     <value>우리의 최신 업데이 트에 관심을 가져 주셔서 감사 합니다. 곧 당신의 가입 확인 이메일을 받게 됩니다.</value>
   </data>
+  <data name="DeleteProfileConfirmation" xml:space="preserve">
+    <value>당신은 귀하의 프로필을 삭제 하 시겠습니까?</value>
+  </data>
+  <data name="DeleteProfile" xml:space="preserve">
+    <value>내 프로필을 삭제</value>
+  </data>
 </root>

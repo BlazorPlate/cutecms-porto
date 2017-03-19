@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Abstract" xml:space="preserve">
-    <value>الموجز بالعربية</value>
+    <value>الملخص</value>
   </data>
   <data name="AcademicInfo" xml:space="preserve">
     <value>المعلومات الأكاديمية</value>
@@ -193,7 +193,7 @@
     <value>عودة للقائمة</value>
   </data>
   <data name="Biography" xml:space="preserve">
-    <value>نبذه عامة</value>
+    <value>التاريخ المهني</value>
   </data>
   <data name="Browse" xml:space="preserve">
     <value>بحث</value>
@@ -1559,5 +1559,11 @@
   </data>
   <data name="ThankYouForInterest" xml:space="preserve">
     <value>شكرا لاهتمامك بآخر التحديثات. قريبا سوف تتلقى رسالة إلكترونية تؤكد اشتراكك في نشرتنا البريدية.</value>
+  </data>
+  <data name="DeleteProfileConfirmation" xml:space="preserve">
+    <value>هل أنت متأكد من أنك تريد حذف ملف تعريفك الشخصي؟</value>
+  </data>
+  <data name="DeleteProfile" xml:space="preserve">
+    <value>حذف ملف التعريف</value>
   </data>
 </root>

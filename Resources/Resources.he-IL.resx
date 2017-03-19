@@ -1560,4 +1560,10 @@
   <data name="ThankYouForInterest" xml:space="preserve">
     <value>תודה לך על התעניינותך העדכונים האחרונים שלנו. זמן קצר תקבלו הודעת דוא ל המאשרת את המנוי שלך.</value>
   </data>
+  <data name="DeleteProfileConfirmation" xml:space="preserve">
+    <value>האם אתה בטוח שברצונך למחוק את הפרופיל שלך?</value>
+  </data>
+  <data name="DeleteProfile" xml:space="preserve">
+    <value>מחק את הפרופיל שלי</value>
+  </data>
 </root>

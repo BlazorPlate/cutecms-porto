@@ -21,6 +21,7 @@ tinyMCE.init({
     editor_selector: "mceEditor",
     height: 400,
     theme: "modern",
+    browser_spellcheck: true,
     plugins: [
         "directionality advlist autolink lists link image charmap print preview hr anchor pagebreak",
         "searchreplace wordcount visualblocks visualchars code fullscreen",

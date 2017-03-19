@@ -1560,4 +1560,10 @@
   <data name="ThankYouForInterest" xml:space="preserve">
     <value>Благодарим вас за ваш интерес в наших последних обновлений. Вскоре вы получите по электронной почте, подтверждающее вашу подписку.</value>
   </data>
+  <data name="DeleteProfileConfirmation" xml:space="preserve">
+    <value>Вы уверены, что вы хотите удалить свой профиль?</value>
+  </data>
+  <data name="DeleteProfile" xml:space="preserve">
+    <value>Удалить мой профиль</value>
+  </data>
 </root>

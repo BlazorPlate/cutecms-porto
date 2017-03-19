@@ -1560,4 +1560,10 @@
   <data name="ThankYouForInterest" xml:space="preserve">
     <value>Tack för ditt intresse för våra senaste uppdateringar. Du får inom kort ett mail som bekräftar din prenumeration.</value>
   </data>
+  <data name="DeleteProfileConfirmation" xml:space="preserve">
+    <value>Är du säker du vill ta bort din profil?</value>
+  </data>
+  <data name="DeleteProfile" xml:space="preserve">
+    <value>Radera min profil</value>
+  </data>
 </root>

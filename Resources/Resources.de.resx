@@ -1560,4 +1560,10 @@
   <data name="ThankYouForInterest" xml:space="preserve">
     <value>Vielen Dank für Ihr Interesse an unseren neuesten Updates. Sie erhalten in Kürze eine e-Mail zur Bestätigung Ihres Abonnements.</value>
   </data>
+  <data name="DeleteProfileConfirmation" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie Ihr Profil löschen möchten?</value>
+  </data>
+  <data name="DeleteProfile" xml:space="preserve">
+    <value>Mein Profil löschen</value>
+  </data>
 </root>

@@ -1560,4 +1560,10 @@
   <data name="ThankYouForInterest" xml:space="preserve">
     <value>私たちの最新の更新プログラムにご関心いただきありがとうございます。まもなくあなたの購読を確認するメールが届きます。</value>
   </data>
+  <data name="DeleteProfileConfirmation" xml:space="preserve">
+    <value>プロフィールを削除するよろしいですか。</value>
+  </data>
+  <data name="DeleteProfile" xml:space="preserve">
+    <value>プロフィールを削除します。</value>
+  </data>
 </root>

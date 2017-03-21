@@ -20,7 +20,6 @@ namespace cutecms_porto.Areas.Config.Controllers
         private ConfigEntities db = new ConfigEntities();
         private IdentityEntities identityDb = new IdentityEntities();
         private List<object> DepartmentsList = new List<object>();
-        private string departmentPath = "";
         #endregion Fields
 
         #region Methods

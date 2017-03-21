@@ -61,7 +61,7 @@ namespace cutecms_porto.Helpers
                         wrapMode.SetWrapMode(WrapMode.TileFlipXY);
                         graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
                     }
-                    catch (OutOfMemoryException oome)
+                    catch
                     {
 
                     }

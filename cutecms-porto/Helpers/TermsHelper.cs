@@ -21,7 +21,6 @@ namespace cutecms_porto.Helpers
         private static RMSEntities rmsDb = new RMSEntities();
         private static ConfigEntities configDb = new ConfigEntities();
         private static List<object> DepartmentsList = new List<object>();
-        private static string departmentPath = "";
         #endregion Fields
         #region Methods
         #region CMSDB

@@ -106,7 +106,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 {
                     var fileName = Path.GetFileName(employee.CV.FileName);
                     var extension = Path.GetExtension(employee.CV.FileName);
-                    var newFileName = Helpers.StringHelper.CleanFileName(employee.FullName.Trim() + "[" + timeStamp + "]" + extension);
+                    var newFileName = Helpers.StringHelper.CleanFileName(employee.FullName.Trim() + "-" + timeStamp + "-" + extension);
                     //var path = String.Format("/fileman/Uploads/Documents/Identity/Employees/Biography/{0}", newFileName);
                     var path = String.Format("/fileman/Uploads/Documents/Identity/Employees/Biography/{0}", newFileName);
                     employee.CV.SaveAs(System.Web.Hosting.HostingEnvironment.MapPath(path)); ;
@@ -117,7 +117,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 {
                     var extension = Path.GetExtension(employee.Image.FileName);
                     //var ~/fileman/Uploads/Images/Identity/Employees/Personal-Photos newFileName = Helpers.StringHelper.CleanFileName(employee.Title + extension);
-                    var newFileName = Helpers.StringHelper.CleanFileName(employee.FullName.Trim() + "[" + timeStamp + "]" + extension);
+                    var newFileName = Helpers.StringHelper.CleanFileName(employee.FullName.Trim() + "-" + timeStamp + "-" + extension);
                     //var path = String.Format("/personal-photo/{0}", newFileName);
                     var path = String.Format("/fileman/Uploads/Images/Identity/Employees/Personal-Photos/{0}", newFileName);
                     employee.PersonalPhotoPath = path;
@@ -196,7 +196,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 {
                     var fileName = Path.GetFileName(employee.CV.FileName);
                     var extension = Path.GetExtension(employee.CV.FileName);
-                    var newFileName = Helpers.StringHelper.CleanFileName(employee.FullName.Trim() + "[" + timeStamp + "]" + extension);
+                    var newFileName = Helpers.StringHelper.CleanFileName(employee.FullName.Trim() + "-" + timeStamp + "-" + extension);
                     var path = String.Format("/fileman/Uploads/Documents/Identity/Employees/Biography/{0}", newFileName);
                     employee.CV.SaveAs(System.Web.Hosting.HostingEnvironment.MapPath(path)); ;
                     employee.ResumeFilePath = path;
@@ -206,7 +206,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 {
                     var extension = Path.GetExtension(employee.Image.FileName);
                     //var newFileName = Helpers.StringHelper.CleanFileName(employee.Title + extension);
-                    var newFileName = Helpers.StringHelper.CleanFileName(employee.FullName.Trim() + "[" + timeStamp + "]" + extension);
+                    var newFileName = Helpers.StringHelper.CleanFileName(employee.FullName.Trim() + "-" + timeStamp + "-" + extension);
                     var path = String.Format("/fileman/Uploads/Images/Identity/Employees/Personal-Photos/{0}", newFileName);
                     employee.PersonalPhotoPath = path;
                     employee.PersonalPhotoName = newFileName;

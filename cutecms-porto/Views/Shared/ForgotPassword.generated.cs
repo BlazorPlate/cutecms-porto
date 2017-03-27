@@ -63,7 +63,9 @@ Write(Html.AntiForgeryToken());
             #line hidden
 WriteLiteral("    <div");
 
-WriteLiteral(" id=\"RegisterAjax\"");
+WriteLiteral(" id=\"ForgetPasswordAjax\"");
+
+WriteLiteral(" style=\"padding-left:25px;padding-right:25px\"");
 
 WriteLiteral(">\r\n        <span");
 
@@ -137,14 +139,14 @@ WriteLiteral(">\r\n                    <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 938), Tuple.Create("\"", 976)
+WriteAttribute("value", Tuple.Create(" value=\"", 989), Tuple.Create("\"", 1027)
             
             #line 19 "..\..\Views\Shared\ForgotPassword.cshtml"
-, Tuple.Create(Tuple.Create("", 946), Tuple.Create<System.Object, System.Int32>(Resources.Resources.EmailLink
+, Tuple.Create(Tuple.Create("", 997), Tuple.Create<System.Object, System.Int32>(Resources.Resources.EmailLink
             
             #line default
             #line hidden
-, 946), false)
+, 997), false)
 );
 
 WriteLiteral(" class=\"btn btn-primary pull-right mb-xl\"");

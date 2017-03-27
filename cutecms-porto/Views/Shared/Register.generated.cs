@@ -61,11 +61,13 @@ Write(Html.AntiForgeryToken());
             
             #line default
             #line hidden
-WriteLiteral("    <div");
+WriteLiteral("        <div");
 
 WriteLiteral(" id=\"RegisterAjax\"");
 
-WriteLiteral(">\r\n        <h4");
+WriteLiteral(" style=\"padding-left:25px;padding-right:25px\"");
+
+WriteLiteral(">\r\n            <h4");
 
 WriteLiteral(" class=\"dropdown-mega-sub-title\"");
 
@@ -73,159 +75,162 @@ WriteLiteral(">");
 
             
             #line 6 "..\..\Views\Shared\Register.cshtml"
-                                       Write(Resources.Resources.RegisterNewUser);
+                                           Write(Resources.Resources.RegisterNewUser);
 
             
             #line default
             #line hidden
-WriteLiteral("</h4>\r\n        <div");
+WriteLiteral("</h4>\r\n            <div");
 
 WriteLiteral(" class=\"row\"");
 
-WriteLiteral(">\r\n            <div");
+WriteLiteral(">\r\n                <div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n                <div");
+WriteLiteral(">\r\n                    <div");
 
 WriteLiteral(" class=\"col-md-12 p-none\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("                    ");
+WriteLiteral("                        ");
 
             
             #line 10 "..\..\Views\Shared\Register.cshtml"
-               Write(Html.TextBoxFor(m => m.Email, new { @class = "form-control input-lg", @placeholder = @Resources.Resources.Email + "..." }));
+                   Write(Html.TextBoxFor(m => m.Email, new { @class = "form-control input-lg", @placeholder = @Resources.Resources.Email + "..." }));
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n");
 
-WriteLiteral("                    ");
+WriteLiteral("                        ");
 
             
             #line 11 "..\..\Views\Shared\Register.cshtml"
-               Write(Html.ValidationMessageFor(model => model.Email));
+                   Write(Html.ValidationMessageFor(model => model.Email));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div");
+WriteLiteral("\r\n                    </div>\r\n                </div>\r\n            </div>\r\n       " +
+"     <div");
 
 WriteLiteral(" class=\"row\"");
 
-WriteLiteral(">\r\n            <div");
+WriteLiteral(">\r\n                <div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n                <div");
+WriteLiteral(">\r\n                    <div");
 
 WriteLiteral(" class=\"col-md-12 p-none\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("                    ");
+WriteLiteral("                        ");
 
             
             #line 18 "..\..\Views\Shared\Register.cshtml"
-               Write(Html.PasswordFor(m => m.Password, new { @class = "form-control input-lg", @placeholder = @Resources.Resources.Password + "..." }));
+                   Write(Html.PasswordFor(m => m.Password, new { @class = "form-control input-lg", @placeholder = @Resources.Resources.Password + "..." }));
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n");
 
-WriteLiteral("                    ");
+WriteLiteral("                        ");
 
             
             #line 19 "..\..\Views\Shared\Register.cshtml"
-               Write(Html.ValidationMessageFor(model => model.Password));
+                   Write(Html.ValidationMessageFor(model => model.Password));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div");
+WriteLiteral("\r\n                    </div>\r\n                </div>\r\n            </div>\r\n       " +
+"     <div");
 
 WriteLiteral(" class=\"row\"");
 
-WriteLiteral(">\r\n            <div");
+WriteLiteral(">\r\n                <div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n                <div");
+WriteLiteral(">\r\n                    <div");
 
 WriteLiteral(" class=\"col-md-12 p-none\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("                    ");
+WriteLiteral("                        ");
 
             
             #line 26 "..\..\Views\Shared\Register.cshtml"
-               Write(Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control input-lg", @placeholder = @Resources.Resources.ConfirmPassword + "..." }));
+                   Write(Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control input-lg", @placeholder = @Resources.Resources.ConfirmPassword + "..." }));
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n");
 
-WriteLiteral("                    ");
+WriteLiteral("                        ");
 
             
             #line 27 "..\..\Views\Shared\Register.cshtml"
-               Write(Html.ValidationMessageFor(model => model.ConfirmPassword));
+                   Write(Html.ValidationMessageFor(model => model.ConfirmPassword));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div");
+WriteLiteral("\r\n                    </div>\r\n                </div>\r\n            </div>\r\n       " +
+"     <div");
 
 WriteLiteral(" class=\"row\"");
 
-WriteLiteral(">\r\n            <div");
+WriteLiteral(">\r\n                <div");
 
 WriteLiteral(" class=\"col-md-12 p-none\"");
 
-WriteLiteral(">\r\n                <input");
+WriteLiteral(">\r\n                    <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 1624), Tuple.Create("\"", 1659)
+WriteAttribute("value", Tuple.Create(" value=\"", 1785), Tuple.Create("\"", 1820)
             
             #line 33 "..\..\Views\Shared\Register.cshtml"
-, Tuple.Create(Tuple.Create("", 1632), Tuple.Create<System.Object, System.Int32>(Resources.Resources.SignUp
+, Tuple.Create(Tuple.Create("", 1793), Tuple.Create<System.Object, System.Int32>(Resources.Resources.SignUp
             
             #line default
             #line hidden
-, 1632), false)
+, 1793), false)
 );
 
 WriteLiteral(" class=\"btn btn-primary pull-right mb-xl\"");
 
 WriteLiteral(" data-loading-text=\"Loading...\"");
 
-WriteLiteral(">\r\n            </div>\r\n        </div>\r\n        <div");
+WriteLiteral(">\r\n                </div>\r\n            </div>\r\n            <div");
 
 WriteLiteral(" class=\"row\"");
 
-WriteLiteral(">\r\n            <div");
+WriteLiteral(">\r\n                <div");
 
 WriteLiteral(" class=\"col-md-12 p-none\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("                ");
+WriteLiteral("                    ");
 
             
             #line 38 "..\..\Views\Shared\Register.cshtml"
-           Write(Html.ValidationSummary(false, "", new { @class = "text-danger" }));
+               Write(Html.ValidationSummary(false, "", new { @class = "text-danger" }));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n            </div>\r\n        </div>\r\n    </div>\r\n");
+WriteLiteral("\r\n                </div>\r\n            </div>\r\n        </div>\r\n");
 
             
             #line 42 "..\..\Views\Shared\Register.cshtml"

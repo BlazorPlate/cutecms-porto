@@ -2,42 +2,42 @@
 @using (Ajax.BeginForm("Register", "Account", new AjaxOptions { UpdateTargetId = "RegisterAjax" }))
 {
     @Html.AntiForgeryToken()
-    <div id="RegisterAjax">
-        <h4 class="dropdown-mega-sub-title">@Resources.Resources.RegisterNewUser</h4>
-        <div class="row">
-            <div class="form-group">
+        <div id="RegisterAjax" style="padding-left:25px;padding-right:25px">
+            <h4 class="dropdown-mega-sub-title">@Resources.Resources.RegisterNewUser</h4>
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-md-12 p-none">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control input-lg", @placeholder = @Resources.Resources.Email + "..." })
+                        @Html.ValidationMessageFor(model => model.Email)
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-md-12 p-none">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control input-lg", @placeholder = @Resources.Resources.Password + "..." })
+                        @Html.ValidationMessageFor(model => model.Password)
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-md-12 p-none">
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control input-lg", @placeholder = @Resources.Resources.ConfirmPassword + "..." })
+                        @Html.ValidationMessageFor(model => model.ConfirmPassword)
+                    </div>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-12 p-none">
-                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control input-lg", @placeholder = @Resources.Resources.Email + "..." })
-                    @Html.ValidationMessageFor(model => model.Email)
+                    <input type="submit" value="@Resources.Resources.SignUp" class="btn btn-primary pull-right mb-xl" data-loading-text="Loading...">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 p-none">
+                    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="form-group">
-                <div class="col-md-12 p-none">
-                    @Html.PasswordFor(m => m.Password, new { @class = "form-control input-lg", @placeholder = @Resources.Resources.Password + "..." })
-                    @Html.ValidationMessageFor(model => model.Password)
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="form-group">
-                <div class="col-md-12 p-none">
-                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control input-lg", @placeholder = @Resources.Resources.ConfirmPassword + "..." })
-                    @Html.ValidationMessageFor(model => model.ConfirmPassword)
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 p-none">
-                <input type="submit" value="@Resources.Resources.SignUp" class="btn btn-primary pull-right mb-xl" data-loading-text="Loading...">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 p-none">
-                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
-            </div>
-        </div>
-    </div>
 }
 

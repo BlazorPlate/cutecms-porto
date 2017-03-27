@@ -124,12 +124,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
             Session.RemoveAll();
             Session.Abandon();
             if (!ModelState.IsValid)
-            {
-                if (RouteData.DataTokens["area"] == null)
-                    return View("~/Views/Shared/LoginAjax.cshtml", model);
                 return View(model);
-            }
-
             // This doesn't count login failures towards account lockout To enable password failures
             // to trigger account lockout, change to shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email.ToLower().Trim(), model.Password, model.RememberMe, shouldLockout: true);
@@ -139,6 +134,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 case SignInStatus.Success:
                     if (!await UserManager.IsEmailConfirmedAsync(user.Id))
                     {
+                        ViewBag.ReturnUrl = returnUrl;
                         ModelState.AddModelError("", Resources.Resources.EmailConfirmationCheck);
                         return View(model);
                     }
@@ -148,12 +144,10 @@ namespace cutecms_porto.Areas.Identity.Controllers
 
                 case SignInStatus.RequiresVerification:
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
-
                 case SignInStatus.Failure:
                 default:
+                    ViewBag.ReturnUrl = returnUrl;
                     ModelState.AddModelError("", Resources.Resources.InvalidLoginAttempt);
-                    if (RouteData.DataTokens["area"] == null)
-                        return View("~/Views/Shared/LoginAjax.cshtml", model);
                     return View(model);
             }
         }

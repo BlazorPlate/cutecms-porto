@@ -4,7 +4,7 @@
 @{
     int count = 0;
     CMSEntities db = new CMSEntities();
-    List<MenuItem> menuItems = db.MenuItems.Where(mi => mi.Menu.TenantId.Trim().Equals(Tenant.TenantId) && mi.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && mi.Menu.Code.Equals("side-navbar") && mi.Status.Code.Equals("published")).OrderBy(mi => mi.Ordinal).ToList();
+    List<MenuItem> menuItems = db.MenuItems.Where(mi => mi.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && mi.Menu.Code.Equals("side-navbar") && mi.Status.Code.Equals("published")).OrderBy(mi => mi.Ordinal).ToList();
     count = menuItems.Count();
 }
 <li>

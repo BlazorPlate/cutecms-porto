@@ -22,7 +22,7 @@ namespace cutecms_porto.Controllers
         public ActionResult Index()
         {
             ViewBag.EmpTypeId = new SelectList(Helpers.TermsHelper.EmployeeTypes(), "EmployeeTypeId", "Value");
-            var departments = db.IdentityDepartments;
+            var departments = db.IdentityDepartments.Where(d => d.TenantId.Equals(Tenant.TenantId));
             return View(departments);
         }
         public ActionResult Search(int? page, string EmpName, int? EmpTypeId)
@@ -32,7 +32,7 @@ namespace cutecms_porto.Controllers
             var query = (from e in db.Employees
                          join ed in db.EmpInDepts
                          on e.TranslationId equals ed.EmpId
-                         where e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) &&
+                         where ed.Department.TenantId.Equals(Tenant.TenantId) && e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) &&
                          (e.FirstName.ToLower().Trim().Contains(EmpName.ToLower().Trim()) || e.LastName.ToLower().Trim().Contains(EmpName.ToLower().Trim()) || string.IsNullOrEmpty(EmpName.Trim()) &&
                          (ed.EmployeeTypeId == EmpTypeId || EmpTypeId == null))
                          select e).Distinct();
@@ -66,7 +66,7 @@ namespace cutecms_porto.Controllers
 
         public ActionResult EmpInDepts(int? id)
         {
-            var empInDepts = db.EmpInDepts.Where(p => p.EmpId == id);
+            var empInDepts = db.EmpInDepts.Where(e => e.Department.TenantId.Equals(Tenant.TenantId) && e.EmpId == id);
             if (empInDepts == null)
                 throw new HttpException(404, "Page Not Found");
             return View(empInDepts);
@@ -78,7 +78,7 @@ namespace cutecms_porto.Controllers
             {
                 throw new HttpException(404, "Page Not Found");
             }
-            var department = db.IdentityDepartments.Find(id);
+            var department = db.IdentityDepartments.Where(d => d.TenantId.Equals(Tenant.TenantId) && d.Id == id).FirstOrDefault();
             if (department == null)
             {
                 throw new HttpException(404, "Page Not Found");

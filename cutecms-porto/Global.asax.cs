@@ -16,6 +16,7 @@ using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Text;
 
 namespace cutecms_porto
 {
@@ -269,11 +270,52 @@ namespace cutecms_porto
                 }
             }
         }
+        //public override string GetVaryByCustomString(HttpContext context, string arg)
+        //{
+        //    if (arg == "culture")
+        //        return HttpContext.Current.Request.RequestContext.RouteData.Values["culture"].ToString();
+        //    if (arg == "host")
+        //        return context.Request.Headers["host"];
+        //    return String.Empty;
+        //}
         public override string GetVaryByCustomString(HttpContext context, string arg)
         {
-            if (arg == "culture")
-                return HttpContext.Current.Request.RequestContext.RouteData.Values["culture"].ToString();
-            return String.Empty;
+            //The code looks for parameters specified in the cache 
+            //profile that are passed to the handler and parses them, 
+            //delimited by a semicolon.
+            StringBuilder sb = new StringBuilder();
+            string[] strings = arg.Split(';');
+            bool appended = false;
+            foreach (string str in strings)
+            {
+                switch (str)
+                {
+                    case "culture":
+                        if (appended)
+                        {
+                            sb.Append(';');
+                        }
+                        //If you want to vary based on a property of
+                        //the request, work with the http context.
+                        sb.Append(HttpContext.Current.Request.RequestContext.RouteData.Values["culture"].ToString());
+                        break;
+                    case "host":
+                        if (appended)
+                        {
+                            sb.Append(';');
+                        }
+                        //If you want to vary by whether the current
+                        //user is the site administrator,
+                        //examine the SPContext.
+                        sb.Append(context.Request.Headers["host"]);
+                        break;
+
+                    default:
+                        continue;
+                }
+                appended = true;
+            }
+            return sb.ToString();
         }
         #endregion Methods
     }

@@ -1,39 +1,39 @@
 ﻿@model cutecms_porto.Areas.Identity.Models.DBModel.Employee
 @using cutecms_porto.Areas.Identity.Models.DBModel;
-    @using System.Threading
-    @{
-        ViewBag.Title = @Resources.Resources.Departments;
-        IdentityEntities db = new IdentityEntities();
-        var empInDepts = db.EmpInDepts.Where(e => e.Employee.TranslationId == Model.TranslationId);
-    }
-    <!-- RIGHT -->
-    <form role="form" action="#" method="post">
-        <table class="table">
-            <tr>
-                <th>
-                    @Resources.Resources.Department
-                </th>
-                <th>
-                    @Resources.Resources.Occupation
-                </th>
-                <th>
-                    @Resources.Resources.JobType
-                </th>
-                <th></th>
-            </tr>
-            @foreach (var item in empInDepts)
+@using System.Threading
+@{
+    ViewBag.Title = Resources.Resources.Departments;
+    IdentityEntities db = new IdentityEntities();
+    var empInDepts = db.EmpInDepts.Where(e => e.Department.TenantId.Equals(Tenant.TenantId) && e.Employee.TranslationId == Model.TranslationId);
+}
+<!-- RIGHT -->
+<form role="form" action="#" method="post">
+    <table class="table">
+        <tr>
+            <th>
+                @Resources.Resources.Department
+            </th>
+            <th>
+                @Resources.Resources.Occupation
+            </th>
+            <th>
+                @Resources.Resources.JobType
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in empInDepts)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Department.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Occupation.OccupationTerms.Where(o => o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.EmployeeType.EmployeeTypeTerms.Where(e => e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value)
-                    </td>
-                </tr>
-            }
-        </table>
-    </form>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Occupation.OccupationTerms.Where(o => o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmployeeType.EmployeeTypeTerms.Where(e => e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value)
+                </td>
+            </tr>
+        }
+    </table>
+</form>

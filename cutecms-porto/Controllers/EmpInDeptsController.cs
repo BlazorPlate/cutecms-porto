@@ -31,7 +31,7 @@ namespace cutecms_porto.Controllers
             if (empTranslationId == null)
                 throw new HttpException(602, "Page Not Translated");
             ViewBag.EmpId = id;
-            var empInDepts = db.EmpInDepts.Include(e => e.Employee).Where(e => e.Employee.TranslationId == empTranslationId);
+            var empInDepts = db.EmpInDepts.Include(e => e.Employee).Where(e => e.Department.TenantId.Equals(Tenant.TenantId) && e.Employee.TranslationId == empTranslationId);
             return View(empInDepts);
         }
 
@@ -42,7 +42,7 @@ namespace cutecms_porto.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            EmpInDept empInDept = db.EmpInDepts.Find(id);
+            EmpInDept empInDept = db.EmpInDepts.Where(e => e.Department.TenantId.Equals(Tenant.TenantId) && e.Id == id).FirstOrDefault();
             if (empInDept == null)
             {
                 throw new HttpException(404, "Page Not Found");
@@ -104,7 +104,7 @@ namespace cutecms_porto.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            EmpInDept empInDept = db.EmpInDepts.Find(id);
+            EmpInDept empInDept = db.EmpInDepts.Where(e => e.Department.TenantId.Equals(Tenant.TenantId) && e.Id == id).FirstOrDefault();
             if (empInDept == null)
             {
                 throw new HttpException(404, "Page Not Found");
@@ -152,7 +152,7 @@ namespace cutecms_porto.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            EmpInDept empInDept = db.EmpInDepts.Include(e => e.Employee).Where(e => e.Id == id).FirstOrDefault();
+            EmpInDept empInDept = db.EmpInDepts.Where(e => e.Department.TenantId.Equals(Tenant.TenantId) && e.Id == id).FirstOrDefault();
             if (empInDept == null)
             {
                 throw new HttpException(404, "Page Not Found");

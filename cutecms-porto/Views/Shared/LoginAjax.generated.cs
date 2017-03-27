@@ -51,6 +51,8 @@ namespace ASP
             
             #line default
             #line hidden
+WriteLiteral("\r\n");
+
         }
     }
 }

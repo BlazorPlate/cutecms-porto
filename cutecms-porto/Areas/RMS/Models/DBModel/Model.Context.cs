@@ -9,15 +9,15 @@
 
 namespace cutecms_porto.Areas.RMS.Models.DBModel
 {
+    using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-
+    
     public partial class RMSEntities : DbContext
     {
         public RMSEntities()
             : base("name=RMSEntities")
         {
-            Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -37,7 +37,6 @@ namespace cutecms_porto.Areas.RMS.Models.DBModel
         public virtual DbSet<Submission> Submissions { get; set; }
         public virtual DbSet<VacancyDegree> VacancyDegrees { get; set; }
         public virtual DbSet<VacancyRank> VacancyRanks { get; set; }
-        public virtual DbSet<RMSDepartment> RMSDepartments { get; set; }
         public virtual DbSet<RMSDepartmentTerm> RMSDepartmentTerms { get; set; }
         public virtual DbSet<JobType> JobTypes { get; set; }
         public virtual DbSet<JobTypeTerm> JobTypeTerms { get; set; }
@@ -46,5 +45,6 @@ namespace cutecms_porto.Areas.RMS.Models.DBModel
         public virtual DbSet<GenderTerm> GenderTerms { get; set; }
         public virtual DbSet<RMSLanguage> RMSLanguages { get; set; }
         public virtual DbSet<Vacancy> Vacancies { get; set; }
+        public virtual DbSet<RMSDepartment> RMSDepartments { get; set; }
     }
 }

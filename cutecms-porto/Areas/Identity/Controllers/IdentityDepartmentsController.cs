@@ -28,7 +28,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         {
             DepartmentsViewModel departments = new DepartmentsViewModel();
             departments.DepartmentTerms = TermsHelper.Departments(null);
-            departments.Departments = db.IdentityDepartments.Where(d => !d.DepartmentTerms.Where(dt => dt.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).Any());
+            departments.Departments = db.IdentityDepartments.Where(d => d.TenantId.Equals(Tenant.TenantId) && !d.DepartmentTerms.Where(dt => dt.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).Any());
             return View(departments);
         }
 
@@ -39,7 +39,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            IdentityDepartment department = db.IdentityDepartments.Find(id);
+            IdentityDepartment department = db.IdentityDepartments.Where(d => d.TenantId.Equals(Tenant.TenantId) && d.Id == id).FirstOrDefault();
             if (department == null)
             {
                 throw new HttpException(404, "Page Not Found");
@@ -80,7 +80,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            IdentityDepartment department = db.IdentityDepartments.Find(id);
+            IdentityDepartment department = db.IdentityDepartments.Where(d => d.TenantId.Equals(Tenant.TenantId) && d.Id == id).FirstOrDefault();
             if (department == null)
             {
                 throw new HttpException(404, "Page Not Found");
@@ -114,7 +114,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            IdentityDepartment department = db.IdentityDepartments.Find(id);
+            IdentityDepartment department = db.IdentityDepartments.Where(d => d.TenantId.Equals(Tenant.TenantId) && d.Id == id).FirstOrDefault();
             if (department == null)
             {
                 throw new HttpException(404, "Page Not Found");

@@ -4,16 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d70151a775a0465f9182c388e7e659e6" Name="Diagram1" ZoomLevel="68">
+      <Diagram DiagramId="d70151a775a0465f9182c388e7e659e6" Name="Diagram1" ZoomLevel="117">
         <EntityTypeShape EntityType="ConfigDBModel.Contact" Width="1.5" PointX="5.25" PointY="15.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ConfigDBModel.PhoneNumber" Width="1.5" PointX="7.5" PointY="16" IsExpanded="true" />
         <EntityTypeShape EntityType="ConfigDBModel.Statistic" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="ConfigDBModel.FK_PhoneNumbers_Contacts" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="ConfigDBModel.ConfigDepartment" Width="1.5" PointX="3.75" PointY="2.75" />
-        <AssociationConnector Association="ConfigDBModel.FK_Contacts_Departments" />
-        <AssociationConnector Association="ConfigDBModel.FK_Departments_Departments" />
         <EntityTypeShape EntityType="ConfigDBModel.ConfigDepartmentTerm" Width="1.5" PointX="6" PointY="7" />
-        <AssociationConnector Association="ConfigDBModel.FK_DepartmentTerms_Departments" />
         <EntityTypeShape EntityType="ConfigDBModel.ConfigPersonalTitle" Width="1.5" PointX="0.75" PointY="14" />
         <AssociationConnector Association="ConfigDBModel.FK_Contacts_PersonalTitles" />
         <EntityTypeShape EntityType="ConfigDBModel.ConfigPersonalTitleTerm" Width="1.5" PointX="3" PointY="10" />
@@ -38,6 +34,10 @@
         <AssociationConnector Association="ConfigDBModel.FK_Contacts_Organization" />
         <AssociationConnector Association="ConfigDBModel.FK_Organization_Languages" />
         <AssociationConnector Association="ConfigDBModel.FK_SocialNetworks_Organization" />
+        <EntityTypeShape EntityType="ConfigDBModel.ConfigDepartment" Width="1.5" PointX="3.375" PointY="1" />
+        <AssociationConnector Association="ConfigDBModel.FK_Contacts_Departments" />
+        <AssociationConnector Association="ConfigDBModel.FK_Departments_Departments" />
+        <AssociationConnector Association="ConfigDBModel.FK_DepartmentTerms_Departments" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

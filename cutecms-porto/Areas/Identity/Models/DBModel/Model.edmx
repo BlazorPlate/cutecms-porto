@@ -28,6 +28,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenantId" Type="nvarchar" MaxLength="50" />
           <Property Name="Code" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="ManagerId" Type="int" />
           <Property Name="ParentId" Type="int" />
@@ -669,19 +670,10 @@
             <End Role="IdentityProgram" EntitySet="IdentityPrograms" />
             <End Role="ProgramTerm" EntitySet="IdentityProgramTerms" />
           </AssociationSet>
-          <EntitySet Name="IdentityDepartments" EntityType="IdentityModel.IdentityDepartment" />
           <EntitySet Name="Employees" EntityType="IdentityModel.Employee" />
           <AssociationSet Name="FK_Employee_DegreeTypes" Association="IdentityModel.FK_Employee_DegreeTypes">
             <End Role="IdentityDegree" EntitySet="IdentityDegrees" />
             <End Role="Employee" EntitySet="Employees" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Departments_Departments" Association="IdentityModel.FK_Departments_Departments">
-            <End Role="Department" EntitySet="IdentityDepartments" />
-            <End Role="Department1" EntitySet="IdentityDepartments" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Departments_Employees" Association="IdentityModel.FK_Departments_Employees">
-            <End Role="Employee" EntitySet="Employees" />
-            <End Role="Department" EntitySet="IdentityDepartments" />
           </AssociationSet>
           <AssociationSet Name="FK_Employee_PersonalTitles" Association="IdentityModel.FK_Employee_PersonalTitles">
             <End Role="IdentityPersonalTitle" EntitySet="IdentityPersonalTitles" />
@@ -696,10 +688,6 @@
             <End Role="Employee" EntitySet="Employees" />
           </AssociationSet>
           <EntitySet Name="IdentityDepartmentTerms" EntityType="IdentityModel.IdentityDepartmentTerm" />
-          <AssociationSet Name="FK_DepartmentTerms_Departments" Association="IdentityModel.FK_DepartmentTerms_Departments">
-            <End Role="IdentityDepartment" EntitySet="IdentityDepartments" />
-            <End Role="DepartmentTerm" EntitySet="IdentityDepartmentTerms" />
-          </AssociationSet>
           <EntitySet Name="Publications" EntityType="IdentityModel.Publication" />
           <AssociationSet Name="FK_Publications_Employees" Association="IdentityModel.FK_Publications_Employees">
             <End Role="Employee" EntitySet="Employees" />
@@ -745,10 +733,6 @@
             <End Role="EmployeeTypeTerm" EntitySet="EmployeeTypeTerms" />
           </AssociationSet>
           <EntitySet Name="EmpInDepts" EntityType="IdentityModel.EmpInDept" />
-          <AssociationSet Name="FK_EmpInDept_Departments" Association="IdentityModel.FK_EmpInDept_Departments">
-            <End Role="IdentityDepartment" EntitySet="IdentityDepartments" />
-            <End Role="EmpInDept" EntitySet="EmpInDepts" />
-          </AssociationSet>
           <AssociationSet Name="FK_EmpInDept_Employees" Association="IdentityModel.FK_EmpInDept_Employees">
             <End Role="Employee" EntitySet="Employees" />
             <End Role="EmpInDept" EntitySet="EmpInDepts" />
@@ -759,6 +743,23 @@
           </AssociationSet>
           <AssociationSet Name="FK_EmpInDept_Positions" Association="IdentityModel.FK_EmpInDept_Positions">
             <End Role="Occupation" EntitySet="Occupations" />
+            <End Role="EmpInDept" EntitySet="EmpInDepts" />
+          </AssociationSet>
+          <EntitySet Name="IdentityDepartments" EntityType="IdentityModel.IdentityDepartment" />
+          <AssociationSet Name="FK_Departments_Departments" Association="IdentityModel.FK_Departments_Departments">
+            <End Role="Department" EntitySet="IdentityDepartments" />
+            <End Role="Department1" EntitySet="IdentityDepartments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Departments_Employees" Association="IdentityModel.FK_Departments_Employees">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Department" EntitySet="IdentityDepartments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DepartmentTerms_Departments" Association="IdentityModel.FK_DepartmentTerms_Departments">
+            <End Role="Department" EntitySet="IdentityDepartments" />
+            <End Role="IdentityDepartmentTerm" EntitySet="IdentityDepartmentTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmpInDept_Departments" Association="IdentityModel.FK_EmpInDept_Departments">
+            <End Role="Department" EntitySet="IdentityDepartments" />
             <End Role="EmpInDept" EntitySet="EmpInDepts" />
           </AssociationSet>
           </EntityContainer>
@@ -932,21 +933,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="IdentityDepartment">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Code" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ManagerId" Type="Int32" />
-          <Property Name="ParentId" Type="Int32" />
-          <Property Name="Ordinal" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Departments1" Relationship="IdentityModel.FK_Departments_Departments" FromRole="Department" ToRole="Department1" />
-          <NavigationProperty Name="Department1" Relationship="IdentityModel.FK_Departments_Departments" FromRole="Department1" ToRole="Department" />
-          <NavigationProperty Name="Employee" Relationship="IdentityModel.FK_Departments_Employees" FromRole="Department" ToRole="Employee" />
-          <NavigationProperty Name="DepartmentTerms" Relationship="IdentityModel.FK_DepartmentTerms_Departments" FromRole="IdentityDepartment" ToRole="DepartmentTerm" />
-          <NavigationProperty Name="EmpInDepts" Relationship="IdentityModel.FK_EmpInDept_Departments" FromRole="IdentityDepartment" ToRole="EmpInDept" />
-        </EntityType>
         <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="Id" />
@@ -979,13 +965,13 @@
           <Property Name="LanguageId" Type="Int32" Nullable="false" />
           <Property Name="TranslationId" Type="Int32" />
           <NavigationProperty Name="Degree" Relationship="IdentityModel.FK_Employee_DegreeTypes" FromRole="Employee" ToRole="IdentityDegree" />
-          <NavigationProperty Name="Departments" Relationship="IdentityModel.FK_Departments_Employees" FromRole="Employee" ToRole="Department" />
           <NavigationProperty Name="PersonalTitle" Relationship="IdentityModel.FK_Employee_PersonalTitles" FromRole="Employee" ToRole="IdentityPersonalTitle" />
           <NavigationProperty Name="Program" Relationship="IdentityModel.FK_Employee_Programs" FromRole="Employee" ToRole="IdentityProgram" />
           <NavigationProperty Name="Rank" Relationship="IdentityModel.FK_Employee_RankTypes" FromRole="Employee" ToRole="IdentityRank" />
           <NavigationProperty Name="Publications" Relationship="IdentityModel.FK_Publications_Employees" FromRole="Employee" ToRole="Publication" />
           <NavigationProperty Name="Language" Relationship="IdentityModel.FK_Employees_Languages" FromRole="Employee" ToRole="Language" />
           <NavigationProperty Name="EmpInDepts" Relationship="IdentityModel.FK_EmpInDept_Employees" FromRole="Employee" ToRole="EmpInDept" />
+          <NavigationProperty Name="Departments" Relationship="IdentityModel.FK_Departments_Employees" FromRole="Employee" ToRole="Department" />
         </EntityType>
         <Association Name="FK_Employee_DegreeTypes">
           <End Type="IdentityModel.IdentityDegree" Role="IdentityDegree" Multiplicity="0..1" />
@@ -996,30 +982,6 @@
             </Principal>
             <Dependent Role="Employee">
               <PropertyRef Name="DegreeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Departments_Departments">
-          <End Type="IdentityModel.IdentityDepartment" Role="Department" Multiplicity="0..1" />
-          <End Type="IdentityModel.IdentityDepartment" Role="Department1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Department">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Department1">
-              <PropertyRef Name="ParentId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Departments_Employees">
-          <End Type="IdentityModel.Employee" Role="Employee" Multiplicity="0..1" />
-          <End Type="IdentityModel.IdentityDepartment" Role="Department" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Employee">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Department">
-              <PropertyRef Name="ManagerId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1067,21 +1029,9 @@
           <Property Name="LanguageId" Type="Int32" Nullable="false" />
           <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="DepartmentId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Department" Relationship="IdentityModel.FK_DepartmentTerms_Departments" FromRole="DepartmentTerm" ToRole="IdentityDepartment" />
           <NavigationProperty Name="Language" Relationship="IdentityModel.FK_DepartmentTerms_Languages" FromRole="IdentityDepartmentTerm" ToRole="Language" />
+          <NavigationProperty Name="Department" Relationship="IdentityModel.FK_DepartmentTerms_Departments" FromRole="IdentityDepartmentTerm" ToRole="Department" />
         </EntityType>
-        <Association Name="FK_DepartmentTerms_Departments">
-          <End Type="IdentityModel.IdentityDepartment" Role="IdentityDepartment" Multiplicity="1" />
-          <End Type="IdentityModel.IdentityDepartmentTerm" Role="DepartmentTerm" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="IdentityDepartment">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="DepartmentTerm">
-              <PropertyRef Name="DepartmentId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Publication">
           <Key>
             <PropertyRef Name="Id" />
@@ -1266,23 +1216,11 @@
           <Property Name="OccupationId" Type="Int32" Nullable="false" />
           <Property Name="EmployeeTypeId" Type="Int32" Nullable="false" />
           <Property Name="Ordinal" Type="Int32" />
-          <NavigationProperty Name="Department" Relationship="IdentityModel.FK_EmpInDept_Departments" FromRole="EmpInDept" ToRole="IdentityDepartment" />
           <NavigationProperty Name="Employee" Relationship="IdentityModel.FK_EmpInDept_Employees" FromRole="EmpInDept" ToRole="Employee" />
           <NavigationProperty Name="EmployeeType" Relationship="IdentityModel.FK_EmpInDept_EmployeeTypes" FromRole="EmpInDept" ToRole="EmployeeType" />
           <NavigationProperty Name="Occupation" Relationship="IdentityModel.FK_EmpInDept_Positions" FromRole="EmpInDept" ToRole="Occupation" />
+          <NavigationProperty Name="Department" Relationship="IdentityModel.FK_EmpInDept_Departments" FromRole="EmpInDept" ToRole="Department" />
         </EntityType>
-        <Association Name="FK_EmpInDept_Departments">
-          <End Type="IdentityModel.IdentityDepartment" Role="IdentityDepartment" Multiplicity="1" />
-          <End Type="IdentityModel.EmpInDept" Role="EmpInDept" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="IdentityDepartment">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="EmpInDept">
-              <PropertyRef Name="DeptId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_EmpInDept_Employees">
           <End Type="IdentityModel.Employee" Role="Employee" Multiplicity="1" />
           <End Type="IdentityModel.EmpInDept" Role="EmpInDept" Multiplicity="*" />
@@ -1316,6 +1254,70 @@
             </Principal>
             <Dependent Role="EmpInDept">
               <PropertyRef Name="OccupationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="IdentityDepartment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenantId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ManagerId" Type="Int32" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="Ordinal" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Departments1" Relationship="IdentityModel.FK_Departments_Departments" FromRole="Department" ToRole="Department1" />
+          <NavigationProperty Name="Department1" Relationship="IdentityModel.FK_Departments_Departments" FromRole="Department1" ToRole="Department" />
+          <NavigationProperty Name="Employee" Relationship="IdentityModel.FK_Departments_Employees" FromRole="Department" ToRole="Employee" />
+          <NavigationProperty Name="DepartmentTerms" Relationship="IdentityModel.FK_DepartmentTerms_Departments" FromRole="Department" ToRole="IdentityDepartmentTerm" />
+          <NavigationProperty Name="EmpInDepts" Relationship="IdentityModel.FK_EmpInDept_Departments" FromRole="Department" ToRole="EmpInDept" />
+        </EntityType>
+        <Association Name="FK_Departments_Departments">
+          <End Type="IdentityModel.IdentityDepartment" Role="Department" Multiplicity="0..1" />
+          <End Type="IdentityModel.IdentityDepartment" Role="Department1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Department1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Departments_Employees">
+          <End Type="IdentityModel.Employee" Role="Employee" Multiplicity="0..1" />
+          <End Type="IdentityModel.IdentityDepartment" Role="Department" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Department">
+              <PropertyRef Name="ManagerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DepartmentTerms_Departments">
+          <End Type="IdentityModel.IdentityDepartment" Role="Department" Multiplicity="1" />
+          <End Type="IdentityModel.IdentityDepartmentTerm" Role="IdentityDepartmentTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="IdentityDepartmentTerm">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmpInDept_Departments">
+          <End Type="IdentityModel.IdentityDepartment" Role="Department" Multiplicity="1" />
+          <End Type="IdentityModel.EmpInDept" Role="EmpInDept" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmpInDept">
+              <PropertyRef Name="DeptId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1425,17 +1427,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="IdentityDepartments">
-            <EntityTypeMapping TypeName="IdentityModel.IdentityDepartment">
-              <MappingFragment StoreEntitySet="Departments">
-                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
-                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
-                <ScalarProperty Name="ManagerId" ColumnName="ManagerId" />
-                <ScalarProperty Name="Code" ColumnName="Code" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Employees">
             <EntityTypeMapping TypeName="IdentityModel.Employee">
               <MappingFragment StoreEntitySet="Employees">
@@ -1532,6 +1523,18 @@
                 <ScalarProperty Name="OccupationId" ColumnName="OccupationId" />
                 <ScalarProperty Name="DeptId" ColumnName="DeptId" />
                 <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IdentityDepartments">
+            <EntityTypeMapping TypeName="IdentityModel.IdentityDepartment">
+              <MappingFragment StoreEntitySet="Departments">
+                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="ManagerId" ColumnName="ManagerId" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="TenantId" ColumnName="TenantId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

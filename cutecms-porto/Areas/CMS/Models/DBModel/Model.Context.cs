@@ -18,7 +18,6 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
         public CMSEntities()
             : base("name=CMSEntities")
         {
-            Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -39,7 +38,6 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
         public virtual DbSet<ImageTag> ImageTags { get; set; }
         public virtual DbSet<ImageFile> ImageFiles { get; set; }
         public virtual DbSet<ImageFileTerm> ImageFileTerms { get; set; }
-        public virtual DbSet<CMSDepartment> CMSDepartments { get; set; }
         public virtual DbSet<CMSDepartmentTerm> CMSDepartmentTerms { get; set; }
         public virtual DbSet<MenuItem> MenuItems { get; set; }
         public virtual DbSet<Content> Contents { get; set; }
@@ -51,5 +49,6 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
         public virtual DbSet<CMSLanguage> CMSLanguages { get; set; }
         public virtual DbSet<ContentList> ContentLists { get; set; }
         public virtual DbSet<ListItem> ListItems { get; set; }
+        public virtual DbSet<CMSDepartment> CMSDepartments { get; set; }
     }
 }

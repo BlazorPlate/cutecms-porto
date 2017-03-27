@@ -148,7 +148,7 @@ namespace cutecms_porto.Helpers
             {
                 departments = (from p in IdentityDb.IdentityDepartments
                                join c in IdentityDb.IdentityDepartmentTerms on p.Id equals c.DepartmentId
-                               where c != null
+                               where c != null && p.TenantId.Equals(Tenant.TenantId)
                                orderby p.Ordinal
                                select c).ToList();
             }
@@ -156,7 +156,7 @@ namespace cutecms_porto.Helpers
             {
                 departments = (from p in IdentityDb.IdentityDepartments
                                join c in IdentityDb.IdentityDepartmentTerms on p.Id equals c.DepartmentId
-                               where c != null && c.LanguageId == languageId
+                               where c != null && c.LanguageId == languageId && p.TenantId.Equals(Tenant.TenantId)
                                orderby p.Ordinal
                                select c).ToList();
             }
@@ -169,7 +169,7 @@ namespace cutecms_porto.Helpers
             var departments = (from p in rmsDb.RMSDepartments
                                join c in rmsDb.RMSDepartmentTerms on p.Id equals c.DepartmentId
                                join v in rmsDb.Vacancies.Where(v => v.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)) on p.Id equals v.DeptId
-                               where c != null && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)
+                               where c != null && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.TenantId.Equals(Tenant.TenantId)
                                orderby p.Ordinal
                                select p);
             return departments;
@@ -178,7 +178,7 @@ namespace cutecms_porto.Helpers
         {
             var departments = (from p in IdentityDb.IdentityDepartments
                                join c in IdentityDb.IdentityDepartmentTerms on p.Id equals c.DepartmentId
-                               where c != null && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)
+                               where c != null && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.TenantId.Equals(Tenant.TenantId)
                                orderby p.Ordinal
                                select c).Include("Language");
             return departments;
@@ -225,7 +225,7 @@ namespace cutecms_porto.Helpers
         public static List<object> GetDepartmentTree(string cultureName)
         {
             DepartmentsList.Clear();
-            foreach (var item in IdentityDb.IdentityDepartments.Where(d => d.ParentId == null))
+            foreach (var item in IdentityDb.IdentityDepartments.Where(d => d.ParentId == null && d.TenantId.Equals(Tenant.TenantId)))
             {
                 foreach (var nestedItem in TreeHelper.Traversal(item, i => i.Departments1))
                 {

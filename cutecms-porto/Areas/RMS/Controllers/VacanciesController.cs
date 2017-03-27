@@ -169,7 +169,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                 vacancy.StatusId = vacanyWithDR.StatusId;
                 int vacancyCounter = db.Vacancies.Where(v => v.TenantId.Trim().Equals(Tenant.TenantId) && v.DeptId == vacancy.DeptId).Count();
                 vacancyCounter++;
-                string deptCode = db.RMSDepartments.Find(vacancy.DeptId).Code.Trim();
+                string deptCode = db.RMSDepartments.Where(d => d.TenantId.Equals(Tenant.TenantId) && d.Id == (vacancy.DeptId)).FirstOrDefault().Code.Trim();
                 string vacancyLanguage = db.RMSLanguages.Find(vacancy.LanguageId).CultureName.Substring(0, 2).ToUpper().Trim();
                 string programCode = db.RMSPrograms.Find(vacancy.ProgramId).Code.Trim();
                 string timeStamp = DateTime.UtcNow.ToString("ddMMyyyy", CultureInfo.InvariantCulture).Trim();
@@ -273,7 +273,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                 vacancy.StatusId = vacanyWithDR.StatusId;
                 string vacancyCounter = vacancy.Code.Substring(0, vacancy.Code.IndexOf("-"));
                 string vacancyLanguage = db.RMSLanguages.Find(vacancy.LanguageId).CultureName.Substring(0, 2).ToUpper().Trim();
-                string deptCode = db.RMSDepartments.Find(vacancy.DeptId).Code.Trim();
+                string deptCode = db.RMSDepartments.Where(d => d.TenantId.Equals(Tenant.TenantId) && d.Id == (vacancy.DeptId)).FirstOrDefault().Code.Trim();
                 string programCode = db.RMSPrograms.Find(vacancy.ProgramId).Code.Trim();
                 string timeStamp = DateTime.UtcNow.ToString("ddMMyyyy", CultureInfo.InvariantCulture).Trim();
                 vacancy.Code = (vacancyCounter + "-" + vacancyLanguage + "-" + deptCode + "-" + programCode + "-" + timeStamp).ToUpper();
@@ -452,7 +452,9 @@ namespace cutecms_porto.Areas.RMS.Controllers
         }
         public void ReGenerateCodes()
         {
-            var departments = (from v in db.Vacancies join d in db.RMSDepartments on v.DeptId equals d.Id select d).Distinct();
+            var departments = (from v in db.Vacancies join d in db.RMSDepartments on v.DeptId equals d.Id
+                               where d.TenantId.Equals(Tenant.TenantId)
+                               select d).Distinct();
             foreach (var dept in departments)
             {
                 int vacancyCounter = 0;
@@ -460,7 +462,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                 foreach (var vacancy in vacanciesInDept)
                 {
                     vacancyCounter++;
-                    string deptCode = db.RMSDepartments.Find(vacancy.DeptId).Code;
+                    string deptCode = db.RMSDepartments.Where(d => d.TenantId.Equals(Tenant.TenantId) && d.Id == (vacancy.DeptId)).FirstOrDefault().Code.Trim();
                     string vacancyLanguage = db.RMSLanguages.Find(vacancy.LanguageId).CultureName.Substring(0, 2).ToUpper().Trim();
                     string programCode = db.RMSPrograms.Find(vacancy.ProgramId).Code.Trim();
                     string timeStamp = DateTime.UtcNow.ToString("ddMMyyyy", CultureInfo.InvariantCulture).Trim();

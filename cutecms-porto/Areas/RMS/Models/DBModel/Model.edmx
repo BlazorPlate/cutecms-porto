@@ -52,6 +52,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenantId" Type="nvarchar" MaxLength="50" />
           <Property Name="Code" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="ManagerId" Type="int" />
           <Property Name="ParentId" Type="int" />
@@ -735,16 +736,7 @@
             <End Role="Status" EntitySet="Statuses" />
             <End Role="StatusTerm" EntitySet="RMSStatusTerms" />
           </AssociationSet>
-          <EntitySet Name="RMSDepartments" EntityType="RMSDBModel.RMSDepartment" />
-          <AssociationSet Name="FK_Departments_Departments" Association="RMSDBModel.FK_Departments_Departments">
-            <End Role="Department" EntitySet="RMSDepartments" />
-            <End Role="Department1" EntitySet="RMSDepartments" />
-          </AssociationSet>
           <EntitySet Name="RMSDepartmentTerms" EntityType="RMSDBModel.RMSDepartmentTerm" />
-          <AssociationSet Name="FK_DepartmentTerms_Departments" Association="RMSDBModel.FK_DepartmentTerms_Departments">
-            <End Role="RMSDepartment" EntitySet="RMSDepartments" />
-            <End Role="DepartmentTerm" EntitySet="RMSDepartmentTerms" />
-          </AssociationSet>
           <EntitySet Name="JobTypes" EntityType="RMSDBModel.JobType" />
           <EntitySet Name="JobTypeTerms" EntityType="RMSDBModel.JobTypeTerm" />
           <AssociationSet Name="FK_JobTypeTerms_JobTypes" Association="RMSDBModel.FK_JobTypeTerms_JobTypes">
@@ -800,10 +792,6 @@
             <End Role="RMSStatusTerm" EntitySet="RMSStatusTerms" />
           </AssociationSet>
           <EntitySet Name="Vacancies" EntityType="RMSDBModel.Vacancy" />
-          <AssociationSet Name="FK_Vacancies_Departments" Association="RMSDBModel.FK_Vacancies_Departments">
-            <End Role="RMSDepartment" EntitySet="RMSDepartments" />
-            <End Role="Vacancy" EntitySet="Vacancies" />
-          </AssociationSet>
           <AssociationSet Name="FK_Vacancies_JobTypes" Association="RMSDBModel.FK_Vacancies_JobTypes">
             <End Role="JobType" EntitySet="JobTypes" />
             <End Role="Vacancy" EntitySet="Vacancies" />
@@ -831,6 +819,19 @@
           <AssociationSet Name="FK_VacancyRanks_Vacancies" Association="RMSDBModel.FK_VacancyRanks_Vacancies">
             <End Role="Vacancy" EntitySet="Vacancies" />
             <End Role="VacancyRank" EntitySet="VacancyRanks" />
+          </AssociationSet>
+          <EntitySet Name="RMSDepartments" EntityType="RMSDBModel.RMSDepartment" />
+          <AssociationSet Name="FK_Departments_Departments" Association="RMSDBModel.FK_Departments_Departments">
+            <End Role="Department" EntitySet="RMSDepartments" />
+            <End Role="Department1" EntitySet="RMSDepartments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DepartmentTerms_Departments" Association="RMSDBModel.FK_DepartmentTerms_Departments">
+            <End Role="Department" EntitySet="RMSDepartments" />
+            <End Role="RMSDepartmentTerm" EntitySet="RMSDepartmentTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vacancies_Departments" Association="RMSDBModel.FK_Vacancies_Departments">
+            <End Role="Department" EntitySet="RMSDepartments" />
+            <End Role="Vacancy" EntitySet="Vacancies" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="Attachment">
@@ -1035,32 +1036,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="RMSDepartment">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Code" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ManagerId" Type="Int32" />
-          <Property Name="ParentId" Type="Int32" />
-          <Property Name="Ordinal" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Departments1" Relationship="RMSDBModel.FK_Departments_Departments" FromRole="Department" ToRole="Department1" />
-          <NavigationProperty Name="Department1" Relationship="RMSDBModel.FK_Departments_Departments" FromRole="Department1" ToRole="Department" />
-          <NavigationProperty Name="DepartmentTerms" Relationship="RMSDBModel.FK_DepartmentTerms_Departments" FromRole="RMSDepartment" ToRole="DepartmentTerm" />
-          <NavigationProperty Name="Vacancies" Relationship="RMSDBModel.FK_Vacancies_Departments" FromRole="RMSDepartment" ToRole="Vacancy" />
-        </EntityType>
-        <Association Name="FK_Departments_Departments">
-          <End Type="RMSDBModel.RMSDepartment" Role="Department" Multiplicity="0..1" />
-          <End Type="RMSDBModel.RMSDepartment" Role="Department1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Department">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Department1">
-              <PropertyRef Name="ParentId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="RMSDepartmentTerm">
           <Key>
             <PropertyRef Name="Id" />
@@ -1069,21 +1044,9 @@
           <Property Name="LanguageId" Type="Int32" Nullable="false" />
           <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="DepartmentId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Department" Relationship="RMSDBModel.FK_DepartmentTerms_Departments" FromRole="DepartmentTerm" ToRole="RMSDepartment" />
           <NavigationProperty Name="Language" Relationship="RMSDBModel.FK_DepartmentTerms_Languages" FromRole="RMSDepartmentTerm" ToRole="Language" />
+          <NavigationProperty Name="Department" Relationship="RMSDBModel.FK_DepartmentTerms_Departments" FromRole="RMSDepartmentTerm" ToRole="Department" />
         </EntityType>
-        <Association Name="FK_DepartmentTerms_Departments">
-          <End Type="RMSDBModel.RMSDepartment" Role="RMSDepartment" Multiplicity="1" />
-          <End Type="RMSDBModel.RMSDepartmentTerm" Role="DepartmentTerm" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="RMSDepartment">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="DepartmentTerm">
-              <PropertyRef Name="DepartmentId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="JobType">
           <Key>
             <PropertyRef Name="Id" />
@@ -1337,7 +1300,6 @@
           <Property Name="IsTranslated" Type="Boolean" Nullable="false" />
           <Property Name="TranslationId" Type="Int32" />
           <Property Name="StatusId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Department" Relationship="RMSDBModel.FK_Vacancies_Departments" FromRole="Vacancy" ToRole="RMSDepartment" />
           <NavigationProperty Name="JobType" Relationship="RMSDBModel.FK_Vacancies_JobTypes" FromRole="Vacancy" ToRole="JobType" />
           <NavigationProperty Name="Language" Relationship="RMSDBModel.FK_Vacancies_Languages" FromRole="Vacancy" ToRole="RMSLanguage" />
           <NavigationProperty Name="Program" Relationship="RMSDBModel.FK_Vacancies_Programs" FromRole="Vacancy" ToRole="RMSProgram" />
@@ -1346,19 +1308,8 @@
           <NavigationProperty Name="VacancyDegrees" Relationship="RMSDBModel.FK_VacancyDegrees_Vacancies" FromRole="Vacancy" ToRole="VacancyDegree" />
           <NavigationProperty Name="VacancyRanks" Relationship="RMSDBModel.FK_VacancyRanks_Vacancies" FromRole="Vacancy" ToRole="VacancyRank" />
           <Property Name="TenantId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Department" Relationship="RMSDBModel.FK_Vacancies_Departments" FromRole="Vacancy" ToRole="Department" />
         </EntityType>
-        <Association Name="FK_Vacancies_Departments">
-          <End Type="RMSDBModel.RMSDepartment" Role="RMSDepartment" Multiplicity="1" />
-          <End Type="RMSDBModel.Vacancy" Role="Vacancy" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="RMSDepartment">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Vacancy">
-              <PropertyRef Name="DeptId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Vacancies_JobTypes">
           <End Type="RMSDBModel.JobType" Role="JobType" Multiplicity="1" />
           <End Type="RMSDBModel.Vacancy" Role="Vacancy" Multiplicity="*" />
@@ -1440,6 +1391,57 @@
             </Principal>
             <Dependent Role="VacancyRank">
               <PropertyRef Name="VacancyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="RMSDepartment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenantId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ManagerId" Type="Int32" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="Ordinal" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Departments1" Relationship="RMSDBModel.FK_Departments_Departments" FromRole="Department" ToRole="Department1" />
+          <NavigationProperty Name="Department1" Relationship="RMSDBModel.FK_Departments_Departments" FromRole="Department1" ToRole="Department" />
+          <NavigationProperty Name="DepartmentTerms" Relationship="RMSDBModel.FK_DepartmentTerms_Departments" FromRole="Department" ToRole="RMSDepartmentTerm" />
+          <NavigationProperty Name="Vacancies" Relationship="RMSDBModel.FK_Vacancies_Departments" FromRole="Department" ToRole="Vacancy" />
+        </EntityType>
+        <Association Name="FK_Departments_Departments">
+          <End Type="RMSDBModel.RMSDepartment" Role="Department" Multiplicity="0..1" />
+          <End Type="RMSDBModel.RMSDepartment" Role="Department1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Department1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DepartmentTerms_Departments">
+          <End Type="RMSDBModel.RMSDepartment" Role="Department" Multiplicity="1" />
+          <End Type="RMSDBModel.RMSDepartmentTerm" Role="RMSDepartmentTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RMSDepartmentTerm">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vacancies_Departments">
+          <End Type="RMSDBModel.RMSDepartment" Role="Department" Multiplicity="1" />
+          <End Type="RMSDBModel.Vacancy" Role="Vacancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vacancy">
+              <PropertyRef Name="DeptId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1568,17 +1570,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="RMSDepartments">
-            <EntityTypeMapping TypeName="RMSDBModel.RMSDepartment">
-              <MappingFragment StoreEntitySet="Departments">
-                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
-                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
-                <ScalarProperty Name="ManagerId" ColumnName="ManagerId" />
-                <ScalarProperty Name="Code" ColumnName="Code" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="RMSDepartmentTerms">
             <EntityTypeMapping TypeName="RMSDBModel.RMSDepartmentTerm">
               <MappingFragment StoreEntitySet="DepartmentTerms">
@@ -1684,6 +1675,18 @@
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RMSDepartments">
+            <EntityTypeMapping TypeName="RMSDBModel.RMSDepartment">
+              <MappingFragment StoreEntitySet="Departments">
+                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="ManagerId" ColumnName="ManagerId" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="TenantId" ColumnName="TenantId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -146,7 +146,7 @@ WriteLiteral(">\r\n");
             #line 28 "..\..\Views\Staff\Search.cshtml"
                      foreach (var item in Model)
                     {
-                        var empInDepts = db.EmpInDepts.Where(p => p.EmpId == item.TranslationId);
+                        var empInDepts = db.EmpInDepts.Where(e => e.Department.TenantId.Equals(Tenant.TenantId) && e.EmpId == item.TranslationId);
                         string personalTitle = item.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? item.PersonalTitle.Code;
 
             
@@ -166,36 +166,36 @@ WriteLiteral(" class=\"thumb-info-wrapper\"");
 
 WriteLiteral(">\r\n                                <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1371), Tuple.Create("\"", 1428)
+WriteAttribute("href", Tuple.Create(" href=\"", 1420), Tuple.Create("\"", 1477)
             
             #line 35 "..\..\Views\Staff\Search.cshtml"
-, Tuple.Create(Tuple.Create("", 1378), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", new { id = item.Id })
+, Tuple.Create(Tuple.Create("", 1427), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", new { id = item.Id })
             
             #line default
             #line hidden
-, 1378), false)
+, 1427), false)
 );
 
 WriteLiteral(">\r\n                                    <img");
 
-WriteAttribute("alt", Tuple.Create(" alt=\"", 1472), Tuple.Create("\"", 1501)
+WriteAttribute("alt", Tuple.Create(" alt=\"", 1521), Tuple.Create("\"", 1550)
             
             #line 36 "..\..\Views\Staff\Search.cshtml"
-, Tuple.Create(Tuple.Create("", 1478), Tuple.Create<System.Object, System.Int32>(item.PersonalPhotoName
+, Tuple.Create(Tuple.Create("", 1527), Tuple.Create<System.Object, System.Int32>(item.PersonalPhotoName
             
             #line default
             #line hidden
-, 1478), false)
+, 1527), false)
 );
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1502), Tuple.Create("\"", 1641)
+WriteAttribute("src", Tuple.Create(" src=\"", 1551), Tuple.Create("\"", 1690)
             
             #line 36 "..\..\Views\Staff\Search.cshtml"
-, Tuple.Create(Tuple.Create("", 1508), Tuple.Create<System.Object, System.Int32>(!File.Exists(Server.MapPath(item.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : item.PersonalPhotoPath
+, Tuple.Create(Tuple.Create("", 1557), Tuple.Create<System.Object, System.Int32>(!File.Exists(Server.MapPath(item.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : item.PersonalPhotoPath
             
             #line default
             #line hidden
-, 1508), false)
+, 1557), false)
 );
 
 WriteLiteral(">\r\n                                    <span");
@@ -297,14 +297,14 @@ WriteLiteral("\r\n                                    <a");
 
 WriteLiteral(" class=\"btn btn-xs\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3026), Tuple.Create("\"", 3083)
+WriteAttribute("href", Tuple.Create(" href=\"", 3075), Tuple.Create("\"", 3132)
             
             #line 51 "..\..\Views\Staff\Search.cshtml"
-, Tuple.Create(Tuple.Create("", 3033), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", new { id = item.Id })
+, Tuple.Create(Tuple.Create("", 3082), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", new { id = item.Id })
             
             #line default
             #line hidden
-, 3033), false)
+, 3082), false)
 );
 
 WriteLiteral(">");
@@ -341,14 +341,14 @@ WriteLiteral("                                        <a");
 
 WriteLiteral(" target=\"_blank\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3424), Tuple.Create("\"", 3448)
+WriteAttribute("href", Tuple.Create(" href=\"", 3473), Tuple.Create("\"", 3497)
             
             #line 56 "..\..\Views\Staff\Search.cshtml"
-, Tuple.Create(Tuple.Create("", 3431), Tuple.Create<System.Object, System.Int32>(item.FacebookUrl
+, Tuple.Create(Tuple.Create("", 3480), Tuple.Create<System.Object, System.Int32>(item.FacebookUrl
             
             #line default
             #line hidden
-, 3431), false)
+, 3480), false)
 );
 
 WriteLiteral("><i");
@@ -384,14 +384,14 @@ WriteLiteral("                                        <a");
 
 WriteLiteral(" target=\"_blank\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3735), Tuple.Create("\"", 3758)
+WriteAttribute("href", Tuple.Create(" href=\"", 3784), Tuple.Create("\"", 3807)
             
             #line 61 "..\..\Views\Staff\Search.cshtml"
-, Tuple.Create(Tuple.Create("", 3742), Tuple.Create<System.Object, System.Int32>(item.TwitterUrl
+, Tuple.Create(Tuple.Create("", 3791), Tuple.Create<System.Object, System.Int32>(item.TwitterUrl
             
             #line default
             #line hidden
-, 3742), false)
+, 3791), false)
 );
 
 WriteLiteral("><i");
@@ -421,14 +421,14 @@ WriteLiteral("                                        <a");
 
 WriteLiteral(" target=\"_blank\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4043), Tuple.Create("\"", 4067)
+WriteAttribute("href", Tuple.Create(" href=\"", 4092), Tuple.Create("\"", 4116)
             
             #line 65 "..\..\Views\Staff\Search.cshtml"
-, Tuple.Create(Tuple.Create("", 4050), Tuple.Create<System.Object, System.Int32>(item.LinkedInUrl
+, Tuple.Create(Tuple.Create("", 4099), Tuple.Create<System.Object, System.Int32>(item.LinkedInUrl
             
             #line default
             #line hidden
-, 4050), false)
+, 4099), false)
 );
 
 WriteLiteral("><i");
@@ -458,14 +458,14 @@ WriteLiteral("                                        <a");
 
 WriteLiteral(" target=\"_blank\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4356), Tuple.Create("\"", 4382)
+WriteAttribute("href", Tuple.Create(" href=\"", 4405), Tuple.Create("\"", 4431)
             
             #line 69 "..\..\Views\Staff\Search.cshtml"
-, Tuple.Create(Tuple.Create("", 4363), Tuple.Create<System.Object, System.Int32>(item.GooglePlusUrl
+, Tuple.Create(Tuple.Create("", 4412), Tuple.Create<System.Object, System.Int32>(item.GooglePlusUrl
             
             #line default
             #line hidden
-, 4363), false)
+, 4412), false)
 );
 
 WriteLiteral("><i");
@@ -495,14 +495,14 @@ WriteLiteral("                                        <a");
 
 WriteLiteral(" target=\"_blank\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4674), Tuple.Create("\"", 4697)
+WriteAttribute("href", Tuple.Create(" href=\"", 4723), Tuple.Create("\"", 4746)
             
             #line 73 "..\..\Views\Staff\Search.cshtml"
-, Tuple.Create(Tuple.Create("", 4681), Tuple.Create<System.Object, System.Int32>(item.YouTubeUrl
+, Tuple.Create(Tuple.Create("", 4730), Tuple.Create<System.Object, System.Int32>(item.YouTubeUrl
             
             #line default
             #line hidden
-, 4681), false)
+, 4730), false)
 );
 
 WriteLiteral("><i");
@@ -583,14 +583,14 @@ WriteLiteral("        <div>\r\n            <a");
 
 WriteLiteral(" class=\"text-blue\"");
 
-WriteAttribute("href", Tuple.Create(" href=", 5409), Tuple.Create("", 5435)
+WriteAttribute("href", Tuple.Create(" href=", 5458), Tuple.Create("", 5484)
             
             #line 93 "..\..\Views\Staff\Search.cshtml"
-, Tuple.Create(Tuple.Create("", 5415), Tuple.Create<System.Object, System.Int32>(Url.Action("Index")
+, Tuple.Create(Tuple.Create("", 5464), Tuple.Create<System.Object, System.Int32>(Url.Action("Index")
             
             #line default
             #line hidden
-, 5415), false)
+, 5464), false)
 );
 
 WriteLiteral("><i");

@@ -122,15 +122,12 @@ namespace cutecms_porto.Controllers
             ViewBag.ReturnUrl = returnUrl;
             return View(imageFiles);
         }
-        [OutputCache(Duration = 9000, VaryByCustom = "culture")]
-
+        [OutputCache(Duration = 9000, VaryByCustom = "culture;host")]
         public PartialViewResult GetTopMenu()
         {
             return PartialView("_TopMenu");
         }
-
-
-        [OutputCache(Duration = 9000, VaryByCustom = "culture")]
+        [OutputCache(Duration = 9000, VaryByCustom = "culture;host")]
         [ChildActionOnly]
         public PartialViewResult GetHeaderMenu()
         {

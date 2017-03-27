@@ -34,7 +34,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
             }
             var empInDepts = (from p in db.EmpInDepts.Include(e => e.Department).Include(e => e.Occupation)
                               join c in db.Employees on p.EmpId equals c.TranslationId
-                              where p.DeptId == id && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)
+                              where p.Department.TenantId.Equals(Tenant.TenantId) && p.DeptId == id && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)
                               orderby p.Ordinal
                               orderby p.DeptId
                               select p);
@@ -49,7 +49,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            EmpInDept empInDept = db.EmpInDepts.Find(id);
+            EmpInDept empInDept = db.EmpInDepts.Where(e => e.Department.TenantId.Equals(Tenant.TenantId) && e.Id == id).FirstOrDefault();
             if (empInDept == null)
             {
                 throw new HttpException(404, "Page Not Found");
@@ -101,7 +101,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            EmpInDept empInDept = db.EmpInDepts.Find(id);
+            EmpInDept empInDept = db.EmpInDepts.Where(e => e.Department.TenantId.Equals(Tenant.TenantId) && e.Id == id).FirstOrDefault();
             if (empInDept == null)
             {
                 throw new HttpException(404, "Page Not Found");
@@ -139,7 +139,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            EmpInDept empInDept = db.EmpInDepts.Find(id);
+            EmpInDept empInDept = db.EmpInDepts.Where(e => e.Department.TenantId.Equals(Tenant.TenantId) && e.Id == id).FirstOrDefault();
             if (empInDept == null)
             {
                 throw new HttpException(404, "Page Not Found");
@@ -155,7 +155,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
             EmpInDept empInDept = db.EmpInDepts.Find(id);
             db.EmpInDepts.Remove(empInDept);
             db.SaveChanges();
-            return RedirectToAction("Index", new { id = empInDept.DeptId});
+            return RedirectToAction("Index", new { id = empInDept.DeptId });
         }
         protected override void Dispose(bool disposing)
         {

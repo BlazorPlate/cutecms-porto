@@ -37,6 +37,9 @@ namespace cutecms_porto.Areas.Config.Models.DBModel
         [Display(Name = "Email", ResourceType = typeof(Resources.Resources))]
         public string Email { get; set; }
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
+        [Display(Name = "Ordinal", ResourceType = typeof(Resources.Resources))]
+        public int Ordinal { get; set; }
+        [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
         [Display(Name = "Organization", ResourceType = typeof(Resources.Resources))]
         public int OrganizationId { get; set; }
 

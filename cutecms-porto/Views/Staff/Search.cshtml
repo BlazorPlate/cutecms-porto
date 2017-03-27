@@ -27,7 +27,7 @@
                 <ul class="team-list sort-destination">
                     @foreach (var item in Model)
                     {
-                        var empInDepts = db.EmpInDepts.Where(p => p.EmpId == item.TranslationId);
+                        var empInDepts = db.EmpInDepts.Where(e => e.Department.TenantId.Equals(Tenant.TenantId) && e.EmpId == item.TranslationId);
                         string personalTitle = item.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? item.PersonalTitle.Code;
                     <li class="col-md-3 col-sm-6 isotope-item">
                         <span class="thumb-info thumb-info-hide-wrapper-bg mb-xlg">

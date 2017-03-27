@@ -18,7 +18,6 @@ namespace cutecms_porto.Areas.Config.Models.DBModel
         public ConfigEntities()
             : base("name=ConfigEntities")
         {
-            Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -29,7 +28,6 @@ namespace cutecms_porto.Areas.Config.Models.DBModel
         public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<PhoneNumber> PhoneNumbers { get; set; }
         public virtual DbSet<Statistic> Statistics { get; set; }
-        public virtual DbSet<ConfigDepartment> ConfigDepartments { get; set; }
         public virtual DbSet<ConfigDepartmentTerm> ConfigDepartmentTerms { get; set; }
         public virtual DbSet<ConfigPersonalTitle> ConfigPersonalTitles { get; set; }
         public virtual DbSet<ConfigPersonalTitleTerm> ConfigPersonalTitleTerms { get; set; }
@@ -42,5 +40,6 @@ namespace cutecms_porto.Areas.Config.Models.DBModel
         public virtual DbSet<ConfigStatusTerm> ConfigStatusTerms { get; set; }
         public virtual DbSet<SocialNetwork> SocialNetworks { get; set; }
         public virtual DbSet<Organization> Organizations { get; set; }
+        public virtual DbSet<ConfigDepartment> ConfigDepartments { get; set; }
     }
 }

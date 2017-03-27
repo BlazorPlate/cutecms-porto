@@ -51,21 +51,17 @@ namespace ASP
         }
         public override void Execute()
         {
-WriteLiteral("    ");
-
-WriteLiteral("    ");
-
             
             #line 4 "..\..\Views\Staff\Departments.cshtml"
-      
-        ViewBag.Title = @Resources.Resources.Departments;
-        IdentityEntities db = new IdentityEntities();
-        var empInDepts = db.EmpInDepts.Where(e => e.Employee.TranslationId == Model.TranslationId);
-    
+  
+    ViewBag.Title = Resources.Resources.Departments;
+    IdentityEntities db = new IdentityEntities();
+    var empInDepts = db.EmpInDepts.Where(e => e.Department.TenantId.Equals(Tenant.TenantId) && e.Employee.TranslationId == Model.TranslationId);
+
             
             #line default
             #line hidden
-WriteLiteral("\r\n    <!-- RIGHT -->\r\n    <form");
+WriteLiteral("\r\n<!-- RIGHT -->\r\n<form");
 
 WriteLiteral(" role=\"form\"");
 
@@ -73,102 +69,102 @@ WriteLiteral(" action=\"#\"");
 
 WriteLiteral(" method=\"post\"");
 
-WriteLiteral(">\r\n        <table");
+WriteLiteral(">\r\n    <table");
 
 WriteLiteral(" class=\"table\"");
 
-WriteLiteral(">\r\n            <tr>\r\n                <th>\r\n");
+WriteLiteral(">\r\n        <tr>\r\n            <th>\r\n");
 
-WriteLiteral("                    ");
+WriteLiteral("                ");
 
             
             #line 14 "..\..\Views\Staff\Departments.cshtml"
-               Write(Resources.Resources.Department);
+           Write(Resources.Resources.Department);
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n                </th>\r\n                <th>\r\n");
+WriteLiteral("\r\n            </th>\r\n            <th>\r\n");
 
-WriteLiteral("                    ");
+WriteLiteral("                ");
 
             
             #line 17 "..\..\Views\Staff\Departments.cshtml"
-               Write(Resources.Resources.Occupation);
+           Write(Resources.Resources.Occupation);
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n                </th>\r\n                <th>\r\n");
+WriteLiteral("\r\n            </th>\r\n            <th>\r\n");
 
-WriteLiteral("                    ");
+WriteLiteral("                ");
 
             
             #line 20 "..\..\Views\Staff\Departments.cshtml"
-               Write(Resources.Resources.JobType);
+           Write(Resources.Resources.JobType);
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n                </th>\r\n                <th></th>\r\n            </tr>\r\n");
+WriteLiteral("\r\n            </th>\r\n            <th></th>\r\n        </tr>\r\n");
 
             
             #line 24 "..\..\Views\Staff\Departments.cshtml"
-            
+        
             
             #line default
             #line hidden
             
             #line 24 "..\..\Views\Staff\Departments.cshtml"
-             foreach (var item in empInDepts)
+         foreach (var item in empInDepts)
             {
 
             
             #line default
             #line hidden
-WriteLiteral("                <tr>\r\n                    <td>\r\n");
+WriteLiteral("            <tr>\r\n                <td>\r\n");
 
-WriteLiteral("                        ");
+WriteLiteral("                    ");
 
             
             #line 28 "..\..\Views\Staff\Departments.cshtml"
-                   Write(Html.DisplayFor(modelItem => item.Department.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value));
+               Write(Html.DisplayFor(modelItem => item.Department.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n                    </td>\r\n                    <td>\r\n");
+WriteLiteral("\r\n                </td>\r\n                <td>\r\n");
 
-WriteLiteral("                        ");
+WriteLiteral("                    ");
 
             
             #line 31 "..\..\Views\Staff\Departments.cshtml"
-                   Write(Html.DisplayFor(modelItem => item.Occupation.OccupationTerms.Where(o => o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value));
+               Write(Html.DisplayFor(modelItem => item.Occupation.OccupationTerms.Where(o => o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n                    </td>\r\n                    <td>\r\n");
+WriteLiteral("\r\n                </td>\r\n                <td>\r\n");
 
-WriteLiteral("                        ");
+WriteLiteral("                    ");
 
             
             #line 34 "..\..\Views\Staff\Departments.cshtml"
-                   Write(Html.DisplayFor(modelItem => item.EmployeeType.EmployeeTypeTerms.Where(e => e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value));
+               Write(Html.DisplayFor(modelItem => item.EmployeeType.EmployeeTypeTerms.Where(e => e.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n                    </td>\r\n                </tr>\r\n");
+WriteLiteral("\r\n                </td>\r\n            </tr>\r\n");
 
             
             #line 37 "..\..\Views\Staff\Departments.cshtml"
-            }
+        }
 
             
             #line default
             #line hidden
-WriteLiteral("        </table>\r\n    </form>");
+WriteLiteral("    </table>\r\n</form>");
 
         }
     }

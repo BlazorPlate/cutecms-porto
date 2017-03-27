@@ -20,16 +20,12 @@
         <AssociationConnector Association="IdentityModel.FK_OccupationTerms_Occupations" />
         <EntityTypeShape EntityType="IdentityModel.IdentityProgramTerm" Width="1.5" PointX="11" PointY="8.125" />
         <AssociationConnector Association="IdentityModel.FK_ProgramTerms_Programs" />
-        <EntityTypeShape EntityType="IdentityModel.IdentityDepartment" Width="1.5" PointX="13.25" PointY="3.25" />
         <EntityTypeShape EntityType="IdentityModel.Employee" Width="1.5" PointX="11" PointY="0.75" />
         <AssociationConnector Association="IdentityModel.FK_Employee_DegreeTypes" />
-        <AssociationConnector Association="IdentityModel.FK_Departments_Departments" />
-        <AssociationConnector Association="IdentityModel.FK_Departments_Employees" />
         <AssociationConnector Association="IdentityModel.FK_Employee_PersonalTitles" />
         <AssociationConnector Association="IdentityModel.FK_Employee_Programs" />
         <AssociationConnector Association="IdentityModel.FK_Employee_RankTypes" />
         <EntityTypeShape EntityType="IdentityModel.IdentityDepartmentTerm" Width="1.5" PointX="15.5" PointY="9" />
-        <AssociationConnector Association="IdentityModel.FK_DepartmentTerms_Departments" />
         <EntityTypeShape EntityType="IdentityModel.Publication" Width="1.5" PointX="13.25" PointY="7.5" />
         <AssociationConnector Association="IdentityModel.FK_Publications_Employees" />
         <EntityTypeShape EntityType="IdentityModel.IdentityLanguage" Width="1.5" PointX="3.75" PointY="8.75" />
@@ -45,10 +41,14 @@
         <AssociationConnector Association="IdentityModel.FK_EmployeeTypeTerms_EmployeeTypes" />
         <AssociationConnector Association="IdentityModel.FK_EmployeeTypeTerms_Languages" />
         <EntityTypeShape EntityType="IdentityModel.EmpInDept" Width="1.5" PointX="15.5" PointY="4.625" />
-        <AssociationConnector Association="IdentityModel.FK_EmpInDept_Departments" />
         <AssociationConnector Association="IdentityModel.FK_EmpInDept_Employees" />
         <AssociationConnector Association="IdentityModel.FK_EmpInDept_EmployeeTypes" />
         <AssociationConnector Association="IdentityModel.FK_EmpInDept_Positions" />
+        <EntityTypeShape EntityType="IdentityModel.IdentityDepartment" Width="1.5" PointX="13.25" PointY="3" />
+        <AssociationConnector Association="IdentityModel.FK_Departments_Departments" />
+        <AssociationConnector Association="IdentityModel.FK_Departments_Employees" />
+        <AssociationConnector Association="IdentityModel.FK_DepartmentTerms_Departments" />
+        <AssociationConnector Association="IdentityModel.FK_EmpInDept_Departments" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

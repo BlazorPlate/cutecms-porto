@@ -105,6 +105,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenantId" Type="nvarchar" MaxLength="50" />
           <Property Name="Code" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="ManagerId" Type="int" />
           <Property Name="ParentId" Type="int" />
@@ -911,16 +912,7 @@
             <End Role="ImageFile" EntitySet="ImageFiles" />
             <End Role="ImageTag" EntitySet="ImageTags" />
           </AssociationSet>
-          <EntitySet Name="CMSDepartments" EntityType="CuteCMSDBModel.CMSDepartment" />
           <EntitySet Name="CMSDepartmentTerms" EntityType="CuteCMSDBModel.CMSDepartmentTerm" />
-          <AssociationSet Name="FK_Departments_Departments" Association="CuteCMSDBModel.FK_Departments_Departments">
-            <End Role="Department" EntitySet="CMSDepartments" />
-            <End Role="Department1" EntitySet="CMSDepartments" />
-          </AssociationSet>
-          <AssociationSet Name="FK_DepartmentTerms_Departments" Association="CuteCMSDBModel.FK_DepartmentTerms_Departments">
-            <End Role="Department" EntitySet="CMSDepartments" />
-            <End Role="DepartmentTerm" EntitySet="CMSDepartmentTerms" />
-          </AssociationSet>
           <EntitySet Name="MenuItems" EntityType="CuteCMSDBModel.MenuItem" />
           <AssociationSet Name="FK_MenuItems_MenuItems1" Association="CuteCMSDBModel.FK_MenuItems_MenuItems1">
             <End Role="MenuItem" EntitySet="MenuItems" />
@@ -1030,6 +1022,15 @@
           <AssociationSet Name="FK_ListItems_ContentLists" Association="CuteCMSDBModel.FK_ListItems_ContentLists">
             <End Role="ContentList" EntitySet="ContentLists" />
             <End Role="ListItem" EntitySet="ListItems" />
+          </AssociationSet>
+          <EntitySet Name="CMSDepartments" EntityType="CuteCMSDBModel.CMSDepartment" />
+          <AssociationSet Name="FK_Departments_Departments" Association="CuteCMSDBModel.FK_Departments_Departments">
+            <End Role="Department" EntitySet="CMSDepartments" />
+            <End Role="Department1" EntitySet="CMSDepartments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DepartmentTerms_Departments" Association="CuteCMSDBModel.FK_DepartmentTerms_Departments">
+            <End Role="Department" EntitySet="CMSDepartments" />
+            <End Role="CMSDepartmentTerm" EntitySet="CMSDepartmentTerms" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="ContentType">
@@ -1267,19 +1268,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="CMSDepartment">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Code" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ManagerId" Type="Int32" />
-          <Property Name="ParentId" Type="Int32" />
-          <Property Name="Ordinal" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Departments1" Relationship="CuteCMSDBModel.FK_Departments_Departments" FromRole="Department" ToRole="Department1" />
-          <NavigationProperty Name="Department1" Relationship="CuteCMSDBModel.FK_Departments_Departments" FromRole="Department1" ToRole="Department" />
-          <NavigationProperty Name="DepartmentTerms" Relationship="CuteCMSDBModel.FK_DepartmentTerms_Departments" FromRole="Department" ToRole="DepartmentTerm" />
-        </EntityType>
         <EntityType Name="CMSDepartmentTerm">
           <Key>
             <PropertyRef Name="Id" />
@@ -1288,33 +1276,9 @@
           <Property Name="LanguageId" Type="Int32" Nullable="false" />
           <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="DepartmentId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Department" Relationship="CuteCMSDBModel.FK_DepartmentTerms_Departments" FromRole="DepartmentTerm" ToRole="Department" />
           <NavigationProperty Name="Language" Relationship="CuteCMSDBModel.FK_DepartmentTerms_Languages" FromRole="CMSDepartmentTerm" ToRole="Language" />
+          <NavigationProperty Name="Department" Relationship="CuteCMSDBModel.FK_DepartmentTerms_Departments" FromRole="CMSDepartmentTerm" ToRole="Department" />
         </EntityType>
-        <Association Name="FK_Departments_Departments">
-          <End Type="CuteCMSDBModel.CMSDepartment" Role="Department" Multiplicity="0..1" />
-          <End Type="CuteCMSDBModel.CMSDepartment" Role="Department1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Department">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Department1">
-              <PropertyRef Name="ParentId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_DepartmentTerms_Departments">
-          <End Type="CuteCMSDBModel.CMSDepartment" Role="Department" Multiplicity="1" />
-          <End Type="CuteCMSDBModel.CMSDepartmentTerm" Role="DepartmentTerm" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Department">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="DepartmentTerm">
-              <PropertyRef Name="DepartmentId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="MenuItem">
           <Key>
             <PropertyRef Name="Id" />
@@ -1797,6 +1761,44 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="CMSDepartment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenantId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ManagerId" Type="Int32" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="Ordinal" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Departments1" Relationship="CuteCMSDBModel.FK_Departments_Departments" FromRole="Department" ToRole="Department1" />
+          <NavigationProperty Name="Department1" Relationship="CuteCMSDBModel.FK_Departments_Departments" FromRole="Department1" ToRole="Department" />
+          <NavigationProperty Name="DepartmentTerms" Relationship="CuteCMSDBModel.FK_DepartmentTerms_Departments" FromRole="Department" ToRole="CMSDepartmentTerm" />
+        </EntityType>
+        <Association Name="FK_Departments_Departments">
+          <End Type="CuteCMSDBModel.CMSDepartment" Role="Department" Multiplicity="0..1" />
+          <End Type="CuteCMSDBModel.CMSDepartment" Role="Department1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Department1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DepartmentTerms_Departments">
+          <End Type="CuteCMSDBModel.CMSDepartment" Role="Department" Multiplicity="1" />
+          <End Type="CuteCMSDBModel.CMSDepartmentTerm" Role="CMSDepartmentTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CMSDepartmentTerm">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1937,17 +1939,6 @@
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Value" ColumnName="Value" />
                 <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CMSDepartments">
-            <EntityTypeMapping TypeName="CuteCMSDBModel.CMSDepartment">
-              <MappingFragment StoreEntitySet="Departments">
-                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
-                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
-                <ScalarProperty Name="ManagerId" ColumnName="ManagerId" />
-                <ScalarProperty Name="Code" ColumnName="Code" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -2113,6 +2104,18 @@
                 <ScalarProperty Name="Url" ColumnName="Url" />
                 <ScalarProperty Name="Body" ColumnName="Body" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMSDepartments">
+            <EntityTypeMapping TypeName="CuteCMSDBModel.CMSDepartment">
+              <MappingFragment StoreEntitySet="Departments">
+                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="ManagerId" ColumnName="ManagerId" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="TenantId" ColumnName="TenantId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -46,7 +46,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 employees = (from e in db.Employees
                              join ed in db.EmpInDepts on e.TranslationId equals ed.Employee.TranslationId
                              join et in db.EmployeeTypes on ed.EmployeeTypeId equals et.Id
-                             where et.Id == employeeTypeIdFilter && (e.LanguageId == languageIdFilter || languageIdFilter == null) && (e.FirstName.Trim().Contains(employeeNameFilter.Trim()) || e.MiddleName.Trim().Contains(employeeNameFilter.Trim()) || e.LastName.Trim().Contains(employeeNameFilter.Trim()) || string.IsNullOrEmpty(employeeNameFilter)) && (!string.IsNullOrEmpty(e.LoginId)) == hasAccountFilter
+                             where ed.Department.TenantId.Equals(Tenant.TenantId) && et.Id == employeeTypeIdFilter && (e.LanguageId == languageIdFilter || languageIdFilter == null) && (e.FirstName.Trim().Contains(employeeNameFilter.Trim()) || e.MiddleName.Trim().Contains(employeeNameFilter.Trim()) || e.LastName.Trim().Contains(employeeNameFilter.Trim()) || string.IsNullOrEmpty(employeeNameFilter)) && (!string.IsNullOrEmpty(e.LoginId)) == hasAccountFilter
                              select e).Distinct();
             }
             else

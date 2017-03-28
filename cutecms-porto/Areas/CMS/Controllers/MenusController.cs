@@ -71,7 +71,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            Menu menu = db.Menus.Where(m => m.TenantId.Trim().Equals(Tenant.TenantId) && m.Id == id).FirstOrDefault();
+            Menu menu = db.Menus.Where(m => (m.TenantId.Trim().Equals(Tenant.TenantId) || string.IsNullOrEmpty(m.TenantId)) && m.Id == id).FirstOrDefault();
             if (menu == null)
             {
                 throw new HttpException(404, "Page Not Found");

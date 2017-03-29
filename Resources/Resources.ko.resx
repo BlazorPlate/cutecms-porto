@@ -330,9 +330,6 @@
   <data name="RememberMe" xml:space="preserve">
     <value>나를 기억합니다</value>
   </data>
-  <data name="PhotoGallery" xml:space="preserve">
-    <value>사진 갤러리</value>
-  </data>
   <data name="Search" xml:space="preserve">
     <value>검색</value>
   </data>
@@ -623,9 +620,6 @@
   </data>
   <data name="NoArticles" xml:space="preserve">
     <value>아니 기사 있다.</value>
-  </data>
-  <data name="ChooseAlbum" xml:space="preserve">
-    <value>앨범 선택</value>
   </data>
   <data name="Vacancy" xml:space="preserve">
     <value>작업 Annoucement</value>
@@ -1176,9 +1170,6 @@
   <data name="Frontend" xml:space="preserve">
     <value>프론트 엔드</value>
   </data>
-  <data name="Gallery" xml:space="preserve">
-    <value>갤러리</value>
-  </data>
   <data name="Image" xml:space="preserve">
     <value>이미지</value>
   </data>
@@ -1251,9 +1242,6 @@
   <data name="VacancyUnableToDelete" xml:space="preserve">
     <value>Submission(s) 관련 있다 그것 때문에이 공석을 삭제할 수 없습니다.</value>
   </data>
-  <data name="ChooseGallery" xml:space="preserve">
-    <value>-선택 갤러리-</value>
-  </data>
   <data name="ChoosePersonalTitle" xml:space="preserve">
     <value>-선택 개인 제목-</value>
   </data>
@@ -1325,9 +1313,6 @@
   </data>
   <data name="ImageFiles" xml:space="preserve">
     <value>이미지 파일</value>
-  </data>
-  <data name="Galleries" xml:space="preserve">
-    <value>갤러리</value>
   </data>
   <data name="ContentLists" xml:space="preserve">
     <value>콘텐츠 목록</value>
@@ -1500,14 +1485,8 @@
   <data name="ShowAll" xml:space="preserve">
     <value>모두 보기</value>
   </data>
-  <data name="GalleryCategory" xml:space="preserve">
-    <value>갤러리 카테고리</value>
-  </data>
   <data name="ChooseCategory" xml:space="preserve">
     <value>-선택 카테고리-</value>
-  </data>
-  <data name="GalleryCategories" xml:space="preserve">
-    <value>갤러리 카테고리</value>
   </data>
   <data name="AddressLine1" xml:space="preserve">
     <value>주소 입력란 1</value>
@@ -1565,5 +1544,20 @@
   </data>
   <data name="DeleteProfile" xml:space="preserve">
     <value>내 프로필을 삭제</value>
+  </data>
+  <data name="Gallery" xml:space="preserve">
+    <value>사진 갤러리</value>
+  </data>
+  <data name="ChooseGallery" xml:space="preserve">
+    <value>-선택 사진 갤러리-</value>
+  </data>
+  <data name="Galleries" xml:space="preserve">
+    <value>사진 갤러리</value>
+  </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>카테고리</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>카테고리</value>
   </data>
 </root>

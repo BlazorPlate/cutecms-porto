@@ -67,7 +67,7 @@ namespace ASP
             #line 6 "..\..\Views\Home\Galleries.cshtml"
   
     List<string> categoryList = new List<string>();
-    ViewBag.Title = @Resources.Resources.PhotoGallery;
+    ViewBag.Title = Resources.Resources.Galleries;
     CMSEntities cmsDb = new CMSEntities();
 
             
@@ -260,18 +260,18 @@ WriteLiteral(">\r\n\r\n");
             #line hidden
 WriteLiteral("                            <li");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 2377), Tuple.Create("\"", 2442)
-, Tuple.Create(Tuple.Create("", 2385), Tuple.Create("col-md-3", 2385), true)
-, Tuple.Create(Tuple.Create(" ", 2393), Tuple.Create("col-sm-6", 2394), true)
-, Tuple.Create(Tuple.Create(" ", 2402), Tuple.Create("col-xs-12", 2403), true)
-, Tuple.Create(Tuple.Create(" ", 2412), Tuple.Create("isotope-item", 2413), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 2373), Tuple.Create("\"", 2438)
+, Tuple.Create(Tuple.Create("", 2381), Tuple.Create("col-md-3", 2381), true)
+, Tuple.Create(Tuple.Create(" ", 2389), Tuple.Create("col-sm-6", 2390), true)
+, Tuple.Create(Tuple.Create(" ", 2398), Tuple.Create("col-xs-12", 2399), true)
+, Tuple.Create(Tuple.Create(" ", 2408), Tuple.Create("isotope-item", 2409), true)
             
             #line 53 "..\..\Views\Home\Galleries.cshtml"
-, Tuple.Create(Tuple.Create(" ", 2425), Tuple.Create<System.Object, System.Int32>(categoryFilters
+, Tuple.Create(Tuple.Create(" ", 2421), Tuple.Create<System.Object, System.Int32>(categoryFilters
             
             #line default
             #line hidden
-, 2426), false)
+, 2422), false)
 );
 
 WriteLiteral(">\r\n                                <div");
@@ -280,14 +280,14 @@ WriteLiteral(" class=\"image-gallery-item\"");
 
 WriteLiteral(">\r\n                                    <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2550), Tuple.Create("\"", 2622)
+WriteAttribute("href", Tuple.Create(" href=\"", 2546), Tuple.Create("\"", 2618)
             
             #line 55 "..\..\Views\Home\Galleries.cshtml"
-, Tuple.Create(Tuple.Create("", 2557), Tuple.Create<System.Object, System.Int32>(Url.Action("ImageFiles","Home", new { id = item.Id, area = "" })
+, Tuple.Create(Tuple.Create("", 2553), Tuple.Create<System.Object, System.Int32>(Url.Action("ImageFiles","Home", new { id = item.Id, area = "" })
             
             #line default
             #line hidden
-, 2557), false)
+, 2553), false)
 );
 
 WriteLiteral(">\r\n                                        <span");
@@ -300,14 +300,14 @@ WriteLiteral(" class=\"thumb-info-wrapper\"");
 
 WriteLiteral(">\r\n                                                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2824), Tuple.Create("\"", 2895)
+WriteAttribute("src", Tuple.Create(" src=\"", 2820), Tuple.Create("\"", 2891)
             
             #line 58 "..\..\Views\Home\Galleries.cshtml"
-, Tuple.Create(Tuple.Create("", 2830), Tuple.Create<System.Object, System.Int32>(item.ImageFiles.OrderBy(i=>i.Ordinal).FirstOrDefault().ThumbPath
+, Tuple.Create(Tuple.Create("", 2826), Tuple.Create<System.Object, System.Int32>(item.ImageFiles.OrderBy(i=>i.Ordinal).FirstOrDefault().ThumbPath
             
             #line default
             #line hidden
-, 2830), false)
+, 2826), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");

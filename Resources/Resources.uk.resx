@@ -330,9 +330,6 @@
   <data name="RememberMe" xml:space="preserve">
     <value>Запам'ятати мене</value>
   </data>
-  <data name="PhotoGallery" xml:space="preserve">
-    <value>Фотогалерея</value>
-  </data>
   <data name="Search" xml:space="preserve">
     <value>Пошук</value>
   </data>
@@ -623,9 +620,6 @@
   </data>
   <data name="NoArticles" xml:space="preserve">
     <value>Там не немає статті.</value>
-  </data>
-  <data name="ChooseAlbum" xml:space="preserve">
-    <value>Виберіть альбом</value>
   </data>
   <data name="Vacancy" xml:space="preserve">
     <value>Робота Annoucement</value>
@@ -1176,9 +1170,6 @@
   <data name="Frontend" xml:space="preserve">
     <value>Інтерфейс</value>
   </data>
-  <data name="Gallery" xml:space="preserve">
-    <value>Галерея</value>
-  </data>
   <data name="Image" xml:space="preserve">
     <value>Зображення</value>
   </data>
@@ -1251,9 +1242,6 @@
   <data name="VacancyUnableToDelete" xml:space="preserve">
     <value>Не вдалося видалити цю вакансію, тому що вона має пов'язаних з submission(s).</value>
   </data>
-  <data name="ChooseGallery" xml:space="preserve">
-    <value>-- Вибери галерея-</value>
-  </data>
   <data name="ChoosePersonalTitle" xml:space="preserve">
     <value>-- Вибери особистий титул-</value>
   </data>
@@ -1325,9 +1313,6 @@
   </data>
   <data name="ImageFiles" xml:space="preserve">
     <value>Файли зображень</value>
-  </data>
-  <data name="Galleries" xml:space="preserve">
-    <value>Галереї</value>
   </data>
   <data name="ContentLists" xml:space="preserve">
     <value>Вмісту списків</value>
@@ -1500,14 +1485,8 @@
   <data name="ShowAll" xml:space="preserve">
     <value>Показати все</value>
   </data>
-  <data name="GalleryCategory" xml:space="preserve">
-    <value>Галерея-Категорія</value>
-  </data>
   <data name="ChooseCategory" xml:space="preserve">
     <value>-- Оберіть категорію-</value>
-  </data>
-  <data name="GalleryCategories" xml:space="preserve">
-    <value>Галерея категорії</value>
   </data>
   <data name="AddressLine1" xml:space="preserve">
     <value>Адреса лінія 1</value>
@@ -1565,5 +1544,20 @@
   </data>
   <data name="DeleteProfile" xml:space="preserve">
     <value>Видалити мій профіль</value>
+  </data>
+  <data name="Gallery" xml:space="preserve">
+    <value>Фотогалерея</value>
+  </data>
+  <data name="ChooseGallery" xml:space="preserve">
+    <value>-- Вибери фото - галерея</value>
+  </data>
+  <data name="Galleries" xml:space="preserve">
+    <value>Фото галереї</value>
+  </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>Категорія</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>Категорії</value>
   </data>
 </root>

@@ -502,15 +502,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Choose Album.
-        /// </summary>
-        public static string ChooseAlbum {
-            get {
-                return ResourceManager.GetString("ChooseAlbum", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to --Choose author--.
         /// </summary>
         public static string ChooseAuthor {
@@ -556,7 +547,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to --Choose gallery--.
+        ///   Looks up a localized string similar to --Choose photo gallery--.
         /// </summary>
         public static string ChooseGallery {
             get {
@@ -1663,7 +1654,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Galleries.
+        ///   Looks up a localized string similar to Photo Galleries.
         /// </summary>
         public static string Galleries {
             get {
@@ -1672,7 +1663,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gallery.
+        ///   Looks up a localized string similar to Photo Gallery.
         /// </summary>
         public static string Gallery {
             get {
@@ -1681,7 +1672,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gallery Categories.
+        ///   Looks up a localized string similar to Categories.
         /// </summary>
         public static string GalleryCategories {
             get {
@@ -1690,7 +1681,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gallery Category.
+        ///   Looks up a localized string similar to Category.
         /// </summary>
         public static string GalleryCategory {
             get {
@@ -3081,15 +3072,6 @@ namespace Resources {
         public static string PhoneNumbers {
             get {
                 return ResourceManager.GetString("PhoneNumbers", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Photo Gallery.
-        /// </summary>
-        public static string PhotoGallery {
-            get {
-                return ResourceManager.GetString("PhotoGallery", resourceCulture);
             }
         }
         

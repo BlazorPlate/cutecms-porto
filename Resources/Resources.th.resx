@@ -330,9 +330,6 @@
   <data name="RememberMe" xml:space="preserve">
     <value>จดจำ</value>
   </data>
-  <data name="PhotoGallery" xml:space="preserve">
-    <value>รูปภาพ</value>
-  </data>
   <data name="Search" xml:space="preserve">
     <value>ค้นหา</value>
   </data>
@@ -623,9 +620,6 @@
   </data>
   <data name="NoArticles" xml:space="preserve">
     <value>ไม่มีบทความนี้</value>
-  </data>
-  <data name="ChooseAlbum" xml:space="preserve">
-    <value>เลือกอัลบั้ม</value>
   </data>
   <data name="Vacancy" xml:space="preserve">
     <value>ประกาศงาน</value>
@@ -1176,9 +1170,6 @@
   <data name="Frontend" xml:space="preserve">
     <value>ส่วนหน้า</value>
   </data>
-  <data name="Gallery" xml:space="preserve">
-    <value>แกลเลอรี</value>
-  </data>
   <data name="Image" xml:space="preserve">
     <value>รูปภาพ</value>
   </data>
@@ -1251,9 +1242,6 @@
   <data name="VacancyUnableToDelete" xml:space="preserve">
     <value>ไม่สามารถลบตำแหน่งนี้ เพราะมันมีที่เกี่ยวข้อง submission(s)</value>
   </data>
-  <data name="ChooseGallery" xml:space="preserve">
-    <value>-เลือกรูปภาพ-</value>
-  </data>
   <data name="ChoosePersonalTitle" xml:space="preserve">
     <value>-เลือกส่วนบุคคลชื่อ-</value>
   </data>
@@ -1325,9 +1313,6 @@
   </data>
   <data name="ImageFiles" xml:space="preserve">
     <value>ไฟล์รูปภาพ</value>
-  </data>
-  <data name="Galleries" xml:space="preserve">
-    <value>แกลลอรี่</value>
   </data>
   <data name="ContentLists" xml:space="preserve">
     <value>เนื้อหารายการ</value>
@@ -1500,14 +1485,8 @@
   <data name="ShowAll" xml:space="preserve">
     <value>แสดงทั้งหมด</value>
   </data>
-  <data name="GalleryCategory" xml:space="preserve">
-    <value>ประเภทรูปภาพ</value>
-  </data>
   <data name="ChooseCategory" xml:space="preserve">
     <value>-เลือกประเภท-</value>
-  </data>
-  <data name="GalleryCategories" xml:space="preserve">
-    <value>หมวดหมู่รูปภาพ</value>
   </data>
   <data name="AddressLine1" xml:space="preserve">
     <value>บรรทัดที่อยู่ 1</value>
@@ -1565,5 +1544,20 @@
   </data>
   <data name="DeleteProfile" xml:space="preserve">
     <value>ลบโปรไฟล์ของฉัน</value>
+  </data>
+  <data name="Gallery" xml:space="preserve">
+    <value>รูปภาพ</value>
+  </data>
+  <data name="ChooseGallery" xml:space="preserve">
+    <value>-เลือกภาพแกลอรี่-</value>
+  </data>
+  <data name="Galleries" xml:space="preserve">
+    <value>แกลเลอรี่ภาพ</value>
+  </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>ประเภท</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>หมวดหมู่</value>
   </data>
 </root>

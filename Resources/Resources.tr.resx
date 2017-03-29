@@ -330,9 +330,6 @@
   <data name="RememberMe" xml:space="preserve">
     <value>Beni hatırla</value>
   </data>
-  <data name="PhotoGallery" xml:space="preserve">
-    <value>Fotoğraf Galerisi</value>
-  </data>
   <data name="Search" xml:space="preserve">
     <value>Arama</value>
   </data>
@@ -623,9 +620,6 @@
   </data>
   <data name="NoArticles" xml:space="preserve">
     <value>Hiçbir makaleleri vardır.</value>
-  </data>
-  <data name="ChooseAlbum" xml:space="preserve">
-    <value>Albüm seçin</value>
   </data>
   <data name="Vacancy" xml:space="preserve">
     <value>İş Annoucement</value>
@@ -1176,9 +1170,6 @@
   <data name="Frontend" xml:space="preserve">
     <value>Frontend</value>
   </data>
-  <data name="Gallery" xml:space="preserve">
-    <value>Galeri</value>
-  </data>
   <data name="Image" xml:space="preserve">
     <value>Görüntü</value>
   </data>
@@ -1251,9 +1242,6 @@
   <data name="VacancyUnableToDelete" xml:space="preserve">
     <value>Submission(s) ilgili sahip çünkü bu pozisyon silinemedi.</value>
   </data>
-  <data name="ChooseGallery" xml:space="preserve">
-    <value>--Seçin Galeri--</value>
-  </data>
   <data name="ChoosePersonalTitle" xml:space="preserve">
     <value>--Kişisel başlık--seçin</value>
   </data>
@@ -1325,9 +1313,6 @@
   </data>
   <data name="ImageFiles" xml:space="preserve">
     <value>Görüntü dosyaları</value>
-  </data>
-  <data name="Galleries" xml:space="preserve">
-    <value>Galeriler</value>
   </data>
   <data name="ContentLists" xml:space="preserve">
     <value>İçerik listeleri</value>
@@ -1500,14 +1485,8 @@
   <data name="ShowAll" xml:space="preserve">
     <value>Tümünü göster</value>
   </data>
-  <data name="GalleryCategory" xml:space="preserve">
-    <value>Galeri kategorisi</value>
-  </data>
   <data name="ChooseCategory" xml:space="preserve">
     <value>--Seçin Kategori...</value>
-  </data>
-  <data name="GalleryCategories" xml:space="preserve">
-    <value>Galeri Kategoriler</value>
   </data>
   <data name="AddressLine1" xml:space="preserve">
     <value>Adres satırı 1</value>
@@ -1565,5 +1544,20 @@
   </data>
   <data name="DeleteProfile" xml:space="preserve">
     <value>Silmek benim yandan görünüş</value>
+  </data>
+  <data name="Gallery" xml:space="preserve">
+    <value>Fotoğraf Galerisi</value>
+  </data>
+  <data name="ChooseGallery" xml:space="preserve">
+    <value>--Fotoğraf Galerisi--seçin</value>
+  </data>
+  <data name="Galleries" xml:space="preserve">
+    <value>Fotoğraf Galerileri</value>
+  </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>Kategori</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>Kategoriler</value>
   </data>
 </root>

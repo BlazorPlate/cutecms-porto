@@ -16,7 +16,7 @@
         </div>
         <div class="form-group">
             <div class="col-md-10">
-                @Html.DropDownList("id", new SelectList(ViewBag.GalleryIdFilter, "Value", "Text"), Resources.Resources.ChooseAlbum, new { @class = "form-control" })
+                @Html.DropDownList("id", new SelectList(ViewBag.GalleryIdFilter, "Value", "Text"), Resources.Resources.ChooseGallery, new { @class = "form-control" })
             </div>
         </div>
         <div class="form-group">
@@ -27,7 +27,7 @@
     </div>
 }
 <p>
-    @Html.ActionLink(Resources.Resources.Create, "Create")
+    @Html.ActionLink(Resources.Resources.Create, "Create", new { id = ViewBag.GalleryId })
 </p>
 <table class="table">
     <tr>

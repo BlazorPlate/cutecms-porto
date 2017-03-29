@@ -330,9 +330,6 @@
   <data name="RememberMe" xml:space="preserve">
     <value>Husk meg</value>
   </data>
-  <data name="PhotoGallery" xml:space="preserve">
-    <value>Fotogalleri</value>
-  </data>
   <data name="Search" xml:space="preserve">
     <value>Søk</value>
   </data>
@@ -623,9 +620,6 @@
   </data>
   <data name="NoArticles" xml:space="preserve">
     <value>Det er ingen artikler.</value>
-  </data>
-  <data name="ChooseAlbum" xml:space="preserve">
-    <value>Velg Album</value>
   </data>
   <data name="Vacancy" xml:space="preserve">
     <value>Jobb Annoucement</value>
@@ -1176,9 +1170,6 @@
   <data name="Frontend" xml:space="preserve">
     <value>Frontend</value>
   </data>
-  <data name="Gallery" xml:space="preserve">
-    <value>Galleri</value>
-  </data>
   <data name="Image" xml:space="preserve">
     <value>Bilde</value>
   </data>
@@ -1251,9 +1242,6 @@
   <data name="VacancyUnableToDelete" xml:space="preserve">
     <value>Kan ikke slette denne stilling fordi det har relaterte innlevering (er).</value>
   </data>
-  <data name="ChooseGallery" xml:space="preserve">
-    <value>-Velg gallery--</value>
-  </data>
   <data name="ChoosePersonalTitle" xml:space="preserve">
     <value>-Velg personlig tittel-</value>
   </data>
@@ -1325,9 +1313,6 @@
   </data>
   <data name="ImageFiles" xml:space="preserve">
     <value>Bildefiler</value>
-  </data>
-  <data name="Galleries" xml:space="preserve">
-    <value>Gallerier</value>
   </data>
   <data name="ContentLists" xml:space="preserve">
     <value>Innhold lister</value>
@@ -1500,14 +1485,8 @@
   <data name="ShowAll" xml:space="preserve">
     <value>Vis alle</value>
   </data>
-  <data name="GalleryCategory" xml:space="preserve">
-    <value>Galleri kategori</value>
-  </data>
   <data name="ChooseCategory" xml:space="preserve">
     <value>-Velg kategori-</value>
-  </data>
-  <data name="GalleryCategories" xml:space="preserve">
-    <value>Galleri kategorier</value>
   </data>
   <data name="AddressLine1" xml:space="preserve">
     <value>Adresselinje 1</value>
@@ -1565,5 +1544,20 @@
   </data>
   <data name="DeleteProfile" xml:space="preserve">
     <value>Slette min profil</value>
+  </data>
+  <data name="Gallery" xml:space="preserve">
+    <value>Fotogalleri</value>
+  </data>
+  <data name="ChooseGallery" xml:space="preserve">
+    <value>-Velg photo gallery--</value>
+  </data>
+  <data name="Galleries" xml:space="preserve">
+    <value>Fotogallerier</value>
+  </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>Kategori</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>Kategorier</value>
   </data>
 </root>

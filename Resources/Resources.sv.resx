@@ -330,9 +330,6 @@
   <data name="RememberMe" xml:space="preserve">
     <value>Kom ihåg mig</value>
   </data>
-  <data name="PhotoGallery" xml:space="preserve">
-    <value>Photo Gallery</value>
-  </data>
   <data name="Search" xml:space="preserve">
     <value>Sök</value>
   </data>
@@ -623,9 +620,6 @@
   </data>
   <data name="NoArticles" xml:space="preserve">
     <value>Det finns inga artiklar.</value>
-  </data>
-  <data name="ChooseAlbum" xml:space="preserve">
-    <value>Välj Album</value>
   </data>
   <data name="Vacancy" xml:space="preserve">
     <value>Jobb Annoucement</value>
@@ -1176,9 +1170,6 @@
   <data name="Frontend" xml:space="preserve">
     <value>Frontend</value>
   </data>
-  <data name="Gallery" xml:space="preserve">
-    <value>Galleri</value>
-  </data>
   <data name="Image" xml:space="preserve">
     <value>Bild</value>
   </data>
@@ -1251,9 +1242,6 @@
   <data name="VacancyUnableToDelete" xml:space="preserve">
     <value>Det går inte ta bort denna tjänst eftersom det har relaterade submission(s).</value>
   </data>
-  <data name="ChooseGallery" xml:space="preserve">
-    <value>--Välj Galleri--</value>
-  </data>
   <data name="ChoosePersonalTitle" xml:space="preserve">
     <value>--Välj personlig titel--</value>
   </data>
@@ -1325,9 +1313,6 @@
   </data>
   <data name="ImageFiles" xml:space="preserve">
     <value>Bildfiler</value>
-  </data>
-  <data name="Galleries" xml:space="preserve">
-    <value>Gallerier</value>
   </data>
   <data name="ContentLists" xml:space="preserve">
     <value>Innehåll listor</value>
@@ -1500,14 +1485,8 @@
   <data name="ShowAll" xml:space="preserve">
     <value>Visa alla</value>
   </data>
-  <data name="GalleryCategory" xml:space="preserve">
-    <value>Galleri-kategori</value>
-  </data>
   <data name="ChooseCategory" xml:space="preserve">
     <value>--Välj kategori--</value>
-  </data>
-  <data name="GalleryCategories" xml:space="preserve">
-    <value>Gallery-kategorier</value>
   </data>
   <data name="AddressLine1" xml:space="preserve">
     <value>Adress linje 1</value>
@@ -1565,5 +1544,20 @@
   </data>
   <data name="DeleteProfile" xml:space="preserve">
     <value>Radera min profil</value>
+  </data>
+  <data name="Gallery" xml:space="preserve">
+    <value>Photo Gallery</value>
+  </data>
+  <data name="ChooseGallery" xml:space="preserve">
+    <value>--Välj foto galleri--</value>
+  </data>
+  <data name="Galleries" xml:space="preserve">
+    <value>Fotogallerier</value>
+  </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>Kategori</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>Kategorier</value>
   </data>
 </root>

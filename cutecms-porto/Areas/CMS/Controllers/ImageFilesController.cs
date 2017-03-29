@@ -24,20 +24,20 @@ namespace cutecms_porto.Areas.CMS.Controllers
 
         #region Methods
         // GET: Images
-        public ActionResult Index(int? page, int id = 0)
+        public ActionResult Index(int? page, int? id)
         {
             var pageNumber = page ?? 1; // if no page was specified in the querystring, default to the first page (1)
-            var imageFiles = db.ImageFiles.Include("Gallery").Where(i => i.TenantId.Trim().Equals(Tenant.TenantId) && (i.GalleryId == id || id == 0)).OrderBy(i => i.GalleryId).ThenBy(i => i.CreatedOn).ToPagedList(pageNumber, 10); // will only contain 25 products max because of the pageSize
-            ViewBag.GalleryIdFilter = new SelectList(db.Galleries.Where(g => g.TenantId.Trim().Equals(Tenant.TenantId)), "Id", "Code");
+            var imageFiles = db.ImageFiles.Include("Gallery").Where(i => i.TenantId.Trim().Equals(Tenant.TenantId) && (i.GalleryId == id || id == null)).OrderBy(i => i.GalleryId).ThenBy(i => i.CreatedOn).ToPagedList(pageNumber, 10); // will only contain 25 products max because of the pageSize
+            ViewBag.GalleryIdFilter = new SelectList(db.Galleries.Where(g => g.TenantId.Trim().Equals(Tenant.TenantId)), "Id", "Code", id);
             ViewBag.GalleryId = id;
             return View(imageFiles);
         }
 
         // GET: Images/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
             var imageWithTags = new CreateImageWithTagsViewModel();
-            ViewBag.GalleryId = new SelectList(db.Galleries.Where(g => g.TenantId.Trim().Equals(Tenant.TenantId)), "Id", "Code");
+            ViewBag.GalleryId = new SelectList(db.Galleries.Where(g => g.TenantId.Trim().Equals(Tenant.TenantId)), "Id", "Code", id);
             return View(imageWithTags);
         }
 

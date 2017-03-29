@@ -330,9 +330,6 @@
   <data name="RememberMe" xml:space="preserve">
     <value>Onthoud mijn gegevens</value>
   </data>
-  <data name="PhotoGallery" xml:space="preserve">
-    <value>Fotogalerij</value>
-  </data>
   <data name="Search" xml:space="preserve">
     <value>Zoek</value>
   </data>
@@ -623,9 +620,6 @@
   </data>
   <data name="NoArticles" xml:space="preserve">
     <value>Er zijn geen artikelen.</value>
-  </data>
-  <data name="ChooseAlbum" xml:space="preserve">
-    <value>Kies Album</value>
   </data>
   <data name="Vacancy" xml:space="preserve">
     <value>Baan Annoucement</value>
@@ -1176,9 +1170,6 @@
   <data name="Frontend" xml:space="preserve">
     <value>Frontend</value>
   </data>
-  <data name="Gallery" xml:space="preserve">
-    <value>Galerij</value>
-  </data>
   <data name="Image" xml:space="preserve">
     <value>Afbeelding</value>
   </data>
@@ -1251,9 +1242,6 @@
   <data name="VacancyUnableToDelete" xml:space="preserve">
     <value>Kan niet verwijderen van deze vacature omdat deze submission(s) is gerelateerd.</value>
   </data>
-  <data name="ChooseGallery" xml:space="preserve">
-    <value>--Kies galerij--</value>
-  </data>
   <data name="ChoosePersonalTitle" xml:space="preserve">
     <value>--Kies persoonlijke titel--</value>
   </data>
@@ -1325,9 +1313,6 @@
   </data>
   <data name="ImageFiles" xml:space="preserve">
     <value>Afbeeldingsbestanden</value>
-  </data>
-  <data name="Galleries" xml:space="preserve">
-    <value>Galerijen</value>
   </data>
   <data name="ContentLists" xml:space="preserve">
     <value>Inhoud lijsten</value>
@@ -1500,14 +1485,8 @@
   <data name="ShowAll" xml:space="preserve">
     <value>Toon alle</value>
   </data>
-  <data name="GalleryCategory" xml:space="preserve">
-    <value>Topaanbieding in galerij rubriek</value>
-  </data>
   <data name="ChooseCategory" xml:space="preserve">
     <value>--Kies categorie--</value>
-  </data>
-  <data name="GalleryCategories" xml:space="preserve">
-    <value>Galerie categorieën</value>
   </data>
   <data name="AddressLine1" xml:space="preserve">
     <value>Adresregel 1</value>
@@ -1565,5 +1544,20 @@
   </data>
   <data name="DeleteProfile" xml:space="preserve">
     <value>Verwijder mijn profiel</value>
+  </data>
+  <data name="Gallery" xml:space="preserve">
+    <value>Fotogalerij</value>
+  </data>
+  <data name="ChooseGallery" xml:space="preserve">
+    <value>--Kies foto galerij--</value>
+  </data>
+  <data name="Galleries" xml:space="preserve">
+    <value>Foto Galleries</value>
+  </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>Categorie</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>Categorieën</value>
   </data>
 </root>

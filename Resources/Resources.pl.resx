@@ -330,9 +330,6 @@
   <data name="RememberMe" xml:space="preserve">
     <value>Zapamiętaj mnie</value>
   </data>
-  <data name="PhotoGallery" xml:space="preserve">
-    <value>Galeria zdjęć</value>
-  </data>
   <data name="Search" xml:space="preserve">
     <value>Szukaj</value>
   </data>
@@ -623,9 +620,6 @@
   </data>
   <data name="NoArticles" xml:space="preserve">
     <value>Nie ma żadnych artykułów.</value>
-  </data>
-  <data name="ChooseAlbum" xml:space="preserve">
-    <value>Wybierz Album</value>
   </data>
   <data name="Vacancy" xml:space="preserve">
     <value>Annoucement pracy</value>
@@ -1176,9 +1170,6 @@
   <data name="Frontend" xml:space="preserve">
     <value>Frontend</value>
   </data>
-  <data name="Gallery" xml:space="preserve">
-    <value>Galeria</value>
-  </data>
   <data name="Image" xml:space="preserve">
     <value>Obraz</value>
   </data>
@@ -1251,9 +1242,6 @@
   <data name="VacancyUnableToDelete" xml:space="preserve">
     <value>Nie można usunąć ten wakat, bo to ma związane materiały przesyłane przez użytkownika.</value>
   </data>
-  <data name="ChooseGallery" xml:space="preserve">
-    <value>--Wybierz--Galeria</value>
-  </data>
   <data name="ChoosePersonalTitle" xml:space="preserve">
     <value>--Wybierz osobiste tytuł--</value>
   </data>
@@ -1325,9 +1313,6 @@
   </data>
   <data name="ImageFiles" xml:space="preserve">
     <value>Pliki obrazów</value>
-  </data>
-  <data name="Galleries" xml:space="preserve">
-    <value>Galerie</value>
   </data>
   <data name="ContentLists" xml:space="preserve">
     <value>Zawartość listy</value>
@@ -1500,14 +1485,8 @@
   <data name="ShowAll" xml:space="preserve">
     <value>Pokaż wszystkie</value>
   </data>
-  <data name="GalleryCategory" xml:space="preserve">
-    <value>Kategoria galerii</value>
-  </data>
   <data name="ChooseCategory" xml:space="preserve">
     <value>--Wybierz kategorii--</value>
-  </data>
-  <data name="GalleryCategories" xml:space="preserve">
-    <value>Kategorie galerii</value>
   </data>
   <data name="AddressLine1" xml:space="preserve">
     <value>1. wiersz adresu</value>
@@ -1565,5 +1544,20 @@
   </data>
   <data name="DeleteProfile" xml:space="preserve">
     <value>Usunąć mój profil</value>
+  </data>
+  <data name="Gallery" xml:space="preserve">
+    <value>Galeria zdjęć</value>
+  </data>
+  <data name="ChooseGallery" xml:space="preserve">
+    <value>--Wybierz zdjęcie Galeria--</value>
+  </data>
+  <data name="Galleries" xml:space="preserve">
+    <value>Galerie zdjęć</value>
+  </data>
+  <data name="GalleryCategory" xml:space="preserve">
+    <value>Kategorii</value>
+  </data>
+  <data name="GalleryCategories" xml:space="preserve">
+    <value>Kategorie</value>
   </data>
 </root>

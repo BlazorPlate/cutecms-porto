@@ -175,10 +175,7 @@ namespace cutecms_porto.Helpers
         {
             string language = filterContext.RouteData.Values["lang"] == null ? CultureHelper.GetCurrentCulture() : filterContext.RouteData.Values["lang"].ToString();
             filterContext.Result =
-            new RedirectResult
-                (string.Format("~/{0}/identity/account/login?returnUrl={1}",
-                                language,
-                                HttpUtility.UrlEncode(filterContext.HttpContext.Request.Url.PathAndQuery)));
+            new RedirectResult(string.Format("~/{0}/identity/account/login?returnUrl={1}", language, HttpUtility.UrlEncode(filterContext.HttpContext.Request.Url.PathAndQuery)));
             //base.HandleUnauthorizedRequest(filterContext); 
         }
     }

@@ -431,10 +431,8 @@ WriteLiteral(">");
             #line hidden
 WriteLiteral("</p>\r\n");
 
-WriteLiteral("                            <br />\r\n");
-
             
-            #line 87 "..\..\Views\Careers\Details.cshtml"
+            #line 86 "..\..\Views\Careers\Details.cshtml"
                         }
 
             
@@ -443,7 +441,7 @@ WriteLiteral("                            <br />\r\n");
 WriteLiteral("                    </div>\r\n\r\n\r\n                </div>\r\n");
 
             
-            #line 92 "..\..\Views\Careers\Details.cshtml"
+            #line 91 "..\..\Views\Careers\Details.cshtml"
             }
 
             
@@ -452,7 +450,7 @@ WriteLiteral("                    </div>\r\n\r\n\r\n                </div>\r\n")
 WriteLiteral("            ");
 
             
-            #line 93 "..\..\Views\Careers\Details.cshtml"
+            #line 92 "..\..\Views\Careers\Details.cshtml"
              if (Model.VacancyRanks.Count() > 0)
             {
 
@@ -482,7 +480,7 @@ WriteLiteral(" class=\"mb-none\"");
 WriteLiteral(">");
 
             
-            #line 100 "..\..\Views\Careers\Details.cshtml"
+            #line 99 "..\..\Views\Careers\Details.cshtml"
                                        Write(Resources.Resources.Rank);
 
             
@@ -491,13 +489,13 @@ WriteLiteral(">");
 WriteLiteral("</h4>\r\n");
 
             
-            #line 101 "..\..\Views\Careers\Details.cshtml"
+            #line 100 "..\..\Views\Careers\Details.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 101 "..\..\Views\Careers\Details.cshtml"
+            #line 100 "..\..\Views\Careers\Details.cshtml"
                          foreach (var rank in Model.VacancyRanks)
                         {
                             string rankName = TermsHelper.Ranks().Where(d => d.RankId == rank.RankId).FirstOrDefault()?.Value ?? db.RMSRanks.Where(d => d.Id == rank.RankId).FirstOrDefault().Code;
@@ -512,7 +510,7 @@ WriteLiteral(" class=\"tall\"");
 WriteLiteral(">");
 
             
-            #line 104 "..\..\Views\Careers\Details.cshtml"
+            #line 103 "..\..\Views\Careers\Details.cshtml"
                                        Write(rankName);
 
             
@@ -520,10 +518,8 @@ WriteLiteral(">");
             #line hidden
 WriteLiteral("</p>\r\n");
 
-WriteLiteral("                            <br />\r\n");
-
             
-            #line 106 "..\..\Views\Careers\Details.cshtml"
+            #line 104 "..\..\Views\Careers\Details.cshtml"
                         }
 
             
@@ -532,7 +528,7 @@ WriteLiteral("                            <br />\r\n");
 WriteLiteral("                    </div>\r\n                </div>\r\n");
 
             
-            #line 109 "..\..\Views\Careers\Details.cshtml"
+            #line 107 "..\..\Views\Careers\Details.cshtml"
 
             }
 
@@ -542,7 +538,7 @@ WriteLiteral("                    </div>\r\n                </div>\r\n");
 WriteLiteral("            ");
 
             
-            #line 111 "..\..\Views\Careers\Details.cshtml"
+            #line 109 "..\..\Views\Careers\Details.cshtml"
              if (Model.Notes != null)
             {
 
@@ -572,7 +568,7 @@ WriteLiteral(" class=\"mb-none\"");
 WriteLiteral(">");
 
             
-            #line 118 "..\..\Views\Careers\Details.cshtml"
+            #line 116 "..\..\Views\Careers\Details.cshtml"
                                        Write(Resources.Resources.Notes);
 
             
@@ -585,7 +581,7 @@ WriteLiteral(" class=\"tall\"");
 WriteLiteral(">");
 
             
-            #line 119 "..\..\Views\Careers\Details.cshtml"
+            #line 117 "..\..\Views\Careers\Details.cshtml"
                                    Write(Html.Raw(HttpUtility.HtmlDecode(Model.Notes)));
 
             
@@ -594,7 +590,7 @@ WriteLiteral(">");
 WriteLiteral("</p>\r\n                    </div>\r\n                </div>\r\n");
 
             
-            #line 122 "..\..\Views\Careers\Details.cshtml"
+            #line 120 "..\..\Views\Careers\Details.cshtml"
             }
 
             
@@ -603,13 +599,13 @@ WriteLiteral("</p>\r\n                    </div>\r\n                </div>\r\n")
 WriteLiteral("\r\n");
 
             
-            #line 124 "..\..\Views\Careers\Details.cshtml"
+            #line 122 "..\..\Views\Careers\Details.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 124 "..\..\Views\Careers\Details.cshtml"
+            #line 122 "..\..\Views\Careers\Details.cshtml"
              if (Model.ExpiredOn != null)
             {
 
@@ -639,7 +635,7 @@ WriteLiteral(" class=\"mb-none\"");
 WriteLiteral(">");
 
             
-            #line 131 "..\..\Views\Careers\Details.cshtml"
+            #line 129 "..\..\Views\Careers\Details.cshtml"
                                        Write(Resources.Resources.ExpiredOn);
 
             
@@ -652,7 +648,7 @@ WriteLiteral(" class=\"tall\"");
 WriteLiteral(">");
 
             
-            #line 132 "..\..\Views\Careers\Details.cshtml"
+            #line 130 "..\..\Views\Careers\Details.cshtml"
                                    Write(Model.ExpiredOn);
 
             
@@ -661,7 +657,7 @@ WriteLiteral(">");
 WriteLiteral("</p>\r\n                    </div>\r\n                </div>\r\n");
 
             
-            #line 135 "..\..\Views\Careers\Details.cshtml"
+            #line 133 "..\..\Views\Careers\Details.cshtml"
             }
 
             
@@ -675,20 +671,20 @@ WriteLiteral(">\r\n                <a");
 
 WriteLiteral(" class=\"btn btn-primary mb-xl\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 6087), Tuple.Create("\"", 6148)
+WriteAttribute("href", Tuple.Create(" href=\"", 6015), Tuple.Create("\"", 6076)
             
-            #line 137 "..\..\Views\Careers\Details.cshtml"
-, Tuple.Create(Tuple.Create("", 6094), Tuple.Create<System.Object, System.Int32>(Url.Action("Apply", "Careers", new { id = Model.Id })
+            #line 135 "..\..\Views\Careers\Details.cshtml"
+, Tuple.Create(Tuple.Create("", 6022), Tuple.Create<System.Object, System.Int32>(Url.Action("Apply", "Careers", new { id = Model.Id })
             
             #line default
             #line hidden
-, 6094), false)
+, 6022), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 137 "..\..\Views\Careers\Details.cshtml"
+            #line 135 "..\..\Views\Careers\Details.cshtml"
                                                                                                           Write(Resources.Resources.ApplyNow);
 
             
@@ -698,14 +694,14 @@ WriteLiteral("</a>\r\n                <a");
 
 WriteLiteral(" class=\"btn btn-primary mb-xl\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 6233), Tuple.Create("\"", 6271)
+WriteAttribute("href", Tuple.Create(" href=\"", 6161), Tuple.Create("\"", 6199)
             
-            #line 138 "..\..\Views\Careers\Details.cshtml"
-, Tuple.Create(Tuple.Create("", 6240), Tuple.Create<System.Object, System.Int32>(Url.Action("Index", "Careers")
+            #line 136 "..\..\Views\Careers\Details.cshtml"
+, Tuple.Create(Tuple.Create("", 6168), Tuple.Create<System.Object, System.Int32>(Url.Action("Index", "Careers")
             
             #line default
             #line hidden
-, 6240), false)
+, 6168), false)
 );
 
 WriteLiteral("><i");
@@ -715,7 +711,7 @@ WriteLiteral(" class=\"fa fa-arrow-left\"");
 WriteLiteral("></i> ");
 
             
-            #line 138 "..\..\Views\Careers\Details.cshtml"
+            #line 136 "..\..\Views\Careers\Details.cshtml"
                                                                                                                     Write(Resources.Resources.BackToList);
 
             
@@ -736,7 +732,7 @@ WriteLiteral(" class=\"fa fa-share\"");
 WriteLiteral("></i>");
 
             
-            #line 143 "..\..\Views\Careers\Details.cshtml"
+            #line 141 "..\..\Views\Careers\Details.cshtml"
                                                           Write(Resources.Resources.Share);
 
             

@@ -83,7 +83,6 @@
                         {
                             string degreeName = TermsHelper.Degrees().Where(d => d.DegreeId == degree.DegreeId).FirstOrDefault()?.Value ?? db.RMSDegrees.Where(d => d.Id == degree.DegreeId).FirstOrDefault().Code;
                             <p class="tall">@degreeName</p>
-                            <br />
                         }
                     </div>
 
@@ -102,7 +101,6 @@
                         {
                             string rankName = TermsHelper.Ranks().Where(d => d.RankId == rank.RankId).FirstOrDefault()?.Value ?? db.RMSRanks.Where(d => d.Id == rank.RankId).FirstOrDefault().Code;
                             <p class="tall">@rankName</p>
-                            <br />
                         }
                     </div>
                 </div>

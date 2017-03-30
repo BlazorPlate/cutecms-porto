@@ -265,9 +265,8 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 if (user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)))
                 {
                     // Don't reveal that the user does not exist or is not confirmed
-                    return View("ForgotPasswordConfirmation", "Home", new { area = "" });
+                    return RedirectToAction("ForgotPasswordConfirmation", "Home", new { area = "" });
                 }
-
                 // For more information on how to enable account confirmation and password reset
                 // please visit http://go.microsoft.com/fwlink/?LinkID=320771 Send an email with this link
 

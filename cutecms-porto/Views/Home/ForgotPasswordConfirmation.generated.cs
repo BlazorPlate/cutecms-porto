@@ -44,7 +44,7 @@ WriteLiteral("\r\n");
             
             #line 2 "..\..\Views\Home\ForgotPasswordConfirmation.cshtml"
   
-    ViewBag.Title = @Resources.Resources.ForgotPasswordConfirmation;
+    ViewBag.Title = Resources.Resources.ForgotPasswordConfirmation;
 
             
             #line default

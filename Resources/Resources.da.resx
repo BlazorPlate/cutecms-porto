@@ -306,9 +306,6 @@
   <data name="MetaKeywords" xml:space="preserve">
     <value>Metasøgeord</value>
   </data>
-  <data name="UrlSlug" xml:space="preserve">
-    <value>URL Slug</value>
-  </data>
   <data name="Languages" xml:space="preserve">
     <value>Sprog</value>
   </data>
@@ -362,9 +359,6 @@
   </data>
   <data name="Parent" xml:space="preserve">
     <value>Forælder</value>
-  </data>
-  <data name="Url" xml:space="preserve">
-    <value>URL-ADRESSE</value>
   </data>
   <data name="CreateNewAccount" xml:space="preserve">
     <value>Opret ny konto.</value>
@@ -806,9 +800,6 @@
   </data>
   <data name="CopyRights" xml:space="preserve">
     <value>Alle rettigheder forbeholdes</value>
-  </data>
-  <data name="DeveloperURL" xml:space="preserve">
-    <value>Udvikler URL</value>
   </data>
   <data name="GooglePlusUrl" xml:space="preserve">
     <value>Google Plus</value>
@@ -1371,9 +1362,6 @@
   <data name="Keywords" xml:space="preserve">
     <value>Nøgleord</value>
   </data>
-  <data name="PostUrl" xml:space="preserve">
-    <value>Send URL-adresse</value>
-  </data>
   <data name="PoweredBy" xml:space="preserve">
     <value>Styret af</value>
   </data>
@@ -1559,5 +1547,14 @@
   </data>
   <data name="GalleryCategories" xml:space="preserve">
     <value>Kategorier</value>
+  </data>
+  <data name="UrlSlug" xml:space="preserve">
+    <value>Venlige Link</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="DeveloperURL" xml:space="preserve">
+    <value>Udvikler Website</value>
   </data>
 </root>

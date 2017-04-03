@@ -306,9 +306,6 @@
   <data name="MetaKeywords" xml:space="preserve">
     <value>Meta Keywords</value>
   </data>
-  <data name="UrlSlug" xml:space="preserve">
-    <value>כתובת url של החילזון</value>
-  </data>
   <data name="Languages" xml:space="preserve">
     <value>שפות</value>
   </data>
@@ -362,9 +359,6 @@
   </data>
   <data name="Parent" xml:space="preserve">
     <value>האב</value>
-  </data>
-  <data name="Url" xml:space="preserve">
-    <value>כתובת URL</value>
   </data>
   <data name="CreateNewAccount" xml:space="preserve">
     <value>צור חשבון חדש.</value>
@@ -806,9 +800,6 @@
   </data>
   <data name="CopyRights" xml:space="preserve">
     <value>כל הזכויות שמורות</value>
-  </data>
-  <data name="DeveloperURL" xml:space="preserve">
-    <value>מפתח URL</value>
   </data>
   <data name="GooglePlusUrl" xml:space="preserve">
     <value>גוגל פלוס</value>
@@ -1371,9 +1362,6 @@
   <data name="Keywords" xml:space="preserve">
     <value>מילות מפתח</value>
   </data>
-  <data name="PostUrl" xml:space="preserve">
-    <value>כתובת url של פוסט</value>
-  </data>
   <data name="PoweredBy" xml:space="preserve">
     <value>באמצעות</value>
   </data>
@@ -1559,5 +1547,14 @@
   </data>
   <data name="GalleryCategories" xml:space="preserve">
     <value>קטגוריות</value>
+  </data>
+  <data name="UrlSlug" xml:space="preserve">
+    <value>קישור ידידותי</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>קישור</value>
+  </data>
+  <data name="DeveloperURL" xml:space="preserve">
+    <value>מפתח האתר</value>
   </data>
 </root>

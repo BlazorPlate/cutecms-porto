@@ -306,9 +306,6 @@
   <data name="MetaKeywords" xml:space="preserve">
     <value>Meta کلیدی الفاظ</value>
   </data>
-  <data name="UrlSlug" xml:space="preserve">
-    <value>URL سلگ</value>
-  </data>
   <data name="Languages" xml:space="preserve">
     <value>زبانیں</value>
   </data>
@@ -362,9 +359,6 @@
   </data>
   <data name="Parent" xml:space="preserve">
     <value>جدی</value>
-  </data>
-  <data name="Url" xml:space="preserve">
-    <value>یو آر ایل</value>
   </data>
   <data name="CreateNewAccount" xml:space="preserve">
     <value>نیا اکاؤنٹ بنائیں ۔</value>
@@ -806,9 +800,6 @@
   </data>
   <data name="CopyRights" xml:space="preserve">
     <value>جملہ حقوق محفوظ ہیں</value>
-  </data>
-  <data name="DeveloperURL" xml:space="preserve">
-    <value>ڈویلپر URL</value>
   </data>
   <data name="GooglePlusUrl" xml:space="preserve">
     <value>گوگل پلس</value>
@@ -1371,9 +1362,6 @@
   <data name="Keywords" xml:space="preserve">
     <value>کلیدی الفاظ</value>
   </data>
-  <data name="PostUrl" xml:space="preserve">
-    <value>پوسٹ Url</value>
-  </data>
   <data name="PoweredBy" xml:space="preserve">
     <value>چلتا ہے</value>
   </data>
@@ -1559,5 +1547,14 @@
   </data>
   <data name="GalleryCategories" xml:space="preserve">
     <value>زمرہ جات</value>
+  </data>
+  <data name="UrlSlug" xml:space="preserve">
+    <value>دوستانہ لنک</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>ربط</value>
+  </data>
+  <data name="DeveloperURL" xml:space="preserve">
+    <value>ڈویلپر کی ویب سائٹ</value>
   </data>
 </root>

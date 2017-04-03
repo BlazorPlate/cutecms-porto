@@ -306,9 +306,6 @@
   <data name="MetaKeywords" xml:space="preserve">
     <value>メタ キーワード</value>
   </data>
-  <data name="UrlSlug" xml:space="preserve">
-    <value>URL メタルスラッグ</value>
-  </data>
   <data name="Languages" xml:space="preserve">
     <value>言語</value>
   </data>
@@ -362,9 +359,6 @@
   </data>
   <data name="Parent" xml:space="preserve">
     <value>親</value>
-  </data>
-  <data name="Url" xml:space="preserve">
-    <value>URL</value>
   </data>
   <data name="CreateNewAccount" xml:space="preserve">
     <value>新しいアカウントを作成します。</value>
@@ -806,9 +800,6 @@
   </data>
   <data name="CopyRights" xml:space="preserve">
     <value>すべての権利予約</value>
-  </data>
-  <data name="DeveloperURL" xml:space="preserve">
-    <value>開発者の URL</value>
   </data>
   <data name="GooglePlusUrl" xml:space="preserve">
     <value>グーグル プラス</value>
@@ -1371,9 +1362,6 @@
   <data name="Keywords" xml:space="preserve">
     <value>キーワード</value>
   </data>
-  <data name="PostUrl" xml:space="preserve">
-    <value>記事の Url</value>
-  </data>
   <data name="PoweredBy" xml:space="preserve">
     <value>協力を受けています</value>
   </data>
@@ -1559,5 +1547,14 @@
   </data>
   <data name="GalleryCategories" xml:space="preserve">
     <value>カテゴリ</value>
+  </data>
+  <data name="UrlSlug" xml:space="preserve">
+    <value>フレンドリー リンク</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>リンク</value>
+  </data>
+  <data name="DeveloperURL" xml:space="preserve">
+    <value>開発者のウェブサイト</value>
   </data>
 </root>

@@ -6066,7 +6066,6 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_TopMenu.generated.cs</LastGenOutput>
     </Content>
-    <None Include="Properties\PublishProfiles\cutecms-porto.pubxml" />
     <Content Include="Views\Shared\_Footer.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_Footer.generated.cs</LastGenOutput>
@@ -6075,6 +6074,7 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Subscribed.generated.cs</LastGenOutput>
     </Content>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
@@ -7252,12 +7252,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Resources\Resources.csproj">
-      <Project>{10f46ed5-e586-4beb-99a4-03790767b1e4}</Project>
-      <Name>Resources</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="App_GlobalResources\ValidationResources.resx">
       <CustomToolNamespace>App_GlobalResources</CustomToolNamespace>
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -7493,6 +7487,12 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ValidationResources.vi.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Resources\Resources.csproj">
+      <Project>{10f46ed5-e586-4beb-99a4-03790767b1e4}</Project>
+      <Name>Resources</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

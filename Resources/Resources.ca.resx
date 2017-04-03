@@ -306,9 +306,6 @@
   <data name="MetaKeywords" xml:space="preserve">
     <value>Meta paraules clau</value>
   </data>
-  <data name="UrlSlug" xml:space="preserve">
-    <value>URL Slug</value>
-  </data>
   <data name="Languages" xml:space="preserve">
     <value>Llengües</value>
   </data>
@@ -362,9 +359,6 @@
   </data>
   <data name="Parent" xml:space="preserve">
     <value>Pare</value>
-  </data>
-  <data name="Url" xml:space="preserve">
-    <value>URL</value>
   </data>
   <data name="CreateNewAccount" xml:space="preserve">
     <value>Crear compte nou.</value>
@@ -806,9 +800,6 @@
   </data>
   <data name="CopyRights" xml:space="preserve">
     <value>Tots els drets reservats</value>
-  </data>
-  <data name="DeveloperURL" xml:space="preserve">
-    <value>Desenvolupador URL</value>
   </data>
   <data name="GooglePlusUrl" xml:space="preserve">
     <value>Google Plus</value>
@@ -1371,9 +1362,6 @@
   <data name="Keywords" xml:space="preserve">
     <value>Paraules clau</value>
   </data>
-  <data name="PostUrl" xml:space="preserve">
-    <value>Url de lloc</value>
-  </data>
   <data name="PoweredBy" xml:space="preserve">
     <value>Alimentat per</value>
   </data>
@@ -1559,5 +1547,14 @@
   </data>
   <data name="GalleryCategories" xml:space="preserve">
     <value>Categories</value>
+  </data>
+  <data name="UrlSlug" xml:space="preserve">
+    <value>Amistós enllaç</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Enllaç</value>
+  </data>
+  <data name="DeveloperURL" xml:space="preserve">
+    <value>Desenvolupador web</value>
   </data>
 </root>

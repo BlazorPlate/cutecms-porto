@@ -306,9 +306,6 @@
   <data name="MetaKeywords" xml:space="preserve">
     <value>Meta słowa kluczowe</value>
   </data>
-  <data name="UrlSlug" xml:space="preserve">
-    <value>Adres URL informacji o pracy</value>
-  </data>
   <data name="Languages" xml:space="preserve">
     <value>Języki</value>
   </data>
@@ -362,9 +359,6 @@
   </data>
   <data name="Parent" xml:space="preserve">
     <value>Nadrzędny</value>
-  </data>
-  <data name="Url" xml:space="preserve">
-    <value>ADRES URL</value>
   </data>
   <data name="CreateNewAccount" xml:space="preserve">
     <value>Utwórz nowe konto.</value>
@@ -806,9 +800,6 @@
   </data>
   <data name="CopyRights" xml:space="preserve">
     <value>Wszelkie prawa zastrzeżone</value>
-  </data>
-  <data name="DeveloperURL" xml:space="preserve">
-    <value>Adres URL autora</value>
   </data>
   <data name="GooglePlusUrl" xml:space="preserve">
     <value>Google Plus</value>
@@ -1371,9 +1362,6 @@
   <data name="Keywords" xml:space="preserve">
     <value>Słowa kluczowe</value>
   </data>
-  <data name="PostUrl" xml:space="preserve">
-    <value>Post Url</value>
-  </data>
   <data name="PoweredBy" xml:space="preserve">
     <value>Powered by</value>
   </data>
@@ -1559,5 +1547,14 @@
   </data>
   <data name="GalleryCategories" xml:space="preserve">
     <value>Kategorie</value>
+  </data>
+  <data name="UrlSlug" xml:space="preserve">
+    <value>Przyjazny Link</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="DeveloperURL" xml:space="preserve">
+    <value>Strona autora</value>
   </data>
 </root>

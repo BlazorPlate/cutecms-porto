@@ -306,9 +306,6 @@
   <data name="MetaKeywords" xml:space="preserve">
     <value>Metacuvinte cheie</value>
   </data>
-  <data name="UrlSlug" xml:space="preserve">
-    <value>URL-UL Slug</value>
-  </data>
   <data name="Languages" xml:space="preserve">
     <value>Limbi</value>
   </data>
@@ -362,9 +359,6 @@
   </data>
   <data name="Parent" xml:space="preserve">
     <value>Părinte</value>
-  </data>
-  <data name="Url" xml:space="preserve">
-    <value>URL-UL</value>
   </data>
   <data name="CreateNewAccount" xml:space="preserve">
     <value>Creare cont nou.</value>
@@ -806,9 +800,6 @@
   </data>
   <data name="CopyRights" xml:space="preserve">
     <value>Toate drepturile rezervate</value>
-  </data>
-  <data name="DeveloperURL" xml:space="preserve">
-    <value>URL-UL de dezvoltator</value>
   </data>
   <data name="GooglePlusUrl" xml:space="preserve">
     <value>Google Plus</value>
@@ -1371,9 +1362,6 @@
   <data name="Keywords" xml:space="preserve">
     <value>Cuvinte cheie</value>
   </data>
-  <data name="PostUrl" xml:space="preserve">
-    <value>Post URL-ul</value>
-  </data>
   <data name="PoweredBy" xml:space="preserve">
     <value>oferit de</value>
   </data>
@@ -1559,5 +1547,14 @@
   </data>
   <data name="GalleryCategories" xml:space="preserve">
     <value>Categorii</value>
+  </data>
+  <data name="UrlSlug" xml:space="preserve">
+    <value>Link-ul prietenos</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Link-ul</value>
+  </data>
+  <data name="DeveloperURL" xml:space="preserve">
+    <value>Site-ul dezvoltatorului</value>
   </data>
 </root>

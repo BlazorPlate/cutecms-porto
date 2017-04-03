@@ -1105,7 +1105,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Developer URL.
+        ///   Looks up a localized string similar to Developer Website.
         /// </summary>
         public static string DeveloperURL {
             get {
@@ -3139,15 +3139,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Post Url.
-        /// </summary>
-        public static string PostUrl {
-            get {
-                return ResourceManager.GetString("PostUrl", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Powered by.
         /// </summary>
         public static string PoweredBy {
@@ -4102,7 +4093,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to URL.
+        ///   Looks up a localized string similar to Link.
         /// </summary>
         public static string Url {
             get {

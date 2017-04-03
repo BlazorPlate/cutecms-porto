@@ -306,9 +306,6 @@
   <data name="MetaKeywords" xml:space="preserve">
     <value>Meta ključne riječi</value>
   </data>
-  <data name="UrlSlug" xml:space="preserve">
-    <value>URL cjevčica</value>
-  </data>
   <data name="Languages" xml:space="preserve">
     <value>Jezici</value>
   </data>
@@ -362,9 +359,6 @@
   </data>
   <data name="Parent" xml:space="preserve">
     <value>Roditelj</value>
-  </data>
-  <data name="Url" xml:space="preserve">
-    <value>URL</value>
   </data>
   <data name="CreateNewAccount" xml:space="preserve">
     <value>Stvori novi račun.</value>
@@ -806,9 +800,6 @@
   </data>
   <data name="CopyRights" xml:space="preserve">
     <value>Sva prava pridržana</value>
-  </data>
-  <data name="DeveloperURL" xml:space="preserve">
-    <value>Autor URL</value>
   </data>
   <data name="GooglePlusUrl" xml:space="preserve">
     <value>Google Plus</value>
@@ -1371,9 +1362,6 @@
   <data name="Keywords" xml:space="preserve">
     <value>Ključne riječi</value>
   </data>
-  <data name="PostUrl" xml:space="preserve">
-    <value>Pošta Url</value>
-  </data>
   <data name="PoweredBy" xml:space="preserve">
     <value>pokretan od</value>
   </data>
@@ -1559,5 +1547,14 @@
   </data>
   <data name="GalleryCategories" xml:space="preserve">
     <value>Kategorije</value>
+  </data>
+  <data name="UrlSlug" xml:space="preserve">
+    <value>Prijateljske veze</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Veza</value>
+  </data>
+  <data name="DeveloperURL" xml:space="preserve">
+    <value>Autor web stranice</value>
   </data>
 </root>

@@ -306,9 +306,6 @@
   <data name="MetaKeywords" xml:space="preserve">
     <value>คำสำคัญ Meta</value>
   </data>
-  <data name="UrlSlug" xml:space="preserve">
-    <value>บุ้ง URL</value>
-  </data>
   <data name="Languages" xml:space="preserve">
     <value>ภาษา</value>
   </data>
@@ -362,9 +359,6 @@
   </data>
   <data name="Parent" xml:space="preserve">
     <value>หลัก</value>
-  </data>
-  <data name="Url" xml:space="preserve">
-    <value>URL</value>
   </data>
   <data name="CreateNewAccount" xml:space="preserve">
     <value>สร้างบัญชีใหม่</value>
@@ -806,9 +800,6 @@
   </data>
   <data name="CopyRights" xml:space="preserve">
     <value>สงวนลิขสิทธิ์</value>
-  </data>
-  <data name="DeveloperURL" xml:space="preserve">
-    <value>URL สำหรับนักพัฒนา</value>
   </data>
   <data name="GooglePlusUrl" xml:space="preserve">
     <value>Google Plus</value>
@@ -1371,9 +1362,6 @@
   <data name="Keywords" xml:space="preserve">
     <value>คำสำคัญ</value>
   </data>
-  <data name="PostUrl" xml:space="preserve">
-    <value>โพสต์ Url</value>
-  </data>
   <data name="PoweredBy" xml:space="preserve">
     <value>รับพลังมาจาก</value>
   </data>
@@ -1559,5 +1547,14 @@
   </data>
   <data name="GalleryCategories" xml:space="preserve">
     <value>หมวดหมู่</value>
+  </data>
+  <data name="UrlSlug" xml:space="preserve">
+    <value>ลิงค์</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>การเชื่อมโยง</value>
+  </data>
+  <data name="DeveloperURL" xml:space="preserve">
+    <value>เว็บไซต์ผู้พัฒนา</value>
   </data>
 </root>

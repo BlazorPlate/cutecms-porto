@@ -306,9 +306,6 @@
   <data name="MetaKeywords" xml:space="preserve">
     <value>मेटा खोजशब्दों</value>
   </data>
-  <data name="UrlSlug" xml:space="preserve">
-    <value>URL स्लग</value>
-  </data>
   <data name="Languages" xml:space="preserve">
     <value>भाषाएँ</value>
   </data>
@@ -362,9 +359,6 @@
   </data>
   <data name="Parent" xml:space="preserve">
     <value>माता-पिता</value>
-  </data>
-  <data name="Url" xml:space="preserve">
-    <value>URL</value>
   </data>
   <data name="CreateNewAccount" xml:space="preserve">
     <value>नया खाता बनाएँ।</value>
@@ -806,9 +800,6 @@
   </data>
   <data name="CopyRights" xml:space="preserve">
     <value>सभी अधिकार सुरक्षित</value>
-  </data>
-  <data name="DeveloperURL" xml:space="preserve">
-    <value>डेवलपर URL</value>
   </data>
   <data name="GooglePlusUrl" xml:space="preserve">
     <value>गूगल प्लस</value>
@@ -1371,9 +1362,6 @@
   <data name="Keywords" xml:space="preserve">
     <value>कीवर्ड</value>
   </data>
-  <data name="PostUrl" xml:space="preserve">
-    <value>पोस्ट यूआरएल</value>
-  </data>
   <data name="PoweredBy" xml:space="preserve">
     <value>इसके द्वारा संचालित</value>
   </data>
@@ -1559,5 +1547,14 @@
   </data>
   <data name="GalleryCategories" xml:space="preserve">
     <value>श्रेणियाँ</value>
+  </data>
+  <data name="UrlSlug" xml:space="preserve">
+    <value>मित्र लिंक</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>लिंक</value>
+  </data>
+  <data name="DeveloperURL" xml:space="preserve">
+    <value>डेवलपर वेबसाइट</value>
   </data>
 </root>

@@ -306,9 +306,6 @@
   <data name="MetaKeywords" xml:space="preserve">
     <value>메타 키워드</value>
   </data>
-  <data name="UrlSlug" xml:space="preserve">
-    <value>URL 슬러그</value>
-  </data>
   <data name="Languages" xml:space="preserve">
     <value>언어 선택</value>
   </data>
@@ -362,9 +359,6 @@
   </data>
   <data name="Parent" xml:space="preserve">
     <value>부모</value>
-  </data>
-  <data name="Url" xml:space="preserve">
-    <value>URL</value>
   </data>
   <data name="CreateNewAccount" xml:space="preserve">
     <value>새 계정을 만듭니다.</value>
@@ -806,9 +800,6 @@
   </data>
   <data name="CopyRights" xml:space="preserve">
     <value>모든 권리 보유</value>
-  </data>
-  <data name="DeveloperURL" xml:space="preserve">
-    <value>개발자 URL</value>
   </data>
   <data name="GooglePlusUrl" xml:space="preserve">
     <value>구글 플러스</value>
@@ -1371,9 +1362,6 @@
   <data name="Keywords" xml:space="preserve">
     <value>키워드</value>
   </data>
-  <data name="PostUrl" xml:space="preserve">
-    <value>게시 Url</value>
-  </data>
   <data name="PoweredBy" xml:space="preserve">
     <value>제공</value>
   </data>
@@ -1559,5 +1547,14 @@
   </data>
   <data name="GalleryCategories" xml:space="preserve">
     <value>카테고리</value>
+  </data>
+  <data name="UrlSlug" xml:space="preserve">
+    <value>친절 한 링크</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>링크</value>
+  </data>
+  <data name="DeveloperURL" xml:space="preserve">
+    <value>개발자 웹사이트</value>
   </data>
 </root>

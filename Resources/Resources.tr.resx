@@ -306,9 +306,6 @@
   <data name="MetaKeywords" xml:space="preserve">
     <value>Meta anahtar kelimeler</value>
   </data>
-  <data name="UrlSlug" xml:space="preserve">
-    <value>URL sülük</value>
-  </data>
   <data name="Languages" xml:space="preserve">
     <value>Diller</value>
   </data>
@@ -362,9 +359,6 @@
   </data>
   <data name="Parent" xml:space="preserve">
     <value>Üst</value>
-  </data>
-  <data name="Url" xml:space="preserve">
-    <value>URL</value>
   </data>
   <data name="CreateNewAccount" xml:space="preserve">
     <value>Yeni bir hesap oluşturun.</value>
@@ -806,9 +800,6 @@
   </data>
   <data name="CopyRights" xml:space="preserve">
     <value>Tüm hakları saklıdır</value>
-  </data>
-  <data name="DeveloperURL" xml:space="preserve">
-    <value>Geliştirici URL</value>
   </data>
   <data name="GooglePlusUrl" xml:space="preserve">
     <value>Google Plus</value>
@@ -1371,9 +1362,6 @@
   <data name="Keywords" xml:space="preserve">
     <value>Anahtar kelimeler</value>
   </data>
-  <data name="PostUrl" xml:space="preserve">
-    <value>Yazı Url</value>
-  </data>
   <data name="PoweredBy" xml:space="preserve">
     <value>Destekçi</value>
   </data>
@@ -1559,5 +1547,14 @@
   </data>
   <data name="GalleryCategories" xml:space="preserve">
     <value>Kategoriler</value>
+  </data>
+  <data name="UrlSlug" xml:space="preserve">
+    <value>Kolay bağlantı</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Bağlantı</value>
+  </data>
+  <data name="DeveloperURL" xml:space="preserve">
+    <value>Geliştirici Web sitesi</value>
   </data>
 </root>

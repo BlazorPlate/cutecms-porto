@@ -306,9 +306,6 @@
   <data name="MetaKeywords" xml:space="preserve">
     <value>Meta kata kunci</value>
   </data>
-  <data name="UrlSlug" xml:space="preserve">
-    <value>URL Slug</value>
-  </data>
   <data name="Languages" xml:space="preserve">
     <value>Bahasa</value>
   </data>
@@ -362,9 +359,6 @@
   </data>
   <data name="Parent" xml:space="preserve">
     <value>Orang tua</value>
-  </data>
-  <data name="Url" xml:space="preserve">
-    <value>URL</value>
   </data>
   <data name="CreateNewAccount" xml:space="preserve">
     <value>Buat akun baru.</value>
@@ -806,9 +800,6 @@
   </data>
   <data name="CopyRights" xml:space="preserve">
     <value>Semua Hak, Milik</value>
-  </data>
-  <data name="DeveloperURL" xml:space="preserve">
-    <value>Pengembang URL</value>
   </data>
   <data name="GooglePlusUrl" xml:space="preserve">
     <value>Google ditambah</value>
@@ -1371,9 +1362,6 @@
   <data name="Keywords" xml:space="preserve">
     <value>Kata kunci</value>
   </data>
-  <data name="PostUrl" xml:space="preserve">
-    <value>Posting Url</value>
-  </data>
   <data name="PoweredBy" xml:space="preserve">
     <value>Didukung oleh</value>
   </data>
@@ -1559,5 +1547,14 @@
   </data>
   <data name="GalleryCategories" xml:space="preserve">
     <value>Kategori</value>
+  </data>
+  <data name="UrlSlug" xml:space="preserve">
+    <value>Ramah Link</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="DeveloperURL" xml:space="preserve">
+    <value>Pengembang Website</value>
   </data>
 </root>

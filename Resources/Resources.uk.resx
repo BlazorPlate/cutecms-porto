@@ -306,9 +306,6 @@
   <data name="MetaKeywords" xml:space="preserve">
     <value>Мета ключові слова</value>
   </data>
-  <data name="UrlSlug" xml:space="preserve">
-    <value>Службове поле URL</value>
-  </data>
   <data name="Languages" xml:space="preserve">
     <value>Мови</value>
   </data>
@@ -362,9 +359,6 @@
   </data>
   <data name="Parent" xml:space="preserve">
     <value>Батьків</value>
-  </data>
-  <data name="Url" xml:space="preserve">
-    <value>URL-АДРЕСА</value>
   </data>
   <data name="CreateNewAccount" xml:space="preserve">
     <value>Створити новий обліковий запис.</value>
@@ -806,9 +800,6 @@
   </data>
   <data name="CopyRights" xml:space="preserve">
     <value>Всі права захищені</value>
-  </data>
-  <data name="DeveloperURL" xml:space="preserve">
-    <value>Розробник URL</value>
   </data>
   <data name="GooglePlusUrl" xml:space="preserve">
     <value>Google Plus</value>
@@ -1371,9 +1362,6 @@
   <data name="Keywords" xml:space="preserve">
     <value>Ключові слова</value>
   </data>
-  <data name="PostUrl" xml:space="preserve">
-    <value>Посаду Url</value>
-  </data>
   <data name="PoweredBy" xml:space="preserve">
     <value>Наданий</value>
   </data>
@@ -1559,5 +1547,14 @@
   </data>
   <data name="GalleryCategories" xml:space="preserve">
     <value>Категорії</value>
+  </data>
+  <data name="UrlSlug" xml:space="preserve">
+    <value>Дружні посилання</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Посилання</value>
+  </data>
+  <data name="DeveloperURL" xml:space="preserve">
+    <value>Розробник сайт</value>
   </data>
 </root>

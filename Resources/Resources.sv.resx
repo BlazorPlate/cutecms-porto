@@ -306,9 +306,6 @@
   <data name="MetaKeywords" xml:space="preserve">
     <value>Meta-nyckelord</value>
   </data>
-  <data name="UrlSlug" xml:space="preserve">
-    <value>URL Slug</value>
-  </data>
   <data name="Languages" xml:space="preserve">
     <value>Språk</value>
   </data>
@@ -362,9 +359,6 @@
   </data>
   <data name="Parent" xml:space="preserve">
     <value>Förälder</value>
-  </data>
-  <data name="Url" xml:space="preserve">
-    <value>URL</value>
   </data>
   <data name="CreateNewAccount" xml:space="preserve">
     <value>Skapa nytt konto.</value>
@@ -806,9 +800,6 @@
   </data>
   <data name="CopyRights" xml:space="preserve">
     <value>Alla rättigheter reserverade</value>
-  </data>
-  <data name="DeveloperURL" xml:space="preserve">
-    <value>Utvecklare URL</value>
   </data>
   <data name="GooglePlusUrl" xml:space="preserve">
     <value>Google Plus</value>
@@ -1371,9 +1362,6 @@
   <data name="Keywords" xml:space="preserve">
     <value>Sökord</value>
   </data>
-  <data name="PostUrl" xml:space="preserve">
-    <value>Post Url</value>
-  </data>
   <data name="PoweredBy" xml:space="preserve">
     <value>Styrt av</value>
   </data>
@@ -1559,5 +1547,14 @@
   </data>
   <data name="GalleryCategories" xml:space="preserve">
     <value>Kategorier</value>
+  </data>
+  <data name="UrlSlug" xml:space="preserve">
+    <value>Länk</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Länk</value>
+  </data>
+  <data name="DeveloperURL" xml:space="preserve">
+    <value>Utvecklarens webbplats</value>
   </data>
 </root>

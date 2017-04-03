@@ -306,9 +306,6 @@
   <data name="MetaKeywords" xml:space="preserve">
     <value>META klíčová slova</value>
   </data>
-  <data name="UrlSlug" xml:space="preserve">
-    <value>Adresa URL popisu</value>
-  </data>
   <data name="Languages" xml:space="preserve">
     <value>Jazyky</value>
   </data>
@@ -362,9 +359,6 @@
   </data>
   <data name="Parent" xml:space="preserve">
     <value>Rodiče</value>
-  </data>
-  <data name="Url" xml:space="preserve">
-    <value>ADRESA URL</value>
   </data>
   <data name="CreateNewAccount" xml:space="preserve">
     <value>Vytvořte nový účet.</value>
@@ -806,9 +800,6 @@
   </data>
   <data name="CopyRights" xml:space="preserve">
     <value>Všechna práva vyhrazena</value>
-  </data>
-  <data name="DeveloperURL" xml:space="preserve">
-    <value>Vývojář URL</value>
   </data>
   <data name="GooglePlusUrl" xml:space="preserve">
     <value>Google Plus</value>
@@ -1371,9 +1362,6 @@
   <data name="Keywords" xml:space="preserve">
     <value>Klíčová slova</value>
   </data>
-  <data name="PostUrl" xml:space="preserve">
-    <value>Post Url</value>
-  </data>
   <data name="PoweredBy" xml:space="preserve">
     <value>Běží na</value>
   </data>
@@ -1559,5 +1547,14 @@
   </data>
   <data name="GalleryCategories" xml:space="preserve">
     <value>Kategorie</value>
+  </data>
+  <data name="UrlSlug" xml:space="preserve">
+    <value>Popisný odkaz</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Odkaz</value>
+  </data>
+  <data name="DeveloperURL" xml:space="preserve">
+    <value>Pro vývojáře</value>
   </data>
 </root>

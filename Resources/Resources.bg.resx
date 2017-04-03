@@ -306,9 +306,6 @@
   <data name="MetaKeywords" xml:space="preserve">
     <value>Мета ключови думи</value>
   </data>
-  <data name="UrlSlug" xml:space="preserve">
-    <value>URL Плужек</value>
-  </data>
   <data name="Languages" xml:space="preserve">
     <value>Езици</value>
   </data>
@@ -362,9 +359,6 @@
   </data>
   <data name="Parent" xml:space="preserve">
     <value>Родител</value>
-  </data>
-  <data name="Url" xml:space="preserve">
-    <value>URL</value>
   </data>
   <data name="CreateNewAccount" xml:space="preserve">
     <value>Създаване на нов акаунт.</value>
@@ -806,9 +800,6 @@
   </data>
   <data name="CopyRights" xml:space="preserve">
     <value>Всички права запазени</value>
-  </data>
-  <data name="DeveloperURL" xml:space="preserve">
-    <value>Разработчици URL</value>
   </data>
   <data name="GooglePlusUrl" xml:space="preserve">
     <value>Google Plus</value>
@@ -1371,9 +1362,6 @@
   <data name="Keywords" xml:space="preserve">
     <value>Ключови думи</value>
   </data>
-  <data name="PostUrl" xml:space="preserve">
-    <value>Пост Url</value>
-  </data>
   <data name="PoweredBy" xml:space="preserve">
     <value>Изпълнява се от</value>
   </data>
@@ -1559,5 +1547,14 @@
   </data>
   <data name="GalleryCategories" xml:space="preserve">
     <value>Категории</value>
+  </data>
+  <data name="UrlSlug" xml:space="preserve">
+    <value>Приятелска връзка</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Връзка</value>
+  </data>
+  <data name="DeveloperURL" xml:space="preserve">
+    <value>Разработчици сайт</value>
   </data>
 </root>

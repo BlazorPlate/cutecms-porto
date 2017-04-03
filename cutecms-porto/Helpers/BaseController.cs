@@ -42,7 +42,7 @@ namespace cutecms_porto.Helpers
         }
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            var fullAddress = filterContext.HttpContext.Request.Headers["Host"].Split('.');
+            //var fullAddress = filterContext.HttpContext.Request.Headers["Host"].Split('.');
             //if (fullAddress.Length < 2)
             //    filterContext.Result = new HttpStatusCodeResult(404); //or redirect filterContext.Result = new RedirectToRouteResult(..);
             //Tenant.TenantId = fullAddress[0];

@@ -333,9 +333,6 @@
   <data name="Details" xml:space="preserve">
     <value>التفاصيل</value>
   </data>
-  <data name="DeveloperURL" xml:space="preserve">
-    <value>رابط المطور</value>
-  </data>
   <data name="Director" xml:space="preserve">
     <value>المدير</value>
   </data>
@@ -948,12 +945,6 @@
   <data name="UploadPersonalPhoto" xml:space="preserve">
     <value>تحميل صورة شخصية</value>
   </data>
-  <data name="Url" xml:space="preserve">
-    <value>الرابط</value>
-  </data>
-  <data name="UrlSlug" xml:space="preserve">
-    <value>رابط المسار</value>
-  </data>
   <data name="User" xml:space="preserve">
     <value>مستخدم</value>
   </data>
@@ -1371,9 +1362,6 @@
   <data name="Keywords" xml:space="preserve">
     <value>الكلمات المفتاحية</value>
   </data>
-  <data name="PostUrl" xml:space="preserve">
-    <value>رابط الإعلان</value>
-  </data>
   <data name="PoweredBy" xml:space="preserve">
     <value>تم تطوير الموقع من خلال</value>
   </data>
@@ -1559,5 +1547,14 @@
   </data>
   <data name="GalleryCategories" xml:space="preserve">
     <value>التصنيفات</value>
+  </data>
+  <data name="UrlSlug" xml:space="preserve">
+    <value>وصلة ودية</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>الارتباط</value>
+  </data>
+  <data name="DeveloperURL" xml:space="preserve">
+    <value>الموقع المطور</value>
   </data>
 </root>

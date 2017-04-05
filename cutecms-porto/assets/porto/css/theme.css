@@ -740,7 +740,7 @@ html:not(.sticky-header-active) #header.header-transparent-sticky-deactive .head
 
 	#header .header-nav.header-nav-stripe nav > ul > li > a, #header .header-nav.header-nav-stripe nav > ul > li:hover > a {
 		background: transparent;
-		padding: 40px 13px 38px;
+		padding: 50px 13px 38px;
 		margin: 0;
 	}
 

@@ -46,7 +46,7 @@
         <link rel="stylesheet" href="~/assets/porto/css/rtl-theme.css">
         <link rel="stylesheet" href="~/assets/porto/css/rtl-theme-elements.css">
         <link rel="stylesheet" href="~/assets/porto/css/rtl-theme-blog.css">
-        @*<link rel="stylesheet" href="~/assets/porto/css/rtl-theme-shop.css">*@
+        <link rel="stylesheet" href="~/assets/porto/css/rtl-theme-shop.css">
         <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/droid-arabic-kufi" type="text/css" />
     }
     else
@@ -54,7 +54,7 @@
         <link rel="stylesheet" href="~/assets/porto/css/theme.css">
         <link rel="stylesheet" href="~/assets/porto/css/theme-elements.css">
         <link rel="stylesheet" href="~/assets/porto/css/theme-blog.css">
-        @*<link rel="stylesheet" href="~/assets/porto/css/theme-shop.css">*@
+        <link rel="stylesheet" href="~/assets/porto/css/theme-shop.css">
     }
     <!-- Current Page CSS -->
     <link rel="stylesheet" href="~/assets/porto/vendor/rs-plugin/css/settings.css">
@@ -103,11 +103,11 @@
 </head>
 <body>
     <div class="body">
-        <header id="header" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 57, 'stickySetTop': '-57px', 'stickyChangeLogo': true}">
-            <div class="header-body">
+        <header id="header" class="header-mobile-nav-only" data-plugin-options='{"stickyEnabled": true, "stickyEnableOnBoxed": true, "stickyEnableOnMobile": true, "stickyStartAt": 52, "stickySetTop": "-52px", "stickyChangeLogo": true}'>
+            <div class="header-body" style="top:0px">
                 <div class="header-top">
                     <div class="container">
-                        <nav class="header-nav-top">
+                        <nav class="header-nav-top" style="margin-left:0px;">
                             <ul class="nav nav-pills">
                                 <li>
                                     <a href="#" id="dropdownLanguage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -145,8 +145,9 @@
                         <div class="header-column">
                             <div class="header-logo">
                                 <a href="~/@Thread.CurrentThread.CurrentCulture.Name">
+
                                     @*<img alt="@(OrganizationData.Organization?.PrimaryLogoName)" width="100" height="100" data-sticky-width="80" data-sticky-height="80" data-sticky-top="40" src="@(OrganizationData.Organization?.PrimaryLogoPath)">*@
-                                    <img alt="CuteCMS.NET" width="111" height="54" data-sticky-width="82" data-sticky-height="40" data-sticky-top="29" src="~/assets/porto/img/header-logo.png" style="top: 0px; width: 111px; height: 54px;">
+                                    <img alt="CuteCMS.NET" width="111" height="54" data-sticky-width="82" data-sticky-height="40" data-sticky-top="15" src="~/assets/porto/img/header-logo.png" style="top: 0; width: 111px; height: 54px;">
                                 </a>
                             </div>
                         </div>

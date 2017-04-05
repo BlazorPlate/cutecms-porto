@@ -1,7 +1,7 @@
 /*
 Name: 			Shop1
 Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	5.2.0
+Theme Version:	5.7.1
 */
 
 (function( $ ) {
@@ -176,12 +176,82 @@ Theme Version:	5.2.0
 				smallImg = targetLink.data('image'),
 				bigImg = targetLink.data('zoom-image');
 
+			// Sync data-zoom-image for gallery
+			$('#product-zoom').attr('data-zoom-image',bigImg);
+
+			// prevent default
+			$.magnificPopup.close();
+
 			ez.swaptheimage(smallImg, bigImg);
 		});
+
+	// Set up gallery on click
+	var galleryZoom = $('#productGalleryThumbs');
+	galleryZoom.magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		gallery:{
+		    enabled: true
+		},
+		callbacks: {
+		    elementParse: function(item) {
+			    item.src = item.el.attr('data-zoom-image');
+			}
+		}
+	});
+
+	// Zoom image when click on icon
+	$('.product-img-zoom').on('click', function(){
+		var current = $('#product-zoom').attr('data-zoom-image');
+
+		$('#productGalleryThumbs .owl-item').each(function(){
+			if( current == $(this).find('.product-gallery-item').attr('data-zoom-image') ) {
+				return galleryZoom.magnificPopup('open', $(this).index());
+			}
+		});
+	});
 
 	// No def events for links
 	$('#productGalleryThumbs').find('a').on('click', function (e) {
 		e.preventDefault();
 	});
+
+	// Newsletter Checkbox Cookie - Check if has newsCheck cookie
+	if( getCookie('newsCheck') != '' ) {
+		$.magnificPopup.close();
+	}
+
+	// Create cookie or delete depending the checkbox
+	$('.newsletter-subscribe input[type="checkbox"]').on('change', function(){
+		if( $(this).prop('checked') ) {
+			setCookie('newsCheck', 'true', 30); // Expires in 30 days
+		} else {
+			setCookie('newsCheck', 'true', 0);
+		}
+	});
+
+	// Set cookie
+	function setCookie(cname, cvalue, exdays) {
+	    var d = new Date();
+	    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+	    var expires = "expires="+d.toUTCString();
+	    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	}
+
+	// Get cookie
+	function getCookie(cname) {
+	    var name = cname + "=";
+	    var ca = document.cookie.split(';');
+	    for(var i = 0; i < ca.length; i++) {
+	        var c = ca[i];
+	        while (c.charAt(0) == ' ') {
+	            c = c.substring(1);
+	        }
+	        if (c.indexOf(name) == 0) {
+	            return c.substring(name.length, c.length);
+	        }
+	    }
+	    return "";
+	}
     
 }).apply( this, [ jQuery ]);

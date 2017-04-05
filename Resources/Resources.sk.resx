@@ -1557,4 +1557,7 @@
   <data name="DeveloperURL" xml:space="preserve">
     <value>Vývojár webových stránkach</value>
   </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Odkaz</value>
+  </data>
 </root>

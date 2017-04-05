@@ -1557,4 +1557,7 @@
   <data name="DeveloperURL" xml:space="preserve">
     <value>Phát triển Website</value>
   </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Tài liệu tham khảo</value>
+  </data>
 </root>

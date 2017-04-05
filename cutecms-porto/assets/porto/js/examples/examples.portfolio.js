@@ -1,7 +1,7 @@
 /*
 Name: 			Portfolio - Examples
 Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	5.2.0
+Theme Version:	5.7.1
 */
 (function($) {
 
@@ -15,41 +15,25 @@ Theme Version:	5.2.0
 		type: 'inline',
 		gallery: {
 			enabled: true
-		},
-		callbacks: {
-			beforeOpen: function() {
-
-				// Close
-				$('a[data-portfolio-close]').on('click', function(e) {
-					e.preventDefault();
-					$.magnificPopup.close();
-				});
-
-				// Remove Next and Close
-				if($('a[data-portfolio-on-modal]').length <= 1) {
-					
-					$('a[data-portfolio-prev], a[data-portfolio-next]').remove();
-
-				} else {
-
-					// Prev
-					$('a[data-portfolio-prev]').on('click', function(e) {
-						e.preventDefault();
-						$('.mfp-arrow-left').trigger('click');
-						return false;
-					});
-
-					// Next
-					$('a[data-portfolio-next]').on('click', function(e) {
-						e.preventDefault();
-						$('.mfp-arrow-right').trigger('click');
-						return false;
-					});
-
-				}
-
-			}
 		}
+	});
+
+	$('a[data-portfolio-close]').on('click', function(e) {
+		e.preventDefault();
+		$.magnificPopup.instance.close();
+		return false;
+	});
+
+	$('a[data-portfolio-prev]').on('click', function(e) {
+		e.preventDefault();
+		$.magnificPopup.instance.prev();
+		return false;
+	});
+
+	$('a[data-portfolio-next]').on('click', function(e) {
+		e.preventDefault();
+		$.magnificPopup.instance.next();
+		return false;
 	});
 
 	/*
@@ -282,7 +266,7 @@ Theme Version:	5.2.0
 						var $this = $(this),
 							opts;
 
-						var pluginOptions = $this.data('plugin-options');
+						var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 						if (pluginOptions)
 							opts = pluginOptions;
 
@@ -419,7 +403,7 @@ Theme Version:	5.2.0
 						var $this = $(this),
 							opts;
 
-						var pluginOptions = $this.data('plugin-options');
+						var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 						if (pluginOptions)
 							opts = pluginOptions;
 
@@ -508,7 +492,7 @@ Theme Version:	5.2.0
 								var $this = $(this),
 									opts;
 
-								var pluginOptions = $this.data('plugin-options');
+								var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 								if (pluginOptions)
 									opts = pluginOptions;
 
@@ -672,6 +656,12 @@ Theme Version:	5.2.0
 					}
 					return value;
 				}
+
+				$(window).on('resize', function() {
+					setTimeout(function() {
+						$grid.isotope('layout');
+					}, 300);
+				});
 
 				if ($loader) {
 					$loader.removeClass('sort-destination-loader-showing');

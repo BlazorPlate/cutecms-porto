@@ -1557,4 +1557,7 @@
   <data name="DeveloperURL" xml:space="preserve">
     <value>开发人员网站</value>
   </data>
+  <data name="Reference" xml:space="preserve">
+    <value>引用</value>
+  </data>
 </root>

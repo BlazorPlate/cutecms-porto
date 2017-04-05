@@ -1,8 +1,8 @@
-﻿@charset "UTF-8";
+@charset "UTF-8";
 /*
 Name: 			theme-elements.css
 Written by: 	Okler Themes - (http://www.okler.net)
-Version: 		5.2.0
+Theme Version:	5.7.1
 */
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
@@ -846,16 +846,10 @@ html.boxed .nav-secondary.sticky-active {
 /* Sizes */
 .btn-xlg {
 	border-radius: 6px;
-	font-size: 18px;
-	padding: 15px 60px;
+	font-size: 16px;
+	padding: 12px 33px;
 }
 
-@media (max-width: 479px) {
-	.btn-xlg {
-		font-size: 16px;
-		padding: 15px 30px;
-	}
-}
 /* Labels */
 .label-primary {
 	background-color: #CCC;
@@ -897,7 +891,7 @@ html.boxed .nav-secondary.sticky-active {
 
 /* Forms */
 form label {
-	font-weight: bold;
+	font-weight: normal;
 }
 
 textarea {
@@ -3038,6 +3032,12 @@ html[xmlns] .clearfix {
 	height: 1%;
 }
 
+/* Container */
+.container-xl {
+	width: 100%;
+	max-width: 1630px;
+}
+
 /* Sample Item */
 .sample-item-container {
 	max-width: 1650px;
@@ -3075,7 +3075,7 @@ html[xmlns] .clearfix {
 	box-shadow: 10px 10px 74px -15px rgba(0, 0, 0, 0.1);
 	position: relative;
 	height: 22.8vw;
-	max-height: 370px;
+	max-height: 365px;
 	display: block !important;
 	overflow: hidden;
 	-webkit-transition: box-shadow 0.3s ease;
@@ -3092,8 +3092,8 @@ html[xmlns] .clearfix {
 }
 
 .sample-item .owl-carousel .owl-item > div {
-	height: 370px;
-	max-height: 370px;
+	height: 365px;
+	max-height: 365px;
 }
 
 .sample-item .owl-carousel .owl-nav .owl-prev,
@@ -3166,7 +3166,7 @@ html[xmlns] .clearfix {
 .sample-item .sample-item-image-wrapper {
 	background: #FFF;
 	height: 22vw;
-	max-height: 370px;
+	max-height: 365px;
 	max-width: 500px;
 	width: 100%;
 	display: inline-block;
@@ -3195,7 +3195,7 @@ html[xmlns] .clearfix {
 
 .sample-item .sample-item-image {
 	height: 22.8vw;
-	max-height: 370px;
+	max-height: 365px;
 	max-width: 500px;
 	width: 100%;
 	position: absolute;
@@ -3228,6 +3228,11 @@ html[xmlns] .clearfix {
 	padding: 0;
 	margin: 0;
 	font-size: 12px;
+}
+
+.sample-item.sample-item-home .sample-item-image-wrapper,
+.sample-item.sample-item-home .sample-item-image {
+	max-height: 260px;
 }
 
 .sample-item.sample-item-coming-soon .sample-item-image {

@@ -1552,9 +1552,12 @@
     <value>URL Slug</value>
   </data>
   <data name="Url" xml:space="preserve">
-    <value>Link</value>
+    <value>URL</value>
   </data>
   <data name="DeveloperURL" xml:space="preserve">
     <value>Developer Website</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Reference</value>
   </data>
 </root>

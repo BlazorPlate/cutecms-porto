@@ -1552,9 +1552,12 @@
     <value>وصلة ودية</value>
   </data>
   <data name="Url" xml:space="preserve">
-    <value>الارتباط</value>
+    <value>الرابط</value>
   </data>
   <data name="DeveloperURL" xml:space="preserve">
     <value>الموقع المطور</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>المرجع</value>
   </data>
 </root>

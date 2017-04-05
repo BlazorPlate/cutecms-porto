@@ -1557,4 +1557,7 @@
   <data name="DeveloperURL" xml:space="preserve">
     <value>Розробник сайт</value>
   </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Посилання</value>
+  </data>
 </root>

@@ -1557,4 +1557,7 @@
   <data name="DeveloperURL" xml:space="preserve">
     <value>Geliştirici Web sitesi</value>
   </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Başvuru</value>
+  </data>
 </root>

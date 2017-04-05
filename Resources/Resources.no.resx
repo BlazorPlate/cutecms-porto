@@ -1557,4 +1557,7 @@
   <data name="DeveloperURL" xml:space="preserve">
     <value>Developer-websted</value>
   </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Referanse</value>
+  </data>
 </root>

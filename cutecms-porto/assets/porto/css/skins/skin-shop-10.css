@@ -2974,9 +2974,27 @@ html[dir="rtl"] #header .tip.skin:before {
 		border-left-color: #0088cc;
 	}
 
+	html.side-header #header .header-nav-main nav > ul li.dropdown > a.dropdown-toggle:after {
+		border-color: transparent transparent transparent #0088cc;
+	}
+
+	html.side-header #header .header-nav-main nav > ul li.dropdown.active > a.dropdown-toggle:after,
+	html.side-header #header .header-nav-main nav > ul li.dropdown:hover > a.dropdown-toggle:after {
+		border-color: transparent transparent transparent #ffffff;
+	}
+
 	html.side-header-right #header .header-nav-main nav > ul li.dropdown.open > .dropdown-menu,
 	html.side-header-right #header .header-nav-main nav > ul li.dropdown:hover > .dropdown-menu {
 		border-right-color: #0088cc;
+	}
+
+	html.side-header-right #header .header-nav-main nav > ul li.dropdown > a.dropdown-toggle:after {
+		border-color: transparent #0088cc transparent transparent;
+	}
+
+	html.side-header-right #header .header-nav-main nav > ul li.dropdown.active > a.dropdown-toggle:after,
+	html.side-header-right #header .header-nav-main nav > ul li.dropdown:hover > a.dropdown-toggle:after {
+		border-color: transparent #ffffff transparent transparent;
 	}
 }
 
@@ -3518,8 +3536,17 @@ html #header .header-top.header-top-light .dropdown-menu a:focus {
 		color: #0088cc;
 	}
 
+	#header .header-nav-main.header-nav-main-light nav > ul > li.open > a.dropdown-toggle:after,
+	#header .header-nav-main.header-nav-main-light nav > ul > li:hover > a.dropdown-toggle:after {
+		border-color: #0088cc transparent transparent transparent;
+	}
+
 	#header .header-nav-main.header-nav-main-light nav > ul > li.active > a {
 		color: #0088cc;
+	}
+
+	#header .header-nav-main.header-nav-main-light nav > ul > li.active > a.dropdown-toggle:after {
+		border-color: #0088cc transparent transparent transparent;
 	}
 }
 

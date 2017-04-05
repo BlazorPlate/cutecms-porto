@@ -1,7 +1,7 @@
 /*
 Name: 			Photography
 Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	5.2.0
+Theme Version:	5.7.1
 */
 
 // Demo Config
@@ -27,7 +27,6 @@ theme.PluginScrollToTop.initialize = function() {};
 		autoHeight: "off",
 		fullScreenAlignForce: "off",
 		fullScreenOffset: "",
-		disableProgressBar: "on",
 		hideThumbsOnMobile: "off",
 		hideSliderAtLimit: 0,
 		hideCaptionAtLimit: 0,
@@ -186,7 +185,7 @@ theme.PluginScrollToTop.initialize = function() {};
 									var $this = $(this),
 										opts;
 
-									var pluginOptions = $this.data('plugin-options');
+									var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 									if (pluginOptions)
 										opts = pluginOptions;
 
@@ -203,7 +202,7 @@ theme.PluginScrollToTop.initialize = function() {};
 	 								var $this = $(this),
 	 									opts;
 
-	 								var pluginOptions = $this.data('plugin-options');
+	 								var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 	 								if (pluginOptions)
 	 									opts = pluginOptions;
 
@@ -334,7 +333,7 @@ theme.PluginScrollToTop.initialize = function() {};
 									var $this = $(this),
 										opts;
 
-									var pluginOptions = $this.data('plugin-options');
+									var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 									if (pluginOptions)
 										opts = pluginOptions;
 
@@ -435,7 +434,7 @@ theme.PluginScrollToTop.initialize = function() {};
 						var $this = $(this),
 							opts;
 
-						var pluginOptions = $this.data('plugin-options');
+						var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 						if (pluginOptions)
 							opts = pluginOptions;
 
@@ -775,6 +774,7 @@ theme.PluginScrollToTop.initialize = function() {};
 				dots: false,
 				loop: false,
 				navText: [],
+				rtl: (($('html[dir="rtl"]').get(0)) ? true : false),
 				onRefreshed: function(e){
 					setTimeout(function(){
 						$('.mfp-wrap.photography-portfolio-gallery').css('opacity',1);
@@ -801,7 +801,8 @@ theme.PluginScrollToTop.initialize = function() {};
 				nav: false,
 				center: false,
 				dots: false,
-				pagination: false
+				pagination: false,
+				rtl: (($('html[dir="rtl"]').get(0)) ? true : false)
 			})
 			.on('click', '.owl-item', function() {
 				$thumbGalleryDetail.trigger('to.owl.carousel', [$(this).index(), duration, true]);
@@ -830,6 +831,7 @@ theme.PluginScrollToTop.initialize = function() {};
 				dots: false,
 				loop: false,
 				navText: [],
+				rtl: (($('html[dir="rtl"]').get(0)) ? true : false),
 				onRefreshed: function(e){
 					setTimeout(function(){
 						$('.mfp-wrap.photography-portfolio-gallery').css('opacity',1);
@@ -857,6 +859,7 @@ theme.PluginScrollToTop.initialize = function() {};
 				center: false,
 				dots: false,
 				pagination: false,
+				rtl: (($('html[dir="rtl"]').get(0)) ? true : false),
 				responsive:{
 			        0:{
 			            items:2

@@ -3283,6 +3283,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reference.
+        /// </summary>
+        public static string Reference {
+            get {
+                return ResourceManager.GetString("Reference", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Kind regards,.
         /// </summary>
         public static string Regards {
@@ -4093,7 +4102,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Link.
+        ///   Looks up a localized string similar to URL.
         /// </summary>
         public static string Url {
             get {

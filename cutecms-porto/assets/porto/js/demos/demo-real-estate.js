@@ -1,7 +1,7 @@
 /*
 Name: 			RealEstate
 Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	5.2.0
+Theme Version:	5.7.1
 */
 
 
@@ -55,6 +55,19 @@ $('#revolutionSlider').bind("revolution.slide.onchange",function (e,data) {
 
 	$('.slides-number .atual').text( atual_slide );
 });
+
+/*
+* Isotope
+*/
+var $wrapper = $('.properties-listing');
+
+if( $wrapper.get(0) ) {
+	$wrapper.waitForImages(function() {
+		$wrapper.isotope({
+			itemSelector: '.isotope-item'
+		});
+	});
+}
 
 /*
 Custom Listing Load More
@@ -136,7 +149,7 @@ var listingLoadMore = {
 							var $this = $(this),
 								opts;
 
-							var pluginOptions = $this.data('plugin-options');
+							var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 							if (pluginOptions)
 								opts = pluginOptions;
 

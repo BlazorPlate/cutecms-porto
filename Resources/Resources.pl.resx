@@ -1557,4 +1557,7 @@
   <data name="DeveloperURL" xml:space="preserve">
     <value>Strona autora</value>
   </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Odwołanie</value>
+  </data>
 </root>

@@ -33,10 +33,11 @@ namespace cutecms_porto.Areas.CMS.Models
 
         #region Properties
         public ImageFile ImageFile { get; set; }
-        [Required]
+        [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
         [Display(Name = "Gallery", ResourceType = typeof(Resources.Resources))]
         public short GalleryId { get; set; }
         public string[] AvailableTags { get; set; }
+        [Display(Name = "Tags", ResourceType = typeof(Resources.Resources))]
         public List<SelectTagEditorViewModel> Tags { get; set; }
         [Display(Name = "ImageFiles", ResourceType = typeof(Resources.Resources))]
         public IEnumerable<HttpPostedFileBase> ImageFiles { get; set; }

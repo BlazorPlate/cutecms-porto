@@ -1,7 +1,7 @@
 /*
 Name: 			Gym
 Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	5.2.0
+Theme Version:	5.7.1
 */
 
 (function( $ ) {
@@ -23,7 +23,6 @@ Theme Version:	5.2.0
 		autoHeight: "off",
 		fullScreenAlignForce: "off",
 		fullScreenOffset: "",
-		disableProgressBar: "on",
 		hideThumbsOnMobile: "off",
 		hideSliderAtLimit: 0,
 		hideCaptionAtLimit: 0,
@@ -88,7 +87,7 @@ Theme Version:	5.2.0
         clientId: '11111111111111111111111111111111',
         accessToken: '1111111111.1111111.11111111111111111111111111111111',
         resolution: 'standard_resolution',
-        template: '<div style="background: url({{image}}); background-size: cover;"></div>',
+        template: '<div style="background: url({{image}}); background-size: cover;"><a target="_blank" href="{{link}}"></a></div>',
         after: function(){
         	// Init Owl Carousel Instagram
 			$('.owl-instagram').owlCarousel({

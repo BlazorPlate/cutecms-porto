@@ -1,7 +1,7 @@
 /*
 Name: 			Hotel
 Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	5.2.0
+Theme Version:	5.7.1
 */
 
 (function( $ ) {
@@ -73,16 +73,18 @@ Theme Version:	5.2.0
 		defaultDate: '+1d',
 		startDate: '+1d',
 		autoclose: true,
-		orientation: 'bottom',
-		container: '#header'
+		orientation: (($('html[dir="rtl"]').get(0)) ? 'bottom right' : 'bottom'),
+		container: '#header',
+		rtl: (($('html[dir="rtl"]').get(0)) ? true : false)
 	});
 
 	$('#bookNowDepartureHeader').datepicker({
 		defaultDate: '+2d',
 		startDate: '+2d',
 		autoclose: true,
-		orientation: 'bottom',
-		container: '#header'
+		orientation: (($('html[dir="rtl"]').get(0)) ? 'bottom right' : 'bottom'),
+		container: '#header',
+		rtl: (($('html[dir="rtl"]').get(0)) ? true : false)
 	});
 
 	$(document).scroll(function(){
@@ -93,16 +95,18 @@ Theme Version:	5.2.0
 		defaultDate: '+1d',
 		startDate: '+1d',
 		autoclose: true,
-		orientation: 'bottom',
-		container: '#bookForm'
+		orientation: (($('html[dir="rtl"]').get(0)) ? 'bottom right' : 'bottom'),
+		container: '#bookForm',
+		rtl: (($('html[dir="rtl"]').get(0)) ? true : false)
 	});
 
 	$('#bookNowDeparture').datepicker({
 		defaultDate: '+2d',
 		startDate: '+2d',
 		autoclose: true,
-		orientation: 'bottom',
-		container: '#bookForm'
+		orientation: (($('html[dir="rtl"]').get(0)) ? 'bottom right' : 'bottom'),
+		container: '#bookForm',
+		rtl: (($('html[dir="rtl"]').get(0)) ? true : false)
 	});
 
 	// Book Form

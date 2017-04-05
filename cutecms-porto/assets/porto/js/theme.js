@@ -1,11 +1,38 @@
 /*
 Name: 			Theme Base
 Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	5.2.0
+Theme Version:	5.7.1
 */
 
 // Theme
 window.theme = {};
+
+// Theme Common Functions
+window.theme.fn = {
+
+	getOptions: function(opts) {
+
+		if (typeof(opts) == 'object') {
+
+			return opts;
+
+		} else if (typeof(opts) == 'string') {
+
+			try {
+				return JSON.parse(opts.replace(/'/g,'"').replace(';',''));
+			} catch(e) {
+				return {};
+			}
+
+		} else {
+
+			return {};
+
+		}
+
+	}
+
+};
 
 // Animate
 (function(theme, $) {
@@ -215,12 +242,20 @@ window.theme = {};
 
 			// Auto Height Fixes
 			if (this.options.autoHeight) {
+				var itemsHeight = [];
+
+				$el.find('.owl-item').each(function(){
+					if( $(this).hasClass('active') ) {
+						itemsHeight.push( $(this).height() );
+					}
+				});
+
 				$(window).afterResize(function() {
-					$el.find('.owl-stage-outer').height( $el.find('.owl-item.active').height() );
+					$el.find('.owl-stage-outer').height( Math.max.apply(null, itemsHeight) );
 				});
 
 				$(window).on('load', function() {
-					$el.find('.owl-stage-outer').height( $el.find('.owl-item.active').height() );
+					$el.find('.owl-stage-outer').height( Math.max.apply(null, itemsHeight) );
 				});
 			}
 
@@ -2500,7 +2535,7 @@ window.theme = {};
 			},
 
 			setOptions: function(opts) {
-				this.options = $.extend(true, {}, this.defaults, opts, this.$wrapper.data('plugin-options'));
+				this.options = $.extend(true, {}, this.defaults, opts, theme.fn.getOptions(this.$wrapper.data('plugin-options')));
 
 				return this;
 			},
@@ -2583,7 +2618,7 @@ window.theme = {};
 			},
 
 			setOptions: function(opts) {
-				this.options = $.extend(true, {}, this.defaults, opts, this.$wrapper.data('plugin-options'));
+				this.options = $.extend(true, {}, this.defaults, opts, theme.fn.getOptions(this.$wrapper.data('plugin-options')));
 
 				return this;
 			},
@@ -2748,7 +2783,7 @@ window.theme = {};
 			},
 
 			setOptions: function(opts) {
-				this.options = $.extend(true, {}, this.defaults, opts, this.$wrapper.data('plugin-options'));
+				this.options = $.extend(true, {}, this.defaults, opts, theme.fn.getOptions(this.$wrapper.data('plugin-options')));
 
 				return this;
 			},
@@ -2854,7 +2889,7 @@ window.theme = {};
 			},
 
 			setOptions: function(opts) {
-				this.options = $.extend(true, {}, this.defaults, opts, this.$wrapper.data('plugin-options'));
+				this.options = $.extend(true, {}, this.defaults, opts, theme.fn.getOptions(this.$wrapper.data('plugin-options')));
 
 				return this;
 			},
@@ -2918,7 +2953,7 @@ window.theme = {};
 			},
 
 			setOptions: function(opts) {
-				this.options = $.extend(true, {}, this.defaults, opts, this.$wrapper.data('plugin-options'));
+				this.options = $.extend(true, {}, this.defaults, opts, theme.fn.getOptions(this.$wrapper.data('plugin-options')));
 
 				return this;
 			},

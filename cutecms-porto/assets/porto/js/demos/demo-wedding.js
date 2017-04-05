@@ -1,7 +1,7 @@
 /*
 Name: 			Wedding
 Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	5.2.0
+Theme Version:	5.7.1
 */
 
 (function( $ ) {
@@ -287,7 +287,7 @@ Theme Version:	5.2.0
 								var $this = $(this),
 									opts;
 
-								var pluginOptions = $this.data('plugin-options');
+								var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 								if (pluginOptions)
 									opts = pluginOptions;
 

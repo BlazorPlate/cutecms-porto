@@ -1,7 +1,7 @@
 /*
 Name: 			Construction
 Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	5.2.0
+Theme Version:	5.7.1
 */
 
 (function( $ ) {
@@ -47,7 +47,8 @@ Theme Version:	5.2.0
 			nav: true,
 			dots: false,
 			loop: false,
-			navText: []
+			navText: [],
+			rtl: (($('html[dir="rtl"]').get(0)) ? true : false)
 		})
 		.on('changed.owl.carousel', function(e) {
 			if (!flag) {
@@ -63,7 +64,8 @@ Theme Version:	5.2.0
 			items: 4,
 			nav: false,
 			center: false,
-			dots: false
+			dots: false,
+			rtl: (($('html[dir="rtl"]').get(0)) ? true : false)
 		})
 		.on('click', '.owl-item', function() {
 			$thumbGalleryDetail1.trigger('to.owl.carousel', [$(this).index(), duration, true]);

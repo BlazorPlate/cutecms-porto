@@ -1557,4 +1557,7 @@
   <data name="DeveloperURL" xml:space="preserve">
     <value>개발자 웹사이트</value>
   </data>
+  <data name="Reference" xml:space="preserve">
+    <value>참조</value>
+  </data>
 </root>

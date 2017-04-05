@@ -1557,4 +1557,7 @@
   <data name="DeveloperURL" xml:space="preserve">
     <value>Udvikler Website</value>
   </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Reference</value>
+  </data>
 </root>

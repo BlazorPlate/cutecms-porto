@@ -20,7 +20,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -61,7 +61,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -85,7 +85,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -109,7 +109,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -133,7 +133,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -157,7 +157,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -181,7 +181,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -205,7 +205,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -229,7 +229,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -253,7 +253,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -277,7 +277,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -301,7 +301,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -325,7 +325,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -349,7 +349,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -373,7 +373,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -397,7 +397,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -421,7 +421,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -445,7 +445,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 

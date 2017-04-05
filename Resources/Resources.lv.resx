@@ -1557,4 +1557,7 @@
   <data name="DeveloperURL" xml:space="preserve">
     <value>Izstrādātāju mājas lapā</value>
   </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Atsauces</value>
+  </data>
 </root>

@@ -41,7 +41,7 @@
                     @if (organization != null)
                     {
                         <ul class="contact">
-                            <li><p><i class="fa fa-map-marker"></i> <strong>@Resources.Resources.Address:</strong> @organization.AddressLine1, @organization.City, @organization.Country</p></li>
+                            <li><p><i class="fa fa-map-marker"></i> <strong>@Resources.Resources.Address:</strong> @organization.City, @organization.State, @organization.Country</p></li>
                             <li><p><i class="fa fa-phone"></i> <strong>@Resources.Resources.Phone:</strong> @organization.Telephone</p></li>
                             <li><p><i class="fa fa-envelope"></i> <strong>@Resources.Resources.Email:</strong> <a href="mailto:@organization.Email">@organization.Email</a></p></li>
                         </ul>

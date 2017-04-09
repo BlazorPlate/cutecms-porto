@@ -94,7 +94,7 @@ namespace cutecms_porto.Areas.Config.Controllers
                 }
                 if (organization.SecondaryLogo != null && organization.SecondaryLogo.ContentLength > 0)
                 {
-                    var extension = Path.GetExtension(organization.  SecondaryLogo.FileName);
+                    var extension = Path.GetExtension(organization.SecondaryLogo.FileName);
                     var newFileName = StringHelper.CleanFileName(organization.Code + "-secondary" + extension);
                     //var newFileName = organization.Name + extension;
                     var path = String.Format("/fileman/Uploads/Images/Config/Organizations/{0}", newFileName);
@@ -111,7 +111,7 @@ namespace cutecms_porto.Areas.Config.Controllers
                 }
                 if (organization.IsDefault)
                 {
-                    foreach (var item in db.Organizations.Where(o => o.TenantId.Equals(Tenant.TenantId)))
+                    foreach (var item in db.Organizations.Where(o => o.TenantId.Trim().Equals(Tenant.TenantId)))
                     {
                         if (item.TranslationId == organization.TranslationId)
                         {
@@ -199,16 +199,16 @@ namespace cutecms_porto.Areas.Config.Controllers
                 }
                 organization.TenantId = Tenant.TenantId;
                 db.Entry(organization).State = EntityState.Modified;
-                foreach (var item in db.Organizations.Where(o => o.TranslationId != organization.TranslationId))
+                foreach (var item in db.Organizations.Where(o => o.TranslationId != organization.TranslationId && o.TenantId.Trim().Equals(Tenant.TenantId)))
                 {
                     item.IsDefault = false;
                     db.Entry(item).State = EntityState.Modified;
                 }
-                foreach (var item in db.Organizations.Where(o => o.TranslationId == organization.TranslationId))
+                foreach (var item in db.Organizations.Where(o => o.TranslationId == organization.TranslationId && o.TenantId.Trim().Equals(Tenant.TenantId)))
                 {
                     item.IsDefault = organization.IsDefault;
                     db.Entry(item).State = EntityState.Modified;
-                }   
+                }
                 db.SaveChanges();
                 CacheHelper.ClearCache();
                 return RedirectToAction("Index");

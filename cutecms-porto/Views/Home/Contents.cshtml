@@ -18,8 +18,8 @@
         </div>
     </section>
 }
-<section class="justify">
-    <div class="container">
+
+    <div class="container text-justify">
         <div class="row">
             <!-- LEFT COLUMNS -->
             <div class="col-md-9 col-sm-9 col-md-push-3 col-sm-push-3"> 
@@ -63,18 +63,6 @@
                 }
                 <!-- /SEARCH RESULTS -->
                 @Html.PagedListPager((IPagedList)Model, page => Url.Action("Contents", new { page, keywordFilter = ViewBag.KeywordFilter, contentTypeIdFilter = ViewBag.ContentTypeId, statusIdFilter = ViewBag.StatusId }))
-                <div class="post-block post-share">
-                    <h3 class="heading-primary"><i class="fa fa-share"></i>@Resources.Resources.Share</h3>
-                    <!-- AddThis Button BEGIN -->
-                    <div class="addthis_toolbox addthis_default_style ">
-                        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-                        <a class="addthis_button_tweet"></a>
-                        <a class="addthis_button_pinterest_pinit"></a>
-                        <a class="addthis_counter addthis_pill_style"></a>
-                    </div>
-                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50faf75173aadc53"></script>
-                    <!-- AddThis Button END -->
-                </div>
             </div>
             <!-- /LEFT COLUMNS -->
             <!-- RIGHT COLUMNS -->
@@ -93,5 +81,16 @@
             </div>
             <!-- /RIGHT COLUMNS -->
         </div>
+        <div class="post-block post-share">
+            <h3 class="heading-primary"><i class="fa fa-share"></i>@Resources.Resources.Share</h3>
+            <!-- AddThis Button BEGIN -->
+            <div class="addthis_toolbox addthis_default_style ">
+                <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                <a class="addthis_button_tweet"></a>
+                <a class="addthis_button_pinterest_pinit"></a>
+                <a class="addthis_counter addthis_pill_style"></a>
+            </div>
+            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50faf75173aadc53"></script>
+            <!-- AddThis Button END -->
+        </div>
     </div>
-</section>

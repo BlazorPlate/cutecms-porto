@@ -1560,4 +1560,16 @@
   <data name="Reference" xml:space="preserve">
     <value>Referensi</value>
   </data>
+  <data name="ContentItems" xml:space="preserve">
+    <value>Konten item</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Pengaturan</value>
+  </data>
+  <data name="Recruitment" xml:space="preserve">
+    <value>Perekrutan</value>
+  </data>
+  <data name="Identity" xml:space="preserve">
+    <value>Identitas</value>
+  </data>
 </root>

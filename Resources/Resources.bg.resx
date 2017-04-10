@@ -1560,4 +1560,16 @@
   <data name="Reference" xml:space="preserve">
     <value>Препратка</value>
   </data>
+  <data name="ContentItems" xml:space="preserve">
+    <value>Съдържание елементи</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="Recruitment" xml:space="preserve">
+    <value>Набиране на персонал</value>
+  </data>
+  <data name="Identity" xml:space="preserve">
+    <value>Идентичност</value>
+  </data>
 </root>

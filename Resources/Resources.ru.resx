@@ -1560,4 +1560,16 @@
   <data name="Reference" xml:space="preserve">
     <value>Ссылка</value>
   </data>
+  <data name="ContentItems" xml:space="preserve">
+    <value>Элементы контента</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Параметры</value>
+  </data>
+  <data name="Recruitment" xml:space="preserve">
+    <value>Вербовка</value>
+  </data>
+  <data name="Identity" xml:space="preserve">
+    <value>Личность</value>
+  </data>
 </root>

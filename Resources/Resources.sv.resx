@@ -1560,4 +1560,16 @@
   <data name="Reference" xml:space="preserve">
     <value>Referens</value>
   </data>
+  <data name="ContentItems" xml:space="preserve">
+    <value>Innehållsobjekt</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Inställningar</value>
+  </data>
+  <data name="Recruitment" xml:space="preserve">
+    <value>Rekrytering</value>
+  </data>
+  <data name="Identity" xml:space="preserve">
+    <value>Identitet</value>
+  </data>
 </root>

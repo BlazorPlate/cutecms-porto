@@ -1560,4 +1560,16 @@
   <data name="Reference" xml:space="preserve">
     <value>Referinţă</value>
   </data>
+  <data name="ContentItems" xml:space="preserve">
+    <value>Elemente de conţinut</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Setări</value>
+  </data>
+  <data name="Recruitment" xml:space="preserve">
+    <value>Recrutare</value>
+  </data>
+  <data name="Identity" xml:space="preserve">
+    <value>Identitate</value>
+  </data>
 </root>

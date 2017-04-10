@@ -1560,4 +1560,16 @@
   <data name="Reference" xml:space="preserve">
     <value>संदर्भ</value>
   </data>
+  <data name="ContentItems" xml:space="preserve">
+    <value>सामग्री आइटम</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>सेटिंग्स</value>
+  </data>
+  <data name="Recruitment" xml:space="preserve">
+    <value>भर्ती</value>
+  </data>
+  <data name="Identity" xml:space="preserve">
+    <value>पहचान</value>
+  </data>
 </root>

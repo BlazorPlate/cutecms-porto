@@ -1560,4 +1560,16 @@
   <data name="Reference" xml:space="preserve">
     <value>Başvuru</value>
   </data>
+  <data name="ContentItems" xml:space="preserve">
+    <value>İçerik öğeleri</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="Recruitment" xml:space="preserve">
+    <value>İşe Alım</value>
+  </data>
+  <data name="Identity" xml:space="preserve">
+    <value>Kimlik</value>
+  </data>
 </root>

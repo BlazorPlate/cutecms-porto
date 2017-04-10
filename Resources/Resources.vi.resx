@@ -1560,4 +1560,16 @@
   <data name="Reference" xml:space="preserve">
     <value>Tài liệu tham khảo</value>
   </data>
+  <data name="ContentItems" xml:space="preserve">
+    <value>Nội dung bài</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Cài đặt</value>
+  </data>
+  <data name="Recruitment" xml:space="preserve">
+    <value>Tuyển dụng</value>
+  </data>
+  <data name="Identity" xml:space="preserve">
+    <value>Danh tính</value>
+  </data>
 </root>

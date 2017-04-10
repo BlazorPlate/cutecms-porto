@@ -1560,4 +1560,16 @@
   <data name="Reference" xml:space="preserve">
     <value>הפניה</value>
   </data>
+  <data name="ContentItems" xml:space="preserve">
+    <value>פריטי תוכן</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>הגדרות</value>
+  </data>
+  <data name="Recruitment" xml:space="preserve">
+    <value>גיוס</value>
+  </data>
+  <data name="Identity" xml:space="preserve">
+    <value>זהות</value>
+  </data>
 </root>

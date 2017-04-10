@@ -1,40 +1,200 @@
-﻿@using cutecms_porto.Areas.CMS.Models.DBModel
-@using cutecms_porto.Helpers
-@using System.Threading;
-@{
-    int count = 0;
-    CMSEntities db = new CMSEntities();
-    List<MenuItem> menuItems = db.MenuItems.Where(mi => mi.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && mi.Menu.Code.Equals("side-navbar") && mi.Status.Code.Equals("published")).OrderBy(mi => mi.Ordinal).ToList();
-    count = menuItems.Count();
-}
-<li>
-    @if (menuItems != null && count > 0)
-    {
-        @GetTreeView(menuItems.ToList(), null)
+﻿@*@using cutecms_porto.Areas.CMS.Models.DBModel
+    @using cutecms_porto.Helpers
+    @{
+        int count = 0;
+        CMSEntities db = new CMSEntities();
+        List<MenuItem> menuItems = db.MenuItems.Where(mi => mi.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && mi.Menu.Code.Equals("side-navbar") && mi.Status.Code.Equals("published")).OrderBy(mi => mi.Ordinal).ToList();
+        count = menuItems.Count();
     }
-    @helper GetTreeView(List<MenuItem> menuItems, int? parentID)
-    {
-foreach (var item in menuItems.Where(mi => mi.ParentId.Equals(parentID)))
-{
-    var submenu = menuItems.Where(s => s.ParentId.Equals(item.Id)).Count();
     <li>
-        @if (item.IsParent)
+        @if (menuItems != null && count > 0)
         {
-            <a href="#" class="waves-effect"><i class="ti-folder"></i> <span class="hide-menu">@item.Name<span class="fa arrow"></span></span></a>
+            @GetTreeView(menuItems.ToList(), null)
         }
-        else
+        @helper GetTreeView(List<MenuItem> menuItems, int? parentID)
         {
-            <a href="@item.Path">
-                <i class="@item.CssClass"></i> @item.Name
+    foreach (var item in menuItems.Where(mi => mi.ParentId.Equals(parentID)))
+    {
+        var submenu = menuItems.Where(s => s.ParentId.Equals(item.Id)).Count();
+        <li>
+            @if (item.IsParent)
+            {
+                <a href="#" class="waves-effect"><i class="ti-folder"></i> <span class="hide-menu">@item.Name<span class="fa arrow"></span></span></a>
+            }
+            else
+            {
+                <a href="@item.Path">
+                    <i class="@item.CssClass"></i> @item.Name
+                </a>
+            }
+            @if (submenu > 0)
+            {
+                <ul class="nav @(cutecms_porto.Helpers.TreeHelper.Depth(item) == 0 ? "nav-second-level":"nav-second-level")">
+                    @GetTreeView(menuItems, item.Id)
+                </ul>
+            }
+        </li>
+    }
+    }
+        </li>*@
+@using System.Threading;
+<li>
+    <a class="waves-effect" href="#"><i class="ti-user"></i> <span class="hide-menu">@Resources.Resources.Identity<span class="fa arrow"></span></span></a>
+    <ul class="nav nav-second-level collapse">
+        <li>
+            <a href="/@Thread.CurrentThread.CurrentCulture/identity/account/index">
+                <i></i> @Resources.Resources.Users
             </a>
-        }
-        @if (submenu > 0)
-        {
-            <ul class="nav @(cutecms_porto.Helpers.TreeHelper.Depth(item) == 0 ? "nav-second-level":"nav-third-level")">
-                @GetTreeView(menuItems, item.Id)
-            </ul>
-        }
-    </li>
-}
-}
-    </li>
+        </li>
+        <li>
+            <a href="/@Thread.CurrentThread.CurrentCulture/identity/groups">
+                <i></i> @Resources.Resources.Groups
+            </a>
+        </li>
+        <li>
+            <a href="/@Thread.CurrentThread.CurrentCulture/identity/roles">
+                <i></i> @Resources.Resources.Roles
+            </a>
+        </li>
+        <li>
+            <a href="/@Thread.CurrentThread.CurrentCulture/identity/employees">
+                <i></i> @Resources.Resources.Employees
+            </a>
+        </li>
+        <li>
+            <a class="active" href="#">
+                <i class="ti-settings"></i> @Resources.Resources.Settings
+            </a>
+        </li>
+        <li>
+            <a href="/@Thread.CurrentThread.CurrentCulture/identity/identitydepartments">
+                <i></i> @Resources.Resources.Departments
+            </a>
+        </li>
+        <li>
+            <a href="/@Thread.CurrentThread.CurrentCulture/identity/employeetypes">
+                <i></i> @Resources.Resources.EmployeeTypes
+            </a>
+        </li>
+        <li>
+            <a href="/@Thread.CurrentThread.CurrentCulture/identity/occupations">
+                <i></i> @Resources.Resources.Occupations
+            </a>
+        </li>
+        <li>
+            <a href="/@Thread.CurrentThread.CurrentCulture/identity/identitypersonaltitles">
+                <i></i> @Resources.Resources.PersonalTitles
+            </a>
+        </li>
+    </ul>
+</li>
+<li>
+    <a class="waves-effect" href="#"><i class="ti-tablet"></i> <span class="hide-menu">@Resources.Resources.Contents<span class="fa arrow"></span></span></a>
+    <ul class="nav nav-second-level collapse">
+        <li>
+            <a href="/@Thread.CurrentThread.CurrentCulture/cms/contents">
+                <i></i> @Resources.Resources.ContentItems
+            </a>
+        </li>
+        <li>
+            <a href="/@Thread.CurrentThread.CurrentCulture/cms/Imagefiles">
+                <i></i> @Resources.Resources.Images
+            </a>
+        </li>
+        <li>
+            <a href="/@Thread.CurrentThread.CurrentCulture/cms/menus">
+                <i></i> @Resources.Resources.Menus
+            </a>
+        </li>
+        <li>
+            <a class="active" href="#">
+                <i class="ti-settings"></i> @Resources.Resources.Settings
+            </a>
+        </li>
+        <li>
+            <a href="/@Thread.CurrentThread.CurrentCulture/cms/contenttypes">
+                <i></i> @Resources.Resources.ContentTypes
+            </a>
+        </li>
+        <li>
+            <a href="/@Thread.CurrentThread.CurrentCulture/cms/categories">
+                <i></i> @Resources.Resources.Categories
+            </a>
+        </li>
+        <li>
+            <a href="/@Thread.CurrentThread.CurrentCulture/cms/galleries">
+                <i></i> @Resources.Resources.Galleries
+            </a>
+        </li>
+        <li>
+            <a href="/@Thread.CurrentThread.CurrentCulture/cms/tags">
+                <i></i> @Resources.Resources.Tags
+            </a>
+        </li>
+    </ul>
+</li>
+<li>
+    <a class="waves-effect" href="#"><i class="ti-files"></i> <span class="hide-menu">@Resources.Resources.Recruitment<span class="fa arrow"></span></span></a>
+    <ul class="nav nav-second-level collapse">
+        <li>
+            <a href="/@Thread.CurrentThread.CurrentCulture/rms/vacancies">
+                <i></i> @Resources.Resources.Vacancies
+            </a>
+        </li>
+        <li>
+            <a href="/@Thread.CurrentThread.CurrentCulture/rms/submissions">
+                <i></i> @Resources.Resources.Submissions
+            </a>
+        </li>
+        <li>
+            <a class="active" href="#">
+                <i class="ti-settings"></i> @Resources.Resources.Settings
+            </a>
+        </li>
+        <li>
+            <a href="/@Thread.CurrentThread.CurrentCulture/rms/rmsdegrees">
+                <i></i> @Resources.Resources.Degrees
+            </a>
+        </li>
+        <li>
+            <a href="/@Thread.CurrentThread.CurrentCulture/rms/jobtypes">
+                <i></i> @Resources.Resources.JobTypes
+            </a>
+        </li>
+        <li>
+            <a href="/@Thread.CurrentThread.CurrentCulture/rms/rmsranks">
+                <i></i> @Resources.Resources.Ranks
+            </a>
+        </li>
+        <li>
+            <a href="/@Thread.CurrentThread.CurrentCulture/rms/rmsprograms">
+                <i></i> @Resources.Resources.Programs
+            </a>
+        </li>
+    </ul>
+</li>
+<li>
+    <a class="waves-effect" href="#"><i class="ti-settings"></i> <span class="hide-menu">@Resources.Resources.Configuration<span class="fa arrow"></span></span></a>
+    <ul class="nav nav-second-level collapse">
+        <li>
+            <a href="/@Thread.CurrentThread.CurrentCulture/config/organizations">
+                <i></i> @Resources.Resources.Organizations
+            </a>
+        </li>
+        <li>
+            <a href="/@Thread.CurrentThread.CurrentCulture/config/statistics">
+                <i></i> @Resources.Resources.Statistics
+            </a>
+        </li>
+        <li>
+            <a href="/@Thread.CurrentThread.CurrentCulture/config/languages">
+                <i></i> @Resources.Resources.Languages
+            </a>
+        </li>
+        <li>
+            <a href="/@Thread.CurrentThread.CurrentCulture/config/notifications">
+                <i></i> @Resources.Resources.Notifications
+            </a>
+        </li>
+    </ul>
+</li>

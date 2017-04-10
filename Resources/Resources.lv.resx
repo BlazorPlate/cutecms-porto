@@ -1560,4 +1560,16 @@
   <data name="Reference" xml:space="preserve">
     <value>Atsauces</value>
   </data>
+  <data name="ContentItems" xml:space="preserve">
+    <value>Satura elementus</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Iestatījumi</value>
+  </data>
+  <data name="Recruitment" xml:space="preserve">
+    <value>Personāla atlases</value>
+  </data>
+  <data name="Identity" xml:space="preserve">
+    <value>Identitāte</value>
+  </data>
 </root>

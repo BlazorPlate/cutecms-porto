@@ -1560,4 +1560,16 @@
   <data name="Reference" xml:space="preserve">
     <value>Referenční</value>
   </data>
+  <data name="ContentItems" xml:space="preserve">
+    <value>Položky obsahu</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Nastavení</value>
+  </data>
+  <data name="Recruitment" xml:space="preserve">
+    <value>Nábor</value>
+  </data>
+  <data name="Identity" xml:space="preserve">
+    <value>Identita</value>
+  </data>
 </root>

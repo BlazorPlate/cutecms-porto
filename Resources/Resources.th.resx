@@ -1560,4 +1560,16 @@
   <data name="Reference" xml:space="preserve">
     <value>อ้างอิง</value>
   </data>
+  <data name="ContentItems" xml:space="preserve">
+    <value>เนื้อหารายการ</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>การตั้งค่า</value>
+  </data>
+  <data name="Recruitment" xml:space="preserve">
+    <value>สรรหาบุคลากร</value>
+  </data>
+  <data name="Identity" xml:space="preserve">
+    <value>รหัสประจำตัว</value>
+  </data>
 </root>

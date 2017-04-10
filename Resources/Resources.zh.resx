@@ -1560,4 +1560,16 @@
   <data name="Reference" xml:space="preserve">
     <value>引用</value>
   </data>
+  <data name="ContentItems" xml:space="preserve">
+    <value>内容项目。</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="Recruitment" xml:space="preserve">
+    <value>招聘</value>
+  </data>
+  <data name="Identity" xml:space="preserve">
+    <value>身份</value>
+  </data>
 </root>

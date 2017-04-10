@@ -1560,4 +1560,16 @@
   <data name="Reference" xml:space="preserve">
     <value>참조</value>
   </data>
+  <data name="ContentItems" xml:space="preserve">
+    <value>콘텐츠 항목</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>설정</value>
+  </data>
+  <data name="Recruitment" xml:space="preserve">
+    <value>모집</value>
+  </data>
+  <data name="Identity" xml:space="preserve">
+    <value>신원</value>
+  </data>
 </root>

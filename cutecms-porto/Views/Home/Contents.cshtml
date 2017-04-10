@@ -63,6 +63,18 @@
                 }
                 <!-- /SEARCH RESULTS -->
                 @Html.PagedListPager((IPagedList)Model, page => Url.Action("Contents", new { page, keywordFilter = ViewBag.KeywordFilter, contentTypeIdFilter = ViewBag.ContentTypeId, statusIdFilter = ViewBag.StatusId }))
+                <div class="post-block post-share">
+                    <h3 class="heading-primary"><i class="fa fa-share"></i>@Resources.Resources.Share</h3>
+                    <!-- AddThis Button BEGIN -->
+                    <div class="addthis_toolbox addthis_default_style ">
+                        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                        <a class="addthis_button_tweet"></a>
+                        <a class="addthis_button_pinterest_pinit"></a>
+                        <a class="addthis_counter addthis_pill_style"></a>
+                    </div>
+                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50faf75173aadc53"></script>
+                    <!-- AddThis Button END -->
+                </div>
             </div>
             <!-- /LEFT COLUMNS -->
             <!-- RIGHT COLUMNS -->
@@ -72,14 +84,14 @@
                 {
                     @Html.TextBox("keywordFilter", ViewBag.KeywordFilter as string, new { @class = "form-control", @placeholder = Resources.Resources.Keywords })
                     <b>@Resources.Resources.Category</b>
-                    @Html.DropDownList("contentTypeIdFilter", new SelectList(ViewBag.ContentTypeIdFilter, "Value", "Text"), Resources.Resources.ChooseContentType, new { @class = "form-control" })
+                    @Html.DropDownList("contentTypeIdFilter", new SelectList(ViewBag.ContentTypeIdFilter, "Value", "Text"), Resources.Resources.ChooseCategory, new { @class = "form-control" })
                     <b>@Resources.Resources.Status</b>
                     @Html.DropDownList("statusIdFilter", new SelectList(ViewBag.StatusIdFilter, "Value", "Text"), Resources.Resources.ChooseStatus, new { @class = "form-control" })
                     <br />
                     <input type="submit" value="@Resources.Resources.Search" class="btn btn-primary form-control" />
                 }
             </div>
+            <!-- /RIGHT COLUMNS -->
         </div>
     </div>
-    <!-- /RIGHT COLUMNS -->
 </section>

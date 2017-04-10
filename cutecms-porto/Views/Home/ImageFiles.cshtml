@@ -7,7 +7,7 @@
 }
 
 @section Styles{
-<link href="~/assets/porto/vendor/blueimp-gallery/css/bootstrap-blueimp-gallery.css" rel="stylesheet" />
+    <link href="~/assets/porto/vendor/blueimp-gallery/css/bootstrap-blueimp-gallery.css" rel="stylesheet" />
 }
 @section PageHeader
 {
@@ -23,76 +23,88 @@
 }
 <section>
     <div class="container">
-        @using (Html.BeginForm("ImageFiles", "Home"))
-        {
-            Html.Hidden("GalleryId");
-            <div class="form-horizontal">
-                <div class="form-group">
-                    <div class="col-md-10">
-                        @Html.Label(Resources.Resources.Search)
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-10">
-                        @Html.DropDownList("TagIdFilter", new SelectList(ViewBag.TagIdFilter, "Value", "Text"), Resources.Resources.ChooseTag, new { @class = "form-control" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-10">
-                        <input type="submit" value="@Resources.Resources.Search" class="btn btn-primary" />
-                    </div>
-                </div>
-            </div>
-        }
-        <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
-        <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
-            <!-- The container for the modal slides -->
-            <div class="slides"></div>
-            <!-- Controls for the borderless lightbox -->
-            <h3 class="title"></h3>
-            <a class="prev">‹</a>
-            <a class="next">›</a>
-            <a class="close">×</a>
-            <a class="play-pause"></a>
-            <ol class="indicator"></ol>
-            <!-- The modal dialog, which will be used to wrap the lightbox content -->
-            <div class="modal fade">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title"></h4>
-                        </div>
-                        <div class="modal-body next" style="max-height: 500px; min-height: 400px;"></div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default pull-left prev">
-                                <i class="glyphicon glyphicon-chevron-left"></i>
-                                Previous
-                            </button>
-                            <button type="button" class="btn btn-primary next">
-                                Next
-                                <i class="glyphicon glyphicon-chevron-right"></i>
-                            </button>
+        <div class="row">
+            <!-- LEFT COLUMNS -->
+            <div class="col-md-9 col-sm-9 col-md-push-3 col-sm-push-3">
+                <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+                <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+                    <!-- The container for the modal slides -->
+                    <div class="slides"></div>
+                    <!-- Controls for the borderless lightbox -->
+                    <h3 class="title"></h3>
+                    <a class="prev">‹</a>
+                    <a class="next">›</a>
+                    <a class="close">×</a>
+                    <a class="play-pause"></a>
+                    <ol class="indicator"></ol>
+                    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+                    <div class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title"></h4>
+                                </div>
+                                <div class="modal-body next" style="max-height: 500px; min-height: 400px;"></div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default pull-left prev">
+                                        <i class="glyphicon glyphicon-chevron-left"></i>
+                                        Previous
+                                    </button>
+                                    <button type="button" class="btn btn-primary next">
+                                        Next
+                                        <i class="glyphicon glyphicon-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div id="links">
-            @foreach (var item in Model)
+                <div id="links">
+                    @foreach (var item in Model)
             {
                 string description = (item.ImageFileTerms.Where(i => i.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && i.ImageFileId == item.Id).FirstOrDefault() != null) ? item.ImageFileTerms.Where(i => i.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && i.ImageFileId == item.Id).FirstOrDefault().Description : string.Empty;
-                <a href="@item.FilePath" title="@description" data-gallery>
-                    <img src="@item.ThumbPath" alt="@description" class="img-rounded" style="margin-bottom:7px;" />
-                </a>
-            }
+                        <a href="@item.FilePath" title="@description" data-gallery>
+                            <img src="@item.ThumbPath" alt="@description" class="img-rounded" style="margin-bottom:7px;" />
+                        </a>
+                    }
+                </div>
+                @Html.PagedListPager((IPagedList)Model, page => Url.Action("ImageFiles", new { page, tagIdFilter = ViewBag.TagId }))
+                <div>
+                    @Html.ActionLink(Resources.Resources.BackToList, "Galleries")
+                </div>
+                <div class="post-block post-share">
+                    <h3 class="heading-primary"><i class="fa fa-share"></i>@Resources.Resources.Share</h3>
+                    <!-- AddThis Button BEGIN -->
+                    <div class="addthis_toolbox addthis_default_style ">
+                        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                        <a class="addthis_button_tweet"></a>
+                        <a class="addthis_button_pinterest_pinit"></a>
+                        <a class="addthis_counter addthis_pill_style"></a>
+                    </div>
+                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50faf75173aadc53"></script>
+                    <!-- AddThis Button END -->
+                </div>
+                <!-- /LEFT COLUMNS -->
+            </div>
+            <!-- RIGHT COLUMNS -->
+            <div class="col-md-3 col-sm-3 col-md-pull-9 col-sm-pull-9">
+                <h4>@Resources.Resources.Search</h4>
+                @using (Html.BeginForm("Contents", "Home", FormMethod.Get))
+                {
+                    Html.Hidden("GalleryId");
+                    @Html.DropDownList("TagIdFilter", new SelectList(ViewBag.TagIdFilter, "Value", "Text"), Resources.Resources.ChooseTag, new { @class = "form-control" })
+                    <br />
+                        <input type="submit" value="@Resources.Resources.Search" class="btn btn-primary form-control" />
+                }
+            </div>
+            <!-- /RIGHT COLUMNS -->
         </div>
-        @Html.PagedListPager((IPagedList)Model, page => Url.Action("ImageFiles", new { page, tagIdFilter = ViewBag.TagId}))
-        <div>
-            @Html.ActionLink(Resources.Resources.BackToList, "Galleries")
-        </div>
+
     </div>
+
 </section>
+
 @section Scripts{
-<script src="~/assets/porto/vendor/blueimp-gallery/js/jquery.blueimp-gallery.min.js"></script>
+    <script src="~/assets/porto/vendor/blueimp-gallery/js/jquery.blueimp-gallery.min.js"></script>
 }

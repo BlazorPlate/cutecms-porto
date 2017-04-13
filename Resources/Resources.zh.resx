@@ -1572,4 +1572,19 @@
   <data name="Identity" xml:space="preserve">
     <value>身份</value>
   </data>
+  <data name="Lorem1" xml:space="preserve">
+    <value>您的业务增长最快的方式。</value>
+  </data>
+  <data name="Lorem2" xml:space="preserve">
+    <value>查阅我们的选项和功能包括。</value>
+  </data>
+  <data name="GetStarted" xml:space="preserve">
+    <value>现在就开始 ！</value>
+  </data>
+  <data name="Or" xml:space="preserve">
+    <value>或</value>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>了解更多信息。</value>
+  </data>
 </root>

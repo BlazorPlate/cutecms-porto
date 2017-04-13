@@ -1572,4 +1572,19 @@
   <data name="Identity" xml:space="preserve">
     <value>Identity</value>
   </data>
+  <data name="Lorem1" xml:space="preserve">
+    <value>Najrýchlejší spôsob, ako rast vášho podnikania.</value>
+  </data>
+  <data name="Lorem2" xml:space="preserve">
+    <value>Pozrite si naše možnosti a funkcie.</value>
+  </data>
+  <data name="GetStarted" xml:space="preserve">
+    <value>Začnite už teraz!</value>
+  </data>
+  <data name="Or" xml:space="preserve">
+    <value>alebo</value>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>zistiť viac.</value>
+  </data>
 </root>

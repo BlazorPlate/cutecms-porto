@@ -1572,4 +1572,19 @@
   <data name="Settings" xml:space="preserve">
     <value>الإعدادات</value>
   </data>
+  <data name="Lorem1" xml:space="preserve">
+    <value>أسرع طريقة لتعزيز أعمالكم التجارية.</value>
+  </data>
+  <data name="Lorem2" xml:space="preserve">
+    <value>تعرف على الخيارات والميزات التي نقدمها.</value>
+  </data>
+  <data name="GetStarted" xml:space="preserve">
+    <value>ابدأ الآن!</value>
+  </data>
+  <data name="Or" xml:space="preserve">
+    <value>أو</value>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>تعرف على المزيد.</value>
+  </data>
 </root>

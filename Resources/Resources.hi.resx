@@ -1572,4 +1572,19 @@
   <data name="Identity" xml:space="preserve">
     <value>पहचान</value>
   </data>
+  <data name="Lorem1" xml:space="preserve">
+    <value>अपने व्यापार के बढ़ने के लिए सबसे तेज़ तरीका।</value>
+  </data>
+  <data name="Lorem2" xml:space="preserve">
+    <value>हमारे विकल्प और सुविधाएँ शामिल बाहर की जाँच करें।</value>
+  </data>
+  <data name="GetStarted" xml:space="preserve">
+    <value>अब शुरू हो जाओ!</value>
+  </data>
+  <data name="Or" xml:space="preserve">
+    <value>या</value>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>और जानो.</value>
+  </data>
 </root>

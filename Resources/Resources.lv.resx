@@ -1572,4 +1572,19 @@
   <data name="Identity" xml:space="preserve">
     <value>Identitāte</value>
   </data>
+  <data name="Lorem1" xml:space="preserve">
+    <value>Ātrākais veids, kā pieaugs jūsu biznesa.</value>
+  </data>
+  <data name="Lorem2" xml:space="preserve">
+    <value>Apskatiet mūsu iespējas un funkcijas, kas iekļautas.</value>
+  </data>
+  <data name="GetStarted" xml:space="preserve">
+    <value>Sāciet jau tagad!</value>
+  </data>
+  <data name="Or" xml:space="preserve">
+    <value>vai</value>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>apgūt vairāk.</value>
+  </data>
 </root>

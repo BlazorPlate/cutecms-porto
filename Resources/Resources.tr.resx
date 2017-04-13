@@ -1572,4 +1572,19 @@
   <data name="Identity" xml:space="preserve">
     <value>Kimlik</value>
   </data>
+  <data name="Lorem1" xml:space="preserve">
+    <value>İşinizi büyütmek için en hızlı yolu.</value>
+  </data>
+  <data name="Lorem2" xml:space="preserve">
+    <value>Bizim seçenekleri ve içerdiği özellikleri göz atın.</value>
+  </data>
+  <data name="GetStarted" xml:space="preserve">
+    <value>Şimdi başlayın!</value>
+  </data>
+  <data name="Or" xml:space="preserve">
+    <value>veya</value>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>Daha fazla bilgi edinin.</value>
+  </data>
 </root>

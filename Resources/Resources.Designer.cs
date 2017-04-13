@@ -1735,6 +1735,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Get Started Now!.
+        /// </summary>
+        public static string GetStarted {
+            get {
+                return ResourceManager.GetString("GetStarted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Go to CuteCMS.
         /// </summary>
         public static string GoCuteCMS {
@@ -2266,6 +2275,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to learn more..
+        /// </summary>
+        public static string LearnMore {
+            get {
+                return ResourceManager.GetString("LearnMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to LinkedIn.
         /// </summary>
         public static string LinkedInUrl {
@@ -2388,6 +2406,24 @@ namespace Resources {
         public static string Longitude {
             get {
                 return ResourceManager.GetString("Longitude", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The fastest way to grow your business..
+        /// </summary>
+        public static string Lorem1 {
+            get {
+                return ResourceManager.GetString("Lorem1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check out our options and features included..
+        /// </summary>
+        public static string Lorem2 {
+            get {
+                return ResourceManager.GetString("Lorem2", resourceCulture);
             }
         }
         
@@ -2865,6 +2901,15 @@ namespace Resources {
         public static string Oops {
             get {
                 return ResourceManager.GetString("Oops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to or.
+        /// </summary>
+        public static string Or {
+            get {
+                return ResourceManager.GetString("Or", resourceCulture);
             }
         }
         

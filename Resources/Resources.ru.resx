@@ -1572,4 +1572,19 @@
   <data name="Identity" xml:space="preserve">
     <value>Личность</value>
   </data>
+  <data name="Lorem1" xml:space="preserve">
+    <value>Самый быстрый способ для развития своего бизнеса.</value>
+  </data>
+  <data name="Lorem2" xml:space="preserve">
+    <value>Проверьте наши возможности и функции включены.</value>
+  </data>
+  <data name="GetStarted" xml:space="preserve">
+    <value>Начните прямо сейчас!</value>
+  </data>
+  <data name="Or" xml:space="preserve">
+    <value>или</value>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>Подробнее.</value>
+  </data>
 </root>

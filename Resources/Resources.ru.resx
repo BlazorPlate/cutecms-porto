@@ -1587,4 +1587,22 @@
   <data name="LearnMore" xml:space="preserve">
     <value>Подробнее.</value>
   </data>
+  <data name="Lorem3" xml:space="preserve">
+    <value>Этот текст является примером того текста, который может быть заменен в том же пространстве, этот текст был создан из генератора латинского текста.</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>Январь</value>
+  </data>
+  <data name="JohnSmith" xml:space="preserve">
+    <value>Джон Смит</value>
+  </data>
+  <data name="JobTitleName" xml:space="preserve">
+    <value>Генеральный директор &amp; учредителя - компании ABC</value>
+  </data>
+  <data name="WhatClientsSay" xml:space="preserve">
+    <value>Что говорят клиенты</value>
+  </data>
+  <data name="LoremTitle" xml:space="preserve">
+    <value>Этот текст является примером текста, который может быть заменен в том же пространстве.</value>
+  </data>
 </root>

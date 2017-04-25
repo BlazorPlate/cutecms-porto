@@ -1587,4 +1587,22 @@
   <data name="LearnMore" xml:space="preserve">
     <value>और जानो.</value>
   </data>
+  <data name="Lorem3" xml:space="preserve">
+    <value>इस पाठ में एक ही स्थान बदला जा सकता है पाठ का एक उदाहरण है, इस पाठ में लैटिन पाठ जनरेटर से जनरेट की गई है।</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>जनवरी</value>
+  </data>
+  <data name="JohnSmith" xml:space="preserve">
+    <value>जॉन स्मिथ</value>
+  </data>
+  <data name="JobTitleName" xml:space="preserve">
+    <value>सीईओ &amp; संस्थापक - एबीसी कंपनी</value>
+  </data>
+  <data name="WhatClientsSay" xml:space="preserve">
+    <value>क्या ग्राहकों का कहना है</value>
+  </data>
+  <data name="LoremTitle" xml:space="preserve">
+    <value>इस पाठ में एक ही स्थान बदला जा सकता है पाठ का एक उदाहरण है।</value>
+  </data>
 </root>

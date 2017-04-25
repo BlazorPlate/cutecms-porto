@@ -1587,4 +1587,22 @@
   <data name="LearnMore" xml:space="preserve">
     <value>apgūt vairāk.</value>
   </data>
+  <data name="Lorem3" xml:space="preserve">
+    <value>Šis teksts ir teksts, kas atrodas vienā un tai pašā telpā var aizstāt piemērs, šis teksts ir ģenerēts no ģeneratora tekstiem latīņu rakstībā.</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>Janvāris</value>
+  </data>
+  <data name="JohnSmith" xml:space="preserve">
+    <value>Jānis Bērziņš</value>
+  </data>
+  <data name="JobTitleName" xml:space="preserve">
+    <value>CEO un dibinātājs - ABC uzņēmums</value>
+  </data>
+  <data name="WhatClientsSay" xml:space="preserve">
+    <value>Ko klienti saka</value>
+  </data>
+  <data name="LoremTitle" xml:space="preserve">
+    <value>Šis teksts ir teksts, kas atrodas vienā un tai pašā telpā var aizstāt piemērs.</value>
+  </data>
 </root>

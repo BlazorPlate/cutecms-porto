@@ -1587,4 +1587,22 @@
   <data name="LearnMore" xml:space="preserve">
     <value>اور سيکھو.</value>
   </data>
+  <data name="Lorem3" xml:space="preserve">
+    <value>یہ متن ایک مثال متن میں ایک ہی جگہ جگہ کیا جا سکتا ہے، اس متن کو لاطینی متن کے جنریٹر سے پیدا کیا گیا ہے ۔</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>جنوری</value>
+  </data>
+  <data name="JohnSmith" xml:space="preserve">
+    <value>جان سمتھ</value>
+  </data>
+  <data name="JobTitleName" xml:space="preserve">
+    <value>سی ای او &amp; بانی - اے بی سی کمپنی</value>
+  </data>
+  <data name="WhatClientsSay" xml:space="preserve">
+    <value>کیا کلائنٹس کہتے ہیں کہ</value>
+  </data>
+  <data name="LoremTitle" xml:space="preserve">
+    <value>یہ متن ایک مثال متن ہے جس میں ایک ہی جگہ جگہ کیا جا سکتا ہے ۔</value>
+  </data>
 </root>

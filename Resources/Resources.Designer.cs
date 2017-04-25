@@ -2113,6 +2113,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to January.
+        /// </summary>
+        public static string January {
+            get {
+                return ResourceManager.GetString("January", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Job Announcement.
         /// </summary>
         public static string JobAnnouncement {
@@ -2140,6 +2149,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CEO &amp; Founder - ABC Company.
+        /// </summary>
+        public static string JobTitleName {
+            get {
+                return ResourceManager.GetString("JobTitleName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Job Type.
         /// </summary>
         public static string JobType {
@@ -2154,6 +2172,15 @@ namespace Resources {
         public static string JobTypes {
             get {
                 return ResourceManager.GetString("JobTypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to John Smith.
+        /// </summary>
+        public static string JohnSmith {
+            get {
+                return ResourceManager.GetString("JohnSmith", resourceCulture);
             }
         }
         
@@ -2424,6 +2451,24 @@ namespace Resources {
         public static string Lorem2 {
             get {
                 return ResourceManager.GetString("Lorem2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This text is an example of text that can be replaced in the same space, this text has been generated from the Latin text generator..
+        /// </summary>
+        public static string Lorem3 {
+            get {
+                return ResourceManager.GetString("Lorem3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This text is an example of text that can be replaced in the same space..
+        /// </summary>
+        public static string LoremTitle {
+            get {
+                return ResourceManager.GetString("LoremTitle", resourceCulture);
             }
         }
         
@@ -4413,6 +4458,15 @@ namespace Resources {
         public static string Welcome {
             get {
                 return ResourceManager.GetString("Welcome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What Clients Say.
+        /// </summary>
+        public static string WhatClientsSay {
+            get {
+                return ResourceManager.GetString("WhatClientsSay", resourceCulture);
             }
         }
         

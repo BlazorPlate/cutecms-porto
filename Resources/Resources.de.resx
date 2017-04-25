@@ -1587,4 +1587,22 @@
   <data name="LearnMore" xml:space="preserve">
     <value>Weitere Informationen.</value>
   </data>
+  <data name="Lorem3" xml:space="preserve">
+    <value>Dieser Text ist ein Beispiel für Text, der im gleichen Raum ersetzt werden kann, diesen Text aus dem lateinischen Text-Generator generiert wurde.</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>Januar</value>
+  </data>
+  <data name="JohnSmith" xml:space="preserve">
+    <value>John Smith</value>
+  </data>
+  <data name="JobTitleName" xml:space="preserve">
+    <value>CEO &amp; Gründer - Firma ABC</value>
+  </data>
+  <data name="WhatClientsSay" xml:space="preserve">
+    <value>Was Kunden sagen</value>
+  </data>
+  <data name="LoremTitle" xml:space="preserve">
+    <value>Dieser Text ist ein Beispiel für Text, der im gleichen Raum ersetzt werden kann.</value>
+  </data>
 </root>

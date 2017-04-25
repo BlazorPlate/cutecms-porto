@@ -1587,4 +1587,22 @@
   <data name="LearnMore" xml:space="preserve">
     <value>Víc se uč.</value>
   </data>
+  <data name="Lorem3" xml:space="preserve">
+    <value>Tento text je příklad textu, který mohou být nahrazeny ve stejném prostoru, tento text byl vytvořen z textu v latince generátoru.</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>Ledna</value>
+  </data>
+  <data name="JohnSmith" xml:space="preserve">
+    <value>Jan Novák</value>
+  </data>
+  <data name="JobTitleName" xml:space="preserve">
+    <value>CEO &amp; zakladatel - společnosti ABC</value>
+  </data>
+  <data name="WhatClientsSay" xml:space="preserve">
+    <value>Co říkají klienti</value>
+  </data>
+  <data name="LoremTitle" xml:space="preserve">
+    <value>Tento text je příklad textu, který mohou být nahrazeny ve stejném prostoru.</value>
+  </data>
 </root>

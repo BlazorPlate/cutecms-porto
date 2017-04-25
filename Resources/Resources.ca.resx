@@ -1587,4 +1587,22 @@
   <data name="LearnMore" xml:space="preserve">
     <value>més informació.</value>
   </data>
+  <data name="Lorem3" xml:space="preserve">
+    <value>Aquest text és un exemple de text que pot ser substituït en el mateix espai, aquest text ha estat generat des del generador de text llatí.</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>Gener</value>
+  </data>
+  <data name="JohnSmith" xml:space="preserve">
+    <value>John Smith</value>
+  </data>
+  <data name="JobTitleName" xml:space="preserve">
+    <value>CEO 59 fundador - empresa d'ABC</value>
+  </data>
+  <data name="WhatClientsSay" xml:space="preserve">
+    <value>Què diuen els Clients</value>
+  </data>
+  <data name="LoremTitle" xml:space="preserve">
+    <value>Aquest text és un exemple de text que pot ser substituït en el mateix espai.</value>
+  </data>
 </root>

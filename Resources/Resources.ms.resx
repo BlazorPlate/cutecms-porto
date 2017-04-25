@@ -1587,4 +1587,22 @@
   <data name="LearnMore" xml:space="preserve">
     <value>belajar lagi.</value>
   </data>
+  <data name="Lorem3" xml:space="preserve">
+    <value>Teks ini adalah satu contoh teks yang akan diganti di tempat yang sama, teks ini telah dihasilkan daripada penjana teks bahasa Latin.</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>Januari</value>
+  </data>
+  <data name="JohnSmith" xml:space="preserve">
+    <value>John Smith</value>
+  </data>
+  <data name="JobTitleName" xml:space="preserve">
+    <value>Ketua Pegawai Eksekutif &amp; pengasas - syarikat ABC</value>
+  </data>
+  <data name="WhatClientsSay" xml:space="preserve">
+    <value>Katakanlah Apakah pelanggan</value>
+  </data>
+  <data name="LoremTitle" xml:space="preserve">
+    <value>Teks ini adalah satu contoh teks yang akan diganti di tempat yang sama.</value>
+  </data>
 </root>

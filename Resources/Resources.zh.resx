@@ -1587,4 +1587,22 @@
   <data name="LearnMore" xml:space="preserve">
     <value>了解更多信息。</value>
   </data>
+  <data name="Lorem3" xml:space="preserve">
+    <value>此文本是可以在同一空间中替换的文本的示例，这个文本已从拉丁文文本生成器生成。</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>1 月</value>
+  </data>
+  <data name="JohnSmith" xml:space="preserve">
+    <value>约翰 · 史密斯</value>
+  </data>
+  <data name="JobTitleName" xml:space="preserve">
+    <value>首席执行官及创始人-ABC 公司</value>
+  </data>
+  <data name="WhatClientsSay" xml:space="preserve">
+    <value>客户说什么</value>
+  </data>
+  <data name="LoremTitle" xml:space="preserve">
+    <value>此文本是文本的可以在同一空间中替换的示例。</value>
+  </data>
 </root>

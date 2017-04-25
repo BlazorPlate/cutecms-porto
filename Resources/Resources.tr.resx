@@ -1587,4 +1587,22 @@
   <data name="LearnMore" xml:space="preserve">
     <value>Daha fazla bilgi edinin.</value>
   </data>
+  <data name="Lorem3" xml:space="preserve">
+    <value>Bu metin, aynı alanda eski yerine koymak metin örneği, bu metin Latin metin jeneratör üretti.</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>Ocak</value>
+  </data>
+  <data name="JohnSmith" xml:space="preserve">
+    <value>John Smith</value>
+  </data>
+  <data name="JobTitleName" xml:space="preserve">
+    <value>CEO ve kurucusu - ABC şirketi</value>
+  </data>
+  <data name="WhatClientsSay" xml:space="preserve">
+    <value>Ne istemcileri Say</value>
+  </data>
+  <data name="LoremTitle" xml:space="preserve">
+    <value>Bu metin, aynı alanda eski yerine koymak metin örneği var.</value>
+  </data>
 </root>

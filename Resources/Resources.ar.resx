@@ -1587,4 +1587,22 @@
   <data name="LearnMore" xml:space="preserve">
     <value>تعرف على المزيد.</value>
   </data>
+  <data name="Lorem3" xml:space="preserve">
+    <value>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص اللاتيني.</value>
+  </data>
+  <data name="JohnSmith" xml:space="preserve">
+    <value>جون سميث</value>
+  </data>
+  <data name="WhatClientsSay" xml:space="preserve">
+    <value>ما يقوله العملاء</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>يناير</value>
+  </data>
+  <data name="JobTitleName" xml:space="preserve">
+    <value>الرئيس التنفيذي - شركة اي بي سي</value>
+  </data>
+  <data name="LoremTitle" xml:space="preserve">
+    <value>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة.</value>
+  </data>
 </root>

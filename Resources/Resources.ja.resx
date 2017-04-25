@@ -1587,4 +1587,22 @@
   <data name="LearnMore" xml:space="preserve">
     <value>詳細情報。</value>
   </data>
+  <data name="Lorem3" xml:space="preserve">
+    <value>このテキストは、同じ空間に置き換えることができますテキストの例は、このテキストはラテン系のテキストの発電機から生成されています。</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>1 月</value>
+  </data>
+  <data name="JohnSmith" xml:space="preserve">
+    <value>ジョン ・ スミス</value>
+  </data>
+  <data name="JobTitleName" xml:space="preserve">
+    <value>代表取締役社長・創業者 - ABC 社</value>
+  </data>
+  <data name="WhatClientsSay" xml:space="preserve">
+    <value>クライアントの声</value>
+  </data>
+  <data name="LoremTitle" xml:space="preserve">
+    <value>このテキストは、同じ空間に置き換えることができますテキストの例です。</value>
+  </data>
 </root>

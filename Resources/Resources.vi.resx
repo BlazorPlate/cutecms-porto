@@ -1587,4 +1587,22 @@
   <data name="LearnMore" xml:space="preserve">
     <value>Tìm hiểu thêm.</value>
   </data>
+  <data name="Lorem3" xml:space="preserve">
+    <value>Văn bản này là một ví dụ về văn bản có thể được thay thế trong cùng một không gian, văn bản này đã được tạo ra từ máy phát điện Latin văn bản.</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>Tháng một</value>
+  </data>
+  <data name="JohnSmith" xml:space="preserve">
+    <value>John Smith</value>
+  </data>
+  <data name="JobTitleName" xml:space="preserve">
+    <value>Giám đốc điều hành &amp; người sáng lập - công ty ABC</value>
+  </data>
+  <data name="WhatClientsSay" xml:space="preserve">
+    <value>Khách hàng nói gì</value>
+  </data>
+  <data name="LoremTitle" xml:space="preserve">
+    <value>Văn bản này là một ví dụ về văn bản có thể được thay thế trong cùng một không gian.</value>
+  </data>
 </root>

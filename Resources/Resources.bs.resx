@@ -1587,4 +1587,22 @@
   <data name="LearnMore" xml:space="preserve">
     <value>uči više.</value>
   </data>
+  <data name="Lorem3" xml:space="preserve">
+    <value>Ovaj tekst je primjer teksta koji se može zamijeniti u isti prostor, ovaj tekst je bio generiran iz latinskog teksta generator.</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>Siječanj</value>
+  </data>
+  <data name="JohnSmith" xml:space="preserve">
+    <value>John Smith</value>
+  </data>
+  <data name="JobTitleName" xml:space="preserve">
+    <value>Izvršni Direktor i osnivač - tvrtka ABC</value>
+  </data>
+  <data name="WhatClientsSay" xml:space="preserve">
+    <value>Što klijenti kažu</value>
+  </data>
+  <data name="LoremTitle" xml:space="preserve">
+    <value>Ovaj tekst je primjer teksta koji se može zamijeniti u istom prostoru.</value>
+  </data>
 </root>

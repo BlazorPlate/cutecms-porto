@@ -1587,4 +1587,22 @@
   <data name="LearnMore" xml:space="preserve">
     <value>află mai multe.</value>
   </data>
+  <data name="Lorem3" xml:space="preserve">
+    <value>Acest text este un exemplu de text care poate fi înlocuit în acelaşi spaţiu, acest text a fost generat de Generatorul de text în latină.</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>Ianuarie</value>
+  </data>
+  <data name="JohnSmith" xml:space="preserve">
+    <value>John Smith</value>
+  </data>
+  <data name="JobTitleName" xml:space="preserve">
+    <value>CEO &amp; fondator - firma ABC</value>
+  </data>
+  <data name="WhatClientsSay" xml:space="preserve">
+    <value>Ce spun clientii</value>
+  </data>
+  <data name="LoremTitle" xml:space="preserve">
+    <value>Acest text este un exemplu de text care poate fi înlocuit în acelaşi spaţiu.</value>
+  </data>
 </root>

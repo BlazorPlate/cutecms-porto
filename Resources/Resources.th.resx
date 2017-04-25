@@ -1587,4 +1587,22 @@
   <data name="LearnMore" xml:space="preserve">
     <value>ศึกษาเพิ่มเติม</value>
   </data>
+  <data name="Lorem3" xml:space="preserve">
+    <value>ข้อความนี้เป็นตัวอย่างของข้อความที่สามารถถูกแทนที่ในพื้นที่เดียวกัน ข้อความนี้ถูกสร้างขึ้นจากเครื่องกำเนิดไฟฟ้าภาษาละติน</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>มกราคม</value>
+  </data>
+  <data name="JohnSmith" xml:space="preserve">
+    <value>จอห์นสมิธ</value>
+  </data>
+  <data name="JobTitleName" xml:space="preserve">
+    <value>CEO และผู้ก่อตั้ง - บริษัท ABC</value>
+  </data>
+  <data name="WhatClientsSay" xml:space="preserve">
+    <value>สิ่งที่ลูกค้าพูด</value>
+  </data>
+  <data name="LoremTitle" xml:space="preserve">
+    <value>ข้อความนี้เป็นตัวอย่างของข้อความที่สามารถถูกแทนที่ในพื้นที่เดียวกัน</value>
+  </data>
 </root>

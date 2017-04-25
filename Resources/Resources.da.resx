@@ -1587,4 +1587,22 @@
   <data name="LearnMore" xml:space="preserve">
     <value>Lær mere.</value>
   </data>
+  <data name="Lorem3" xml:space="preserve">
+    <value>Denne tekst er et eksempel på tekst, der kan erstattes i den samme plads, denne tekst er blevet genereret fra den latinske tekst generator.</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>Januar</value>
+  </data>
+  <data name="JohnSmith" xml:space="preserve">
+    <value>John Smith</value>
+  </data>
+  <data name="JobTitleName" xml:space="preserve">
+    <value>CEO &amp; grundlægger - ABC selskab</value>
+  </data>
+  <data name="WhatClientsSay" xml:space="preserve">
+    <value>Hvad kunderne siger</value>
+  </data>
+  <data name="LoremTitle" xml:space="preserve">
+    <value>Denne tekst er et eksempel på tekst, der kan erstattes i det samme rum.</value>
+  </data>
 </root>

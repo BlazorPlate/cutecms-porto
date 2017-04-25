@@ -1587,4 +1587,22 @@
   <data name="LearnMore" xml:space="preserve">
     <value>بیشتر بدانید.</value>
   </data>
+  <data name="Lorem3" xml:space="preserve">
+    <value>این متن نمونه ای از متن است که می تواند در همان فضا را جایگزین، این متن از ژنراتور متن لاتین تولید شده.</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>ژانویه</value>
+  </data>
+  <data name="JohnSmith" xml:space="preserve">
+    <value>جان اسمیت</value>
+  </data>
+  <data name="JobTitleName" xml:space="preserve">
+    <value>مدیر عامل شرکت &amp; موسس - شرکت ABC</value>
+  </data>
+  <data name="WhatClientsSay" xml:space="preserve">
+    <value>چه مشتریان بگو</value>
+  </data>
+  <data name="LoremTitle" xml:space="preserve">
+    <value>این متن نمونه ای از متن است که می تواند در همان فضا جایگزین است.</value>
+  </data>
 </root>

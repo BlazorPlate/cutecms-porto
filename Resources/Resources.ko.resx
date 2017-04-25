@@ -1587,4 +1587,22 @@
   <data name="LearnMore" xml:space="preserve">
     <value>자세히.</value>
   </data>
+  <data name="Lorem3" xml:space="preserve">
+    <value>이 텍스트는 같은 공간에서 대체 될 수 있는 텍스트의 예를 들어,이 텍스트는 라틴어 텍스트 생성기에서 생성 되었다.</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>1 월</value>
+  </data>
+  <data name="JohnSmith" xml:space="preserve">
+    <value>존 스미스</value>
+  </data>
+  <data name="JobTitleName" xml:space="preserve">
+    <value>CEO 및 창립자-ABC 회사</value>
+  </data>
+  <data name="WhatClientsSay" xml:space="preserve">
+    <value>고객 뭐라 고</value>
+  </data>
+  <data name="LoremTitle" xml:space="preserve">
+    <value>이 텍스트는 같은 공간에서 대체 될 수 있는 텍스트의 예입니다.</value>
+  </data>
 </root>

@@ -1,0 +1,38 @@
+/* Add here all your CSS customizations */
+.no-list ul {
+    list-style-type: none;
+}
+
+.max-width-400 {
+    max-width: 400px !important;
+}
+
+@media (max-width: 991px) {
+    .width-100 {
+        width: 100%;
+    }
+}
+
+.nav-tabs li.active a, .nav-tabs li.active a:hover, .nav-tabs li.active a:focus {
+    color: #0088cc !important;
+}
+
+.nav-tabs li a {
+    color: #111 !important;
+    font-weight: 600 !important;
+}
+
+.btn.btn-reveal {
+    padding-left: 28px;
+    padding-right: 28px;
+    overflow: hidden;
+    position: relative;
+}
+
+.page-header {
+    padding: 10px 0 !important;
+}
+
+.thumb-info .thumb-info-title {
+    font-weight: 600;
+}

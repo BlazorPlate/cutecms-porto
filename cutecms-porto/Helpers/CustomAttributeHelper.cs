@@ -6,14 +6,48 @@ using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Linq;
 using System.Net.Mail;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
-using System.Web.ModelBinding;
-using System.Web.Mvc;
 
 namespace cutecms_porto.Helpers
 {
+    public class ValidateImageFileAttribute : ValidationAttribute
+    {
+        #region Methods
+        public override bool IsValid(object value)
+        {
+            int MaxContentLength = 10485760; //10 MB
+            string[] AllowedFileExtensions = new string[] { ".jpg", ".jpeg", ".bmp", ".png", ".doc", ".docx", ".pdf", ".xls", ".xlsx" };
+            var file = value as HttpPostedFileBase;
+            if (file == null)
+            {
+                return true;
+            }
+            if (file != null && file.ContentLength > 0)
+            {
+                if (!AllowedFileExtensions.Contains(file.FileName.Substring(file.FileName.LastIndexOf('.')).ToLower()))
+                {
+                    ErrorMessage = Resources.Resources.PleaseUploadFileOfType + string.Join(", ", AllowedFileExtensions);
+                    return false;
+                }
+                else if (file.ContentLength > MaxContentLength)
+                {
+                    ErrorMessage = Resources.Resources.MaximumAllowedSize + (MaxContentLength / 1024 / 1024).ToString() + "MB";
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+        #endregion Methods
+    }
+
     public class ValidateImageAttribute : ValidationAttribute
     {
         #region Methods

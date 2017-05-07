@@ -43,7 +43,7 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
         public int Ordinal { get; set; }
         [Display(Name = "Visible", ResourceType = typeof(Resources.Resources))]
         public bool Visible { get; set; }
-        [ValidateFile]
+        [ValidateImageFile]
         [Display(Name = "FilePath", ResourceType = typeof(Resources.Resources))]
         [NotMapped]
         public HttpPostedFileBase File { get; set; }

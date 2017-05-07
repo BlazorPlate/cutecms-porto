@@ -124,7 +124,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
         // properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,Body,Url,Class,Ordinal,Visible,File,Thumb,FilePath,ContentListId")] ListItem listItem)
+        public ActionResult Edit([Bind(Include = "Id,Title,Body,Url,Class,Ordinal,Visible,File,Thumb,FilePath,ThumbPath,ContentListId")] ListItem listItem)
         {
             if (ModelState.IsValid)
             {
@@ -133,8 +133,8 @@ namespace cutecms_porto.Areas.CMS.Controllers
                 if (listItem.File != null && listItem.File.ContentLength > 0)
                 {
                     var extension = Path.GetExtension(listItem.File.FileName);
-                    //var newFileName = Helpers.StringHelper.CleanFileName(listItem.Title + extension);
-                    var newFileName = listItem.Title + extension;
+                    var newFileName = Helpers.StringHelper.CleanFileName(listItem.Title + extension);
+                    //var newFileName = listItem.Title + extension;
                     var path = String.Format("/fileman/Uploads/Documents/CMS/ListItems/Attachments/{0}", newFileName);
                     listItem.File.SaveAs(System.Web.Hosting.HostingEnvironment.MapPath(path));
                     listItem.FilePath = path;
@@ -143,8 +143,8 @@ namespace cutecms_porto.Areas.CMS.Controllers
                 if (listItem.Thumb != null && listItem.Thumb.ContentLength > 0)
                 {
                     var extension = Path.GetExtension(listItem.Thumb.FileName);
-                    //var newFileName = Helpers.StringHelper.CleanFileName(listItem.Title + extension);
-                    var newFileName = listItem.Title + extension;
+                    var newFileName = Helpers.StringHelper.CleanFileName(listItem.Title + extension);
+                    //var newFileName = listItem.Title + extension;
                     var path = String.Format("/fileman/Uploads/Images/CMS/ListItems/Thumbs/{0}", newFileName);
                     listItem.ThumbPath = path;
                     listItem.ThumbName = newFileName;

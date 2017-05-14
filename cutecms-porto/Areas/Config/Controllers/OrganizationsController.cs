@@ -124,7 +124,7 @@ namespace cutecms_porto.Areas.Config.Controllers
                         db.Entry(item).State = EntityState.Modified;
                     }
                 }
-                organization.TenantId = Tenant.TenantId;
+                organization.TenantId = Tenant.GetCurrentTenantId();
                 db.Organizations.Add(organization);
                 db.SaveChanges();
                 if (organization.TranslationId == null)
@@ -197,7 +197,7 @@ namespace cutecms_porto.Areas.Config.Controllers
                         ImageUploaderHelper.SaveImageToFolder(img, extension, new Size(sWidth.Value, sHeight.Value), organization.SecondaryLogoPath);
                     }
                 }
-                organization.TenantId = Tenant.TenantId;
+                organization.TenantId = Tenant.GetCurrentTenantId();
                 db.Entry(organization).State = EntityState.Modified;
                 foreach (var item in db.Organizations.Where(o => o.TranslationId != organization.TranslationId && o.TenantId.Trim().Equals(Tenant.TenantId)))
                 {

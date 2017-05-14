@@ -55,7 +55,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
         {
             if (ModelState.IsValid)
             {
-                menu.TenantId = Tenant.TenantId;
+                menu.TenantId = Tenant.GetCurrentTenantId();
                 db.Menus.Add(menu);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -76,7 +76,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             {
                 throw new HttpException(404, "Page Not Found");
             }
-            menu.TenantId = Tenant.TenantId;
+            menu.TenantId = Tenant.GetCurrentTenantId();
             return View(menu);
         }
 

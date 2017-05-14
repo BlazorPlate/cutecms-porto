@@ -270,7 +270,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                             db.SaveChanges();
                             if (content.TranslationId == null)
                                 content.TranslationId = content.Id;
-                            content.TenantId = Tenant.TenantId;
+                            content.TenantId = Tenant.GetCurrentTenantId();
                             db.Entry(content).State = EntityState.Modified;
                             if (content.HasMenuItem)
                             {
@@ -413,7 +413,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                             cultureName = db.CMSLanguages.Find(content.LanguageId).CultureName.Trim();
                             content.ModifiedBy = User.Identity.GetUserId();
                             content.ModifiedOn = DateTime.Now;
-                            content.TenantId = Tenant.TenantId;
+                            content.TenantId = Tenant.GetCurrentTenantId();
                             db.Entry(content).State = EntityState.Modified;
                             db.SaveChanges();
                             dbContextTransaction.Commit();

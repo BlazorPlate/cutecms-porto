@@ -9,6 +9,14 @@ namespace cutecms_porto.Helpers
     public static class Tenant
     {
         public static string TenantId { get; set; }
+        public static string GetCurrentTenantId()
+        {
+            var fullAddress = HttpContext.Current.Request.Headers["Host"].Split('.');
+            if (fullAddress.Length < 2)
+                throw new HttpException(400, "Bad Request");
+            Tenant.TenantId = fullAddress[0];
+            return "";
+        }
     }
 
     public static class OrganizationData

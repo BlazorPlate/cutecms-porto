@@ -14,7 +14,7 @@ namespace cutecms_porto.Helpers
             var fullAddress = HttpContext.Current.Request.Headers["Host"].Split('.');
             if (fullAddress.Length < 2)
                 throw new HttpException(400, "Bad Request");
-            Tenant.TenantId = fullAddress[0];
+            TenantId = fullAddress[0];
             return "";
         }
     }

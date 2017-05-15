@@ -241,6 +241,11 @@ namespace cutecms_porto.Areas.CMS.Controllers
                                     db.SaveChanges();
                                     menuItem.MenuId = menu.Id;
                                 }
+                                else
+                                {
+                                    menuItem.MenuId = db.Menus.Where(m => m.TenantId.Trim().Equals(Tenant.TenantId) && m.Code.Trim().Equals("header")).FirstOrDefault().Id;
+                                }
+
                                 if (content.ParentMenuItemId != null)
                                 {
                                     StringHelper.MenuItemsList.Clear();
@@ -295,9 +300,19 @@ namespace cutecms_porto.Areas.CMS.Controllers
                             statusId = contentStatus.Id;
                             return RedirectToAction("Index", new { statusId = statusId });
                         }
-                        catch
+                        catch (DbEntityValidationException e)
                         {
                             dbContextTransaction.Rollback();
+                            foreach (var eve in e.EntityValidationErrors)
+                            {
+                                Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                                 eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                                foreach (var ve in eve.ValidationErrors)
+                                {
+                                    Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                                     ve.PropertyName, ve.ErrorMessage);
+                                }
+                            }
                         }
                     }
                 }

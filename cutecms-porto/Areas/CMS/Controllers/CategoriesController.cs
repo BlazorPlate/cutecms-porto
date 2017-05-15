@@ -52,7 +52,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
         {
             if (ModelState.IsValid)
             {
-                category.TenantId = Tenant.GetCurrentTenantId();
+                category.TenantId = Tenant.TenantId;
                 db.Categories.Add(category);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -85,7 +85,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
         {
             if (ModelState.IsValid)
             {
-                category.TenantId = Tenant.GetCurrentTenantId();
+                category.TenantId = Tenant.TenantId;
                 db.Entry(category).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

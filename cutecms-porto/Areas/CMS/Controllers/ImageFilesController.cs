@@ -83,7 +83,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                             // Save large size image, 800 x 800
                             ImageUploaderHelper.SaveImageToFolder(img, extension, new Size(width.Value, height.Value), imageFile.FilePath);
                         }
-                        imageFile.TenantId = Tenant.GetCurrentTenantId();
+                        imageFile.TenantId = Tenant.TenantId;
                         db.ImageFiles.Add(imageFile);
                         db.SaveChanges();
                         foreach (var item in imageWithTagsVM.Tags)
@@ -126,7 +126,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
         {
             if (ModelState.IsValid)
             {
-                imageWithTagsVM.ImageFile.TenantId = Tenant.GetCurrentTenantId();
+                imageWithTagsVM.ImageFile.TenantId = Tenant.TenantId;
                 db.Entry(imageWithTagsVM.ImageFile).State = EntityState.Modified;
                 db.SaveChanges();
                 var image = db.ImageFiles.First(u => u.Id == imageWithTagsVM.ImageFile.Id);

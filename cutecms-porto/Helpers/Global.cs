@@ -6,7 +6,7 @@ using System.Web.Routing;
 
 namespace cutecms_porto.Helpers
 {
-    public static class Tenant
+    public class Tenant
     {
         public static string TenantId { get; set; }
         public static string GetCurrentTenantId()
@@ -15,7 +15,8 @@ namespace cutecms_porto.Helpers
             if (fullAddress.Length < 2)
                 throw new HttpException(400, "Bad Request");
             TenantId = fullAddress[0];
-            return "";
+            //TenantId = "services";
+            return TenantId;
         }
     }
 

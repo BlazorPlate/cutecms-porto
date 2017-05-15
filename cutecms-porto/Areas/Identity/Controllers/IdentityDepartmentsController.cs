@@ -64,7 +64,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         {
             if (ModelState.IsValid)
             {
-                department.TenantId = Tenant.GetCurrentTenantId();
+                department.TenantId = Tenant.TenantId;
                 db.IdentityDepartments.Add(department);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -99,7 +99,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         {
             if (ModelState.IsValid)
             {
-                department.TenantId = Tenant.GetCurrentTenantId();
+                department.TenantId = Tenant.TenantId;
                 db.Entry(department).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

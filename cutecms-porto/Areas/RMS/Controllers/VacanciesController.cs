@@ -146,7 +146,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                 if (vacancyStatus.Code.Trim().Equals("published"))
                     vacanyWithDR.PublishedOn = DateTime.Now;
                 var vacancy = new Vacancy();
-                vacancy.TenantId = Tenant.GetCurrentTenantId();
+                vacancy.TenantId = Tenant.TenantId;
                 vacancy.Code = "0";
                 vacancy.Title = vacanyWithDR.Title;
                 vacancy.Description = vacanyWithDR.Description;
@@ -174,7 +174,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                 string programCode = db.RMSPrograms.Find(vacancy.ProgramId).Code.Trim();
                 string timeStamp = DateTime.UtcNow.ToString("ddMMyyyy", CultureInfo.InvariantCulture).Trim();
                 vacancy.Code = (vacancyCounter + "-" + vacancyLanguage + "-" + deptCode + "-" + programCode + "-" + timeStamp).ToUpper();
-                vacancy.TenantId = Tenant.GetCurrentTenantId();
+                vacancy.TenantId = Tenant.TenantId;
                 db.Vacancies.Add(vacancy);
                 db.SaveChanges();
                 if (vacancy.TranslationId == null)
@@ -248,7 +248,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                 var isVacancyPublished = (db.Vacancies.Find(vacanyWithDR.Id).Status.Code.ToLower().Equals("published")) ? true : false;
                 var vacancy = new Vacancy();
                 vacancy.Id = vacanyWithDR.Id;
-                vacancy.TenantId = Tenant.GetCurrentTenantId();
+                vacancy.TenantId = Tenant.TenantId;
                 vacancy.Code = vacanyWithDR.Code;
                 vacancy.Title = vacanyWithDR.Title;
                 vacancy.Description = vacanyWithDR.Description;
@@ -277,7 +277,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                 string programCode = db.RMSPrograms.Find(vacancy.ProgramId).Code.Trim();
                 string timeStamp = DateTime.UtcNow.ToString("ddMMyyyy", CultureInfo.InvariantCulture).Trim();
                 vacancy.Code = (vacancyCounter + "-" + vacancyLanguage + "-" + deptCode + "-" + programCode + "-" + timeStamp).ToUpper();
-                vacancy.TenantId = Tenant.GetCurrentTenantId();
+                vacancy.TenantId = Tenant.TenantId;
                 using (var db = new RMSEntities())
                 {
                     db.Entry(vacancy).State = EntityState.Modified;

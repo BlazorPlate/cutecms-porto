@@ -229,6 +229,18 @@ namespace cutecms_porto.Areas.CMS.Controllers
                             }
                             if (content.HasMenuItem)
                             {
+                                int? menuId = db.Menus.Where(m => m.TenantId.Trim().Equals(Tenant.TenantId) && m.Code.Trim().Equals("header")).FirstOrDefault()?.Id;
+                                if (menuId == null)
+                                {
+                                    Menu menu = new Menu();
+                                    menu.Code = "header";
+                                    menu.Visible = true;
+                                    menu.Ordinal = 0;
+                                    menu.TenantId = Tenant.TenantId;
+                                    db.Menus.Add(menu);
+                                    db.SaveChanges();
+                                    menuItem.MenuId = menu.Id;
+                                }
                                 if (content.ParentMenuItemId != null)
                                 {
                                     StringHelper.MenuItemsList.Clear();
@@ -247,8 +259,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                                     content.AbsolutePath = link.Item2;
                                     menuItem.Path = link.Item2;
                                 }
-                                menuItem.Name = content.Title;
-                                menuItem.MenuId = db.Menus.Where(m => m.TenantId.Trim().Equals(Tenant.TenantId) && m.Code.Trim().Equals("header")).FirstOrDefault().Id;
+                                menuItem.Name = content.Title;                              
                                 menuItem.LanguageId = content.LanguageId;
                                 menuItem.IsCms = true;
                                 menuItem.IsLeaf = true;
@@ -270,7 +281,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                             db.SaveChanges();
                             if (content.TranslationId == null)
                                 content.TranslationId = content.Id;
-                            content.TenantId = Tenant.GetCurrentTenantId();
+                            content.TenantId = Tenant.TenantId;
                             db.Entry(content).State = EntityState.Modified;
                             if (content.HasMenuItem)
                             {
@@ -413,7 +424,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                             cultureName = db.CMSLanguages.Find(content.LanguageId).CultureName.Trim();
                             content.ModifiedBy = User.Identity.GetUserId();
                             content.ModifiedOn = DateTime.Now;
-                            content.TenantId = Tenant.GetCurrentTenantId();
+                            content.TenantId = Tenant.TenantId;
                             db.Entry(content).State = EntityState.Modified;
                             db.SaveChanges();
                             dbContextTransaction.Commit();

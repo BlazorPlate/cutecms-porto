@@ -2539,59 +2539,59 @@
       <DependentUpon>NotTranslated.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Home\Calendar.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>Calendar.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Views\Home\Contact.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>Contact.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Views\Home\Contents.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>Contents.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Views\Home\ForgotPasswordConfirmation.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>ForgotPasswordConfirmation.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Views\Home\Galleries.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>Galleries.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Views\Home\ImageFiles.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>ImageFiles.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Views\Home\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>Index.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Views\Home\ResetPassword.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>ResetPassword.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Views\Home\ResetPasswordConfirmation.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>ResetPasswordConfirmation.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Views\Home\Subscribed.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>Subscribed.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Views\Home\Welcome.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>Welcome.cshtml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Views\MyProfile\AcademicInfo.generated.cs">
       <AutoGen>True</AutoGen>
@@ -8306,6 +8306,50 @@
       <LastGenOutput>Index.generated.cs</LastGenOutput>
     </Content>
     <Content Include="assets\porto\vendor\validation\jquery.validate.unobtrusive.bootstrap.min.js.map" />
+    <Content Include="Views\Home\Calendar.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Calendar.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\Contact.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Contact.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\Contents.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Contents.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\ForgotPasswordConfirmation.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ForgotPasswordConfirmation.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\Galleries.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Galleries.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\ImageFiles.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ImageFiles.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\ResetPassword.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ResetPassword.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\ResetPasswordConfirmation.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ResetPasswordConfirmation.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\Subscribed.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Subscribed.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\Welcome.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Welcome.generated.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -8320,14 +8364,6 @@
     <Content Include="Views\Shared\_Layout.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_Layout.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Home\Contact.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Contact.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Home\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Areas\Identity\Views\Account\_ExternalLoginsListPartial.cshtml">
       <Generator>RazorGenerator</Generator>
@@ -8481,14 +8517,6 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Content.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Home\Contents.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Contents.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Home\Calendar.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Calendar.generated.cs</LastGenOutput>
-    </Content>
     <Content Include="Views\Shared\_Breadcrumb.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_Breadcrumb.generated.cs</LastGenOutput>
@@ -8634,14 +8662,6 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Departments.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Home\Galleries.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Galleries.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Home\ImageFiles.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ImageFiles.generated.cs</LastGenOutput>
-    </Content>
     <Content Include="Views\MyProfile\Translations.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Translations.generated.cs</LastGenOutput>
@@ -8670,22 +8690,6 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>ForgotPasswordAjax.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Home\ForgotPasswordConfirmation.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ForgotPasswordConfirmation.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Home\ResetPasswordConfirmation.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ResetPasswordConfirmation.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Home\ResetPassword.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ResetPassword.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Home\Welcome.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Welcome.generated.cs</LastGenOutput>
-    </Content>
     <Content Include="Views\Error\InvalidToken.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>InvalidToken.generated.cs</LastGenOutput>
@@ -8697,10 +8701,6 @@
     <Content Include="Views\Shared\_Footer.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_Footer.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Home\Subscribed.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Subscribed.generated.cs</LastGenOutput>
     </Content>
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
   </ItemGroup>

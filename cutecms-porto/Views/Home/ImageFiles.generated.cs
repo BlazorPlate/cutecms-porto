@@ -69,11 +69,11 @@ WriteLiteral("\r\n\r\n");
 
 DefineSection("Styles", () => {
 
-WriteLiteral("\r\n<link");
+WriteLiteral("\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 219), Tuple.Create("\"", 297)
-, Tuple.Create(Tuple.Create("", 226), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/blueimp-gallery/css/bootstrap-blueimp-gallery.css")
-, 226), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 223), Tuple.Create("\"", 301)
+, Tuple.Create(Tuple.Create("", 230), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/blueimp-gallery/css/bootstrap-blueimp-gallery.css")
+, 230), false)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
@@ -118,152 +118,69 @@ WriteLiteral("<section>\r\n    <div");
 
 WriteLiteral(" class=\"container\"");
 
-WriteLiteral(">\r\n");
+WriteLiteral(">\r\n        <div");
 
-            
-            #line 26 "..\..\Views\Home\ImageFiles.cshtml"
-        
-            
-            #line default
-            #line hidden
-            
-            #line 26 "..\..\Views\Home\ImageFiles.cshtml"
-         using (Html.BeginForm("ImageFiles", "Home"))
-        {
-            Html.Hidden("GalleryId");
+WriteLiteral(" class=\"row\"");
 
-            
-            #line default
-            #line hidden
-WriteLiteral("            <div");
+WriteLiteral(">\r\n            <!-- LEFT COLUMNS -->\r\n            <div");
 
-WriteLiteral(" class=\"form-horizontal\"");
+WriteLiteral(" class=\"col-md-9 col-sm-9 col-md-push-3 col-sm-push-3\"");
 
-WriteLiteral(">\r\n                <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n                    <div");
-
-WriteLiteral(" class=\"col-md-10\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                        ");
-
-            
-            #line 32 "..\..\Views\Home\ImageFiles.cshtml"
-                   Write(Html.Label(Resources.Resources.Search));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                    </div>\r\n                </div>\r\n                <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n                    <div");
-
-WriteLiteral(" class=\"col-md-10\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("                        ");
-
-            
-            #line 37 "..\..\Views\Home\ImageFiles.cshtml"
-                   Write(Html.DropDownList("TagIdFilter", new SelectList(ViewBag.TagIdFilter, "Value", "Text"), Resources.Resources.ChooseTag, new { @class = "form-control" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                    </div>\r\n                </div>\r\n                <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n                    <div");
-
-WriteLiteral(" class=\"col-md-10\"");
-
-WriteLiteral(">\r\n                        <input");
-
-WriteLiteral(" type=\"submit\"");
-
-WriteAttribute("value", Tuple.Create(" value=\"", 1450), Tuple.Create("\"", 1485)
-            
-            #line 42 "..\..\Views\Home\ImageFiles.cshtml"
-, Tuple.Create(Tuple.Create("", 1458), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Search
-            
-            #line default
-            #line hidden
-, 1458), false)
-);
-
-WriteLiteral(" class=\"btn btn-primary\"");
-
-WriteLiteral(" />\r\n                    </div>\r\n                </div>\r\n            </div>\r\n");
-
-            
-            #line 46 "..\..\Views\Home\ImageFiles.cshtml"
-        }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("        <!-- The Bootstrap Image Gallery lightbox, should be a child element of t" +
-"he document body -->\r\n        <div");
+WriteLiteral(">\r\n                <!-- The Bootstrap Image Gallery lightbox, should be a child e" +
+"lement of the document body -->\r\n                <div");
 
 WriteLiteral(" id=\"blueimp-gallery\"");
 
 WriteLiteral(" class=\"blueimp-gallery blueimp-gallery-controls\"");
 
-WriteLiteral(">\r\n            <!-- The container for the modal slides -->\r\n            <div");
+WriteLiteral(">\r\n                    <!-- The container for the modal slides -->\r\n             " +
+"       <div");
 
 WriteLiteral(" class=\"slides\"");
 
-WriteLiteral("></div>\r\n            <!-- Controls for the borderless lightbox -->\r\n            <" +
-"h3");
+WriteLiteral("></div>\r\n                    <!-- Controls for the borderless lightbox -->\r\n     " +
+"               <h3");
 
 WriteLiteral(" class=\"title\"");
 
-WriteLiteral("></h3>\r\n            <a");
+WriteLiteral("></h3>\r\n                    <a");
 
 WriteLiteral(" class=\"prev\"");
 
-WriteLiteral(">‹</a>\r\n            <a");
+WriteLiteral(">‹</a>\r\n                    <a");
 
 WriteLiteral(" class=\"next\"");
 
-WriteLiteral(">›</a>\r\n            <a");
+WriteLiteral(">›</a>\r\n                    <a");
 
 WriteLiteral(" class=\"close\"");
 
-WriteLiteral(">×</a>\r\n            <a");
+WriteLiteral(">×</a>\r\n                    <a");
 
 WriteLiteral(" class=\"play-pause\"");
 
-WriteLiteral("></a>\r\n            <ol");
+WriteLiteral("></a>\r\n                    <ol");
 
 WriteLiteral(" class=\"indicator\"");
 
-WriteLiteral("></ol>\r\n            <!-- The modal dialog, which will be used to wrap the lightbo" +
-"x content -->\r\n            <div");
+WriteLiteral("></ol>\r\n                    <!-- The modal dialog, which will be used to wrap the" +
+" lightbox content -->\r\n                    <div");
 
 WriteLiteral(" class=\"modal fade\"");
 
-WriteLiteral(">\r\n                <div");
+WriteLiteral(">\r\n                        <div");
 
 WriteLiteral(" class=\"modal-dialog\"");
 
-WriteLiteral(">\r\n                    <div");
+WriteLiteral(">\r\n                            <div");
 
 WriteLiteral(" class=\"modal-content\"");
 
-WriteLiteral(">\r\n                        <div");
+WriteLiteral(">\r\n                                <div");
 
 WriteLiteral(" class=\"modal-header\"");
 
-WriteLiteral(">\r\n                            <button");
+WriteLiteral(">\r\n                                    <button");
 
 WriteLiteral(" type=\"button\"");
 
@@ -271,152 +188,277 @@ WriteLiteral(" class=\"close\"");
 
 WriteLiteral(" aria-hidden=\"true\"");
 
-WriteLiteral(">&times;</button>\r\n                            <h4");
+WriteLiteral(">&times;</button>\r\n                                    <h4");
 
 WriteLiteral(" class=\"modal-title\"");
 
-WriteLiteral("></h4>\r\n                        </div>\r\n                        <div");
+WriteLiteral("></h4>\r\n                                </div>\r\n                                <" +
+"div");
 
 WriteLiteral(" class=\"modal-body next\"");
 
 WriteLiteral(" style=\"max-height: 500px; min-height: 400px;\"");
 
-WriteLiteral("></div>\r\n                        <div");
+WriteLiteral("></div>\r\n                                <div");
 
 WriteLiteral(" class=\"modal-footer\"");
 
-WriteLiteral(">\r\n                            <button");
+WriteLiteral(">\r\n                                    <button");
 
 WriteLiteral(" type=\"button\"");
 
 WriteLiteral(" class=\"btn btn-default pull-left prev\"");
 
-WriteLiteral(">\r\n                                <i");
+WriteLiteral(">\r\n                                        <i");
 
 WriteLiteral(" class=\"glyphicon glyphicon-chevron-left\"");
 
-WriteLiteral("></i>\r\n                                Previous\r\n                            </bu" +
-"tton>\r\n                            <button");
+WriteLiteral("></i>\r\n                                        Previous\r\n                        " +
+"            </button>\r\n                                    <button");
 
 WriteLiteral(" type=\"button\"");
 
 WriteLiteral(" class=\"btn btn-primary next\"");
 
-WriteLiteral(">\r\n                                Next\r\n                                <i");
+WriteLiteral(">\r\n                                        Next\r\n                                " +
+"        <i");
 
 WriteLiteral(" class=\"glyphicon glyphicon-chevron-right\"");
 
-WriteLiteral("></i>\r\n                            </button>\r\n                        </div>\r\n   " +
-"                 </div>\r\n                </div>\r\n            </div>\r\n        </d" +
-"iv>\r\n        <div");
+WriteLiteral("></i>\r\n                                    </button>\r\n                           " +
+"     </div>\r\n                            </div>\r\n                        </div>\r" +
+"\n                    </div>\r\n                </div>\r\n                <div");
 
 WriteLiteral(" id=\"links\"");
 
 WriteLiteral(">\r\n");
 
             
-            #line 82 "..\..\Views\Home\ImageFiles.cshtml"
-            
+            #line 64 "..\..\Views\Home\ImageFiles.cshtml"
+                    
             
             #line default
             #line hidden
             
-            #line 82 "..\..\Views\Home\ImageFiles.cshtml"
-             foreach (var item in Model)
+            #line 64 "..\..\Views\Home\ImageFiles.cshtml"
+                     foreach (var item in Model)
             {
                 string description = (item.ImageFileTerms.Where(i => i.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && i.ImageFileId == item.Id).FirstOrDefault() != null) ? item.ImageFileTerms.Where(i => i.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && i.ImageFileId == item.Id).FirstOrDefault().Description : string.Empty;
 
             
             #line default
             #line hidden
-WriteLiteral("                <a");
+WriteLiteral("                        <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3894), Tuple.Create("\"", 3915)
+WriteAttribute("href", Tuple.Create(" href=\"", 3382), Tuple.Create("\"", 3403)
             
-            #line 85 "..\..\Views\Home\ImageFiles.cshtml"
-, Tuple.Create(Tuple.Create("", 3901), Tuple.Create<System.Object, System.Int32>(item.FilePath
+            #line 67 "..\..\Views\Home\ImageFiles.cshtml"
+, Tuple.Create(Tuple.Create("", 3389), Tuple.Create<System.Object, System.Int32>(item.FilePath
             
             #line default
             #line hidden
-, 3901), false)
+, 3389), false)
 );
 
-WriteAttribute("title", Tuple.Create(" title=\"", 3916), Tuple.Create("\"", 3936)
+WriteAttribute("title", Tuple.Create(" title=\"", 3404), Tuple.Create("\"", 3424)
             
-            #line 85 "..\..\Views\Home\ImageFiles.cshtml"
-, Tuple.Create(Tuple.Create("", 3924), Tuple.Create<System.Object, System.Int32>(description
+            #line 67 "..\..\Views\Home\ImageFiles.cshtml"
+, Tuple.Create(Tuple.Create("", 3412), Tuple.Create<System.Object, System.Int32>(description
             
             #line default
             #line hidden
-, 3924), false)
+, 3412), false)
 );
 
-WriteLiteral(" data-gallery>\r\n                    <img");
+WriteLiteral(" data-gallery>\r\n                            <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 3977), Tuple.Create("\"", 3998)
+WriteAttribute("src", Tuple.Create(" src=\"", 3473), Tuple.Create("\"", 3494)
             
-            #line 86 "..\..\Views\Home\ImageFiles.cshtml"
-, Tuple.Create(Tuple.Create("", 3983), Tuple.Create<System.Object, System.Int32>(item.ThumbPath
+            #line 68 "..\..\Views\Home\ImageFiles.cshtml"
+, Tuple.Create(Tuple.Create("", 3479), Tuple.Create<System.Object, System.Int32>(item.ThumbPath
             
             #line default
             #line hidden
-, 3983), false)
+, 3479), false)
 );
 
-WriteAttribute("alt", Tuple.Create(" alt=\"", 3999), Tuple.Create("\"", 4017)
+WriteAttribute("alt", Tuple.Create(" alt=\"", 3495), Tuple.Create("\"", 3513)
             
-            #line 86 "..\..\Views\Home\ImageFiles.cshtml"
-, Tuple.Create(Tuple.Create("", 4005), Tuple.Create<System.Object, System.Int32>(description
+            #line 68 "..\..\Views\Home\ImageFiles.cshtml"
+, Tuple.Create(Tuple.Create("", 3501), Tuple.Create<System.Object, System.Int32>(description
             
             #line default
             #line hidden
-, 4005), false)
+, 3501), false)
 );
 
 WriteLiteral(" class=\"img-rounded\"");
 
 WriteLiteral(" style=\"margin-bottom:7px;\"");
 
-WriteLiteral(" />\r\n                </a>\r\n");
+WriteLiteral(" />\r\n                        </a>\r\n");
 
             
-            #line 88 "..\..\Views\Home\ImageFiles.cshtml"
-            }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("        </div>\r\n");
-
-WriteLiteral("        ");
-
-            
-            #line 90 "..\..\Views\Home\ImageFiles.cshtml"
-   Write(Html.PagedListPager((IPagedList)Model, page => Url.Action("ImageFiles", new { page, tagIdFilter = ViewBag.TagId})));
+            #line 70 "..\..\Views\Home\ImageFiles.cshtml"
+                    }
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n        <div>\r\n");
+WriteLiteral("                </div>\r\n");
 
-WriteLiteral("            ");
+WriteLiteral("                ");
+
+            
+            #line 72 "..\..\Views\Home\ImageFiles.cshtml"
+           Write(Html.PagedListPager((IPagedList)Model, page => Url.Action("ImageFiles", new { page, tagIdFilter = ViewBag.TagId })));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                <div>\r\n");
+
+WriteLiteral("                    ");
+
+            
+            #line 74 "..\..\Views\Home\ImageFiles.cshtml"
+               Write(Html.ActionLink(Resources.Resources.BackToList, "Galleries"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                </div>\r\n                <!-- /LEFT COLUMNS -->\r\n            </d" +
+"iv>\r\n            <!-- RIGHT COLUMNS -->\r\n            <div");
+
+WriteLiteral(" class=\"col-md-3 col-sm-3 col-md-pull-9 col-sm-pull-9\"");
+
+WriteLiteral(">\r\n                <h4>");
+
+            
+            #line 80 "..\..\Views\Home\ImageFiles.cshtml"
+               Write(Resources.Resources.Search);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</h4>\r\n");
+
+            
+            #line 81 "..\..\Views\Home\ImageFiles.cshtml"
+                
+            
+            #line default
+            #line hidden
+            
+            #line 81 "..\..\Views\Home\ImageFiles.cshtml"
+                 using (Html.BeginForm("Contents", "Home", FormMethod.Get))
+                {
+                    Html.Hidden("GalleryId");
+                    
+            
+            #line default
+            #line hidden
+            
+            #line 84 "..\..\Views\Home\ImageFiles.cshtml"
+               Write(Html.DropDownList("TagIdFilter", new SelectList(ViewBag.TagIdFilter, "Value", "Text"), Resources.Resources.ChooseTag, new { @class = "form-control" }));
+
+            
+            #line default
+            #line hidden
+            
+            #line 84 "..\..\Views\Home\ImageFiles.cshtml"
+                                                                                                                                                                           
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                    <br />\r\n");
+
+WriteLiteral("                        <input");
+
+WriteLiteral(" type=\"submit\"");
+
+WriteAttribute("value", Tuple.Create(" value=\"", 4518), Tuple.Create("\"", 4553)
+            
+            #line 86 "..\..\Views\Home\ImageFiles.cshtml"
+, Tuple.Create(Tuple.Create("", 4526), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Search
+            
+            #line default
+            #line hidden
+, 4526), false)
+);
+
+WriteLiteral(" class=\"btn btn-primary form-control\"");
+
+WriteLiteral(" />\r\n");
+
+            
+            #line 87 "..\..\Views\Home\ImageFiles.cshtml"
+                }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("            </div>\r\n            <!-- /RIGHT COLUMNS -->\r\n        </div>\r\n        " +
+"<div");
+
+WriteLiteral(" class=\"post-block post-share\"");
+
+WriteLiteral(">\r\n            <h3");
+
+WriteLiteral(" class=\"heading-primary\"");
+
+WriteLiteral("><i");
+
+WriteLiteral(" class=\"fa fa-share\"");
+
+WriteLiteral("></i>");
 
             
             #line 92 "..\..\Views\Home\ImageFiles.cshtml"
-       Write(Html.ActionLink(Resources.Resources.BackToList, "Galleries"));
+                                                              Write(Resources.Resources.Share);
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n        </div>\r\n    </div>\r\n</section>\r\n");
+WriteLiteral("</h3>\r\n            <!-- AddThis Button BEGIN -->\r\n            <div");
+
+WriteLiteral(" class=\"addthis_toolbox addthis_default_style \"");
+
+WriteLiteral(">\r\n                <a");
+
+WriteLiteral(" class=\"addthis_button_facebook_like\"");
+
+WriteLiteral(" fb:like:layout=\"button_count\"");
+
+WriteLiteral("></a>\r\n                <a");
+
+WriteLiteral(" class=\"addthis_button_tweet\"");
+
+WriteLiteral("></a>\r\n                <a");
+
+WriteLiteral(" class=\"addthis_button_pinterest_pinit\"");
+
+WriteLiteral("></a>\r\n                <a");
+
+WriteLiteral(" class=\"addthis_counter addthis_pill_style\"");
+
+WriteLiteral("></a>\r\n            </div>\r\n            <script");
+
+WriteLiteral(" type=\"text/javascript\"");
+
+WriteLiteral(" src=\"//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50faf75173aadc53\"");
+
+WriteLiteral("></script>\r\n            <!-- AddThis Button END -->\r\n        </div>\r\n    </div>\r\n" +
+"\r\n</section>\r\n\r\n");
 
 DefineSection("Scripts", () => {
 
-WriteLiteral("\r\n<script");
+WriteLiteral("\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 4404), Tuple.Create("\"", 4480)
-, Tuple.Create(Tuple.Create("", 4410), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/blueimp-gallery/js/jquery.blueimp-gallery.min.js")
-, 4410), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 5483), Tuple.Create("\"", 5559)
+, Tuple.Create(Tuple.Create("", 5489), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/blueimp-gallery/js/jquery.blueimp-gallery.min.js")
+, 5489), false)
 );
 
 WriteLiteral("></script>\r\n");

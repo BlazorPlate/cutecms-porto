@@ -181,13 +181,28 @@ WriteLiteral(">\r\n                    <div");
 
 WriteLiteral(" class=\"col-md-8\"");
 
-WriteLiteral(@">
-                        <p>
-                            The fastest way to grow your business with the leader in <em>Technology</em>
-                            <span>Check out our options and features included.</span>
-                        </p>
-                    </div>
-                    <div");
+WriteLiteral(">\r\n                        <p>\r\n");
+
+WriteLiteral("                          ");
+
+            
+            #line 36 "..\..\Views\Home\Index.cshtml"
+                     Write(Resources.Resources.Lorem1);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                            <span>");
+
+            
+            #line 37 "..\..\Views\Home\Index.cshtml"
+                             Write(Resources.Resources.Lorem2);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</span>\r\n                        </p>\r\n                    </div>\r\n              " +
+"      <div");
 
 WriteLiteral(" class=\"col-md-4\"");
 
@@ -201,17 +216,43 @@ WriteLiteral(" href=\"#\"");
 
 WriteLiteral(" class=\"btn btn-lg btn-primary\"");
 
-WriteLiteral(">Get Started Now!</a>\r\n                            <div");
+WriteLiteral(">");
+
+            
+            #line 42 "..\..\Views\Home\Index.cshtml"
+                                                                  Write(Resources.Resources.GetStarted);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</a>\r\n                            <div");
 
 WriteLiteral(" class=\"learn-more\"");
 
-WriteLiteral(">or <a");
+WriteLiteral(">");
 
-WriteLiteral(" href=\"index.html\"");
+            
+            #line 43 "..\..\Views\Home\Index.cshtml"
+                                               Write(Resources.Resources.Or);
 
-WriteLiteral(">learn more.</a></div>\r\n                        </div>\r\n                    </div" +
-">\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div" +
-">\r\n\r\n<div");
+            
+            #line default
+            #line hidden
+WriteLiteral(" <a");
+
+WriteLiteral(" href=\"/\"");
+
+WriteLiteral(">");
+
+            
+            #line 43 "..\..\Views\Home\Index.cshtml"
+                                                                                   Write(Resources.Resources.LearnMore);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</a></div>\r\n                        </div>\r\n                    </div>\r\n         " +
+"       </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<div");
 
 WriteLiteral(" class=\"container\"");
 
@@ -223,199 +264,22 @@ WriteLiteral(">\r\n        <div");
 
 WriteLiteral(" class=\"col-md-12\"");
 
-WriteLiteral(">\r\n            <h1");
-
-WriteLiteral(" class=\"mb-sm word-rotator-title\"");
-
-WriteLiteral(">\r\n                Porto is\r\n                <strong");
-
-WriteLiteral(" class=\"inverted\"");
-
-WriteLiteral(">\r\n                    <span");
-
-WriteLiteral(" class=\"word-rotate\"");
-
-WriteLiteral(" data-plugin-options=\'{\"delay\": 2000, \"animDelay\": 300}\'");
-
-WriteLiteral(">\r\n                        <span");
-
-WriteLiteral(" class=\"word-rotate-items\"");
-
-WriteLiteral(@">
-                            <span>incredibly</span>
-                            <span>especially</span>
-                            <span>extremely</span>
-                        </span>
-                    </span>
-                </strong>
-                beautiful and fully responsive.
-            </h1>
-            <p");
+WriteLiteral(">\r\n            <p");
 
 WriteLiteral(" class=\"lead\"");
 
-WriteLiteral(@">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, nulla vel pellentesque consequat, ante nulla hendrerit arcu, ac tincidunt mauris lacus sed leo. vamus suscipit molestie vestibulum.
-            </p>
-        </div>
-    </div>
+WriteLiteral(">\r\n");
 
-</div>
+WriteLiteral("                ");
 
-<div");
+            
+            #line 57 "..\..\Views\Home\Index.cshtml"
+           Write(Resources.Resources.Lorem3);
 
-WriteLiteral(" class=\"home-concept\"");
-
-WriteLiteral(">\r\n    <div");
-
-WriteLiteral(" class=\"container\"");
-
-WriteLiteral(">\r\n        <div");
-
-WriteLiteral(" class=\"row center\"");
-
-WriteLiteral(">\r\n            <span");
-
-WriteLiteral(" class=\"sun\"");
-
-WriteLiteral("></span>\r\n            <span");
-
-WriteLiteral(" class=\"cloud\"");
-
-WriteLiteral("></span>\r\n            <div");
-
-WriteLiteral(" class=\"col-md-2 col-md-offset-1\"");
-
-WriteLiteral(">\r\n                <div");
-
-WriteLiteral(" class=\"process-image appear-animation\"");
-
-WriteLiteral(" data-appear-animation=\"bounceIn\"");
-
-WriteLiteral(">\r\n                    <img");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 3554), Tuple.Create("\"", 3602)
-, Tuple.Create(Tuple.Create("", 3560), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/home-concept-item-1.png")
-, 3560), false)
-);
-
-WriteLiteral(" alt=\"\"");
-
-WriteLiteral(" />\r\n                    <strong>Strategy</strong>\r\n                </div>\r\n     " +
-"       </div>\r\n            <div");
-
-WriteLiteral(" class=\"col-md-2\"");
-
-WriteLiteral(">\r\n                <div");
-
-WriteLiteral(" class=\"process-image\"");
-
-WriteLiteral(" data-appear-animation=\"bounceIn\"");
-
-WriteLiteral(" data-appear-animation-delay=\"200\"");
-
-WriteLiteral(">\r\n                    <img");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 3878), Tuple.Create("\"", 3926)
-, Tuple.Create(Tuple.Create("", 3884), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/home-concept-item-2.png")
-, 3884), false)
-);
-
-WriteLiteral(" alt=\"\"");
-
-WriteLiteral(" />\r\n                    <strong>Planning</strong>\r\n                </div>\r\n     " +
-"       </div>\r\n            <div");
-
-WriteLiteral(" class=\"col-md-2\"");
-
-WriteLiteral(">\r\n                <div");
-
-WriteLiteral(" class=\"process-image\"");
-
-WriteLiteral(" data-appear-animation=\"bounceIn\"");
-
-WriteLiteral(" data-appear-animation-delay=\"400\"");
-
-WriteLiteral(">\r\n                    <img");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 4202), Tuple.Create("\"", 4250)
-, Tuple.Create(Tuple.Create("", 4208), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/home-concept-item-3.png")
-, 4208), false)
-);
-
-WriteLiteral(" alt=\"\"");
-
-WriteLiteral(" />\r\n                    <strong>Build</strong>\r\n                </div>\r\n        " +
-"    </div>\r\n            <div");
-
-WriteLiteral(" class=\"col-md-4 col-md-offset-1\"");
-
-WriteLiteral(">\r\n                <div");
-
-WriteLiteral(" class=\"project-image\"");
-
-WriteLiteral(">\r\n                    <div");
-
-WriteLiteral(" id=\"fcSlideshow\"");
-
-WriteLiteral(" class=\"fc-slideshow\"");
-
-WriteLiteral(">\r\n                        <ul");
-
-WriteLiteral(" class=\"fc-slides\"");
-
-WriteLiteral(">\r\n                            <li><a");
-
-WriteLiteral(" href=\"portfolio-single-small-slider.html\"");
-
-WriteLiteral("><img");
-
-WriteLiteral(" class=\"img-responsive\"");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 4665), Tuple.Create("\"", 4717)
-, Tuple.Create(Tuple.Create("", 4671), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/projects/project-home-1.jpg")
-, 4671), false)
-);
-
-WriteLiteral(" alt=\"\"");
-
-WriteLiteral(" /></a></li>\r\n                            <li><a");
-
-WriteLiteral(" href=\"portfolio-single-small-slider.html\"");
-
-WriteLiteral("><img");
-
-WriteLiteral(" class=\"img-responsive\"");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 4843), Tuple.Create("\"", 4895)
-, Tuple.Create(Tuple.Create("", 4849), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/projects/project-home-2.jpg")
-, 4849), false)
-);
-
-WriteLiteral(" alt=\"\"");
-
-WriteLiteral(" /></a></li>\r\n                            <li><a");
-
-WriteLiteral(" href=\"portfolio-single-small-slider.html\"");
-
-WriteLiteral("><img");
-
-WriteLiteral(" class=\"img-responsive\"");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 5021), Tuple.Create("\"", 5073)
-, Tuple.Create(Tuple.Create("", 5027), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/projects/project-home-3.jpg")
-, 5027), false)
-);
-
-WriteLiteral(" alt=\"\"");
-
-WriteLiteral(" /></a></li>\r\n                        </ul>\r\n                    </div>\r\n        " +
-"            <strong");
-
-WriteLiteral(" class=\"our-work\"");
-
-WriteLiteral(">Our Work</strong>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r" +
-"\n    </div>\r\n</div>\r\n\r\n<div");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            </p>\r\n        </div>\r\n    </div>\r\n\r\n</div>\r\n\r\n<div");
 
 WriteLiteral(" class=\"container\"");
 
@@ -427,504 +291,7 @@ WriteLiteral(">\r\n        <hr");
 
 WriteLiteral(" class=\"tall\"");
 
-WriteLiteral(">\r\n    </div>\r\n\r\n</div>\r\n\r\n<div");
-
-WriteLiteral(" class=\"container\"");
-
-WriteLiteral(">\r\n\r\n    <div");
-
-WriteLiteral(" class=\"row\"");
-
-WriteLiteral(">\r\n        <div");
-
-WriteLiteral(" class=\"col-md-8\"");
-
-WriteLiteral(">\r\n            <h2>Our <strong>Features</strong></h2>\r\n            <div");
-
-WriteLiteral(" class=\"row\"");
-
-WriteLiteral(">\r\n                <div");
-
-WriteLiteral(" class=\"col-sm-6\"");
-
-WriteLiteral(">\r\n                    <div");
-
-WriteLiteral(" class=\"feature-box\"");
-
-WriteLiteral(">\r\n                        <div");
-
-WriteLiteral(" class=\"feature-box-icon\"");
-
-WriteLiteral(">\r\n                            <i");
-
-WriteLiteral(" class=\"fa fa-group\"");
-
-WriteLiteral("></i>\r\n                        </div>\r\n                        <div");
-
-WriteLiteral(" class=\"feature-box-info\"");
-
-WriteLiteral(">\r\n                            <h4");
-
-WriteLiteral(" class=\"heading-primary mb-none\"");
-
-WriteLiteral(">Customer Support</h4>\r\n                            <p");
-
-WriteLiteral(" class=\"tall\"");
-
-WriteLiteral(">Lorem ipsum dolor sit amet, consectetur adip.</p>\r\n                        </div" +
-">\r\n                    </div>\r\n                    <div");
-
-WriteLiteral(" class=\"feature-box\"");
-
-WriteLiteral(">\r\n                        <div");
-
-WriteLiteral(" class=\"feature-box-icon\"");
-
-WriteLiteral(">\r\n                            <i");
-
-WriteLiteral(" class=\"fa fa-file\"");
-
-WriteLiteral("></i>\r\n                        </div>\r\n                        <div");
-
-WriteLiteral(" class=\"feature-box-info\"");
-
-WriteLiteral(">\r\n                            <h4");
-
-WriteLiteral(" class=\"heading-primary mb-none\"");
-
-WriteLiteral(">HTML5 / CSS3 / JS</h4>\r\n                            <p");
-
-WriteLiteral(" class=\"tall\"");
-
-WriteLiteral(">Lorem ipsum dolor sit amet, adip.</p>\r\n                        </div>\r\n         " +
-"           </div>\r\n                    <div");
-
-WriteLiteral(" class=\"feature-box\"");
-
-WriteLiteral(">\r\n                        <div");
-
-WriteLiteral(" class=\"feature-box-icon\"");
-
-WriteLiteral(">\r\n                            <i");
-
-WriteLiteral(" class=\"fa fa-google-plus\"");
-
-WriteLiteral("></i>\r\n                        </div>\r\n                        <div");
-
-WriteLiteral(" class=\"feature-box-info\"");
-
-WriteLiteral(">\r\n                            <h4");
-
-WriteLiteral(" class=\"heading-primary mb-none\"");
-
-WriteLiteral(">500+ Google Fonts</h4>\r\n                            <p");
-
-WriteLiteral(" class=\"tall\"");
-
-WriteLiteral(">Lorem ipsum dolor sit amet, consectetur adip.</p>\r\n                        </div" +
-">\r\n                    </div>\r\n                    <div");
-
-WriteLiteral(" class=\"feature-box\"");
-
-WriteLiteral(">\r\n                        <div");
-
-WriteLiteral(" class=\"feature-box-icon\"");
-
-WriteLiteral(">\r\n                            <i");
-
-WriteLiteral(" class=\"fa fa-adjust\"");
-
-WriteLiteral("></i>\r\n                        </div>\r\n                        <div");
-
-WriteLiteral(" class=\"feature-box-info\"");
-
-WriteLiteral(">\r\n                            <h4");
-
-WriteLiteral(" class=\"heading-primary mb-none\"");
-
-WriteLiteral(">Colors</h4>\r\n                            <p");
-
-WriteLiteral(" class=\"tall\"");
-
-WriteLiteral(">Lorem ipsum dolor sit amet, consectetur adip.</p>\r\n                        </div" +
-">\r\n                    </div>\r\n                </div>\r\n                <div");
-
-WriteLiteral(" class=\"col-sm-6\"");
-
-WriteLiteral(">\r\n                    <div");
-
-WriteLiteral(" class=\"feature-box\"");
-
-WriteLiteral(">\r\n                        <div");
-
-WriteLiteral(" class=\"feature-box-icon\"");
-
-WriteLiteral(">\r\n                            <i");
-
-WriteLiteral(" class=\"fa fa-film\"");
-
-WriteLiteral("></i>\r\n                        </div>\r\n                        <div");
-
-WriteLiteral(" class=\"feature-box-info\"");
-
-WriteLiteral(">\r\n                            <h4");
-
-WriteLiteral(" class=\"heading-primary mb-none\"");
-
-WriteLiteral(">Sliders</h4>\r\n                            <p");
-
-WriteLiteral(" class=\"tall\"");
-
-WriteLiteral(">Lorem ipsum dolor sit amet, consectetur.</p>\r\n                        </div>\r\n  " +
-"                  </div>\r\n                    <div");
-
-WriteLiteral(" class=\"feature-box\"");
-
-WriteLiteral(">\r\n                        <div");
-
-WriteLiteral(" class=\"feature-box-icon\"");
-
-WriteLiteral(">\r\n                            <i");
-
-WriteLiteral(" class=\"fa fa-user\"");
-
-WriteLiteral("></i>\r\n                        </div>\r\n                        <div");
-
-WriteLiteral(" class=\"feature-box-info\"");
-
-WriteLiteral(">\r\n                            <h4");
-
-WriteLiteral(" class=\"heading-primary mb-none\"");
-
-WriteLiteral(">Icons</h4>\r\n                            <p");
-
-WriteLiteral(" class=\"tall\"");
-
-WriteLiteral(">Lorem ipsum dolor sit amet, consectetur adip.</p>\r\n                        </div" +
-">\r\n                    </div>\r\n                    <div");
-
-WriteLiteral(" class=\"feature-box\"");
-
-WriteLiteral(">\r\n                        <div");
-
-WriteLiteral(" class=\"feature-box-icon\"");
-
-WriteLiteral(">\r\n                            <i");
-
-WriteLiteral(" class=\"fa fa-bars\"");
-
-WriteLiteral("></i>\r\n                        </div>\r\n                        <div");
-
-WriteLiteral(" class=\"feature-box-info\"");
-
-WriteLiteral(">\r\n                            <h4");
-
-WriteLiteral(" class=\"heading-primary mb-none\"");
-
-WriteLiteral(">Buttons</h4>\r\n                            <p");
-
-WriteLiteral(" class=\"tall\"");
-
-WriteLiteral(">Lorem ipsum dolor sit, consectetur adip.</p>\r\n                        </div>\r\n  " +
-"                  </div>\r\n                    <div");
-
-WriteLiteral(" class=\"feature-box\"");
-
-WriteLiteral(">\r\n                        <div");
-
-WriteLiteral(" class=\"feature-box-icon\"");
-
-WriteLiteral(">\r\n                            <i");
-
-WriteLiteral(" class=\"fa fa-desktop\"");
-
-WriteLiteral("></i>\r\n                        </div>\r\n                        <div");
-
-WriteLiteral(" class=\"feature-box-info\"");
-
-WriteLiteral(">\r\n                            <h4");
-
-WriteLiteral(" class=\"heading-primary mb-none\"");
-
-WriteLiteral(">Lightbox</h4>\r\n                            <p");
-
-WriteLiteral(" class=\"tall\"");
-
-WriteLiteral(">Lorem sit amet, consectetur adip.</p>\r\n                        </div>\r\n         " +
-"           </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n " +
-"       <div");
-
-WriteLiteral(" class=\"col-md-4\"");
-
-WriteLiteral(">\r\n            <h2>and more...</h2>\r\n\r\n            <div");
-
-WriteLiteral(" class=\"panel-group\"");
-
-WriteLiteral(" id=\"accordion\"");
-
-WriteLiteral(">\r\n                <div");
-
-WriteLiteral(" class=\"panel panel-default\"");
-
-WriteLiteral(">\r\n                    <div");
-
-WriteLiteral(" class=\"panel-heading\"");
-
-WriteLiteral(">\r\n                        <h4");
-
-WriteLiteral(" class=\"panel-title\"");
-
-WriteLiteral(">\r\n                            <a");
-
-WriteLiteral(" class=\"accordion-toggle\"");
-
-WriteLiteral(" data-toggle=\"collapse\"");
-
-WriteLiteral(" data-parent=\"#accordion\"");
-
-WriteLiteral(" href=\"#collapseOne\"");
-
-WriteLiteral(">\r\n                                <i");
-
-WriteLiteral(" class=\"fa fa-usd\"");
-
-WriteLiteral("></i>\r\n                                Pricing Tables\r\n                          " +
-"  </a>\r\n                        </h4>\r\n                    </div>\r\n             " +
-"       <div");
-
-WriteLiteral(" id=\"collapseOne\"");
-
-WriteLiteral(" class=\"accordion-body collapse in\"");
-
-WriteLiteral(">\r\n                        <div");
-
-WriteLiteral(" class=\"panel-body\"");
-
-WriteLiteral(@">
-                            Donec tellus massa, tristique sit amet condim vel, facilisis quis sapien. Praesent id enim sit amet odio vulputate eleifend in in tortor.
-                        </div>
-                    </div>
-                </div>
-                <div");
-
-WriteLiteral(" class=\"panel panel-default\"");
-
-WriteLiteral(">\r\n                    <div");
-
-WriteLiteral(" class=\"panel-heading\"");
-
-WriteLiteral(">\r\n                        <h4");
-
-WriteLiteral(" class=\"panel-title\"");
-
-WriteLiteral(">\r\n                            <a");
-
-WriteLiteral(" class=\"accordion-toggle\"");
-
-WriteLiteral(" data-toggle=\"collapse\"");
-
-WriteLiteral(" data-parent=\"#accordion\"");
-
-WriteLiteral(" href=\"#collapseTwo\"");
-
-WriteLiteral(">\r\n                                <i");
-
-WriteLiteral(" class=\"fa fa-comment\"");
-
-WriteLiteral("></i>\r\n                                Contact Forms\r\n                           " +
-" </a>\r\n                        </h4>\r\n                    </div>\r\n              " +
-"      <div");
-
-WriteLiteral(" id=\"collapseTwo\"");
-
-WriteLiteral(" class=\"accordion-body collapse\"");
-
-WriteLiteral(">\r\n                        <div");
-
-WriteLiteral(" class=\"panel-body\"");
-
-WriteLiteral(">\r\n                            Donec tellus massa, tristique sit amet condimentum" +
-" vel, facilisis quis sapien.\r\n                        </div>\r\n                  " +
-"  </div>\r\n                </div>\r\n                <div");
-
-WriteLiteral(" class=\"panel panel-default\"");
-
-WriteLiteral(">\r\n                    <div");
-
-WriteLiteral(" class=\"panel-heading\"");
-
-WriteLiteral(">\r\n                        <h4");
-
-WriteLiteral(" class=\"panel-title\"");
-
-WriteLiteral(">\r\n                            <a");
-
-WriteLiteral(" class=\"accordion-toggle\"");
-
-WriteLiteral(" data-toggle=\"collapse\"");
-
-WriteLiteral(" data-parent=\"#accordion\"");
-
-WriteLiteral(" href=\"#collapseThree\"");
-
-WriteLiteral(">\r\n                                <i");
-
-WriteLiteral(" class=\"fa fa-laptop\"");
-
-WriteLiteral("></i>\r\n                                Portfolio Pages\r\n                         " +
-"   </a>\r\n                        </h4>\r\n                    </div>\r\n            " +
-"        <div");
-
-WriteLiteral(" id=\"collapseThree\"");
-
-WriteLiteral(" class=\"accordion-body collapse\"");
-
-WriteLiteral(">\r\n                        <div");
-
-WriteLiteral(" class=\"panel-body\"");
-
-WriteLiteral(">\r\n                            Donec tellus massa, tristique sit amet condimentum" +
-" vel, facilisis quis sapien.\r\n                        </div>\r\n                  " +
-"  </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>" +
-"\r\n\r\n    <hr");
-
-WriteLiteral(" class=\"tall\"");
-
-WriteLiteral(">\r\n\r\n    <div");
-
-WriteLiteral(" class=\"row center\"");
-
-WriteLiteral(">\r\n        <div");
-
-WriteLiteral(" class=\"col-md-12\"");
-
-WriteLiteral(">\r\n            <h2");
-
-WriteLiteral(" class=\"mb-sm word-rotator-title\"");
-
-WriteLiteral(">\r\n                We\'re not the only ones\r\n                <strong>\r\n           " +
-"         <span");
-
-WriteLiteral(" class=\"word-rotate\"");
-
-WriteLiteral(" data-plugin-options=\'{\"delay\": 3500, \"animDelay\": 400}\'");
-
-WriteLiteral(">\r\n                        <span");
-
-WriteLiteral(" class=\"word-rotate-items\"");
-
-WriteLiteral(@">
-                            <span>excited</span>
-                            <span>happy</span>
-                        </span>
-                    </span>
-                </strong>
-                about Porto Template...
-            </h2>
-            <h4");
-
-WriteLiteral(" class=\"heading-primary lead tall\"");
-
-WriteLiteral(">25,000 customers in 100 countries use Porto Template. Meet our customers.</h4>\r\n" +
-"        </div>\r\n    </div>\r\n\r\n    <div");
-
-WriteLiteral(" class=\"row center\"");
-
-WriteLiteral(">\r\n        <div");
-
-WriteLiteral(" class=\"owl-carousel owl-theme\"");
-
-WriteLiteral(" data-plugin-options=\'{\"items\": 6, \"autoplay\": true, \"autoplayTimeout\": 3000}\'");
-
-WriteLiteral(">\r\n            <div>\r\n                <img");
-
-WriteLiteral(" class=\"img-responsive\"");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 13196), Tuple.Create("\"", 13237)
-, Tuple.Create(Tuple.Create("", 13202), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/logos/logo-1.png")
-, 13202), false)
-);
-
-WriteLiteral(" alt=\"\"");
-
-WriteLiteral(">\r\n            </div>\r\n            <div>\r\n                <img");
-
-WriteLiteral(" class=\"img-responsive\"");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 13330), Tuple.Create("\"", 13371)
-, Tuple.Create(Tuple.Create("", 13336), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/logos/logo-2.png")
-, 13336), false)
-);
-
-WriteLiteral(" alt=\"\"");
-
-WriteLiteral(">\r\n            </div>\r\n            <div>\r\n                <img");
-
-WriteLiteral(" class=\"img-responsive\"");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 13464), Tuple.Create("\"", 13505)
-, Tuple.Create(Tuple.Create("", 13470), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/logos/logo-3.png")
-, 13470), false)
-);
-
-WriteLiteral(" alt=\"\"");
-
-WriteLiteral(">\r\n            </div>\r\n            <div>\r\n                <img");
-
-WriteLiteral(" class=\"img-responsive\"");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 13598), Tuple.Create("\"", 13639)
-, Tuple.Create(Tuple.Create("", 13604), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/logos/logo-4.png")
-, 13604), false)
-);
-
-WriteLiteral(" alt=\"\"");
-
-WriteLiteral(">\r\n            </div>\r\n            <div>\r\n                <img");
-
-WriteLiteral(" class=\"img-responsive\"");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 13732), Tuple.Create("\"", 13773)
-, Tuple.Create(Tuple.Create("", 13738), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/logos/logo-5.png")
-, 13738), false)
-);
-
-WriteLiteral(" alt=\"\"");
-
-WriteLiteral(">\r\n            </div>\r\n            <div>\r\n                <img");
-
-WriteLiteral(" class=\"img-responsive\"");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 13866), Tuple.Create("\"", 13907)
-, Tuple.Create(Tuple.Create("", 13872), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/logos/logo-6.png")
-, 13872), false)
-);
-
-WriteLiteral(" alt=\"\"");
-
-WriteLiteral(">\r\n            </div>\r\n            <div>\r\n                <img");
-
-WriteLiteral(" class=\"img-responsive\"");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 14000), Tuple.Create("\"", 14041)
-, Tuple.Create(Tuple.Create("", 14006), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/logos/logo-4.png")
-, 14006), false)
-);
-
-WriteLiteral(" alt=\"\"");
-
-WriteLiteral(">\r\n            </div>\r\n            <div>\r\n                <img");
-
-WriteLiteral(" class=\"img-responsive\"");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 14134), Tuple.Create("\"", 14175)
-, Tuple.Create(Tuple.Create("", 14140), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/logos/logo-2.png")
-, 14140), false)
-);
-
-WriteLiteral(" alt=\"\"");
-
-WriteLiteral(">\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n</div>\r\n\r\n<section");
+WriteLiteral(">\r\n    </div>\r\n\r\n</div>\r\n\r\n<section");
 
 WriteLiteral(" class=\"section section-custom-map\"");
 
@@ -948,8 +315,16 @@ WriteLiteral(">\r\n                    <div");
 
 WriteLiteral(" class=\"recent-posts mb-xl\"");
 
-WriteLiteral(">\r\n                        <h2>Latest <strong>Blog</strong> Posts</h2>\r\n         " +
-"               <div");
+WriteLiteral(">\r\n                        <h2>");
+
+            
+            #line 78 "..\..\Views\Home\Index.cshtml"
+                       Write(Resources.Resources.LatestNews);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</h2>\r\n                        <div");
 
 WriteLiteral(" class=\"row\"");
 
@@ -977,8 +352,17 @@ WriteLiteral(">15</span>\r\n                                                <spa
 
 WriteLiteral(" class=\"month\"");
 
-WriteLiteral(">Jan</span>\r\n                                            </div>\r\n                " +
-"                            <h4");
+WriteLiteral(">");
+
+            
+            #line 86 "..\..\Views\Home\Index.cshtml"
+                                                               Write(Resources.Resources.January);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</span>\r\n                                            </div>\r\n                    " +
+"                        <h4");
 
 WriteLiteral(" class=\"heading-primary\"");
 
@@ -986,20 +370,26 @@ WriteLiteral("><a");
 
 WriteLiteral(" href=\"blog-post.html\"");
 
-WriteLiteral(">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h4>\r\n             " +
-"                               <p>Lorem ipsum dolor sit amet, consectetur adipis" +
-"cing elit. Donec hendrerit vehicula est, in consequat libero. <a");
+WriteLiteral(">");
 
-WriteLiteral(" href=\"/\"");
+            
+            #line 88 "..\..\Views\Home\Index.cshtml"
+                                                                                            Write(Resources.Resources.LoremTitle);
 
-WriteLiteral(" class=\"read-more\"");
+            
+            #line default
+            #line hidden
+WriteLiteral("</a></h4>\r\n                                            <p>");
 
-WriteLiteral(">read more <i");
+            
+            #line 89 "..\..\Views\Home\Index.cshtml"
+                                          Write(Resources.Resources.Lorem3);
 
-WriteLiteral(" class=\"fa fa-angle-right\"");
-
-WriteLiteral("></i></a></p>\r\n                                        </article>\r\n              " +
-"                      </div>\r\n                                    <div");
+            
+            #line default
+            #line hidden
+WriteLiteral("</p>\r\n                                        </article>\r\n                       " +
+"             </div>\r\n                                    <div");
 
 WriteLiteral(" class=\"col-md-6\"");
 
@@ -1016,8 +406,17 @@ WriteLiteral(">15</span>\r\n                                                <spa
 
 WriteLiteral(" class=\"month\"");
 
-WriteLiteral(">Jan</span>\r\n                                            </div>\r\n                " +
-"                            <h4");
+WriteLiteral(">");
+
+            
+            #line 96 "..\..\Views\Home\Index.cshtml"
+                                                               Write(Resources.Resources.January);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</span>\r\n                                            </div>\r\n                    " +
+"                        <h4");
 
 WriteLiteral(" class=\"heading-primary\"");
 
@@ -1025,21 +424,27 @@ WriteLiteral("><a");
 
 WriteLiteral(" href=\"blog-post.html\"");
 
-WriteLiteral(">Lorem ipsum dolor</a></h4>\r\n                                            <p>Lorem" +
-" ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est" +
-", in consequat. <a");
+WriteLiteral(">");
 
-WriteLiteral(" href=\"/\"");
+            
+            #line 98 "..\..\Views\Home\Index.cshtml"
+                                                                                            Write(Resources.Resources.LoremTitle);
 
-WriteLiteral(" class=\"read-more\"");
+            
+            #line default
+            #line hidden
+WriteLiteral("</a></h4>\r\n                                            <p>");
 
-WriteLiteral(">read more <i");
+            
+            #line 99 "..\..\Views\Home\Index.cshtml"
+                                          Write(Resources.Resources.Lorem3);
 
-WriteLiteral(" class=\"fa fa-angle-right\"");
-
-WriteLiteral("></i></a></p>\r\n                                        </article>\r\n              " +
-"                      </div>\r\n                                </div>\r\n          " +
-"                      <div>\r\n                                    <div");
+            
+            #line default
+            #line hidden
+WriteLiteral("</p>\r\n                                        </article>\r\n                       " +
+"             </div>\r\n                                </div>\r\n                   " +
+"             <div>\r\n                                    <div");
 
 WriteLiteral(" class=\"col-md-6\"");
 
@@ -1066,19 +471,17 @@ WriteLiteral("><a");
 WriteLiteral(" href=\"blog-post.html\"");
 
 WriteLiteral(">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h4>\r\n             " +
-"                               <p>Lorem ipsum dolor sit amet, consectetur adipis" +
-"cing elit. Donec hendrerit vehicula est, in consequat libero. <a");
+"                               <p>");
 
-WriteLiteral(" href=\"/\"");
+            
+            #line 111 "..\..\Views\Home\Index.cshtml"
+                                          Write(Resources.Resources.Lorem3);
 
-WriteLiteral(" class=\"read-more\"");
-
-WriteLiteral(">read more <i");
-
-WriteLiteral(" class=\"fa fa-angle-right\"");
-
-WriteLiteral("></i></a></p>\r\n                                        </article>\r\n              " +
-"                      </div>\r\n                                    <div");
+            
+            #line default
+            #line hidden
+WriteLiteral("</p>\r\n                                        </article>\r\n                       " +
+"             </div>\r\n                                    <div");
 
 WriteLiteral(" class=\"col-md-6\"");
 
@@ -1104,59 +507,27 @@ WriteLiteral("><a");
 
 WriteLiteral(" href=\"blog-post.html\"");
 
-WriteLiteral(">Lorem ipsum dolor</a></h4>\r\n                                            <p>Lorem" +
-" ipsum dolor sit amet, consectetur adipiscing elit. <a");
+WriteLiteral(">");
 
-WriteLiteral(" href=\"/\"");
+            
+            #line 120 "..\..\Views\Home\Index.cshtml"
+                                                                                            Write(Resources.Resources.LoremTitle);
 
-WriteLiteral(" class=\"read-more\"");
+            
+            #line default
+            #line hidden
+WriteLiteral("</a></h4>\r\n                                            <p>");
 
-WriteLiteral(">read more <i");
+            
+            #line 121 "..\..\Views\Home\Index.cshtml"
+                                          Write(Resources.Resources.Lorem3);
 
-WriteLiteral(" class=\"fa fa-angle-right\"");
-
-WriteLiteral("></i></a></p>\r\n                                        </article>\r\n              " +
-"                      </div>\r\n                                </div>\r\n          " +
-"                      <div>\r\n                                    <div");
-
-WriteLiteral(" class=\"col-md-6\"");
-
-WriteLiteral(">\r\n                                        <article>\r\n                           " +
-"                 <div");
-
-WriteLiteral(" class=\"date\"");
-
-WriteLiteral(">\r\n                                                <span");
-
-WriteLiteral(" class=\"day\"");
-
-WriteLiteral(">15</span>\r\n                                                <span");
-
-WriteLiteral(" class=\"month\"");
-
-WriteLiteral(">Jan</span>\r\n                                            </div>\r\n                " +
-"                            <h4");
-
-WriteLiteral(" class=\"heading-primary\"");
-
-WriteLiteral("><a");
-
-WriteLiteral(" href=\"blog-post.html\"");
-
-WriteLiteral(">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h4>\r\n             " +
-"                               <p>Lorem ipsum dolor sit amet, consectetur adipis" +
-"cing elit. Donec hendrerit vehicula est, in consequat libero. <a");
-
-WriteLiteral(" href=\"/\"");
-
-WriteLiteral(" class=\"read-more\"");
-
-WriteLiteral(">read more <i");
-
-WriteLiteral(" class=\"fa fa-angle-right\"");
-
-WriteLiteral("></i></a></p>\r\n                                        </article>\r\n              " +
-"                      </div>\r\n                                    <div");
+            
+            #line default
+            #line hidden
+WriteLiteral("</p>\r\n                                        </article>\r\n                       " +
+"             </div>\r\n                                </div>\r\n                   " +
+"             <div>\r\n                                    <div");
 
 WriteLiteral(" class=\"col-md-6\"");
 
@@ -1182,19 +553,70 @@ WriteLiteral("><a");
 
 WriteLiteral(" href=\"blog-post.html\"");
 
-WriteLiteral(">Lorem ipsum dolor</a></h4>\r\n                                            <p>Lorem" +
-" ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est" +
-", in consequat. <a");
+WriteLiteral(">");
 
-WriteLiteral(" href=\"/\"");
+            
+            #line 132 "..\..\Views\Home\Index.cshtml"
+                                                                                            Write(Resources.Resources.LoremTitle);
 
-WriteLiteral(" class=\"read-more\"");
+            
+            #line default
+            #line hidden
+WriteLiteral("</a></h4>\r\n                                            <p>");
 
-WriteLiteral(">read more <i");
+            
+            #line 133 "..\..\Views\Home\Index.cshtml"
+                                          Write(Resources.Resources.Lorem3);
 
-WriteLiteral(" class=\"fa fa-angle-right\"");
+            
+            #line default
+            #line hidden
+WriteLiteral("</p>\r\n                                        </article>\r\n                       " +
+"             </div>\r\n                                    <div");
 
-WriteLiteral(@"></i></a></p>
+WriteLiteral(" class=\"col-md-6\"");
+
+WriteLiteral(">\r\n                                        <article>\r\n                           " +
+"                 <div");
+
+WriteLiteral(" class=\"date\"");
+
+WriteLiteral(">\r\n                                                <span");
+
+WriteLiteral(" class=\"day\"");
+
+WriteLiteral(">15</span>\r\n                                                <span");
+
+WriteLiteral(" class=\"month\"");
+
+WriteLiteral(">Jan</span>\r\n                                            </div>\r\n                " +
+"                            <h4");
+
+WriteLiteral(" class=\"heading-primary\"");
+
+WriteLiteral("><a");
+
+WriteLiteral(" href=\"blog-post.html\"");
+
+WriteLiteral(">");
+
+            
+            #line 142 "..\..\Views\Home\Index.cshtml"
+                                                                                            Write(Resources.Resources.LoremTitle);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</a></h4>\r\n                                            <p>");
+
+            
+            #line 143 "..\..\Views\Home\Index.cshtml"
+                                          Write(Resources.Resources.Lorem3);
+
+            
+            #line default
+            #line hidden
+WriteLiteral(@"</p>
                                         </article>
                                     </div>
                                 </div>
@@ -1206,8 +628,16 @@ WriteLiteral(@"></i></a></p>
 
 WriteLiteral(" class=\"col-md-6\"");
 
-WriteLiteral(">\r\n                    <h2><strong>What</strong> Client’s Say</h2>\r\n             " +
-"       <div");
+WriteLiteral(">\r\n                    <h2>");
+
+            
+            #line 152 "..\..\Views\Home\Index.cshtml"
+                   Write(Resources.Resources.WhatClientsSay);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</h2>\r\n                    <div");
 
 WriteLiteral(" class=\"row\"");
 
@@ -1225,11 +655,18 @@ WriteLiteral(">\r\n                                    <div");
 
 WriteLiteral(" class=\"testimonial testimonial-primary\"");
 
-WriteLiteral(@">
-                                        <blockquote>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat.  Donec hendrerit vehicula est, in consequat.  Donec hendrerit vehicula est, in consequat.</p>
-                                        </blockquote>
-                                        <div");
+WriteLiteral(">\r\n                                        <blockquote>\r\n                        " +
+"                    <p>");
+
+            
+            #line 159 "..\..\Views\Home\Index.cshtml"
+                                          Write(Resources.Resources.Lorem3);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</p>\r\n                                        </blockquote>\r\n                    " +
+"                    <div");
 
 WriteLiteral(" class=\"testimonial-arrow-down\"");
 
@@ -1243,22 +680,36 @@ WriteLiteral(" class=\"testimonial-author-thumbnail img-thumbnail\"");
 
 WriteLiteral(">\r\n                                                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 21389), Tuple.Create("\"", 21434)
-, Tuple.Create(Tuple.Create("", 21395), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/clients/client-1.jpg")
-, 21395), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 8552), Tuple.Create("\"", 8597)
+, Tuple.Create(Tuple.Create("", 8558), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/clients/client-1.jpg")
+, 8558), false)
 );
 
 WriteLiteral(" alt=\"\"");
 
-WriteLiteral(@">
-                                            </div>
-                                            <p><strong>John Smith</strong><span>CEO & Founder - Okler</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div");
+WriteLiteral(">\r\n                                            </div>\r\n                          " +
+"                  <p><strong>");
+
+            
+            #line 166 "..\..\Views\Home\Index.cshtml"
+                                                  Write(Resources.Resources.JohnSmith);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</strong><span>");
+
+            
+            #line 166 "..\..\Views\Home\Index.cshtml"
+                                                                                               Write(Resources.Resources.JobTitleName);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</span></p>\r\n                                        </div>\r\n                    " +
+"                </div>\r\n                                </div>\r\n                " +
+"            </div>\r\n                            <div>\r\n                         " +
+"       <div");
 
 WriteLiteral(" class=\"col-md-12\"");
 
@@ -1266,11 +717,18 @@ WriteLiteral(">\r\n                                    <div");
 
 WriteLiteral(" class=\"testimonial testimonial-primary\"");
 
-WriteLiteral(@">
-                                        <blockquote>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat.</p>
-                                        </blockquote>
-                                        <div");
+WriteLiteral(">\r\n                                        <blockquote>\r\n                        " +
+"                    <p>");
+
+            
+            #line 175 "..\..\Views\Home\Index.cshtml"
+                                          Write(Resources.Resources.Lorem3);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</p>\r\n                                        </blockquote>\r\n                    " +
+"                    <div");
 
 WriteLiteral(" class=\"testimonial-arrow-down\"");
 
@@ -1284,16 +742,33 @@ WriteLiteral(" class=\"testimonial-author-thumbnail img-thumbnail\"");
 
 WriteLiteral(">\r\n                                                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 22629), Tuple.Create("\"", 22674)
-, Tuple.Create(Tuple.Create("", 22635), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/clients/client-1.jpg")
-, 22635), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 9650), Tuple.Create("\"", 9695)
+, Tuple.Create(Tuple.Create("", 9656), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/clients/client-1.jpg")
+, 9656), false)
 );
 
 WriteLiteral(" alt=\"\"");
 
-WriteLiteral(@">
-                                            </div>
-                                            <p><strong>John Smith</strong><span>CEO & Founder - Okler</span></p>
+WriteLiteral(">\r\n                                            </div>\r\n                          " +
+"                  <p><strong>");
+
+            
+            #line 182 "..\..\Views\Home\Index.cshtml"
+                                                  Write(Resources.Resources.JohnSmith);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</strong><span>");
+
+            
+            #line 182 "..\..\Views\Home\Index.cshtml"
+                                                                                               Write(Resources.Resources.JobTitleName);
+
+            
+            #line default
+            #line hidden
+WriteLiteral(@"</span></p>
                                         </div>
                                     </div>
                                 </div>

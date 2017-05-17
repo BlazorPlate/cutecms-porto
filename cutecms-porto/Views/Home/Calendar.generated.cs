@@ -153,13 +153,9 @@ WriteLiteral("></script>\r\n");
 
 });
 
-WriteLiteral("<section");
+WriteLiteral("\r\n    <div");
 
-WriteLiteral(" class=\"justify\"");
-
-WriteLiteral(">\r\n    <div");
-
-WriteLiteral(" class=\"container\"");
+WriteLiteral(" class=\"container text-justify\"");
 
 WriteLiteral(">\r\n        <div");
 
@@ -282,14 +278,14 @@ WriteLiteral("</h2>\r\n");
             #line hidden
 WriteLiteral("                        <div>\r\n                            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3898), Tuple.Create("\"", 3965)
+WriteAttribute("href", Tuple.Create(" href=\"", 3886), Tuple.Create("\"", 3953)
             
             #line 85 "..\..\Views\Home\Calendar.cshtml"
-, Tuple.Create(Tuple.Create("", 3905), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
+, Tuple.Create(Tuple.Create("", 3893), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
             
             #line default
             #line hidden
-, 3905), false)
+, 3893), false)
 );
 
 WriteLiteral(">");
@@ -381,14 +377,14 @@ WriteLiteral("<br /><a");
 
 WriteLiteral(" class=\"btn btn-reveal btn-info btn-xs\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4605), Tuple.Create("\"", 4672)
+WriteAttribute("href", Tuple.Create(" href=\"", 4593), Tuple.Create("\"", 4660)
             
             #line 91 "..\..\Views\Home\Calendar.cshtml"
-                                            , Tuple.Create(Tuple.Create("", 4612), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
+                                            , Tuple.Create(Tuple.Create("", 4600), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
             
             #line default
             #line hidden
-, 4612), false)
+, 4600), false)
 );
 
 WriteLiteral("><i");
@@ -436,7 +432,57 @@ WriteLiteral("</p>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("            </div>\r\n        </div>\r\n    </div>\r\n</section>");
+WriteLiteral("            </div>\r\n        </div>\r\n        <div");
+
+WriteLiteral(" class=\"post-block post-share\"");
+
+WriteLiteral(">\r\n            <h3");
+
+WriteLiteral(" class=\"heading-primary\"");
+
+WriteLiteral("><i");
+
+WriteLiteral(" class=\"fa fa-share\"");
+
+WriteLiteral("></i>");
+
+            
+            #line 102 "..\..\Views\Home\Calendar.cshtml"
+                                                              Write(Resources.Resources.Share);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</h3>\r\n            <!-- AddThis Button BEGIN -->\r\n            <div");
+
+WriteLiteral(" class=\"addthis_toolbox addthis_default_style \"");
+
+WriteLiteral(">\r\n                <a");
+
+WriteLiteral(" class=\"addthis_button_facebook_like\"");
+
+WriteLiteral(" fb:like:layout=\"button_count\"");
+
+WriteLiteral("></a>\r\n                <a");
+
+WriteLiteral(" class=\"addthis_button_tweet\"");
+
+WriteLiteral("></a>\r\n                <a");
+
+WriteLiteral(" class=\"addthis_button_pinterest_pinit\"");
+
+WriteLiteral("></a>\r\n                <a");
+
+WriteLiteral(" class=\"addthis_counter addthis_pill_style\"");
+
+WriteLiteral("></a>\r\n            </div>\r\n            <script");
+
+WriteLiteral(" type=\"text/javascript\"");
+
+WriteLiteral(" src=\"//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50faf75173aadc53\"");
+
+WriteLiteral("></script>\r\n            <!-- AddThis Button END -->\r\n        </div>\r\n    </div>\r\n" +
+"\r\n");
 
         }
     }

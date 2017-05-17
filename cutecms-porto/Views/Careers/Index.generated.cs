@@ -106,13 +106,9 @@ WriteLiteral("</h1>\r\n                </div>\r\n            </div>\r\n        <
 
 });
 
-WriteLiteral("<section");
+WriteLiteral("    <div");
 
-WriteLiteral(" class=\"justify\"");
-
-WriteLiteral(">\r\n    <div");
-
-WriteLiteral(" class=\"container\"");
+WriteLiteral(" class=\"container text-justify\"");
 
 WriteLiteral(">\r\n        <div");
 
@@ -133,13 +129,13 @@ WriteLiteral(" data-plugin-options=\"{ \'isAccordion\': true }\"");
 WriteLiteral(">\r\n");
 
             
-            #line 28 "..\..\Views\Careers\Index.cshtml"
+            #line 27 "..\..\Views\Careers\Index.cshtml"
                     
             
             #line default
             #line hidden
             
-            #line 28 "..\..\Views\Careers\Index.cshtml"
+            #line 27 "..\..\Views\Careers\Index.cshtml"
                      foreach (var item in Model)
                     {
 
@@ -153,7 +149,7 @@ WriteLiteral(" class=\"toggle\"");
 WriteLiteral(">\r\n                            <label>");
 
             
-            #line 31 "..\..\Views\Careers\Index.cshtml"
+            #line 30 "..\..\Views\Careers\Index.cshtml"
                               Write(item.Title.Trim());
 
             
@@ -166,7 +162,7 @@ WriteLiteral(" class=\"pull-right mr-md\"");
 WriteLiteral(">");
 
             
-            #line 31 "..\..\Views\Careers\Index.cshtml"
+            #line 30 "..\..\Views\Careers\Index.cshtml"
                                                                                 Write(item.Available);
 
             
@@ -175,7 +171,7 @@ WriteLiteral(">");
 WriteLiteral(" ");
 
             
-            #line 31 "..\..\Views\Careers\Index.cshtml"
+            #line 30 "..\..\Views\Careers\Index.cshtml"
                                                                                                 Write(Resources.Resources.Available);
 
             
@@ -188,7 +184,7 @@ WriteLiteral(" class=\"toggle-content\"");
 WriteLiteral(">\r\n                                <p><strong>");
 
             
-            #line 33 "..\..\Views\Careers\Index.cshtml"
+            #line 32 "..\..\Views\Careers\Index.cshtml"
                                       Write(Resources.Resources.Code);
 
             
@@ -197,7 +193,7 @@ WriteLiteral(">\r\n                                <p><strong>");
 WriteLiteral(":</strong> ");
 
             
-            #line 33 "..\..\Views\Careers\Index.cshtml"
+            #line 32 "..\..\Views\Careers\Index.cshtml"
                                                                           Write(item.Code);
 
             
@@ -206,7 +202,7 @@ WriteLiteral(":</strong> ");
 WriteLiteral(" - <strong>");
 
             
-            #line 33 "..\..\Views\Careers\Index.cshtml"
+            #line 32 "..\..\Views\Careers\Index.cshtml"
                                                                                                Write(Resources.Resources.Department);
 
             
@@ -215,7 +211,7 @@ WriteLiteral(" - <strong>");
 WriteLiteral(":</strong> ");
 
             
-            #line 33 "..\..\Views\Careers\Index.cshtml"
+            #line 32 "..\..\Views\Careers\Index.cshtml"
                                                                                                                                           Write(item.Department.DepartmentTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? item.Code);
 
             
@@ -224,7 +220,7 @@ WriteLiteral(":</strong> ");
 WriteLiteral("</p>\r\n                                <p>");
 
             
-            #line 34 "..\..\Views\Careers\Index.cshtml"
+            #line 33 "..\..\Views\Careers\Index.cshtml"
                               Write(Html.Raw(HttpUtility.HtmlDecode(item.Description.StripHtml())));
 
             
@@ -234,20 +230,20 @@ WriteLiteral("</p>\r\n                                <p><a");
 
 WriteLiteral(" class=\"btn btn-primary mb-xl\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1649), Tuple.Create("\"", 1711)
+WriteAttribute("href", Tuple.Create(" href=\"", 1635), Tuple.Create("\"", 1697)
             
-            #line 35 "..\..\Views\Careers\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 1656), Tuple.Create<System.Object, System.Int32>(Url.Action("Details", "Careers", new { id = item.Id })
+            #line 34 "..\..\Views\Careers\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 1642), Tuple.Create<System.Object, System.Int32>(Url.Action("Details", "Careers", new { id = item.Id })
             
             #line default
             #line hidden
-, 1656), false)
+, 1642), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 35 "..\..\Views\Careers\Index.cshtml"
+            #line 34 "..\..\Views\Careers\Index.cshtml"
                                                                                                                               Write(Resources.Resources.Apply);
 
             
@@ -257,7 +253,7 @@ WriteLiteral("</a></p>\r\n                            </div>\r\n                
 "\n");
 
             
-            #line 38 "..\..\Views\Careers\Index.cshtml"
+            #line 37 "..\..\Views\Careers\Index.cshtml"
                     }
 
             
@@ -268,7 +264,7 @@ WriteLiteral("                </div>\r\n");
 WriteLiteral("                ");
 
             
-            #line 40 "..\..\Views\Careers\Index.cshtml"
+            #line 39 "..\..\Views\Careers\Index.cshtml"
            Write(Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page, keywordFilter = ViewBag.KeywordFilter, deptIdFilter = ViewBag.DeptId, jobTypeIdFilter = ViewBag.JobTypeId, statusIdFilter = ViewBag.StatusId })));
 
             
@@ -282,7 +278,7 @@ WriteLiteral(" class=\"col-md-3 col-sm-3 col-md-pull-9 col-sm-pull-9\"");
 WriteLiteral(">\r\n                <h4>");
 
             
-            #line 45 "..\..\Views\Careers\Index.cshtml"
+            #line 44 "..\..\Views\Careers\Index.cshtml"
                Write(Resources.Resources.Search);
 
             
@@ -291,13 +287,13 @@ WriteLiteral(">\r\n                <h4>");
 WriteLiteral("</h4>\r\n");
 
             
-            #line 46 "..\..\Views\Careers\Index.cshtml"
+            #line 45 "..\..\Views\Careers\Index.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 46 "..\..\Views\Careers\Index.cshtml"
+            #line 45 "..\..\Views\Careers\Index.cshtml"
                  using (Html.BeginForm("Index", "Careers", FormMethod.Post))
                 {
 
@@ -321,7 +317,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 51 "..\..\Views\Careers\Index.cshtml"
+            #line 50 "..\..\Views\Careers\Index.cshtml"
                            Write(Html.TextBox("keywordFilter", ViewBag.KeywordFilter as string, new { @class = "form-control", @placeholder = Resources.Resources.Keywords }));
 
             
@@ -341,7 +337,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 56 "..\..\Views\Careers\Index.cshtml"
+            #line 55 "..\..\Views\Careers\Index.cshtml"
                            Write(Html.DropDownList("deptIdFilter", new SelectList(ViewBag.DeptIdFilter, "Value", "Text"), Resources.Resources.ChooseDepartment, new { @class = "form-control" }));
 
             
@@ -361,7 +357,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 61 "..\..\Views\Careers\Index.cshtml"
+            #line 60 "..\..\Views\Careers\Index.cshtml"
                            Write(Html.DropDownList("jobTypeIdFilter", new SelectList(ViewBag.JobTypeIdFilter, "Value", "Text"), Resources.Resources.ChooseJobType, new { @class = "form-control" }));
 
             
@@ -381,7 +377,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 66 "..\..\Views\Careers\Index.cshtml"
+            #line 65 "..\..\Views\Careers\Index.cshtml"
                            Write(Html.DropDownList("statusIdFilter", new SelectList(ViewBag.StatusIdFilter, "Value", "Text"), Resources.Resources.ChooseStatus, new { @class = "form-control" }));
 
             
@@ -400,14 +396,14 @@ WriteLiteral(">\r\n                                <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 4076), Tuple.Create("\"", 4111)
+WriteAttribute("value", Tuple.Create(" value=\"", 4062), Tuple.Create("\"", 4097)
             
-            #line 71 "..\..\Views\Careers\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 4084), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Search
+            #line 70 "..\..\Views\Careers\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 4070), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Search
             
             #line default
             #line hidden
-, 4084), false)
+, 4070), false)
 );
 
 WriteLiteral(" class=\"btn btn-primary\"");
@@ -416,14 +412,64 @@ WriteLiteral(" />\r\n                            </div>\r\n                     
 "            </div>\r\n");
 
             
-            #line 75 "..\..\Views\Careers\Index.cshtml"
+            #line 74 "..\..\Views\Careers\Index.cshtml"
                 }
 
             
             #line default
             #line hidden
-WriteLiteral("            </div>\r\n        </div>\r\n    </div>\r\n    <!-- /RIGHT COLUMNS -->\r\n</se" +
-"ction>\r\n");
+WriteLiteral("            </div>\r\n            <!-- /RIGHT COLUMNS -->\r\n        </div>\r\n        " +
+"<div");
+
+WriteLiteral(" class=\"post-block post-share\"");
+
+WriteLiteral(">\r\n            <h3");
+
+WriteLiteral(" class=\"heading-primary\"");
+
+WriteLiteral("><i");
+
+WriteLiteral(" class=\"fa fa-share\"");
+
+WriteLiteral("></i>");
+
+            
+            #line 79 "..\..\Views\Careers\Index.cshtml"
+                                                              Write(Resources.Resources.Share);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</h3>\r\n            <!-- AddThis Button BEGIN -->\r\n            <div");
+
+WriteLiteral(" class=\"addthis_toolbox addthis_default_style \"");
+
+WriteLiteral(">\r\n                <a");
+
+WriteLiteral(" class=\"addthis_button_facebook_like\"");
+
+WriteLiteral(" fb:like:layout=\"button_count\"");
+
+WriteLiteral("></a>\r\n                <a");
+
+WriteLiteral(" class=\"addthis_button_tweet\"");
+
+WriteLiteral("></a>\r\n                <a");
+
+WriteLiteral(" class=\"addthis_button_pinterest_pinit\"");
+
+WriteLiteral("></a>\r\n                <a");
+
+WriteLiteral(" class=\"addthis_counter addthis_pill_style\"");
+
+WriteLiteral("></a>\r\n            </div>\r\n            <script");
+
+WriteLiteral(" type=\"text/javascript\"");
+
+WriteLiteral(" src=\"//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50faf75173aadc53\"");
+
+WriteLiteral("></script>\r\n            <!-- AddThis Button END -->\r\n        </div>\r\n    </div>\r\n" +
+"\r\n");
 
         }
     }

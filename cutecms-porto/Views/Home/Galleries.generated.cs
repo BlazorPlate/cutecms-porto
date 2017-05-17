@@ -107,7 +107,11 @@ WriteLiteral("</h1>\r\n                </div>\r\n            </div>\r\n        <
 
 });
 
-WriteLiteral("<section>\r\n    <div");
+WriteLiteral("<div");
+
+WriteLiteral(" class=\"container\"");
+
+WriteLiteral(">\r\n    <div");
 
 WriteLiteral(" class=\"row\"");
 
@@ -260,18 +264,18 @@ WriteLiteral(">\r\n\r\n");
             #line hidden
 WriteLiteral("                            <li");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 2373), Tuple.Create("\"", 2438)
-, Tuple.Create(Tuple.Create("", 2381), Tuple.Create("col-md-3", 2381), true)
-, Tuple.Create(Tuple.Create(" ", 2389), Tuple.Create("col-sm-6", 2390), true)
-, Tuple.Create(Tuple.Create(" ", 2398), Tuple.Create("col-xs-12", 2399), true)
-, Tuple.Create(Tuple.Create(" ", 2408), Tuple.Create("isotope-item", 2409), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 2387), Tuple.Create("\"", 2452)
+, Tuple.Create(Tuple.Create("", 2395), Tuple.Create("col-md-3", 2395), true)
+, Tuple.Create(Tuple.Create(" ", 2403), Tuple.Create("col-sm-6", 2404), true)
+, Tuple.Create(Tuple.Create(" ", 2412), Tuple.Create("col-xs-12", 2413), true)
+, Tuple.Create(Tuple.Create(" ", 2422), Tuple.Create("isotope-item", 2423), true)
             
             #line 53 "..\..\Views\Home\Galleries.cshtml"
-, Tuple.Create(Tuple.Create(" ", 2421), Tuple.Create<System.Object, System.Int32>(categoryFilters
+, Tuple.Create(Tuple.Create(" ", 2435), Tuple.Create<System.Object, System.Int32>(categoryFilters
             
             #line default
             #line hidden
-, 2422), false)
+, 2436), false)
 );
 
 WriteLiteral(">\r\n                                <div");
@@ -280,14 +284,14 @@ WriteLiteral(" class=\"image-gallery-item\"");
 
 WriteLiteral(">\r\n                                    <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2546), Tuple.Create("\"", 2618)
+WriteAttribute("href", Tuple.Create(" href=\"", 2560), Tuple.Create("\"", 2632)
             
             #line 55 "..\..\Views\Home\Galleries.cshtml"
-, Tuple.Create(Tuple.Create("", 2553), Tuple.Create<System.Object, System.Int32>(Url.Action("ImageFiles","Home", new { id = item.Id, area = "" })
+, Tuple.Create(Tuple.Create("", 2567), Tuple.Create<System.Object, System.Int32>(Url.Action("ImageFiles","Home", new { id = item.Id, area = "" })
             
             #line default
             #line hidden
-, 2553), false)
+, 2567), false)
 );
 
 WriteLiteral(">\r\n                                        <span");
@@ -300,14 +304,14 @@ WriteLiteral(" class=\"thumb-info-wrapper\"");
 
 WriteLiteral(">\r\n                                                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2820), Tuple.Create("\"", 2891)
+WriteAttribute("src", Tuple.Create(" src=\"", 2834), Tuple.Create("\"", 2905)
             
             #line 58 "..\..\Views\Home\Galleries.cshtml"
-, Tuple.Create(Tuple.Create("", 2826), Tuple.Create<System.Object, System.Int32>(item.ImageFiles.OrderBy(i=>i.Ordinal).FirstOrDefault().ThumbPath
+, Tuple.Create(Tuple.Create("", 2840), Tuple.Create<System.Object, System.Int32>(item.ImageFiles.OrderBy(i=>i.Ordinal).FirstOrDefault().ThumbPath
             
             #line default
             #line hidden
-, 2826), false)
+, 2840), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");
@@ -391,16 +395,67 @@ WriteLiteral(@"></i></span>
             #line default
             #line hidden
 WriteLiteral("                    </ul>\r\n                </div>\r\n            </div>\r\n        </" +
-"div>\r\n    </div>\r\n</section>\r\n");
+"div>\r\n    </div>\r\n\r\n\r\n");
+
+WriteLiteral("    ");
 
             
-            #line 82 "..\..\Views\Home\Galleries.cshtml"
+            #line 83 "..\..\Views\Home\Galleries.cshtml"
 Write(Html.PagedListPager((IPagedList)Model, page => Url.Action("Galleries", new { page })));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n");
+WriteLiteral("\r\n    <div");
+
+WriteLiteral(" class=\"post-block post-share\"");
+
+WriteLiteral(">\r\n        <h3");
+
+WriteLiteral(" class=\"heading-primary\"");
+
+WriteLiteral("><i");
+
+WriteLiteral(" class=\"fa fa-share\"");
+
+WriteLiteral("></i>");
+
+            
+            #line 85 "..\..\Views\Home\Galleries.cshtml"
+                                                          Write(Resources.Resources.Share);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</h3>\r\n        <!-- AddThis Button BEGIN -->\r\n        <div");
+
+WriteLiteral(" class=\"addthis_toolbox addthis_default_style \"");
+
+WriteLiteral(">\r\n            <a");
+
+WriteLiteral(" class=\"addthis_button_facebook_like\"");
+
+WriteLiteral(" fb:like:layout=\"button_count\"");
+
+WriteLiteral("></a>\r\n            <a");
+
+WriteLiteral(" class=\"addthis_button_tweet\"");
+
+WriteLiteral("></a>\r\n            <a");
+
+WriteLiteral(" class=\"addthis_button_pinterest_pinit\"");
+
+WriteLiteral("></a>\r\n            <a");
+
+WriteLiteral(" class=\"addthis_counter addthis_pill_style\"");
+
+WriteLiteral("></a>\r\n        </div>\r\n        <script");
+
+WriteLiteral(" type=\"text/javascript\"");
+
+WriteLiteral(" src=\"//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50faf75173aadc53\"");
+
+WriteLiteral("></script>\r\n        <!-- AddThis Button END -->\r\n    </div>\r\n</div>\r\n");
 
         }
     }

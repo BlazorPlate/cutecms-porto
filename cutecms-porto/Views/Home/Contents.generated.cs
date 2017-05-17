@@ -105,13 +105,9 @@ WriteLiteral("</h1>\r\n                </div>\r\n            </div>\r\n        <
 
 });
 
-WriteLiteral("<section");
+WriteLiteral("\r\n    <div");
 
-WriteLiteral(" class=\"justify\"");
-
-WriteLiteral(">\r\n    <div");
-
-WriteLiteral(" class=\"container\"");
+WriteLiteral(" class=\"container text-justify\"");
 
 WriteLiteral(">\r\n        <div");
 
@@ -146,14 +142,14 @@ WriteLiteral(" class=\"row\"");
 
 WriteLiteral(">\r\n                            <h4><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 934), Tuple.Create("\"", 1001)
+WriteAttribute("href", Tuple.Create(" href=\"", 922), Tuple.Create("\"", 989)
             
             #line 33 "..\..\Views\Home\Contents.cshtml"
-, Tuple.Create(Tuple.Create("", 941), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
+, Tuple.Create(Tuple.Create("", 929), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
             
             #line default
             #line hidden
-, 941), false)
+, 929), false)
 );
 
 WriteLiteral(">");
@@ -292,14 +288,14 @@ WriteLiteral("\r\n                                </p>\r\n                      
 
 WriteLiteral(" class=\"btn btn-primary btn-xs\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2356), Tuple.Create("\"", 2423)
+WriteAttribute("href", Tuple.Create(" href=\"", 2344), Tuple.Create("\"", 2411)
             
             #line 50 "..\..\Views\Home\Contents.cshtml"
-, Tuple.Create(Tuple.Create("", 2363), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
+, Tuple.Create(Tuple.Create("", 2351), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
             
             #line default
             #line hidden
-, 2363), false)
+, 2351), false)
 );
 
 WriteLiteral("><i");
@@ -351,16 +347,16 @@ WriteLiteral("</p>\r\n                        <br />\r\n                        
 
 WriteLiteral(" class=\"text-blue\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2914), Tuple.Create("\"", 2964)
-, Tuple.Create(Tuple.Create("", 2921), Tuple.Create<System.Object, System.Int32>(Href("~/")
-, 2921), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 2902), Tuple.Create("\"", 2952)
+, Tuple.Create(Tuple.Create("", 2909), Tuple.Create<System.Object, System.Int32>(Href("~/")
+, 2909), false)
             
             #line 61 "..\..\Views\Home\Contents.cshtml"
-, Tuple.Create(Tuple.Create("", 2923), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture.Name
+, Tuple.Create(Tuple.Create("", 2911), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture.Name
             
             #line default
             #line hidden
-, 2923), false)
+, 2911), false)
 );
 
 WriteLiteral("><i");
@@ -459,14 +455,14 @@ WriteLiteral("</b>\r\n");
             #line hidden
             
             #line 75 "..\..\Views\Home\Contents.cshtml"
-               Write(Html.DropDownList("contentTypeIdFilter", new SelectList(ViewBag.ContentTypeIdFilter, "Value", "Text"), Resources.Resources.ChooseContentType, new { @class = "form-control" }));
+               Write(Html.DropDownList("contentTypeIdFilter", new SelectList(ViewBag.ContentTypeIdFilter, "Value", "Text"), Resources.Resources.ChooseCategory, new { @class = "form-control" }));
 
             
             #line default
             #line hidden
             
             #line 75 "..\..\Views\Home\Contents.cshtml"
-                                                                                                                                                                                                   
+                                                                                                                                                                                                
 
             
             #line default
@@ -508,14 +504,14 @@ WriteLiteral("                    <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 4426), Tuple.Create("\"", 4461)
+WriteAttribute("value", Tuple.Create(" value=\"", 4411), Tuple.Create("\"", 4446)
             
             #line 79 "..\..\Views\Home\Contents.cshtml"
-, Tuple.Create(Tuple.Create("", 4434), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Search
+, Tuple.Create(Tuple.Create("", 4419), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Search
             
             #line default
             #line hidden
-, 4434), false)
+, 4419), false)
 );
 
 WriteLiteral(" class=\"btn btn-primary form-control\"");
@@ -529,8 +525,58 @@ WriteLiteral(" />\r\n");
             
             #line default
             #line hidden
-WriteLiteral("            </div>\r\n        </div>\r\n    </div>\r\n    <!-- /RIGHT COLUMNS -->\r\n</se" +
-"ction>");
+WriteLiteral("            </div>\r\n            <!-- /RIGHT COLUMNS -->\r\n        </div>\r\n        " +
+"<div");
+
+WriteLiteral(" class=\"post-block post-share\"");
+
+WriteLiteral(">\r\n            <h3");
+
+WriteLiteral(" class=\"heading-primary\"");
+
+WriteLiteral("><i");
+
+WriteLiteral(" class=\"fa fa-share\"");
+
+WriteLiteral("></i>");
+
+            
+            #line 85 "..\..\Views\Home\Contents.cshtml"
+                                                              Write(Resources.Resources.Share);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</h3>\r\n            <!-- AddThis Button BEGIN -->\r\n            <div");
+
+WriteLiteral(" class=\"addthis_toolbox addthis_default_style \"");
+
+WriteLiteral(">\r\n                <a");
+
+WriteLiteral(" class=\"addthis_button_facebook_like\"");
+
+WriteLiteral(" fb:like:layout=\"button_count\"");
+
+WriteLiteral("></a>\r\n                <a");
+
+WriteLiteral(" class=\"addthis_button_tweet\"");
+
+WriteLiteral("></a>\r\n                <a");
+
+WriteLiteral(" class=\"addthis_button_pinterest_pinit\"");
+
+WriteLiteral("></a>\r\n                <a");
+
+WriteLiteral(" class=\"addthis_counter addthis_pill_style\"");
+
+WriteLiteral("></a>\r\n            </div>\r\n            <script");
+
+WriteLiteral(" type=\"text/javascript\"");
+
+WriteLiteral(" src=\"//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50faf75173aadc53\"");
+
+WriteLiteral("></script>\r\n            <!-- AddThis Button END -->\r\n        </div>\r\n    </div>\r\n" +
+"");
 
         }
     }

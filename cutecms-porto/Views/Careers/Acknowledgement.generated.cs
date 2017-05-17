@@ -103,24 +103,20 @@ WriteLiteral("</span></h2>\r\n                </div>\r\n            </div>\r\n  
 
 });
 
-WriteLiteral("<section");
+WriteLiteral("    <div");
 
-WriteLiteral(" class=\"justify\"");
-
-WriteLiteral(">\r\n    <div");
-
-WriteLiteral(" class=\"container\"");
+WriteLiteral(" class=\"container text-justify\"");
 
 WriteLiteral(">\r\n");
 
             
-            #line 20 "..\..\Views\Careers\Acknowledgement.cshtml"
+            #line 19 "..\..\Views\Careers\Acknowledgement.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 20 "..\..\Views\Careers\Acknowledgement.cshtml"
+            #line 19 "..\..\Views\Careers\Acknowledgement.cshtml"
          if (!string.IsNullOrEmpty(Model.Body))
         {
 
@@ -134,7 +130,7 @@ WriteLiteral(" class=\"bold\"");
 WriteLiteral(">");
 
             
-            #line 22 "..\..\Views\Careers\Acknowledgement.cshtml"
+            #line 21 "..\..\Views\Careers\Acknowledgement.cshtml"
                        Write(Resources.Resources.Dear);
 
             
@@ -143,7 +139,7 @@ WriteLiteral(">");
 WriteLiteral(" ");
 
             
-            #line 22 "..\..\Views\Careers\Acknowledgement.cshtml"
+            #line 21 "..\..\Views\Careers\Acknowledgement.cshtml"
                                                  Write(Model.FullName);
 
             
@@ -152,20 +148,20 @@ WriteLiteral(" ");
 WriteLiteral(",</p>\r\n");
 
             
-            #line 23 "..\..\Views\Careers\Acknowledgement.cshtml"
+            #line 22 "..\..\Views\Careers\Acknowledgement.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 23 "..\..\Views\Careers\Acknowledgement.cshtml"
+            #line 22 "..\..\Views\Careers\Acknowledgement.cshtml"
        Write(Html.Raw(HttpUtility.HtmlDecode(Model.Body)));
 
             
             #line default
             #line hidden
             
-            #line 23 "..\..\Views\Careers\Acknowledgement.cshtml"
+            #line 22 "..\..\Views\Careers\Acknowledgement.cshtml"
                                                          
         }
 
@@ -177,13 +173,63 @@ WriteLiteral("        <br />\r\n");
 WriteLiteral("        ");
 
             
-            #line 26 "..\..\Views\Careers\Acknowledgement.cshtml"
+            #line 25 "..\..\Views\Careers\Acknowledgement.cshtml"
    Write(Html.ActionLink(Resources.Resources.BackToList, "Index", "Vacancies"));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n    </div>\r\n</section>\r\n");
+WriteLiteral("\r\n        <div");
+
+WriteLiteral(" class=\"post-block post-share\"");
+
+WriteLiteral(">\r\n            <h3");
+
+WriteLiteral(" class=\"heading-primary\"");
+
+WriteLiteral("><i");
+
+WriteLiteral(" class=\"fa fa-share\"");
+
+WriteLiteral("></i>");
+
+            
+            #line 27 "..\..\Views\Careers\Acknowledgement.cshtml"
+                                                              Write(Resources.Resources.Share);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</h3>\r\n            <!-- AddThis Button BEGIN -->\r\n            <div");
+
+WriteLiteral(" class=\"addthis_toolbox addthis_default_style \"");
+
+WriteLiteral(">\r\n                <a");
+
+WriteLiteral(" class=\"addthis_button_facebook_like\"");
+
+WriteLiteral(" fb:like:layout=\"button_count\"");
+
+WriteLiteral("></a>\r\n                <a");
+
+WriteLiteral(" class=\"addthis_button_tweet\"");
+
+WriteLiteral("></a>\r\n                <a");
+
+WriteLiteral(" class=\"addthis_button_pinterest_pinit\"");
+
+WriteLiteral("></a>\r\n                <a");
+
+WriteLiteral(" class=\"addthis_counter addthis_pill_style\"");
+
+WriteLiteral("></a>\r\n            </div>\r\n            <script");
+
+WriteLiteral(" type=\"text/javascript\"");
+
+WriteLiteral(" src=\"//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50faf75173aadc53\"");
+
+WriteLiteral("></script>\r\n            <!-- AddThis Button END -->\r\n        </div>\r\n    </div>\r\n" +
+"\r\n");
 
         }
     }

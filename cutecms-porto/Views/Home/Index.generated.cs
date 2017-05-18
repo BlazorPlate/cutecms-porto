@@ -470,8 +470,16 @@ WriteLiteral("><a");
 
 WriteLiteral(" href=\"blog-post.html\"");
 
-WriteLiteral(">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h4>\r\n             " +
-"                               <p>");
+WriteLiteral(">");
+
+            
+            #line 110 "..\..\Views\Home\Index.cshtml"
+                                                                                            Write(Resources.Resources.LoremTitle);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</a></h4>\r\n                                            <p>");
 
             
             #line 111 "..\..\Views\Home\Index.cshtml"
@@ -680,9 +688,9 @@ WriteLiteral(" class=\"testimonial-author-thumbnail img-thumbnail\"");
 
 WriteLiteral(">\r\n                                                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 8552), Tuple.Create("\"", 8597)
-, Tuple.Create(Tuple.Create("", 8558), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/clients/client-1.jpg")
-, 8558), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 8527), Tuple.Create("\"", 8572)
+, Tuple.Create(Tuple.Create("", 8533), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/clients/client-1.jpg")
+, 8533), false)
 );
 
 WriteLiteral(" alt=\"\"");
@@ -742,9 +750,9 @@ WriteLiteral(" class=\"testimonial-author-thumbnail img-thumbnail\"");
 
 WriteLiteral(">\r\n                                                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 9650), Tuple.Create("\"", 9695)
-, Tuple.Create(Tuple.Create("", 9656), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/clients/client-1.jpg")
-, 9656), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 9625), Tuple.Create("\"", 9670)
+, Tuple.Create(Tuple.Create("", 9631), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/clients/client-1.jpg")
+, 9631), false)
 );
 
 WriteLiteral(" alt=\"\"");

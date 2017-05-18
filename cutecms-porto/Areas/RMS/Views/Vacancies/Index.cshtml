@@ -7,91 +7,111 @@
     ViewBag.Title = Resources.Resources.Index;
     RMSEntities db = new RMSEntities();
 }
+@section styles{
+    <link href="~/assets/admin/plugins/bower_components/datatables/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <style>
+        a.dt-button, button.dt-button, div.dt-button {
+            background: #03a9f3;
+            color: #fff;
+            border-color: #03a9f3;
+        }
+    </style>
+}
 <p>
     @Html.ActionLink(Resources.Resources.Create, "Create")
 </p>
-<div>
-    <table id="vacanciesTable" class="table table-bordered table-hover nowrap">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Id)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Code)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Title)
-                </th>
-                <th class="select-filter">
-                    @Html.DisplayNameFor(model => model.Language)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.LanguageId)
-                </th>
-                <th class="select-filter">
-                    @Html.DisplayNameFor(model => model.Department)
-                </th>
-                <th class="select-filter">
-                    @Html.DisplayNameFor(model => model.JobType)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.PublishedOn)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ExpiredOn)
-                </th>
-                <th class="select-filter">
-                    @Html.DisplayNameFor(model => model.IsTranslated)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.TranslationId)
-                </th>
-                <th class="select-filter">
-                    @Html.DisplayNameFor(model => model.Status)
-                </th>
-                <th>@Resources.Resources.Actions</th>
-            </tr>
-        </thead>
-        <tfoot>
-            <tr>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Language)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Department)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.JobType)
-                </th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Status)
-                </th>
-                <th></th>
-                <th></th>
-            </tr>
-        </tfoot>
-    </table>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="white-box">
+            <h3 class="box-title m-b-0">Data Export</h3>
+            <p class="text-muted m-b-30">Export data to Copy, CSV, Excel, PDF & Print</p>
+            <div class="table-responsive">
+                <table id="vacanciesTable" class="display nowrap" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Id)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Code)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Title)
+                            </th>
+                            <th class="select-filter">
+                                @Html.DisplayNameFor(model => model.Language)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.LanguageId)
+                            </th>
+                            <th class="select-filter">
+                                @Html.DisplayNameFor(model => model.Department)
+                            </th>
+                            <th class="select-filter">
+                                @Html.DisplayNameFor(model => model.JobType)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.PublishedOn)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ExpiredOn)
+                            </th>
+                            <th class="select-filter">
+                                @Html.DisplayNameFor(model => model.IsTranslated)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TranslationId)
+                            </th>
+                            <th class="select-filter">
+                                @Html.DisplayNameFor(model => model.Status)
+                            </th>
+                            <th>@Resources.Resources.Actions</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Language)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Department)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.JobType)
+                            </th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Status)
+                            </th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
-@section Scripts{
-    <link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
-    <link href="https://cdn.datatables.net/buttons/1.2.1/css/buttons.dataTables.min.css" rel="stylesheet" />
-    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap4.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-    <script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
-    <script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
-    <script src="//cdn.datatables.net/buttons/1.2.1/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.2.1/js/dataTables.buttons.min.js"></script>
-    <script src="//cdn.datatables.net/buttons/1.2.1/js/buttons.colVis.min.js"></script>
-    <script src="//cdn.datatables.net/buttons/1.2.1/js/buttons.print.min.js"></script>
-    <script>
+@section scripts{
+    <!-- Custom Theme JavaScript -->
+<script src="~/assets/admin/js/custom.min.js"></script>
+<script src="~/assets/admin/plugins/bower_components/datatables/jquery.dataTables.min.js"></script>
+<!-- start - This is for export functionality only -->
+<script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+<!-- end - This is for export functionality only -->
+<script>
         //$('#vacanciesTable tfoot th').each(function () {
         //    $(this).html('<input type="text" />');
         //});
@@ -100,7 +120,7 @@
                 "serverSide": true,
                 "scrollX": true,
                 "scrollX": true,
-                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                "lengthMenu": [[5,10, 25, 50, -1], [5,10, 25, 50, "All"]],
                 dom: 'lBfrtip',
                 buttons: [
                    {
@@ -139,7 +159,7 @@
                   },
                   {
                       text: '@Resources.Resources.ColVis',
-                      extend: 'colvis',
+                      //extend: 'colvis',
                   },
                 ],
                 "language": {
@@ -175,9 +195,9 @@
                    "sortable": false,
                    "render": function (data, type, col) {
                        return '<a class=\'btn\' href=\'' + '@Url.Action("Index", "Submissions")/' + "index/" + col["Id"] + '\'>@Resources.Resources.Submissions</a>'
-                           + '|<a class=\'btn\' href=\'' + '@Url.Action("Translations", "Vacancies")/' + col["TranslationId"] + '\'>@Resources.Resources.Translations</a>'
+                           //+ '|<a class=\'btn\' href=\'' + '@Url.Action("Translations", "Vacancies")/' + col["TranslationId"] + '\'>@Resources.Resources.Translations</a>'
                            + '|<a class=\'btn\' href=\'' + '@Url.Action("Edit", "Vacancies")/' + col["Id"] + '\'>@Resources.Resources.Edit</a>'
-                           + '|<a class=\'btn\' href=\'' + '@Url.Action("Details", "Vacancies")/' + col["Id"] + '\'>@Resources.Resources.Details</a>'
+                           @*+ '|<a class=\'btn\' href=\'' + '@Url.Action("Details", "Vacancies")/' + col["Id"] + '\'>@Resources.Resources.Details</a>'*@
                            + '|<a class=\'btn\' href=\'' + '@Url.Action("Delete", "Vacancies")/' + col["Id"] + '\'>@Resources.Resources.Delete</a>';
                        @*+ '<a class=\'btn\' href=\'' + '@Url.Action("Delete", "Vacancies")/' + col["Id"] + '\'>Delete</a>';*@
                    }
@@ -211,28 +231,5 @@
                 });
             });
         });
-    </script>
-}
-@if (ViewBag.StatusMessageId != null)
-{
-    int statusId = ViewBag.StatusMessageId;
-    string status = db.RMSStatusTerms.Where(s => s.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && s.StatusId == statusId).FirstOrDefault() != null ? db.RMSStatusTerms.Where(s => s.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && s.StatusId == statusId).FirstOrDefault().Value : db.Statuses.Where(i => i.Id == statusId).FirstOrDefault().Code;
-    if (@CultureHelper.IsRighToLeft())
-    {
-        <script type="text/javascript">
-            $(document).ready(function () {
-                toastr.options.positionClass = 'toast-top-left'
-                toastr.success('@status')
-            });
-        </script>
-    }
-    else
-    {
-        <script type="text/javascript">
-            $(document).ready(function () {
-                toastr.options.positionClass = 'toast-top-right'
-                toastr.success('@status')
-            });
-        </script>
-    }
+</script>
 }

@@ -6854,9 +6854,6 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Index.generated.cs</LastGenOutput>
     </Content>
-    <None Include=".dockerignore">
-      <DependentUpon>Dockerfile</DependentUpon>
-    </None>
     <None Include="assets\porto\vendor\validation\jquery.validate-vsdoc.js" />
     <Content Include="assets\porto\vendor\style-switcher\bootstrap-colorpicker\css\bootstrap-colorpicker.css" />
     <Content Include="assets\porto\vendor\style-switcher\bootstrap-colorpicker\css\bootstrap-colorpicker.min.css" />
@@ -8705,7 +8702,6 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_Footer.generated.cs</LastGenOutput>
     </Content>
-    <None Include="Dockerfile" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
   </ItemGroup>
   <ItemGroup>

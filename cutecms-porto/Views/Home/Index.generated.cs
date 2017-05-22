@@ -17,12 +17,6 @@ namespace ASP
     using System.Linq;
     using System.Net;
     using System.Text;
-    
-    #line 3 "..\..\Views\Home\Index.cshtml"
-    using System.Threading;
-    
-    #line default
-    #line hidden
     using System.Web;
     using System.Web.Helpers;
     using System.Web.Mvc;
@@ -35,14 +29,8 @@ namespace ASP
     using System.Web.WebPages;
     using cutecms_porto;
     
-    #line 2 "..\..\Views\Home\Index.cshtml"
-    using cutecms_porto.Areas.CMS.Models.DBModel;
-    
-    #line default
-    #line hidden
-    
     #line 1 "..\..\Views\Home\Index.cshtml"
-    using cutecms_porto.Areas.Config.Models.DBModel;
+    using cutecms_porto.Areas.CMS.Models.DBModel;
     
     #line default
     #line hidden
@@ -58,7 +46,7 @@ namespace ASP
         public override void Execute()
         {
             
-            #line 5 "..\..\Views\Home\Index.cshtml"
+            #line 3 "..\..\Views\Home\Index.cshtml"
   
     ViewBag.Title = Resources.Resources.Home;
     ViewBag.Contents = Model.Contents;
@@ -75,27 +63,27 @@ WriteLiteral("\r\n    <!-- Current Page CSS -->\r\n    <link");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 379), Tuple.Create("\"", 447)
-, Tuple.Create(Tuple.Create("", 386), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/circle-flip-slideshow/css/component.css")
-, 386), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 304), Tuple.Create("\"", 372)
+, Tuple.Create(Tuple.Create("", 311), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/circle-flip-slideshow/css/component.css")
+, 311), false)
 );
 
 WriteLiteral(">\r\n    <link");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 477), Tuple.Create("\"", 533)
-, Tuple.Create(Tuple.Create("", 484), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/nivo-slider/nivo-slider.css")
-, 484), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 402), Tuple.Create("\"", 458)
+, Tuple.Create(Tuple.Create("", 409), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/nivo-slider/nivo-slider.css")
+, 409), false)
 );
 
 WriteLiteral(">\r\n    <link");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 563), Tuple.Create("\"", 623)
-, Tuple.Create(Tuple.Create("", 570), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/nivo-slider/default/default.css")
-, 570), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 488), Tuple.Create("\"", 548)
+, Tuple.Create(Tuple.Create("", 495), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/nivo-slider/default/default.css")
+, 495), false)
 );
 
 WriteLiteral(">\r\n");
@@ -130,9 +118,9 @@ WriteLiteral(" class=\"nivoSlider\"");
 
 WriteLiteral(">\r\n                        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 900), Tuple.Create("\"", 943)
-, Tuple.Create(Tuple.Create("", 906), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/slides/slide-1.jpg")
-, 906), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 825), Tuple.Create("\"", 868)
+, Tuple.Create(Tuple.Create("", 831), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/slides/slide-1.jpg")
+, 831), false)
 );
 
 WriteLiteral(" data-thumb=\"img/slides/slide-1.jpg\"");
@@ -145,9 +133,9 @@ WriteLiteral(" href=\"index.html\"");
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1041), Tuple.Create("\"", 1084)
-, Tuple.Create(Tuple.Create("", 1047), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/slides/slide-2.jpg")
-, 1047), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 966), Tuple.Create("\"", 1009)
+, Tuple.Create(Tuple.Create("", 972), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/slides/slide-2.jpg")
+, 972), false)
 );
 
 WriteLiteral(" data-thumb=\"img/slides/slide-2.jpg\"");
@@ -186,7 +174,7 @@ WriteLiteral(">\r\n                        <p>\r\n");
 WriteLiteral("                          ");
 
             
-            #line 36 "..\..\Views\Home\Index.cshtml"
+            #line 34 "..\..\Views\Home\Index.cshtml"
                      Write(Resources.Resources.Lorem1);
 
             
@@ -195,7 +183,7 @@ WriteLiteral("                          ");
 WriteLiteral("\r\n                            <span>");
 
             
-            #line 37 "..\..\Views\Home\Index.cshtml"
+            #line 35 "..\..\Views\Home\Index.cshtml"
                              Write(Resources.Resources.Lorem2);
 
             
@@ -219,7 +207,7 @@ WriteLiteral(" class=\"btn btn-lg btn-primary\"");
 WriteLiteral(">");
 
             
-            #line 42 "..\..\Views\Home\Index.cshtml"
+            #line 40 "..\..\Views\Home\Index.cshtml"
                                                                   Write(Resources.Resources.GetStarted);
 
             
@@ -232,7 +220,7 @@ WriteLiteral(" class=\"learn-more\"");
 WriteLiteral(">");
 
             
-            #line 43 "..\..\Views\Home\Index.cshtml"
+            #line 41 "..\..\Views\Home\Index.cshtml"
                                                Write(Resources.Resources.Or);
 
             
@@ -245,7 +233,7 @@ WriteLiteral(" href=\"/\"");
 WriteLiteral(">");
 
             
-            #line 43 "..\..\Views\Home\Index.cshtml"
+            #line 41 "..\..\Views\Home\Index.cshtml"
                                                                                    Write(Resources.Resources.LearnMore);
 
             
@@ -273,7 +261,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 57 "..\..\Views\Home\Index.cshtml"
+            #line 55 "..\..\Views\Home\Index.cshtml"
            Write(Resources.Resources.Lorem3);
 
             
@@ -318,7 +306,7 @@ WriteLiteral(" class=\"recent-posts mb-xl\"");
 WriteLiteral(">\r\n                        <h2>");
 
             
-            #line 78 "..\..\Views\Home\Index.cshtml"
+            #line 76 "..\..\Views\Home\Index.cshtml"
                        Write(Resources.Resources.LatestNews);
 
             
@@ -355,7 +343,7 @@ WriteLiteral(" class=\"month\"");
 WriteLiteral(">");
 
             
-            #line 86 "..\..\Views\Home\Index.cshtml"
+            #line 84 "..\..\Views\Home\Index.cshtml"
                                                                Write(Resources.Resources.January);
 
             
@@ -373,7 +361,7 @@ WriteLiteral(" href=\"blog-post.html\"");
 WriteLiteral(">");
 
             
-            #line 88 "..\..\Views\Home\Index.cshtml"
+            #line 86 "..\..\Views\Home\Index.cshtml"
                                                                                             Write(Resources.Resources.LoremTitle);
 
             
@@ -382,7 +370,7 @@ WriteLiteral(">");
 WriteLiteral("</a></h4>\r\n                                            <p>");
 
             
-            #line 89 "..\..\Views\Home\Index.cshtml"
+            #line 87 "..\..\Views\Home\Index.cshtml"
                                           Write(Resources.Resources.Lorem3);
 
             
@@ -409,7 +397,7 @@ WriteLiteral(" class=\"month\"");
 WriteLiteral(">");
 
             
-            #line 96 "..\..\Views\Home\Index.cshtml"
+            #line 94 "..\..\Views\Home\Index.cshtml"
                                                                Write(Resources.Resources.January);
 
             
@@ -427,7 +415,7 @@ WriteLiteral(" href=\"blog-post.html\"");
 WriteLiteral(">");
 
             
-            #line 98 "..\..\Views\Home\Index.cshtml"
+            #line 96 "..\..\Views\Home\Index.cshtml"
                                                                                             Write(Resources.Resources.LoremTitle);
 
             
@@ -436,7 +424,7 @@ WriteLiteral(">");
 WriteLiteral("</a></h4>\r\n                                            <p>");
 
             
-            #line 99 "..\..\Views\Home\Index.cshtml"
+            #line 97 "..\..\Views\Home\Index.cshtml"
                                           Write(Resources.Resources.Lorem3);
 
             
@@ -473,7 +461,7 @@ WriteLiteral(" href=\"blog-post.html\"");
 WriteLiteral(">");
 
             
-            #line 110 "..\..\Views\Home\Index.cshtml"
+            #line 108 "..\..\Views\Home\Index.cshtml"
                                                                                             Write(Resources.Resources.LoremTitle);
 
             
@@ -482,7 +470,7 @@ WriteLiteral(">");
 WriteLiteral("</a></h4>\r\n                                            <p>");
 
             
-            #line 111 "..\..\Views\Home\Index.cshtml"
+            #line 109 "..\..\Views\Home\Index.cshtml"
                                           Write(Resources.Resources.Lorem3);
 
             
@@ -518,7 +506,7 @@ WriteLiteral(" href=\"blog-post.html\"");
 WriteLiteral(">");
 
             
-            #line 120 "..\..\Views\Home\Index.cshtml"
+            #line 118 "..\..\Views\Home\Index.cshtml"
                                                                                             Write(Resources.Resources.LoremTitle);
 
             
@@ -527,7 +515,7 @@ WriteLiteral(">");
 WriteLiteral("</a></h4>\r\n                                            <p>");
 
             
-            #line 121 "..\..\Views\Home\Index.cshtml"
+            #line 119 "..\..\Views\Home\Index.cshtml"
                                           Write(Resources.Resources.Lorem3);
 
             
@@ -564,7 +552,7 @@ WriteLiteral(" href=\"blog-post.html\"");
 WriteLiteral(">");
 
             
-            #line 132 "..\..\Views\Home\Index.cshtml"
+            #line 130 "..\..\Views\Home\Index.cshtml"
                                                                                             Write(Resources.Resources.LoremTitle);
 
             
@@ -573,7 +561,7 @@ WriteLiteral(">");
 WriteLiteral("</a></h4>\r\n                                            <p>");
 
             
-            #line 133 "..\..\Views\Home\Index.cshtml"
+            #line 131 "..\..\Views\Home\Index.cshtml"
                                           Write(Resources.Resources.Lorem3);
 
             
@@ -609,7 +597,7 @@ WriteLiteral(" href=\"blog-post.html\"");
 WriteLiteral(">");
 
             
-            #line 142 "..\..\Views\Home\Index.cshtml"
+            #line 140 "..\..\Views\Home\Index.cshtml"
                                                                                             Write(Resources.Resources.LoremTitle);
 
             
@@ -618,7 +606,7 @@ WriteLiteral(">");
 WriteLiteral("</a></h4>\r\n                                            <p>");
 
             
-            #line 143 "..\..\Views\Home\Index.cshtml"
+            #line 141 "..\..\Views\Home\Index.cshtml"
                                           Write(Resources.Resources.Lorem3);
 
             
@@ -639,7 +627,7 @@ WriteLiteral(" class=\"col-md-6\"");
 WriteLiteral(">\r\n                    <h2>");
 
             
-            #line 152 "..\..\Views\Home\Index.cshtml"
+            #line 150 "..\..\Views\Home\Index.cshtml"
                    Write(Resources.Resources.WhatClientsSay);
 
             
@@ -667,7 +655,7 @@ WriteLiteral(">\r\n                                        <blockquote>\r\n     
 "                    <p>");
 
             
-            #line 159 "..\..\Views\Home\Index.cshtml"
+            #line 157 "..\..\Views\Home\Index.cshtml"
                                           Write(Resources.Resources.Lorem3);
 
             
@@ -688,9 +676,9 @@ WriteLiteral(" class=\"testimonial-author-thumbnail img-thumbnail\"");
 
 WriteLiteral(">\r\n                                                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 8527), Tuple.Create("\"", 8572)
-, Tuple.Create(Tuple.Create("", 8533), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/clients/client-1.jpg")
-, 8533), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 8452), Tuple.Create("\"", 8497)
+, Tuple.Create(Tuple.Create("", 8458), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/clients/client-1.jpg")
+, 8458), false)
 );
 
 WriteLiteral(" alt=\"\"");
@@ -699,7 +687,7 @@ WriteLiteral(">\r\n                                            </div>\r\n       
 "                  <p><strong>");
 
             
-            #line 166 "..\..\Views\Home\Index.cshtml"
+            #line 164 "..\..\Views\Home\Index.cshtml"
                                                   Write(Resources.Resources.JohnSmith);
 
             
@@ -708,7 +696,7 @@ WriteLiteral(">\r\n                                            </div>\r\n       
 WriteLiteral("</strong><span>");
 
             
-            #line 166 "..\..\Views\Home\Index.cshtml"
+            #line 164 "..\..\Views\Home\Index.cshtml"
                                                                                                Write(Resources.Resources.JobTitleName);
 
             
@@ -729,7 +717,7 @@ WriteLiteral(">\r\n                                        <blockquote>\r\n     
 "                    <p>");
 
             
-            #line 175 "..\..\Views\Home\Index.cshtml"
+            #line 173 "..\..\Views\Home\Index.cshtml"
                                           Write(Resources.Resources.Lorem3);
 
             
@@ -750,9 +738,9 @@ WriteLiteral(" class=\"testimonial-author-thumbnail img-thumbnail\"");
 
 WriteLiteral(">\r\n                                                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 9625), Tuple.Create("\"", 9670)
-, Tuple.Create(Tuple.Create("", 9631), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/clients/client-1.jpg")
-, 9631), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 9550), Tuple.Create("\"", 9595)
+, Tuple.Create(Tuple.Create("", 9556), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/clients/client-1.jpg")
+, 9556), false)
 );
 
 WriteLiteral(" alt=\"\"");
@@ -761,7 +749,7 @@ WriteLiteral(">\r\n                                            </div>\r\n       
 "                  <p><strong>");
 
             
-            #line 182 "..\..\Views\Home\Index.cshtml"
+            #line 180 "..\..\Views\Home\Index.cshtml"
                                                   Write(Resources.Resources.JohnSmith);
 
             
@@ -770,7 +758,7 @@ WriteLiteral(">\r\n                                            </div>\r\n       
 WriteLiteral("</strong><span>");
 
             
-            #line 182 "..\..\Views\Home\Index.cshtml"
+            #line 180 "..\..\Views\Home\Index.cshtml"
                                                                                                Write(Resources.Resources.JobTitleName);
 
             

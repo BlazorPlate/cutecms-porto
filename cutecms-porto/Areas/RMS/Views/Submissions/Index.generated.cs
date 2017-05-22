@@ -78,233 +78,269 @@ WriteLiteral(" />\r\n");
 
 WriteLiteral("<div");
 
-WriteLiteral(" style=\"margin-top:25px;\"");
+WriteLiteral(" class=\"row\"");
 
-WriteLiteral(">\r\n    <table");
+WriteLiteral(">\r\n    <div");
 
-WriteLiteral(" id=\"submissionsTable\"");
+WriteLiteral(" class=\"col-sm-12\"");
 
-WriteLiteral(" class=\"table table-bordered table-hover nowrap\"");
+WriteLiteral(">\r\n        <div");
 
-WriteLiteral(">\r\n        <thead>\r\n            <tr>\r\n                <th>");
+WriteLiteral(" class=\"white-box\"");
 
-            
-            #line 15 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
-               Write(Html.DisplayNameFor(model => model.Id));
+WriteLiteral(">\r\n            ");
 
-            
-            #line default
-            #line hidden
-WriteLiteral("</th>\r\n                <th>");
+WriteLiteral("\r\n            <div");
 
-            
-            #line 16 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
-               Write(Html.DisplayNameFor(model => model.ApplicantFullName));
+WriteLiteral(" class=\"table-responsive\"");
 
-            
-            #line default
-            #line hidden
-WriteLiteral("</th>\r\n                <th>");
+WriteLiteral(">\r\n                <table");
 
-            
-            #line 17 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
-               Write(Html.DisplayNameFor(model => model.SubmissionDate));
+WriteLiteral(" id=\"submissionTable\"");
 
-            
-            #line default
-            #line hidden
-WriteLiteral("</th>\r\n                <th");
+WriteLiteral(" class=\"display nowrap\"");
 
-WriteLiteral(" class=\"select-filter\"");
+WriteLiteral(" cellspacing=\"0\"");
 
-WriteLiteral(">");
+WriteLiteral(" width=\"100%\"");
 
-            
-            #line 18 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
-                                     Write(Html.DisplayNameFor(model => model.VacancyTitle));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</th>\r\n                <th");
-
-WriteLiteral(" class=\"select-filter\"");
-
-WriteLiteral(">");
-
-            
-            #line 19 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
-                                     Write(Html.DisplayNameFor(model => model.Department));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</th>\r\n                <th>");
+WriteLiteral(">\r\n                    <thead>\r\n                        <tr>\r\n                   " +
+"         <th>");
 
             
             #line 20 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
-               Write(Resources.Resources.Actions);
+                           Write(Html.DisplayNameFor(model => model.Id));
 
             
             #line default
             #line hidden
-WriteLiteral("</th>\r\n            </tr>\r\n        </thead>\r\n        <tfoot>\r\n            <tr>\r\n  " +
-"              <th></th>\r\n                <th></th>\r\n                <th></th>\r\n " +
-"               <th>");
+WriteLiteral("</th>\r\n                            <th>");
 
             
-            #line 28 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
-               Write(Html.DisplayNameFor(model => model.VacancyTitle));
+            #line 21 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
+                           Write(Html.DisplayNameFor(model => model.ApplicantFullName));
 
             
             #line default
             #line hidden
-WriteLiteral("</th>\r\n                <th>");
+WriteLiteral("</th>\r\n                            <th>");
 
             
-            #line 29 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
-               Write(Html.DisplayNameFor(model => model.Department));
+            #line 22 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
+                           Write(Html.DisplayNameFor(model => model.SubmissionDate));
 
             
             #line default
             #line hidden
-WriteLiteral("</th>\r\n                <th></th>\r\n            </tr>\r\n        </tfoot>\r\n    </tabl" +
-"e>\r\n</div>\r\n");
+WriteLiteral("</th>\r\n                            <th");
 
-DefineSection("Scripts", () => {
+WriteLiteral(" class=\"select-filter\"");
 
-WriteLiteral("\r\n    <script");
+WriteLiteral(">");
 
-WriteLiteral(" src=\"https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap4.min.js\"");
+            
+            #line 23 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
+                                                 Write(Html.DisplayNameFor(model => model.VacancyTitle));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</th>\r\n                            <th");
+
+WriteLiteral(" class=\"select-filter\"");
+
+WriteLiteral(">");
+
+            
+            #line 24 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
+                                                 Write(Html.DisplayNameFor(model => model.Department));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</th>\r\n                            <th>");
+
+            
+            #line 25 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
+                           Write(Resources.Resources.Actions);
+
+            
+            #line default
+            #line hidden
+WriteLiteral(@"</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th>");
+
+            
+            #line 33 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
+                           Write(Html.DisplayNameFor(model => model.VacancyTitle));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</th>\r\n                            <th>");
+
+            
+            #line 34 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
+                           Write(Html.DisplayNameFor(model => model.Department));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</th>\r\n                            <th></th>\r\n                        </tr>\r\n    " +
+"                </tfoot>\r\n                </table>\r\n            </div>\r\n        " +
+"</div>\r\n    </div>\r\n</div>\r\n");
+
+DefineSection("scripts", () => {
+
+WriteLiteral("\r\n    <!-- Custom Theme JavaScript -->\r\n    <script");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 2193), Tuple.Create("\"", 2230)
+, Tuple.Create(Tuple.Create("", 2199), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/js/custom.min.js")
+, 2199), false)
+);
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js\"");
+WriteAttribute("src", Tuple.Create(" src=\"", 2254), Tuple.Create("\"", 2335)
+, Tuple.Create(Tuple.Create("", 2260), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/datatables/jquery.dataTables.min.js")
+, 2260), false)
+);
+
+WriteLiteral("></script>\r\n    <!-- start - This is for export functionality only -->\r\n    <scri" +
+"pt");
+
+WriteLiteral(" src=\"https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js\"");
+WriteLiteral(" src=\"https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js\"");
+WriteLiteral(" src=\"https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js\"");
+WriteLiteral(" src=\"https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"//cdn.datatables.net/buttons/1.2.1/js/buttons.html5.min.js\"");
+WriteLiteral(" src=\"https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://cdn.datatables.net/buttons/1.2.1/js/dataTables.buttons.min.js\"");
+WriteLiteral(" src=\"https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js\"");
+
+WriteLiteral("></script>\r\n    <script");
+
+WriteLiteral(" src=\"https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
 WriteLiteral(" src=\"//cdn.datatables.net/buttons/1.2.1/js/buttons.colVis.min.js\"");
 
-WriteLiteral("></script>\r\n    <script");
-
-WriteLiteral(" src=\"//cdn.datatables.net/buttons/1.2.1/js/buttons.print.min.js\"");
-
 WriteLiteral(@"></script>
+    <!-- end - This is for export functionality only -->
     <script>
-        $('.tfoot_search').each(function () {
-            var title = $('.datatable-column-search-inputs thead th').eq($(this).index()).text();
-            $(this).html('<input type=""text"" class=""form-control input-sm"" placeholder=""Search ' + title + '"" />');
-        });
+        //$('#submissionTable tfoot th').each(function () {
+        //    $(this).html('<input type=""text"" />');
+        //});
         $(document).ready(function () {
-            var oTable = $('#submissionsTable').DataTable({
+            var oTable = $('#submissionTable').DataTable({
                 ""serverSide"": true,
-                ""autoWidth"": false,
                 ""scrollX"": true,
-                ""lengthMenu"": [[10, 25, 50, -1], [10, 25, 50, ""All""]],
+                ""scrollX"": true,
+                ""lengthMenu"": [[5,10, 25, 50, -1], [5,10, 25, 50, ""All""]],
                 dom: 'lBfrtip',
                 buttons: [
-             {
-                 text: '");
+                   {
+                       text: '");
 
             
-            #line 59 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
-                   Write(Resources.Resources.Reload);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\',\r\n                 action: function (e, dt, node, config) {\r\n                  " +
-"   dt.ajax.reload();\r\n                 }\r\n             },\r\n             {\r\n     " +
-"            text: \'");
-
-            
-            #line 65 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
-                   Write(Resources.Resources.Copy);
+            #line 70 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
+                         Write(Resources.Resources.Reload);
 
             
             #line default
             #line hidden
-WriteLiteral("\',\r\n                 extend: \'copyHtml5\',\r\n                 exportOptions: {\r\n   " +
-"                  columns: \':visible\'\r\n                 }\r\n             },\r\n    " +
-"        {\r\n                text: \'");
+WriteLiteral("\',\r\n                       action: function (e, dt, node, config) {\r\n            " +
+"               dt.ajax.reload();\r\n                       }\r\n                   }" +
+",\r\n                   {\r\n                       text: \'");
 
             
-            #line 72 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
-                  Write(Resources.Resources.ExportExcel);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\',\r\n                extend: \'excelHtml5\',\r\n                exportOptions: {\r\n    " +
-"                columns: \':visible\'\r\n                }\r\n            },\r\n        " +
-"    {\r\n                text: \'");
-
-            
-            #line 79 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
-                  Write(Resources.Resources.ExportPDF);
+            #line 76 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
+                         Write(Resources.Resources.Copy);
 
             
             #line default
             #line hidden
-WriteLiteral("\',\r\n                extend: \'pdfHtml5\',\r\n                exportOptions: {\r\n      " +
-"              columns: \':visible\'\r\n                }\r\n            },\r\n          " +
-"  {\r\n                text: \'");
+WriteLiteral("\',\r\n                       extend: \'copyHtml5\',\r\n                       exportOpt" +
+"ions: {\r\n                           columns: \':visible\'\r\n                       " +
+"}\r\n                   },\r\n                  {\r\n                      text: \'");
 
             
-            #line 86 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
-                  Write(Resources.Resources.Print);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\',\r\n                extend: \'print\',\r\n                exportOptions: {\r\n         " +
-"           columns: \':visible\'\r\n                }\r\n            },\r\n            {" +
-"\r\n                text: \'");
-
-            
-            #line 93 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
-                  Write(Resources.Resources.ColVis);
+            #line 83 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
+                        Write(Resources.Resources.ExportExcel);
 
             
             #line default
             #line hidden
-WriteLiteral("\',\r\n                extend: \'colvis\',\r\n            },\r\n                ],\r\n      " +
-"          //\"responsive\": true,\r\n                \"language\": {\r\n                " +
-"    \"url\": \"");
+WriteLiteral("\',\r\n                      extend: \'excelHtml5\',\r\n                      exportOpti" +
+"ons: {\r\n                          columns: \':visible\'\r\n                      }\r\n" +
+"                  },\r\n                  {\r\n                      text: \'");
 
             
-            #line 99 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
+            #line 90 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
+                        Write(Resources.Resources.ExportPDF);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\',\r\n                      extend: \'pdfHtml5\',\r\n                      exportOption" +
+"s: {\r\n                          columns: \':visible\'\r\n                      }\r\n  " +
+"                },\r\n                  {\r\n                      text: \'");
+
+            
+            #line 97 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
+                        Write(Resources.Resources.Print);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\',\r\n                      extend: \'print\',\r\n                      exportOptions: " +
+"{\r\n                          columns: \':visible\'\r\n                      }\r\n     " +
+"             },\r\n                  {\r\n                      text: \'");
+
+            
+            #line 104 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
+                        Write(Resources.Resources.ColVis);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\',\r\n                      extend: \'colvis\',\r\n                  },\r\n              " +
+"  ],\r\n                \"language\": {\r\n                    \"url\": \"");
+
+            
+            #line 109 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
                        Write(Resources.Resources.DataTableLanguage);
 
             
             #line default
             #line hidden
-WriteLiteral("\"\r\n                },\r\n                \"ajax\": {\r\n                    \"type\": \"PO" +
-"ST\",\r\n                    \"url\": \"");
+WriteLiteral("\"\r\n                },\r\n                //\"responsive\": true,\r\n                \"aj" +
+"ax\": {\r\n                    \"type\": \"POST\",\r\n                    \"url\": \"");
 
             
-            #line 103 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
-                       Write(Url.Action("DataHandler", "Submissions", new {id=ViewBag.VacancyId, area = "RMS" }));
+            #line 114 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
+                       Write(Url.Action("DataHandler", "Submissions", new { area = "RMS" }));
 
             
             #line default
@@ -331,7 +367,7 @@ WriteLiteral(@""",
                        return '<a class=\'btn\' href=\'' + '");
 
             
-            #line 122 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
+            #line 133 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
                                                        Write(Url.Action("Details", "Submissions"));
 
             
@@ -340,7 +376,7 @@ WriteLiteral(@""",
 WriteLiteral("?id=\' + col[\"Id\"] + \'\\\'>");
 
             
-            #line 122 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
+            #line 133 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
                                                                                                                     Write(Resources.Resources.View);
 
             
@@ -349,7 +385,7 @@ WriteLiteral("?id=\' + col[\"Id\"] + \'\\\'>");
 WriteLiteral("</a>\'\r\n                       + \'|<a class=\\\'btn\\\' href=\\\'\' + \'");
 
             
-            #line 123 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
+            #line 134 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
                                                    Write(Url.Action("ExportCV", "Submissions"));
 
             
@@ -358,7 +394,7 @@ WriteLiteral("</a>\'\r\n                       + \'|<a class=\\\'btn\\\' href=\\
 WriteLiteral("?id=\' + col[\"Id\"] + \'\\\'>");
 
             
-            #line 123 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
+            #line 134 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
                                                                                                                  Write(Resources.Resources.CurriculumVitae);
 
             
@@ -367,7 +403,7 @@ WriteLiteral("?id=\' + col[\"Id\"] + \'\\\'>");
 WriteLiteral("</a>\'\r\n                       + \'|<a class=\\\'btn\\\' href=\\\'\' + \'");
 
             
-            #line 124 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
+            #line 135 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
                                                    Write(Url.Action("ExportApplicant", "Submissions"));
 
             
@@ -376,7 +412,7 @@ WriteLiteral("</a>\'\r\n                       + \'|<a class=\\\'btn\\\' href=\\
 WriteLiteral("?id=\' + col[\"Id\"] + \'\\\'>");
 
             
-            #line 124 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
+            #line 135 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
                                                                                                                         Write(Resources.Resources.Export);
 
             
@@ -384,32 +420,26 @@ WriteLiteral("?id=\' + col[\"Id\"] + \'\\\'>");
             #line hidden
 WriteLiteral("</a>\';\r\n                       ");
 
-WriteLiteral(@"
-                   }
-                   //""render"": function (o) { return '<i class=""ui-tooltip fa fa-pencil"" style=""font-size: 22px;"" data-original-title=""Edit""></i><i class=""ui-tooltip fa fa-trash-o"" style=""font-size: 22px;"" data-original-title=""Delete""></i>'; }
-               },
-                ],
-                ""order"": [0, ""asc""],
-                ""initComplete"": function () {
-                    this.api().columns('.select-filter').every(function () {
-                        var column = this;
-                        var select = $('<select><option value=""""></option></select>')
-                                   .appendTo($(column.footer()).empty())
-                                   .on('change', function () {
-                                       var val = $(this).val();
-                                       column
-                                           .search(val, true, false)
-                                           .draw();
-                                   });
-                        column.data().unique().sort().each(function (d, j) {
-                            select.append('<option value=""' + d + '"">' + d + '</option>')
-                        });
-                    });
-                }
-            });
-        });
-    </script>
-");
+WriteLiteral("\r\n                   }\r\n                   //\"render\": function (o) { return \'<i " +
+"class=\"ui-tooltip fa fa-pencil\" style=\"font-size: 22px;\" data-original-title=\"Ed" +
+"it\"></i><i class=\"ui-tooltip fa fa-trash-o\" style=\"font-size: 22px;\" data-origin" +
+"al-title=\"Delete\"></i>\'; }\r\n               },\r\n                ],\r\n             " +
+"   \"order\": [0, \"asc\"],\r\n                \"initComplete\": function () {\r\n        " +
+"            this.api().columns(\'.select-filter\').every(function () {\r\n          " +
+"              var column = this;\r\n                        var select = $(\'<selec" +
+"t><option value=\"\"></option></select>\')\r\n                       .appendTo($(colu" +
+"mn.footer()).empty())\r\n                       .on(\'change\', function () {\r\n     " +
+"                      var val = $(this).val();\r\n                           colum" +
+"n\r\n                               .search(val, true, false)\r\n                   " +
+"            .draw();\r\n                       });\r\n                        column" +
+".data().unique().sort().each(function (d, j) {\r\n                            sele" +
+"ct.append(\'<option value=\"\' + d + \'\">\' + d + \'</option>\')\r\n                     " +
+"   });\r\n                    });\r\n                }\r\n            });\r\n           " +
+" oTable.columns().every(function () {\r\n                var that = this;\r\n       " +
+"         $(\'input\', this.footer()).on(\'keyup change\', function () {\r\n           " +
+"         that\r\n                        .search(this.value)\r\n                    " +
+"    .draw();\r\n                });\r\n            });\r\n        });\r\n    </script>\r\n" +
+"");
 
 });
 

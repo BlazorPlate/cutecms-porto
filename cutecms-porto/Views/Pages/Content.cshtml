@@ -30,7 +30,7 @@
                             if (menuItemId != null)
                             {
                                 ViewBag.ParentMenuItems = BreadcrumbsHelper.GetParentMenuItems(menuItemId);
-                                @Html.Partial("_Breadcrumb")
+                        @Html.Partial("_Breadcrumb")
                             }
                         }
                     </ul>
@@ -59,7 +59,7 @@
                             foreach (var image in images)
                             {
                                 var description = image.ImageFileTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.ImageFileId == image.Id).FirstOrDefault()?.Value ?? db.ImageFiles.Where(i => i.Id == image.Id).FirstOrDefault().Code;
-                                <img src="@image.FilePath" data-thumb="@image.ThumbPath" alt="@description" />
+                        <img src="@image.FilePath" data-thumb="@image.ThumbPath" alt="@description" />
                             }
                         }
                     </div>
@@ -75,11 +75,11 @@
             <p style="color:brown">
                 @if (Model.StartDate == null)
                 {
-                    <small><i class="fa fa-clock-o"></i> @Resources.Resources.LastUpdatedOn @Model.ModifiedOn.Value.ToString("dddd, d MMMM, yyyy")</small>
+                <small><i class="fa fa-clock-o"></i> @Resources.Resources.LastUpdatedOn @Model.ModifiedOn.Value.ToString("dddd, d MMMM, yyyy")</small>
                 }
                 else
                 {
-                    <small><i class="fa fa-clock-o"></i> @Resources.Resources.From @Model.StartDate.Value.ToString("dddd, d MMMM, yyyy") @(Model.EndDate == null ? "" : @Resources.Resources.Till + " " + Model.EndDate.Value.ToString("dddd, d MMMM, yyyy")) @(Model.Location == null ? "" : "@ " + Model.Location)</small>
+                <small><i class="fa fa-clock-o"></i> @Resources.Resources.From @Model.StartDate.Value.ToString("dddd, d MMMM, yyyy") @(Model.EndDate == null ? "" : @Resources.Resources.Till + " " + Model.EndDate.Value.ToString("dddd, d MMMM, yyyy")) @(Model.Location == null ? "" : "@ " + Model.Location)</small>
                 }
             </p>
         </div>
@@ -113,10 +113,11 @@
                                     {
                                         <label>@Resources.Resources.Url:</label>
                                         <a href="@item.Url" target="_blank">@item.Url</a>
+
                                     }
                                     @if (item.FilePath != null)
-                                    {
-                                        <label>@Resources.Resources.Attachments:</label>
+                                    {    <br />
+                                    <label>@Resources.Resources.Attachments:</label>
                                         <a href="@Url.Content(item.FilePath)">@Resources.Resources.Download @item.Title</a>
                                     }
                                 </div>

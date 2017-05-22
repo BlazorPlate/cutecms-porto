@@ -8,99 +8,110 @@
     <link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/buttons/1.2.1/css/buttons.dataTables.min.css" rel="stylesheet" />
 }
-<div style="margin-top:25px;">
-    <table id="submissionsTable" class="table table-bordered table-hover nowrap">
-        <thead>
-            <tr>
-                <th>@Html.DisplayNameFor(model => model.Id)</th>
-                <th>@Html.DisplayNameFor(model => model.ApplicantFullName)</th>
-                <th>@Html.DisplayNameFor(model => model.SubmissionDate)</th>
-                <th class="select-filter">@Html.DisplayNameFor(model => model.VacancyTitle)</th>
-                <th class="select-filter">@Html.DisplayNameFor(model => model.Department)</th>
-                <th>@Resources.Resources.Actions</th>
-            </tr>
-        </thead>
-        <tfoot>
-            <tr>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th>@Html.DisplayNameFor(model => model.VacancyTitle)</th>
-                <th>@Html.DisplayNameFor(model => model.Department)</th>
-                <th></th>
-            </tr>
-        </tfoot>
-    </table>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="white-box">
+            @*<h3 class="box-title m-b-0">Data Export</h3>
+            <p class="text-muted m-b-30">Export data to Copy, CSV, Excel, PDF & Print</p>*@
+            <div class="table-responsive">
+                <table id="submissionTable" class="display nowrap" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Id)</th>
+                            <th>@Html.DisplayNameFor(model => model.ApplicantFullName)</th>
+                            <th>@Html.DisplayNameFor(model => model.SubmissionDate)</th>
+                            <th class="select-filter">@Html.DisplayNameFor(model => model.VacancyTitle)</th>
+                            <th class="select-filter">@Html.DisplayNameFor(model => model.Department)</th>
+                            <th>@Resources.Resources.Actions</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th>@Html.DisplayNameFor(model => model.VacancyTitle)</th>
+                            <th>@Html.DisplayNameFor(model => model.Department)</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
-@section Scripts{
-    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap4.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-    <script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
-    <script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
-    <script src="//cdn.datatables.net/buttons/1.2.1/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.2.1/js/dataTables.buttons.min.js"></script>
+@section scripts{
+    <!-- Custom Theme JavaScript -->
+    <script src="~/assets/admin/js/custom.min.js"></script>
+    <script src="~/assets/admin/plugins/bower_components/datatables/jquery.dataTables.min.js"></script>
+    <!-- start - This is for export functionality only -->
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
     <script src="//cdn.datatables.net/buttons/1.2.1/js/buttons.colVis.min.js"></script>
-    <script src="//cdn.datatables.net/buttons/1.2.1/js/buttons.print.min.js"></script>
+    <!-- end - This is for export functionality only -->
     <script>
-        $('.tfoot_search').each(function () {
-            var title = $('.datatable-column-search-inputs thead th').eq($(this).index()).text();
-            $(this).html('<input type="text" class="form-control input-sm" placeholder="Search ' + title + '" />');
-        });
+        //$('#submissionTable tfoot th').each(function () {
+        //    $(this).html('<input type="text" />');
+        //});
         $(document).ready(function () {
-            var oTable = $('#submissionsTable').DataTable({
+            var oTable = $('#submissionTable').DataTable({
                 "serverSide": true,
-                "autoWidth": false,
                 "scrollX": true,
-                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                "scrollX": true,
+                "lengthMenu": [[5,10, 25, 50, -1], [5,10, 25, 50, "All"]],
                 dom: 'lBfrtip',
                 buttons: [
-             {
-                 text: '@Resources.Resources.Reload',
-                 action: function (e, dt, node, config) {
-                     dt.ajax.reload();
-                 }
-             },
-             {
-                 text: '@Resources.Resources.Copy',
-                 extend: 'copyHtml5',
-                 exportOptions: {
-                     columns: ':visible'
-                 }
-             },
-            {
-                text: '@Resources.Resources.ExportExcel',
-                extend: 'excelHtml5',
-                exportOptions: {
-                    columns: ':visible'
-                }
-            },
-            {
-                text: '@Resources.Resources.ExportPDF',
-                extend: 'pdfHtml5',
-                exportOptions: {
-                    columns: ':visible'
-                }
-            },
-            {
-                text: '@Resources.Resources.Print',
-                extend: 'print',
-                exportOptions: {
-                    columns: ':visible'
-                }
-            },
-            {
-                text: '@Resources.Resources.ColVis',
-                extend: 'colvis',
-            },
+                   {
+                       text: '@Resources.Resources.Reload',
+                       action: function (e, dt, node, config) {
+                           dt.ajax.reload();
+                       }
+                   },
+                   {
+                       text: '@Resources.Resources.Copy',
+                       extend: 'copyHtml5',
+                       exportOptions: {
+                           columns: ':visible'
+                       }
+                   },
+                  {
+                      text: '@Resources.Resources.ExportExcel',
+                      extend: 'excelHtml5',
+                      exportOptions: {
+                          columns: ':visible'
+                      }
+                  },
+                  {
+                      text: '@Resources.Resources.ExportPDF',
+                      extend: 'pdfHtml5',
+                      exportOptions: {
+                          columns: ':visible'
+                      }
+                  },
+                  {
+                      text: '@Resources.Resources.Print',
+                      extend: 'print',
+                      exportOptions: {
+                          columns: ':visible'
+                      }
+                  },
+                  {
+                      text: '@Resources.Resources.ColVis',
+                      extend: 'colvis',
+                  },
                 ],
-                //"responsive": true,
                 "language": {
                     "url": "@Resources.Resources.DataTableLanguage"
                 },
+                //"responsive": true,
                 "ajax": {
                     "type": "POST",
-                    "url": "@Url.Action("DataHandler", "Submissions", new {id=ViewBag.VacancyId, area = "RMS" })",
+                    "url": "@Url.Action("DataHandler", "Submissions", new { area = "RMS" })",
                     "contentType": 'application/json; charset=utf-8',
                     'data': function (data) {
                         return data = JSON.stringify(data);
@@ -132,18 +143,26 @@
                     this.api().columns('.select-filter').every(function () {
                         var column = this;
                         var select = $('<select><option value=""></option></select>')
-                                   .appendTo($(column.footer()).empty())
-                                   .on('change', function () {
-                                       var val = $(this).val();
-                                       column
-                                           .search(val, true, false)
-                                           .draw();
-                                   });
+                       .appendTo($(column.footer()).empty())
+                       .on('change', function () {
+                           var val = $(this).val();
+                           column
+                               .search(val, true, false)
+                               .draw();
+                       });
                         column.data().unique().sort().each(function (d, j) {
                             select.append('<option value="' + d + '">' + d + '</option>')
                         });
                     });
                 }
+            });
+            oTable.columns().every(function () {
+                var that = this;
+                $('input', this.footer()).on('keyup change', function () {
+                    that
+                        .search(this.value)
+                        .draw();
+                });
             });
         });
     </script>

@@ -236,7 +236,7 @@ WriteAttribute("value", Tuple.Create(" value=\"", 1856), Tuple.Create("\"", 1890
 , 1864), false)
 );
 
-WriteLiteral(" class=\"btn btn-primary mb-xl\"");
+WriteLiteral(" class=\"btn btn-primary pull-right mb-xl\"");
 
 WriteLiteral(" data-loading-text=\"Loading...\"");
 

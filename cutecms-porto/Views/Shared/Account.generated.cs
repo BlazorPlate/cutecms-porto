@@ -73,7 +73,7 @@ namespace ASP
             #line hidden
 WriteLiteral("    <li");
 
-WriteLiteral(" class=\"dropdown pull-right dropdown-mega dropdown-mega-signin signin\"");
+WriteLiteral(" class=\"dropdown dropdown-mega dropdown-mega-signin signin\"");
 
 WriteLiteral(" id=\"headerAccount\"");
 
@@ -308,14 +308,14 @@ WriteLiteral(" class=\"dropdown-menu\"");
 
 WriteLiteral(">\r\n                                                <li><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2531), Tuple.Create("\"", 2571)
+WriteAttribute("href", Tuple.Create(" href=\"", 2520), Tuple.Create("\"", 2560)
             
             #line 43 "..\..\Views\Shared\Account.cshtml"
-, Tuple.Create(Tuple.Create("", 2538), Tuple.Create<System.Object, System.Int32>(Url.Action("Index", "MyProfile")
+, Tuple.Create(Tuple.Create("", 2527), Tuple.Create<System.Object, System.Int32>(Url.Action("Index", "MyProfile")
             
             #line default
             #line hidden
-, 2538), false)
+, 2527), false)
 );
 
 WriteLiteral("><i");
@@ -333,14 +333,14 @@ WriteLiteral("></i> ");
             #line hidden
 WriteLiteral("</a></li>\r\n\r\n                                                <li><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2697), Tuple.Create("\"", 2758)
+WriteAttribute("href", Tuple.Create(" href=\"", 2686), Tuple.Create("\"", 2747)
             
             #line 45 "..\..\Views\Shared\Account.cshtml"
-, Tuple.Create(Tuple.Create("", 2704), Tuple.Create<System.Object, System.Int32>(Url.Action("Index", "Manage", new { area="Identity"})
+, Tuple.Create(Tuple.Create("", 2693), Tuple.Create<System.Object, System.Int32>(Url.Action("Index", "Manage", new { area="Identity"})
             
             #line default
             #line hidden
-, 2704), false)
+, 2693), false)
 );
 
 WriteLiteral("><i");
@@ -374,14 +374,14 @@ WriteLiteral("</a></li>\r\n\r\n");
             #line hidden
 WriteLiteral("                                                    <li><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3022), Tuple.Create("\"", 3076)
+WriteAttribute("href", Tuple.Create(" href=\"", 3011), Tuple.Create("\"", 3065)
             
             #line 49 "..\..\Views\Shared\Account.cshtml"
-, Tuple.Create(Tuple.Create("", 3029), Tuple.Create<System.Object, System.Int32>(Url.Action("Index", "Home", new { area="CMS"})
+, Tuple.Create(Tuple.Create("", 3018), Tuple.Create<System.Object, System.Int32>(Url.Action("Index", "Home", new { area="CMS"})
             
             #line default
             #line hidden
-, 3029), false)
+, 3018), false)
 );
 
 WriteLiteral("><i");

@@ -764,7 +764,7 @@ WriteLiteral(" />\r\n");
             
             #line default
             #line hidden
-WriteLiteral("\r\n        </div>\r\n    </div>\r\n\r\n\r\n    <div");
+WriteLiteral("\r\n        </div>\r\n    </div>\r\n    <div");
 
 WriteLiteral(" class=\"post-block post-share\"");
 
@@ -779,13 +779,13 @@ WriteLiteral(" class=\"fa fa-share\"");
 WriteLiteral("></i>");
 
             
-            #line 140 "..\..\Views\Pages\Content.cshtml"
+            #line 138 "..\..\Views\Pages\Content.cshtml"
                                                           Write(Resources.Resources.Share);
 
             
             #line default
             #line hidden
-WriteLiteral("</h3>\r\n\r\n        <!-- AddThis Button BEGIN -->\r\n        <div");
+WriteLiteral("</h3>\r\n        <!-- AddThis Button BEGIN -->\r\n        <div");
 
 WriteLiteral(" class=\"addthis_toolbox addthis_default_style \"");
 

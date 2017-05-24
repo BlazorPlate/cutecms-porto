@@ -958,10 +958,10 @@
     <value>المستخدمين</value>
   </data>
   <data name="Vacancy" xml:space="preserve">
-    <value>إعلان وظيفة</value>
+    <value>وظيفة شاغرة</value>
   </data>
   <data name="VacancyType" xml:space="preserve">
-    <value>نوع الوظيفة</value>
+    <value>نوع الوظيفة الشاغرة</value>
   </data>
   <data name="VerificationCode" xml:space="preserve">
     <value>رمز التحقق</value>
@@ -1231,7 +1231,7 @@
     <value>الترجمات</value>
   </data>
   <data name="VacancyUnableToDelete" xml:space="preserve">
-    <value>لا يمكن حذف هذه الشاغر الوظيفي لأنه يحتوي على طلب توظيف او اكثر.</value>
+    <value>لا يمكن حذف هذه الوظيفة الشاغرة لأنه يحتوي على طلب توظيف او اكثر.</value>
   </data>
   <data name="ChoosePersonalTitle" xml:space="preserve">
     <value>--اختر اللقب--</value>
@@ -1411,7 +1411,7 @@
     <value>الحالات</value>
   </data>
   <data name="Vacancies" xml:space="preserve">
-    <value>إعلانات الوظائف</value>
+    <value>الوظائف الشاغرة</value>
   </data>
   <data name="LockedOutMessage" xml:space="preserve">
     <value>لقد تم تجميد هذا الحساب, يرجى المحاولة لاحقاً.</value>

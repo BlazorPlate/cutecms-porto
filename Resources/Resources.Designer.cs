@@ -4300,7 +4300,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Job Annoucement.
+        ///   Looks up a localized string similar to Vacancy.
         /// </summary>
         public static string Vacancy {
             get {

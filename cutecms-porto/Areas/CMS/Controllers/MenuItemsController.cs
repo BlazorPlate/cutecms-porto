@@ -205,6 +205,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                                     var link = StringHelper.BuildUrlSlug(content.UrlCode, content.LanguageId, content.ContentTypeId, parentMenuItemPath, content.Title.Trim(), true);
                                     content.UrlSlug = link.Item1;
                                     content.AbsolutePath = link.Item2;
+                                    content.ParentMenuItemId = menuItem.ParentId;
                                     menuItem.Path = link.Item2;
                                 }
                                 else

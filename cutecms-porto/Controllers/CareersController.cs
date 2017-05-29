@@ -67,7 +67,7 @@ namespace cutecms_porto.Controllers
         }
         // POST: /Submission/Create
         [AllowAnonymous]
-        [HttpPost, ValidateInput(false)]
+        [HttpPost]
         public ActionResult Apply(Submission submission, List<HttpPostedFileBase> attachmentFiles, int? id)
         {
             if (submission == null)

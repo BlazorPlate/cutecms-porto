@@ -18,7 +18,7 @@
 }
 <section>
     <div class="container">
-        @using (Html.BeginForm("Apply", "Vacancies", FormMethod.Post, new { id = "apply", enctype = "multipart/form-data" }))
+        @using (Html.BeginForm("Apply", "Careers", FormMethod.Post, new { id = "apply", enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()
             <h3 class="heading-primary">@ViewBag.VacancyTitle</h3>

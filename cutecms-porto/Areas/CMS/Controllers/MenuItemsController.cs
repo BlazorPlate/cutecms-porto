@@ -197,15 +197,14 @@ namespace cutecms_porto.Areas.CMS.Controllers
                                 StringHelper.ParentMenuItemPath = string.Empty;
                                 var content = db.Contents.Find(menuItem.ContentId);
                                 content.Title = menuItem.Name;
-                                if (content.ParentMenuItemId != null)
+                                if (menuItem.ParentId != null)
                                 {
                                     StringHelper.MenuItemsList.Clear();
                                     StringHelper.ParentMenuItemPath = string.Empty;
                                     string parentMenuItemPath = StringHelper.GetParentMenuItemPath(menuItem.ParentId, menuItem.LanguageId);
                                     var link = StringHelper.BuildUrlSlug(content.UrlCode, content.LanguageId, content.ContentTypeId, parentMenuItemPath, content.Title.Trim(), true);
                                     content.UrlSlug = link.Item1;
-                                    content.AbsolutePath = link.Item2;
-                                    content.ParentMenuItemId = menuItem.ParentId;
+                                    content.AbsolutePath = link.Item2;                   
                                     menuItem.Path = link.Item2;
                                 }
                                 else
@@ -215,6 +214,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                                     content.AbsolutePath = link.Item2;
                                     menuItem.Path = link.Item2;
                                 }
+                                content.ParentMenuItemId = menuItem.ParentId;
                                 db.Entry(content).State = EntityState.Modified;
                                 db.SaveChanges();
                             }

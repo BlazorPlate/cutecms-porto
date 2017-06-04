@@ -2570,6 +2570,11 @@
     </Compile>
     <Compile Include="Views\Home\Index.generated.cs">
       <DependentUpon>Index.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Home\DemoIndex.generated.cs">
+      <DependentUpon>DemoIndex.cshtml</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
@@ -2727,6 +2732,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>_HeaderMenu.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\_DefaultLayout.generated.cs">
+      <DependentUpon>_DefaultLayout.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Views\Shared\_Layout.generated.cs">
       <AutoGen>True</AutoGen>
@@ -5010,18 +5020,24 @@
     <Content Include="assets\identity\images\login-bg.jpg" />
     <Content Include="assets\identity\images\register-bg.jpg" />
     <Content Include="assets\porto\css\custom.css" />
+    <Content Include="assets\porto\css\demos\demo-app-landing.css" />
     <Content Include="assets\porto\css\demos\demo-business-consulting.css" />
+    <Content Include="assets\porto\css\demos\demo-church.css" />
     <Content Include="assets\porto\css\demos\demo-construction.css" />
     <Content Include="assets\porto\css\demos\demo-digital-agency.css" />
+    <Content Include="assets\porto\css\demos\demo-event.css" />
+    <Content Include="assets\porto\css\demos\demo-finance.css" />
     <Content Include="assets\porto\css\demos\demo-gym.css" />
     <Content Include="assets\porto\css\demos\demo-hotel.css" />
     <Content Include="assets\porto\css\demos\demo-law-firm.css" />
     <Content Include="assets\porto\css\demos\demo-medical.css" />
+    <Content Include="assets\porto\css\demos\demo-one-page-agency.css" />
     <Content Include="assets\porto\css\demos\demo-photography-2.css" />
     <Content Include="assets\porto\css\demos\demo-photography-3.css" />
     <Content Include="assets\porto\css\demos\demo-photography.css" />
     <Content Include="assets\porto\css\demos\demo-real-estate.css" />
     <Content Include="assets\porto\css\demos\demo-restaurant.css" />
+    <Content Include="assets\porto\css\demos\demo-resume.css" />
     <Content Include="assets\porto\css\demos\demo-shop-1.css" />
     <Content Include="assets\porto\css\demos\demo-shop-10.css" />
     <Content Include="assets\porto\css\demos\demo-shop-11.css" />
@@ -8330,9 +8346,9 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>ImageFiles.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Home\Index.cshtml">
+    <Content Include="Views\Home\DemoIndex.cshtml">
       <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
+      <LastGenOutput>DemoIndex.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Views\Home\ResetPassword.cshtml">
       <Generator>RazorGenerator</Generator>
@@ -8703,6 +8719,14 @@
       <LastGenOutput>_Footer.generated.cs</LastGenOutput>
     </Content>
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="Views\Home\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\_DefaultLayout.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_DefaultLayout.generated.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />

@@ -14,7 +14,7 @@ namespace ASP
     using System;
     using System.Collections.Generic;
     
-    #line 2 "..\..\Views\Shared\_Layout.cshtml"
+    #line 2 "..\..\Views\Shared\_DefaultLayout.cshtml"
     using System.Globalization;
     
     #line default
@@ -24,7 +24,7 @@ namespace ASP
     using System.Net;
     using System.Text;
     
-    #line 3 "..\..\Views\Shared\_Layout.cshtml"
+    #line 3 "..\..\Views\Shared\_DefaultLayout.cshtml"
     using System.Threading;
     
     #line default
@@ -41,7 +41,7 @@ namespace ASP
     using System.Web.WebPages;
     using cutecms_porto;
     
-    #line 1 "..\..\Views\Shared\_Layout.cshtml"
+    #line 1 "..\..\Views\Shared\_DefaultLayout.cshtml"
     using cutecms_porto.Areas.CMS.Models.DBModel;
     
     #line default
@@ -49,16 +49,16 @@ namespace ASP
     using cutecms_porto.Helpers;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/_Layout.cshtml")]
-    public partial class _Views_Shared__Layout_cshtml : System.Web.Mvc.WebViewPage<dynamic>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/_DefaultLayout.cshtml")]
+    public partial class _Views_Shared__DefaultLayout_cshtml : System.Web.Mvc.WebViewPage<dynamic>
     {
-        public _Views_Shared__Layout_cshtml()
+        public _Views_Shared__DefaultLayout_cshtml()
         {
         }
         public override void Execute()
         {
             
-            #line 4 "..\..\Views\Shared\_Layout.cshtml"
+            #line 4 "..\..\Views\Shared\_DefaultLayout.cshtml"
   
     CMSEntities db = new CMSEntities();
     CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
@@ -72,7 +72,7 @@ WriteLiteral("\r\n<!DOCTYPE html>\r\n<html");
 
 WriteAttribute("dir", Tuple.Create(" dir=\"", 440), Tuple.Create("\"", 493)
             
-            #line 11 "..\..\Views\Shared\_Layout.cshtml"
+            #line 11 "..\..\Views\Shared\_DefaultLayout.cshtml"
 , Tuple.Create(Tuple.Create("", 446), Tuple.Create<System.Object, System.Int32>(CultureHelper.IsRighToLeft() ? "rtl" : "ltr"
             
             #line default
@@ -213,13 +213,13 @@ WriteAttribute("href", Tuple.Create(" href=\"", 2032), Tuple.Create("\"", 2098)
 WriteLiteral(">\r\n");
 
             
-            #line 42 "..\..\Views\Shared\_Layout.cshtml"
+            #line 42 "..\..\Views\Shared\_DefaultLayout.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 42 "..\..\Views\Shared\_Layout.cshtml"
+            #line 42 "..\..\Views\Shared\_DefaultLayout.cshtml"
      if (CultureHelper.IsRighToLeft())
     {
 
@@ -296,7 +296,7 @@ WriteLiteral(" type=\"text/css\"");
 WriteLiteral(" />\r\n");
 
             
-            #line 51 "..\..\Views\Shared\_Layout.cshtml"
+            #line 51 "..\..\Views\Shared\_DefaultLayout.cshtml"
     }
     else
     {
@@ -349,7 +349,7 @@ WriteAttribute("href", Tuple.Create(" href=\"", 2979), Tuple.Create("\"", 3019)
 WriteLiteral(">\r\n");
 
             
-            #line 58 "..\..\Views\Shared\_Layout.cshtml"
+            #line 58 "..\..\Views\Shared\_DefaultLayout.cshtml"
     }
 
             
@@ -407,228 +407,36 @@ WriteAttribute("src", Tuple.Create(" src=\"", 3550), Tuple.Create("\"", 3604)
 , 3556), false)
 );
 
-WriteLiteral("></script>\r\n\r\n    \r\n    <script");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 3636), Tuple.Create("\"", 3684)
-, Tuple.Create(Tuple.Create("", 3642), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/jquery/jquery.min.js")
-, 3642), false)
-);
-
-WriteLiteral("></script>\r\n\r\n</head>\r\n\r\n<head>\r\n\r\n    <!-- Basic -->\r\n    <meta");
-
-WriteLiteral(" charset=\"utf-8\"");
-
-WriteLiteral(">\r\n    <meta");
-
-WriteLiteral(" http-equiv=\"X-UA-Compatible\"");
-
-WriteLiteral(" content=\"IE=edge\"");
-
-WriteLiteral(">\r\n\r\n    <title>Demo Medical | Porto - Responsive HTML5 Template 5.3.0</title>\r\n\r" +
-"\n    <meta");
-
-WriteLiteral(" name=\"keywords\"");
-
-WriteLiteral(" content=\"HTML5 Template\"");
-
-WriteLiteral(">\r\n    <meta");
-
-WriteLiteral(" name=\"description\"");
-
-WriteLiteral(" content=\"Porto - Responsive HTML5 Template\"");
-
-WriteLiteral(">\r\n    <meta");
-
-WriteLiteral(" name=\"author\"");
-
-WriteLiteral(" content=\"okler.net\"");
-
-WriteLiteral(">\r\n\r\n    <!-- Favicon -->\r\n    <link");
-
-WriteLiteral(" rel=\"shortcut icon\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 4133), Tuple.Create("\"", 4170)
-, Tuple.Create(Tuple.Create("", 4140), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/favicon.ico")
-, 4140), false)
-);
-
-WriteLiteral(" type=\"image/x-icon\"");
-
-WriteLiteral(">\r\n    <link");
-
-WriteLiteral(" rel=\"apple-touch-icon\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 4226), Tuple.Create("\"", 4272)
-, Tuple.Create(Tuple.Create("", 4233), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/apple-touch-icon.png")
-, 4233), false)
-);
-
-WriteLiteral(">\r\n\r\n    <!-- Mobile Metas -->\r\n    <meta");
-
-WriteLiteral(" name=\"viewport\"");
-
-WriteLiteral(" content=\"width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable" +
-"=no\"");
-
-WriteLiteral(">\r\n\r\n    <!-- Web Fonts  -->\r\n    <link");
-
-WriteLiteral(" href=\"https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CSh" +
-"adows+Into+Light\"");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteLiteral(" type=\"text/css\"");
-
-WriteLiteral(">\r\n\r\n    <!-- Vendor CSS -->\r\n    <link");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 4641), Tuple.Create("\"", 4701)
-, Tuple.Create(Tuple.Create("", 4648), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/bootstrap/css/bootstrap.min.css")
-, 4648), false)
-);
-
-WriteLiteral(">\r\n    <link");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 4731), Tuple.Create("\"", 4797)
-, Tuple.Create(Tuple.Create("", 4738), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/font-awesome/css/font-awesome.min.css")
-, 4738), false)
-);
-
-WriteLiteral(">\r\n    <link");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 4827), Tuple.Create("\"", 4879)
-, Tuple.Create(Tuple.Create("", 4834), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/animate/animate.min.css")
-, 4834), false)
-);
-
-WriteLiteral(">\r\n    <link");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 4909), Tuple.Create("\"", 4985)
-, Tuple.Create(Tuple.Create("", 4916), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/simple-line-icons/css/simple-line-icons.min.css")
-, 4916), false)
-);
-
-WriteLiteral(">\r\n    <link");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 5015), Tuple.Create("\"", 5084)
-, Tuple.Create(Tuple.Create("", 5022), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/owl.carousel/assets/owl.carousel.min.css")
-, 5022), false)
-);
-
-WriteLiteral(">\r\n    <link");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 5114), Tuple.Create("\"", 5188)
-, Tuple.Create(Tuple.Create("", 5121), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/owl.carousel/assets/owl.theme.default.min.css")
-, 5121), false)
-);
-
-WriteLiteral(">\r\n    <link");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 5218), Tuple.Create("\"", 5284)
-, Tuple.Create(Tuple.Create("", 5225), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/magnific-popup/magnific-popup.min.css")
-, 5225), false)
-);
-
-WriteLiteral(">\r\n\r\n");
+WriteLiteral("></script>\r\n\r\n");
 
             
-            #line 109 "..\..\Views\Shared\_Layout.cshtml"
+            #line 73 "..\..\Views\Shared\_DefaultLayout.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 109 "..\..\Views\Shared\_Layout.cshtml"
-     if (CultureHelper.IsRighToLeft())
+            #line 73 "..\..\Views\Shared\_DefaultLayout.cshtml"
+     if (cutecms_porto.Helpers.CultureHelper.IsRighToLeft())
     {
 
             
             #line default
             #line hidden
-WriteLiteral("        <link");
+WriteLiteral(@"        <style>
+            .dropdown-menu .edge ul {
+                left: 100% !important;
+                right: auto !important;
+            }
 
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 5367), Tuple.Create("\"", 5427)
-, Tuple.Create(Tuple.Create("", 5374), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/bootstrap-rtl/bootstrap-rtl.css")
-, 5374), false)
-);
-
-WriteLiteral(" />\r\n");
-
-WriteLiteral("        <!-- Theme CSS -->\r\n");
-
-WriteLiteral("        <link");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 5491), Tuple.Create("\"", 5530)
-, Tuple.Create(Tuple.Create("", 5498), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/css/rtl-theme.css")
-, 5498), false)
-);
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("        <link");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 5564), Tuple.Create("\"", 5612)
-, Tuple.Create(Tuple.Create("", 5571), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/css/rtl-theme-elements.css")
-, 5571), false)
-);
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("        <link");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 5646), Tuple.Create("\"", 5690)
-, Tuple.Create(Tuple.Create("", 5653), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/css/rtl-theme-blog.css")
-, 5653), false)
-);
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("        <link");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 5724), Tuple.Create("\"", 5768)
-, Tuple.Create(Tuple.Create("", 5731), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/css/rtl-theme-shop.css")
-, 5731), false)
-);
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("        <link");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteLiteral(" media=\"screen\"");
-
-WriteLiteral(" href=\"https://fontlibrary.org/face/droid-arabic-kufi\"");
-
-WriteLiteral(" type=\"text/css\"");
-
-WriteLiteral(" />\r\n");
+            #topNav div.submenu-dark ul.dropdown-menu a.dropdown-toggle {
+                padding-left: 25px;
+            }
+        </style>
+");
 
             
-            #line 118 "..\..\Views\Shared\_Layout.cshtml"
+            #line 85 "..\..\Views\Shared\_DefaultLayout.cshtml"
     }
     else
     {
@@ -636,168 +444,43 @@ WriteLiteral(" />\r\n");
             
             #line default
             #line hidden
-WriteLiteral("        <link");
+WriteLiteral(@"        <style>
+            .dropdown-menu .edge ul {
+                left: auto !important;
+                right: 100% !important;
+                /*background: rgba(86, 86, 86, 1) !important;*/
+            }
 
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 5946), Tuple.Create("\"", 5981)
-, Tuple.Create(Tuple.Create("", 5953), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/css/theme.css")
-, 5953), false)
-);
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("        <link");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 6015), Tuple.Create("\"", 6059)
-, Tuple.Create(Tuple.Create("", 6022), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/css/theme-elements.css")
-, 6022), false)
-);
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("        <link");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 6093), Tuple.Create("\"", 6133)
-, Tuple.Create(Tuple.Create("", 6100), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/css/theme-blog.css")
-, 6100), false)
-);
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("        <link");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 6167), Tuple.Create("\"", 6207)
-, Tuple.Create(Tuple.Create("", 6174), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/css/theme-shop.css")
-, 6174), false)
-);
-
-WriteLiteral(">\r\n");
+            #topNav div.submenu-dark ul.dropdown-menu a.dropdown-toggle {
+                padding-right: 25px;
+            }
+        </style>
+");
 
             
-            #line 125 "..\..\Views\Shared\_Layout.cshtml"
+            #line 99 "..\..\Views\Shared\_DefaultLayout.cshtml"
     }
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n    <!-- Skin CSS -->\r\n    <link");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 6269), Tuple.Create("\"", 6317)
-, Tuple.Create(Tuple.Create("", 6276), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/css/skins/skin-medical.css")
-, 6276), false)
-);
-
-WriteLiteral(">\r\n\r\n    <!-- Demo CSS -->\r\n    <link");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 6372), Tuple.Create("\"", 6420)
-, Tuple.Create(Tuple.Create("", 6379), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/css/demos/demo-medical.css")
-, 6379), false)
-);
-
-WriteLiteral(">\r\n\r\n    <!-- Theme Custom CSS -->\r\n    <link");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 6483), Tuple.Create("\"", 6519)
-, Tuple.Create(Tuple.Create("", 6490), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/css/custom.css")
-, 6490), false)
-);
-
-WriteLiteral(">\r\n\r\n    <!-- Head Libs -->\r\n    <script");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 6560), Tuple.Create("\"", 6614)
-, Tuple.Create(Tuple.Create("", 6566), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/modernizr/modernizr.min.js")
-, 6566), false)
-);
-
-WriteLiteral("></script>\r\n");
+WriteLiteral("    ");
 
             
-            #line 138 "..\..\Views\Shared\_Layout.cshtml"
-  
-            
-            #line default
-            #line hidden
-            
-            #line 138 "..\..\Views\Shared\_Layout.cshtml"
-   if (cutecms_porto.Helpers.CultureHelper.IsRighToLeft())
-  {
-
-            
-            #line default
-            #line hidden
-WriteLiteral(@"    <style>
-        .dropdown-menu .edge ul {
-            left: 100% !important;
-            right: auto !important;
-        }
-
-        #topNav div.submenu-dark ul.dropdown-menu a.dropdown-toggle {
-            padding-left: 25px;
-        }
-        .team .thumb-info .thumb-info-caption .custom-thumb-info-title i {
-            left: 20px !important;
-        }
-        .team .owl-carousel.nav-bottom .owl-nav {
-            left: 10px !important;
-        }
-    </style>
-");
-
-            
-            #line 156 "..\..\Views\Shared\_Layout.cshtml"
-  }
-  else
-  {
-
-            
-            #line default
-            #line hidden
-WriteLiteral(@"    <style>
-        .dropdown-menu .edge ul {
-            left: auto !important;
-            right: 100% !important;
-            /*background: rgba(86, 86, 86, 1) !important;*/
-        }
-
-        #topNav div.submenu-dark ul.dropdown-menu a.dropdown-toggle {
-            padding-right: 25px;
-        }
-        .team .thumb-info .thumb-info-caption .custom-thumb-info-title i {
-            right: 20px !important;
-        }
-        .team .owl-carousel.nav-bottom .owl-nav {
-            right: 10px !important;
-        }
-    </style>
-");
-
-            
-            #line 176 "..\..\Views\Shared\_Layout.cshtml"
-  }
-
-            
-            #line default
-            #line hidden
-            
-            #line 177 "..\..\Views\Shared\_Layout.cshtml"
+            #line 100 "..\..\Views\Shared\_DefaultLayout.cshtml"
 Write(RenderSection("Styles", false));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n</head>\r\n\r\n<body>\r\n    <div");
+WriteLiteral("\r\n    <script");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 4431), Tuple.Create("\"", 4479)
+, Tuple.Create(Tuple.Create("", 4437), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/jquery/jquery.min.js")
+, 4437), false)
+);
+
+WriteLiteral("></script>\r\n\r\n</head>\r\n<body>\r\n    <div");
 
 WriteLiteral(" class=\"body\"");
 
@@ -849,37 +532,37 @@ WriteLiteral(" aria-expanded=\"false\"");
 
 WriteLiteral(">\r\n                                        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 8558), Tuple.Create("\"", 8592)
-, Tuple.Create(Tuple.Create("", 8564), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/blank.gif")
-, 8564), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 5270), Tuple.Create("\"", 5304)
+, Tuple.Create(Tuple.Create("", 5276), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/blank.gif")
+, 5276), false)
 );
 
-WriteAttribute("class", Tuple.Create(" class=\"", 8593), Tuple.Create("\"", 8655)
-, Tuple.Create(Tuple.Create("", 8601), Tuple.Create("flag", 8601), true)
-, Tuple.Create(Tuple.Create(" ", 8605), Tuple.Create("flag-", 8606), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 5305), Tuple.Create("\"", 5367)
+, Tuple.Create(Tuple.Create("", 5313), Tuple.Create("flag", 5313), true)
+, Tuple.Create(Tuple.Create(" ", 5317), Tuple.Create("flag-", 5318), true)
             
-            #line 190 "..\..\Views\Shared\_Layout.cshtml"
-                 , Tuple.Create(Tuple.Create("", 8611), Tuple.Create<System.Object, System.Int32>(regionInfo.TwoLetterISORegionName.ToLower()
+            #line 114 "..\..\Views\Shared\_DefaultLayout.cshtml"
+                 , Tuple.Create(Tuple.Create("", 5323), Tuple.Create<System.Object, System.Int32>(regionInfo.TwoLetterISORegionName.ToLower()
             
             #line default
             #line hidden
-, 8611), false)
+, 5323), false)
 );
 
-WriteAttribute("alt", Tuple.Create(" alt=\"", 8656), Tuple.Create("\"", 8685)
+WriteAttribute("alt", Tuple.Create(" alt=\"", 5368), Tuple.Create("\"", 5397)
             
-            #line 190 "..\..\Views\Shared\_Layout.cshtml"
-                                                                    , Tuple.Create(Tuple.Create("", 8662), Tuple.Create<System.Object, System.Int32>(regionInfo.DisplayName
+            #line 114 "..\..\Views\Shared\_DefaultLayout.cshtml"
+                                                                    , Tuple.Create(Tuple.Create("", 5374), Tuple.Create<System.Object, System.Int32>(regionInfo.DisplayName
             
             #line default
             #line hidden
-, 8662), false)
+, 5374), false)
 );
 
 WriteLiteral("> ");
 
             
-            #line 190 "..\..\Views\Shared\_Layout.cshtml"
+            #line 114 "..\..\Views\Shared\_DefaultLayout.cshtml"
                                                                                                                                                                          Write(regionInfo.NativeName);
 
             
@@ -899,13 +582,13 @@ WriteLiteral(" aria-labelledby=\"dropdownLanguage\"");
 WriteLiteral(">\r\n");
 
             
-            #line 194 "..\..\Views\Shared\_Layout.cshtml"
+            #line 118 "..\..\Views\Shared\_DefaultLayout.cshtml"
                                         
             
             #line default
             #line hidden
             
-            #line 194 "..\..\Views\Shared\_Layout.cshtml"
+            #line 118 "..\..\Views\Shared\_DefaultLayout.cshtml"
                                          foreach (var item in languages)
                                         {
                                             CultureInfo itemCultureInfo = CultureInfo.CreateSpecificCulture(item.CultureName.Trim());
@@ -916,49 +599,49 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                                            <li><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 9335), Tuple.Create("\"", 9497)
+WriteAttribute("href", Tuple.Create(" href=\"", 6047), Tuple.Create("\"", 6209)
             
-            #line 198 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 9342), Tuple.Create<System.Object, System.Int32>(Url.RouteUrl(new RouteValueDictionary(ViewContext.RouteData.Values.ToDictionary(r => r.Key, r => r.Key == "culture" ? item.CultureName.Trim() : r.Value)))
+            #line 122 "..\..\Views\Shared\_DefaultLayout.cshtml"
+, Tuple.Create(Tuple.Create("", 6054), Tuple.Create<System.Object, System.Int32>(Url.RouteUrl(new RouteValueDictionary(ViewContext.RouteData.Values.ToDictionary(r => r.Key, r => r.Key == "culture" ? item.CultureName.Trim() : r.Value)))
             
             #line default
             #line hidden
-, 9342), false)
+, 6054), false)
 );
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 9503), Tuple.Create("\"", 9537)
-, Tuple.Create(Tuple.Create("", 9509), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/blank.gif")
-, 9509), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 6215), Tuple.Create("\"", 6249)
+, Tuple.Create(Tuple.Create("", 6221), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/blank.gif")
+, 6221), false)
 );
 
-WriteAttribute("class", Tuple.Create(" class=\"", 9538), Tuple.Create("\"", 9570)
-, Tuple.Create(Tuple.Create("", 9546), Tuple.Create("flag", 9546), true)
-, Tuple.Create(Tuple.Create(" ", 9550), Tuple.Create("flag-", 9551), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 6250), Tuple.Create("\"", 6282)
+, Tuple.Create(Tuple.Create("", 6258), Tuple.Create("flag", 6258), true)
+, Tuple.Create(Tuple.Create(" ", 6262), Tuple.Create("flag-", 6263), true)
             
-            #line 198 "..\..\Views\Shared\_Layout.cshtml"
-                                                                                                                                                                                               , Tuple.Create(Tuple.Create("", 9556), Tuple.Create<System.Object, System.Int32>(item.FlagCode
+            #line 122 "..\..\Views\Shared\_DefaultLayout.cshtml"
+                                                                                                                                                                                               , Tuple.Create(Tuple.Create("", 6268), Tuple.Create<System.Object, System.Int32>(item.FlagCode
             
             #line default
             #line hidden
-, 9556), false)
+, 6268), false)
 );
 
-WriteAttribute("alt", Tuple.Create(" alt=\"", 9571), Tuple.Create("\"", 9603)
+WriteAttribute("alt", Tuple.Create(" alt=\"", 6283), Tuple.Create("\"", 6315)
             
-            #line 198 "..\..\Views\Shared\_Layout.cshtml"
-                                                                                                                                                                                                                    , Tuple.Create(Tuple.Create("", 9577), Tuple.Create<System.Object, System.Int32>(itemRegionInfo.NativeName
+            #line 122 "..\..\Views\Shared\_DefaultLayout.cshtml"
+                                                                                                                                                                                                                    , Tuple.Create(Tuple.Create("", 6289), Tuple.Create<System.Object, System.Int32>(itemRegionInfo.NativeName
             
             #line default
             #line hidden
-, 9577), false)
+, 6289), false)
 );
 
 WriteLiteral("> ");
 
             
-            #line 198 "..\..\Views\Shared\_Layout.cshtml"
+            #line 122 "..\..\Views\Shared\_DefaultLayout.cshtml"
                                                                                                                                                                                                                                                                                                                             Write(itemRegionInfo.NativeName);
 
             
@@ -967,7 +650,7 @@ WriteLiteral("> ");
 WriteLiteral("</a></li>\r\n");
 
             
-            #line 199 "..\..\Views\Shared\_Layout.cshtml"
+            #line 123 "..\..\Views\Shared\_DefaultLayout.cshtml"
                                         }
 
             
@@ -977,13 +660,13 @@ WriteLiteral("                                    </ul>\r\n                     
 "\n                            </ul>\r\n                        </nav>\r\n");
 
             
-            #line 204 "..\..\Views\Shared\_Layout.cshtml"
+            #line 128 "..\..\Views\Shared\_DefaultLayout.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 204 "..\..\Views\Shared\_Layout.cshtml"
+            #line 128 "..\..\Views\Shared\_DefaultLayout.cshtml"
                           Html.RenderAction("GetTopMenu", "Home", new { area = "" });
             
             #line default
@@ -995,13 +678,13 @@ WriteLiteral(" class=\"header-search hidden-xs\"");
 WriteLiteral(">\r\n");
 
             
-            #line 206 "..\..\Views\Shared\_Layout.cshtml"
+            #line 130 "..\..\Views\Shared\_DefaultLayout.cshtml"
                             
             
             #line default
             #line hidden
             
-            #line 206 "..\..\Views\Shared\_Layout.cshtml"
+            #line 130 "..\..\Views\Shared\_DefaultLayout.cshtml"
                              using (Html.BeginForm("Contents", "Home", new { area = "" }, FormMethod.Post))
                             {
 
@@ -1017,7 +700,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 209 "..\..\Views\Shared\_Layout.cshtml"
+            #line 133 "..\..\Views\Shared\_DefaultLayout.cshtml"
                                Write(Html.Editor("keywordFilter", new { htmlAttributes = new { @placeholder = Resources.Resources.Search, @class = "form-control" } }));
 
             
@@ -1041,7 +724,7 @@ WriteLiteral("></i></button>\r\n                                    </span>\r\n 
 "            </div>\r\n");
 
             
-            #line 214 "..\..\Views\Shared\_Layout.cshtml"
+            #line 138 "..\..\Views\Shared\_DefaultLayout.cshtml"
                             }
 
             
@@ -1066,16 +749,16 @@ WriteLiteral(" class=\"header-logo\"");
 
 WriteLiteral(">\r\n                                <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 10994), Tuple.Create("\"", 11044)
-, Tuple.Create(Tuple.Create("", 11001), Tuple.Create<System.Object, System.Int32>(Href("~/")
-, 11001), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 7706), Tuple.Create("\"", 7756)
+, Tuple.Create(Tuple.Create("", 7713), Tuple.Create<System.Object, System.Int32>(Href("~/")
+, 7713), false)
             
-            #line 223 "..\..\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 11003), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture.Name
+            #line 147 "..\..\Views\Shared\_DefaultLayout.cshtml"
+, Tuple.Create(Tuple.Create("", 7715), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture.Name
             
             #line default
             #line hidden
-, 11003), false)
+, 7715), false)
 );
 
 WriteLiteral(">\r\n\r\n                                    ");
@@ -1094,9 +777,9 @@ WriteLiteral(" data-sticky-height=\"40\"");
 
 WriteLiteral(" data-sticky-top=\"15\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 11452), Tuple.Create("\"", 11492)
-, Tuple.Create(Tuple.Create("", 11458), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/header-logo.png")
-, 11458), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 8164), Tuple.Create("\"", 8204)
+, Tuple.Create(Tuple.Create("", 8170), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/header-logo.png")
+, 8170), false)
 );
 
 WriteLiteral(" style=\"top: 0; width: 111px; height: 54px;\"");
@@ -1147,16 +830,16 @@ WriteLiteral(">\r\n                                                    <a");
 
 WriteLiteral(" class=\"dropdown-toggle\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 12512), Tuple.Create("\"", 12562)
-, Tuple.Create(Tuple.Create("", 12519), Tuple.Create<System.Object, System.Int32>(Href("~/")
-, 12519), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 9224), Tuple.Create("\"", 9274)
+, Tuple.Create(Tuple.Create("", 9231), Tuple.Create<System.Object, System.Int32>(Href("~/")
+, 9231), false)
             
-            #line 240 "..\..\Views\Shared\_Layout.cshtml"
-      , Tuple.Create(Tuple.Create("", 12521), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture.Name
+            #line 164 "..\..\Views\Shared\_DefaultLayout.cshtml"
+       , Tuple.Create(Tuple.Create("", 9233), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture.Name
             
             #line default
             #line hidden
-, 12521), false)
+, 9233), false)
 );
 
 WriteLiteral(">\r\n");
@@ -1164,7 +847,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                                        ");
 
             
-            #line 241 "..\..\Views\Shared\_Layout.cshtml"
+            #line 165 "..\..\Views\Shared\_DefaultLayout.cshtml"
                                                    Write(Resources.Resources.Home);
 
             
@@ -1174,13 +857,13 @@ WriteLiteral("\r\n                                                    </a>\r\n  
 "                           </li>\r\n");
 
             
-            #line 244 "..\..\Views\Shared\_Layout.cshtml"
+            #line 168 "..\..\Views\Shared\_DefaultLayout.cshtml"
                                                 
             
             #line default
             #line hidden
             
-            #line 244 "..\..\Views\Shared\_Layout.cshtml"
+            #line 168 "..\..\Views\Shared\_DefaultLayout.cshtml"
                                                   Html.RenderAction("GetHeaderMenu", "Home", new { area = "" });
             
             #line default
@@ -1188,13 +871,13 @@ WriteLiteral("\r\n                                                    </a>\r\n  
 WriteLiteral("\r\n");
 
             
-            #line 245 "..\..\Views\Shared\_Layout.cshtml"
+            #line 169 "..\..\Views\Shared\_DefaultLayout.cshtml"
                                                 
             
             #line default
             #line hidden
             
-            #line 245 "..\..\Views\Shared\_Layout.cshtml"
+            #line 169 "..\..\Views\Shared\_DefaultLayout.cshtml"
                                                   Html.RenderPartial("~/Views/Shared/Account.cshtml");
             
             #line default
@@ -1215,7 +898,7 @@ WriteLiteral(@"
 WriteLiteral("        ");
 
             
-            #line 256 "..\..\Views\Shared\_Layout.cshtml"
+            #line 180 "..\..\Views\Shared\_DefaultLayout.cshtml"
    Write(RenderSection("PageHeader", false));
 
             
@@ -1232,7 +915,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 258 "..\..\Views\Shared\_Layout.cshtml"
+            #line 182 "..\..\Views\Shared\_DefaultLayout.cshtml"
        Write(RenderBody());
 
             
@@ -1241,52 +924,52 @@ WriteLiteral("            ");
 WriteLiteral("\r\n        </div>\r\n");
 
             
-            #line 260 "..\..\Views\Shared\_Layout.cshtml"
+            #line 184 "..\..\Views\Shared\_DefaultLayout.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 260 "..\..\Views\Shared\_Layout.cshtml"
+            #line 184 "..\..\Views\Shared\_DefaultLayout.cshtml"
           Html.RenderAction("GetFooter", "Home", new { area = "" });
             
             #line default
             #line hidden
 WriteLiteral("\r\n    </div>\r\n    <!-- Vendor -->\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 13567), Tuple.Create("\"", 13629)
-, Tuple.Create(Tuple.Create("", 13573), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/jquery.appear/jquery.appear.min.js")
-, 13573), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 10279), Tuple.Create("\"", 10341)
+, Tuple.Create(Tuple.Create("", 10285), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/jquery.appear/jquery.appear.min.js")
+, 10285), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 13653), Tuple.Create("\"", 13715)
-, Tuple.Create(Tuple.Create("", 13659), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/jquery.easing/jquery.easing.min.js")
-, 13659), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 10365), Tuple.Create("\"", 10427)
+, Tuple.Create(Tuple.Create("", 10371), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/jquery.easing/jquery.easing.min.js")
+, 10371), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 13739), Tuple.Create("\"", 13801)
-, Tuple.Create(Tuple.Create("", 13745), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/jquery-cookie/jquery-cookie.min.js")
-, 13745), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 10451), Tuple.Create("\"", 10513)
+, Tuple.Create(Tuple.Create("", 10457), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/jquery-cookie/jquery-cookie.min.js")
+, 10457), false)
 );
 
 WriteLiteral("></script>\r\n    ");
 
 WriteLiteral("\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 13913), Tuple.Create("\"", 13970)
-, Tuple.Create(Tuple.Create("", 13919), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/bootstrap/js/bootstrap.min.js")
-, 13919), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 10625), Tuple.Create("\"", 10682)
+, Tuple.Create(Tuple.Create("", 10631), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/bootstrap/js/bootstrap.min.js")
+, 10631), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 13994), Tuple.Create("\"", 14042)
-, Tuple.Create(Tuple.Create("", 14000), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/common/common.min.js")
-, 14000), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 10706), Tuple.Create("\"", 10754)
+, Tuple.Create(Tuple.Create("", 10712), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/common/common.min.js")
+, 10712), false)
 );
 
 WriteLiteral("></script>\r\n");
@@ -1294,7 +977,7 @@ WriteLiteral("></script>\r\n");
 WriteLiteral("    ");
 
             
-            #line 269 "..\..\Views\Shared\_Layout.cshtml"
+            #line 193 "..\..\Views\Shared\_DefaultLayout.cshtml"
 Write(Scripts.Render("~/bundles/jqueryval"));
 
             
@@ -1302,128 +985,128 @@ Write(Scripts.Render("~/bundles/jqueryval"));
             #line hidden
 WriteLiteral("\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 14110), Tuple.Create("\"", 14188)
-, Tuple.Create(Tuple.Create("", 14116), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.min.js")
-, 14116), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 10822), Tuple.Create("\"", 10900)
+, Tuple.Create(Tuple.Create("", 10828), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.min.js")
+, 10828), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 14212), Tuple.Create("\"", 14270)
-, Tuple.Create(Tuple.Create("", 14218), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/jquery.gmap/jquery.gmap.min.js")
-, 14218), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 10924), Tuple.Create("\"", 10982)
+, Tuple.Create(Tuple.Create("", 10930), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/jquery.gmap/jquery.gmap.min.js")
+, 10930), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 14294), Tuple.Create("\"", 14360)
-, Tuple.Create(Tuple.Create("", 14300), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/jquery.lazyload/jquery.lazyload.min.js")
-, 14300), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 11006), Tuple.Create("\"", 11072)
+, Tuple.Create(Tuple.Create("", 11012), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/jquery.lazyload/jquery.lazyload.min.js")
+, 11012), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 14384), Tuple.Create("\"", 14441)
-, Tuple.Create(Tuple.Create("", 14390), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/isotope/jquery.isotope.min.js")
-, 14390), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 11096), Tuple.Create("\"", 11153)
+, Tuple.Create(Tuple.Create("", 11102), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/isotope/jquery.isotope.min.js")
+, 11102), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 14465), Tuple.Create("\"", 14525)
-, Tuple.Create(Tuple.Create("", 14471), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/owl.carousel/owl.carousel.min.js")
-, 14471), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 11177), Tuple.Create("\"", 11237)
+, Tuple.Create(Tuple.Create("", 11183), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/owl.carousel/owl.carousel.min.js")
+, 11183), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 14549), Tuple.Create("\"", 14620)
-, Tuple.Create(Tuple.Create("", 14555), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/magnific-popup/jquery.magnific-popup.min.js")
-, 14555), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 11261), Tuple.Create("\"", 11332)
+, Tuple.Create(Tuple.Create("", 11267), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/magnific-popup/jquery.magnific-popup.min.js")
+, 11267), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 14644), Tuple.Create("\"", 14688)
-, Tuple.Create(Tuple.Create("", 14650), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/vide/vide.min.js")
-, 14650), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 11356), Tuple.Create("\"", 11400)
+, Tuple.Create(Tuple.Create("", 11362), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/vide/vide.min.js")
+, 11362), false)
 );
 
 WriteLiteral("></script>\r\n\r\n    <!-- Theme Base, Components and Settings -->\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 14764), Tuple.Create("\"", 14796)
-, Tuple.Create(Tuple.Create("", 14770), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/js/theme.js")
-, 14770), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 11476), Tuple.Create("\"", 11508)
+, Tuple.Create(Tuple.Create("", 11482), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/js/theme.js")
+, 11482), false)
 );
 
 WriteLiteral("></script>\r\n\r\n    <!-- Current Page Vendor and Views -->\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 14866), Tuple.Create("\"", 14937)
-, Tuple.Create(Tuple.Create("", 14872), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/rs-plugin/js/jquery.themepunch.tools.min.js")
-, 14872), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 11578), Tuple.Create("\"", 11649)
+, Tuple.Create(Tuple.Create("", 11584), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/rs-plugin/js/jquery.themepunch.tools.min.js")
+, 11584), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 14961), Tuple.Create("\"", 15037)
-, Tuple.Create(Tuple.Create("", 14967), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js")
-, 14967), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 11673), Tuple.Create("\"", 11749)
+, Tuple.Create(Tuple.Create("", 11679), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js")
+, 11679), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 15061), Tuple.Create("\"", 15136)
-, Tuple.Create(Tuple.Create("", 15067), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/circle-flip-slideshow/js/jquery.flipshow.min.js")
-, 15067), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 11773), Tuple.Create("\"", 11848)
+, Tuple.Create(Tuple.Create("", 11779), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/circle-flip-slideshow/js/jquery.flipshow.min.js")
+, 11779), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 15160), Tuple.Create("\"", 15225)
-, Tuple.Create(Tuple.Create("", 15166), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/nivo-slider/jquery.nivo.slider.min.js")
-, 15166), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 11872), Tuple.Create("\"", 11937)
+, Tuple.Create(Tuple.Create("", 11878), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/nivo-slider/jquery.nivo.slider.min.js")
+, 11878), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 15249), Tuple.Create("\"", 15291)
-, Tuple.Create(Tuple.Create("", 15255), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/js/views/view.home.js")
-, 15255), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 11961), Tuple.Create("\"", 12003)
+, Tuple.Create(Tuple.Create("", 11967), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/js/views/view.home.js")
+, 11967), false)
 );
 
 WriteLiteral("></script>\r\n\r\n    <!-- Tiny MCE -->\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 15340), Tuple.Create("\"", 15408)
-, Tuple.Create(Tuple.Create("", 15346), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/tinymce/tinymce.min.js")
-, 15346), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 12052), Tuple.Create("\"", 12120)
+, Tuple.Create(Tuple.Create("", 12058), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/tinymce/tinymce.min.js")
+, 12058), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 15432), Tuple.Create("\"", 15507)
-, Tuple.Create(Tuple.Create("", 15438), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/tinymce/jquery.tinymce.min.js")
-, 15438), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 12144), Tuple.Create("\"", 12219)
+, Tuple.Create(Tuple.Create("", 12150), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/tinymce/jquery.tinymce.min.js")
+, 12150), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 15531), Tuple.Create("\"", 15602)
-, Tuple.Create(Tuple.Create("", 15537), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/tinymce/tinymce-layout.js")
-, 15537), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 12243), Tuple.Create("\"", 12314)
+, Tuple.Create(Tuple.Create("", 12249), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/tinymce/tinymce-layout.js")
+, 12249), false)
 );
 
 WriteLiteral("></script>\r\n    <!-- Theme Custom -->\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 15653), Tuple.Create("\"", 15686)
-, Tuple.Create(Tuple.Create("", 15659), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/js/custom.js")
-, 15659), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 12365), Tuple.Create("\"", 12398)
+, Tuple.Create(Tuple.Create("", 12371), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/js/custom.js")
+, 12371), false)
 );
 
 WriteLiteral("></script>\r\n\r\n    <!-- Theme Initialization Files -->\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 15753), Tuple.Create("\"", 15790)
-, Tuple.Create(Tuple.Create("", 15759), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/js/theme.init.js")
-, 15759), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 12465), Tuple.Create("\"", 12502)
+, Tuple.Create(Tuple.Create("", 12471), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/js/theme.init.js")
+, 12471), false)
 );
 
 WriteLiteral(@"></script>
@@ -1442,13 +1125,13 @@ WriteLiteral(@"></script>
 ");
 
             
-            #line 309 "..\..\Views\Shared\_Layout.cshtml"
+            #line 233 "..\..\Views\Shared\_DefaultLayout.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 309 "..\..\Views\Shared\_Layout.cshtml"
+            #line 233 "..\..\Views\Shared\_DefaultLayout.cshtml"
      if (!CultureHelper.IsRighToLeft())
     {
 
@@ -1477,7 +1160,7 @@ WriteLiteral(@"        <script>
 ");
 
             
-            #line 330 "..\..\Views\Shared\_Layout.cshtml"
+            #line 254 "..\..\Views\Shared\_DefaultLayout.cshtml"
     }
     else
     {
@@ -1509,7 +1192,7 @@ WriteLiteral(@"        <script>
 ");
 
             
-            #line 354 "..\..\Views\Shared\_Layout.cshtml"
+            #line 278 "..\..\Views\Shared\_DefaultLayout.cshtml"
     }
 
             
@@ -1518,7 +1201,7 @@ WriteLiteral(@"        <script>
 WriteLiteral("    ");
 
             
-            #line 355 "..\..\Views\Shared\_Layout.cshtml"
+            #line 279 "..\..\Views\Shared\_DefaultLayout.cshtml"
 Write(RenderSection("Scripts", false));
 
             

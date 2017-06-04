@@ -270,14 +270,6 @@ namespace cutecms_porto
                 }
             }
         }
-        //public override string GetVaryByCustomString(HttpContext context, string arg)
-        //{
-        //    if (arg == "culture")
-        //        return HttpContext.Current.Request.RequestContext.RouteData.Values["culture"].ToString();
-        //    if (arg == "host")
-        //        return context.Request.Headers["host"];
-        //    return String.Empty;
-        //}
         public override string GetVaryByCustomString(HttpContext context, string arg)
         {
             //The code looks for parameters specified in the cache 

@@ -2733,15 +2733,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_HeaderMenu.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Shared\_DefaultLayout.generated.cs">
-      <DependentUpon>_DefaultLayout.cshtml</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="Views\Shared\_Layout.generated.cs">
+      <DependentUpon>_Layout.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>_Layout.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Shared\_MyProfile.generated.cs">
       <AutoGen>True</AutoGen>
@@ -8377,10 +8372,6 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Layout.generated.cs</LastGenOutput>
-    </Content>
     <Content Include="Areas\Identity\Views\Account\_ExternalLoginsListPartial.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_ExternalLoginsListPartial.generated.cs</LastGenOutput>
@@ -8723,9 +8714,9 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Index.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Shared\_DefaultLayout.cshtml">
+    <Content Include="Views\Shared\_Layout.cshtml">
       <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_DefaultLayout.generated.cs</LastGenOutput>
+      <LastGenOutput>_Layout.generated.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

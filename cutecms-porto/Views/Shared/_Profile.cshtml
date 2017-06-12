@@ -23,8 +23,6 @@
                 <small class="text-muted">@occupation &#64; @department</small>
                 <hr />
             }
-            if (employee.Publications.Count() != 0)
-            {
                 var percentage = ProfileCompletion(employee);
              <!-- completed -->
                 <div>
@@ -44,8 +42,7 @@
                         }
                     </div>
                 </div>
-    <!-- /completed -->
-            }
+             <!-- /completed -->
         }
     </div>
     @if (employee != null)
@@ -69,7 +66,7 @@
                 }
                 @if (!string.IsNullOrEmpty(employee.LinkedInUrl))
                 {
-                    <li><i class="fa fa-2x fa-linkedin-square width-20 hidden-xs hidden-sm"></i> <a href="@employee.LinkedInUrl">@Resources.Resources.ViewMySocialNetwork</li>
+                    <li><i class="fa fa-2x fa-linkedin-square width-20 hidden-xs hidden-sm"></i> <a href="@employee.LinkedInUrl">@Resources.Resources.ViewMySocialNetwork</a></li>
                 }
                 @if (!string.IsNullOrEmpty(employee.GooglePlusUrl))
                 {

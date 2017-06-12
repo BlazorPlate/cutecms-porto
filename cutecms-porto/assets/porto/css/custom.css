@@ -1,4 +1,9 @@
 /* Add here all your CSS customizations */
+form label {
+    font-weight: 700;
+}
+
+
 .no-list ul {
     list-style-type: none;
 }

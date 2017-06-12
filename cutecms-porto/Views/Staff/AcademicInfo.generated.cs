@@ -53,24 +53,22 @@ WriteLiteral(" action=\"#\"");
 
 WriteLiteral(" method=\"post\"");
 
-WriteLiteral(">\r\n        <div");
+WriteLiteral(">\r\n    <div");
 
 WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("            ");
+WriteLiteral("        ");
 
             
             #line 5 "..\..\Views\Staff\AcademicInfo.cshtml"
-       Write(Html.LabelFor(model => model.RankId));
+   Write(Html.LabelFor(model => model.RankId));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n");
-
-WriteLiteral("            ");
+WriteLiteral("\r\n        <br>");
 
             
             #line 6 "..\..\Views\Staff\AcademicInfo.cshtml"
@@ -79,24 +77,22 @@ WriteLiteral("            ");
             
             #line default
             #line hidden
-WriteLiteral("\r\n        </div>\r\n        <div");
+WriteLiteral("\r\n    </div>\r\n    <div");
 
 WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("            ");
+WriteLiteral("        ");
 
             
             #line 9 "..\..\Views\Staff\AcademicInfo.cshtml"
-       Write(Html.LabelFor(model => model.DegreeId));
+   Write(Html.LabelFor(model => model.DegreeId));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n");
-
-WriteLiteral("            ");
+WriteLiteral("\r\n        <br>");
 
             
             #line 10 "..\..\Views\Staff\AcademicInfo.cshtml"
@@ -105,24 +101,22 @@ WriteLiteral("            ");
             
             #line default
             #line hidden
-WriteLiteral("\r\n        </div>\r\n        <div");
+WriteLiteral("\r\n    </div>\r\n    <div");
 
 WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("            ");
+WriteLiteral("        ");
 
             
             #line 13 "..\..\Views\Staff\AcademicInfo.cshtml"
-       Write(Html.LabelFor(model => model.ProgramId));
+   Write(Html.LabelFor(model => model.ProgramId));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n");
-
-WriteLiteral("            ");
+WriteLiteral("\r\n        <br>");
 
             
             #line 14 "..\..\Views\Staff\AcademicInfo.cshtml"
@@ -131,7 +125,7 @@ WriteLiteral("            ");
             
             #line default
             #line hidden
-WriteLiteral("\r\n        </div>\r\n    </form>");
+WriteLiteral("\r\n    </div>\r\n</form>");
 
         }
     }

@@ -48,7 +48,7 @@ namespace ASP
             
             #line 3 "..\..\Views\Staff\MemberProfile.cshtml"
   
-    ViewBag.Title = @Resources.Resources.Profile;
+    ViewBag.Title = Resources.Resources.Profile;
 
             
             #line default

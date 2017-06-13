@@ -9,9 +9,12 @@
 
 namespace cutecms_porto.Areas.Identity.Models.DBModel
 {
+    using cutecms_porto.Helpers;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.Web;
+
     public partial class IdentityDepartmentTerm
     {
         public int Id { get; set; }
@@ -21,9 +24,32 @@ namespace cutecms_porto.Areas.Identity.Models.DBModel
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
         [Display(Name = "Value", ResourceType = typeof(Resources.Resources))]
         public string Value { get; set; }
+        [ValidateImage]
+        [Display(Name = "Icon", ResourceType = typeof(Resources.Resources))]
+        public HttpPostedFileBase Icon { get; set; }
+        [Display(Name = "IconName", ResourceType = typeof(Resources.Resources))]
+        public string IconName { get; set; }
+        [Display(Name = "IconPath", ResourceType = typeof(Resources.Resources))]
+        public string IconPath { get; set; }
+        [Display(Name = "Summary", ResourceType = typeof(Resources.Resources))]
+        public string Summary { get; set; }
+        [Display(Name = "Description", ResourceType = typeof(Resources.Resources))]
+        public string Description { get; set; }
+        [ValidateImage]
+        [Display(Name = "Image", ResourceType = typeof(Resources.Resources))]
+        public HttpPostedFileBase Image { get; set; }
+        [Display(Name = "ImageName", ResourceType = typeof(Resources.Resources))]
+        public string ImageName { get; set; }
+        [Display(Name = "ImagePath", ResourceType = typeof(Resources.Resources))]
+        public string ImagePath { get; set; }
+        [Display(Name = "HomeVisible", ResourceType = typeof(Resources.Resources))]
+        public bool HomeVisible { get; set; }
+
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
-        [Display(Name = "PersonalTitle", ResourceType = typeof(Resources.Resources))]
+        [Display(Name = "Department", ResourceType = typeof(Resources.Resources))]
         public int DepartmentId { get; set; }
+ 
+  
 
         public virtual IdentityDepartment Department { get; set; }
         public virtual IdentityLanguage Language { get; set; }

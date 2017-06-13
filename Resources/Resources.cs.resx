@@ -1104,7 +1104,7 @@
   <data name="Export" xml:space="preserve">
     <value>Exportovat</value>
   </data>
-  <data name="UploadAttachments" xml:space="preserve">
+  <data name="PleaseUploadAttachments" xml:space="preserve">
     <value>Prosím nahrávejte požadované přílohy.</value>
   </data>
   <data name="Oops" xml:space="preserve">
@@ -1604,5 +1604,23 @@
   </data>
   <data name="LoremTitle" xml:space="preserve">
     <value>Tento text je příklad textu, který mohou být nahrazeny ve stejném prostoru.</value>
+  </data>
+  <data name="UploadIcon" xml:space="preserve">
+    <value>Nahrát ikonu</value>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>Nahrát obrázek</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Shrnutí</value>
+  </data>
+  <data name="Icon" xml:space="preserve">
+    <value>Ikona</value>
+  </data>
+  <data name="PleaseUploadIconOfType" xml:space="preserve">
+    <value>Nahrajte prosím ikonu typu:!</value>
+  </data>
+  <data name="IconNotes" xml:space="preserve">
+    <value>Nahrajte prosím ikonu typu: .PNG!</value>
   </data>
 </root>

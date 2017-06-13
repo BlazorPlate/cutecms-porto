@@ -1104,7 +1104,7 @@
   <data name="Export" xml:space="preserve">
     <value>صادرات</value>
   </data>
-  <data name="UploadAttachments" xml:space="preserve">
+  <data name="PleaseUploadAttachments" xml:space="preserve">
     <value>لطفا آپلود فایل مورد نیاز است.</value>
   </data>
   <data name="Oops" xml:space="preserve">
@@ -1604,5 +1604,23 @@
   </data>
   <data name="LoremTitle" xml:space="preserve">
     <value>این متن نمونه ای از متن است که می تواند در همان فضا جایگزین است.</value>
+  </data>
+  <data name="UploadIcon" xml:space="preserve">
+    <value>آپلود آیکون</value>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>بارگذاری تصویر</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>خلاصه</value>
+  </data>
+  <data name="Icon" xml:space="preserve">
+    <value>آیکون</value>
+  </data>
+  <data name="PleaseUploadIconOfType" xml:space="preserve">
+    <value>لطفا یک آیکون از نوع آپلود :!</value>
+  </data>
+  <data name="IconNotes" xml:space="preserve">
+    <value>لطفا یک آیکون از نوع آپلود: .PNG!</value>
   </data>
 </root>

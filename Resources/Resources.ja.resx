@@ -1104,7 +1104,7 @@
   <data name="Export" xml:space="preserve">
     <value>エクスポート</value>
   </data>
-  <data name="UploadAttachments" xml:space="preserve">
+  <data name="PleaseUploadAttachments" xml:space="preserve">
     <value>必要な添付ファイルをアップロードしてください。</value>
   </data>
   <data name="Oops" xml:space="preserve">
@@ -1604,5 +1604,23 @@
   </data>
   <data name="LoremTitle" xml:space="preserve">
     <value>このテキストは、同じ空間に置き換えることができますテキストの例です。</value>
+  </data>
+  <data name="UploadIcon" xml:space="preserve">
+    <value>アイコンをアップロード</value>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>画像のアップロード</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>概要</value>
+  </data>
+  <data name="Icon" xml:space="preserve">
+    <value>Icon</value>
+  </data>
+  <data name="PleaseUploadIconOfType" xml:space="preserve">
+    <value>タイプのアイコンをアップロードしてください：</value>
+  </data>
+  <data name="IconNotes" xml:space="preserve">
+    <value>タイプのアイコンをアップロードしてください：.PNG！</value>
   </data>
 </root>

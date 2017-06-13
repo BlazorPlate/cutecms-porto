@@ -41,7 +41,8 @@ namespace ASP
             
             #line 2 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
   
-    ViewBag.Title = Resources.Resources.Term;    
+    ViewBag.MainTitle = Resources.Resources.Term;
+    ViewBag.Title = Resources.Resources.Create;
 
             
             #line default
@@ -49,36 +50,36 @@ namespace ASP
 WriteLiteral("\r\n");
 
             
-            #line 5 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
- using (Html.BeginForm())
+            #line 6 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+ using (Html.BeginForm("Create", "IdentityDepartmentTerms", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     
             
             #line default
             #line hidden
             
-            #line 7 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+            #line 8 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
 Write(Html.AntiForgeryToken());
 
             
             #line default
             #line hidden
             
-            #line 7 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+            #line 8 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
                             
     
             
             #line default
             #line hidden
             
-            #line 8 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+            #line 9 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
 Write(Html.Hidden("DepartmentId"));
 
             
             #line default
             #line hidden
             
-            #line 8 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+            #line 9 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
                                 
 
             
@@ -97,7 +98,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 11 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+            #line 12 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
        Write(Html.LabelFor(model => model.DepartmentId, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -112,7 +113,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 13 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+            #line 14 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
            Write(Html.TextBox("DepartmentCode", null, htmlAttributes: new { @class = "form-control", @disabled = "disabled" }));
 
             
@@ -123,7 +124,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 14 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+            #line 15 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
            Write(Html.ValidationMessageFor(model => model.DepartmentId, "", new { @class = "text-danger" }));
 
             
@@ -138,7 +139,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 18 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+            #line 19 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
        Write(Html.LabelFor(model => model.LanguageId, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -153,7 +154,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 20 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+            #line 21 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
            Write(Html.DropDownList("LanguageId", null, Resources.Resources.ChooseLanguage, htmlAttributes: new { @class = "form-control" }));
 
             
@@ -164,7 +165,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 21 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+            #line 22 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
            Write(Html.ValidationMessageFor(model => model.LanguageId, "", new { @class = "text-danger" }));
 
             
@@ -179,7 +180,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 25 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+            #line 26 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
        Write(Html.LabelFor(model => model.Value, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -194,7 +195,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 27 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+            #line 28 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
            Write(Html.EditorFor(model => model.Value, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -205,13 +206,226 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 28 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+            #line 29 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
            Write(Html.ValidationMessageFor(model => model.Value, "", new { @class = "text-danger" }));
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n            </div>\r\n        </div>\r\n        <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 33 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+       Write(Html.Label(Resources.Resources.UploadIcon, new { @class = "control-label col-md-2" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            <div");
+
+WriteLiteral(" class=\"col-md-10\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 35 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+           Write(Html.TextBoxFor(model => model.Icon, new { @class = "form-control", type = "file", multiple = "false", placeholder = "upload files" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                <small");
+
+WriteLiteral(" class=\"text-muted block\"");
+
+WriteLiteral(">");
+
+            
+            #line 36 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+                                           Write(Resources.Resources.ImageNotes);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</small>\r\n            </div>\r\n        </div>\r\n\r\n        <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 41 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+       Write(Html.LabelFor(model => model.Summary, htmlAttributes: new { @class = "control-label col-md-2" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            <div");
+
+WriteLiteral(" class=\"col-md-10\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 43 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+           Write(Html.TextAreaFor(model => model.Summary, new { htmlAttributes = new { @class = "form-control" } }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 44 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+           Write(Html.ValidationMessageFor(model => model.Summary, "", new { @class = "text-danger" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            </div>\r\n        </div>\r\n\r\n        <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 49 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+       Write(Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            <div");
+
+WriteLiteral(" class=\"col-md-10\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 51 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+           Write(Html.TextAreaFor(model => model.Description, new { @class = "mceEditor" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 52 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+           Write(Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            </div>\r\n        </div>\r\n\r\n        <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 57 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+       Write(Html.Label(Resources.Resources.UploadImage, new { @class = "control-label col-md-2" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            <div");
+
+WriteLiteral(" class=\"col-md-10\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 59 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+           Write(Html.TextBoxFor(model => model.Image, new { @class = "form-control", type = "file", multiple = "false", placeholder = "upload files" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                <small");
+
+WriteLiteral(" class=\"text-muted block\"");
+
+WriteLiteral(">");
+
+            
+            #line 60 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+                                           Write(Resources.Resources.ImageNotes);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</small>\r\n            </div>\r\n        </div>\r\n\r\n        <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 65 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+       Write(Html.LabelFor(model => model.HomeVisible, htmlAttributes: new { @class = "control-label col-md-2" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            <div");
+
+WriteLiteral(" class=\"col-md-10\"");
+
+WriteLiteral(">\r\n                <div");
+
+WriteLiteral(" class=\"checkbox\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                    ");
+
+            
+            #line 68 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+               Write(Html.CheckBoxFor(model => model.HomeVisible, new { @class = "js-switch" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("                    ");
+
+            
+            #line 69 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+               Write(Html.ValidationMessageFor(model => model.HomeVisible, "", new { @class = "text-danger" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div");
 
 WriteLiteral(" class=\"form-group\"");
 
@@ -223,14 +437,14 @@ WriteLiteral(">\r\n                <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=", 1745), Tuple.Create("", 1779)
+WriteAttribute("value", Tuple.Create(" value=", 4152), Tuple.Create("", 4186)
             
-            #line 33 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
-, Tuple.Create(Tuple.Create("", 1752), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Create
+            #line 75 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+, Tuple.Create(Tuple.Create("", 4159), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Create
             
             #line default
             #line hidden
-, 1752), false)
+, 4159), false)
 );
 
 WriteLiteral(" class=\"btn btn-default\"");
@@ -248,7 +462,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 38 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+            #line 80 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
            Write(Html.ValidationSummary(false, "", new { @class = "text-danger" }));
 
             
@@ -257,7 +471,7 @@ WriteLiteral("                ");
 WriteLiteral("\r\n            </div>\r\n        </div>\r\n    </div>\r\n");
 
             
-            #line 42 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+            #line 84 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
 }
 
             
@@ -268,8 +482,8 @@ WriteLiteral("<div>\r\n");
 WriteLiteral("    ");
 
             
-            #line 44 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
-Write(Html.ActionLink(Resources.Resources.BackToList, "Index", new { deptId = ViewBag.DepartmentId }));
+            #line 86 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+Write(Html.ActionLink(Resources.Resources.BackToList, "Index", new { id = ViewBag.DepartmentId }));
 
             
             #line default

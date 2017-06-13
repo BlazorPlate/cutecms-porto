@@ -1104,7 +1104,7 @@
   <data name="Export" xml:space="preserve">
     <value>내보내기</value>
   </data>
-  <data name="UploadAttachments" xml:space="preserve">
+  <data name="PleaseUploadAttachments" xml:space="preserve">
     <value>필요한 첨부 파일을 업로드 하시기 바랍니다.</value>
   </data>
   <data name="Oops" xml:space="preserve">
@@ -1604,5 +1604,23 @@
   </data>
   <data name="LoremTitle" xml:space="preserve">
     <value>이 텍스트는 같은 공간에서 대체 될 수 있는 텍스트의 예입니다.</value>
+  </data>
+  <data name="UploadIcon" xml:space="preserve">
+    <value>아이콘 업로드</value>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>이미지 업로드</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>개요</value>
+  </data>
+  <data name="Icon" xml:space="preserve">
+    <value>아이콘</value>
+  </data>
+  <data name="PleaseUploadIconOfType" xml:space="preserve">
+    <value>유형 아이콘을 업로드하십시오.</value>
+  </data>
+  <data name="IconNotes" xml:space="preserve">
+    <value>유형이 PNG 인 아이콘을 업로드하십시오!</value>
   </data>
 </root>

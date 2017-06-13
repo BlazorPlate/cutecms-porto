@@ -37,6 +37,13 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="LanguageId" Type="int" Nullable="false" />
           <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IconName" Type="nvarchar(max)" />
+          <Property Name="IconPath" Type="nvarchar(max)" />
+          <Property Name="Summary" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="ImageName" Type="nvarchar(max)" />
+          <Property Name="ImagePath" Type="nvarchar(max)" />
+          <Property Name="HomeVisible" Type="bit" Nullable="false" />
           <Property Name="DepartmentId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Languages">
@@ -558,7 +565,6 @@
             <End Role="Contacts" EntitySet="Contacts" />
             <End Role="PhoneNumbers" EntitySet="PhoneNumbers" />
           </AssociationSet>
-          <EntitySet Name="ConfigDepartmentTerms" EntityType="ConfigDBModel.ConfigDepartmentTerm" />
           <EntitySet Name="ConfigPersonalTitles" EntityType="ConfigDBModel.ConfigPersonalTitle" />
           <AssociationSet Name="FK_Contacts_PersonalTitles" Association="ConfigDBModel.FK_Contacts_PersonalTitles">
             <End Role="PersonalTitle" EntitySet="ConfigPersonalTitles" />
@@ -570,10 +576,6 @@
             <End Role="PersonalTitleTerm" EntitySet="ConfigPersonalTitleTerms" />
           </AssociationSet>
           <EntitySet Name="ConfigLanguages" EntityType="ConfigDBModel.ConfigLanguage" />
-          <AssociationSet Name="FK_DepartmentTerms_Languages" Association="ConfigDBModel.FK_DepartmentTerms_Languages">
-            <End Role="Language" EntitySet="ConfigLanguages" />
-            <End Role="ConfigDepartmentTerm" EntitySet="ConfigDepartmentTerms" />
-          </AssociationSet>
           <AssociationSet Name="FK_PersonalTitleTerms_Languages" Association="ConfigDBModel.FK_PersonalTitleTerms_Languages">
             <End Role="Language" EntitySet="ConfigLanguages" />
             <End Role="ConfigPersonalTitleTerm" EntitySet="ConfigPersonalTitleTerms" />
@@ -631,22 +633,16 @@
             <End Role="Department" EntitySet="ConfigDepartments" />
             <End Role="Department1" EntitySet="ConfigDepartments" />
           </AssociationSet>
+          <EntitySet Name="ConfigDepartmentTerms" EntityType="ConfigDBModel.ConfigDepartmentTerm" />
           <AssociationSet Name="FK_DepartmentTerms_Departments" Association="ConfigDBModel.FK_DepartmentTerms_Departments">
-            <End Role="Department" EntitySet="ConfigDepartments" />
-            <End Role="ConfigDepartmentTerm" EntitySet="ConfigDepartmentTerms" />
+            <End Role="ConfigDepartment" EntitySet="ConfigDepartments" />
+            <End Role="DepartmentTerm" EntitySet="ConfigDepartmentTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DepartmentTerms_Languages" Association="ConfigDBModel.FK_DepartmentTerms_Languages">
+            <End Role="ConfigLanguage" EntitySet="ConfigLanguages" />
+            <End Role="DepartmentTerm" EntitySet="ConfigDepartmentTerms" />
           </AssociationSet>
           </EntityContainer>
-        <EntityType Name="ConfigDepartmentTerm">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="LanguageId" Type="Int32" Nullable="false" />
-          <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="DepartmentId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Language" Relationship="ConfigDBModel.FK_DepartmentTerms_Languages" FromRole="ConfigDepartmentTerm" ToRole="Language" />
-          <NavigationProperty Name="Department" Relationship="ConfigDBModel.FK_DepartmentTerms_Departments" FromRole="ConfigDepartmentTerm" ToRole="Department" />
-        </EntityType>
         <EntityType Name="ConfigPersonalTitle">
           <Key>
             <PropertyRef Name="Id" />
@@ -704,24 +700,12 @@
           <Property Name="IsEnabled" Type="Boolean" Nullable="false" />
           <Property Name="IsDefault" Type="Boolean" Nullable="false" />
           <Property Name="Ordinal" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="DepartmentTerms" Relationship="ConfigDBModel.FK_DepartmentTerms_Languages" FromRole="Language" ToRole="ConfigDepartmentTerm" />
           <NavigationProperty Name="PersonalTitleTerms" Relationship="ConfigDBModel.FK_PersonalTitleTerms_Languages" FromRole="Language" ToRole="ConfigPersonalTitleTerm" />
           <NavigationProperty Name="NotificationTerms" Relationship="ConfigDBModel.FK_NotificationTerms_Languages" FromRole="ConfigLanguage" ToRole="NotificationTerm" />
           <NavigationProperty Name="StatusTerms" Relationship="ConfigDBModel.FK_StatusTerms_Languages" FromRole="ConfigLanguage" ToRole="StatusTerm" />
           <NavigationProperty Name="Organizations" Relationship="ConfigDBModel.FK_Organization_Languages" FromRole="ConfigLanguage" ToRole="Organization" />
+          <NavigationProperty Name="DepartmentTerms" Relationship="ConfigDBModel.FK_DepartmentTerms_Languages" FromRole="ConfigLanguage" ToRole="DepartmentTerm" />
         </EntityType>
-        <Association Name="FK_DepartmentTerms_Languages">
-          <End Type="ConfigDBModel.ConfigLanguage" Role="Language" Multiplicity="1" />
-          <End Type="ConfigDBModel.ConfigDepartmentTerm" Role="ConfigDepartmentTerm" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Language">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ConfigDepartmentTerm">
-              <PropertyRef Name="LanguageId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_PersonalTitleTerms_Languages">
           <End Type="ConfigDBModel.ConfigLanguage" Role="Language" Multiplicity="1" />
           <End Type="ConfigDBModel.ConfigPersonalTitleTerm" Role="ConfigPersonalTitleTerm" Multiplicity="*" />
@@ -973,7 +957,7 @@
           <NavigationProperty Name="Contacts" Relationship="ConfigDBModel.FK_Contacts_Departments" FromRole="Department" ToRole="Contact" />
           <NavigationProperty Name="Departments1" Relationship="ConfigDBModel.FK_Departments_Departments" FromRole="Department" ToRole="Department1" />
           <NavigationProperty Name="Department1" Relationship="ConfigDBModel.FK_Departments_Departments" FromRole="Department1" ToRole="Department" />
-          <NavigationProperty Name="DepartmentTerms" Relationship="ConfigDBModel.FK_DepartmentTerms_Departments" FromRole="Department" ToRole="ConfigDepartmentTerm" />
+          <NavigationProperty Name="DepartmentTerms" Relationship="ConfigDBModel.FK_DepartmentTerms_Departments" FromRole="ConfigDepartment" ToRole="DepartmentTerm" />
         </EntityType>
         <Association Name="FK_Contacts_Departments">
           <End Type="ConfigDBModel.ConfigDepartment" Role="Department" Multiplicity="1" />
@@ -999,15 +983,45 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="ConfigDepartmentTerm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageId" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IconName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IconPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Summary" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImageName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HomeVisible" Type="Boolean" Nullable="false" />
+          <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Department" Relationship="ConfigDBModel.FK_DepartmentTerms_Departments" FromRole="DepartmentTerm" ToRole="ConfigDepartment" />
+          <NavigationProperty Name="Language" Relationship="ConfigDBModel.FK_DepartmentTerms_Languages" FromRole="DepartmentTerm" ToRole="ConfigLanguage" />
+        </EntityType>
         <Association Name="FK_DepartmentTerms_Departments">
-          <End Type="ConfigDBModel.ConfigDepartment" Role="Department" Multiplicity="1" />
-          <End Type="ConfigDBModel.ConfigDepartmentTerm" Role="ConfigDepartmentTerm" Multiplicity="*" />
+          <End Type="ConfigDBModel.ConfigDepartment" Role="ConfigDepartment" Multiplicity="1" />
+          <End Type="ConfigDBModel.ConfigDepartmentTerm" Role="DepartmentTerm" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Department">
+            <Principal Role="ConfigDepartment">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="ConfigDepartmentTerm">
+            <Dependent Role="DepartmentTerm">
               <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DepartmentTerms_Languages">
+          <End Type="ConfigDBModel.ConfigLanguage" Role="ConfigLanguage" Multiplicity="1" />
+          <End Type="ConfigDBModel.ConfigDepartmentTerm" Role="DepartmentTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConfigLanguage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DepartmentTerm">
+              <PropertyRef Name="LanguageId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1057,16 +1071,6 @@
                 <ScalarProperty Name="Longitude" ColumnName="Longitude" />
                 <ScalarProperty Name="MetroCode" ColumnName="MetroCode" />
                 <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ConfigDepartmentTerms">
-            <EntityTypeMapping TypeName="ConfigDBModel.ConfigDepartmentTerm">
-              <MappingFragment StoreEntitySet="DepartmentTerms">
-                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
-                <ScalarProperty Name="Value" ColumnName="Value" />
-                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1223,6 +1227,23 @@
                 <ScalarProperty Name="ManagerId" ColumnName="ManagerId" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
                 <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConfigDepartmentTerms">
+            <EntityTypeMapping TypeName="ConfigDBModel.ConfigDepartmentTerm">
+              <MappingFragment StoreEntitySet="DepartmentTerms">
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="HomeVisible" ColumnName="HomeVisible" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Summary" ColumnName="Summary" />
+                <ScalarProperty Name="IconPath" ColumnName="IconPath" />
+                <ScalarProperty Name="IconName" ColumnName="IconName" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

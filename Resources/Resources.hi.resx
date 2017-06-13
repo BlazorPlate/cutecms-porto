@@ -1104,7 +1104,7 @@
   <data name="Export" xml:space="preserve">
     <value>निर्यात करें</value>
   </data>
-  <data name="UploadAttachments" xml:space="preserve">
+  <data name="PleaseUploadAttachments" xml:space="preserve">
     <value>कृपया आवश्यक अनुलग्नकों को अपलोड।</value>
   </data>
   <data name="Oops" xml:space="preserve">
@@ -1604,5 +1604,23 @@
   </data>
   <data name="LoremTitle" xml:space="preserve">
     <value>इस पाठ में एक ही स्थान बदला जा सकता है पाठ का एक उदाहरण है।</value>
+  </data>
+  <data name="UploadIcon" xml:space="preserve">
+    <value>अपलोड करें</value>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>छवि अपलोड/जोड़ें</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>सारांश</value>
+  </data>
+  <data name="Icon" xml:space="preserve">
+    <value>आइकन</value>
+  </data>
+  <data name="PleaseUploadIconOfType" xml:space="preserve">
+    <value>कृपया प्रकार के एक आइकन अपलोड करें:!</value>
+  </data>
+  <data name="IconNotes" xml:space="preserve">
+    <value>कृपया प्रकार का आइकन अपलोड करें: .पीएनजी!</value>
   </data>
 </root>

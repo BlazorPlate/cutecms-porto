@@ -1104,7 +1104,7 @@
   <data name="Export" xml:space="preserve">
     <value>Eksportere</value>
   </data>
-  <data name="UploadAttachments" xml:space="preserve">
+  <data name="PleaseUploadAttachments" xml:space="preserve">
     <value>Vennligst Last opp nødvendig vedleggene.</value>
   </data>
   <data name="Oops" xml:space="preserve">
@@ -1604,5 +1604,23 @@
   </data>
   <data name="LoremTitle" xml:space="preserve">
     <value>Denne teksten er et eksempel som kan bli erstattet i samme rom.</value>
+  </data>
+  <data name="UploadIcon" xml:space="preserve">
+    <value>Last opp ikon</value>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>Last opp bilde</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Sammendrag</value>
+  </data>
+  <data name="Icon" xml:space="preserve">
+    <value>Ikon</value>
+  </data>
+  <data name="PleaseUploadIconOfType" xml:space="preserve">
+    <value>Vennligst last opp et ikon av type:!</value>
+  </data>
+  <data name="IconNotes" xml:space="preserve">
+    <value>Vennligst last opp et ikon av type: .PNG!</value>
   </data>
 </root>

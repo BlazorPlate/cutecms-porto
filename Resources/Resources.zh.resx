@@ -1104,7 +1104,7 @@
   <data name="Export" xml:space="preserve">
     <value>出口</value>
   </data>
-  <data name="UploadAttachments" xml:space="preserve">
+  <data name="PleaseUploadAttachments" xml:space="preserve">
     <value>请上传所需的附件。</value>
   </data>
   <data name="Oops" xml:space="preserve">
@@ -1604,5 +1604,23 @@
   </data>
   <data name="LoremTitle" xml:space="preserve">
     <value>此文本是文本的可以在同一空间中替换的示例。</value>
+  </data>
+  <data name="UploadIcon" xml:space="preserve">
+    <value>上载图标</value>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>上传图像</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>点评</value>
+  </data>
+  <data name="Icon" xml:space="preserve">
+    <value>图标</value>
+  </data>
+  <data name="PleaseUploadIconOfType" xml:space="preserve">
+    <value>请上传图标：！</value>
+  </data>
+  <data name="IconNotes" xml:space="preserve">
+    <value>请上传图标：.PNG！</value>
   </data>
 </root>

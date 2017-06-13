@@ -9,13 +9,11 @@
         <EntityTypeShape EntityType="ConfigDBModel.PhoneNumber" Width="1.5" PointX="7.5" PointY="16" IsExpanded="true" />
         <EntityTypeShape EntityType="ConfigDBModel.Statistic" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="ConfigDBModel.FK_PhoneNumbers_Contacts" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="ConfigDBModel.ConfigDepartmentTerm" Width="1.5" PointX="6" PointY="7" />
         <EntityTypeShape EntityType="ConfigDBModel.ConfigPersonalTitle" Width="1.5" PointX="0.75" PointY="14" />
         <AssociationConnector Association="ConfigDBModel.FK_Contacts_PersonalTitles" />
         <EntityTypeShape EntityType="ConfigDBModel.ConfigPersonalTitleTerm" Width="1.5" PointX="3" PointY="10" />
         <AssociationConnector Association="ConfigDBModel.FK_PersonalTitleTerms_PersonalTitles" />
         <EntityTypeShape EntityType="ConfigDBModel.ConfigLanguage" Width="1.5" PointX="0.75" PointY="9.5" />
-        <AssociationConnector Association="ConfigDBModel.FK_DepartmentTerms_Languages" />
         <AssociationConnector Association="ConfigDBModel.FK_PersonalTitleTerms_Languages" />
         <EntityTypeShape EntityType="ConfigDBModel.NotificationTerm" Width="1.5" PointX="6" PointY="9.875" />
         <AssociationConnector Association="ConfigDBModel.FK_NotificationTerms_Languages" />
@@ -37,7 +35,9 @@
         <EntityTypeShape EntityType="ConfigDBModel.ConfigDepartment" Width="1.5" PointX="3.375" PointY="1" />
         <AssociationConnector Association="ConfigDBModel.FK_Contacts_Departments" />
         <AssociationConnector Association="ConfigDBModel.FK_Departments_Departments" />
+        <EntityTypeShape EntityType="ConfigDBModel.ConfigDepartmentTerm" Width="1.5" PointX="5.625" PointY="5.125" />
         <AssociationConnector Association="ConfigDBModel.FK_DepartmentTerms_Departments" />
+        <AssociationConnector Association="ConfigDBModel.FK_DepartmentTerms_Languages" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

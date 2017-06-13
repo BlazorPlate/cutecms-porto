@@ -1104,7 +1104,7 @@
   <data name="Export" xml:space="preserve">
     <value>ייצוא</value>
   </data>
-  <data name="UploadAttachments" xml:space="preserve">
+  <data name="PleaseUploadAttachments" xml:space="preserve">
     <value>בבקשה להעלות את הקבצים המצורפים הנדרש.</value>
   </data>
   <data name="Oops" xml:space="preserve">
@@ -1604,5 +1604,23 @@
   </data>
   <data name="LoremTitle" xml:space="preserve">
     <value>טקסט זה הוא דוגמה של טקסט שניתן להחליפו באותו מרחב.</value>
+  </data>
+  <data name="UploadIcon" xml:space="preserve">
+    <value>הכנס  סמל</value>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>העלאת תמונה</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>תקציר</value>
+  </data>
+  <data name="Icon" xml:space="preserve">
+    <value>סמל</value>
+  </data>
+  <data name="PleaseUploadIconOfType" xml:space="preserve">
+    <value>אנא העלו לאייקון של סוג:!</value>
+  </data>
+  <data name="IconNotes" xml:space="preserve">
+    <value>אנא העלו לאייקון של סוג:. PNG!</value>
   </data>
 </root>

@@ -8,6 +8,9 @@ using System.Web;
 using System.Web.Mvc;
 using cutecms_porto.Areas.Identity.Models.DBModel;
 using cutecms_porto.Helpers;
+using System.IO;
+using System.Drawing;
+using System.Globalization;
 
 namespace cutecms_porto.Areas.Identity.Controllers
 {
@@ -62,10 +65,36 @@ namespace cutecms_porto.Areas.Identity.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,LanguageId,Value,DepartmentId")] IdentityDepartmentTerm identityDepartmentTerm)
+        public ActionResult Create([Bind(Include = "Id,LanguageId,Value,Icon,IconName,IconPath,Summary,Description,Image,ImageName,ImagePath,HomeVisible,DepartmentId")] IdentityDepartmentTerm identityDepartmentTerm)
         {
             if (ModelState.IsValid)
             {
+                if (identityDepartmentTerm.Icon != null && identityDepartmentTerm.Icon.ContentLength > 0)
+                {
+                    var extension = Path.GetExtension(identityDepartmentTerm.Icon.FileName);
+                    string timeStamp = DateTime.UtcNow.ToString("ddMMyyyy HHmmssfff", CultureInfo.InvariantCulture);
+                    var newFileName = StringHelper.CleanFileName(identityDepartmentTerm.Value.Trim() + "-" + timeStamp + "-" + extension);
+                    var path = String.Format("/fileman/Uploads/Images/Identity/Departments/Icons/{0}", newFileName);
+                    identityDepartmentTerm.IconPath = path;
+                    identityDepartmentTerm.IconName = newFileName;
+                    using (var img = Image.FromStream(identityDepartmentTerm.Icon.InputStream))
+                    {
+                        ImageUploaderHelper.SaveImageToFolder(img, extension, new Size(43, 57), identityDepartmentTerm.IconPath);
+                    }
+                }
+                if (identityDepartmentTerm.Image != null && identityDepartmentTerm.Image.ContentLength > 0)
+                {
+                    var extension = Path.GetExtension(identityDepartmentTerm.Image.FileName);
+                    string timeStamp = DateTime.UtcNow.ToString("ddMMyyyy HHmmssfff", CultureInfo.InvariantCulture);
+                    var newFileName = Helpers.StringHelper.CleanFileName(identityDepartmentTerm.Value.Trim() + "-" + timeStamp + "-" + extension);
+                    var path = String.Format("/fileman/Uploads/Images/Identity/Departments/Images/{0}", newFileName);
+                    identityDepartmentTerm.ImagePath = path;
+                    identityDepartmentTerm.ImageName = newFileName;
+                    using (var img = System.Drawing.Image.FromStream(identityDepartmentTerm.Image.InputStream))
+                    {
+                        ImageUploaderHelper.SaveImageToFolder(img, extension, new Size(360, 180), identityDepartmentTerm.ImagePath);
+                    }
+                }
                 db.IdentityDepartmentTerms.Add(identityDepartmentTerm);
                 db.SaveChanges();
                 return RedirectToAction("Index", new { id = identityDepartmentTerm.DepartmentId });
@@ -100,10 +129,36 @@ namespace cutecms_porto.Areas.Identity.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,LanguageId,Value,DepartmentId")] IdentityDepartmentTerm identityDepartmentTerm)
+        public ActionResult Edit([Bind(Include = "Id,LanguageId,Value,Icon,IconName,IconPath,Summary,Description,Image,ImageName,ImagePath,HomeVisible,DepartmentId")] IdentityDepartmentTerm identityDepartmentTerm)
         {
             if (ModelState.IsValid)
             {
+                if (identityDepartmentTerm.Icon != null && identityDepartmentTerm.Icon.ContentLength > 0)
+                {
+                    var extension = Path.GetExtension(identityDepartmentTerm.Icon.FileName);
+                    string timeStamp = DateTime.UtcNow.ToString("ddMMyyyy HHmmssfff", CultureInfo.InvariantCulture);
+                    var newFileName = StringHelper.CleanFileName(identityDepartmentTerm.Value.Trim() + "-" + timeStamp + "-" + extension);
+                    var path = String.Format("/fileman/Uploads/Images/Identity/Departments/Icons/{0}", newFileName);
+                    identityDepartmentTerm.IconPath = path;
+                    identityDepartmentTerm.IconName = newFileName;
+                    using (var img = Image.FromStream(identityDepartmentTerm.Icon.InputStream))
+                    {
+                        ImageUploaderHelper.SaveImageToFolder(img, extension, new Size(43, 57), identityDepartmentTerm.IconPath);
+                    }
+                }
+                if (identityDepartmentTerm.Image != null && identityDepartmentTerm.Image.ContentLength > 0)
+                {
+                    var extension = Path.GetExtension(identityDepartmentTerm.Image.FileName);
+                    string timeStamp = DateTime.UtcNow.ToString("ddMMyyyy HHmmssfff", CultureInfo.InvariantCulture);
+                    var newFileName = Helpers.StringHelper.CleanFileName(identityDepartmentTerm.Value.Trim() + "-" + timeStamp + "-" + extension);
+                    var path = String.Format("/fileman/Uploads/Images/Identity/Departments/Images/{0}", newFileName);
+                    identityDepartmentTerm.ImagePath = path;
+                    identityDepartmentTerm.ImageName = newFileName;
+                    using (var img = Image.FromStream(identityDepartmentTerm.Image.InputStream))
+                    {
+                        ImageUploaderHelper.SaveImageToFolder(img, extension, new Size(360, 180), identityDepartmentTerm.ImagePath);
+                    }
+                }
                 db.Entry(identityDepartmentTerm).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index", new { id = identityDepartmentTerm.DepartmentId });

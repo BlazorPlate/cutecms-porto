@@ -1104,7 +1104,7 @@
   <data name="Export" xml:space="preserve">
     <value>Export</value>
   </data>
-  <data name="UploadAttachments" xml:space="preserve">
+  <data name="PleaseUploadAttachments" xml:space="preserve">
     <value>Veuillez télécharger les pièces jointes nécessaires.</value>
   </data>
   <data name="Oops" xml:space="preserve">
@@ -1604,5 +1604,23 @@
   </data>
   <data name="LoremTitle" xml:space="preserve">
     <value>Ce texte est un exemple de texte qui peut être remplacé dans le même espace.</value>
+  </data>
+  <data name="UploadIcon" xml:space="preserve">
+    <value>Téléchargez une icône</value>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>Charger une image</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Résumé</value>
+  </data>
+  <data name="Icon" xml:space="preserve">
+    <value>Icône</value>
+  </data>
+  <data name="PleaseUploadIconOfType" xml:space="preserve">
+    <value>Veuillez télécharger une icône de type :!</value>
+  </data>
+  <data name="IconNotes" xml:space="preserve">
+    <value>Veuillez télécharger une icône de type: .PNG!</value>
   </data>
 </root>

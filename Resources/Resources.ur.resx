@@ -1104,7 +1104,7 @@
   <data name="Export" xml:space="preserve">
     <value>برآمد کریں</value>
   </data>
-  <data name="UploadAttachments" xml:space="preserve">
+  <data name="PleaseUploadAttachments" xml:space="preserve">
     <value>براہ مہربانی مطلوبہ منسلکات اپ لوڈ کریں ۔</value>
   </data>
   <data name="Oops" xml:space="preserve">
@@ -1604,5 +1604,23 @@
   </data>
   <data name="LoremTitle" xml:space="preserve">
     <value>یہ متن ایک مثال متن ہے جس میں ایک ہی جگہ جگہ کیا جا سکتا ہے ۔</value>
+  </data>
+  <data name="UploadIcon" xml:space="preserve">
+    <value>اپ‌لوڈ کریں</value>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>تصویر اپ لوڈ کریں</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>خلاصہ!</value>
+  </data>
+  <data name="Icon" xml:space="preserve">
+    <value>آئیکَن</value>
+  </data>
+  <data name="PleaseUploadIconOfType" xml:space="preserve">
+    <value>قسم کا ایک آئکن اپ لوڈ کریں :!</value>
+  </data>
+  <data name="IconNotes" xml:space="preserve">
+    <value>قسم کا ایک آئکن اپ لوڈ کریں: PNG کی!</value>
   </data>
 </root>

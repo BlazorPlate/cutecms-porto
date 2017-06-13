@@ -41,6 +41,13 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="LanguageId" Type="int" Nullable="false" />
           <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IconName" Type="nvarchar(max)" />
+          <Property Name="IconPath" Type="nvarchar(max)" />
+          <Property Name="Summary" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="ImageName" Type="nvarchar(max)" />
+          <Property Name="ImagePath" Type="nvarchar(max)" />
+          <Property Name="HomeVisible" Type="bit" Nullable="false" />
           <Property Name="DepartmentId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="EmpInDept">
@@ -687,7 +694,6 @@
             <End Role="IdentityRank" EntitySet="IdentityRanks" />
             <End Role="Employee" EntitySet="Employees" />
           </AssociationSet>
-          <EntitySet Name="IdentityDepartmentTerms" EntityType="IdentityModel.IdentityDepartmentTerm" />
           <EntitySet Name="Publications" EntityType="IdentityModel.Publication" />
           <AssociationSet Name="FK_Publications_Employees" Association="IdentityModel.FK_Publications_Employees">
             <End Role="Employee" EntitySet="Employees" />
@@ -697,10 +703,6 @@
           <AssociationSet Name="FK_DegreeTerms_Languages" Association="IdentityModel.FK_DegreeTerms_Languages">
             <End Role="Language" EntitySet="IdentityLanguages" />
             <End Role="IdentityDegreeTerm" EntitySet="IdentityDegreeTerms" />
-          </AssociationSet>
-          <AssociationSet Name="FK_DepartmentTerms_Languages" Association="IdentityModel.FK_DepartmentTerms_Languages">
-            <End Role="Language" EntitySet="IdentityLanguages" />
-            <End Role="IdentityDepartmentTerm" EntitySet="IdentityDepartmentTerms" />
           </AssociationSet>
           <AssociationSet Name="FK_Employees_Languages" Association="IdentityModel.FK_Employees_Languages">
             <End Role="Language" EntitySet="IdentityLanguages" />
@@ -754,13 +756,18 @@
             <End Role="Employee" EntitySet="Employees" />
             <End Role="Department" EntitySet="IdentityDepartments" />
           </AssociationSet>
-          <AssociationSet Name="FK_DepartmentTerms_Departments" Association="IdentityModel.FK_DepartmentTerms_Departments">
-            <End Role="Department" EntitySet="IdentityDepartments" />
-            <End Role="IdentityDepartmentTerm" EntitySet="IdentityDepartmentTerms" />
-          </AssociationSet>
           <AssociationSet Name="FK_EmpInDept_Departments" Association="IdentityModel.FK_EmpInDept_Departments">
             <End Role="Department" EntitySet="IdentityDepartments" />
             <End Role="EmpInDept" EntitySet="EmpInDepts" />
+          </AssociationSet>
+          <EntitySet Name="IdentityDepartmentTerms" EntityType="IdentityModel.IdentityDepartmentTerm" />
+          <AssociationSet Name="FK_DepartmentTerms_Departments" Association="IdentityModel.FK_DepartmentTerms_Departments">
+            <End Role="IdentityDepartment" EntitySet="IdentityDepartments" />
+            <End Role="DepartmentTerm" EntitySet="IdentityDepartmentTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DepartmentTerms_Languages" Association="IdentityModel.FK_DepartmentTerms_Languages">
+            <End Role="IdentityLanguage" EntitySet="IdentityLanguages" />
+            <End Role="DepartmentTerm" EntitySet="IdentityDepartmentTerms" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="IdentityDegree">
@@ -1021,17 +1028,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="IdentityDepartmentTerm">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="LanguageId" Type="Int32" Nullable="false" />
-          <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="DepartmentId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Language" Relationship="IdentityModel.FK_DepartmentTerms_Languages" FromRole="IdentityDepartmentTerm" ToRole="Language" />
-          <NavigationProperty Name="Department" Relationship="IdentityModel.FK_DepartmentTerms_Departments" FromRole="IdentityDepartmentTerm" ToRole="Department" />
-        </EntityType>
         <EntityType Name="Publication">
           <Key>
             <PropertyRef Name="Id" />
@@ -1068,13 +1064,13 @@
           <Property Name="IsDefault" Type="Boolean" Nullable="false" />
           <Property Name="Ordinal" Type="Int32" Nullable="false" />
           <NavigationProperty Name="DegreeTerms" Relationship="IdentityModel.FK_DegreeTerms_Languages" FromRole="Language" ToRole="IdentityDegreeTerm" />
-          <NavigationProperty Name="DepartmentTerms" Relationship="IdentityModel.FK_DepartmentTerms_Languages" FromRole="Language" ToRole="IdentityDepartmentTerm" />
           <NavigationProperty Name="Employees" Relationship="IdentityModel.FK_Employees_Languages" FromRole="Language" ToRole="Employee" />
           <NavigationProperty Name="OccupationTerms" Relationship="IdentityModel.FK_OccupationTerms_Languages" FromRole="Language" ToRole="OccupationTerm" />
           <NavigationProperty Name="PersonalTitleTerms" Relationship="IdentityModel.FK_PersonalTitleTerms_Languages" FromRole="Language" ToRole="IdentityPersonalTitleTerm" />
           <NavigationProperty Name="ProgramTerms" Relationship="IdentityModel.FK_ProgramTerms_Languages" FromRole="Language" ToRole="IdentityProgramTerm" />
           <NavigationProperty Name="RankTerms" Relationship="IdentityModel.FK_RankTerms_Languages" FromRole="Language" ToRole="IdentityRankTerm" />
           <NavigationProperty Name="EmployeeTypeTerms" Relationship="IdentityModel.FK_EmployeeTypeTerms_Languages" FromRole="IdentityLanguage" ToRole="EmployeeTypeTerm" />
+          <NavigationProperty Name="DepartmentTerms" Relationship="IdentityModel.FK_DepartmentTerms_Languages" FromRole="IdentityLanguage" ToRole="DepartmentTerm" />
         </EntityType>
         <Association Name="FK_DegreeTerms_Languages">
           <End Type="IdentityModel.IdentityLanguage" Role="Language" Multiplicity="1" />
@@ -1084,18 +1080,6 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="IdentityDegreeTerm">
-              <PropertyRef Name="LanguageId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_DepartmentTerms_Languages">
-          <End Type="IdentityModel.IdentityLanguage" Role="Language" Multiplicity="1" />
-          <End Type="IdentityModel.IdentityDepartmentTerm" Role="IdentityDepartmentTerm" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Language">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="IdentityDepartmentTerm">
               <PropertyRef Name="LanguageId" />
             </Dependent>
           </ReferentialConstraint>
@@ -1270,8 +1254,8 @@
           <NavigationProperty Name="Departments1" Relationship="IdentityModel.FK_Departments_Departments" FromRole="Department" ToRole="Department1" />
           <NavigationProperty Name="Department1" Relationship="IdentityModel.FK_Departments_Departments" FromRole="Department1" ToRole="Department" />
           <NavigationProperty Name="Employee" Relationship="IdentityModel.FK_Departments_Employees" FromRole="Department" ToRole="Employee" />
-          <NavigationProperty Name="DepartmentTerms" Relationship="IdentityModel.FK_DepartmentTerms_Departments" FromRole="Department" ToRole="IdentityDepartmentTerm" />
           <NavigationProperty Name="EmpInDepts" Relationship="IdentityModel.FK_EmpInDept_Departments" FromRole="Department" ToRole="EmpInDept" />
+          <NavigationProperty Name="DepartmentTerms" Relationship="IdentityModel.FK_DepartmentTerms_Departments" FromRole="IdentityDepartment" ToRole="DepartmentTerm" />
         </EntityType>
         <Association Name="FK_Departments_Departments">
           <End Type="IdentityModel.IdentityDepartment" Role="Department" Multiplicity="0..1" />
@@ -1297,18 +1281,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_DepartmentTerms_Departments">
-          <End Type="IdentityModel.IdentityDepartment" Role="Department" Multiplicity="1" />
-          <End Type="IdentityModel.IdentityDepartmentTerm" Role="IdentityDepartmentTerm" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Department">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="IdentityDepartmentTerm">
-              <PropertyRef Name="DepartmentId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_EmpInDept_Departments">
           <End Type="IdentityModel.IdentityDepartment" Role="Department" Multiplicity="1" />
           <End Type="IdentityModel.EmpInDept" Role="EmpInDept" Multiplicity="*" />
@@ -1318,6 +1290,48 @@
             </Principal>
             <Dependent Role="EmpInDept">
               <PropertyRef Name="DeptId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="IdentityDepartmentTerm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageId" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IconName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IconPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Summary" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImageName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HomeVisible" Type="Boolean" Nullable="false" />
+          <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Department" Relationship="IdentityModel.FK_DepartmentTerms_Departments" FromRole="DepartmentTerm" ToRole="IdentityDepartment" />
+          <NavigationProperty Name="Language" Relationship="IdentityModel.FK_DepartmentTerms_Languages" FromRole="DepartmentTerm" ToRole="IdentityLanguage" />
+        </EntityType>
+        <Association Name="FK_DepartmentTerms_Departments">
+          <End Type="IdentityModel.IdentityDepartment" Role="IdentityDepartment" Multiplicity="1" />
+          <End Type="IdentityModel.IdentityDepartmentTerm" Role="DepartmentTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IdentityDepartment">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DepartmentTerm">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DepartmentTerms_Languages">
+          <End Type="IdentityModel.IdentityLanguage" Role="IdentityLanguage" Multiplicity="1" />
+          <End Type="IdentityModel.IdentityDepartmentTerm" Role="DepartmentTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IdentityLanguage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DepartmentTerm">
+              <PropertyRef Name="LanguageId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1460,16 +1474,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="IdentityDepartmentTerms">
-            <EntityTypeMapping TypeName="IdentityModel.IdentityDepartmentTerm">
-              <MappingFragment StoreEntitySet="DepartmentTerms">
-                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
-                <ScalarProperty Name="Value" ColumnName="Value" />
-                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Publications">
             <EntityTypeMapping TypeName="IdentityModel.Publication">
               <MappingFragment StoreEntitySet="Publications">
@@ -1535,6 +1539,23 @@
                 <ScalarProperty Name="ManagerId" ColumnName="ManagerId" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
                 <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IdentityDepartmentTerms">
+            <EntityTypeMapping TypeName="IdentityModel.IdentityDepartmentTerm">
+              <MappingFragment StoreEntitySet="DepartmentTerms">
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="HomeVisible" ColumnName="HomeVisible" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Summary" ColumnName="Summary" />
+                <ScalarProperty Name="IconPath" ColumnName="IconPath" />
+                <ScalarProperty Name="IconName" ColumnName="IconName" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

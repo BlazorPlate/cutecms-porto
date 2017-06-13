@@ -211,17 +211,6 @@ WriteLiteral("                ");
             
             #line default
             #line hidden
-WriteLiteral("\r\n");
-
-WriteLiteral("                ");
-
-            
-            #line 32 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
-           Write(Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" }));
-
-            
-            #line default
-            #line hidden
 WriteLiteral("\r\n                <small");
 
 WriteLiteral(" class=\"text-muted block\"");
@@ -229,7 +218,7 @@ WriteLiteral(" class=\"text-muted block\"");
 WriteLiteral(">");
 
             
-            #line 33 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 32 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
                                            Write(Resources.Resources.ImageNotes);
 
             
@@ -244,7 +233,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 37 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 36 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
        Write(Html.LabelFor(model => model.PersonalTitleId, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -259,7 +248,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 39 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 38 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.DropDownList("PersonalTitleId", null, Resources.Resources.ChoosePersonalTitle, htmlAttributes: new { @class = "form-control" }));
 
             
@@ -270,7 +259,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 40 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 39 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.ValidationMessageFor(model => model.PersonalTitleId, "", new { @class = "text-danger" }));
 
             
@@ -285,7 +274,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 44 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 43 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
        Write(Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -300,7 +289,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 46 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 45 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -311,7 +300,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 47 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 46 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" }));
 
             
@@ -326,7 +315,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 51 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 50 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
        Write(Html.LabelFor(model => model.MiddleName, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -341,7 +330,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 53 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 52 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.EditorFor(model => model.MiddleName, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -352,7 +341,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 54 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 53 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.ValidationMessageFor(model => model.MiddleName, "", new { @class = "text-danger" }));
 
             
@@ -367,7 +356,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 58 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 57 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
        Write(Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -382,7 +371,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 60 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 59 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -393,7 +382,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 61 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 60 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" }));
 
             
@@ -408,7 +397,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 65 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 64 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
        Write(Html.LabelFor(model => model.Biography, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -423,7 +412,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 67 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 66 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.TextAreaFor(model => model.Biography, new { @class = "mceEditor" }));
 
             
@@ -434,7 +423,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 68 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 67 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.ValidationMessageFor(model => model.Biography, "", new { @class = "text-danger" }));
 
             
@@ -449,7 +438,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 72 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 71 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
        Write(Html.LabelFor(model => model.CV, new { @class = "control-label col-md-2" }));
 
             
@@ -464,7 +453,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 74 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 73 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.TextBoxFor(model => model.CV, new { @class = "form-control", type = "file", multiple = "false", placeholder = "upload files" }));
 
             
@@ -475,7 +464,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 75 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 74 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.ValidationMessageFor(model => model.CV, "", new { @class = "text-danger" }));
 
             
@@ -488,7 +477,7 @@ WriteLiteral(" class=\"text-muted block\"");
 WriteLiteral(">");
 
             
-            #line 76 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 75 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
                                            Write(Resources.Resources.CVNotes);
 
             
@@ -503,7 +492,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 80 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 79 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
        Write(Html.LabelFor(model => model.RankId, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -518,7 +507,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 82 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 81 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.DropDownList("RankId", null, string.Empty, htmlAttributes: new { @class = "form-control" }));
 
             
@@ -529,7 +518,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 83 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 82 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.ValidationMessageFor(model => model.RankId, "", new { @class = "text-danger" }));
 
             
@@ -544,7 +533,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 87 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 86 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
        Write(Html.LabelFor(model => model.DegreeId, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -559,7 +548,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 89 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 88 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.DropDownList("DegreeId", null, string.Empty, htmlAttributes: new { @class = "form-control" }));
 
             
@@ -570,7 +559,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 90 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 89 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.ValidationMessageFor(model => model.DegreeId, "", new { @class = "text-danger" }));
 
             
@@ -585,7 +574,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 94 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 93 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
        Write(Html.LabelFor(model => model.ProgramId, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -600,7 +589,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 96 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 95 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.DropDownList("ProgramId", null, string.Empty, htmlAttributes: new { @class = "form-control" }));
 
             
@@ -611,7 +600,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 97 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 96 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.ValidationMessageFor(model => model.ProgramId, "", new { @class = "text-danger" }));
 
             
@@ -626,7 +615,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 101 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 100 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
        Write(Html.LabelFor(model => model.OfficeNumber, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -641,7 +630,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 103 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 102 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.EditorFor(model => model.OfficeNumber, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -652,7 +641,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 104 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 103 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.ValidationMessageFor(model => model.OfficeNumber, "", new { @class = "text-danger" }));
 
             
@@ -667,7 +656,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 108 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 107 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
        Write(Html.LabelFor(model => model.Mobile, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -682,7 +671,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 110 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 109 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -693,7 +682,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 111 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 110 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" }));
 
             
@@ -708,7 +697,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 115 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 114 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
        Write(Html.LabelFor(model => model.LandLine, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -723,7 +712,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 117 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 116 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.EditorFor(model => model.LandLine, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -734,7 +723,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 118 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 117 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.ValidationMessageFor(model => model.LandLine, "", new { @class = "text-danger" }));
 
             
@@ -749,7 +738,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 122 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 121 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
        Write(Html.LabelFor(model => model.Extension, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -764,7 +753,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 124 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 123 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.EditorFor(model => model.Extension, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -775,7 +764,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 125 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 124 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.ValidationMessageFor(model => model.Extension, "", new { @class = "text-danger" }));
 
             
@@ -790,7 +779,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 129 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 128 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
        Write(Html.LabelFor(model => model.FacebookUrl, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -805,7 +794,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 131 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 130 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.EditorFor(model => model.FacebookUrl, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -816,7 +805,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 132 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 131 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.ValidationMessageFor(model => model.FacebookUrl, "", new { @class = "text-danger" }));
 
             
@@ -831,7 +820,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 136 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 135 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
        Write(Html.LabelFor(model => model.TwitterUrl, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -846,7 +835,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 138 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 137 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.EditorFor(model => model.TwitterUrl, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -857,7 +846,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 139 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 138 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.ValidationMessageFor(model => model.TwitterUrl, "", new { @class = "text-danger" }));
 
             
@@ -872,7 +861,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 143 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 142 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
        Write(Html.LabelFor(model => model.YouTubeUrl, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -887,7 +876,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 145 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 144 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.EditorFor(model => model.YouTubeUrl, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -898,7 +887,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 146 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 145 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.ValidationMessageFor(model => model.YouTubeUrl, "", new { @class = "text-danger" }));
 
             
@@ -913,7 +902,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 150 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 149 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
        Write(Html.LabelFor(model => model.GooglePlusUrl, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -928,7 +917,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 152 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 151 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.EditorFor(model => model.GooglePlusUrl, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -939,7 +928,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 153 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 152 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.ValidationMessageFor(model => model.GooglePlusUrl, "", new { @class = "text-danger" }));
 
             
@@ -954,7 +943,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 157 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 156 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
        Write(Html.LabelFor(model => model.LinkedInUrl, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -969,7 +958,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 159 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 158 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.EditorFor(model => model.LinkedInUrl, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -980,7 +969,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 160 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 159 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.ValidationMessageFor(model => model.LinkedInUrl, "", new { @class = "text-danger" }));
 
             
@@ -995,7 +984,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 164 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 163 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
        Write(Html.LabelFor(model => model.Ordinal, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -1010,7 +999,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 166 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 165 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.EditorFor(model => model.Ordinal, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -1021,7 +1010,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 167 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 166 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.ValidationMessageFor(model => model.Ordinal, "", new { @class = "text-danger" }));
 
             
@@ -1039,14 +1028,14 @@ WriteLiteral(">\r\n                <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=", 10653), Tuple.Create("", 10687)
+WriteAttribute("value", Tuple.Create(" value=", 10551), Tuple.Create("", 10585)
             
-            #line 172 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
-, Tuple.Create(Tuple.Create("", 10660), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Create
+            #line 171 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+, Tuple.Create(Tuple.Create("", 10558), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Create
             
             #line default
             #line hidden
-, 10660), false)
+, 10558), false)
 );
 
 WriteLiteral(" class=\"btn btn-primary\"");
@@ -1064,7 +1053,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 177 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 176 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
            Write(Html.ValidationSummary(false, "", new { @class = "text-danger" }));
 
             
@@ -1073,7 +1062,7 @@ WriteLiteral("                ");
 WriteLiteral("\r\n            </div>\r\n        </div>\r\n    </div>\r\n");
 
             
-            #line 181 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 180 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
 }
 
             
@@ -1084,7 +1073,7 @@ WriteLiteral("<div>\r\n");
 WriteLiteral("    ");
 
             
-            #line 183 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
+            #line 182 "..\..\Areas\Identity\Views\Employees\Create.cshtml"
 Write(Html.ActionLink(Resources.Resources.BackToList, "Index"));
 
             

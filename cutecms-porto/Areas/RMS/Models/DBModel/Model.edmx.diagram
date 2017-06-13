@@ -24,7 +24,6 @@
         <AssociationConnector Association="RMSDBModel.FK_RankTerms_Ranks" />
         <AssociationConnector Association="RMSDBModel.FK_VacancyRanks_RankTypes" />
         <AssociationConnector Association="RMSDBModel.FK_StatusTerms_Statuses" />
-        <EntityTypeShape EntityType="RMSDBModel.RMSDepartmentTerm" Width="1.5" PointX="3" PointY="16.625" />
         <EntityTypeShape EntityType="RMSDBModel.JobType" Width="1.5" PointX="0.75" PointY="17.625" />
         <EntityTypeShape EntityType="RMSDBModel.JobTypeTerm" Width="1.5" PointX="3" PointY="13.625" />
         <AssociationConnector Association="RMSDBModel.FK_JobTypeTerms_JobTypes" />
@@ -36,7 +35,6 @@
         <EntityTypeShape EntityType="RMSDBModel.GenderTerm" Width="1.5" PointX="14" PointY="16.75" />
         <EntityTypeShape EntityType="RMSDBModel.RMSLanguage" Width="1.5" PointX="0.75" PointY="12.75" />
         <AssociationConnector Association="RMSDBModel.FK_DegreeTerms_Languages" />
-        <AssociationConnector Association="RMSDBModel.FK_DepartmentTerms_Languages" />
         <AssociationConnector Association="RMSDBModel.FK_GenderTerms_Genders" />
         <AssociationConnector Association="RMSDBModel.FK_GenderTerms_Languages" />
         <AssociationConnector Association="RMSDBModel.FK_JobTypeTerms_Languages" />
@@ -53,8 +51,10 @@
         <AssociationConnector Association="RMSDBModel.FK_VacancyRanks_Vacancies" />
         <EntityTypeShape EntityType="RMSDBModel.RMSDepartment" Width="1.5" PointX="0.75" PointY="1" />
         <AssociationConnector Association="RMSDBModel.FK_Departments_Departments" />
-        <AssociationConnector Association="RMSDBModel.FK_DepartmentTerms_Departments" />
         <AssociationConnector Association="RMSDBModel.FK_Vacancies_Departments" />
+        <EntityTypeShape EntityType="RMSDBModel.RMSDepartmentTerm" Width="1.5" PointX="6" PointY="6.125" />
+        <AssociationConnector Association="RMSDBModel.FK_DepartmentTerms_Departments" />
+        <AssociationConnector Association="RMSDBModel.FK_DepartmentTerms_Languages" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

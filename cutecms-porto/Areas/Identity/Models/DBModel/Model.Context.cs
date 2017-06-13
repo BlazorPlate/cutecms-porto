@@ -36,12 +36,12 @@ namespace cutecms_porto.Areas.Identity.Models.DBModel
         public virtual DbSet<OccupationTerm> OccupationTerms { get; set; }
         public virtual DbSet<IdentityProgramTerm> IdentityProgramTerms { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
-        public virtual DbSet<IdentityDepartmentTerm> IdentityDepartmentTerms { get; set; }
         public virtual DbSet<Publication> Publications { get; set; }
         public virtual DbSet<IdentityLanguage> IdentityLanguages { get; set; }
         public virtual DbSet<EmployeeType> EmployeeTypes { get; set; }
         public virtual DbSet<EmployeeTypeTerm> EmployeeTypeTerms { get; set; }
         public virtual DbSet<EmpInDept> EmpInDepts { get; set; }
         public virtual DbSet<IdentityDepartment> IdentityDepartments { get; set; }
+        public virtual DbSet<IdentityDepartmentTerm> IdentityDepartmentTerms { get; set; }
     }
 }

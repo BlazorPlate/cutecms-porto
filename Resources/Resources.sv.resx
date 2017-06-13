@@ -1104,7 +1104,7 @@
   <data name="Export" xml:space="preserve">
     <value>Exportera</value>
   </data>
-  <data name="UploadAttachments" xml:space="preserve">
+  <data name="PleaseUploadAttachments" xml:space="preserve">
     <value>Vänligen ladda upp bilagor obligatoriska.</value>
   </data>
   <data name="Oops" xml:space="preserve">
@@ -1604,5 +1604,23 @@
   </data>
   <data name="LoremTitle" xml:space="preserve">
     <value>Denna text är ett exempel på text som kan ersättas i samma utrymme.</value>
+  </data>
+  <data name="UploadIcon" xml:space="preserve">
+    <value>Ladda upp ikon</value>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>Ladda upp bild</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Sammanfattning</value>
+  </data>
+  <data name="Icon" xml:space="preserve">
+    <value>.</value>
+  </data>
+  <data name="PleaseUploadIconOfType" xml:space="preserve">
+    <value>Var god ladda upp en ikon för typ:!</value>
+  </data>
+  <data name="IconNotes" xml:space="preserve">
+    <value>Var god ladda upp en ikon för typ: .PNG!</value>
   </data>
 </root>

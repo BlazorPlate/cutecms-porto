@@ -1861,6 +1861,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Icon.
+        /// </summary>
+        public static string Icon {
+            get {
+                return ResourceManager.GetString("Icon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please upload an icon of type: .PNG.
+        /// </summary>
+        public static string IconNotes {
+            get {
+                return ResourceManager.GetString("IconNotes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Serial Number.
         /// </summary>
         public static string Id {
@@ -3193,11 +3211,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please upload the required attachments..
+        /// </summary>
+        public static string PleaseUploadAttachments {
+            get {
+                return ResourceManager.GetString("PleaseUploadAttachments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please upload a file of type:.
         /// </summary>
         public static string PleaseUploadFileOfType {
             get {
                 return ResourceManager.GetString("PleaseUploadFileOfType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please upload an icon of type:.
+        /// </summary>
+        public static string PleaseUploadIconOfType {
+            get {
+                return ResourceManager.GetString("PleaseUploadIconOfType", resourceCulture);
             }
         }
         
@@ -4021,6 +4057,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Summary.
+        /// </summary>
+        public static string Summary {
+            get {
+                return ResourceManager.GetString("Summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tag.
         /// </summary>
         public static string Tag {
@@ -4201,11 +4246,20 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please upload the required attachments..
+        ///   Looks up a localized string similar to Upload Icon.
         /// </summary>
-        public static string UploadAttachments {
+        public static string UploadIcon {
             get {
-                return ResourceManager.GetString("UploadAttachments", resourceCulture);
+                return ResourceManager.GetString("UploadIcon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload Image.
+        /// </summary>
+        public static string UploadImage {
+            get {
+                return ResourceManager.GetString("UploadImage", resourceCulture);
             }
         }
         

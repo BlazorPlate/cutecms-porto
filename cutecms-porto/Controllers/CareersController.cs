@@ -81,7 +81,7 @@ namespace cutecms_porto.Controllers
                 submission.Applicant.AttachmentFiles.RemoveAll(item => item == null);
                 if (submission.Applicant.AttachmentFiles.Count == 0)
                 {
-                    ModelState.AddModelError("attachments", Resources.Resources.UploadAttachments);
+                    ModelState.AddModelError("attachments", Resources.Resources.PleaseUploadAttachments);
                     ViewBag.VacancyTitle = db.Vacancies.Find(id).Title.ToString();
                     return View();
                 }

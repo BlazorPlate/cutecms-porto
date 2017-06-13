@@ -1104,7 +1104,7 @@
   <data name="Export" xml:space="preserve">
     <value>تصدير</value>
   </data>
-  <data name="UploadAttachments" xml:space="preserve">
+  <data name="PleaseUploadAttachments" xml:space="preserve">
     <value>يرجى تحميل المرفقات المطلوبة.</value>
   </data>
   <data name="Oops" xml:space="preserve">
@@ -1604,5 +1604,23 @@
   </data>
   <data name="LoremTitle" xml:space="preserve">
     <value>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة.</value>
+  </data>
+  <data name="UploadIcon" xml:space="preserve">
+    <value>تحميل الأيقونة</value>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>تحميل الصورة</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>الموجز</value>
+  </data>
+  <data name="Icon" xml:space="preserve">
+    <value>الأيقونة</value>
+  </data>
+  <data name="IconNotes" xml:space="preserve">
+    <value>يرجى التأكد من أن تكون الأيقونة من نوع .PNG</value>
+  </data>
+  <data name="PleaseUploadIconOfType" xml:space="preserve">
+    <value>يرجى تحميل أيقونة من نوع:</value>
   </data>
 </root>

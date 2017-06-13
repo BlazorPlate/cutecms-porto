@@ -21,6 +21,20 @@ namespace cutecms_porto.Areas.Config.Models.DBModel
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
         [Display(Name = "Value", ResourceType = typeof(Resources.Resources))]
         public string Value { get; set; }
+        [Display(Name = "IconName", ResourceType = typeof(Resources.Resources))]
+        public string IconName { get; set; }
+        [Display(Name = "IconPath", ResourceType = typeof(Resources.Resources))]
+        public string IconPath { get; set; }
+        [Display(Name = "Summary", ResourceType = typeof(Resources.Resources))]
+        public string Summary { get; set; }
+        [Display(Name = "Description", ResourceType = typeof(Resources.Resources))]
+        public string Description { get; set; }
+        [Display(Name = "ImageName", ResourceType = typeof(Resources.Resources))]
+        public string ImageName { get; set; }
+        [Display(Name = "ImagePath", ResourceType = typeof(Resources.Resources))]
+        public string ImagePath { get; set; }
+        [Display(Name = "HomeVisible", ResourceType = typeof(Resources.Resources))]
+        public bool HomeVisible { get; set; }
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
         [Display(Name = "Department", ResourceType = typeof(Resources.Resources))]
         public int DepartmentId { get; set; }

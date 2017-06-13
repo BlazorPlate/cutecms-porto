@@ -117,12 +117,250 @@ WriteLiteral("            ");
             
             #line default
             #line hidden
+WriteLiteral("\r\n        </dd>\r\n        <dt>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 27 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml"
+       Write(Html.DisplayNameFor(model => model.Icon));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dt>\r\n");
+
+            
+            #line 29 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml"
+        
+            
+            #line default
+            #line hidden
+            
+            #line 29 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml"
+         if (Model.IconPath != null)
+            {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("            <dd>\r\n                <img");
+
+WriteLiteral(" height=\"57\"");
+
+WriteLiteral(" width=\"43\"");
+
+WriteLiteral(" class=\"img-responsive\"");
+
+WriteAttribute("alt", Tuple.Create(" alt=\"", 974), Tuple.Create("\"", 995)
+            
+            #line 32 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml"
+, Tuple.Create(Tuple.Create("", 980), Tuple.Create<System.Object, System.Int32>(Model.IconPath
+            
+            #line default
+            #line hidden
+, 980), false)
+);
+
+WriteAttribute("src", Tuple.Create(" src=\"", 996), Tuple.Create("\"", 1017)
+            
+            #line 32 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml"
+              , Tuple.Create(Tuple.Create("", 1002), Tuple.Create<System.Object, System.Int32>(Model.IconPath
+            
+            #line default
+            #line hidden
+, 1002), false)
+);
+
+WriteLiteral(">\r\n            </dd>\r\n");
+
+            
+            #line 34 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml"
+        }
+        else
+        {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("            <dd>\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 38 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml"
+           Write(Html.Display(Resources.Resources.NotAvailable));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            </dd>\r\n");
+
+            
+            #line 40 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml"
+        }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        <dt>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 43 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml"
+       Write(Html.DisplayNameFor(model => model.Summary));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 47 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml"
+       Write(Html.DisplayFor(model => model.Summary));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dd>\r\n        <dt>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 50 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml"
+       Write(Html.DisplayNameFor(model => model.Description));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dt>\r\n        <dd>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 53 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml"
+       Write(Html.DisplayFor(model => model.Description));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dd>\r\n        <dt>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 56 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml"
+       Write(Html.DisplayNameFor(model => model.Image));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dt>\r\n");
+
+            
+            #line 58 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml"
+        
+            
+            #line default
+            #line hidden
+            
+            #line 58 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml"
+         if (Model.ImagePath != null)
+        {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("            <dd>\r\n                <img");
+
+WriteLiteral(" height=\"180\"");
+
+WriteLiteral(" width=\"360\"");
+
+WriteLiteral(" class=\"img-responsive\"");
+
+WriteAttribute("alt", Tuple.Create(" alt=\"", 1762), Tuple.Create("\"", 1784)
+            
+            #line 61 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml"
+, Tuple.Create(Tuple.Create("", 1768), Tuple.Create<System.Object, System.Int32>(Model.ImagePath
+            
+            #line default
+            #line hidden
+, 1768), false)
+);
+
+WriteAttribute("src", Tuple.Create(" src=\"", 1785), Tuple.Create("\"", 1807)
+            
+            #line 61 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml"
+                 , Tuple.Create(Tuple.Create("", 1791), Tuple.Create<System.Object, System.Int32>(Model.ImagePath
+            
+            #line default
+            #line hidden
+, 1791), false)
+);
+
+WriteLiteral(">\r\n            </dd>\r\n");
+
+            
+            #line 63 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml"
+        }
+        else
+        {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("            <dd>\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 67 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml"
+           Write(Html.Display(Resources.Resources.NotAvailable));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            </dd>\r\n");
+
+            
+            #line 69 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml"
+        }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("        <dd>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 71 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml"
+       Write(Html.DisplayFor(model => model.Description));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dd>\r\n\r\n        <dd>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 75 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml"
+       Write(Html.DisplayFor(model => model.HomeVisible));
+
+            
+            #line default
+            #line hidden
 WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n</div>\r\n<p>\r\n");
 
 WriteLiteral("    ");
 
             
-            #line 29 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml"
+            #line 80 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml"
 Write(Html.ActionLink(Resources.Resources.Edit, "Edit", new { id = Model.Id }));
 
             
@@ -133,7 +371,7 @@ WriteLiteral(" |\r\n");
 WriteLiteral("    ");
 
             
-            #line 30 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml"
+            #line 81 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml"
 Write(Html.ActionLink(Resources.Resources.BackToList, "Index", new { id = Model.DepartmentId }));
 
             

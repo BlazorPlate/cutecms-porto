@@ -1104,7 +1104,7 @@
   <data name="Export" xml:space="preserve">
     <value>Xuất khẩu</value>
   </data>
-  <data name="UploadAttachments" xml:space="preserve">
+  <data name="PleaseUploadAttachments" xml:space="preserve">
     <value>Xin vui lòng tải lên các tập tin đính kèm của yêu cầu.</value>
   </data>
   <data name="Oops" xml:space="preserve">
@@ -1604,5 +1604,23 @@
   </data>
   <data name="LoremTitle" xml:space="preserve">
     <value>Văn bản này là một ví dụ về văn bản có thể được thay thế trong cùng một không gian.</value>
+  </data>
+  <data name="UploadIcon" xml:space="preserve">
+    <value>Tải lên bộ biểu tượng</value>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>Tải lên ảnh</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Tổng kết</value>
+  </data>
+  <data name="Icon" xml:space="preserve">
+    <value>Biểu tượng</value>
+  </data>
+  <data name="PleaseUploadIconOfType" xml:space="preserve">
+    <value>Vui lòng tải lên biểu tượng loại :!</value>
+  </data>
+  <data name="IconNotes" xml:space="preserve">
+    <value>Vui lòng tải lên biểu tượng loại: .PNG!</value>
   </data>
 </root>

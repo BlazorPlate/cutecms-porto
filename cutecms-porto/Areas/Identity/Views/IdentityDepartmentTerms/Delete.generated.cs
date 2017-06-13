@@ -126,30 +126,129 @@ WriteLiteral("            ");
             
             #line default
             #line hidden
-WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n");
+WriteLiteral("\r\n        </dd>\r\n        <dt>\r\n");
+
+WriteLiteral("            ");
 
             
             #line 28 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Delete.cshtml"
+       Write(Html.DisplayNameFor(model => model.IconName));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 32 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Delete.cshtml"
+       Write(Html.DisplayFor(model => model.IconName));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dd>\r\n\r\n        <dt>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 36 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Delete.cshtml"
+       Write(Html.DisplayNameFor(model => model.IconPath));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 40 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Delete.cshtml"
+       Write(Html.DisplayFor(model => model.IconPath));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dd>\r\n\r\n        <dt>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 44 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Delete.cshtml"
+       Write(Html.DisplayNameFor(model => model.Summary));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 48 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Delete.cshtml"
+       Write(Html.DisplayFor(model => model.Summary));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dd>\r\n\r\n        <dt>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 52 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Delete.cshtml"
+       Write(Html.DisplayNameFor(model => model.Description));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dt>\r\n\r\n        <dd>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 56 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Delete.cshtml"
+       Write(Html.DisplayFor(model => model.Description));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dd>\r\n\r\n        <dd>\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 60 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Delete.cshtml"
+       Write(Html.DisplayFor(model => model.HomeVisible));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n");
+
+            
+            #line 63 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Delete.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 28 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Delete.cshtml"
+            #line 63 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Delete.cshtml"
      using (Html.BeginForm()) {
         
             
             #line default
             #line hidden
             
-            #line 29 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Delete.cshtml"
+            #line 64 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Delete.cshtml"
    Write(Html.AntiForgeryToken());
 
             
             #line default
             #line hidden
             
-            #line 29 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Delete.cshtml"
+            #line 64 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Delete.cshtml"
                                 
 
             
@@ -163,14 +262,14 @@ WriteLiteral(">\r\n            <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=", 957), Tuple.Create("", 991)
+WriteAttribute("value", Tuple.Create(" value=", 1752), Tuple.Create("", 1786)
             
-            #line 31 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Delete.cshtml"
-, Tuple.Create(Tuple.Create("", 964), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Delete
+            #line 66 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Delete.cshtml"
+, Tuple.Create(Tuple.Create("", 1759), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Delete
             
             #line default
             #line hidden
-, 964), false)
+, 1759), false)
 );
 
 WriteLiteral(" class=\"btn btn-default\"");
@@ -180,7 +279,7 @@ WriteLiteral(" /> |\r\n");
 WriteLiteral("            ");
 
             
-            #line 32 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Delete.cshtml"
+            #line 67 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Delete.cshtml"
        Write(Html.ActionLink(Resources.Resources.BackToList, "Index", new { id = Model.DepartmentId }));
 
             
@@ -189,7 +288,7 @@ WriteLiteral("            ");
 WriteLiteral("\r\n        </div>\r\n");
 
             
-            #line 34 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Delete.cshtml"
+            #line 69 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Delete.cshtml"
     }
 
             

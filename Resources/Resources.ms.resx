@@ -1104,7 +1104,7 @@
   <data name="Export" xml:space="preserve">
     <value>Eksport</value>
   </data>
-  <data name="UploadAttachments" xml:space="preserve">
+  <data name="PleaseUploadAttachments" xml:space="preserve">
     <value>Sila muat naik lampiran yang diperlukan.</value>
   </data>
   <data name="Oops" xml:space="preserve">
@@ -1604,5 +1604,23 @@
   </data>
   <data name="LoremTitle" xml:space="preserve">
     <value>Teks ini adalah satu contoh teks yang akan diganti di tempat yang sama.</value>
+  </data>
+  <data name="UploadIcon" xml:space="preserve">
+    <value>Muat Naik</value>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>Memuat naik imej!</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Ringkasan</value>
+  </data>
+  <data name="Icon" xml:space="preserve">
+    <value>Ikon</value>
+  </data>
+  <data name="PleaseUploadIconOfType" xml:space="preserve">
+    <value>Sila muat naik ikon jenis :!</value>
+  </data>
+  <data name="IconNotes" xml:space="preserve">
+    <value>Sila muat naik ikon type: PNG!</value>
   </data>
 </root>

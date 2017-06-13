@@ -1104,7 +1104,7 @@
   <data name="Export" xml:space="preserve">
     <value>การส่งออก</value>
   </data>
-  <data name="UploadAttachments" xml:space="preserve">
+  <data name="PleaseUploadAttachments" xml:space="preserve">
     <value>โปรดอัปโหลดสิ่งที่แนบที่จำเป็น</value>
   </data>
   <data name="Oops" xml:space="preserve">
@@ -1604,5 +1604,23 @@
   </data>
   <data name="LoremTitle" xml:space="preserve">
     <value>ข้อความนี้เป็นตัวอย่างของข้อความที่สามารถถูกแทนที่ในพื้นที่เดียวกัน</value>
+  </data>
+  <data name="UploadIcon" xml:space="preserve">
+    <value>อัปโหลด</value>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>อัปโหลดภาพ!</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>สรุป</value>
+  </data>
+  <data name="Icon" xml:space="preserve">
+    <value>ไอคอน</value>
+  </data>
+  <data name="PleaseUploadIconOfType" xml:space="preserve">
+    <value>โปรดอัปโหลดไอคอนประเภท :!</value>
+  </data>
+  <data name="IconNotes" xml:space="preserve">
+    <value>โปรดอัปโหลดไอคอนประเภท: .PNG!</value>
   </data>
 </root>

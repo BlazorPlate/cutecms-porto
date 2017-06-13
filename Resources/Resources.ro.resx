@@ -1104,7 +1104,7 @@
   <data name="Export" xml:space="preserve">
     <value>Export</value>
   </data>
-  <data name="UploadAttachments" xml:space="preserve">
+  <data name="PleaseUploadAttachments" xml:space="preserve">
     <value>Vă rugăm să încărcaţi anexe necesare.</value>
   </data>
   <data name="Oops" xml:space="preserve">
@@ -1604,5 +1604,23 @@
   </data>
   <data name="LoremTitle" xml:space="preserve">
     <value>Acest text este un exemplu de text care poate fi înlocuit în acelaşi spaţiu.</value>
+  </data>
+  <data name="UploadIcon" xml:space="preserve">
+    <value>incarcati icoana:</value>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>Incarca Imagine</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Sumar</value>
+  </data>
+  <data name="Icon" xml:space="preserve">
+    <value>Pictogramă</value>
+  </data>
+  <data name="PleaseUploadIconOfType" xml:space="preserve">
+    <value>Încărcați o pictogramă de tip :!</value>
+  </data>
+  <data name="IconNotes" xml:space="preserve">
+    <value>Încărcați o pictogramă de tip: .PNG!</value>
   </data>
 </root>

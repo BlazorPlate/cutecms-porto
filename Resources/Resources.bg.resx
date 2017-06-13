@@ -1104,7 +1104,7 @@
   <data name="Export" xml:space="preserve">
     <value>Износ</value>
   </data>
-  <data name="UploadAttachments" xml:space="preserve">
+  <data name="PleaseUploadAttachments" xml:space="preserve">
     <value>Моля, качи исканите прикачени документи.</value>
   </data>
   <data name="Oops" xml:space="preserve">
@@ -1604,5 +1604,23 @@
   </data>
   <data name="LoremTitle" xml:space="preserve">
     <value>Този текст е пример за текст, който може да бъде заменен в същото пространство.</value>
+  </data>
+  <data name="UploadIcon" xml:space="preserve">
+    <value>Качете икона</value>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>Качи снимка</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Резюме</value>
+  </data>
+  <data name="Icon" xml:space="preserve">
+    <value>Ляво горе</value>
+  </data>
+  <data name="PleaseUploadIconOfType" xml:space="preserve">
+    <value>Моля, качете икона от тип:!</value>
+  </data>
+  <data name="IconNotes" xml:space="preserve">
+    <value>Моля, качете икона от типа: .PNG!</value>
   </data>
 </root>

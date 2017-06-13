@@ -84,6 +84,42 @@ namespace cutecms_porto.Helpers
         }
         #endregion Methods
     }
+    public class ValidateIconAttribute : ValidationAttribute
+    {
+        #region Methods
+        public override bool IsValid(object value)
+        {
+            int MaxContentLength = 10485760; //10 MB
+            string[] AllowedFileExtensions = new string[] { ".png" };
+            var file = value as HttpPostedFileBase;
+            if (file == null)
+            {
+                return true;
+            }
+            if (file != null && file.ContentLength > 0)
+            {
+                if (!AllowedFileExtensions.Contains(file.FileName.Substring(file.FileName.LastIndexOf('.')).ToLower()))
+                {
+                    ErrorMessage = Resources.Resources.PleaseUploadIconOfType + string.Join(", ", AllowedFileExtensions);
+                    return false;
+                }
+                else if (file.ContentLength > MaxContentLength)
+                {
+                    ErrorMessage = Resources.Resources.MaximumAllowedSize + (MaxContentLength / 1024 / 1024).ToString() + "MB";
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+        #endregion Methods
+    }
 
     public class ValidateFileAttribute : ValidationAttribute
     {

@@ -1104,7 +1104,7 @@
   <data name="Export" xml:space="preserve">
     <value>Eksportere</value>
   </data>
-  <data name="UploadAttachments" xml:space="preserve">
+  <data name="PleaseUploadAttachments" xml:space="preserve">
     <value>Behage sende de nødvendige vedhæftede filer.</value>
   </data>
   <data name="Oops" xml:space="preserve">
@@ -1604,5 +1604,23 @@
   </data>
   <data name="LoremTitle" xml:space="preserve">
     <value>Denne tekst er et eksempel på tekst, der kan erstattes i det samme rum.</value>
+  </data>
+  <data name="UploadIcon" xml:space="preserve">
+    <value>Upload ikon</value>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>Upload billede</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Opsummering</value>
+  </data>
+  <data name="Icon" xml:space="preserve">
+    <value>Ikon</value>
+  </data>
+  <data name="PleaseUploadIconOfType" xml:space="preserve">
+    <value>Upload venligst et ikon af typen :!</value>
+  </data>
+  <data name="IconNotes" xml:space="preserve">
+    <value>Upload venligst et ikon af typen: .PNG!</value>
   </data>
 </root>

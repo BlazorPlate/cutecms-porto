@@ -1104,7 +1104,7 @@
   <data name="Export" xml:space="preserve">
     <value>Eksports</value>
   </data>
-  <data name="UploadAttachments" xml:space="preserve">
+  <data name="PleaseUploadAttachments" xml:space="preserve">
     <value>Lūdzu, augšupielādējiet vajadzīgo pielikumu.</value>
   </data>
   <data name="Oops" xml:space="preserve">
@@ -1604,5 +1604,23 @@
   </data>
   <data name="LoremTitle" xml:space="preserve">
     <value>Šis teksts ir teksts, kas atrodas vienā un tai pašā telpā var aizstāt piemērs.</value>
+  </data>
+  <data name="UploadIcon" xml:space="preserve">
+    <value>Pievienot</value>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>Augšupielādēt attēlu</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Kopsavilkums</value>
+  </data>
+  <data name="Icon" xml:space="preserve">
+    <value>Ikona</value>
+  </data>
+  <data name="PleaseUploadIconOfType" xml:space="preserve">
+    <value>Lūdzu, augšupielādējiet ikonu veida :!</value>
+  </data>
+  <data name="IconNotes" xml:space="preserve">
+    <value>Lūdzu, augšupielādējiet ikonu tips: .PNG!</value>
   </data>
 </root>

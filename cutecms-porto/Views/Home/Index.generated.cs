@@ -327,8 +327,8 @@ WriteLiteral(">Emergency case</label>\r\n                                <strong
 
 WriteLiteral(" class=\"font-weight-normal\"");
 
-WriteLiteral(">(800)123-4567</strong>\r\n                            </div>\r\n                    " +
-"    </div>\r\n                    </a>\r\n                </div>\r\n");
+WriteLiteral(">(962)5399-0990</strong>\r\n                            </div>\r\n                   " +
+"     </div>\r\n                    </a>\r\n                </div>\r\n");
 
 WriteLiteral("                <div");
 
@@ -413,9 +413,9 @@ WriteLiteral(" class=\"feature-box-icon\"");
 
 WriteLiteral(">\r\n                            <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 7122), Tuple.Create("\"", 7189)
-, Tuple.Create(Tuple.Create("", 7128), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/icons/medical-icon-heart.png")
-, 7128), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 7123), Tuple.Create("\"", 7190)
+, Tuple.Create(Tuple.Create("", 7129), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/icons/medical-icon-heart.png")
+, 7129), false)
 );
 
 WriteLiteral(" alt");
@@ -461,9 +461,9 @@ WriteLiteral(" class=\"feature-box-icon\"");
 
 WriteLiteral(">\r\n                            <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 7844), Tuple.Create("\"", 7911)
-, Tuple.Create(Tuple.Create("", 7850), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/icons/medical-icon-heart.png")
-, 7850), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 7845), Tuple.Create("\"", 7912)
+, Tuple.Create(Tuple.Create("", 7851), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/icons/medical-icon-heart.png")
+, 7851), false)
 );
 
 WriteLiteral(" alt");
@@ -584,8 +584,8 @@ WriteLiteral(">Emergency case</label>\r\n                                <strong
 
 WriteLiteral(" class=\"font-weight-normal\"");
 
-WriteLiteral(">(800)123-4567</strong>\r\n                            </div>\r\n                    " +
-"    </div>\r\n                    </a>\r\n                </div>\r\n");
+WriteLiteral(">(962)5399-0990</strong>\r\n                            </div>\r\n                   " +
+"     </div>\r\n                    </a>\r\n                </div>\r\n");
 
             
             #line 189 "..\..\Views\Home\Index.cshtml"
@@ -626,9 +626,9 @@ WriteLiteral(" class=\"col-sm-4 col-md-4\"");
 
 WriteLiteral(">\r\n                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 11433), Tuple.Create("\"", 11493)
-, Tuple.Create(Tuple.Create("", 11439), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/gallery/gallery-1.jpg")
-, 11439), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 11435), Tuple.Create("\"", 11495)
+, Tuple.Create(Tuple.Create("", 11441), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/gallery/gallery-1.jpg")
+, 11441), false)
 );
 
 WriteLiteral(" alt");
@@ -682,9 +682,9 @@ WriteLiteral(" class=\"feature-box-icon\"");
 
 WriteLiteral(">\r\n                        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 12272), Tuple.Create("\"", 12347)
-, Tuple.Create(Tuple.Create("", 12278), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/icons/department-icon-cardiology.png")
-, 12278), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 12274), Tuple.Create("\"", 12349)
+, Tuple.Create(Tuple.Create("", 12280), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/icons/department-icon-cardiology.png")
+, 12280), false)
 );
 
 WriteLiteral(" alt");
@@ -726,9 +726,9 @@ WriteLiteral(" class=\"feature-box-icon\"");
 
 WriteLiteral(">\r\n                        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 13093), Tuple.Create("\"", 13174)
-, Tuple.Create(Tuple.Create("", 13099), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/icons/department-icon-gastroenterology.png")
-, 13099), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 13095), Tuple.Create("\"", 13176)
+, Tuple.Create(Tuple.Create("", 13101), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/icons/department-icon-gastroenterology.png")
+, 13101), false)
 );
 
 WriteLiteral(" alt");
@@ -770,9 +770,9 @@ WriteLiteral(" class=\"feature-box-icon\"");
 
 WriteLiteral(">\r\n                        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 13926), Tuple.Create("\"", 14002)
-, Tuple.Create(Tuple.Create("", 13932), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/icons/department-icon-pulmonology.png")
-, 13932), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 13928), Tuple.Create("\"", 14004)
+, Tuple.Create(Tuple.Create("", 13934), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/icons/department-icon-pulmonology.png")
+, 13934), false)
 );
 
 WriteLiteral(" alt");
@@ -818,9 +818,9 @@ WriteLiteral(" class=\"feature-box-icon\"");
 
 WriteLiteral(">\r\n                        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 14798), Tuple.Create("\"", 14869)
-, Tuple.Create(Tuple.Create("", 14804), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/icons/department-icon-dental.png")
-, 14804), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 14800), Tuple.Create("\"", 14871)
+, Tuple.Create(Tuple.Create("", 14806), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/icons/department-icon-dental.png")
+, 14806), false)
 );
 
 WriteLiteral(" alt");
@@ -861,9 +861,9 @@ WriteLiteral(" class=\"feature-box-icon\"");
 
 WriteLiteral(">\r\n                        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 15611), Tuple.Create("\"", 15686)
-, Tuple.Create(Tuple.Create("", 15617), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/icons/department-icon-gynecology.png")
-, 15617), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 15613), Tuple.Create("\"", 15688)
+, Tuple.Create(Tuple.Create("", 15619), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/icons/department-icon-gynecology.png")
+, 15619), false)
 );
 
 WriteLiteral(" alt");
@@ -905,9 +905,9 @@ WriteLiteral(" class=\"feature-box-icon\"");
 
 WriteLiteral(">\r\n                        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 16432), Tuple.Create("\"", 16507)
-, Tuple.Create(Tuple.Create("", 16438), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/icons/department-icon-hepatology.png")
-, 16438), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 16434), Tuple.Create("\"", 16509)
+, Tuple.Create(Tuple.Create("", 16440), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/icons/department-icon-hepatology.png")
+, 16440), false)
 );
 
 WriteLiteral(" alt");
@@ -1034,9 +1034,9 @@ WriteLiteral(" class=\"thumb-info-wrapper m-none\"");
 
 WriteLiteral(">\r\n                                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 18628), Tuple.Create("\"", 18687)
-, Tuple.Create(Tuple.Create("", 18634), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/doctors/doctor-1.jpg")
-, 18634), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 18630), Tuple.Create("\"", 18689)
+, Tuple.Create(Tuple.Create("", 18636), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/doctors/doctor-1.jpg")
+, 18636), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");
@@ -1089,9 +1089,9 @@ WriteLiteral(" class=\"thumb-info-wrapper m-none\"");
 
 WriteLiteral(">\r\n                                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 19796), Tuple.Create("\"", 19855)
-, Tuple.Create(Tuple.Create("", 19802), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/doctors/doctor-2.jpg")
-, 19802), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 19798), Tuple.Create("\"", 19857)
+, Tuple.Create(Tuple.Create("", 19804), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/doctors/doctor-2.jpg")
+, 19804), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");
@@ -1144,9 +1144,9 @@ WriteLiteral(" class=\"thumb-info-wrapper m-none\"");
 
 WriteLiteral(">\r\n                                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 20971), Tuple.Create("\"", 21030)
-, Tuple.Create(Tuple.Create("", 20977), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/doctors/doctor-3.jpg")
-, 20977), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 20973), Tuple.Create("\"", 21032)
+, Tuple.Create(Tuple.Create("", 20979), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/doctors/doctor-3.jpg")
+, 20979), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");
@@ -1199,9 +1199,9 @@ WriteLiteral(" class=\"thumb-info-wrapper m-none\"");
 
 WriteLiteral(">\r\n                                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 22143), Tuple.Create("\"", 22202)
-, Tuple.Create(Tuple.Create("", 22149), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/doctors/doctor-4.jpg")
-, 22149), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 22145), Tuple.Create("\"", 22204)
+, Tuple.Create(Tuple.Create("", 22151), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/doctors/doctor-4.jpg")
+, 22151), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");
@@ -1254,9 +1254,9 @@ WriteLiteral(" class=\"thumb-info-wrapper m-none\"");
 
 WriteLiteral(">\r\n                                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 23307), Tuple.Create("\"", 23366)
-, Tuple.Create(Tuple.Create("", 23313), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/doctors/doctor-5.jpg")
-, 23313), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 23309), Tuple.Create("\"", 23368)
+, Tuple.Create(Tuple.Create("", 23315), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/doctors/doctor-5.jpg")
+, 23315), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");
@@ -1339,9 +1339,9 @@ WriteLiteral(" alt=\"\"");
 
 WriteLiteral(" class=\"img-responsive\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 24959), Tuple.Create("\"", 25019)
-, Tuple.Create(Tuple.Create("", 24965), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/gallery/gallery-2.jpg")
-, 24965), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 24961), Tuple.Create("\"", 25021)
+, Tuple.Create(Tuple.Create("", 24967), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/gallery/gallery-2.jpg")
+, 24967), false)
 );
 
 WriteLiteral(">\r\n                        </span>\r\n                        <span");
@@ -1388,9 +1388,9 @@ WriteLiteral(" alt=\"\"");
 
 WriteLiteral(" class=\"img-responsive\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 25983), Tuple.Create("\"", 26043)
-, Tuple.Create(Tuple.Create("", 25989), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/gallery/gallery-3.jpg")
-, 25989), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 25985), Tuple.Create("\"", 26045)
+, Tuple.Create(Tuple.Create("", 25991), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/gallery/gallery-3.jpg")
+, 25991), false)
 );
 
 WriteLiteral(">\r\n                        </span>\r\n                        <span");
@@ -1437,9 +1437,9 @@ WriteLiteral(" alt=\"\"");
 
 WriteLiteral(" class=\"img-responsive\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 27006), Tuple.Create("\"", 27066)
-, Tuple.Create(Tuple.Create("", 27012), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/gallery/gallery-4.jpg")
-, 27012), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 27008), Tuple.Create("\"", 27068)
+, Tuple.Create(Tuple.Create("", 27014), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/gallery/gallery-4.jpg")
+, 27014), false)
 );
 
 WriteLiteral(">\r\n                        </span>\r\n                        <span");
@@ -1515,9 +1515,9 @@ WriteLiteral(" class=\"content-grid-item col-sm-4 col-md-2 center\"");
 
 WriteLiteral(">\r\n                        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 28406), Tuple.Create("\"", 28471)
-, Tuple.Create(Tuple.Create("", 28412), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/logos/insurance-logo-1.png")
-, 28412), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 28408), Tuple.Create("\"", 28473)
+, Tuple.Create(Tuple.Create("", 28414), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/logos/insurance-logo-1.png")
+, 28414), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");
@@ -1528,9 +1528,9 @@ WriteLiteral(" class=\"content-grid-item col-sm-4 col-md-2 center\"");
 
 WriteLiteral(">\r\n                        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 28634), Tuple.Create("\"", 28699)
-, Tuple.Create(Tuple.Create("", 28640), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/logos/insurance-logo-2.png")
-, 28640), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 28636), Tuple.Create("\"", 28701)
+, Tuple.Create(Tuple.Create("", 28642), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/logos/insurance-logo-2.png")
+, 28642), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");
@@ -1541,9 +1541,9 @@ WriteLiteral(" class=\"content-grid-item col-sm-4 col-md-2 center\"");
 
 WriteLiteral(">\r\n                        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 28862), Tuple.Create("\"", 28927)
-, Tuple.Create(Tuple.Create("", 28868), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/logos/insurance-logo-3.png")
-, 28868), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 28864), Tuple.Create("\"", 28929)
+, Tuple.Create(Tuple.Create("", 28870), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/logos/insurance-logo-3.png")
+, 28870), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");
@@ -1554,9 +1554,9 @@ WriteLiteral(" class=\"content-grid-item col-sm-4 col-md-2 center\"");
 
 WriteLiteral(">\r\n                        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 29090), Tuple.Create("\"", 29155)
-, Tuple.Create(Tuple.Create("", 29096), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/logos/insurance-logo-4.png")
-, 29096), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 29092), Tuple.Create("\"", 29157)
+, Tuple.Create(Tuple.Create("", 29098), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/logos/insurance-logo-4.png")
+, 29098), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");
@@ -1567,9 +1567,9 @@ WriteLiteral(" class=\"content-grid-item col-sm-4 col-md-2 center\"");
 
 WriteLiteral(">\r\n                        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 29318), Tuple.Create("\"", 29383)
-, Tuple.Create(Tuple.Create("", 29324), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/logos/insurance-logo-5.png")
-, 29324), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 29320), Tuple.Create("\"", 29385)
+, Tuple.Create(Tuple.Create("", 29326), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/logos/insurance-logo-5.png")
+, 29326), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");
@@ -1580,9 +1580,9 @@ WriteLiteral(" class=\"content-grid-item col-sm-4 col-md-2 center\"");
 
 WriteLiteral(">\r\n                        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 29546), Tuple.Create("\"", 29611)
-, Tuple.Create(Tuple.Create("", 29552), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/logos/insurance-logo-6.png")
-, 29552), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 29548), Tuple.Create("\"", 29613)
+, Tuple.Create(Tuple.Create("", 29554), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/logos/insurance-logo-6.png")
+, 29554), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");

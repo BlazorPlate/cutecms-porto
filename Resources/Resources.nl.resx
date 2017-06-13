@@ -1104,7 +1104,7 @@
   <data name="Export" xml:space="preserve">
     <value>Exporteren</value>
   </data>
-  <data name="UploadAttachments" xml:space="preserve">
+  <data name="PleaseUploadAttachments" xml:space="preserve">
     <value>Upload de vereiste bijlagen.</value>
   </data>
   <data name="Oops" xml:space="preserve">
@@ -1604,5 +1604,23 @@
   </data>
   <data name="LoremTitle" xml:space="preserve">
     <value>Deze tekst is een voorbeeld van tekst die kan worden vervangen in dezelfde ruimte.</value>
+  </data>
+  <data name="UploadIcon" xml:space="preserve">
+    <value>Upload pictogram</value>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>Afbeelding uploaden</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Samenvatting</value>
+  </data>
+  <data name="Icon" xml:space="preserve">
+    <value>Icon</value>
+  </data>
+  <data name="PleaseUploadIconOfType" xml:space="preserve">
+    <value>Gelieve een pictogram van het type te uploaden :!</value>
+  </data>
+  <data name="IconNotes" xml:space="preserve">
+    <value>Upload een pictogram van het type: .PNG!</value>
   </data>
 </root>

@@ -1104,7 +1104,7 @@
   <data name="Export" xml:space="preserve">
     <value>Dışa aktarma</value>
   </data>
-  <data name="UploadAttachments" xml:space="preserve">
+  <data name="PleaseUploadAttachments" xml:space="preserve">
     <value>Lütfen gerekli ekleri yükleyin.</value>
   </data>
   <data name="Oops" xml:space="preserve">
@@ -1604,5 +1604,23 @@
   </data>
   <data name="LoremTitle" xml:space="preserve">
     <value>Bu metin, aynı alanda eski yerine koymak metin örneği var.</value>
+  </data>
+  <data name="UploadIcon" xml:space="preserve">
+    <value>Simge Yükle</value>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>Resim Yükle</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Özet</value>
+  </data>
+  <data name="Icon" xml:space="preserve">
+    <value>Simge!</value>
+  </data>
+  <data name="PleaseUploadIconOfType" xml:space="preserve">
+    <value>Lütfen bir tür simge yükleyin :!</value>
+  </data>
+  <data name="IconNotes" xml:space="preserve">
+    <value>Lütfen bir tür simge yükleyin: .PNG!</value>
   </data>
 </root>

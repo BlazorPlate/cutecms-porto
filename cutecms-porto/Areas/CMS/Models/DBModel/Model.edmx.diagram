@@ -61,7 +61,7 @@
         <AssociationConnector Association="CuteCMSDBModel.FK_ListItems_ContentLists" />
         <EntityTypeShape EntityType="CuteCMSDBModel.CMSDepartment" Width="1.5" PointX="0.75" PointY="1" />
         <AssociationConnector Association="CuteCMSDBModel.FK_Departments_Departments" />
-        <EntityTypeShape EntityType="CuteCMSDBModel.CMSDepartmentTerm" Width="1.5" PointX="6" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuteCMSDBModel.CMSDepartmentTerm" Width="1.5" PointX="6" PointY="6.375" />
         <AssociationConnector Association="CuteCMSDBModel.FK_DepartmentTerms_Departments" />
         <AssociationConnector Association="CuteCMSDBModel.FK_DepartmentTerms_Languages" />
         </Diagram>

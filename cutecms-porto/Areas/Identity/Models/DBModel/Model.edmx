@@ -41,6 +41,8 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="LanguageId" Type="int" Nullable="false" />
           <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="UrlSlug" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="AbsolutePath" Type="nvarchar(max)" Nullable="false" />
           <Property Name="IconName" Type="nvarchar(max)" />
           <Property Name="IconPath" Type="nvarchar(max)" />
           <Property Name="Summary" Type="nvarchar(max)" />
@@ -48,6 +50,7 @@
           <Property Name="ImageName" Type="nvarchar(max)" />
           <Property Name="ImagePath" Type="nvarchar(max)" />
           <Property Name="HomeVisible" Type="bit" Nullable="false" />
+          <Property Name="Ordinal" Type="int" />
           <Property Name="DepartmentId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="EmpInDept">
@@ -1300,6 +1303,8 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="LanguageId" Type="Int32" Nullable="false" />
           <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UrlSlug" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AbsolutePath" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="IconName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="IconPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Summary" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -1307,6 +1312,7 @@
           <Property Name="ImageName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="HomeVisible" Type="Boolean" Nullable="false" />
+          <Property Name="Ordinal" Type="Int32" />
           <Property Name="DepartmentId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Department" Relationship="IdentityModel.FK_DepartmentTerms_Departments" FromRole="DepartmentTerm" ToRole="IdentityDepartment" />
           <NavigationProperty Name="Language" Relationship="IdentityModel.FK_DepartmentTerms_Languages" FromRole="DepartmentTerm" ToRole="IdentityLanguage" />
@@ -1547,6 +1553,7 @@
             <EntityTypeMapping TypeName="IdentityModel.IdentityDepartmentTerm">
               <MappingFragment StoreEntitySet="DepartmentTerms">
                 <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
                 <ScalarProperty Name="HomeVisible" ColumnName="HomeVisible" />
                 <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
                 <ScalarProperty Name="ImageName" ColumnName="ImageName" />
@@ -1554,6 +1561,8 @@
                 <ScalarProperty Name="Summary" ColumnName="Summary" />
                 <ScalarProperty Name="IconPath" ColumnName="IconPath" />
                 <ScalarProperty Name="IconName" ColumnName="IconName" />
+                <ScalarProperty Name="AbsolutePath" ColumnName="AbsolutePath" />
+                <ScalarProperty Name="UrlSlug" ColumnName="UrlSlug" />
                 <ScalarProperty Name="Value" ColumnName="Value" />
                 <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />

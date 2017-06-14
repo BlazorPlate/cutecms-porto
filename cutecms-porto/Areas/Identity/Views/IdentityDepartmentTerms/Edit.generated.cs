@@ -491,6 +491,56 @@ WriteLiteral("                    ");
             #line hidden
 WriteLiteral("\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div");
 
+WriteLiteral(" id=\"OrdinalDiv\"");
+
+WriteLiteral(">\r\n            <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 80 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+           Write(Html.LabelFor(model => model.Ordinal, htmlAttributes: new { @class = "control-label col-md-2" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                <div");
+
+WriteLiteral(" class=\"col-md-10\"");
+
+WriteLiteral(">\r\n                    <div");
+
+WriteLiteral(" class=\"checkbox\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                        ");
+
+            
+            #line 83 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+                   Write(Html.EditorFor(model => model.Ordinal, new { htmlAttributes = new { @class = "form-control" } }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("                        ");
+
+            
+            #line 84 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+                   Write(Html.ValidationMessageFor(model => model.Ordinal, "", new { @class = "text-danger" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                    </div>\r\n                </div>\r\n            </div>\r\n       " +
+" </div>\r\n        <div");
+
 WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n            <div");
@@ -501,14 +551,14 @@ WriteLiteral(">\r\n                <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=", 4403), Tuple.Create("", 4435)
+WriteAttribute("value", Tuple.Create(" value=", 4995), Tuple.Create("", 5027)
             
-            #line 80 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 4410), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Save
+            #line 91 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+, Tuple.Create(Tuple.Create("", 5002), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Save
             
             #line default
             #line hidden
-, 4410), false)
+, 5002), false)
 );
 
 WriteLiteral(" class=\"btn btn-default\"");
@@ -526,7 +576,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 85 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+            #line 96 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
            Write(Html.ValidationSummary(false, "", new { @class = "text-danger" }));
 
             
@@ -535,7 +585,7 @@ WriteLiteral("                ");
 WriteLiteral("\r\n            </div>\r\n        </div>\r\n    </div>\r\n");
 
             
-            #line 89 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+            #line 100 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
 }
 
             
@@ -546,13 +596,43 @@ WriteLiteral("<div>\r\n");
 WriteLiteral("    ");
 
             
-            #line 91 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+            #line 102 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
 Write(Html.ActionLink(Resources.Resources.BackToList, "Index", new { id = Model.DepartmentId }));
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n</div>\r\n");
+
+DefineSection("Scripts", () => {
+
+WriteLiteral("\r\n    <script");
+
+WriteLiteral(" type=\"text/javascript\"");
+
+WriteLiteral(@">
+        $(document).ready(function () {
+            //Uncheck the CheckBox initially
+            $('#HomeVisible').change(function () {
+                if (this.checked) {
+                    $('#OrdinalDiv').show();
+                }
+                else {
+                    $(""#OrdinalDiv"").hide()
+                    $(""#Ordinal"").val(null);
+                }
+            });
+            if ($('#HomeVisible').is(':checked')) {
+                $(""#OrdinalDiv"").show();
+            }
+            else {
+                $(""#OrdinalDiv"").hide();
+            }
+        });
+    </script>
+");
+
+});
 
         }
     }

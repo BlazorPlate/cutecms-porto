@@ -335,114 +335,117 @@
         </script>
     }
     <script type="text/javascript">
-        $("#StartDate").on("dp.change", function (e) {
-            $('#EndDate').data("DateTimePicker").minDate(e.date);
-        });
-        $("#EndDate").on("dp.change", function (e) {
-            $('#StartDate').data("DateTimePicker").maxDate(e.date);
-        });
-        $("#PublishedOn").on("dp.change", function (e) {
-            $('#ExpiredOn').data("DateTimePicker").minDate(e.date);
-        });
-        $("#ExpiredOn").on("dp.change", function (e) {
-            $('#PublishedOn').data("DateTimePicker").maxDate(e.date);
-        });
-    </script>
-    <script type="text/javascript">
-        $("#ExpiredOnDiv").hide();
-        $("#PublishedOnDiv").hide();
-        var selectedValue = $("#StatusId").val();
-        if (selectedValue == 1) {
-            $("#ExpiredOnDiv").fadeIn();
-        }
-        if (selectedValue == 3) {
-            $("#PublishedOnDiv").fadeIn();
-            $("#ExpiredOnDiv").fadeIn();
-        }
-        $(function () {
-            $("#StatusId").change(function () {
-                var selectedText = $(this).find("option:selected").text();
-                var selectedValue = $(this).val();
-                if (selectedValue == 1) {
-                    $("#PublishedOnDiv").fadeOut();
-                    $("#ExpiredOnDiv").fadeIn();
-                    $("#IsUrgentDiv").fadeIn();
-                    $("#PublishedOn").val(null);
-                    $("#ExpiredOn").val(null);
-                }
-                if (selectedValue == 2) {
-                    $("#ExpiredOnDiv").fadeOut();
-                    $("#PublishedOnDiv").fadeOut();
-                    $("#PublishedOn").val(null);
-                    $("#ExpiredOn").val(null);
-                    $('#IsUrgent').removeAttr('checked');
-                    $("#IsUrgentDiv").fadeOut();
-                }
-                if (selectedValue == 3) {
-                    $("#ExpiredOnDiv").fadeIn();
-                    $("#PublishedOnDiv").fadeIn();
-                    $("#IsUrgentDiv").fadeIn();
-                    $("#PublishedOn").val(null);
-                    $("#ExpiredOn").val(null);
-                }
+            $("#StartDate").on("dp.change", function (e) {
+                $('#EndDate').data("DateTimePicker").minDate(e.date);
             });
-        });
+            $("#EndDate").on("dp.change", function (e) {
+                $('#StartDate').data("DateTimePicker").maxDate(e.date);
+            });
+            $("#PublishedOn").on("dp.change", function (e) {
+                $('#ExpiredOn').data("DateTimePicker").minDate(e.date);
+            });
+            $("#ExpiredOn").on("dp.change", function (e) {
+                $('#PublishedOn').data("DateTimePicker").maxDate(e.date);
+            });
     </script>
     <script type="text/javascript">
-        $(document).ready(function () {
-            // Initially, Hide the ParentMenuItemDiv  when Web Form is loaded
-            $('#ParentMenuItemDiv').hide();
-            if ($('#HasMenuItem').prop('checked')) {
-                $('#ParentMenuItemDiv').show();
+            $("#ExpiredOnDiv").hide();
+            $("#PublishedOnDiv").hide();
+            var selectedValue = $("#StatusId").val();
+            if (selectedValue == 1) {
+                $("#ExpiredOnDiv").fadeIn();
             }
-            else {
-                $("#ParentMenuItemId").val('0');
+            if (selectedValue == 3) {
+                $("#PublishedOnDiv").fadeIn();
+                $("#ExpiredOnDiv").fadeIn();
             }
-            $('#HasMenuItem').change(function () {
-                if (this.checked) {
+            $(function () {
+                $("#StatusId").change(function () {
+                    var selectedText = $(this).find("option:selected").text();
+                    var selectedValue = $(this).val();
+                    if (selectedValue == 1) {
+                        $("#PublishedOnDiv").fadeOut();
+                        $("#ExpiredOnDiv").fadeIn();
+                        $("#IsUrgentDiv").fadeIn();
+                        $("#PublishedOn").val(null);
+                        $("#ExpiredOn").val(null);
+                    }
+                    if (selectedValue == 2) {
+                        $("#ExpiredOnDiv").fadeOut();
+                        $("#PublishedOnDiv").fadeOut();
+                        $("#PublishedOn").val(null);
+                        $("#ExpiredOn").val(null);
+                        $('#IsUrgent').removeAttr('checked');
+                        $("#IsUrgentDiv").fadeOut();
+                    }
+                    if (selectedValue == 3) {
+                        $("#ExpiredOnDiv").fadeIn();
+                        $("#PublishedOnDiv").fadeIn();
+                        $("#IsUrgentDiv").fadeIn();
+                        $("#PublishedOn").val(null);
+                        $("#ExpiredOn").val(null);
+                    }
+                });
+            });
+    </script>
+    <script type="text/javascript">
+            $(document).ready(function () {
+                // Initially, Hide the ParentMenuItemDiv  when Web Form is loaded
+                $('#ParentMenuItemDiv').hide();
+                if ($('#HasMenuItem').prop('checked')) {
                     $('#ParentMenuItemDiv').show();
                 }
                 else {
                     $("#ParentMenuItemId").val('0');
-                    $('#ParentMenuItemDiv').hide();
                 }
+                $('#HasMenuItem').change(function () {
+                    if (this.checked) {
+                        $('#ParentMenuItemDiv').show();
+                    }
+                    else {
+                        $("#ParentMenuItemId").val('0');
+                        $('#ParentMenuItemDiv').hide();
+                    }
+                });
             });
-        });
     </script>
 
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('#IsUrgent').change(function () {
-                if (this.checked) {
-                    $('#UrgentExpiredOnDiv').show();
-                }
-                else {
-                    $("#UrgentExpiredOnDiv").hide()
-                    $("#UrgentExpiredOn").val(null);
+            $(document).ready(function () {
+                $('#IsUrgent').change(function () {
+                    if (this.checked) {
+                        $('#UrgentExpiredOnDiv').show();
+                    }
+                    else {
+                        $("#UrgentExpiredOnDiv").hide()
+                        $("#UrgentExpiredOn").val(null);
+                    }
+                });
+                if ($('#IsUrgent').not(':checked')) {
+                    $("#UrgentExpiredOnDiv").hide();
                 }
             });
-            if ($('#IsUrgent').not(':checked')) {
-                $("#UrgentExpiredOnDiv").hide();
-            }
-        });
     </script>
     <script type="text/javascript">
-        $(document).ready(function () {
-            //Uncheck the CheckBox initially
-            $('#HasShortcut').change(function () {
-                if (this.checked) {
-                    $('#ShortcutDiv').show();
+            $(document).ready(function () {
+                //Uncheck the CheckBox initially
+                $('#HasShortcut').change(function () {
+                    if (this.checked) {
+                        $('#ShortcutDiv').show();
+                    }
+                    else {
+                        $("#ShortcutDiv").hide()
+                        $("#Ordinal").val(null);
+                        $("#ShortcutTitle").val(null);
+                        $("#CssClass").val(null);
+                    }
+                });
+                if ($('#HasShortcut').is(':checked')) {
+                    $("#ShortcutDiv").show();
                 }
                 else {
-                    $("#ShortcutDiv").hide()
-                    $("#Ordinal").val(null);
-                    $("#ShortcutTitle").val(null);
-                    $("#CssClass").val(null);
+                    $("#ShortcutDiv").hide();
                 }
             });
-            if ($('#HasShortcut').not(':checked')) {
-                $("#ShortcutDiv").hide();
-            }
-        });
     </script>
 }

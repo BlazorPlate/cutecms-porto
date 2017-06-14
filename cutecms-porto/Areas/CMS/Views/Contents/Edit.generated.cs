@@ -1528,67 +1528,68 @@ WriteLiteral("    <script");
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral(@">
-        $(""#StartDate"").on(""dp.change"", function (e) {
-            $('#EndDate').data(""DateTimePicker"").minDate(e.date);
-        });
-        $(""#EndDate"").on(""dp.change"", function (e) {
-            $('#StartDate').data(""DateTimePicker"").maxDate(e.date);
-        });
-        $(""#PublishedOn"").on(""dp.change"", function (e) {
-            $('#ExpiredOn').data(""DateTimePicker"").minDate(e.date);
-        });
-        $(""#ExpiredOn"").on(""dp.change"", function (e) {
-            $('#PublishedOn').data(""DateTimePicker"").maxDate(e.date);
-        });
+            $(""#StartDate"").on(""dp.change"", function (e) {
+                $('#EndDate').data(""DateTimePicker"").minDate(e.date);
+            });
+            $(""#EndDate"").on(""dp.change"", function (e) {
+                $('#StartDate').data(""DateTimePicker"").maxDate(e.date);
+            });
+            $(""#PublishedOn"").on(""dp.change"", function (e) {
+                $('#ExpiredOn').data(""DateTimePicker"").minDate(e.date);
+            });
+            $(""#ExpiredOn"").on(""dp.change"", function (e) {
+                $('#PublishedOn').data(""DateTimePicker"").maxDate(e.date);
+            });
     </script>
     <script");
 
 WriteLiteral(" type=\"text/javascript\"");
 
-WriteLiteral(">\r\n        $(\"#ExpiredOnDiv\").hide();\r\n        $(\"#PublishedOnDiv\").hide();\r\n    " +
-"    var selectedValue = $(\"#StatusId\").val();\r\n        if (selectedValue == 1) {" +
-"\r\n            $(\"#ExpiredOnDiv\").fadeIn();\r\n        }\r\n        if (selectedValue" +
-" == 3) {\r\n            $(\"#PublishedOnDiv\").fadeIn();\r\n            $(\"#ExpiredOnD" +
-"iv\").fadeIn();\r\n        }\r\n        $(function () {\r\n            $(\"#StatusId\").c" +
-"hange(function () {\r\n                var selectedText = $(this).find(\"option:sel" +
-"ected\").text();\r\n                var selectedValue = $(this).val();\r\n           " +
-"     if (selectedValue == 1) {\r\n                    $(\"#PublishedOnDiv\").fadeOut" +
-"();\r\n                    $(\"#ExpiredOnDiv\").fadeIn();\r\n                    $(\"#I" +
-"sUrgentDiv\").fadeIn();\r\n                    $(\"#PublishedOn\").val(null);\r\n      " +
-"              $(\"#ExpiredOn\").val(null);\r\n                }\r\n                if " +
-"(selectedValue == 2) {\r\n                    $(\"#ExpiredOnDiv\").fadeOut();\r\n     " +
-"               $(\"#PublishedOnDiv\").fadeOut();\r\n                    $(\"#Publishe" +
-"dOn\").val(null);\r\n                    $(\"#ExpiredOn\").val(null);\r\n              " +
-"      $(\'#IsUrgent\').removeAttr(\'checked\');\r\n                    $(\"#IsUrgentDiv" +
-"\").fadeOut();\r\n                }\r\n                if (selectedValue == 3) {\r\n   " +
-"                 $(\"#ExpiredOnDiv\").fadeIn();\r\n                    $(\"#Published" +
-"OnDiv\").fadeIn();\r\n                    $(\"#IsUrgentDiv\").fadeIn();\r\n            " +
-"        $(\"#PublishedOn\").val(null);\r\n                    $(\"#ExpiredOn\").val(nu" +
-"ll);\r\n                }\r\n            });\r\n        });\r\n    </script>\r\n    <scrip" +
-"t");
+WriteLiteral(">\r\n            $(\"#ExpiredOnDiv\").hide();\r\n            $(\"#PublishedOnDiv\").hide(" +
+");\r\n            var selectedValue = $(\"#StatusId\").val();\r\n            if (selec" +
+"tedValue == 1) {\r\n                $(\"#ExpiredOnDiv\").fadeIn();\r\n            }\r\n " +
+"           if (selectedValue == 3) {\r\n                $(\"#PublishedOnDiv\").fadeI" +
+"n();\r\n                $(\"#ExpiredOnDiv\").fadeIn();\r\n            }\r\n            $" +
+"(function () {\r\n                $(\"#StatusId\").change(function () {\r\n           " +
+"         var selectedText = $(this).find(\"option:selected\").text();\r\n           " +
+"         var selectedValue = $(this).val();\r\n                    if (selectedVal" +
+"ue == 1) {\r\n                        $(\"#PublishedOnDiv\").fadeOut();\r\n           " +
+"             $(\"#ExpiredOnDiv\").fadeIn();\r\n                        $(\"#IsUrgentD" +
+"iv\").fadeIn();\r\n                        $(\"#PublishedOn\").val(null);\r\n          " +
+"              $(\"#ExpiredOn\").val(null);\r\n                    }\r\n               " +
+"     if (selectedValue == 2) {\r\n                        $(\"#ExpiredOnDiv\").fadeO" +
+"ut();\r\n                        $(\"#PublishedOnDiv\").fadeOut();\r\n                " +
+"        $(\"#PublishedOn\").val(null);\r\n                        $(\"#ExpiredOn\").va" +
+"l(null);\r\n                        $(\'#IsUrgent\').removeAttr(\'checked\');\r\n       " +
+"                 $(\"#IsUrgentDiv\").fadeOut();\r\n                    }\r\n          " +
+"          if (selectedValue == 3) {\r\n                        $(\"#ExpiredOnDiv\")." +
+"fadeIn();\r\n                        $(\"#PublishedOnDiv\").fadeIn();\r\n             " +
+"           $(\"#IsUrgentDiv\").fadeIn();\r\n                        $(\"#PublishedOn\"" +
+").val(null);\r\n                        $(\"#ExpiredOn\").val(null);\r\n              " +
+"      }\r\n                });\r\n            });\r\n    </script>\r\n    <script");
 
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral(@">
-        $(document).ready(function () {
-            // Initially, Hide the ParentMenuItemDiv  when Web Form is loaded
-            $('#ParentMenuItemDiv').hide();
-            if ($('#HasMenuItem').prop('checked')) {
-                $('#ParentMenuItemDiv').show();
-            }
-            else {
-                $(""#ParentMenuItemId"").val('0');
-            }
-            $('#HasMenuItem').change(function () {
-                if (this.checked) {
+            $(document).ready(function () {
+                // Initially, Hide the ParentMenuItemDiv  when Web Form is loaded
+                $('#ParentMenuItemDiv').hide();
+                if ($('#HasMenuItem').prop('checked')) {
                     $('#ParentMenuItemDiv').show();
                 }
                 else {
                     $(""#ParentMenuItemId"").val('0');
-                    $('#ParentMenuItemDiv').hide();
                 }
+                $('#HasMenuItem').change(function () {
+                    if (this.checked) {
+                        $('#ParentMenuItemDiv').show();
+                    }
+                    else {
+                        $(""#ParentMenuItemId"").val('0');
+                        $('#ParentMenuItemDiv').hide();
+                    }
+                });
             });
-        });
     </script>
 
     <script");
@@ -1596,43 +1597,46 @@ WriteLiteral(@">
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral(@">
-        $(document).ready(function () {
-            $('#IsUrgent').change(function () {
-                if (this.checked) {
-                    $('#UrgentExpiredOnDiv').show();
-                }
-                else {
-                    $(""#UrgentExpiredOnDiv"").hide()
-                    $(""#UrgentExpiredOn"").val(null);
+            $(document).ready(function () {
+                $('#IsUrgent').change(function () {
+                    if (this.checked) {
+                        $('#UrgentExpiredOnDiv').show();
+                    }
+                    else {
+                        $(""#UrgentExpiredOnDiv"").hide()
+                        $(""#UrgentExpiredOn"").val(null);
+                    }
+                });
+                if ($('#IsUrgent').not(':checked')) {
+                    $(""#UrgentExpiredOnDiv"").hide();
                 }
             });
-            if ($('#IsUrgent').not(':checked')) {
-                $(""#UrgentExpiredOnDiv"").hide();
-            }
-        });
     </script>
     <script");
 
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral(@">
-        $(document).ready(function () {
-            //Uncheck the CheckBox initially
-            $('#HasShortcut').change(function () {
-                if (this.checked) {
-                    $('#ShortcutDiv').show();
+            $(document).ready(function () {
+                //Uncheck the CheckBox initially
+                $('#HasShortcut').change(function () {
+                    if (this.checked) {
+                        $('#ShortcutDiv').show();
+                    }
+                    else {
+                        $(""#ShortcutDiv"").hide()
+                        $(""#Ordinal"").val(null);
+                        $(""#ShortcutTitle"").val(null);
+                        $(""#CssClass"").val(null);
+                    }
+                });
+                if ($('#HasShortcut').is(':checked')) {
+                    $(""#ShortcutDiv"").show();
                 }
                 else {
-                    $(""#ShortcutDiv"").hide()
-                    $(""#Ordinal"").val(null);
-                    $(""#ShortcutTitle"").val(null);
-                    $(""#CssClass"").val(null);
+                    $(""#ShortcutDiv"").hide();
                 }
             });
-            if ($('#HasShortcut').not(':checked')) {
-                $(""#ShortcutDiv"").hide();
-            }
-        });
     </script>
 ");
 

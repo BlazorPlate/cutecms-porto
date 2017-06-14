@@ -52,7 +52,7 @@
         <EntityTypeShape EntityType="RMSDBModel.RMSDepartment" Width="1.5" PointX="0.75" PointY="1" />
         <AssociationConnector Association="RMSDBModel.FK_Departments_Departments" />
         <AssociationConnector Association="RMSDBModel.FK_Vacancies_Departments" />
-        <EntityTypeShape EntityType="RMSDBModel.RMSDepartmentTerm" Width="1.5" PointX="6" PointY="6.125" />
+        <EntityTypeShape EntityType="RMSDBModel.RMSDepartmentTerm" Width="1.5" PointX="6" PointY="5.75" />
         <AssociationConnector Association="RMSDBModel.FK_DepartmentTerms_Departments" />
         <AssociationConnector Association="RMSDBModel.FK_DepartmentTerms_Languages" />
         </Diagram>

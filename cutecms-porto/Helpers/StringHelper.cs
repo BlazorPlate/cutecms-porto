@@ -1,4 +1,5 @@
 ﻿using cutecms_porto.Areas.CMS.Models.DBModel;
+using cutecms_porto.Areas.Identity.Models.DBModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,11 +23,10 @@ namespace cutecms_porto.Helpers
         #endregion Fields
 
         #region Methods
-        public static Tuple<string, string> BuildUrlSlug(int? random, int contentLanguageId, int contentTypeId, string parentMenuItemPath, string contentTitle, bool hasMenuItem)
+        public static Tuple<string, string> BuildUrl(int? random, string culture, int contentTypeId, string parentMenuItemPath, string contentTitle, bool hasMenuItem)
         {
             string AbsolutePath = string.Empty;
             string contentUrlSlug = string.Empty;
-            string culture = db.CMSLanguages.Find(contentLanguageId).CultureName.Trim();
             string contentType = db.ContentTypes.Find(contentTypeId).Code;
             if (hasMenuItem)
             {
@@ -52,11 +52,19 @@ namespace cutecms_porto.Helpers
                 contentUrlSlug = contentType + "/" + random + "/" + contentTitle.Trim();
             }
             AbsolutePath = "/" + culture + "/content" + "/pages/" + contentUrlSlug;
-            AbsolutePath = CleanUrl(AbsolutePath, contentLanguageId);
-            contentUrlSlug = CleanUrl(contentUrlSlug, contentLanguageId);
+            AbsolutePath = CleanUrl(AbsolutePath, culture);
+            contentUrlSlug = CleanUrl(contentUrlSlug, culture);
             return Tuple.Create(contentUrlSlug, AbsolutePath);
         }
-
+        public static Tuple<string, string> BuildDepartmentUrl(string culture, string parentDepartmentPath)
+        {
+            string AbsolutePath = string.Empty;
+            string departmentUrlSlug = string.Empty;
+            AbsolutePath = "/" + culture + "/department" + "/pages/" + parentDepartmentPath;
+            AbsolutePath = CleanUrl(AbsolutePath, culture);
+            departmentUrlSlug = CleanUrl(parentDepartmentPath, culture);
+            return Tuple.Create(departmentUrlSlug, AbsolutePath);
+        }
         public static string GetParentMenuItemPath(int? menuItemId, int languageId)
         {
             MenuItem menuItem = db.MenuItems.Find(menuItemId);
@@ -87,13 +95,17 @@ namespace cutecms_porto.Helpers
             return ParentMenuItemPath;
         }
 
-        public static string CleanUrl(string UrlSlug, int languageId)
+        public static string GetParentDepartmentPath(IdentityDepartment department, string culture)
+        {
+            return TreeHelper.DepartmentDepth(department, culture);
+        }
+        public static string CleanUrl(string UrlSlug, string culture)
         {
             if (!String.IsNullOrEmpty(UrlSlug))
             {
                 //First to lower case
                 UrlSlug = UrlSlug.ToLowerInvariant();
-                var neutralCulture = CultureHelper.GetNeutralCulture(db.CMSLanguages.Find(languageId).CultureName.Trim());
+                var neutralCulture = CultureHelper.GetNeutralCulture(culture);
                 if (!IsRightToLeft(neutralCulture)) //Remove all accents
                     UrlSlug = UrlSlug.RemoveAccent();
                 //Remove invalid chars
@@ -117,11 +129,14 @@ namespace cutecms_porto.Helpers
             }
             return fileName;
         }
+
         public static bool IsRightToLeft(string culture)
         {
             bool result = RTLNeutralCulrture.Any(culture.Contains);
             return result;
         }
+
+
         #endregion Methods
     }
 }

@@ -1623,4 +1623,10 @@
   <data name="IconNotes" xml:space="preserve">
     <value>Carregue um ícone do tipo: .PNG!</value>
   </data>
+  <data name="IconName" xml:space="preserve">
+    <value>Ícone</value>
+  </data>
+  <data name="IconPath" xml:space="preserve">
+    <value>Caminho do ícone</value>
+  </data>
 </root>

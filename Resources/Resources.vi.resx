@@ -1623,4 +1623,10 @@
   <data name="IconNotes" xml:space="preserve">
     <value>Vui lòng tải lên biểu tượng loại: .PNG!</value>
   </data>
+  <data name="IconName" xml:space="preserve">
+    <value>Biểu tượng</value>
+  </data>
+  <data name="IconPath" xml:space="preserve">
+    <value>Đường  dẫn</value>
+  </data>
 </root>

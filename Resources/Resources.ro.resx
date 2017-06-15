@@ -1623,4 +1623,10 @@
   <data name="IconNotes" xml:space="preserve">
     <value>Încărcați o pictogramă de tip: .PNG!</value>
   </data>
+  <data name="IconName" xml:space="preserve">
+    <value>Pictogramă</value>
+  </data>
+  <data name="IconPath" xml:space="preserve">
+    <value>Iconiță</value>
+  </data>
 </root>

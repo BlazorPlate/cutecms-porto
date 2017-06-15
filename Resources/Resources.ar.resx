@@ -1623,4 +1623,10 @@
   <data name="PleaseUploadIconOfType" xml:space="preserve">
     <value>يرجى تحميل أيقونة من نوع:</value>
   </data>
+  <data name="IconName" xml:space="preserve">
+    <value>الأيقونة</value>
+  </data>
+  <data name="IconPath" xml:space="preserve">
+    <value>مسار الأيقونة</value>
+  </data>
 </root>

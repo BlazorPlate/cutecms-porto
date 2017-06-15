@@ -69,6 +69,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         {
             if (ModelState.IsValid)
             {
+                var culture = db.IdentityLanguages.Find(identityDepartmentTerm.LanguageId).CultureName.Trim();
                 if (identityDepartmentTerm.Icon != null && identityDepartmentTerm.Icon.ContentLength > 0)
                 {
                     var extension = Path.GetExtension(identityDepartmentTerm.Icon.FileName);
@@ -95,6 +96,11 @@ namespace cutecms_porto.Areas.Identity.Controllers
                         ImageUploaderHelper.SaveImageToFolder(img, extension, new Size(360, 180), identityDepartmentTerm.ImagePath);
                     }
                 }
+                var dept = db.IdentityDepartments.Find(identityDepartmentTerm.DepartmentId);
+                string parentDepartmentPath = StringHelper.GetParentDepartmentPath(dept, culture);
+                var link = StringHelper.BuildDepartmentUrl(culture, parentDepartmentPath);
+                identityDepartmentTerm.UrlSlug = link.Item1;
+                identityDepartmentTerm.AbsolutePath = link.Item2;
                 db.IdentityDepartmentTerms.Add(identityDepartmentTerm);
                 db.SaveChanges();
                 return RedirectToAction("Index", new { id = identityDepartmentTerm.DepartmentId });
@@ -133,6 +139,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         {
             if (ModelState.IsValid)
             {
+                var culture = db.IdentityLanguages.Find(identityDepartmentTerm.LanguageId).CultureName.Trim();
                 if (identityDepartmentTerm.Icon != null && identityDepartmentTerm.Icon.ContentLength > 0)
                 {
                     var extension = Path.GetExtension(identityDepartmentTerm.Icon.FileName);
@@ -159,8 +166,11 @@ namespace cutecms_porto.Areas.Identity.Controllers
                         ImageUploaderHelper.SaveImageToFolder(img, extension, new Size(360, 180), identityDepartmentTerm.ImagePath);
                     }
                 }
-                identityDepartmentTerm.AbsolutePath = "N/A";
-                identityDepartmentTerm.UrlSlug = "N/A";
+                var dept = db.IdentityDepartments.Find(identityDepartmentTerm.DepartmentId);
+                string parentDepartmentPath = StringHelper.GetParentDepartmentPath(dept, culture);
+                var link = StringHelper.BuildDepartmentUrl(culture, parentDepartmentPath);
+                identityDepartmentTerm.UrlSlug = link.Item1;
+                identityDepartmentTerm.AbsolutePath = link.Item2;
                 db.Entry(identityDepartmentTerm).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index", new { id = identityDepartmentTerm.DepartmentId });

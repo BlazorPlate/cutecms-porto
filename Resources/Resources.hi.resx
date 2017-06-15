@@ -1623,4 +1623,10 @@
   <data name="IconNotes" xml:space="preserve">
     <value>कृपया प्रकार का आइकन अपलोड करें: .पीएनजी!</value>
   </data>
+  <data name="IconName" xml:space="preserve">
+    <value>आइकन</value>
+  </data>
+  <data name="IconPath" xml:space="preserve">
+    <value>आइकन</value>
+  </data>
 </root>

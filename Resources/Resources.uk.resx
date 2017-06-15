@@ -1623,4 +1623,10 @@
   <data name="IconNotes" xml:space="preserve">
     <value>Будь ласка, завантажте значок типу: .PNG!</value>
   </data>
+  <data name="IconName" xml:space="preserve">
+    <value>Іконки</value>
+  </data>
+  <data name="IconPath" xml:space="preserve">
+    <value>Іконка Шлях!</value>
+  </data>
 </root>

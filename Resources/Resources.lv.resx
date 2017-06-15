@@ -1623,4 +1623,10 @@
   <data name="IconNotes" xml:space="preserve">
     <value>Lūdzu, augšupielādējiet ikonu tips: .PNG!</value>
   </data>
+  <data name="IconName" xml:space="preserve">
+    <value>Ikona</value>
+  </data>
+  <data name="IconPath" xml:space="preserve">
+    <value>Ceļš</value>
+  </data>
 </root>

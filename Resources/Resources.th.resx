@@ -1623,4 +1623,10 @@
   <data name="IconNotes" xml:space="preserve">
     <value>โปรดอัปโหลดไอคอนประเภท: .PNG!</value>
   </data>
+  <data name="IconName" xml:space="preserve">
+    <value>ไอคอน</value>
+  </data>
+  <data name="IconPath" xml:space="preserve">
+    <value>ไอคอน</value>
+  </data>
 </root>

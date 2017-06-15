@@ -1623,4 +1623,10 @@
   <data name="IconNotes" xml:space="preserve">
     <value>Lütfen bir tür simge yükleyin: .PNG!</value>
   </data>
+  <data name="IconName" xml:space="preserve">
+    <value>Simge!</value>
+  </data>
+  <data name="IconPath" xml:space="preserve">
+    <value>Simge Yolu</value>
+  </data>
 </root>

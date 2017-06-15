@@ -1623,4 +1623,10 @@
   <data name="IconNotes" xml:space="preserve">
     <value>Var god ladda upp en ikon för typ: .PNG!</value>
   </data>
+  <data name="IconName" xml:space="preserve">
+    <value>.</value>
+  </data>
+  <data name="IconPath" xml:space="preserve">
+    <value>Ikonväg!</value>
+  </data>
 </root>

@@ -1623,4 +1623,10 @@
   <data name="IconNotes" xml:space="preserve">
     <value>유형이 PNG 인 아이콘을 업로드하십시오!</value>
   </data>
+  <data name="IconName" xml:space="preserve">
+    <value>아이콘</value>
+  </data>
+  <data name="IconPath" xml:space="preserve">
+    <value>아이콘</value>
+  </data>
 </root>

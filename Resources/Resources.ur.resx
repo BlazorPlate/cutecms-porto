@@ -1623,4 +1623,10 @@
   <data name="IconNotes" xml:space="preserve">
     <value>قسم کا ایک آئکن اپ لوڈ کریں: PNG کی!</value>
   </data>
+  <data name="IconName" xml:space="preserve">
+    <value>آئیکَن</value>
+  </data>
+  <data name="IconPath" xml:space="preserve">
+    <value>آئیکَن</value>
+  </data>
 </root>

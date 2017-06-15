@@ -169,7 +169,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
         public ActionResult Edit([Bind(Include = "Id,Name,Path,MenuId,ParentId,CssClass,Ordinal,IsCms,IsParent,Visible,LanguageId,IsPublished,ContentId,StatusId")] MenuItem menuItem)
         {
             if (ModelState.IsValid)
-            {
+            { 
                 using (var context = new CMSEntities())
                 {
                     using (var dbContextTransaction = context.Database.BeginTransaction())
@@ -196,20 +196,21 @@ namespace cutecms_porto.Areas.CMS.Controllers
                                 StringHelper.MenuItemsList.Clear();
                                 StringHelper.ParentMenuItemPath = string.Empty;
                                 var content = db.Contents.Find(menuItem.ContentId);
+                                var culture = db.CMSLanguages.Find(content.LanguageId).CultureName.Trim();
                                 content.Title = menuItem.Name;
                                 if (menuItem.ParentId != null)
                                 {
                                     StringHelper.MenuItemsList.Clear();
                                     StringHelper.ParentMenuItemPath = string.Empty;
                                     string parentMenuItemPath = StringHelper.GetParentMenuItemPath(menuItem.ParentId, menuItem.LanguageId);
-                                    var link = StringHelper.BuildUrlSlug(content.UrlCode, content.LanguageId, content.ContentTypeId, parentMenuItemPath, content.Title.Trim(), true);
+                                    var link = StringHelper.BuildUrl(content.UrlCode, culture, content.ContentTypeId, parentMenuItemPath, content.Title.Trim(), true);
                                     content.UrlSlug = link.Item1;
                                     content.AbsolutePath = link.Item2;                   
                                     menuItem.Path = link.Item2;
                                 }
                                 else
                                 {
-                                    var link = StringHelper.BuildUrlSlug(content.UrlCode, content.LanguageId, content.ContentTypeId, null, content.Title.Trim(), true);
+                                    var link = StringHelper.BuildUrl(content.UrlCode, culture, content.ContentTypeId, null, content.Title.Trim(), true);
                                     content.UrlSlug = link.Item1;
                                     content.AbsolutePath = link.Item2;
                                     menuItem.Path = link.Item2;
@@ -257,10 +258,11 @@ namespace cutecms_porto.Areas.CMS.Controllers
                 StringHelper.ParentMenuItemPath = string.Empty;
                 Content content = new Content();
                 content = db.Contents.Find(item.ContentId);
+                var culture = db.CMSLanguages.Find(content.LanguageId).CultureName.Trim();
                 if (content != null)
                 {
                     string parentMenuItemPath = StringHelper.GetParentMenuItemPath(content.ParentMenuItemId, content.LanguageId);
-                    var link = StringHelper.BuildUrlSlug(content.UrlCode, content.LanguageId, content.ContentTypeId, parentMenuItemPath, content.Title.Trim(), true);
+                    var link = StringHelper.BuildUrl(content.UrlCode, culture, content.ContentTypeId, parentMenuItemPath, content.Title.Trim(), true);
                     content.UrlSlug = link.Item1;
                     content.AbsolutePath = link.Item2;
                     item.Path = link.Item2;

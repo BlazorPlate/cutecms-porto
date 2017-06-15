@@ -1870,11 +1870,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Icon.
+        /// </summary>
+        public static string IconName {
+            get {
+                return ResourceManager.GetString("IconName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please upload an icon of type: .PNG.
         /// </summary>
         public static string IconNotes {
             get {
                 return ResourceManager.GetString("IconNotes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Icon Path.
+        /// </summary>
+        public static string IconPath {
+            get {
+                return ResourceManager.GetString("IconPath", resourceCulture);
             }
         }
         

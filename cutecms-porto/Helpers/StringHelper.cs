@@ -60,7 +60,7 @@ namespace cutecms_porto.Helpers
         {
             string AbsolutePath = string.Empty;
             string departmentUrlSlug = string.Empty;
-            AbsolutePath = "/" + culture + "/department" + "/pages/" + parentDepartmentPath;
+            AbsolutePath = "/" + culture + "/dept" + "/pages/" + parentDepartmentPath;
             AbsolutePath = CleanUrl(AbsolutePath, culture);
             departmentUrlSlug = CleanUrl(parentDepartmentPath, culture);
             return Tuple.Create(departmentUrlSlug, AbsolutePath);

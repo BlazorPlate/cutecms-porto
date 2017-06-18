@@ -8719,6 +8719,7 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_Layout.generated.cs</LastGenOutput>
     </Content>
+    <Content Include="Views\Pages\Dept.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />

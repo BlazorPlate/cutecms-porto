@@ -14,6 +14,7 @@ namespace cutecms_porto.Areas.Identity.Models.DBModel
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Web;
+    using System.Web.Mvc;
 
     public partial class IdentityDepartmentTerm
     {
@@ -37,6 +38,7 @@ namespace cutecms_porto.Areas.Identity.Models.DBModel
         public string IconPath { get; set; }
         [Display(Name = "Summary", ResourceType = typeof(Resources.Resources))]
         public string Summary { get; set; }
+        [AllowHtml]
         [Display(Name = "Description", ResourceType = typeof(Resources.Resources))]
         public string Description { get; set; }
         [ValidateImage]

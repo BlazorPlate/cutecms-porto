@@ -19,6 +19,10 @@ namespace cutecms_porto
             defaults: new { culture = CultureHelper.GetDefaultCulture(), controller = "Pages", action = "Content", id = UrlParameter.Optional, tenant = UrlParameter.Optional },            
             namespaces: new[] { "cutecms_porto.Controllers" });
 
+            routes.MapRoute(name: "Dept", url: "{culture}/dept/pages/{*slug}",
+            defaults: new { culture = CultureHelper.GetDefaultCulture(), controller = "Pages", action = "Dept", id = UrlParameter.Optional, tenant = UrlParameter.Optional },
+            namespaces: new[] { "cutecms_porto.Controllers" });
+
             routes.MapRoute(name: "Default", url: "{culture}/{controller}/{action}/{id}",
             defaults: new { culture = CultureHelper.GetDefaultCulture(), controller = "Home", action = "Index", id = UrlParameter.Optional, tenant = UrlParameter.Optional },
             namespaces: new[] { "cutecms_porto.Controllers" });

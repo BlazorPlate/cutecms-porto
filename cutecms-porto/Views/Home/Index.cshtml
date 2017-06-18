@@ -1,4 +1,11 @@
-﻿@section Styles{
+﻿@using cutecms_porto.Areas.CMS.Models.DBModel
+@using cutecms_porto.Areas.Identity.Models.DBModel
+@using System.Threading
+@{
+    CMSEntities cmsDb = new CMSEntities();
+    IdentityEntities IdentityDb = new IdentityEntities();
+}
+@section Styles{
     <!-- Current Page CSS -->
     <link rel="stylesheet" href="~/assets/porto/vendor/rs-plugin/css/settings.css">
     <link rel="stylesheet" href="~/assets/porto/vendor/rs-plugin/css/layers.css">
@@ -199,7 +206,7 @@
                 <a class="btn btn-borders btn-quaternary custom-button text-uppercase mt-lg mb-lg font-weight-bold">read more</a>
             </div>
             <div class="col-sm-4 col-md-4">
-                <img src="~/assets/porto/img/demos/medical/gallery/gallery-1.jpg" alt class="img-responsive box-shadow-custom" />
+                <img src="~/assets/porto/img/demos/medical/gallery/gallery-1.jpg" alt="" class="img-responsive box-shadow-custom" />
             </div>
         </div>
     </div>
@@ -212,76 +219,32 @@
                 <p class="lead font-weight-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
         </div>
-        <div class="row mt-lg">
+
+
+        @{var i = 0;}
+        @foreach (var item in IdentityDb.IdentityDepartmentTerms.Where(d => d.Department.TenantId.Trim().Equals(Tenant.TenantId) && d.HomeVisible && d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).OrderBy(d => d.Ordinal))
+        {
+            if (i % 3 == 0)
+            {
+                @:<div class="row mt-lg">
+                        }
             <div class="col-md-4">
                 <div class="feature-box feature-box-style-2 mb-xl appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
                     <div class="feature-box-icon">
-                        <img src="~/assets/porto/img/demos/medical/icons/department-icon-cardiology.png" alt class="img-responsive" />
+                        <img src="@item.IconPath" alt="" class="img-responsive" />
                     </div>
                     <div class="feature-box-info ml-md">
-                        <h4 class="font-weight-semibold"><a href="demo-medical-departments-detail.html" class="text-decoration-none">Cardiology</a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit, leo vitae interdum...</p>
+                        <h4 class="font-weight-semibold"><a href="@item.AbsolutePath" class="text-decoration-none">@item.Value</a></h4>
+                        <p>@item.Summary</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="feature-box feature-box-style-2 mb-xl appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
-                    <div class="feature-box-icon">
-                        <img src="~/assets/porto/img/demos/medical/icons/department-icon-gastroenterology.png" alt class="img-responsive" />
-                    </div>
-                    <div class="feature-box-info ml-md">
-                        <h4 class="font-weight-semibold"><a href="demo-medical-departments-detail.html" class="text-decoration-none">Gastroenterology</a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit, leo vitae interdum...</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="feature-box feature-box-style-2 mb-xl appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
-                    <div class="feature-box-icon">
-                        <img src="~/assets/porto/img/demos/medical/icons/department-icon-pulmonology.png" alt class="img-responsive" />
-                    </div>
-                    <div class="feature-box-info ml-md">
-                        <h4 class="font-weight-semibold"><a href="demo-medical-departments-detail.html" class="text-decoration-none">Pulmonology</a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit, leo vitae interdum...</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-lg">
-            <div class="col-md-4">
-                <div class="feature-box feature-box-style-2 mb-xl appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
-                    <div class="feature-box-icon">
-                        <img src="~/assets/porto/img/demos/medical/icons/department-icon-dental.png" alt class="img-responsive" />
-                    </div>
-                    <div class="feature-box-info ml-md">
-                        <h4 class="font-weight-semibold"><a href="demo-medical-departments-detail.html" class="text-decoration-none">Dental</a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit, leo vitae interdum...</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="feature-box feature-box-style-2 mb-xl appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
-                    <div class="feature-box-icon">
-                        <img src="~/assets/porto/img/demos/medical/icons/department-icon-gynecology.png" alt class="img-responsive" />
-                    </div>
-                    <div class="feature-box-info ml-md">
-                        <h4 class="font-weight-semibold"><a href="demo-medical-departments-detail.html" class="text-decoration-none">Gynecology</a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit, leo vitae interdum...</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="feature-box feature-box-style-2 mb-xl appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
-                    <div class="feature-box-icon">
-                        <img src="~/assets/porto/img/demos/medical/icons/department-icon-hepatology.png" alt class="img-responsive" />
-                    </div>
-                    <div class="feature-box-info ml-md">
-                        <h4 class="font-weight-semibold"><a href="demo-medical-departments-detail.html" class="text-decoration-none">Hepatology</a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit, leo vitae interdum...</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+            i++;
+            if (i % 3 == 0)
+            {
+                @:</div>
+            }
+        }
         <div class="row mt-lg pb-xlg">
             <div class="col-md-12 center">
                 <a class="btn btn-borders btn-quaternary custom-button text-uppercase mt-lg font-weight-bold" href="demo-medical-departments.html">view more</a>

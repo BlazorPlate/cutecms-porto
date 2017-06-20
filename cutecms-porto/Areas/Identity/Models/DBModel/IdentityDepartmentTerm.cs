@@ -49,6 +49,8 @@ namespace cutecms_porto.Areas.Identity.Models.DBModel
         public string ImageName { get; set; }
         [Display(Name = "ImagePath", ResourceType = typeof(Resources.Resources))]
         public string ImagePath { get; set; }
+        [Display(Name = "Visible", ResourceType = typeof(Resources.Resources))]
+        public bool Visible { get; set; }   
         [Display(Name = "HomeVisible", ResourceType = typeof(Resources.Resources))]
         public bool HomeVisible { get; set; }
         [Display(Name = "Ordinal", ResourceType = typeof(Resources.Resources))]

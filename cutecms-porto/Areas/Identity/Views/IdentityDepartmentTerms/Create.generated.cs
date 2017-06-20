@@ -390,7 +390,7 @@ WriteLiteral("            ");
 
             
             #line 65 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
-       Write(Html.LabelFor(model => model.HomeVisible, htmlAttributes: new { @class = "control-label col-md-2" }));
+       Write(Html.LabelFor(model => model.Visible, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
             #line default
@@ -409,7 +409,7 @@ WriteLiteral("                    ");
 
             
             #line 68 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
-               Write(Html.CheckBoxFor(model => model.HomeVisible, new { @class = "js-switch" }));
+               Write(Html.CheckBoxFor(model => model.Visible, new { @class = "js-switch" }));
 
             
             #line default
@@ -420,6 +420,51 @@ WriteLiteral("                    ");
 
             
             #line 69 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+               Write(Html.ValidationMessageFor(model => model.Visible, "", new { @class = "text-danger" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 75 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+       Write(Html.LabelFor(model => model.HomeVisible, htmlAttributes: new { @class = "control-label col-md-2" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            <div");
+
+WriteLiteral(" class=\"col-md-10\"");
+
+WriteLiteral(">\r\n                <div");
+
+WriteLiteral(" class=\"checkbox\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                    ");
+
+            
+            #line 78 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+               Write(Html.CheckBoxFor(model => model.HomeVisible, new { @class = "js-switch" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("                    ");
+
+            
+            #line 79 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
                Write(Html.ValidationMessageFor(model => model.HomeVisible, "", new { @class = "text-danger" }));
 
             
@@ -438,7 +483,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 75 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+            #line 85 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
            Write(Html.LabelFor(model => model.Ordinal, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -457,7 +502,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 78 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+            #line 88 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
                    Write(Html.EditorFor(model => model.Ordinal, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -468,7 +513,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                        ");
 
             
-            #line 79 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+            #line 89 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
                    Write(Html.ValidationMessageFor(model => model.Ordinal, "", new { @class = "text-danger" }));
 
             
@@ -487,14 +532,14 @@ WriteLiteral(">\r\n                <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=", 4744), Tuple.Create("", 4778)
+WriteAttribute("value", Tuple.Create(" value=", 5229), Tuple.Create("", 5263)
             
-            #line 86 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
-, Tuple.Create(Tuple.Create("", 4751), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Create
+            #line 96 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+, Tuple.Create(Tuple.Create("", 5236), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Create
             
             #line default
             #line hidden
-, 4751), false)
+, 5236), false)
 );
 
 WriteLiteral(" class=\"btn btn-default\"");
@@ -512,7 +557,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 91 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+            #line 101 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
            Write(Html.ValidationSummary(false, "", new { @class = "text-danger" }));
 
             
@@ -521,7 +566,7 @@ WriteLiteral("                ");
 WriteLiteral("\r\n            </div>\r\n        </div>\r\n    </div>\r\n");
 
             
-            #line 95 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+            #line 105 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
 }
 
             
@@ -532,7 +577,7 @@ WriteLiteral("<div>\r\n");
 WriteLiteral("    ");
 
             
-            #line 97 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
+            #line 107 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml"
 Write(Html.ActionLink(Resources.Resources.BackToList, "Index", new { id = ViewBag.DepartmentId }));
 
             

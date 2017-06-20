@@ -5,9 +5,10 @@
     menuItems.Clear();
     menuItems = ViewBag.ParentMenuItems;
 }
-@GetTreeView(menuItems, null)
 
-@helper GetTreeView(List<MenuItem> menuItems, short? parentID)
+@GetTreeView(menuItems)
+
+@helper GetTreeView(List<MenuItem> menuItems)
         {
 lock (cutecms_porto.Helpers.BaseController.BreadcrumbLock)
 {
@@ -21,7 +22,7 @@ lock (cutecms_porto.Helpers.BaseController.BreadcrumbLock)
                 }
                 else
                 {
-                    <a href="#">@menuItems[copyOfIndex].Name <b class="@Resources.Resources.MarginDirClass @Resources.Resources.Arrow"></b></a>
+                    <a href="@menuItems[copyOfIndex].Path">@menuItems[copyOfIndex].Name <b class="@Resources.Resources.MarginDirClass @Resources.Resources.Arrow"></b></a>
                 }
             </li>
     }

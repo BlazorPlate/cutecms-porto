@@ -35,7 +35,7 @@
         <EntityTypeShape EntityType="ConfigDBModel.ConfigDepartment" Width="1.5" PointX="3.375" PointY="1" />
         <AssociationConnector Association="ConfigDBModel.FK_Contacts_Departments" />
         <AssociationConnector Association="ConfigDBModel.FK_Departments_Departments" />
-        <EntityTypeShape EntityType="ConfigDBModel.ConfigDepartmentTerm" Width="1.5" PointX="5.625" PointY="4.875" />
+        <EntityTypeShape EntityType="ConfigDBModel.ConfigDepartmentTerm" Width="1.5" PointX="5.625" PointY="4.75" />
         <AssociationConnector Association="ConfigDBModel.FK_DepartmentTerms_Departments" />
         <AssociationConnector Association="ConfigDBModel.FK_DepartmentTerms_Languages" />
       </Diagram>

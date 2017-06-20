@@ -41,14 +41,14 @@ namespace ASP
     public partial class _Views_Shared__Breadcrumb_cshtml : System.Web.Mvc.WebViewPage<dynamic>
     {
 
-#line 10 "..\..\Views\Shared\_Breadcrumb.cshtml"
-public System.Web.WebPages.HelperResult GetTreeView(List<MenuItem> menuItems, short? parentID)
+#line 11 "..\..\Views\Shared\_Breadcrumb.cshtml"
+public System.Web.WebPages.HelperResult GetTreeView(List<MenuItem> menuItems)
         {
 #line default
 #line hidden
 return new System.Web.WebPages.HelperResult(__razor_helper_writer => {
 
-#line 11 "..\..\Views\Shared\_Breadcrumb.cshtml"
+#line 12 "..\..\Views\Shared\_Breadcrumb.cshtml"
          
 lock (cutecms_porto.Helpers.BaseController.BreadcrumbLock)
 {
@@ -62,13 +62,13 @@ lock (cutecms_porto.Helpers.BaseController.BreadcrumbLock)
 WriteLiteralTo(__razor_helper_writer, "            <li>\r\n");
 
 
-#line 18 "..\..\Views\Shared\_Breadcrumb.cshtml"
+#line 19 "..\..\Views\Shared\_Breadcrumb.cshtml"
                 
 
 #line default
 #line hidden
 
-#line 18 "..\..\Views\Shared\_Breadcrumb.cshtml"
+#line 19 "..\..\Views\Shared\_Breadcrumb.cshtml"
                  if (menuItems[copyOfIndex].IsLeaf)
                 {
 
@@ -77,20 +77,20 @@ WriteLiteralTo(__razor_helper_writer, "            <li>\r\n");
 #line hidden
 WriteLiteralTo(__razor_helper_writer, "                    <a");
 
-WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 605), Tuple.Create("\"", 640)
+WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 584), Tuple.Create("\"", 619)
 
-#line 20 "..\..\Views\Shared\_Breadcrumb.cshtml"
-, Tuple.Create(Tuple.Create("", 612), Tuple.Create<System.Object, System.Int32>(menuItems[copyOfIndex].Path
+#line 21 "..\..\Views\Shared\_Breadcrumb.cshtml"
+, Tuple.Create(Tuple.Create("", 591), Tuple.Create<System.Object, System.Int32>(menuItems[copyOfIndex].Path
 
 #line default
 #line hidden
-, 612), false)
+, 591), false)
 );
 
 WriteLiteralTo(__razor_helper_writer, ">");
 
 
-#line 20 "..\..\Views\Shared\_Breadcrumb.cshtml"
+#line 21 "..\..\Views\Shared\_Breadcrumb.cshtml"
                              WriteTo(__razor_helper_writer, menuItems[copyOfIndex].Name);
 
 
@@ -99,7 +99,7 @@ WriteLiteralTo(__razor_helper_writer, ">");
 WriteLiteralTo(__razor_helper_writer, "</a>\r\n");
 
 
-#line 21 "..\..\Views\Shared\_Breadcrumb.cshtml"
+#line 22 "..\..\Views\Shared\_Breadcrumb.cshtml"
                 }
                 else
                 {
@@ -109,40 +109,48 @@ WriteLiteralTo(__razor_helper_writer, "</a>\r\n");
 #line hidden
 WriteLiteralTo(__razor_helper_writer, "                    <a");
 
-WriteLiteralTo(__razor_helper_writer, " href=\"#\"");
+WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 737), Tuple.Create("\"", 772)
+
+#line 25 "..\..\Views\Shared\_Breadcrumb.cshtml"
+, Tuple.Create(Tuple.Create("", 744), Tuple.Create<System.Object, System.Int32>(menuItems[copyOfIndex].Path
+
+#line default
+#line hidden
+, 744), false)
+);
 
 WriteLiteralTo(__razor_helper_writer, ">");
 
 
-#line 24 "..\..\Views\Shared\_Breadcrumb.cshtml"
-  WriteTo(__razor_helper_writer, menuItems[copyOfIndex].Name);
+#line 25 "..\..\Views\Shared\_Breadcrumb.cshtml"
+                             WriteTo(__razor_helper_writer, menuItems[copyOfIndex].Name);
 
 
 #line default
 #line hidden
 WriteLiteralTo(__razor_helper_writer, " <b");
 
-WriteAttributeTo(__razor_helper_writer, "class", Tuple.Create(" class=\"", 799), Tuple.Create("\"", 869)
+WriteAttributeTo(__razor_helper_writer, "class", Tuple.Create(" class=\"", 805), Tuple.Create("\"", 875)
 
-#line 24 "..\..\Views\Shared\_Breadcrumb.cshtml"
-, Tuple.Create(Tuple.Create("", 807), Tuple.Create<System.Object, System.Int32>(Resources.Resources.MarginDirClass
-
-#line default
-#line hidden
-, 807), false)
-
-#line 24 "..\..\Views\Shared\_Breadcrumb.cshtml"
-                           , Tuple.Create(Tuple.Create(" ", 842), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Arrow
+#line 25 "..\..\Views\Shared\_Breadcrumb.cshtml"
+                   , Tuple.Create(Tuple.Create("", 813), Tuple.Create<System.Object, System.Int32>(Resources.Resources.MarginDirClass
 
 #line default
 #line hidden
-, 843), false)
+, 813), false)
+
+#line 25 "..\..\Views\Shared\_Breadcrumb.cshtml"
+                                                      , Tuple.Create(Tuple.Create(" ", 848), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Arrow
+
+#line default
+#line hidden
+, 849), false)
 );
 
 WriteLiteralTo(__razor_helper_writer, "></b></a>\r\n");
 
 
-#line 25 "..\..\Views\Shared\_Breadcrumb.cshtml"
+#line 26 "..\..\Views\Shared\_Breadcrumb.cshtml"
                 }
 
 
@@ -151,7 +159,7 @@ WriteLiteralTo(__razor_helper_writer, "></b></a>\r\n");
 WriteLiteralTo(__razor_helper_writer, "            </li>\r\n");
 
 
-#line 27 "..\..\Views\Shared\_Breadcrumb.cshtml"
+#line 28 "..\..\Views\Shared\_Breadcrumb.cshtml"
     }
 }
 
@@ -160,7 +168,7 @@ WriteLiteralTo(__razor_helper_writer, "            </li>\r\n");
 #line hidden
 });
 
-#line 29 "..\..\Views\Shared\_Breadcrumb.cshtml"
+#line 30 "..\..\Views\Shared\_Breadcrumb.cshtml"
 }
 #line default
 #line hidden
@@ -181,11 +189,11 @@ WriteLiteralTo(__razor_helper_writer, "            </li>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("\r\n");
+WriteLiteral("\r\n\r\n");
 
             
-            #line 8 "..\..\Views\Shared\_Breadcrumb.cshtml"
-Write(GetTreeView(menuItems, null));
+            #line 9 "..\..\Views\Shared\_Breadcrumb.cshtml"
+Write(GetTreeView(menuItems));
 
             
             #line default

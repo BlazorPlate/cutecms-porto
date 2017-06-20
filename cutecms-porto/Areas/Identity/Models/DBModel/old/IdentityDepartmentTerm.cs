@@ -9,9 +9,13 @@
 
 namespace cutecms_porto.Areas.Identity.Models.DBModel
 {
+    using cutecms_porto.Helpers;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.Web;
+    using System.Web.Mvc;
+
     public partial class IdentityDepartmentTerm
     {
         public int Id { get; set; }
@@ -21,6 +25,10 @@ namespace cutecms_porto.Areas.Identity.Models.DBModel
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
         [Display(Name = "Value", ResourceType = typeof(Resources.Resources))]
         public string Value { get; set; }
+        [Display(Name = "UrlSlug", ResourceType = typeof(Resources.Resources))]
+        public string UrlSlug { get; set; }
+        [Display(Name = "AbsolutePath", ResourceType = typeof(Resources.Resources))]
+        public string AbsolutePath { get; set; }
         [ValidateImage]
         [Display(Name = "Icon", ResourceType = typeof(Resources.Resources))]
         public HttpPostedFileBase Icon { get; set; }
@@ -30,6 +38,7 @@ namespace cutecms_porto.Areas.Identity.Models.DBModel
         public string IconPath { get; set; }
         [Display(Name = "Summary", ResourceType = typeof(Resources.Resources))]
         public string Summary { get; set; }
+        [AllowHtml]
         [Display(Name = "Description", ResourceType = typeof(Resources.Resources))]
         public string Description { get; set; }
         [ValidateImage]
@@ -40,6 +49,8 @@ namespace cutecms_porto.Areas.Identity.Models.DBModel
         public string ImageName { get; set; }
         [Display(Name = "ImagePath", ResourceType = typeof(Resources.Resources))]
         public string ImagePath { get; set; }
+        [Display(Name = "Visible", ResourceType = typeof(Resources.Resources))]
+        public bool Visible { get; set; }   
         [Display(Name = "HomeVisible", ResourceType = typeof(Resources.Resources))]
         public bool HomeVisible { get; set; }
         [Display(Name = "Ordinal", ResourceType = typeof(Resources.Resources))]

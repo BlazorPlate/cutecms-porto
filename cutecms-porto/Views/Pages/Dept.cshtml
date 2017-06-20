@@ -1,24 +1,80 @@
 ﻿@model cutecms_porto.Areas.Identity.Models.DBModel.IdentityDepartmentTerm
-
+@using System.Threading
+@using cutecms_porto.Areas.Identity.Models
+@using cutecms_porto.Areas.Identity.Models.DBModel
 @{
-    ViewBag.Title = "Dept";
+    ApplicationDbContext _db = new ApplicationDbContext();
+    IdentityEntities db = new IdentityEntities();
+    ViewBag.Title = Model.Value;
+    ViewBag.ParentDepts = BreadcrumbsHelper.GetParentDepts(Model.DepartmentId);
 }
 
-<h2>Dept</h2>
+@section PageHeader
+{
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="breadcrumb">
+                        <li><a href="~/@Thread.CurrentThread.CurrentCulture.Name">@Resources.Resources.Home</a></li>
+                        @{
+                           
+                        }
+                             @Html.Partial("_DeptBreadcrumb")
+                    </ul>
+                    <br />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h1><a style="color:white;text-decoration:none" href="@Url.Action("Content", "Pages" , new { slug=Model.UrlSlug })">@Model.Value</a></h1>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+<div class="container">
 
-<div>
-    <h4>IdentityDepartmentTerm</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Value)
-        </dt>
+    <div class="row mt-lg mb-lg pb-xl">
+        <div class="col-md-3">
 
-        <dd>
-            @Html.DisplayFor(model => model.Value)
-        </dd>
-    </dl>
+            <aside class="sidebar">
+                <h4 class="font-weight-semibold mb-lg">Departments</h4>
+
+                <ul class="nav nav-list narrow mb-xlg">
+                    <li class="active"><a href="demo-medical-departments-detail.html">Cardiology</a></li>
+                    <li><a href="demo-medical-departments-detail.html">Gastroenterology</a></li>
+                    <li><a href="demo-medical-departments-detail.html">Pulmonology</a></li>
+                    <li><a href="demo-medical-departments-detail.html">Dental</a></li>
+                    <li><a href="demo-medical-departments-detail.html">Gynecology</a></li>
+                    <li><a href="demo-medical-departments-detail.html">Hepatology</a></li>
+                </ul>
+            </aside>
+
+        </div>
+        <div class="col-md-9">
+
+            <div class="feature-box feature-box-style-2 mb-lg">
+                <div class="feature-box-icon">
+                    <img src="@Model.IconPath" alt="@Model.IconName" class="img-responsive" />
+                </div>
+                <div class="feature-box-info ml-md">
+                    <h2 class="font-weight-semibold mb-md">@Model.Value</h2>
+                    <p class="lead font-weight-normal">@Model.Summary</p>
+
+                    <img src="@Model.ImagePath" style="max-width: 260px;" alt="@Model.ImageName" class="pull-right ml-xl mb-xl img-responsive box-shadow-custom" />
+
+                    <p>@Html.Raw(HttpUtility.HtmlDecode(Model.Description)) </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")

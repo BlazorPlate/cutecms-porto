@@ -10,6 +10,8 @@
         ViewBag.Description = Model.MetaDescription;
         ViewBag.Author = _db.Users.Find(Model.Author).UserName;
         Layout = "~/Views/Shared/_Layout.cshtml";
+        var menuItemId = db.MenuItems.FirstOrDefault(m => m.ContentId == Model.Id)?.Id;
+        ViewBag.ParentMenuItems = BreadcrumbsHelper.GetParentMenuItems(menuItemId);
     }
     <!-- Current Page CSS -->
     <link rel="stylesheet" href="~/assets/porto/vendor/circle-flip-slideshow/css/component.css">
@@ -23,16 +25,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <ul class="breadcrumb">
-                        <li><a href="~/@Thread.CurrentThread.CurrentCulture.Name">@Resources.Resources.Home</a></li>
-                        @if (Model.ParentMenuItemId != null)
-                        {
-                            var menuItemId = db.MenuItems.FirstOrDefault(m => m.ContentId == Model.Id)?.Id;
-                            if (menuItemId != null)
-                            {
-                                ViewBag.ParentMenuItems = BreadcrumbsHelper.GetParentMenuItems(menuItemId);
-                        @Html.Partial("_Breadcrumb")
-                            }
-                        }
+                        <li><a href="~/@Thread.CurrentThread.CurrentCulture.Name">@Resources.Resources.Home</a></li>             
+                        @Html.Partial("_Breadcrumb")                
                     </ul>
                     <br />
                 </div>

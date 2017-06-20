@@ -1,0 +1,34 @@
+﻿@using cutecms_porto.Areas.Identity.Models.DBModel
+@using System.Threading
+@{
+    IdentityEntities db = new IdentityEntities();
+    List<IdentityDepartment> depts = new List<IdentityDepartment>();
+    depts.Clear();
+    depts = ViewBag.ParentDepts;
+}
+@if (depts != null)
+{
+    @GetTreeView(depts)
+}
+@helper GetTreeView(List<IdentityDepartment> depts)
+        {
+lock (cutecms_porto.Helpers.BaseController.BreadcrumbLock)
+{
+    for (int index = depts.Count() - 1; index >= 0; index--)
+    {
+        int copyOfIndex = index;
+            <li>
+                @if (depts[copyOfIndex].Departments1.Count == 0)
+                {
+                    <a href="@(depts[copyOfIndex].DepartmentTerms.Where(d=>d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.AbsolutePath)">@(depts[copyOfIndex].DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? depts[copyOfIndex].Code)</a>
+                }
+                else
+                {
+                    <a href="@(depts[copyOfIndex].DepartmentTerms.Where(d=>d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.AbsolutePath)">@(depts[copyOfIndex].DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? depts[copyOfIndex].Code)<b class="@Resources.Resources.MarginDirClass @Resources.Resources.Arrow"></b></a>
+                }
+            </li>
+    }
+}
+}
+
+

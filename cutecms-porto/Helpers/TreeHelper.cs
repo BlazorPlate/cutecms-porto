@@ -39,6 +39,7 @@ namespace cutecms_porto.Helpers
             // root of the tree, keeping count of
             // how many nodes we walk over in
             // the process
+            deptList.Add(node);
             while (node != null)
             {
                 i++;
@@ -49,7 +50,7 @@ namespace cutecms_porto.Helpers
             deptList.Reverse();
             foreach (var item in deptList)
                 pathToRoot += (item.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(culture)).FirstOrDefault()?.Value ?? item.Code) + "/";
-            return pathToRoot.TrimEnd('/');
+            return pathToRoot.Remove(pathToRoot.LastIndexOf('/'));
         }
 
     }

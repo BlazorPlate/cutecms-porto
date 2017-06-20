@@ -2836,7 +2836,7 @@
     <Content Include="Areas\CMS\Models\DBModel\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.Context.cs</LastGenOutput>
+      <LastGenOutput>Model.Context1.cs</LastGenOutput>
     </Content>
     <Content Include="Areas\CMS\Models\DBModel\Model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -8720,6 +8720,7 @@
       <LastGenOutput>_Layout.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Views\Pages\Dept.cshtml" />
+    <Content Include="Views\Shared\_DeptBreadcrumb.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />

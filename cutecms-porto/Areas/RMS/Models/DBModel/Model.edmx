@@ -73,6 +73,7 @@
           <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="ImageName" Type="nvarchar(max)" />
           <Property Name="ImagePath" Type="nvarchar(max)" />
+          <Property Name="Visible" Type="bit" Nullable="false" />
           <Property Name="HomeVisible" Type="bit" Nullable="false" />
           <Property Name="Ordinal" Type="int" />
           <Property Name="DepartmentId" Type="int" Nullable="false" />
@@ -1435,6 +1436,7 @@
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ImageName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Visible" Type="Boolean" Nullable="false" />
           <Property Name="HomeVisible" Type="Boolean" Nullable="false" />
           <Property Name="Ordinal" Type="Int32" />
           <Property Name="DepartmentId" Type="Int32" Nullable="false" />
@@ -1707,6 +1709,7 @@
                 <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
                 <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
                 <ScalarProperty Name="HomeVisible" ColumnName="HomeVisible" />
+                <ScalarProperty Name="Visible" ColumnName="Visible" />
                 <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
                 <ScalarProperty Name="ImageName" ColumnName="ImageName" />
                 <ScalarProperty Name="Description" ColumnName="Description" />

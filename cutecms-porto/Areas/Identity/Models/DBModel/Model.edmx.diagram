@@ -46,7 +46,7 @@
         <AssociationConnector Association="IdentityModel.FK_Departments_Departments" />
         <AssociationConnector Association="IdentityModel.FK_Departments_Employees" />
         <AssociationConnector Association="IdentityModel.FK_EmpInDept_Departments" />
-        <EntityTypeShape EntityType="IdentityModel.IdentityDepartmentTerm" Width="1.5" PointX="15.5" PointY="8.75" />
+        <EntityTypeShape EntityType="IdentityModel.IdentityDepartmentTerm" Width="1.5" PointX="15.5" PointY="8.625" />
         <AssociationConnector Association="IdentityModel.FK_DepartmentTerms_Departments" />
         <AssociationConnector Association="IdentityModel.FK_DepartmentTerms_Languages" />
         </Diagram>

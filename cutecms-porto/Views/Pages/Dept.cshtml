@@ -6,7 +6,8 @@
     ApplicationDbContext _db = new ApplicationDbContext();
     IdentityEntities db = new IdentityEntities();
     ViewBag.Title = Model.Value;
-    ViewBag.ParentDepts = BreadcrumbsHelper.GetParentDepts(Model.DepartmentId);
+    ViewBag.ParentDepts = TreeHelper.DepartmentPath(Model.Department, Thread.CurrentThread.CurrentCulture.Name);
+
 }
 
 @section PageHeader
@@ -17,10 +18,7 @@
                 <div class="col-md-12">
                     <ul class="breadcrumb">
                         <li><a href="~/@Thread.CurrentThread.CurrentCulture.Name">@Resources.Resources.Home</a></li>
-                        @{
-                           
-                        }
-                             @Html.Partial("_DeptBreadcrumb")
+                        @Html.Partial("_DeptBreadcrumb")
                     </ul>
                     <br />
                 </div>
@@ -34,26 +32,19 @@
     </section>
 }
 <div class="container">
-
     <div class="row mt-lg mb-lg pb-xl">
         <div class="col-md-3">
-
             <aside class="sidebar">
-                <h4 class="font-weight-semibold mb-lg">Departments</h4>
-
+                <h4 class="font-weight-semibold mb-lg">@Resources.Resources.Departments</h4>
                 <ul class="nav nav-list narrow mb-xlg">
-                    <li class="active"><a href="demo-medical-departments-detail.html">Cardiology</a></li>
-                    <li><a href="demo-medical-departments-detail.html">Gastroenterology</a></li>
-                    <li><a href="demo-medical-departments-detail.html">Pulmonology</a></li>
-                    <li><a href="demo-medical-departments-detail.html">Dental</a></li>
-                    <li><a href="demo-medical-departments-detail.html">Gynecology</a></li>
-                    <li><a href="demo-medical-departments-detail.html">Hepatology</a></li>
+                    @foreach (var item in db.IdentityDepartmentTerms.Where(d => d.Department.TenantId.Trim().Equals(Tenant.TenantId) && d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).Where(d => d.Visible).OrderBy(d => d.DepartmentId).ThenBy(d => d.Ordinal))
+                    {
+                        <li><a href="@item.AbsolutePath">@item.Value</a></li>
+                    }
                 </ul>
             </aside>
-
         </div>
         <div class="col-md-9">
-
             <div class="feature-box feature-box-style-2 mb-lg">
                 <div class="feature-box-icon">
                     <img src="@Model.IconPath" alt="@Model.IconName" class="img-responsive" />
@@ -68,14 +59,52 @@
                 </div>
 
             </div>
-
+            @if (User.IsInRole("Admin"))
+            {
+                <input type="button" class="btn btn-primary mr-xs mb-sm" title="@Resources.Resources.Edit" value="@Resources.Resources.Edit" onclick="location.href='@Url.Action("Edit", "IdentityDepartmentTerms", new { area = "Identity",id = Model.Id })'" />
+            }
+            <input type="button" class="btn btn-default mr-xs mb-sm" title="@Resources.Resources.Back" value="@Resources.Resources.Back" onclick="location.href='@Url.Action("Index", "Home", new { area = ""})'" />
+            <section class="team">
+                <div class="row mt-lg mb-lg">
+                    <div class="col-md-12">
+                        <h2 class="font-weight-semibold mb-xs">Meet our Specialists</h2>
+                        <p class="lead font-weight-normal">At Porto Medical, we offer a wide array of departments, gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor.</p>
+                        <ul class="nav nav-pills sort-source" data-sort-id="portfolio" data-option-key="filter" data-plugin-options="{'layoutMode': 'fitRows', 'filter': '*'}">
+                            <li data-option-value="*" class="active"><a href="#">Show All</a></li>
+                            @foreach (var item in TreeHelper.Traversal(Model.Department, x => x.Departments1).ToList())
+                            {
+                                <li data-option-value=".@item.Code"><a href="#">@item.Code</a></li>
+                            }
+                        </ul>
+                        <hr class="solid">
+                        <div class="row">
+                            <div class="sort-destination-loader sort-destination-loader-showing">
+                                <ul class="portfolio-list sort-destination" data-sort-id="portfolio">
+                                    <li class="col-md-3 col-sm-6 col-xs-12 isotope-item cardiology">
+                                        <div class="portfolio-item">
+                                            <a href="#" data-href="demo-medical-doctors-detail.html" data-ajax-on-page class="text-decoration-none">
+                                                <span class="thumb-info thumb-info-no-zoom thumb-info-hide-wrapper-bg">
+                                                    <span class="thumb-info-wrapper m-none">
+                                                        <img src="#" class="img-responsive" alt="">
+                                                    </span>
+                                                    <span class="thumb-info-caption p-md pt-xlg pb-xlg">
+                                                        <span class="custom-thumb-info-title">
+                                                            <span class="custom-thumb-info-type font-weight-light text-md">Cardiology</span>
+                                                            <span class="custom-thumb-info-inner font-weight-semibold text-lg">John Doe</span>
+                                                            <i class="icon-arrow-right-circle icons font-weight-semibold text-lg "></i>
+                                                        </span>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-
     </div>
-
 </div>
 
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

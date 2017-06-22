@@ -25,8 +25,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <ul class="breadcrumb">
-                        <li><a href="~/@Thread.CurrentThread.CurrentCulture.Name">@Resources.Resources.Home</a></li>             
-                        @Html.Partial("_Breadcrumb")                
+                        <li><a href="~/@Thread.CurrentThread.CurrentCulture.Name">@Resources.Resources.Home</a></li>
+                        @Html.Partial("_Breadcrumb")
                     </ul>
                     <br />
                 </div>
@@ -53,7 +53,7 @@
                             foreach (var image in images)
                             {
                                 var description = image.ImageFileTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.ImageFileId == image.Id).FirstOrDefault()?.Value ?? db.ImageFiles.Where(i => i.Id == image.Id).FirstOrDefault().Code;
-                        <img src="@image.FilePath" data-thumb="@image.ThumbPath" alt="@description" />
+                                <img src="@image.FilePath" data-thumb="@image.ThumbPath" alt="@description" />
                             }
                         }
                     </div>
@@ -69,11 +69,11 @@
             <p style="color:brown">
                 @if (Model.StartDate == null)
                 {
-                <small><i class="fa fa-clock-o"></i> @Resources.Resources.LastUpdatedOn @Model.ModifiedOn.Value.ToString("dddd, d MMMM, yyyy")</small>
+                    <small><i class="fa fa-clock-o"></i> @Resources.Resources.LastUpdatedOn @Model.ModifiedOn.Value.ToString("dddd, d MMMM, yyyy")</small>
                 }
                 else
                 {
-                <small><i class="fa fa-clock-o"></i> @Resources.Resources.From @Model.StartDate.Value.ToString("dddd, d MMMM, yyyy") @(Model.EndDate == null ? "" : @Resources.Resources.Till + " " + Model.EndDate.Value.ToString("dddd, d MMMM, yyyy")) @(Model.Location == null ? "" : "@ " + Model.Location)</small>
+                    <small><i class="fa fa-clock-o"></i> @Resources.Resources.From @Model.StartDate.Value.ToString("dddd, d MMMM, yyyy") @(Model.EndDate == null ? "" : @Resources.Resources.Till + " " + Model.EndDate.Value.ToString("dddd, d MMMM, yyyy")) @(Model.Location == null ? "" : "@ " + Model.Location)</small>
                 }
             </p>
         </div>
@@ -112,7 +112,7 @@
                                     @if (item.FilePath != null)
                                     {    <br />
                                     <label>@Resources.Resources.Attachments:</label>
-                                        <a href="@Url.Content(item.FilePath)">@Resources.Resources.Download @item.Title</a>
+                                    <a href="@Url.Content(item.FilePath)">@Resources.Resources.Download @item.Title</a>
                                     }
                                 </div>
                             </section>
@@ -123,7 +123,7 @@
             </div>
             @if (User.IsInRole("Admin"))
             {
-                <input type="button" class="btn btn-primary mr-xs mb-sm" title="Delete" value="@Resources.Resources.Edit" onclick="location.href='@Url.Action("Edit", "Contents", new { area = "CMS",id = Model.Id })'" />
+                <input type="button" class="btn btn-primary mr-xs mb-sm" title="@Resources.Resources.Edit" value="@Resources.Resources.Edit" onclick="location.href='@Url.Action("Edit", "Contents", new { area = "CMS",id = Model.Id })'" />
             }
 
         </div>

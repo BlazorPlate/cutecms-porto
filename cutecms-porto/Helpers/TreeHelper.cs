@@ -52,6 +52,24 @@ namespace cutecms_porto.Helpers
                 pathToRoot += (item.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(culture)).FirstOrDefault()?.Value ?? item.Code) + "/";
             return pathToRoot.Remove(pathToRoot.LastIndexOf('/'));
         }
-
+        public static List<IdentityDepartment> DepartmentPath(IdentityDepartment node, string culture)
+        {
+            int i = -1;
+            string pathToRoot = string.Empty;
+            List<IdentityDepartment> deptList = new List<IdentityDepartment>();
+            // Walk up the tree until we find the
+            // root of the tree, keeping count of
+            // how many nodes we walk over in
+            // the process
+            deptList.Add(node);
+            while (node != null)
+            {
+                i++;
+                node = node.Department1;
+                if (node != null)
+                    deptList.Add(node);
+            }
+            return deptList;
+        }
     }
 }

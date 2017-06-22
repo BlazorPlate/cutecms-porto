@@ -171,6 +171,13 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 var link = StringHelper.BuildDepartmentUrl(culture, parentDepartmentPath);
                 identityDepartmentTerm.UrlSlug = link.Item1;
                 identityDepartmentTerm.AbsolutePath = link.Item2;
+                var local = db.Set<IdentityDepartmentTerm>()
+                         .Local
+                         .FirstOrDefault(f => f.Id == identityDepartmentTerm.Id);
+                if (local != null)
+                {
+                    db.Entry(local).State = EntityState.Detached;
+                }
                 db.Entry(identityDepartmentTerm).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index", new { id = identityDepartmentTerm.DepartmentId });

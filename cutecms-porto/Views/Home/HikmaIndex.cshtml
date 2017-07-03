@@ -222,7 +222,7 @@
 
 
         @{var i = 0;}
-        @foreach (var item in IdentityDb.IdentityDepartmentTerms.Where(d => d.Department.TenantId.Trim().Equals(Tenant.TenantId) && d.HomeVisible && d.Visible && d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).OrderBy(d => d.DepartmentId).ThenBy(d => d.Ordinal))
+        @foreach (var item in IdentityDb.IdentityDepartmentTerms.Where(d => d.Department.TenantId.Trim().Equals(Tenant.TenantId) && d.HomeVisible &&d.Visible && d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).OrderBy(d => d.DepartmentId).ThenBy(d => d.Ordinal))
         {
             if (i % 3 == 0)
             {
@@ -231,10 +231,10 @@
             <div class="col-md-4">
                 <div class="feature-box feature-box-style-2 mb-xl appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
                     <div class="feature-box-icon">
-                        <img src="@item.IconPath" alt="@item.Description" class="img-responsive" />
+                        <img src="@item.IconPath" alt="" class="img-responsive" />
                     </div>
                     <div class="feature-box-info ml-md">
-                        <h4 class="font-weight-semibold"><a href="@string.Concat(item.AbsolutePath, string.Concat("#", item.Department.Code))" class="text-decoration-none">@item.Value</a></h4>
+                        <h4 class="font-weight-semibold"><a href="@item.AbsolutePath" class="text-decoration-none">@item.Value</a></h4>
                         <p>@item.Summary</p>
                     </div>
                 </div>

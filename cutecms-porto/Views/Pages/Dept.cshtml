@@ -7,6 +7,7 @@
     IdentityEntities db = new IdentityEntities();
     ViewBag.Title = Model.Value;
     ViewBag.ParentDepts = TreeHelper.DepartmentPath(Model.Department, Thread.CurrentThread.CurrentCulture.Name);
+    bool activeFlag = true;
 
 }
 
@@ -37,9 +38,9 @@
             <aside class="sidebar">
                 <h4 class="font-weight-semibold mb-lg">@Resources.Resources.Departments</h4>
                 <ul class="nav nav-list narrow mb-xlg">
-                    @foreach (var item in db.IdentityDepartmentTerms.Where(d => d.Department.TenantId.Trim().Equals(Tenant.TenantId) && d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).Where(d => d.Visible).OrderBy(d => d.DepartmentId).ThenBy(d => d.Ordinal))
+                    @foreach (var item in db.IdentityDepartmentTerms.Where(d => d.Department.TenantId.Trim().Equals(Tenant.TenantId) && d.Department.Departments1.Count > 0 && d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).Where(d => d.Visible).OrderBy(d => d.DepartmentId).ThenBy(d => d.Ordinal))
                     {
-                        <li><a href="@item.AbsolutePath">@item.Value</a></li>
+                        <li><a href="@string.Concat(item.AbsolutePath, string.Concat("#", item.Department.Code))">@item.Value</a></li>
                     }
                 </ul>
             </aside>
@@ -70,34 +71,54 @@
                         <h2 class="font-weight-semibold mb-xs">Meet our Specialists</h2>
                         <p class="lead font-weight-normal">At Porto Medical, we offer a wide array of departments, gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor.</p>
                         <ul class="nav nav-pills sort-source" data-sort-id="portfolio" data-option-key="filter" data-plugin-options="{'layoutMode': 'fitRows', 'filter': '*'}">
-                            <li data-option-value="*" class="active"><a href="#">Show All</a></li>
-                            @foreach (var item in TreeHelper.Traversal(Model.Department, x => x.Departments1).ToList())
+                            @*<li data-option-value="*" class="active"><a href="#">@Resources.Resources.ShowAll</a></li>*@
+                            @foreach (var item in TreeHelper.Traversal(Model.Department, x => x.Departments1))
                             {
-                                <li data-option-value=".@item.Code"><a href="#">@item.Code</a></li>
+                                @*if (activeFlag)
+                                {
+                                    <li id="default" class="active" data-option-value=".@item.Code"><a href="#">@item.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value</a></li>
+                                    activeFlag = false;
+                                }
+                                else
+                                {
+                                    <li data-option-value=".@item.Code"><a href="#">@item.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value</a></li>
+
+                                }*@
+                                <li data-option-value=".@item.Code"><a href="#">@item.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value</a></li>
+
                             }
                         </ul>
                         <hr class="solid">
                         <div class="row">
                             <div class="sort-destination-loader sort-destination-loader-showing">
                                 <ul class="portfolio-list sort-destination" data-sort-id="portfolio">
-                                    <li class="col-md-3 col-sm-6 col-xs-12 isotope-item cardiology">
-                                        <div class="portfolio-item">
-                                            <a href="#" data-href="demo-medical-doctors-detail.html" data-ajax-on-page class="text-decoration-none">
-                                                <span class="thumb-info thumb-info-no-zoom thumb-info-hide-wrapper-bg">
-                                                    <span class="thumb-info-wrapper m-none">
-                                                        <img src="#" class="img-responsive" alt="">
-                                                    </span>
-                                                    <span class="thumb-info-caption p-md pt-xlg pb-xlg">
-                                                        <span class="custom-thumb-info-title">
-                                                            <span class="custom-thumb-info-type font-weight-light text-md">Cardiology</span>
-                                                            <span class="custom-thumb-info-inner font-weight-semibold text-lg">John Doe</span>
-                                                            <i class="icon-arrow-right-circle icons font-weight-semibold text-lg "></i>
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </li>
+                                    @foreach (var item in TreeHelper.Traversal(Model.Department, x => x.Departments1))
+                                    {
+                                        foreach (var subDept in TreeHelper.Traversal(item, x => x.Departments1))
+                                        {
+                                            foreach (var empInDept in subDept.EmpInDepts)
+                                            {
+                                                <li class="col-md-3 col-sm-6 col-xs-12 isotope-item @item.Code">
+                                                    <div class="portfolio-item">
+                                                        <a href="@Url.Action("MemberProfile","Staff", new { id = empInDept.Employee.TranslationId })" data-ajax-on-page class="text-decoration-none">
+                                                            <span class="thumb-info thumb-info-no-zoom thumb-info-hide-wrapper-bg">
+                                                                <span class="thumb-info-wrapper m-none">
+                                                                    <img alt="@empInDept.Employee.PersonalPhotoName" src="@(!File.Exists(Server.MapPath(empInDept.Employee.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : @empInDept.Employee.PersonalPhotoPath)">
+                                                                </span>
+                                                                <span class="thumb-info-caption p-md pt-xlg pb-xlg">
+                                                                    <span class="custom-thumb-info-title">
+                                                                        <span class="custom-thumb-info-type font-weight-light text-md">@empInDept.Department.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value</span>
+                                                                        <span class="custom-thumb-info-inner font-weight-semibold text-lg">@empInDept.Employee.FullName</span>
+                                                                        <i class="icon-arrow-right-circle icons font-weight-semibold text-lg "></i>
+                                                                    </span>
+                                                                </span>
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                            }
+                                        }
+                                    }
                                 </ul>
                             </div>
                         </div>
@@ -107,4 +128,3 @@
         </div>
     </div>
 </div>
-

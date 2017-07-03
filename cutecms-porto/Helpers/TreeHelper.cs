@@ -49,7 +49,7 @@ namespace cutecms_porto.Helpers
             }
             deptList.Reverse();
             foreach (var item in deptList)
-                pathToRoot += (item.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(culture)).FirstOrDefault()?.Value ?? item.Code) + "/";
+                pathToRoot += (item.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(culture)).FirstOrDefault()?.Value.Trim() ?? item.Code.Trim()) + "/";
             return pathToRoot.Remove(pathToRoot.LastIndexOf('/'));
         }
         public static List<IdentityDepartment> DepartmentPath(IdentityDepartment node, string culture)

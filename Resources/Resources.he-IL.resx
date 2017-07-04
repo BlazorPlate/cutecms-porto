@@ -1629,4 +1629,10 @@
   <data name="IconPath" xml:space="preserve">
     <value>סמל</value>
   </data>
+  <data name="MeetOurTeam" xml:space="preserve">
+    <value>פגוש את הצוות</value>
+  </data>
+  <data name="MainDepts" xml:space="preserve">
+    <value>ראשי מחלקות</value>
+  </data>
 </root>

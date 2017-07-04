@@ -1629,4 +1629,10 @@
   <data name="IconPath" xml:space="preserve">
     <value>आइकन</value>
   </data>
+  <data name="MeetOurTeam" xml:space="preserve">
+    <value>हमारी टीम से मिलें</value>
+  </data>
+  <data name="MainDepts" xml:space="preserve">
+    <value>मुख्य विभाग!</value>
+  </data>
 </root>

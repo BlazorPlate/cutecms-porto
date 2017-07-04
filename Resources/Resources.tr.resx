@@ -1629,4 +1629,10 @@
   <data name="IconPath" xml:space="preserve">
     <value>Simge Yolu</value>
   </data>
+  <data name="MeetOurTeam" xml:space="preserve">
+    <value>Takımımız</value>
+  </data>
+  <data name="MainDepts" xml:space="preserve">
+    <value>Bölümler</value>
+  </data>
 </root>

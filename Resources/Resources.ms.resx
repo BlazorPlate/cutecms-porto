@@ -1629,4 +1629,10 @@
   <data name="IconPath" xml:space="preserve">
     <value>Ikon</value>
   </data>
+  <data name="MeetOurTeam" xml:space="preserve">
+    <value>Pasukan Kami</value>
+  </data>
+  <data name="MainDepts" xml:space="preserve">
+    <value>Jabatan utama</value>
+  </data>
 </root>

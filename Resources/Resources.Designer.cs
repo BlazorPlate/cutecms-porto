@@ -2518,6 +2518,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Main Departments.
+        /// </summary>
+        public static string MainDepts {
+            get {
+                return ResourceManager.GetString("MainDepts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Manage.
         /// </summary>
         public static string Manage {
@@ -2595,6 +2604,15 @@ namespace Resources {
         public static string MaximumAllowedSize {
             get {
                 return ResourceManager.GetString("MaximumAllowedSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Meet our Team.
+        /// </summary>
+        public static string MeetOurTeam {
+            get {
+                return ResourceManager.GetString("MeetOurTeam", resourceCulture);
             }
         }
         

@@ -1629,4 +1629,10 @@
   <data name="IconPath" xml:space="preserve">
     <value>ไอคอน</value>
   </data>
+  <data name="MeetOurTeam" xml:space="preserve">
+    <value>ทีมงานของเรา</value>
+  </data>
+  <data name="MainDepts" xml:space="preserve">
+    <value>แผนก</value>
+  </data>
 </root>

@@ -1629,4 +1629,10 @@
   <data name="IconPath" xml:space="preserve">
     <value>Iconiță</value>
   </data>
+  <data name="MeetOurTeam" xml:space="preserve">
+    <value>Echipa noastră</value>
+  </data>
+  <data name="MainDepts" xml:space="preserve">
+    <value>Departamente</value>
+  </data>
 </root>

@@ -6,7 +6,7 @@
     ApplicationDbContext _db = new ApplicationDbContext();
     IdentityEntities db = new IdentityEntities();
     ViewBag.Title = Model.Value;
-    ViewBag.ParentDepts = TreeHelper.DepartmentPath(Model.Department, Thread.CurrentThread.CurrentCulture.Name);
+    ViewBag.ParentDepts = BreadcrumbsHelper.GetParentDepartmentItems(Model.Department, Thread.CurrentThread.CurrentCulture.Name);
     bool activeFlag = true;
 
 }
@@ -36,7 +36,7 @@
     <div class="row mt-lg mb-lg pb-xl">
         <div class="col-md-3">
             <aside class="sidebar">
-                <h4 class="font-weight-semibold mb-lg">@Resources.Resources.Departments</h4>
+                <h4 class="font-weight-semibold mb-lg">@Resources.Resources.MainDepts</h4>
                 <ul class="nav nav-list narrow mb-xlg">
                     @foreach (var item in db.IdentityDepartmentTerms.Where(d => d.Department.TenantId.Trim().Equals(Tenant.TenantId) && d.Department.Departments1.Count > 0 && d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).Where(d => d.Visible).OrderBy(d => d.DepartmentId).ThenBy(d => d.Ordinal))
                     {
@@ -68,13 +68,13 @@
             <section class="team">
                 <div class="row mt-lg mb-lg">
                     <div class="col-md-12">
-                        <h2 class="font-weight-semibold mb-xs">Meet our Specialists</h2>
-                        <p class="lead font-weight-normal">At Porto Medical, we offer a wide array of departments, gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor.</p>
+                        <h2 class="font-weight-semibold mb-xs">@Resources.Resources.MeetOurTeam</h2>
+                        @*<p class="lead font-weight-normal">At Porto Medical, we offer a wide array of departments, gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor.</p>*@
                         <ul class="nav nav-pills sort-source" data-sort-id="portfolio" data-option-key="filter" data-plugin-options="{'layoutMode': 'fitRows', 'filter': '*'}">
                             @*<li data-option-value="*" class="active"><a href="#">@Resources.Resources.ShowAll</a></li>*@
-                            @foreach (var item in TreeHelper.Traversal(Model.Department, x => x.Departments1))
+                            @foreach (var item in TreeHelper.Traversal(Model.Department, x => x.Departments1).OrderBy(d => d.Ordinal))
                             {
-                                @*if (activeFlag)
+                                if (activeFlag)
                                 {
                                     <li id="default" class="active" data-option-value=".@item.Code"><a href="#">@item.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value</a></li>
                                     activeFlag = false;
@@ -83,9 +83,7 @@
                                 {
                                     <li data-option-value=".@item.Code"><a href="#">@item.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value</a></li>
 
-                                }*@
-                                <li data-option-value=".@item.Code"><a href="#">@item.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value</a></li>
-
+                                }
                             }
                         </ul>
                         <hr class="solid">
@@ -94,22 +92,28 @@
                                 <ul class="portfolio-list sort-destination" data-sort-id="portfolio">
                                     @foreach (var item in TreeHelper.Traversal(Model.Department, x => x.Departments1))
                                     {
-                                        foreach (var subDept in TreeHelper.Traversal(item, x => x.Departments1))
+                                        var deptList = TreeHelper.Traversal(item, x => x.Departments1);
+                                        deptList.OrderBy(d => d.Ordinal);
+                                        foreach (var subDept in deptList)
                                         {
-                                            foreach (var empInDept in subDept.EmpInDepts)
+                                            foreach (var empInDept in subDept.EmpInDepts.OrderBy(e => e.Ordinal))
                                             {
+                                                string personalTitle = empInDept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? empInDept.Employee.PersonalTitle.Code;
+                                                var employee = db.Employees.Where(e => e.Language.CultureName.Equals(Thread.CurrentThread.CurrentCulture.Name) && e.TranslationId == empInDept.Employee.TranslationId).FirstOrDefault();
                                                 <li class="col-md-3 col-sm-6 col-xs-12 isotope-item @item.Code">
                                                     <div class="portfolio-item">
-                                                        <a href="@Url.Action("MemberProfile","Staff", new { id = empInDept.Employee.TranslationId })" data-ajax-on-page class="text-decoration-none">
+                                                        <a href="@Url.Action("MemberProfile", "Staff", new { id = empInDept.Employee.TranslationId })" data-ajax-on-page class="text-decoration-none">
                                                             <span class="thumb-info thumb-info-no-zoom thumb-info-hide-wrapper-bg">
                                                                 <span class="thumb-info-wrapper m-none">
-                                                                    <img alt="@empInDept.Employee.PersonalPhotoName" src="@(!File.Exists(Server.MapPath(empInDept.Employee.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : @empInDept.Employee.PersonalPhotoPath)">
+                                                                    <img alt="@empInDept.Employee.PersonalPhotoName" src="@(!File.Exists(Server.MapPath(employee.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : @employee.PersonalPhotoPath)">
                                                                 </span>
                                                                 <span class="thumb-info-caption p-md pt-xlg pb-xlg">
                                                                     <span class="custom-thumb-info-title">
                                                                         <span class="custom-thumb-info-type font-weight-light text-md">@empInDept.Department.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value</span>
-                                                                        <span class="custom-thumb-info-inner font-weight-semibold text-lg">@empInDept.Employee.FullName</span>
-                                                                        <i class="icon-arrow-right-circle icons font-weight-semibold text-lg "></i>
+                                                                        <span class="custom-thumb-info-inner font-weight-semibold text-lg">@personalTitle @employee.FullName</span>
+                                                                        @{string occupation = (empInDept.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? empInDept.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : empInDept.Occupation.Code;}
+                                                                        <span class="custom-thumb-info-type font-weight-light text-sm">@occupation</span>
+
                                                                     </span>
                                                                 </span>
                                                             </span>

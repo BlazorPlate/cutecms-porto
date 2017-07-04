@@ -1629,4 +1629,10 @@
   <data name="IconPath" xml:space="preserve">
     <value>路径</value>
   </data>
+  <data name="MeetOurTeam" xml:space="preserve">
+    <value>我们的专业团队</value>
+  </data>
+  <data name="MainDepts" xml:space="preserve">
+    <value>主要部门</value>
+  </data>
 </root>

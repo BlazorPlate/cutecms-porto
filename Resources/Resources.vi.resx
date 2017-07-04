@@ -1629,4 +1629,10 @@
   <data name="IconPath" xml:space="preserve">
     <value>Đường  dẫn</value>
   </data>
+  <data name="MeetOurTeam" xml:space="preserve">
+    <value>Gặp đội của chúng tôi</value>
+  </data>
+  <data name="MainDepts" xml:space="preserve">
+    <value>Phòng ban</value>
+  </data>
 </root>

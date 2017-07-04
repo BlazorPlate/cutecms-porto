@@ -1629,4 +1629,10 @@
   <data name="IconPath" xml:space="preserve">
     <value>آئیکَن</value>
   </data>
+  <data name="MeetOurTeam" xml:space="preserve">
+    <value>ہماری ٹیم سے ملو</value>
+  </data>
+  <data name="MainDepts" xml:space="preserve">
+    <value>مین محکموں</value>
+  </data>
 </root>

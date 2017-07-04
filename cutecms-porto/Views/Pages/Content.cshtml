@@ -10,8 +10,8 @@
         ViewBag.Description = Model.MetaDescription;
         ViewBag.Author = _db.Users.Find(Model.Author).UserName;
         Layout = "~/Views/Shared/_Layout.cshtml";
-        var menuItemId = db.MenuItems.FirstOrDefault(m => m.ContentId == Model.Id)?.Id;
-        ViewBag.ParentMenuItems = BreadcrumbsHelper.GetParentMenuItems(menuItemId);
+        var menuItem = db.MenuItems.FirstOrDefault(m => m.ContentId == Model.Id);
+        ViewBag.ParentMenuItems = BreadcrumbsHelper.GetParentMenuItems(menuItem, Thread.CurrentThread.CurrentCulture.Name);
     }
     <!-- Current Page CSS -->
     <link rel="stylesheet" href="~/assets/porto/vendor/circle-flip-slideshow/css/component.css">

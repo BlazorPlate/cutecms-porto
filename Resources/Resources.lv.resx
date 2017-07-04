@@ -1629,4 +1629,10 @@
   <data name="IconPath" xml:space="preserve">
     <value>Ceļš</value>
   </data>
+  <data name="MeetOurTeam" xml:space="preserve">
+    <value>Iepazīstieties ar mūsu komandai</value>
+  </data>
+  <data name="MainDepts" xml:space="preserve">
+    <value>Departamenti</value>
+  </data>
 </root>

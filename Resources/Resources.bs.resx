@@ -1629,4 +1629,10 @@
   <data name="IconPath" xml:space="preserve">
     <value>Ikona</value>
   </data>
+  <data name="MeetOurTeam" xml:space="preserve">
+    <value>Upoznajte naš tim</value>
+  </data>
+  <data name="MainDepts" xml:space="preserve">
+    <value>Glavni odjeljenja</value>
+  </data>
 </root>

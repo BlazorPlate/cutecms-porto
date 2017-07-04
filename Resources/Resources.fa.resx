@@ -1629,4 +1629,10 @@
   <data name="IconPath" xml:space="preserve">
     <value>مسیر آیکن</value>
   </data>
+  <data name="MeetOurTeam" xml:space="preserve">
+    <value>آشنایی با پرسنل ما</value>
+  </data>
+  <data name="MainDepts" xml:space="preserve">
+    <value>ساختمان ها</value>
+  </data>
 </root>

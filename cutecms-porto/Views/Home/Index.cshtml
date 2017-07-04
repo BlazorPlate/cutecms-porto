@@ -219,10 +219,8 @@
                 <p class="lead font-weight-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
         </div>
-
-
         @{var i = 0;}
-        @foreach (var item in IdentityDb.IdentityDepartmentTerms.Where(d => d.Department.TenantId.Trim().Equals(Tenant.TenantId) && d.HomeVisible && d.Visible && d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).OrderBy(d => d.DepartmentId).ThenBy(d => d.Ordinal))
+        @foreach (var item in IdentityDb.IdentityDepartmentTerms.Where(d => d.Department.TenantId.Trim().Equals(Tenant.TenantId) && d.HomeVisible && d.Visible && d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).OrderBy(d => d.Department.Ordinal))
         {
             if (i % 3 == 0)
             {

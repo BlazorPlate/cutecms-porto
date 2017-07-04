@@ -1629,4 +1629,10 @@
   <data name="IconPath" xml:space="preserve">
     <value>アイコン</value>
   </data>
+  <data name="MeetOurTeam" xml:space="preserve">
+    <value>私たちのチームを見てください</value>
+  </data>
+  <data name="MainDepts" xml:space="preserve">
+    <value>主な部署</value>
+  </data>
 </root>

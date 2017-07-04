@@ -17,27 +17,6 @@ namespace cutecms_porto.Helpers
         #endregion Fields
 
         #region Methods
-        public static List<MenuItem> GetParentMenuItems(int? menuItemId)
-        {
-            lock (thisLock)
-            {
-                if (menuItemId != null)
-                {
-                    var menuItem = cmsDb.MenuItems.Find(menuItemId);
-                    if (menuItem.IsLeaf)
-                    {
-                        menuItemsList.Clear();
-                        menuItemsList.Add(menuItem);
-                    }
-                    if (menuItem.ParentId != null)
-                    {
-                        menuItemsList.Add(cmsDb.MenuItems.Find(menuItem.ParentId));
-                        GetParentMenuItems(menuItem.ParentId);
-                    }
-                }
-            }
-            return menuItemsList;
-        }
 
         public static List<IdentityDepartment> GetParentDepts(int? deptId)
         {
@@ -60,6 +39,47 @@ namespace cutecms_porto.Helpers
             }
             return deptsList;
         }
+
+        public static List<MenuItem> GetParentMenuItems(MenuItem node, string culture)
+        {
+                int i = -1;
+                string pathToRoot = string.Empty;
+                List<MenuItem> menuItemList = new List<MenuItem>();
+                // Walk up the tree until we find the
+                // root of the tree, keeping count of
+                // how many nodes we walk over in
+                // the process
+                menuItemList.Add(node);
+                while (node != null)
+                {
+                    i++;
+                    node = node.MenuItem1;
+                    if (node != null)
+                        menuItemList.Add(node);
+                }
+                return menuItemList;
+        }
+
+        public static List<IdentityDepartment> GetParentDepartmentItems(IdentityDepartment node, string culture)
+        {
+            int i = -1;
+            string pathToRoot = string.Empty;
+            List<IdentityDepartment> deptList = new List<IdentityDepartment>();
+            // Walk up the tree until we find the
+            // root of the tree, keeping count of
+            // how many nodes we walk over in
+            // the process
+            deptList.Add(node);
+            while (node != null)
+            {
+                i++;
+                node = node.Department1;
+                if (node != null)
+                    deptList.Add(node);
+            }
+            return deptList;
+        }
+
 
         #endregion Methods
     }

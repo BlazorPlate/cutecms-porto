@@ -1,6 +1,7 @@
 ﻿@using cutecms_porto.Areas.CMS.Models.DBModel
 @using cutecms_porto.Areas.Identity.Models.DBModel
 @using System.Threading
+@model cutecms_porto.Models.HomeViewModel
 @{
     CMSEntities cmsDb = new CMSEntities();
     IdentityEntities IdentityDb = new IdentityEntities();
@@ -15,70 +16,41 @@
 <div class="slider-container rev_slider_wrapper" style="height: 650px;">
     <div id="revolutionSlider" class="slider rev_slider" data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'gridheight': 650, 'disableProgressBar': 'on', 'navigation': {'bullets': {'enable': true, 'direction': 'vertical', 'h_align': 'right', 'v_align': 'center', 'space': 5}, 'arrows': {'enable': false}}}">
         <ul>
-            <li data-transition="fade">
-                <img src="~/assets/porto/img/demos/medical/slides/slide-medical-1.jpg"
-                     alt=""
-                     data-bgposition="center center"
-                     data-bgfit="cover"
-                     data-bgrepeat="no-repeat"
-                     class="rev-slidebg">
+            @foreach (var item in Model.HomeGallery)
+            {
+                <li data-transition="fade">
+                    <img src="@item.FilePath"
+                         alt="@(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.Value ?? item.Code)"
+                         data-bgposition="center center"
+                         data-bgfit="cover"
+                         data-bgrepeat="no-repeat"
+                         class="rev-slidebg">
 
-                <div class="tp-caption main-label"
-                     data-x="left" data-hoffset="25"
-                     data-y="center" data-voffset="-5"
-                     data-start="1500"
-                     data-whitespace="nowrap"
-                     data-transform_in="y:[100%];s:500;"
-                     data-transform_out="opacity:0;s:500;"
-                     style="z-index: 5; font-size: 1.5em; text-transform: uppercase;"
-                     data-mask_in="x:0px;y:0px;">20 Years Caring About You</div>
+                    <div class="tp-caption main-label"
+                         data-x="left" data-hoffset="25"
+                         data-y="center" data-voffset="-5"
+                         data-start="1500"
+                         data-whitespace="nowrap"
+                         data-transform_in="y:[100%];s:500;"
+                         data-transform_out="opacity:0;s:500;"
+                         style="z-index: 5; font-size: 1.5em; text-transform: uppercase;"
+                         data-mask_in="x:0px;y:0px;">@(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.SecondaryCaption)</div>
 
-                <div class="tp-caption main-label"
-                     data-x="left" data-hoffset="25"
-                     data-y="center" data-voffset="-55"
-                     data-start="500"
-                     style="z-index: 5; text-transform: uppercase; font-size: 52px;"
-                     data-transform_in="y:[-300%];opacity:0;s:500;">Specialists</div>
+                    <div class="tp-caption main-label"
+                         data-x="left" data-hoffset="25"
+                         data-y="center" data-voffset="-55"
+                         data-start="500"
+                         style="z-index: 5; text-transform: uppercase; font-size: 52px;"
+                         data-transform_in="y:[-300%];opacity:0;s:500;">@(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.PrimaryCaption)</div>
 
-                <div class="tp-caption bottom-label"
-                     data-x="left" data-hoffset="25"
-                     data-y="center" data-voffset="40"
-                     data-start="2000"
-                     style="z-index: 5; border-bottom: 1px solid #fff; padding-bottom: 3px;"
-                     data-transform_in="y:[100%];opacity:0;s:500;" style="font-size: 1.2em;">We are located in New York</div>
-            </li>
-            <li data-transition="fade">
-                <img src="~/assets/porto/img/demos/medical/slides/slide-medical-2.jpg"
-                     alt=""
-                     data-bgposition="center center"
-                     data-bgfit="cover"
-                     data-bgrepeat="no-repeat"
-                     class="rev-slidebg">
-
-                <div class="tp-caption main-label"
-                     data-x="left" data-hoffset="25"
-                     data-y="center" data-voffset="-5"
-                     data-start="1500"
-                     data-whitespace="nowrap"
-                     data-transform_in="y:[100%];s:500;"
-                     data-transform_out="opacity:0;s:500;"
-                     style="z-index: 5; font-size: 1.5em; text-transform: uppercase;"
-                     data-mask_in="x:0px;y:0px;">Talk to us now to schedule a medical appointment</div>
-
-                <div class="tp-caption main-label"
-                     data-x="left" data-hoffset="25"
-                     data-y="center" data-voffset="-55"
-                     data-start="500"
-                     style="z-index: 5; text-transform: uppercase; font-size: 52px;"
-                     data-transform_in="y:[-300%];opacity:0;s:500;">Medical Appointment</div>
-
-                <div class="tp-caption bottom-label"
-                     data-x="left" data-hoffset="25"
-                     data-y="center" data-voffset="40"
-                     data-start="2000"
-                     style="z-index: 5; border-bottom: 1px solid #fff; padding-bottom: 3px;"
-                     data-transform_in="y:[100%];opacity:0;s:500;" style="font-size: 1.2em;">Online or Over the Phone</div>
-            </li>
+                    <div class="tp-caption bottom-label"
+                         data-x="left" data-hoffset="25"
+                         data-y="center" data-voffset="40"
+                         data-start="2000"
+                         style="z-index: 5; border-bottom: 1px solid #fff; padding-bottom: 3px;"
+                         data-transform_in="y:[100%];opacity:0;s:500;" style="font-size: 1.2em;">@(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.TertiaryCaption)</div>
+                </li>
+            }
         </ul>
     </div>
 </div>
@@ -94,7 +66,7 @@
                                 <i class="icon-call-out icons"></i>
                             </div>
                             <div class="feature-box-info ml-md">
-                                <label class="font-weight-light">Emergency case</label>
+                                <label class="font-weight-light">@Resources.Resources.EmergencyCase</label>
                                 <strong class="font-weight-normal">(962)5399-0990</strong>
                             </div>
                         </div>
@@ -116,14 +88,14 @@
                         </div>
                     </div>
                     <h5 class="m-none">
-                        Opening Hours
+                        @Resources.Resources.OpeningHours
                         <i class="icon-arrow-right-circle icons"></i>
                     </h5>
                 </div>
                 <div class="col-lg-3 box-two background-color-tertiary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="600">
                     <h5 class="m-none">
                         <a href="demo-medical-doctors.html" title="">
-                            Doctors Timetable
+                            @Resources.Resources.DoctorsTimetable
                             <i class="icon-arrow-right-circle icons"></i>
                         </a>
                     </h5>
@@ -131,10 +103,10 @@
                 <div class="col-lg-3 box-one background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="0">
                     <div class="feature-box feature-box-style-2 p-lg">
                         <div class="feature-box-icon">
-                            <img src="~/assets/porto/img/demos/medical/icons/medical-icon-heart.png" alt class="img-responsive pt-xs" />
+                            <img src="~/assets/porto/img/demos/medical/icons/medical-icon-heart.png" alt="" class="img-responsive pt-xs" />
                         </div>
                         <div class="feature-box-info ml-md">
-                            <h4 class="m-none">Medical Treatment</h4>
+                            <h4 class="m-none">@Resources.Resources.MedicalTreatment</h4>
                         </div>
                     </div>
                 </div>
@@ -145,10 +117,10 @@
                 <div class="col-lg-3 box-one background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="0">
                     <div class="feature-box feature-box-style-2 p-lg">
                         <div class="feature-box-icon">
-                            <img src="~/assets/porto/img/demos/medical/icons/medical-icon-heart.png" alt class="img-responsive pt-xs" />
+                            <img src="~/assets/porto/img/demos/medical/icons/medical-icon-heart.png" alt="" class="img-responsive pt-xs" />
                         </div>
                         <div class="feature-box-info ml-md">
-                            <h4 class="m-none">Medical Treatment</h4>
+                            <h4 class="m-none">@Resources.Resources.MedicalTreatment</h4>
                         </div>
                     </div>
                 </div>
@@ -163,7 +135,7 @@
                 <div class="col-lg-3 box-three background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1200">
                     <div class="expanded-info p-xlg background-color-primary">
                         <div class="info custom-info">
-                            <span>Mon-Fri</span>
+                            <span>@Resources.Resources.Monday-@Resources.Resources.Friday</span>
                             <span>8:30 am to 5:00 pm</span>
                         </div>
                         <div class="info custom-info">
@@ -176,7 +148,7 @@
                         </div>
                     </div>
                     <h5 class="m-none">
-                        Opening Hours
+                        @Resources.Resources.OpeningHours
                         <i class="icon-arrow-right-circle icons"></i>
                     </h5>
                 </div>
@@ -187,7 +159,7 @@
                                 <i class="icon-call-out icons"></i>
                             </div>
                             <div class="feature-box-info ml-md">
-                                <label class="font-weight-light">Emergency case</label>
+                                <label class="font-weight-light">@Resources.Resources.EmergencyCase</label>
                                 <strong class="font-weight-normal">(962)5399-0990</strong>
                             </div>
                         </div>

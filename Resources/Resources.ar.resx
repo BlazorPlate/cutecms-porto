@@ -1635,4 +1635,46 @@
   <data name="MainDepts" xml:space="preserve">
     <value>الأقسام الرئيسية</value>
   </data>
+  <data name="PrimaryCaption" xml:space="preserve">
+    <value>العنوان الرئيسي</value>
+  </data>
+  <data name="SecondaryCaption" xml:space="preserve">
+    <value>العنوان الثانوي</value>
+  </data>
+  <data name="TertiaryCaption" xml:space="preserve">
+    <value>العنوان الفرعي</value>
+  </data>
+  <data name="MedicalTreatment" xml:space="preserve">
+    <value>العلاج الطبي</value>
+  </data>
+  <data name="DoctorsTimetable" xml:space="preserve">
+    <value>جدول المواعيد</value>
+  </data>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>أوقات الدوام</value>
+  </data>
+  <data name="EmergencyCase" xml:space="preserve">
+    <value>الطوارئ</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>الاحد</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>الاثنين</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>الثلاثاء</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>اربعاء</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>الخميس</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>الجمعه</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>السبت</value>
+  </data>
 </root>

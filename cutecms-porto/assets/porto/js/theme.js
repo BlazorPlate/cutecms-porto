@@ -2543,15 +2543,17 @@ window.theme.fn = {
 			events: function() {
 				var self = this;
 
-				self.$wrapper.find('input').on('focus', function() {
-					self.$wrapper.addClass('open');
+                $(document).ready(function () {
+                    self.$wrapper.find('input').on('focus', function () {
+                        self.$wrapper.addClass('open');
 
-					$(document).mouseup(function(e) {
-						if (!self.$wrapper.is(e.target) && self.$wrapper.has(e.target).length === 0) {
-							self.$wrapper.removeClass('open');
-						}
-					});
-				});
+                        $(document).mouseup(function (e) {
+                            if (!self.$wrapper.is(e.target) && self.$wrapper.has(e.target).length === 0) {
+                                self.$wrapper.removeClass('open');
+                            }
+                        });
+                    });
+                });
 
 				$('#headerSignUp').on('click', function(e) {
 					e.preventDefault();

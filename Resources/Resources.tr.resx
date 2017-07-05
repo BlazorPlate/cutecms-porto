@@ -1635,4 +1635,46 @@
   <data name="MainDepts" xml:space="preserve">
     <value>Bölümler</value>
   </data>
+  <data name="PrimaryCaption" xml:space="preserve">
+    <value>İlk Altyazı</value>
+  </data>
+  <data name="SecondaryCaption" xml:space="preserve">
+    <value>İkincil Altyazı</value>
+  </data>
+  <data name="TertiaryCaption" xml:space="preserve">
+    <value>Üçüncü Başlık</value>
+  </data>
+  <data name="MedicalTreatment" xml:space="preserve">
+    <value>Tedavi</value>
+  </data>
+  <data name="DoctorsTimetable" xml:space="preserve">
+    <value>Doktorlar takvim</value>
+  </data>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>Açılış Saatleri</value>
+  </data>
+  <data name="EmergencyCase" xml:space="preserve">
+    <value>Acil</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>Pazar</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>Pazartesi</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>Salı</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>Çarşamba</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>Perşembe</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>Cuma</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>Cumartesi</value>
+  </data>
 </root>

@@ -1635,4 +1635,46 @@
   <data name="MainDepts" xml:space="preserve">
     <value>Jabatan utama</value>
   </data>
+  <data name="PrimaryCaption" xml:space="preserve">
+    <value>Caption utama</value>
+  </data>
+  <data name="SecondaryCaption" xml:space="preserve">
+    <value>Caption menengah</value>
+  </data>
+  <data name="TertiaryCaption" xml:space="preserve">
+    <value>Caption tinggi</value>
+  </data>
+  <data name="MedicalTreatment" xml:space="preserve">
+    <value>Rawatan Perubatan</value>
+  </data>
+  <data name="DoctorsTimetable" xml:space="preserve">
+    <value>Jadual doktor</value>
+  </data>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>Waktu Pembukaan EPC</value>
+  </data>
+  <data name="EmergencyCase" xml:space="preserve">
+    <value>Kecemasan</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>Ahad</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>Isnin</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>Selasa</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>Rabu</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>Khamis</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>Jumaat</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>Sabtu</value>
+  </data>
 </root>

@@ -1635,4 +1635,46 @@
   <data name="MainDepts" xml:space="preserve">
     <value>Departamenti</value>
   </data>
+  <data name="PrimaryCaption" xml:space="preserve">
+    <value>Primārā paraksts</value>
+  </data>
+  <data name="SecondaryCaption" xml:space="preserve">
+    <value>Sekundārā paraksts</value>
+  </data>
+  <data name="TertiaryCaption" xml:space="preserve">
+    <value>Terciārā paraksts</value>
+  </data>
+  <data name="MedicalTreatment" xml:space="preserve">
+    <value>Ārstēšana nebija nepieciešama</value>
+  </data>
+  <data name="DoctorsTimetable" xml:space="preserve">
+    <value>Ārsti grafiks!</value>
+  </data>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>Darba laiks</value>
+  </data>
+  <data name="EmergencyCase" xml:space="preserve">
+    <value>Avārijas gadījumā</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>Svētdiena</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>Pirmdiena</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>Otrdiena</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>Trešdiena</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>Ceturtdiena</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>Piektdiena</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>Sestdiena</value>
+  </data>
 </root>

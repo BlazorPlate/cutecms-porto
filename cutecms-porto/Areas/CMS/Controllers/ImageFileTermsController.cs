@@ -64,7 +64,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
         // please enable the specific properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,LanguageId,Value,Description,ImageFileId")] ImageFileTerm imageFileTerm)
+        public ActionResult Create([Bind(Include = "Id,LanguageId,Value,PrimaryCaption,SecondaryCaption,TertiaryCaption,Description,ImageFileId")] ImageFileTerm imageFileTerm)
         {
             if (ModelState.IsValid)
             {
@@ -101,7 +101,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
         // please enable the specific properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,LanguageId,Value,Description,ImageFileId")] ImageFileTerm imageFileTerm)
+        public ActionResult Edit([Bind(Include = "Id,LanguageId,Value,PrimaryCaption,SecondaryCaption,TertiaryCaption,Description,ImageFileId")] ImageFileTerm imageFileTerm)
         {
             if (ModelState.IsValid)
             {

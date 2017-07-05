@@ -1635,4 +1635,46 @@
   <data name="MainDepts" xml:space="preserve">
     <value>배양하고 있다.</value>
   </data>
+  <data name="PrimaryCaption" xml:space="preserve">
+    <value>기본 캡션</value>
+  </data>
+  <data name="SecondaryCaption" xml:space="preserve">
+    <value>보조 캡션</value>
+  </data>
+  <data name="TertiaryCaption" xml:space="preserve">
+    <value>3 차 캡션</value>
+  </data>
+  <data name="MedicalTreatment" xml:space="preserve">
+    <value>의료 치료</value>
+  </data>
+  <data name="DoctorsTimetable" xml:space="preserve">
+    <value>의사</value>
+  </data>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>영업 시간</value>
+  </data>
+  <data name="EmergencyCase" xml:space="preserve">
+    <value>긴급</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>일요일</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>월요일</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>화요일</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>수요일</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>목요일</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>금요일</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>토요일</value>
+  </data>
 </root>

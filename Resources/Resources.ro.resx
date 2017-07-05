@@ -1635,4 +1635,46 @@
   <data name="MainDepts" xml:space="preserve">
     <value>Departamente</value>
   </data>
+  <data name="PrimaryCaption" xml:space="preserve">
+    <value>Semnătură primară</value>
+  </data>
+  <data name="SecondaryCaption" xml:space="preserve">
+    <value>Subtitrări secundare</value>
+  </data>
+  <data name="TertiaryCaption" xml:space="preserve">
+    <value>Titlu terțiar</value>
+  </data>
+  <data name="MedicalTreatment" xml:space="preserve">
+    <value>Tratament medical</value>
+  </data>
+  <data name="DoctorsTimetable" xml:space="preserve">
+    <value>Orar medici</value>
+  </data>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>Orar de lucru</value>
+  </data>
+  <data name="EmergencyCase" xml:space="preserve">
+    <value>Caz de urgenţă</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>Duminică</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>Luni</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>Marți</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>Miercuri</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>Joi</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>Vineri</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>Sâmbătă</value>
+  </data>
 </root>

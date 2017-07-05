@@ -1635,4 +1635,46 @@
   <data name="MainDepts" xml:space="preserve">
     <value>Oddělení</value>
   </data>
+  <data name="PrimaryCaption" xml:space="preserve">
+    <value>Primární titulky</value>
+  </data>
+  <data name="SecondaryCaption" xml:space="preserve">
+    <value>Sekundární titulky</value>
+  </data>
+  <data name="TertiaryCaption" xml:space="preserve">
+    <value>Terciární titulky</value>
+  </data>
+  <data name="MedicalTreatment" xml:space="preserve">
+    <value>Lékařská péče</value>
+  </data>
+  <data name="DoctorsTimetable" xml:space="preserve">
+    <value>Lékaři Rozvrh</value>
+  </data>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>Otevírací doba</value>
+  </data>
+  <data name="EmergencyCase" xml:space="preserve">
+    <value>mimořádná událost</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>Neděle</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>Pondělí</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>Úterý</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>Středa</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>Čtvrtek</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>Pátek</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>Sobota</value>
+  </data>
 </root>

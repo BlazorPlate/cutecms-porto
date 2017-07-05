@@ -31,7 +31,7 @@ namespace cutecms_porto.Controllers
         #region Methods
         public ActionResult Index(HomeViewModel homePage)
         {
-            homePage.HomeGallery = cmsDb.ImageFiles.Include("ImageFileTerms").Include("ImageFileTerms.Language").Where(i => i.TenantId.Trim().Equals(Tenant.TenantId) && i.Gallery.HomeVisible && i.Gallery.Code.Trim().Equals("home-gallery")).OrderBy(i => i.Ordinal);
+            homePage.HomeGallery = cmsDb.ImageFiles.Include("Gallery").Include("ImageFileTerms").Include("ImageFileTerms.Language").Where(i => i.TenantId.Trim().Equals(Tenant.TenantId) && i.Gallery.HomeVisible && i.Gallery.Code.Trim().Equals("gallery-02")).OrderBy(i => i.Ordinal);
             homePage.Contents = cmsDb.Contents.Include("ContentType").Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && c.Status.Code.Trim().Equals("published") && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).OrderBy(c => c.Ordinal);
             homePage.ContentLists = cmsDb.ContentLists.Include("Content").Include("ListItems").Where(c => c.Content.TenantId.Trim().Equals(Tenant.TenantId) && c.Content.Status.Code.Trim().Equals("published") && c.Content.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && (c.Content.Code.Trim().Equals("home-list"))).OrderBy(li => li.Ordinal);
             return View(homePage);

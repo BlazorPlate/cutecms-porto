@@ -1635,4 +1635,46 @@
   <data name="MainDepts" xml:space="preserve">
     <value>Afdelingen</value>
   </data>
+  <data name="PrimaryCaption" xml:space="preserve">
+    <value>Primaire Bijschrift</value>
+  </data>
+  <data name="SecondaryCaption" xml:space="preserve">
+    <value>Secundaire Bijschrift</value>
+  </data>
+  <data name="TertiaryCaption" xml:space="preserve">
+    <value>Tertiaire Bijschrift</value>
+  </data>
+  <data name="MedicalTreatment" xml:space="preserve">
+    <value>Medische behandelingen</value>
+  </data>
+  <data name="DoctorsTimetable" xml:space="preserve">
+    <value>Artsen tijdschema</value>
+  </data>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>Openingstijden</value>
+  </data>
+  <data name="EmergencyCase" xml:space="preserve">
+    <value>noodgeval</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>Zondag</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>Maandag</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>Dinsdag</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>woensdag</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>donderdag</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>vrijdag</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>zaterdag</value>
+  </data>
 </root>

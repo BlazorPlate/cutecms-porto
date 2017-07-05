@@ -1635,4 +1635,46 @@
   <data name="MainDepts" xml:space="preserve">
     <value>ساختمان ها</value>
   </data>
+  <data name="PrimaryCaption" xml:space="preserve">
+    <value>عنوان اولیه</value>
+  </data>
+  <data name="SecondaryCaption" xml:space="preserve">
+    <value>عنوان ثانویه</value>
+  </data>
+  <data name="TertiaryCaption" xml:space="preserve">
+    <value>عنوان سوم</value>
+  </data>
+  <data name="MedicalTreatment" xml:space="preserve">
+    <value>درمان های پزشکی</value>
+  </data>
+  <data name="DoctorsTimetable" xml:space="preserve">
+    <value>برنامه پزشکان</value>
+  </data>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>ساعت شروع فعالیت</value>
+  </data>
+  <data name="EmergencyCase" xml:space="preserve">
+    <value>نجات اضطراری</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>ی</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>د</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>س</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>چ</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>پ</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>ج</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>ش</value>
+  </data>
 </root>

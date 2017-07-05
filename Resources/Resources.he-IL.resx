@@ -1635,4 +1635,46 @@
   <data name="MainDepts" xml:space="preserve">
     <value>ראשי מחלקות</value>
   </data>
+  <data name="PrimaryCaption" xml:space="preserve">
+    <value>כיתוב הראשי</value>
+  </data>
+  <data name="SecondaryCaption" xml:space="preserve">
+    <value>כיתוב משני</value>
+  </data>
+  <data name="TertiaryCaption" xml:space="preserve">
+    <value>כיתוב שלישוני</value>
+  </data>
+  <data name="MedicalTreatment" xml:space="preserve">
+    <value>טיפול רפואי</value>
+  </data>
+  <data name="DoctorsTimetable" xml:space="preserve">
+    <value>לוח הזמנים של רופאים</value>
+  </data>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>שעות פתיחה</value>
+  </data>
+  <data name="EmergencyCase" xml:space="preserve">
+    <value>בקר בפורום תמיכת לקוח</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>יום ראשון</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>יום שני</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>יום שלישי</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>יום רביעי</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>יום חמישי</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>יום שישי</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>יום שבת</value>
+  </data>
 </root>

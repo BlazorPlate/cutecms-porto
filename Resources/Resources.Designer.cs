@@ -1168,6 +1168,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Doctors Timetable.
+        /// </summary>
+        public static string DoctorsTimetable {
+            get {
+                return ResourceManager.GetString("DoctorsTimetable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Documents.
         /// </summary>
         public static string Documents {
@@ -1272,6 +1281,15 @@ namespace Resources {
         public static string EmailRegularExpression {
             get {
                 return ResourceManager.GetString("EmailRegularExpression", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Emergency case.
+        /// </summary>
+        public static string EmergencyCase {
+            get {
+                return ResourceManager.GetString("EmergencyCase", resourceCulture);
             }
         }
         
@@ -1632,6 +1650,15 @@ namespace Resources {
         public static string ForgotPasswordInstructions {
             get {
                 return ResourceManager.GetString("ForgotPasswordInstructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Friday.
+        /// </summary>
+        public static string Friday {
+            get {
+                return ResourceManager.GetString("Friday", resourceCulture);
             }
         }
         
@@ -2608,6 +2635,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Medical Treatment.
+        /// </summary>
+        public static string MedicalTreatment {
+            get {
+                return ResourceManager.GetString("MedicalTreatment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Meet our Team.
         /// </summary>
         public static string MeetOurTeam {
@@ -2730,6 +2766,15 @@ namespace Resources {
         public static string ModifiedOn {
             get {
                 return ResourceManager.GetString("ModifiedOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monday.
+        /// </summary>
+        public static string Monday {
+            get {
+                return ResourceManager.GetString("Monday", resourceCulture);
             }
         }
         
@@ -3000,6 +3045,15 @@ namespace Resources {
         public static string Oops {
             get {
                 return ResourceManager.GetString("Oops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opening Hours.
+        /// </summary>
+        public static string OpeningHours {
+            get {
+                return ResourceManager.GetString("OpeningHours", resourceCulture);
             }
         }
         
@@ -3324,6 +3378,15 @@ namespace Resources {
         public static string PoweredBy {
             get {
                 return ResourceManager.GetString("PoweredBy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Primary Caption.
+        /// </summary>
+        public static string PrimaryCaption {
+            get {
+                return ResourceManager.GetString("PrimaryCaption", resourceCulture);
             }
         }
         
@@ -3670,6 +3733,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Saturday.
+        /// </summary>
+        public static string Saturday {
+            get {
+                return ResourceManager.GetString("Saturday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
         public static string Save {
@@ -3720,6 +3792,15 @@ namespace Resources {
         public static string SearchResult {
             get {
                 return ResourceManager.GetString("SearchResult", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Secondary Caption.
+        /// </summary>
+        public static string SecondaryCaption {
+            get {
+                return ResourceManager.GetString("SecondaryCaption", resourceCulture);
             }
         }
         
@@ -4102,6 +4183,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sunday.
+        /// </summary>
+        public static string Sunday {
+            get {
+                return ResourceManager.GetString("Sunday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tag.
         /// </summary>
         public static string Tag {
@@ -4156,6 +4246,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tertiary Caption.
+        /// </summary>
+        public static string TertiaryCaption {
+            get {
+                return ResourceManager.GetString("TertiaryCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thank for joining us!.
         /// </summary>
         public static string ThankYou {
@@ -4188,6 +4287,15 @@ namespace Resources {
         public static string ThumbPath {
             get {
                 return ResourceManager.GetString("ThumbPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thursday.
+        /// </summary>
+        public static string Thursday {
+            get {
+                return ResourceManager.GetString("Thursday", resourceCulture);
             }
         }
         
@@ -4242,6 +4350,15 @@ namespace Resources {
         public static string Translations {
             get {
                 return ResourceManager.GetString("Translations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tuesday.
+        /// </summary>
+        public static string Tuesday {
+            get {
+                return ResourceManager.GetString("Tuesday", resourceCulture);
             }
         }
         
@@ -4539,6 +4656,15 @@ namespace Resources {
         public static string Website {
             get {
                 return ResourceManager.GetString("Website", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wednesday.
+        /// </summary>
+        public static string Wednesday {
+            get {
+                return ResourceManager.GetString("Wednesday", resourceCulture);
             }
         }
         

@@ -1635,4 +1635,46 @@
   <data name="MainDepts" xml:space="preserve">
     <value>Departamentos</value>
   </data>
+  <data name="PrimaryCaption" xml:space="preserve">
+    <value>Legenda primária</value>
+  </data>
+  <data name="SecondaryCaption" xml:space="preserve">
+    <value>Legenda secundária</value>
+  </data>
+  <data name="TertiaryCaption" xml:space="preserve">
+    <value>Legenda Terciária</value>
+  </data>
+  <data name="MedicalTreatment" xml:space="preserve">
+    <value>Tratamento Médico</value>
+  </data>
+  <data name="DoctorsTimetable" xml:space="preserve">
+    <value>Agenda dos médicos</value>
+  </data>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>Horário de Funcionamento</value>
+  </data>
+  <data name="EmergencyCase" xml:space="preserve">
+    <value>emergência</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>Domingo</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>Segunda-feira</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>Terça-feira</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>Quarta-feira</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>Quinta-feira</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>Sexta-feira</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>Sábado</value>
+  </data>
 </root>

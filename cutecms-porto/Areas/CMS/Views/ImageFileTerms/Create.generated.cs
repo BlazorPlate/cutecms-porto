@@ -222,7 +222,7 @@ WriteLiteral("            ");
 
             
             #line 33 "..\..\Areas\CMS\Views\ImageFileTerms\Create.cshtml"
-       Write(Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" }));
+       Write(Html.LabelFor(model => model.PrimaryCaption, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
             #line default
@@ -237,7 +237,7 @@ WriteLiteral("                ");
 
             
             #line 35 "..\..\Areas\CMS\Views\ImageFileTerms\Create.cshtml"
-           Write(Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } }));
+           Write(Html.EditorFor(model => model.PrimaryCaption, new { htmlAttributes = new { @class = "form-control" } }));
 
             
             #line default
@@ -248,6 +248,129 @@ WriteLiteral("                ");
 
             
             #line 36 "..\..\Areas\CMS\Views\ImageFileTerms\Create.cshtml"
+           Write(Html.ValidationMessageFor(model => model.PrimaryCaption, "", new { @class = "text-danger" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            </div>\r\n        </div>\r\n        <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 40 "..\..\Areas\CMS\Views\ImageFileTerms\Create.cshtml"
+       Write(Html.LabelFor(model => model.SecondaryCaption, htmlAttributes: new { @class = "control-label col-md-2" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            <div");
+
+WriteLiteral(" class=\"col-md-10\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 42 "..\..\Areas\CMS\Views\ImageFileTerms\Create.cshtml"
+           Write(Html.EditorFor(model => model.SecondaryCaption, new { htmlAttributes = new { @class = "form-control" } }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 43 "..\..\Areas\CMS\Views\ImageFileTerms\Create.cshtml"
+           Write(Html.ValidationMessageFor(model => model.SecondaryCaption, "", new { @class = "text-danger" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            </div>\r\n        </div>\r\n        <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 47 "..\..\Areas\CMS\Views\ImageFileTerms\Create.cshtml"
+       Write(Html.LabelFor(model => model.TertiaryCaption, htmlAttributes: new { @class = "control-label col-md-2" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            <div");
+
+WriteLiteral(" class=\"col-md-10\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 49 "..\..\Areas\CMS\Views\ImageFileTerms\Create.cshtml"
+           Write(Html.EditorFor(model => model.TertiaryCaption, new { htmlAttributes = new { @class = "form-control" } }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 50 "..\..\Areas\CMS\Views\ImageFileTerms\Create.cshtml"
+           Write(Html.ValidationMessageFor(model => model.TertiaryCaption, "", new { @class = "text-danger" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            </div>\r\n        </div>\r\n        <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 54 "..\..\Areas\CMS\Views\ImageFileTerms\Create.cshtml"
+       Write(Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            <div");
+
+WriteLiteral(" class=\"col-md-10\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 56 "..\..\Areas\CMS\Views\ImageFileTerms\Create.cshtml"
+           Write(Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 57 "..\..\Areas\CMS\Views\ImageFileTerms\Create.cshtml"
            Write(Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" }));
 
             
@@ -265,14 +388,14 @@ WriteLiteral(">\r\n                <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=", 2228), Tuple.Create("", 2262)
+WriteAttribute("value", Tuple.Create(" value=", 3611), Tuple.Create("", 3645)
             
-            #line 41 "..\..\Areas\CMS\Views\ImageFileTerms\Create.cshtml"
-, Tuple.Create(Tuple.Create("", 2235), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Create
+            #line 62 "..\..\Areas\CMS\Views\ImageFileTerms\Create.cshtml"
+, Tuple.Create(Tuple.Create("", 3618), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Create
             
             #line default
             #line hidden
-, 2235), false)
+, 3618), false)
 );
 
 WriteLiteral(" class=\"btn btn-default\"");
@@ -290,7 +413,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 46 "..\..\Areas\CMS\Views\ImageFileTerms\Create.cshtml"
+            #line 67 "..\..\Areas\CMS\Views\ImageFileTerms\Create.cshtml"
            Write(Html.ValidationSummary(false, "", new { @class = "text-danger" }));
 
             
@@ -299,7 +422,7 @@ WriteLiteral("                ");
 WriteLiteral("\r\n            </div>\r\n        </div>\r\n    </div>\r\n");
 
             
-            #line 50 "..\..\Areas\CMS\Views\ImageFileTerms\Create.cshtml"
+            #line 71 "..\..\Areas\CMS\Views\ImageFileTerms\Create.cshtml"
 }
 
             
@@ -310,7 +433,7 @@ WriteLiteral("<div>\r\n");
 WriteLiteral("    ");
 
             
-            #line 52 "..\..\Areas\CMS\Views\ImageFileTerms\Create.cshtml"
+            #line 73 "..\..\Areas\CMS\Views\ImageFileTerms\Create.cshtml"
 Write(Html.ActionLink(Resources.Resources.BackToList, "Index", new { id = ViewBag.ImageFileId }));
 
             
@@ -325,7 +448,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 55 "..\..\Areas\CMS\Views\ImageFileTerms\Create.cshtml"
+            #line 76 "..\..\Areas\CMS\Views\ImageFileTerms\Create.cshtml"
 Write(Scripts.Render("~/bundles/jqueryval"));
 
             

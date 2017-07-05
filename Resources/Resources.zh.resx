@@ -1635,4 +1635,46 @@
   <data name="MainDepts" xml:space="preserve">
     <value>主要部门</value>
   </data>
+  <data name="PrimaryCaption" xml:space="preserve">
+    <value>主要说明</value>
+  </data>
+  <data name="SecondaryCaption" xml:space="preserve">
+    <value>辅助字幕</value>
+  </data>
+  <data name="TertiaryCaption" xml:space="preserve">
+    <value>三等字幕</value>
+  </data>
+  <data name="MedicalTreatment" xml:space="preserve">
+    <value>医学治疗</value>
+  </data>
+  <data name="DoctorsTimetable" xml:space="preserve">
+    <value>門診時間</value>
+  </data>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>开放时间</value>
+  </data>
+  <data name="EmergencyCase" xml:space="preserve">
+    <value>جىددىي</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>星期日</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>星期一</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>星期二</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>星期三</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>星期四</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>星期五</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>星期六</value>
+  </data>
 </root>

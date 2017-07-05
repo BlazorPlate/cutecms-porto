@@ -1635,4 +1635,46 @@
   <data name="MainDepts" xml:space="preserve">
     <value>主な部署</value>
   </data>
+  <data name="PrimaryCaption" xml:space="preserve">
+    <value>プライマリーキャプション</value>
+  </data>
+  <data name="SecondaryCaption" xml:space="preserve">
+    <value>セカンダリキャプション</value>
+  </data>
+  <data name="TertiaryCaption" xml:space="preserve">
+    <value>第三次キャプション</value>
+  </data>
+  <data name="MedicalTreatment" xml:space="preserve">
+    <value>医療!</value>
+  </data>
+  <data name="DoctorsTimetable" xml:space="preserve">
+    <value>医師スケジュール</value>
+  </data>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>営業時間</value>
+  </data>
+  <data name="EmergencyCase" xml:space="preserve">
+    <value>緊急</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>サンデー</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>月曜:</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>火曜:</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>水曜:</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>木曜:</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>金曜:</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>土曜:</value>
+  </data>
 </root>

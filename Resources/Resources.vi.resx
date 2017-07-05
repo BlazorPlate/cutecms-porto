@@ -1635,4 +1635,46 @@
   <data name="MainDepts" xml:space="preserve">
     <value>Phòng ban</value>
   </data>
+  <data name="PrimaryCaption" xml:space="preserve">
+    <value>Chú thích Chính</value>
+  </data>
+  <data name="SecondaryCaption" xml:space="preserve">
+    <value>Phụ chú phụ</value>
+  </data>
+  <data name="TertiaryCaption" xml:space="preserve">
+    <value>Tertiary Caption</value>
+  </data>
+  <data name="MedicalTreatment" xml:space="preserve">
+    <value>Điều trị y tế</value>
+  </data>
+  <data name="DoctorsTimetable" xml:space="preserve">
+    <value>Thời khóa biểu của các bác sĩ</value>
+  </data>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>Giờ mở cửa</value>
+  </data>
+  <data name="EmergencyCase" xml:space="preserve">
+    <value>Trường hợp khẩn cấp</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>Chủ nhật</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>Thứ hai</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>Thứ ba</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>Thứ tư</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>Thứ năm</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>Thứ sáu</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>Thứ Bảy</value>
+  </data>
 </root>

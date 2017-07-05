@@ -1635,4 +1635,46 @@
   <data name="MainDepts" xml:space="preserve">
     <value>مین محکموں</value>
   </data>
+  <data name="PrimaryCaption" xml:space="preserve">
+    <value>پرائمری کیپشن</value>
+  </data>
+  <data name="SecondaryCaption" xml:space="preserve">
+    <value>ثانوی کیپشن</value>
+  </data>
+  <data name="TertiaryCaption" xml:space="preserve">
+    <value>ترتییک کیپشن</value>
+  </data>
+  <data name="MedicalTreatment" xml:space="preserve">
+    <value>طبی علاج</value>
+  </data>
+  <data name="DoctorsTimetable" xml:space="preserve">
+    <value>ڈاکٹر ٹائم ٹیبل</value>
+  </data>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>كام كے اوقات</value>
+  </data>
+  <data name="EmergencyCase" xml:space="preserve">
+    <value>ہنگامی حالات</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>اتوار</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>پیر</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>منگل</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>بدھ</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>جمعرات</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>جمعہ</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>ہفتہ</value>
+  </data>
 </root>

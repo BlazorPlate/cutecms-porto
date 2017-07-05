@@ -1635,4 +1635,46 @@
   <data name="MainDepts" xml:space="preserve">
     <value>Glavni odjeljenja</value>
   </data>
+  <data name="PrimaryCaption" xml:space="preserve">
+    <value>Primarni Caption</value>
+  </data>
+  <data name="SecondaryCaption" xml:space="preserve">
+    <value>Srednje Caption</value>
+  </data>
+  <data name="TertiaryCaption" xml:space="preserve">
+    <value>Tercijarni Caption</value>
+  </data>
+  <data name="MedicalTreatment" xml:space="preserve">
+    <value>Terapija</value>
+  </data>
+  <data name="DoctorsTimetable" xml:space="preserve">
+    <value>bilo je samo doktora na brodu.</value>
+  </data>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>Radno vreme</value>
+  </data>
+  <data name="EmergencyCase" xml:space="preserve">
+    <value>Emergency services</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>Nedelja</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>Ponedeljak</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>Utorak</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>Sreda</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>Četvrtak</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>Petak</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>Subota</value>
+  </data>
 </root>

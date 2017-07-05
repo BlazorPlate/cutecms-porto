@@ -182,6 +182,9 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="LanguageId" Type="int" Nullable="false" />
           <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PrimaryCaption" Type="nvarchar(max)" />
+          <Property Name="SecondaryCaption" Type="nvarchar(max)" />
+          <Property Name="TertiaryCaption" Type="nvarchar(max)" />
           <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="ImageFileId" Type="int" Nullable="false" />
         </EntityType>
@@ -914,11 +917,6 @@
             <End Role="ImageTag" EntitySet="ImageTags" />
           </AssociationSet>
           <EntitySet Name="ImageFiles" EntityType="CuteCMSDBModel.ImageFile" />
-          <EntitySet Name="ImageFileTerms" EntityType="CuteCMSDBModel.ImageFileTerm" />
-          <AssociationSet Name="FK_ImageFileTerms_ImageFiles" Association="CuteCMSDBModel.FK_ImageFileTerms_ImageFiles">
-            <End Role="ImageFile" EntitySet="ImageFiles" />
-            <End Role="ImageFileTerm" EntitySet="ImageFileTerms" />
-          </AssociationSet>
           <AssociationSet Name="FK_ImageTags_ImageFiles" Association="CuteCMSDBModel.FK_ImageTags_ImageFiles">
             <End Role="ImageFile" EntitySet="ImageFiles" />
             <End Role="ImageTag" EntitySet="ImageTags" />
@@ -999,10 +997,6 @@
             <End Role="Language" EntitySet="CMSLanguages" />
             <End Role="GalleryTerm" EntitySet="GalleryTerms" />
           </AssociationSet>
-          <AssociationSet Name="FK_ImageFileTerms_Languages" Association="CuteCMSDBModel.FK_ImageFileTerms_Languages">
-            <End Role="Language" EntitySet="CMSLanguages" />
-            <End Role="ImageFileTerm" EntitySet="ImageFileTerms" />
-          </AssociationSet>
           <AssociationSet Name="FK_MenuItems_Languages" Association="CuteCMSDBModel.FK_MenuItems_Languages">
             <End Role="Language" EntitySet="CMSLanguages" />
             <End Role="MenuItem" EntitySet="MenuItems" />
@@ -1042,6 +1036,15 @@
           <AssociationSet Name="FK_DepartmentTerms_Languages" Association="CuteCMSDBModel.FK_DepartmentTerms_Languages">
             <End Role="CMSLanguage" EntitySet="CMSLanguages" />
             <End Role="DepartmentTerm" EntitySet="CMSDepartmentTerms" />
+          </AssociationSet>
+          <EntitySet Name="ImageFileTerms" EntityType="CuteCMSDBModel.ImageFileTerm" />
+          <AssociationSet Name="FK_ImageFileTerms_ImageFiles" Association="CuteCMSDBModel.FK_ImageFileTerms_ImageFiles">
+            <End Role="ImageFile" EntitySet="ImageFiles" />
+            <End Role="ImageFileTerm" EntitySet="ImageFileTerms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ImageFileTerms_Languages" Association="CuteCMSDBModel.FK_ImageFileTerms_Languages">
+            <End Role="CMSLanguage" EntitySet="CMSLanguages" />
+            <End Role="ImageFileTerm" EntitySet="ImageFileTerms" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="ContentType">
@@ -1238,35 +1241,11 @@
           <Property Name="MIME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Ordinal" Type="Int32" />
           <Property Name="GalleryId" Type="Int32" />
-          <NavigationProperty Name="ImageFileTerms" Relationship="CuteCMSDBModel.FK_ImageFileTerms_ImageFiles" FromRole="ImageFile" ToRole="ImageFileTerm" />
           <NavigationProperty Name="ImageTags" Relationship="CuteCMSDBModel.FK_ImageTags_ImageFiles" FromRole="ImageFile" ToRole="ImageTag" />
           <Property Name="TenantId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Gallery" Relationship="CuteCMSDBModel.FK_ImageFiles_Galleries" FromRole="ImageFile" ToRole="Gallery" />
+          <NavigationProperty Name="ImageFileTerms" Relationship="CuteCMSDBModel.FK_ImageFileTerms_ImageFiles" FromRole="ImageFile" ToRole="ImageFileTerm" />
         </EntityType>
-        <EntityType Name="ImageFileTerm">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="LanguageId" Type="Int32" Nullable="false" />
-          <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ImageFileId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ImageFile" Relationship="CuteCMSDBModel.FK_ImageFileTerms_ImageFiles" FromRole="ImageFileTerm" ToRole="ImageFile" />
-          <NavigationProperty Name="Language" Relationship="CuteCMSDBModel.FK_ImageFileTerms_Languages" FromRole="ImageFileTerm" ToRole="Language" />
-        </EntityType>
-        <Association Name="FK_ImageFileTerms_ImageFiles">
-          <End Type="CuteCMSDBModel.ImageFile" Role="ImageFile" Multiplicity="1" />
-          <End Type="CuteCMSDBModel.ImageFileTerm" Role="ImageFileTerm" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ImageFile">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ImageFileTerm">
-              <PropertyRef Name="ImageFileId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ImageTags_ImageFiles">
           <End Type="CuteCMSDBModel.ImageFile" Role="ImageFile" Multiplicity="1" />
           <End Type="CuteCMSDBModel.ImageTag" Role="ImageTag" Multiplicity="*" />
@@ -1566,12 +1545,12 @@
           <NavigationProperty Name="Contents" Relationship="CuteCMSDBModel.FK_Contents_Languages" FromRole="Language" ToRole="Content" />
           <NavigationProperty Name="ContentTypeTerms" Relationship="CuteCMSDBModel.FK_ContentTypeTerms_Languages" FromRole="Language" ToRole="ContentTypeTerm" />
           <NavigationProperty Name="GalleryTerms" Relationship="CuteCMSDBModel.FK_GalleryTerms_Languages" FromRole="Language" ToRole="GalleryTerm" />
-          <NavigationProperty Name="ImageFileTerms" Relationship="CuteCMSDBModel.FK_ImageFileTerms_Languages" FromRole="Language" ToRole="ImageFileTerm" />
           <NavigationProperty Name="MenuItems" Relationship="CuteCMSDBModel.FK_MenuItems_Languages" FromRole="Language" ToRole="MenuItem" />
           <NavigationProperty Name="PersonalTitleTerms" Relationship="CuteCMSDBModel.FK_PersonalTitleTerms_Languages" FromRole="Language" ToRole="CMSPersonalTitleTerm" />
           <NavigationProperty Name="StatusTerms" Relationship="CuteCMSDBModel.FK_StatusTerms_Languages" FromRole="Language" ToRole="CMSStatusTerm" />
           <NavigationProperty Name="TagTerms" Relationship="CuteCMSDBModel.FK_TagTerms_Languages" FromRole="Language" ToRole="TagTerm" />
           <NavigationProperty Name="DepartmentTerms" Relationship="CuteCMSDBModel.FK_DepartmentTerms_Languages" FromRole="CMSLanguage" ToRole="DepartmentTerm" />
+          <NavigationProperty Name="ImageFileTerms" Relationship="CuteCMSDBModel.FK_ImageFileTerms_Languages" FromRole="CMSLanguage" ToRole="ImageFileTerm" />
         </EntityType>
         <Association Name="FK_CategoryTerms_Categories">
           <End Type="CuteCMSDBModel.Category" Role="Category" Multiplicity="1" />
@@ -1629,18 +1608,6 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="GalleryTerm">
-              <PropertyRef Name="LanguageId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ImageFileTerms_Languages">
-          <End Type="CuteCMSDBModel.CMSLanguage" Role="Language" Multiplicity="1" />
-          <End Type="CuteCMSDBModel.ImageFileTerm" Role="ImageFileTerm" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Language">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ImageFileTerm">
               <PropertyRef Name="LanguageId" />
             </Dependent>
           </ReferentialConstraint>
@@ -1821,6 +1788,45 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="ImageFileTerm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageId" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PrimaryCaption" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecondaryCaption" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TertiaryCaption" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImageFileId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ImageFile" Relationship="CuteCMSDBModel.FK_ImageFileTerms_ImageFiles" FromRole="ImageFileTerm" ToRole="ImageFile" />
+          <NavigationProperty Name="Language" Relationship="CuteCMSDBModel.FK_ImageFileTerms_Languages" FromRole="ImageFileTerm" ToRole="CMSLanguage" />
+        </EntityType>
+        <Association Name="FK_ImageFileTerms_ImageFiles">
+          <End Type="CuteCMSDBModel.ImageFile" Role="ImageFile" Multiplicity="1" />
+          <End Type="CuteCMSDBModel.ImageFileTerm" Role="ImageFileTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ImageFile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ImageFileTerm">
+              <PropertyRef Name="ImageFileId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ImageFileTerms_Languages">
+          <End Type="CuteCMSDBModel.CMSLanguage" Role="CMSLanguage" Multiplicity="1" />
+          <End Type="CuteCMSDBModel.ImageFileTerm" Role="ImageFileTerm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CMSLanguage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ImageFileTerm">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1950,17 +1956,6 @@
                 <ScalarProperty Name="ThumbPath" ColumnName="ThumbPath" />
                 <ScalarProperty Name="FilePath" ColumnName="FilePath" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ImageFileTerms">
-            <EntityTypeMapping TypeName="CuteCMSDBModel.ImageFileTerm">
-              <MappingFragment StoreEntitySet="ImageFileTerms">
-                <ScalarProperty Name="ImageFileId" ColumnName="ImageFileId" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Value" ColumnName="Value" />
-                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -2147,6 +2142,20 @@
                 <ScalarProperty Name="IconName" ColumnName="IconName" />
                 <ScalarProperty Name="AbsolutePath" ColumnName="AbsolutePath" />
                 <ScalarProperty Name="UrlSlug" ColumnName="UrlSlug" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImageFileTerms">
+            <EntityTypeMapping TypeName="CuteCMSDBModel.ImageFileTerm">
+              <MappingFragment StoreEntitySet="ImageFileTerms">
+                <ScalarProperty Name="ImageFileId" ColumnName="ImageFileId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="TertiaryCaption" ColumnName="TertiaryCaption" />
+                <ScalarProperty Name="SecondaryCaption" ColumnName="SecondaryCaption" />
+                <ScalarProperty Name="PrimaryCaption" ColumnName="PrimaryCaption" />
                 <ScalarProperty Name="Value" ColumnName="Value" />
                 <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />

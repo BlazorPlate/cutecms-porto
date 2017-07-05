@@ -1635,4 +1635,46 @@
   <data name="MainDepts" xml:space="preserve">
     <value>Avdelningar</value>
   </data>
+  <data name="PrimaryCaption" xml:space="preserve">
+    <value>Primärt bildtext</value>
+  </data>
+  <data name="SecondaryCaption" xml:space="preserve">
+    <value>Sekundär beskrift</value>
+  </data>
+  <data name="TertiaryCaption" xml:space="preserve">
+    <value>Tertiär Bildtext</value>
+  </data>
+  <data name="MedicalTreatment" xml:space="preserve">
+    <value>Terapi</value>
+  </data>
+  <data name="DoctorsTimetable" xml:space="preserve">
+    <value>Och det gjorde läkarna också</value>
+  </data>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>Öppettider</value>
+  </data>
+  <data name="EmergencyCase" xml:space="preserve">
+    <value>NÖDSITUATION</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>söndag</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>Måndag</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>tisdag</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>Onsdag</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>torsdag</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>Fredag</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>Lördag</value>
+  </data>
 </root>

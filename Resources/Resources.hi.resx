@@ -1635,4 +1635,46 @@
   <data name="MainDepts" xml:space="preserve">
     <value>मुख्य विभाग!</value>
   </data>
+  <data name="PrimaryCaption" xml:space="preserve">
+    <value>प्राथमिक कैप्शन</value>
+  </data>
+  <data name="SecondaryCaption" xml:space="preserve">
+    <value>माध्यमिक कैप्शन</value>
+  </data>
+  <data name="TertiaryCaption" xml:space="preserve">
+    <value>तृतीयक कैप्शन</value>
+  </data>
+  <data name="MedicalTreatment" xml:space="preserve">
+    <value>इलाज</value>
+  </data>
+  <data name="DoctorsTimetable" xml:space="preserve">
+    <value>डॉक्टर समय सारिणी</value>
+  </data>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>खुलने का समय</value>
+  </data>
+  <data name="EmergencyCase" xml:space="preserve">
+    <value>आपातकाल</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>रविवार</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>सोमवार</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>मंगलवार</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>बुधवार</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>गुरुवार</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>शुक्रवार</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>देर रात - सोमवार से शुक्रवार - आधी रात को 10:00</value>
+  </data>
 </root>

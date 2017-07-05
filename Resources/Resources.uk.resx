@@ -1635,4 +1635,46 @@
   <data name="MainDepts" xml:space="preserve">
     <value>Відділи</value>
   </data>
+  <data name="PrimaryCaption" xml:space="preserve">
+    <value>Первинна Підпис</value>
+  </data>
+  <data name="SecondaryCaption" xml:space="preserve">
+    <value>Secondary Підпис</value>
+  </data>
+  <data name="TertiaryCaption" xml:space="preserve">
+    <value>Третинний Підпис</value>
+  </data>
+  <data name="MedicalTreatment" xml:space="preserve">
+    <value>ЛІКУВАННЯ</value>
+  </data>
+  <data name="DoctorsTimetable" xml:space="preserve">
+    <value>Лікарі розклад</value>
+  </data>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>Години роботи</value>
+  </data>
+  <data name="EmergencyCase" xml:space="preserve">
+    <value>Надзвичайних справи</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>У неділю</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>В понеділок</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>У вівторок</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>У середу</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>У четвер</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>У п'ятницю</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>У суботу</value>
+  </data>
 </root>

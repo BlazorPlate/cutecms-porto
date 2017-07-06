@@ -5,6 +5,7 @@
 @{
     CMSEntities cmsDb = new CMSEntities();
     IdentityEntities IdentityDb = new IdentityEntities();
+    List<ListItem> openingHours = Model.ContentLists.Where(c => c.Code.Trim().Equals("opening-hours") && c.Visible).FirstOrDefault()?.ListItems.ToList() ?? new List<ListItem>();
 }
 @section Styles{
     <!-- Current Page CSS -->
@@ -36,20 +37,20 @@
                          style="z-index: 5; font-size: 1.5em; text-transform: uppercase;"
                          data-mask_in="x:0px;y:0px;">@(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.SecondaryCaption)</div>
 
-                    <div class="tp-caption main-label"
-                         data-x="left" data-hoffset="25"
-                         data-y="center" data-voffset="-55"
-                         data-start="500"
-                         style="z-index: 5; text-transform: uppercase; font-size: 52px;"
-                         data-transform_in="y:[-300%];opacity:0;s:500;">@(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.PrimaryCaption)</div>
+                        <div class="tp-caption main-label"
+                             data-x="left" data-hoffset="25"
+                             data-y="center" data-voffset="-55"
+                             data-start="500"
+                             style="z-index: 5; text-transform: uppercase; font-size: 52px;"
+                             data-transform_in="y:[-300%];opacity:0;s:500;">@(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.PrimaryCaption)</div>
 
-                    <div class="tp-caption bottom-label"
-                         data-x="left" data-hoffset="25"
-                         data-y="center" data-voffset="40"
-                         data-start="2000"
-                         style="z-index: 5; border-bottom: 1px solid #fff; padding-bottom: 3px;"
-                         data-transform_in="y:[100%];opacity:0;s:500;" style="font-size: 1.2em;">@(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.TertiaryCaption)</div>
-                </li>
+                            <div class="tp-caption bottom-label"
+                                 data-x="left" data-hoffset="25"
+                                 data-y="center" data-voffset="40"
+                                 data-start="2000"
+                                 style="z-index: 5; border-bottom: 1px solid #fff; padding-bottom: 3px;"
+                                 data-transform_in="y:[100%];opacity:0;s:500;" style="font-size: 1.2em;">@(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.TertiaryCaption)</div>
+                            </li>
             }
         </ul>
     </div>
@@ -74,10 +75,14 @@
                 </div>
                 <div class="col-lg-3 box-three background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1200">
                     <div class="expanded-info p-xlg background-color-primary">
-                        <div class="info custom-info">
-                            <span>Mon-Fri</span>
-                            <span>8:30 am to 5:00 pm</span>
-                        </div>
+                        @foreach (var item in openingHours)
+                        {
+                            <div class="info custom-info">
+                                <span>@item.Title</span>
+                                <span>@item.SubTitle</span>
+                            </div>
+                        }
+
                         <div class="info custom-info">
                             <span>Saturday</span>
                             <span>9:30 am to 1:00 pm</span>
@@ -134,18 +139,32 @@
                 </div>
                 <div class="col-lg-3 box-three background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1200">
                     <div class="expanded-info p-xlg background-color-primary">
-                        <div class="info custom-info">
-                            <span>@Resources.Resources.Monday-@Resources.Resources.Friday</span>
-                            <span>8:30 am to 5:00 pm</span>
+                        <div class="table">
+                            <div class="row">
+
+
+
+                                @foreach (var item in openingHours)
+                                {
+                                    <div class="info custom-info log-in-info">
+                                        <div style="color:white" class="bold">@item.Title</div>
+                                        <div style="color:white">@item.SubTitle</div>
+                                    </div>
+                                }
+                            </div>
                         </div>
-                        <div class="info custom-info">
-                            <span>Saturday</span>
-                            <span>9:30 am to 1:00 pm</span>
-                        </div>
-                        <div class="info custom-info">
-                            <span>Sunday</span>
-                            <span>Closed</span>
-                        </div>
+                        @*<div class="info custom-info">
+                                <span>@Resources.Resources.Monday-@Resources.Resources.Friday</span>
+                                <span>8:30 am to 5:00 pm</span>
+                            </div>
+                            <div class="info custom-info">
+                                <span>Saturday</span>
+                                <span>9:30 am to 1:00 pm</span>
+                            </div>
+                            <div class="info custom-info">
+                                <span>Sunday</span>
+                                <span>Closed</span>
+                            </div>*@
                     </div>
                     <h5 class="m-none">
                         @Resources.Resources.OpeningHours

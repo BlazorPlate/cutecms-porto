@@ -66,7 +66,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
         // properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost, ValidateInput(false)]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Body,Url,Class,Ordinal,Visible,File,Thumb,ContentListId")] ListItem listItem)
+        public ActionResult Create([Bind(Include = "Id,Title,SubTitle,Body,Url,Class,Ordinal,Visible,File,Thumb,ContentListId")] ListItem listItem)
         {
             if (ModelState.IsValid)
             {
@@ -124,7 +124,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
         // properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,Body,Url,Class,Ordinal,Visible,File,Thumb,FilePath,ThumbPath,ContentListId")] ListItem listItem)
+        public ActionResult Edit([Bind(Include = "Id,Title,SubTitle,Body,Url,Class,Ordinal,Visible,File,Thumb,FilePath,ThumbPath,ContentListId")] ListItem listItem)
         {
             if (ModelState.IsValid)
             {

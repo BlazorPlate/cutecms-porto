@@ -1677,4 +1677,7 @@
   <data name="Saturday" xml:space="preserve">
     <value>ہفتہ</value>
   </data>
+  <data name="SubTitle" xml:space="preserve">
+    <value>ذیلی ٹائٹل!</value>
+  </data>
 </root>

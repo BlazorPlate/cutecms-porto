@@ -4174,6 +4174,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Subtitle.
+        /// </summary>
+        public static string SubTitle {
+            get {
+                return ResourceManager.GetString("SubTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Summary.
         /// </summary>
         public static string Summary {

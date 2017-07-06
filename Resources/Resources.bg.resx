@@ -1677,4 +1677,7 @@
   <data name="Saturday" xml:space="preserve">
     <value>Събота</value>
   </data>
+  <data name="SubTitle" xml:space="preserve">
+    <value>Подзаглавие</value>
+  </data>
 </root>

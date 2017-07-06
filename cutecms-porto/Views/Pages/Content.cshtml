@@ -100,8 +100,8 @@
                     {
                         <h2>@contentList.Name</h2>
                     }
+                    @Html.Raw(HttpUtility.HtmlDecode(contentList.MainContent))
                     <div class="toggle toggle-quaternary" data-plugin-toggle>
-
                         @foreach (var item in contentList.ListItems.Where(l => l.Visible).OrderBy(l => l.Ordinal))
                         {
                             if (count != 0)

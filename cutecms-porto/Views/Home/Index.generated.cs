@@ -62,6 +62,7 @@ namespace ASP
   
     CMSEntities cmsDb = new CMSEntities();
     IdentityEntities IdentityDb = new IdentityEntities();
+    List<ListItem> openingHours = Model.ContentLists.Where(c => c.Code.Trim().Equals("opening-hours") && c.Visible).FirstOrDefault()?.ListItems.ToList() ?? new List<ListItem>();
 
             
             #line default
@@ -74,27 +75,27 @@ WriteLiteral("\r\n    <!-- Current Page CSS -->\r\n    <link");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 352), Tuple.Create("\"", 407)
-, Tuple.Create(Tuple.Create("", 359), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/rs-plugin/css/settings.css")
-, 359), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 531), Tuple.Create("\"", 586)
+, Tuple.Create(Tuple.Create("", 538), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/rs-plugin/css/settings.css")
+, 538), false)
 );
 
 WriteLiteral(">\r\n    <link");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 437), Tuple.Create("\"", 490)
-, Tuple.Create(Tuple.Create("", 444), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/rs-plugin/css/layers.css")
-, 444), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 616), Tuple.Create("\"", 669)
+, Tuple.Create(Tuple.Create("", 623), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/rs-plugin/css/layers.css")
+, 623), false)
 );
 
 WriteLiteral(">\r\n    <link");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 520), Tuple.Create("\"", 577)
-, Tuple.Create(Tuple.Create("", 527), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/rs-plugin/css/navigation.css")
-, 527), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 699), Tuple.Create("\"", 756)
+, Tuple.Create(Tuple.Create("", 706), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/rs-plugin/css/navigation.css")
+, 706), false)
 );
 
 WriteLiteral(">\r\n\r\n");
@@ -120,13 +121,13 @@ WriteLiteral(@" data-plugin-options=""{'delay': 9000, 'gridwidth': 1170, 'gridhe
 WriteLiteral(">\r\n        <ul>\r\n");
 
             
-            #line 19 "..\..\Views\Home\Index.cshtml"
+            #line 20 "..\..\Views\Home\Index.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 19 "..\..\Views\Home\Index.cshtml"
+            #line 20 "..\..\Views\Home\Index.cshtml"
              foreach (var item in Model.HomeGallery)
             {
 
@@ -139,24 +140,24 @@ WriteLiteral(" data-transition=\"fade\"");
 
 WriteLiteral(">\r\n                    <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1157), Tuple.Create("\"", 1177)
-            
-            #line 22 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 1163), Tuple.Create<System.Object, System.Int32>(item.FilePath
-            
-            #line default
-            #line hidden
-, 1163), false)
-);
-
-WriteAttribute("alt", Tuple.Create("\r\n                         alt=\"", 1178), Tuple.Create("\"", 1391)
+WriteAttribute("src", Tuple.Create(" src=\"", 1336), Tuple.Create("\"", 1356)
             
             #line 23 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 1210), Tuple.Create<System.Object, System.Int32>(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.Value ?? item.Code
+, Tuple.Create(Tuple.Create("", 1342), Tuple.Create<System.Object, System.Int32>(item.FilePath
             
             #line default
             #line hidden
-, 1210), false)
+, 1342), false)
+);
+
+WriteAttribute("alt", Tuple.Create("\r\n                         alt=\"", 1357), Tuple.Create("\"", 1570)
+            
+            #line 24 "..\..\Views\Home\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 1389), Tuple.Create<System.Object, System.Int32>(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.Value ?? item.Code
+            
+            #line default
+            #line hidden
+, 1389), false)
 );
 
 WriteLiteral("\r\n                         data-bgposition=\"center center\"");
@@ -195,74 +196,74 @@ WriteLiteral("\r\n                         data-mask_in=\"x:0px;y:0px;\"");
 WriteLiteral(">");
 
             
-            #line 37 "..\..\Views\Home\Index.cshtml"
+            #line 38 "..\..\Views\Home\Index.cshtml"
                                                  Write(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.SecondaryCaption);
 
             
             #line default
             #line hidden
-WriteLiteral("</div>\r\n\r\n                    <div");
+WriteLiteral("</div>\r\n\r\n                        <div");
 
 WriteLiteral(" class=\"tp-caption main-label\"");
 
-WriteLiteral("\r\n                         data-x=\"left\"");
+WriteLiteral("\r\n                             data-x=\"left\"");
 
 WriteLiteral(" data-hoffset=\"25\"");
 
-WriteLiteral("\r\n                         data-y=\"center\"");
+WriteLiteral("\r\n                             data-y=\"center\"");
 
 WriteLiteral(" data-voffset=\"-55\"");
 
-WriteLiteral("\r\n                         data-start=\"500\"");
+WriteLiteral("\r\n                             data-start=\"500\"");
 
-WriteLiteral("\r\n                         style=\"z-index: 5; text-transform: uppercase; font-siz" +
-"e: 52px;\"");
+WriteLiteral("\r\n                             style=\"z-index: 5; text-transform: uppercase; font" +
+"-size: 52px;\"");
 
-WriteLiteral("\r\n                         data-transform_in=\"y:[-300%];opacity:0;s:500;\"");
+WriteLiteral("\r\n                             data-transform_in=\"y:[-300%];opacity:0;s:500;\"");
 
 WriteLiteral(">");
 
             
-            #line 44 "..\..\Views\Home\Index.cshtml"
-                                                                    Write(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.PrimaryCaption);
+            #line 45 "..\..\Views\Home\Index.cshtml"
+                                                                        Write(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.PrimaryCaption);
 
             
             #line default
             #line hidden
-WriteLiteral("</div>\r\n\r\n                    <div");
+WriteLiteral("</div>\r\n\r\n                            <div");
 
 WriteLiteral(" class=\"tp-caption bottom-label\"");
 
-WriteLiteral("\r\n                         data-x=\"left\"");
+WriteLiteral("\r\n                                 data-x=\"left\"");
 
 WriteLiteral(" data-hoffset=\"25\"");
 
-WriteLiteral("\r\n                         data-y=\"center\"");
+WriteLiteral("\r\n                                 data-y=\"center\"");
 
 WriteLiteral(" data-voffset=\"40\"");
 
-WriteLiteral("\r\n                         data-start=\"2000\"");
+WriteLiteral("\r\n                                 data-start=\"2000\"");
 
-WriteLiteral("\r\n                         style=\"z-index: 5; border-bottom: 1px solid #fff; padd" +
-"ing-bottom: 3px;\"");
+WriteLiteral("\r\n                                 style=\"z-index: 5; border-bottom: 1px solid #f" +
+"ff; padding-bottom: 3px;\"");
 
-WriteLiteral("\r\n                         data-transform_in=\"y:[100%];opacity:0;s:500;\"");
+WriteLiteral("\r\n                                 data-transform_in=\"y:[100%];opacity:0;s:500;\"");
 
 WriteLiteral(" style=\"font-size: 1.2em;\"");
 
 WriteLiteral(">");
 
             
-            #line 51 "..\..\Views\Home\Index.cshtml"
-                                                                                             Write(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.TertiaryCaption);
+            #line 52 "..\..\Views\Home\Index.cshtml"
+                                                                                                     Write(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.TertiaryCaption);
 
             
             #line default
             #line hidden
-WriteLiteral("</div>\r\n                </li>\r\n");
+WriteLiteral("</div>\r\n                            </li>\r\n");
 
             
-            #line 53 "..\..\Views\Home\Index.cshtml"
+            #line 54 "..\..\Views\Home\Index.cshtml"
             }
 
             
@@ -283,13 +284,13 @@ WriteLiteral(" class=\"row medical-schedules\"");
 WriteLiteral(">\r\n");
 
             
-            #line 60 "..\..\Views\Home\Index.cshtml"
+            #line 61 "..\..\Views\Home\Index.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 60 "..\..\Views\Home\Index.cshtml"
+            #line 61 "..\..\Views\Home\Index.cshtml"
              if (cutecms_porto.Helpers.CultureHelper.IsRighToLeft())
             {
 
@@ -333,7 +334,7 @@ WriteLiteral(" class=\"font-weight-light\"");
 WriteLiteral(">");
 
             
-            #line 69 "..\..\Views\Home\Index.cshtml"
+            #line 70 "..\..\Views\Home\Index.cshtml"
                                                             Write(Resources.Resources.EmergencyCase);
 
             
@@ -358,13 +359,54 @@ WriteLiteral(">\r\n                    <div");
 
 WriteLiteral(" class=\"expanded-info p-xlg background-color-primary\"");
 
-WriteLiteral(">\r\n                        <div");
+WriteLiteral(">\r\n");
+
+            
+            #line 78 "..\..\Views\Home\Index.cshtml"
+                        
+            
+            #line default
+            #line hidden
+            
+            #line 78 "..\..\Views\Home\Index.cshtml"
+                         foreach (var item in openingHours)
+                        {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                            <div");
 
 WriteLiteral(" class=\"info custom-info\"");
 
-WriteLiteral(">\r\n                            <span>Mon-Fri</span>\r\n                            " +
-"<span>8:30 am to 5:00 pm</span>\r\n                        </div>\r\n               " +
-"         <div");
+WriteLiteral(">\r\n                                <span>");
+
+            
+            #line 81 "..\..\Views\Home\Index.cshtml"
+                                 Write(item.Title);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</span>\r\n                                <span>");
+
+            
+            #line 82 "..\..\Views\Home\Index.cshtml"
+                                 Write(item.SubTitle);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</span>\r\n                            </div>\r\n");
+
+            
+            #line 84 "..\..\Views\Home\Index.cshtml"
+                        }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                        <div");
 
 WriteLiteral(" class=\"info custom-info\"");
 
@@ -385,7 +427,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 91 "..\..\Views\Home\Index.cshtml"
+            #line 96 "..\..\Views\Home\Index.cshtml"
                    Write(Resources.Resources.OpeningHours);
 
             
@@ -420,7 +462,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 98 "..\..\Views\Home\Index.cshtml"
+            #line 103 "..\..\Views\Home\Index.cshtml"
                        Write(Resources.Resources.DoctorsTimetable);
 
             
@@ -451,9 +493,9 @@ WriteLiteral(" class=\"feature-box-icon\"");
 
 WriteLiteral(">\r\n                            <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 6534), Tuple.Create("\"", 6601)
-, Tuple.Create(Tuple.Create("", 6540), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/icons/medical-icon-heart.png")
-, 6540), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 6930), Tuple.Create("\"", 6997)
+, Tuple.Create(Tuple.Create("", 6936), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/icons/medical-icon-heart.png")
+, 6936), false)
 );
 
 WriteLiteral(" alt=\"\"");
@@ -471,7 +513,7 @@ WriteLiteral(" class=\"m-none\"");
 WriteLiteral(">");
 
             
-            #line 109 "..\..\Views\Home\Index.cshtml"
+            #line 114 "..\..\Views\Home\Index.cshtml"
                                           Write(Resources.Resources.MedicalTreatment);
 
             
@@ -481,7 +523,7 @@ WriteLiteral("</h4>\r\n                        </div>\r\n                    </d
 "  </div>\r\n");
 
             
-            #line 113 "..\..\Views\Home\Index.cshtml"
+            #line 118 "..\..\Views\Home\Index.cshtml"
 
             }
             else
@@ -508,9 +550,9 @@ WriteLiteral(" class=\"feature-box-icon\"");
 
 WriteLiteral(">\r\n                            <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 7279), Tuple.Create("\"", 7346)
-, Tuple.Create(Tuple.Create("", 7285), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/icons/medical-icon-heart.png")
-, 7285), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 7675), Tuple.Create("\"", 7742)
+, Tuple.Create(Tuple.Create("", 7681), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/icons/medical-icon-heart.png")
+, 7681), false)
 );
 
 WriteLiteral(" alt=\"\"");
@@ -528,7 +570,7 @@ WriteLiteral(" class=\"m-none\"");
 WriteLiteral(">");
 
             
-            #line 123 "..\..\Views\Home\Index.cshtml"
+            #line 128 "..\..\Views\Home\Index.cshtml"
                                           Write(Resources.Resources.MedicalTreatment);
 
             
@@ -576,40 +618,73 @@ WriteLiteral(" class=\"expanded-info p-xlg background-color-primary\"");
 
 WriteLiteral(">\r\n                        <div");
 
-WriteLiteral(" class=\"info custom-info\"");
+WriteLiteral(" class=\"table\"");
 
-WriteLiteral(">\r\n                            <span>");
+WriteLiteral(">\r\n                            <div");
+
+WriteLiteral(" class=\"row\"");
+
+WriteLiteral(">\r\n\r\n\r\n\r\n");
 
             
-            #line 138 "..\..\Views\Home\Index.cshtml"
-                             Write(Resources.Resources.Monday);
+            #line 147 "..\..\Views\Home\Index.cshtml"
+                                
+            
+            #line default
+            #line hidden
+            
+            #line 147 "..\..\Views\Home\Index.cshtml"
+                                 foreach (var item in openingHours)
+                                {
 
             
             #line default
             #line hidden
-WriteLiteral("-");
+WriteLiteral("                                    <div");
+
+WriteLiteral(" class=\"info custom-info log-in-info\"");
+
+WriteLiteral(">\r\n                                        <div");
+
+WriteLiteral(" style=\"color:white\"");
+
+WriteLiteral(" class=\"bold\"");
+
+WriteLiteral(">");
 
             
-            #line 138 "..\..\Views\Home\Index.cshtml"
-                                                         Write(Resources.Resources.Friday);
+            #line 150 "..\..\Views\Home\Index.cshtml"
+                                                                         Write(item.Title);
 
             
             #line default
             #line hidden
-WriteLiteral("</span>\r\n                            <span>8:30 am to 5:00 pm</span>\r\n           " +
-"             </div>\r\n                        <div");
+WriteLiteral("</div>\r\n                                        <div");
 
-WriteLiteral(" class=\"info custom-info\"");
+WriteLiteral(" style=\"color:white\"");
 
-WriteLiteral(">\r\n                            <span>Saturday</span>\r\n                           " +
-" <span>9:30 am to 1:00 pm</span>\r\n                        </div>\r\n              " +
-"          <div");
+WriteLiteral(">");
 
-WriteLiteral(" class=\"info custom-info\"");
+            
+            #line 151 "..\..\Views\Home\Index.cshtml"
+                                                            Write(item.SubTitle);
 
-WriteLiteral(">\r\n                            <span>Sunday</span>\r\n                            <" +
-"span>Closed</span>\r\n                        </div>\r\n                    </div>\r\n" +
-"                    <h5");
+            
+            #line default
+            #line hidden
+WriteLiteral("</div>\r\n                                    </div>\r\n");
+
+            
+            #line 153 "..\..\Views\Home\Index.cshtml"
+                                }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                            </div>\r\n                        </div>\r\n             " +
+"           ");
+
+WriteLiteral("\r\n                    </div>\r\n                    <h5");
 
 WriteLiteral(" class=\"m-none\"");
 
@@ -618,7 +693,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 151 "..\..\Views\Home\Index.cshtml"
+            #line 170 "..\..\Views\Home\Index.cshtml"
                    Write(Resources.Resources.OpeningHours);
 
             
@@ -667,7 +742,7 @@ WriteLiteral(" class=\"font-weight-light\"");
 WriteLiteral(">");
 
             
-            #line 162 "..\..\Views\Home\Index.cshtml"
+            #line 181 "..\..\Views\Home\Index.cshtml"
                                                             Write(Resources.Resources.EmergencyCase);
 
             
@@ -681,7 +756,7 @@ WriteLiteral(">(962)5399-0990</strong>\r\n                            </div>\r\n
 "     </div>\r\n                    </a>\r\n                </div>\r\n");
 
             
-            #line 168 "..\..\Views\Home\Index.cshtml"
+            #line 187 "..\..\Views\Home\Index.cshtml"
 
             }
 
@@ -719,9 +794,9 @@ WriteLiteral(" class=\"col-sm-4 col-md-4\"");
 
 WriteLiteral(">\r\n                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 10980), Tuple.Create("\"", 11040)
-, Tuple.Create(Tuple.Create("", 10986), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/gallery/gallery-1.jpg")
-, 10986), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 12037), Tuple.Create("\"", 12097)
+, Tuple.Create(Tuple.Create("", 12043), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/gallery/gallery-1.jpg")
+, 12043), false)
 );
 
 WriteLiteral(" alt=\"\"");
@@ -756,13 +831,13 @@ WriteLiteral(">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>\r\n 
 "\r\n        </div>\r\n");
 
             
-            #line 194 "..\..\Views\Home\Index.cshtml"
+            #line 213 "..\..\Views\Home\Index.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 194 "..\..\Views\Home\Index.cshtml"
+            #line 213 "..\..\Views\Home\Index.cshtml"
           var i = 0;
             
             #line default
@@ -770,13 +845,13 @@ WriteLiteral(">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>\r\n 
 WriteLiteral("\r\n");
 
             
-            #line 195 "..\..\Views\Home\Index.cshtml"
+            #line 214 "..\..\Views\Home\Index.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 195 "..\..\Views\Home\Index.cshtml"
+            #line 214 "..\..\Views\Home\Index.cshtml"
          foreach (var item in IdentityDb.IdentityDepartmentTerms.Where(d => d.Department.TenantId.Trim().Equals(Tenant.TenantId) && d.HomeVisible && d.Visible && d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).OrderBy(d => d.Department.Ordinal))
         {
             if (i % 3 == 0)
@@ -790,7 +865,7 @@ WriteLiteral("                ");
 WriteLiteral("<div class=\"row mt-lg\">\r\n");
 
             
-            #line 200 "..\..\Views\Home\Index.cshtml"
+            #line 219 "..\..\Views\Home\Index.cshtml"
                         }
 
             
@@ -814,24 +889,24 @@ WriteLiteral(" class=\"feature-box-icon\"");
 
 WriteLiteral(">\r\n                        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 12216), Tuple.Create("\"", 12236)
+WriteAttribute("src", Tuple.Create(" src=\"", 13273), Tuple.Create("\"", 13293)
             
-            #line 204 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 12222), Tuple.Create<System.Object, System.Int32>(item.IconPath
+            #line 223 "..\..\Views\Home\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 13279), Tuple.Create<System.Object, System.Int32>(item.IconPath
             
             #line default
             #line hidden
-, 12222), false)
+, 13279), false)
 );
 
-WriteAttribute("alt", Tuple.Create(" alt=\"", 12237), Tuple.Create("\"", 12260)
+WriteAttribute("alt", Tuple.Create(" alt=\"", 13294), Tuple.Create("\"", 13317)
             
-            #line 204 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 12243), Tuple.Create<System.Object, System.Int32>(item.Description
+            #line 223 "..\..\Views\Home\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 13300), Tuple.Create<System.Object, System.Int32>(item.Description
             
             #line default
             #line hidden
-, 12243), false)
+, 13300), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");
@@ -846,14 +921,14 @@ WriteLiteral(" class=\"font-weight-semibold\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 12434), Tuple.Create("\"", 12516)
+WriteAttribute("href", Tuple.Create(" href=\"", 13491), Tuple.Create("\"", 13573)
             
-            #line 207 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 12441), Tuple.Create<System.Object, System.Int32>(string.Concat(item.AbsolutePath, string.Concat("#", item.Department.Code))
+            #line 226 "..\..\Views\Home\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 13498), Tuple.Create<System.Object, System.Int32>(string.Concat(item.AbsolutePath, string.Concat("#", item.Department.Code))
             
             #line default
             #line hidden
-, 12441), false)
+, 13498), false)
 );
 
 WriteLiteral(" class=\"text-decoration-none\"");
@@ -861,7 +936,7 @@ WriteLiteral(" class=\"text-decoration-none\"");
 WriteLiteral(">");
 
             
-            #line 207 "..\..\Views\Home\Index.cshtml"
+            #line 226 "..\..\Views\Home\Index.cshtml"
                                                                                                                                                                        Write(item.Value);
 
             
@@ -870,7 +945,7 @@ WriteLiteral(">");
 WriteLiteral("</a></h4>\r\n                        <p>");
 
             
-            #line 208 "..\..\Views\Home\Index.cshtml"
+            #line 227 "..\..\Views\Home\Index.cshtml"
                       Write(item.Summary);
 
             
@@ -879,7 +954,7 @@ WriteLiteral("</a></h4>\r\n                        <p>");
 WriteLiteral("</p>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n");
 
             
-            #line 212 "..\..\Views\Home\Index.cshtml"
+            #line 231 "..\..\Views\Home\Index.cshtml"
             i++;
             if (i % 3 == 0)
             {
@@ -892,7 +967,7 @@ WriteLiteral("                ");
 WriteLiteral("</div>\r\n");
 
             
-            #line 216 "..\..\Views\Home\Index.cshtml"
+            #line 235 "..\..\Views\Home\Index.cshtml"
             }
         }
 
@@ -1002,9 +1077,9 @@ WriteLiteral(" class=\"thumb-info-wrapper m-none\"");
 
 WriteLiteral(">\r\n                                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 14429), Tuple.Create("\"", 14488)
-, Tuple.Create(Tuple.Create("", 14435), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/doctors/doctor-1.jpg")
-, 14435), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 15486), Tuple.Create("\"", 15545)
+, Tuple.Create(Tuple.Create("", 15492), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/doctors/doctor-1.jpg")
+, 15492), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");
@@ -1057,9 +1132,9 @@ WriteLiteral(" class=\"thumb-info-wrapper m-none\"");
 
 WriteLiteral(">\r\n                                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 15597), Tuple.Create("\"", 15656)
-, Tuple.Create(Tuple.Create("", 15603), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/doctors/doctor-2.jpg")
-, 15603), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 16654), Tuple.Create("\"", 16713)
+, Tuple.Create(Tuple.Create("", 16660), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/doctors/doctor-2.jpg")
+, 16660), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");
@@ -1112,9 +1187,9 @@ WriteLiteral(" class=\"thumb-info-wrapper m-none\"");
 
 WriteLiteral(">\r\n                                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 16772), Tuple.Create("\"", 16831)
-, Tuple.Create(Tuple.Create("", 16778), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/doctors/doctor-3.jpg")
-, 16778), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 17829), Tuple.Create("\"", 17888)
+, Tuple.Create(Tuple.Create("", 17835), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/doctors/doctor-3.jpg")
+, 17835), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");
@@ -1167,9 +1242,9 @@ WriteLiteral(" class=\"thumb-info-wrapper m-none\"");
 
 WriteLiteral(">\r\n                                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 17944), Tuple.Create("\"", 18003)
-, Tuple.Create(Tuple.Create("", 17950), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/doctors/doctor-4.jpg")
-, 17950), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 19001), Tuple.Create("\"", 19060)
+, Tuple.Create(Tuple.Create("", 19007), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/doctors/doctor-4.jpg")
+, 19007), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");
@@ -1222,9 +1297,9 @@ WriteLiteral(" class=\"thumb-info-wrapper m-none\"");
 
 WriteLiteral(">\r\n                                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 19108), Tuple.Create("\"", 19167)
-, Tuple.Create(Tuple.Create("", 19114), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/doctors/doctor-5.jpg")
-, 19114), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 20165), Tuple.Create("\"", 20224)
+, Tuple.Create(Tuple.Create("", 20171), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/doctors/doctor-5.jpg")
+, 20171), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");
@@ -1307,9 +1382,9 @@ WriteLiteral(" alt=\"\"");
 
 WriteLiteral(" class=\"img-responsive\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 20760), Tuple.Create("\"", 20820)
-, Tuple.Create(Tuple.Create("", 20766), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/gallery/gallery-2.jpg")
-, 20766), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 21817), Tuple.Create("\"", 21877)
+, Tuple.Create(Tuple.Create("", 21823), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/gallery/gallery-2.jpg")
+, 21823), false)
 );
 
 WriteLiteral(">\r\n                        </span>\r\n                        <span");
@@ -1356,9 +1431,9 @@ WriteLiteral(" alt=\"\"");
 
 WriteLiteral(" class=\"img-responsive\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 21784), Tuple.Create("\"", 21844)
-, Tuple.Create(Tuple.Create("", 21790), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/gallery/gallery-3.jpg")
-, 21790), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 22841), Tuple.Create("\"", 22901)
+, Tuple.Create(Tuple.Create("", 22847), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/gallery/gallery-3.jpg")
+, 22847), false)
 );
 
 WriteLiteral(">\r\n                        </span>\r\n                        <span");
@@ -1405,9 +1480,9 @@ WriteLiteral(" alt=\"\"");
 
 WriteLiteral(" class=\"img-responsive\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 22807), Tuple.Create("\"", 22867)
-, Tuple.Create(Tuple.Create("", 22813), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/gallery/gallery-4.jpg")
-, 22813), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 23864), Tuple.Create("\"", 23924)
+, Tuple.Create(Tuple.Create("", 23870), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/gallery/gallery-4.jpg")
+, 23870), false)
 );
 
 WriteLiteral(">\r\n                        </span>\r\n                        <span");
@@ -1483,9 +1558,9 @@ WriteLiteral(" class=\"content-grid-item col-sm-4 col-md-2 center\"");
 
 WriteLiteral(">\r\n                        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 24207), Tuple.Create("\"", 24272)
-, Tuple.Create(Tuple.Create("", 24213), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/logos/insurance-logo-1.png")
-, 24213), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 25264), Tuple.Create("\"", 25329)
+, Tuple.Create(Tuple.Create("", 25270), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/logos/insurance-logo-1.png")
+, 25270), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");
@@ -1496,9 +1571,9 @@ WriteLiteral(" class=\"content-grid-item col-sm-4 col-md-2 center\"");
 
 WriteLiteral(">\r\n                        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 24435), Tuple.Create("\"", 24500)
-, Tuple.Create(Tuple.Create("", 24441), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/logos/insurance-logo-2.png")
-, 24441), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 25492), Tuple.Create("\"", 25557)
+, Tuple.Create(Tuple.Create("", 25498), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/logos/insurance-logo-2.png")
+, 25498), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");
@@ -1509,9 +1584,9 @@ WriteLiteral(" class=\"content-grid-item col-sm-4 col-md-2 center\"");
 
 WriteLiteral(">\r\n                        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 24663), Tuple.Create("\"", 24728)
-, Tuple.Create(Tuple.Create("", 24669), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/logos/insurance-logo-3.png")
-, 24669), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 25720), Tuple.Create("\"", 25785)
+, Tuple.Create(Tuple.Create("", 25726), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/logos/insurance-logo-3.png")
+, 25726), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");
@@ -1522,9 +1597,9 @@ WriteLiteral(" class=\"content-grid-item col-sm-4 col-md-2 center\"");
 
 WriteLiteral(">\r\n                        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 24891), Tuple.Create("\"", 24956)
-, Tuple.Create(Tuple.Create("", 24897), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/logos/insurance-logo-4.png")
-, 24897), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 25948), Tuple.Create("\"", 26013)
+, Tuple.Create(Tuple.Create("", 25954), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/logos/insurance-logo-4.png")
+, 25954), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");
@@ -1535,9 +1610,9 @@ WriteLiteral(" class=\"content-grid-item col-sm-4 col-md-2 center\"");
 
 WriteLiteral(">\r\n                        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 25119), Tuple.Create("\"", 25184)
-, Tuple.Create(Tuple.Create("", 25125), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/logos/insurance-logo-5.png")
-, 25125), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 26176), Tuple.Create("\"", 26241)
+, Tuple.Create(Tuple.Create("", 26182), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/logos/insurance-logo-5.png")
+, 26182), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");
@@ -1548,9 +1623,9 @@ WriteLiteral(" class=\"content-grid-item col-sm-4 col-md-2 center\"");
 
 WriteLiteral(">\r\n                        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 25347), Tuple.Create("\"", 25412)
-, Tuple.Create(Tuple.Create("", 25353), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/logos/insurance-logo-6.png")
-, 25353), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 26404), Tuple.Create("\"", 26469)
+, Tuple.Create(Tuple.Create("", 26410), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/logos/insurance-logo-6.png")
+, 26410), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");

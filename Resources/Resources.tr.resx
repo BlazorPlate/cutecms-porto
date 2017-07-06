@@ -1677,4 +1677,7 @@
   <data name="Saturday" xml:space="preserve">
     <value>Cumartesi</value>
   </data>
+  <data name="SubTitle" xml:space="preserve">
+    <value>Altyazı</value>
+  </data>
 </root>

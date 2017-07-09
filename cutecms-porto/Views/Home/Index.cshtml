@@ -5,7 +5,9 @@
 @{
     CMSEntities cmsDb = new CMSEntities();
     IdentityEntities IdentityDb = new IdentityEntities();
-    List<ListItem> openingHours = Model.ContentLists.Where(c => c.Code.Trim().Equals("opening-hours") && c.Visible).FirstOrDefault()?.ListItems.ToList() ?? new List<ListItem>();
+    var openingHours = Model.ContentLists.Where(c => c.Code.Trim().Equals("opening-hours") && c.Visible).FirstOrDefault()?.ListItems ?? new List<ListItem>();
+    var shortcutContents = Model.Contents.Where(c => c.HasShortcut);
+
 }
 @section Styles{
     <!-- Current Page CSS -->
@@ -68,7 +70,7 @@
                             </div>
                             <div class="feature-box-info ml-md">
                                 <label class="font-weight-light">@Resources.Resources.EmergencyCase</label>
-                                <strong class="font-weight-normal">(962)5399-0990</strong>
+                                <strong class="font-weight-normal">@(OrganizationData.Organization?.Telephone)</strong>
                             </div>
                         </div>
                     </a>
@@ -77,20 +79,11 @@
                     <div class="expanded-info p-xlg background-color-primary">
                         @foreach (var item in openingHours)
                         {
-                            <div class="info custom-info">
-                                <span>@item.Title</span>
-                                <span>@item.SubTitle</span>
+                            <div class="info custom-info log-in-info">
+                                <div style="color:white" class="bold">@item.Title</div>
+                                <div style="color:white">@item.SubTitle</div>
                             </div>
                         }
-
-                        <div class="info custom-info">
-                            <span>Saturday</span>
-                            <span>9:30 am to 1:00 pm</span>
-                        </div>
-                        <div class="info custom-info">
-                            <span>Sunday</span>
-                            <span>Closed</span>
-                        </div>
                     </div>
                     <h5 class="m-none">
                         @Resources.Resources.OpeningHours
@@ -141,9 +134,6 @@
                     <div class="expanded-info p-xlg background-color-primary">
                         <div class="table">
                             <div class="row">
-
-
-
                                 @foreach (var item in openingHours)
                                 {
                                     <div class="info custom-info log-in-info">
@@ -153,18 +143,6 @@
                                 }
                             </div>
                         </div>
-                        @*<div class="info custom-info">
-                                <span>@Resources.Resources.Monday-@Resources.Resources.Friday</span>
-                                <span>8:30 am to 5:00 pm</span>
-                            </div>
-                            <div class="info custom-info">
-                                <span>Saturday</span>
-                                <span>9:30 am to 1:00 pm</span>
-                            </div>
-                            <div class="info custom-info">
-                                <span>Sunday</span>
-                                <span>Closed</span>
-                            </div>*@
                     </div>
                     <h5 class="m-none">
                         @Resources.Resources.OpeningHours
@@ -179,7 +157,7 @@
                             </div>
                             <div class="feature-box-info ml-md">
                                 <label class="font-weight-light">@Resources.Resources.EmergencyCase</label>
-                                <strong class="font-weight-normal">(962)5399-0990</strong>
+                                <strong class="font-weight-normal">@(OrganizationData.Organization?.Telephone)</strong>
                             </div>
                         </div>
                     </a>
@@ -187,19 +165,23 @@
 
             }
         </div>
-        <div class="row mt-xlg pt-xlg mb-xlg pb-xs">
-            <div class="col-sm-8 col-md-8">
-                <h2 class="font-weight-semibold mb-xs">About Us</h2>
-                <p class="lead font-weight-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        @foreach (var item in shortcutContents)
+        {
+            <div class="row mt-xlg pt-xlg mb-xlg pb-xs">
+                <div class="col-sm-8 col-md-8">
+                    <h2 class="font-weight-semibold mb-xs">About Us</h2>
+                    <p class="lead font-weight-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit, leo vitae interdum pretium, tortor risus dapibus tortor, eu suscipit orci leo sed nisl. Integer et ipsum eu nulla auctor mattis sit amet in diam. Vestibulum non ornare arcu. Class aptent taciti sociosqu ad...</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit, leo vitae interdum pretium, tortor risus dapibus tortor, eu suscipit orci leo sed nisl. Integer et ipsum eu nulla auctor mattis sit amet in diam. Vestibulum non ornare arcu. Class aptent taciti sociosqu ad...</p>
 
-                <a class="btn btn-borders btn-quaternary custom-button text-uppercase mt-lg mb-lg font-weight-bold">read more</a>
+                    <a class="btn btn-borders btn-quaternary custom-button text-uppercase mt-lg mb-lg font-weight-bold">read more</a>
+                </div>
+                <div class="col-sm-4 col-md-4">
+                    <img src="~/assets/porto/img/demos/medical/gallery/gallery-1.jpg" alt="" class="img-responsive box-shadow-custom" />
+                </div>
             </div>
-            <div class="col-sm-4 col-md-4">
-                <img src="~/assets/porto/img/demos/medical/gallery/gallery-1.jpg" alt="" class="img-responsive box-shadow-custom" />
-            </div>
-        </div>
+        }
+
     </div>
 </section>
 <section class="section section-no-border">

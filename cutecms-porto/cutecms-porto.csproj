@@ -8733,7 +8733,8 @@
     <Folder Include="fileman\Uploads\Documents\Identity\Employees\Biography\" />
     <Folder Include="fileman\Uploads\Documents\RMS\Applicants\Attachments\" />
     <Folder Include="fileman\Uploads\FLV\" />
-    <Folder Include="fileman\Uploads\Images\CMS\Images\Thumbs\" />
+    <Folder Include="fileman\Uploads\Images\CMS\Contents\Images\" />
+    <Folder Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\" />
     <Folder Include="fileman\Uploads\Images\CMS\ListItems\Thumbs\" />
     <Folder Include="fileman\Uploads\Images\Identity\Departments\Icons\" />
     <Folder Include="fileman\Uploads\Images\Identity\Departments\Images\" />

@@ -1677,7 +1677,7 @@
   <data name="Saturday" xml:space="preserve">
     <value>Thứ Bảy</value>
   </data>
-  <data name="SubTitle" xml:space="preserve">
+  <data name="Subtitle" xml:space="preserve">
     <value>Phụ đề</value>
   </data>
 </root>

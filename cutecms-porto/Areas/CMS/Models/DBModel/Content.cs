@@ -9,9 +9,12 @@
 
 namespace cutecms_porto.Areas.CMS.Models.DBModel
 {
+    using cutecms_porto.Helpers;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Web;
     using System.Web.Mvc;
     public partial class Content
     {
@@ -28,11 +31,17 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
         [Display(Name = "Title", ResourceType = typeof(Resources.Resources))]
         public string Title { get; set; }
+        [Display(Name = "Subtitle", ResourceType = typeof(Resources.Resources))]
+        public string Subtitle { get; set; }
         [Display(Name = "MetaDescription", ResourceType = typeof(Resources.Resources))]
         public string MetaDescription { get; set; }
         [AllowHtml]
         [Display(Name = "MainContent", ResourceType = typeof(Resources.Resources))]
         public string MainContent { get; set; }
+        [Display(Name = "ImageName", ResourceType = typeof(Resources.Resources))]
+        public string ImageName { get; set; }
+        [Display(Name = "ImagePath", ResourceType = typeof(Resources.Resources))]
+        public string ImagePath { get; set; }
         [Display(Name = "Location", ResourceType = typeof(Resources.Resources))]
         public string Location { get; set; }
         [Display(Name = "AbsolutePath", ResourceType = typeof(Resources.Resources))]
@@ -86,7 +95,10 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
         public Nullable<int> ParentMenuItemId { get; set; }
         [Display(Name = "StatusId", ResourceType = typeof(Resources.Resources))]
         public int StatusId { get; set; }
-
+        [ValidateImage]
+        [Display(Name = "ImagePath", ResourceType = typeof(Resources.Resources))]
+        [NotMapped]
+        public HttpPostedFileBase Image { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ContentGallery> ContentGalleries { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

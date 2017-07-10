@@ -9,6 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Web;
@@ -189,12 +191,12 @@ namespace cutecms_porto.Areas.CMS.Controllers
         // properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,ContentTypeId,Code,Title,MainContent,Location,MetaDescription,TranslationId,LanguageId,IsUrgent,UrgentExpiredOn,HasShortcut,ShortcutTitle,CssClass,Ordinal,StartDate,EndDate,PublishedOn,ExpiredOn,ParentMenuItemId,HasMenuItem,RoleVID,StatusId")] Content content)
+        public ActionResult Create([Bind(Include = "Id,ContentTypeId,Code,Title,Subtitle,MainContent,Location,MetaDescription,Image,TranslationId,LanguageId,IsUrgent,UrgentExpiredOn,HasShortcut,ShortcutTitle,CssClass,Ordinal,StartDate,EndDate,PublishedOn,ExpiredOn,ParentMenuItemId,HasMenuItem,RoleVID,StatusId")] Content content)
         {
             var contentStatus = db.CMSStatuses.Find(content.StatusId);
             if (contentStatus.Code.Trim().Equals("published"))
                 content.PublishedOn = DateTime.Now;
-            content.PublishedOn = DateTime.Now;
+            content.PublishedOn = DateTime.Now; 
             if (content.PublishedOn != null && content.StartDate != null)
             {
                 if (content.PublishedOn > content.StartDate)
@@ -207,6 +209,19 @@ namespace cutecms_porto.Areas.CMS.Controllers
                 if (content.ExpiredOn < content.EndDate)
                 {
                     ModelState.AddModelError("InvalidExpiryDate", Resources.Resources.InvalidExpiryDate);
+                }
+            }
+            if (content.Image != null && content.Image.ContentLength > 0)
+            {
+                var extension = Path.GetExtension(content.Image.FileName);
+                var newFileName = Helpers.StringHelper.CleanFileName(content.Title + extension);
+                //var newFileName = listItem.Title + extension;
+                var path = String.Format("/fileman/Uploads/Images/CMS/Contents/Images/{0}", newFileName);
+                content.ImagePath = path;
+                content.ImageName = newFileName;
+                using (var img = System.Drawing.Image.FromStream(content.Image.InputStream))
+                {
+                    ImageUploaderHelper.SaveImageToFolder(img, extension, new Size(361, 298), content.ImagePath);
                 }
             }
             if (ModelState.IsValid)
@@ -354,7 +369,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
         // properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,ContentTypeId,Title,Code,MainContent,Location,LanguageId,UrlCode,IsPublished,MetaDescription,Author,ModifiedBy,PublishedOn,CreatedOn,ModifiedOn,TranslationId,IsTranslated,IsUrgent,UrgentExpiredOn,HasShortcut,ShortcutTitle,CssClass,Ordinal,StartDate,EndDate,PublishedOn,ExpiredOn,ParentMenuItemId,HasMenuItem,RoleVID,StatusId")] Content content, string status)
+        public ActionResult Edit([Bind(Include = "Id,ContentTypeId,Title,Subtitle,Code,MainContent,Location,LanguageId,UrlCode,IsPublished,MetaDescription,Image,Author,ModifiedBy,PublishedOn,CreatedOn,ModifiedOn,TranslationId,IsTranslated,IsUrgent,UrgentExpiredOn,HasShortcut,ShortcutTitle,CssClass,Ordinal,StartDate,EndDate,PublishedOn,ExpiredOn,ParentMenuItemId,HasMenuItem,RoleVID,StatusId")] Content content, string status)
         {
             var contentStatus = db.CMSStatuses.Find(content.StatusId);
             if (contentStatus.Code.Trim().Equals("published") && content.PublishedOn == null)
@@ -373,6 +388,19 @@ namespace cutecms_porto.Areas.CMS.Controllers
                 if (content.ExpiredOn < content.EndDate)
                 {
                     ModelState.AddModelError("InvalidExpiryDate", Resources.Resources.InvalidExpiryDate);
+                }
+            }
+            if (content.Image != null && content.Image.ContentLength > 0)
+            {
+                var extension = Path.GetExtension(content.Image.FileName);
+                var newFileName = Helpers.StringHelper.CleanFileName(content.Title + extension);
+                //var newFileName = listItem.Title + extension;
+                var path = String.Format("/fileman/Uploads/Images/CMS/Contents/Images/{0}", newFileName);
+                content.ImagePath = path;
+                content.ImageName = newFileName;
+                using (var img = System.Drawing.Image.FromStream(content.Image.InputStream))
+                {
+                    ImageUploaderHelper.SaveImageToFolder(img, extension, new Size(361, 298), content.ImagePath);
                 }
             }
             if (ModelState.IsValid)

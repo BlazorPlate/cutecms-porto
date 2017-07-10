@@ -27,12 +27,7 @@
         <AssociationConnector Association="CuteCMSDBModel.FK_MenuItems_MenuItems1" />
         <AssociationConnector Association="CuteCMSDBModel.FK_MenuItems_Menus" />
         <AssociationConnector Association="CuteCMSDBModel.FK_MenuItems_Statuses" />
-        <EntityTypeShape EntityType="CuteCMSDBModel.Content" Width="1.5" PointX="11.25" PointY="18.875" />
-        <AssociationConnector Association="CuteCMSDBModel.FK_Contents_ContentTypes" />
-        <AssociationConnector Association="CuteCMSDBModel.FK_Contents_MenuItems" />
-        <AssociationConnector Association="CuteCMSDBModel.FK_Contents_Statuses" />
         <EntityTypeShape EntityType="CuteCMSDBModel.ContentGallery" Width="1.5" PointX="15.75" PointY="12.75" />
-        <AssociationConnector Association="CuteCMSDBModel.FK_ContentGalleries_Contents" />
         <EntityTypeShape EntityType="CuteCMSDBModel.Category" Width="1.5" PointX="5.75" PointY="1.75" />
         <EntityTypeShape EntityType="CuteCMSDBModel.Gallery" Width="1.5" PointX="6.375" PointY="15" />
         <AssociationConnector Association="CuteCMSDBModel.FK_ContentGalleries_Galleries" />
@@ -45,7 +40,6 @@
         <EntityTypeShape EntityType="CuteCMSDBModel.CMSLanguage" Width="1.5" PointX="0.75" PointY="13.625" />
         <AssociationConnector Association="CuteCMSDBModel.FK_CategoryTerms_Categories" />
         <AssociationConnector Association="CuteCMSDBModel.FK_CategoryTerms_Languages" />
-        <AssociationConnector Association="CuteCMSDBModel.FK_Contents_Languages" />
         <AssociationConnector Association="CuteCMSDBModel.FK_ContentTypeTerms_Languages" />
         <AssociationConnector Association="CuteCMSDBModel.FK_GalleryTerms_Languages" />
         <AssociationConnector Association="CuteCMSDBModel.FK_MenuItems_Languages" />
@@ -53,7 +47,6 @@
         <AssociationConnector Association="CuteCMSDBModel.FK_StatusTerms_Languages" />
         <AssociationConnector Association="CuteCMSDBModel.FK_TagTerms_Languages" />
         <EntityTypeShape EntityType="CuteCMSDBModel.ContentList" Width="1.5" PointX="13.5" PointY="21.625" />
-        <AssociationConnector Association="CuteCMSDBModel.FK_ContentLists_Contents" />
         <EntityTypeShape EntityType="CuteCMSDBModel.CMSDepartment" Width="1.5" PointX="0.75" PointY="1" />
         <AssociationConnector Association="CuteCMSDBModel.FK_Departments_Departments" />
         <EntityTypeShape EntityType="CuteCMSDBModel.CMSDepartmentTerm" Width="1.5" PointX="6" PointY="6.375" />
@@ -62,8 +55,15 @@
         <EntityTypeShape EntityType="CuteCMSDBModel.ImageFileTerm" Width="1.5" PointX="9" PointY="14.75" />
         <AssociationConnector Association="CuteCMSDBModel.FK_ImageFileTerms_ImageFiles" />
         <AssociationConnector Association="CuteCMSDBModel.FK_ImageFileTerms_Languages" />
+        <EntityTypeShape EntityType="CuteCMSDBModel.Content" Width="1.5" PointX="11.25" PointY="15" />
         <EntityTypeShape EntityType="CuteCMSDBModel.ListItem" Width="1.5" PointX="15.75" PointY="21.125" />
+        <AssociationConnector Association="CuteCMSDBModel.FK_ContentGalleries_Contents" />
+        <AssociationConnector Association="CuteCMSDBModel.FK_ContentLists_Contents" />
         <AssociationConnector Association="CuteCMSDBModel.FK_ListItems_ContentLists" />
+        <AssociationConnector Association="CuteCMSDBModel.FK_Contents_ContentTypes" />
+        <AssociationConnector Association="CuteCMSDBModel.FK_Contents_Languages" />
+        <AssociationConnector Association="CuteCMSDBModel.FK_Contents_MenuItems" />
+        <AssociationConnector Association="CuteCMSDBModel.FK_Contents_Statuses" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

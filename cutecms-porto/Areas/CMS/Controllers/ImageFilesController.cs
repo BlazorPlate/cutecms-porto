@@ -70,8 +70,8 @@ namespace cutecms_porto.Areas.CMS.Controllers
                         imageFile.MIME = file.ContentType;
                         imageFile.CreatedOn = DateTime.Now;
                         imageFile.GalleryId = imageWithTagsVM.GalleryId;
-                        imageFile.ThumbPath = String.Format("/fileman/Uploads/Images/CMS/Images/Thumbs/{0}", fileName);
-                        imageFile.FilePath = String.Format("/fileman/Uploads/Images/CMS/Images/{0}", fileName);
+                        imageFile.ThumbPath = String.Format("/fileman/Uploads/Images/CMS/ImageFiles/Thumbs/{0}", fileName);
+                        imageFile.FilePath = String.Format("/fileman/Uploads/Images/CMS/ImageFiles/{0}", fileName);
                         using (var img = System.Drawing.Image.FromStream(file.InputStream))
                         {
                             if (width == null)

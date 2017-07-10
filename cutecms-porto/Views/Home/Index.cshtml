@@ -81,7 +81,7 @@
                         {
                             <div class="info custom-info log-in-info">
                                 <div style="color:white" class="bold">@item.Title</div>
-                                <div style="color:white">@item.SubTitle</div>
+                                <div style="color:white">@item.Subtitle</div>
                             </div>
                         }
                     </div>
@@ -138,7 +138,7 @@
                                 {
                                     <div class="info custom-info log-in-info">
                                         <div style="color:white" class="bold">@item.Title</div>
-                                        <div style="color:white">@item.SubTitle</div>
+                                        <div style="color:white">@item.Subtitle</div>
                                     </div>
                                 }
                             </div>
@@ -169,15 +169,15 @@
         {
             <div class="row mt-xlg pt-xlg mb-xlg pb-xs">
                 <div class="col-sm-8 col-md-8">
-                    <h2 class="font-weight-semibold mb-xs">About Us</h2>
-                    <p class="lead font-weight-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h2 class="font-weight-semibold mb-xs">@item.Title</h2>
+                    <p class="lead font-weight-normal">@item.Subtitle</p>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit, leo vitae interdum pretium, tortor risus dapibus tortor, eu suscipit orci leo sed nisl. Integer et ipsum eu nulla auctor mattis sit amet in diam. Vestibulum non ornare arcu. Class aptent taciti sociosqu ad...</p>
+                    <p>@item.MainContent.StripHtml().Chop(300).Trim()</p>
 
-                    <a class="btn btn-borders btn-quaternary custom-button text-uppercase mt-lg mb-lg font-weight-bold">read more</a>
+                    <a class="btn btn-borders btn-quaternary custom-button text-uppercase mt-lg mb-lg font-weight-bold"  href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })" >read more</a>
                 </div>
                 <div class="col-sm-4 col-md-4">
-                    <img src="~/assets/porto/img/demos/medical/gallery/gallery-1.jpg" alt="" class="img-responsive box-shadow-custom" />
+                    <img src="@item.ImagePath" alt="@item.ImageName" class="img-responsive box-shadow-custom" />
                 </div>
             </div>
         }

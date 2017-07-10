@@ -28,11 +28,17 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
         [Display(Name = "Title", ResourceType = typeof(Resources.Resources))]
         public string Title { get; set; }
+        [Display(Name = "Subtitle", ResourceType = typeof(Resources.Resources))]
+        public string Subtitle { get; set; }
         [Display(Name = "MetaDescription", ResourceType = typeof(Resources.Resources))]
         public string MetaDescription { get; set; }
         [AllowHtml]
         [Display(Name = "MainContent", ResourceType = typeof(Resources.Resources))]
         public string MainContent { get; set; }
+        [Display(Name = "ThumbName", ResourceType = typeof(Resources.Resources))]
+        public string ThumbName { get; set; }
+        [Display(Name = "ThumbPath", ResourceType = typeof(Resources.Resources))]
+        public string ThumbPath { get; set; }
         [Display(Name = "Location", ResourceType = typeof(Resources.Resources))]
         public string Location { get; set; }
         [Display(Name = "AbsolutePath", ResourceType = typeof(Resources.Resources))]

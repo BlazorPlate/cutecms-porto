@@ -240,7 +240,7 @@ WriteLiteral("            ");
 
             
             #line 30 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
-       Write(Html.LabelFor(model => model.SubTitle, htmlAttributes: new { @class = "control-label col-md-2" }));
+       Write(Html.LabelFor(model => model.Subtitle, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
             #line default
@@ -255,7 +255,7 @@ WriteLiteral("                ");
 
             
             #line 32 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
-           Write(Html.EditorFor(model => model.SubTitle, new { htmlAttributes = new { @class = "form-control" } }));
+           Write(Html.EditorFor(model => model.Subtitle, new { htmlAttributes = new { @class = "form-control" } }));
 
             
             #line default
@@ -266,7 +266,7 @@ WriteLiteral("                ");
 
             
             #line 33 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
-           Write(Html.ValidationMessageFor(model => model.SubTitle, "", new { @class = "text-danger" }));
+           Write(Html.ValidationMessageFor(model => model.Subtitle, "", new { @class = "text-danger" }));
 
             
             #line default

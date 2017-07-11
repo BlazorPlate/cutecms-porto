@@ -1680,4 +1680,13 @@
   <data name="Subtitle" xml:space="preserve">
     <value>자막</value>
   </data>
+  <data name="ViewMore" xml:space="preserve">
+    <value>더 보기</value>
+  </data>
+  <data name="Doctors" xml:space="preserve">
+    <value>의사</value>
+  </data>
+  <data name="OurSpecialists" xml:space="preserve">
+    <value>우리의 전문가</value>
+  </data>
 </root>

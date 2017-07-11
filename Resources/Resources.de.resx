@@ -1680,4 +1680,13 @@
   <data name="Subtitle" xml:space="preserve">
     <value>Subtitel</value>
   </data>
+  <data name="ViewMore" xml:space="preserve">
+    <value>Mehr anzeigen</value>
+  </data>
+  <data name="Doctors" xml:space="preserve">
+    <value>Ärzte</value>
+  </data>
+  <data name="OurSpecialists" xml:space="preserve">
+    <value>Unsere Spezialisten</value>
+  </data>
 </root>

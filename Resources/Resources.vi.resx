@@ -1680,4 +1680,13 @@
   <data name="Subtitle" xml:space="preserve">
     <value>Phụ đề</value>
   </data>
+  <data name="ViewMore" xml:space="preserve">
+    <value>Xem thêm</value>
+  </data>
+  <data name="Doctors" xml:space="preserve">
+    <value>Các bác sĩ</value>
+  </data>
+  <data name="OurSpecialists" xml:space="preserve">
+    <value>Bác Sĩ Chuyên Khoa</value>
+  </data>
 </root>

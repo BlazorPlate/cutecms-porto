@@ -1,4 +1,5 @@
 ﻿using cutecms_porto.Areas.CMS.Models.DBModel;
+using cutecms_porto.Areas.Identity.Models.DBModel;
 using System.Collections.Generic;
 namespace cutecms_porto.Models
 {
@@ -9,6 +10,7 @@ namespace cutecms_porto.Models
         //public List<Event> Events { get; set; }
         public IEnumerable<Content> Contents { get; set; }
         public IEnumerable<ContentList> ContentLists { get; internal set; }
+        public IEnumerable<IdentityDepartmentTerm> DepartmentTerms { get; internal set; }
         #endregion Properties
     }
 }

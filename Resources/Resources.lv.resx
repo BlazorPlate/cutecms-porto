@@ -1680,4 +1680,13 @@
   <data name="Subtitle" xml:space="preserve">
     <value>Apakšvirsraksts</value>
   </data>
+  <data name="ViewMore" xml:space="preserve">
+    <value>Skatīt vairāk!</value>
+  </data>
+  <data name="Doctors" xml:space="preserve">
+    <value>Ārsti!</value>
+  </data>
+  <data name="OurSpecialists" xml:space="preserve">
+    <value>Mūsu speciālisti</value>
+  </data>
 </root>

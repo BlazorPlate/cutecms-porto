@@ -1680,4 +1680,13 @@
   <data name="Subtitle" xml:space="preserve">
     <value>उपशीर्शक</value>
   </data>
+  <data name="ViewMore" xml:space="preserve">
+    <value>होर दिक्खो</value>
+  </data>
+  <data name="Doctors" xml:space="preserve">
+    <value>चिकित्सक</value>
+  </data>
+  <data name="OurSpecialists" xml:space="preserve">
+    <value>विशेषज्ञ</value>
+  </data>
 </root>

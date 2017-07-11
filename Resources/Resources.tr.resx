@@ -1680,4 +1680,13 @@
   <data name="Subtitle" xml:space="preserve">
     <value>Altyazı</value>
   </data>
+  <data name="ViewMore" xml:space="preserve">
+    <value>Daha fazla</value>
+  </data>
+  <data name="Doctors" xml:space="preserve">
+    <value>Videolar</value>
+  </data>
+  <data name="OurSpecialists" xml:space="preserve">
+    <value>Uzmanlarımız</value>
+  </data>
 </root>

@@ -14,6 +14,7 @@ namespace cutecms_porto.Areas.RMS.Models.DBModel
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Web;
+    using System.Web.Mvc;
 
     public partial class RMSDepartmentTerm
     {
@@ -24,6 +25,10 @@ namespace cutecms_porto.Areas.RMS.Models.DBModel
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
         [Display(Name = "Value", ResourceType = typeof(Resources.Resources))]
         public string Value { get; set; }
+        [Display(Name = "UrlSlug", ResourceType = typeof(Resources.Resources))]
+        public string UrlSlug { get; set; }
+        [Display(Name = "AbsolutePath", ResourceType = typeof(Resources.Resources))]
+        public string AbsolutePath { get; set; }
         [ValidateImage]
         [Display(Name = "Icon", ResourceType = typeof(Resources.Resources))]
         public HttpPostedFileBase Icon { get; set; }
@@ -33,6 +38,7 @@ namespace cutecms_porto.Areas.RMS.Models.DBModel
         public string IconPath { get; set; }
         [Display(Name = "Summary", ResourceType = typeof(Resources.Resources))]
         public string Summary { get; set; }
+        [AllowHtml]
         [Display(Name = "Description", ResourceType = typeof(Resources.Resources))]
         public string Description { get; set; }
         [ValidateImage]

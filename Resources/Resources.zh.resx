@@ -1680,4 +1680,13 @@
   <data name="Subtitle" xml:space="preserve">
     <value>字幕</value>
   </data>
+  <data name="ViewMore" xml:space="preserve">
+    <value>查看更多</value>
+  </data>
+  <data name="Doctors" xml:space="preserve">
+    <value>医生</value>
+  </data>
+  <data name="OurSpecialists" xml:space="preserve">
+    <value>专家</value>
+  </data>
 </root>

@@ -1680,4 +1680,13 @@
   <data name="Subtitle" xml:space="preserve">
     <value>العنوان الفرعي</value>
   </data>
+  <data name="ViewMore" xml:space="preserve">
+    <value>عرض المزيد</value>
+  </data>
+  <data name="Doctors" xml:space="preserve">
+    <value>الطاقم الطبي</value>
+  </data>
+  <data name="OurSpecialists" xml:space="preserve">
+    <value>الأخصائيين والاستشاريين</value>
+  </data>
 </root>

@@ -1680,4 +1680,13 @@
   <data name="Subtitle" xml:space="preserve">
     <value>Подзаглавие</value>
   </data>
+  <data name="ViewMore" xml:space="preserve">
+    <value>Виж повече</value>
+  </data>
+  <data name="Doctors" xml:space="preserve">
+    <value>Лекарски престилки</value>
+  </data>
+  <data name="OurSpecialists" xml:space="preserve">
+    <value>Нашите специалисти</value>
+  </data>
 </root>

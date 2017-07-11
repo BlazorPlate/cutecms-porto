@@ -1168,6 +1168,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Doctors.
+        /// </summary>
+        public static string Doctors {
+            get {
+                return ResourceManager.GetString("Doctors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Doctors Timetable.
         /// </summary>
         public static string DoctorsTimetable {
@@ -3103,6 +3112,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Our Specialists.
+        /// </summary>
+        public static string OurSpecialists {
+            get {
+                return ResourceManager.GetString("OurSpecialists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Our Staff Directory.
         /// </summary>
         public static string OurStaffDirectory {
@@ -4611,6 +4629,15 @@ namespace Resources {
         public static string ViewCV {
             get {
                 return ResourceManager.GetString("ViewCV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View more.
+        /// </summary>
+        public static string ViewMore {
+            get {
+                return ResourceManager.GetString("ViewMore", resourceCulture);
             }
         }
         

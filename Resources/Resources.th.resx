@@ -1680,4 +1680,13 @@
   <data name="Subtitle" xml:space="preserve">
     <value>คำบรรยาย/ซับ</value>
   </data>
+  <data name="ViewMore" xml:space="preserve">
+    <value>ดูทั้งหมด</value>
+  </data>
+  <data name="Doctors" xml:space="preserve">
+    <value>แพทย์</value>
+  </data>
+  <data name="OurSpecialists" xml:space="preserve">
+    <value>ผู้เชี่ยวชาญของเรา</value>
+  </data>
 </root>

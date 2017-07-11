@@ -1680,4 +1680,13 @@
   <data name="Subtitle" xml:space="preserve">
     <value>Podnadpis</value>
   </data>
+  <data name="ViewMore" xml:space="preserve">
+    <value>Zobrazit víc</value>
+  </data>
+  <data name="Doctors" xml:space="preserve">
+    <value>lékaři</value>
+  </data>
+  <data name="OurSpecialists" xml:space="preserve">
+    <value>Naši odborníci</value>
+  </data>
 </root>

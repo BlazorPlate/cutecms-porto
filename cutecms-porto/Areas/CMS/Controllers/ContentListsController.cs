@@ -26,7 +26,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            var contentLists = db.ContentLists.Include(c => c.Content).Where(cl => cl.ContentId == id);
+            var contentLists = db.ContentLists.Include(c => c.Content).Where(cl => cl.ContentId == id).OrderBy(c=>c.Ordinal);
             ViewBag.ContentId = id;
             return View(contentLists.ToList());
         }
@@ -62,7 +62,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
         // specific properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Code,Name,MainContent,Ordinal,Visible,ContentId")] ContentList contentList)
+        public ActionResult Create([Bind(Include = "Id,Code,Title,Subtitle,MainContent,Ordinal,Visible,HomeVisible,ContentId")] ContentList contentList)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +97,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
         // specific properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Code,Name,MainContent,Ordinal,Visible,ContentId")] ContentList contentList)
+        public ActionResult Edit([Bind(Include = "Id,Code,Title,Subtitle,MainContent,Ordinal,Visible,HomeVisible,ContentId")] ContentList contentList)
         {
             if (ModelState.IsValid)
             {

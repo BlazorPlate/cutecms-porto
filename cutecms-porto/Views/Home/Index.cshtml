@@ -253,7 +253,6 @@
                     {
                         string personalTitle = empInDept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? empInDept.Employee.PersonalTitle.Code;
                         var employee = IdentityDb.Employees.Where(e => e.Language.CultureName.Equals(Thread.CurrentThread.CurrentCulture.Name) && e.TranslationId == empInDept.Employee.TranslationId).FirstOrDefault();
-
                         <div class="pr-sm pl-sm">
                             <a href="@Url.Action("MemberProfile", "Staff", new { id = empInDept.Employee.TranslationId })" data-ajax-on-page class="text-decoration-none">
                                 <span class="thumb-info thumb-info-no-zoom thumb-info-hide-wrapper-bg">
@@ -346,30 +345,34 @@
                 <p class="lead font-weight-normal">Major insurance providers accepted</p>
             </div>
         </div>
-        <div class="row mb-xlg pb-xlg">
-            <div class="content-grid pl-md pr-md">
-                <div class="content-grid-row">
-                    <div class="content-grid-item col-sm-4 col-md-2 center">
-                        <img src="~/assets/porto/img/demos/medical/logos/insurance-logo-1.png" class="img-responsive" />
+            <div class="row center">
+                <div class="owl-carousel owl-theme" data-plugin-options="{'items': 6, 'autoplay': true, 'autoplayTimeout': 3000}">
+                    <div>
+                        <img class="img-responsive" src="img/logos/logo-1.png" alt="">
                     </div>
-                    <div class="content-grid-item col-sm-4 col-md-2 center">
-                        <img src="~/assets/porto/img/demos/medical/logos/insurance-logo-2.png" class="img-responsive" />
+                    <div>
+                        <img class="img-responsive" src="img/logos/logo-2.png" alt="">
                     </div>
-                    <div class="content-grid-item col-sm-4 col-md-2 center">
-                        <img src="~/assets/porto/img/demos/medical/logos/insurance-logo-3.png" class="img-responsive" />
+                    <div>
+                        <img class="img-responsive" src="img/logos/logo-3.png" alt="">
                     </div>
-                    <div class="content-grid-item col-sm-4 col-md-2 center">
-                        <img src="~/assets/porto/img/demos/medical/logos/insurance-logo-4.png" class="img-responsive" />
+                    <div>
+                        <img class="img-responsive" src="img/logos/logo-4.png" alt="">
                     </div>
-                    <div class="content-grid-item col-sm-4 col-md-2 center">
-                        <img src="~/assets/porto/img/demos/medical/logos/insurance-logo-5.png" class="img-responsive" />
+                    <div>
+                        <img class="img-responsive" src="img/logos/logo-5.png" alt="">
                     </div>
-                    <div class="content-grid-item col-sm-4 col-md-2 center">
-                        <img src="~/assets/porto/img/demos/medical/logos/insurance-logo-6.png" class="img-responsive" />
+                    <div>
+                        <img class="img-responsive" src="img/logos/logo-6.png" alt="">
+                    </div>
+                    <div>
+                        <img class="img-responsive" src="img/logos/logo-4.png" alt="">
+                    </div>
+                    <div>
+                        <img class="img-responsive" src="img/logos/logo-2.png" alt="">
                     </div>
                 </div>
             </div>
-        </div>
     </div>
 </section>
 <section class="section-secondary">

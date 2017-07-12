@@ -96,9 +96,9 @@
                 {
                     string active = "active";
                     int count = 0;
-                    if (!contentList.Name.Equals(Model.Title))
+                    if (!contentList.Title.Equals(Model.Title))
                     {
-                        <h2>@contentList.Name</h2>
+                        <h2>@contentList.Title</h2>
                     }
                     @Html.Raw(HttpUtility.HtmlDecode(contentList.MainContent))
                     <div class="toggle toggle-quaternary" data-plugin-toggle>

@@ -58,7 +58,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                 throw new HttpException(400, "Bad Request");
             }
             ViewBag.ContentListId = db.ContentLists.Find(id).Id;
-            ViewBag.ContentListCode = db.ContentLists.Find(id).Name;
+            ViewBag.ContentListCode = db.ContentLists.Find(id).Title;
             return View();
         }
 

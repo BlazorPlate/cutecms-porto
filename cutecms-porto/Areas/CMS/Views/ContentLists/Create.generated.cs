@@ -181,7 +181,7 @@ WriteLiteral("            ");
 
             
             #line 26 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
-       Write(Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" }));
+       Write(Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
             #line default
@@ -196,7 +196,7 @@ WriteLiteral("                ");
 
             
             #line 28 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
-           Write(Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } }));
+           Write(Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } }));
 
             
             #line default
@@ -207,7 +207,7 @@ WriteLiteral("                ");
 
             
             #line 29 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
-           Write(Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" }));
+           Write(Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" }));
 
             
             #line default
@@ -347,14 +347,14 @@ WriteLiteral(">\r\n                <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 2986), Tuple.Create("\"", 3021)
+WriteAttribute("value", Tuple.Create(" value=\"", 2989), Tuple.Create("\"", 3024)
             
             #line 55 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
-, Tuple.Create(Tuple.Create("", 2994), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Create
+, Tuple.Create(Tuple.Create("", 2997), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Create
             
             #line default
             #line hidden
-, 2994), false)
+, 2997), false)
 );
 
 WriteLiteral(" class=\"btn btn-default\"");

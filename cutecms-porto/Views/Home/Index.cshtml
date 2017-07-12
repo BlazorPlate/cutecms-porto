@@ -247,31 +247,31 @@
         </div>
         <div class="row mb-xlg">
             <div class="owl-carousel owl-theme nav-bottom rounded-nav pl-xs pr-xs" data-plugin-options="{'items': 4, 'loop': false, 'dots': false, 'nav': true}">
-               @foreach (var item in Model.DepartmentTerms.OrderBy(d=>d.Ordinal))
-               {
-                   foreach (var empInDept in item.Department.EmpInDepts.OrderBy(d=>d.Ordinal))
-                   {
-                       string personalTitle = empInDept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? empInDept.Employee.PersonalTitle.Code;
-                       var employee = IdentityDb.Employees.Where(e => e.Language.CultureName.Equals(Thread.CurrentThread.CurrentCulture.Name) && e.TranslationId == empInDept.Employee.TranslationId).FirstOrDefault();
+                @foreach (var item in Model.DepartmentTerms.OrderBy(d => d.Ordinal))
+                {
+                    foreach (var empInDept in item.Department.EmpInDepts.OrderBy(d => d.Ordinal))
+                    {
+                        string personalTitle = empInDept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? empInDept.Employee.PersonalTitle.Code;
+                        var employee = IdentityDb.Employees.Where(e => e.Language.CultureName.Equals(Thread.CurrentThread.CurrentCulture.Name) && e.TranslationId == empInDept.Employee.TranslationId).FirstOrDefault();
 
-                    <div class="pr-sm pl-sm">
-                        <a href="@Url.Action("MemberProfile", "Staff", new { id = empInDept.Employee.TranslationId })" data-ajax-on-page class="text-decoration-none">
-                            <span class="thumb-info thumb-info-no-zoom thumb-info-hide-wrapper-bg">
-                                <span class="thumb-info-wrapper m-none">
-                                    <img alt="@empInDept.Employee.PersonalPhotoName" src="@(!File.Exists(Server.MapPath(employee.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : @employee.PersonalPhotoPath)">
-                                </span>
-                                <span class="thumb-info-caption p-md pt-xlg pb-xlg">
-                                    <span class="custom-thumb-info-title">
-                                        <span class="custom-thumb-info-type font-weight-light text-md">@empInDept.Department.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value</span>
-                                        <span class="custom-thumb-info-inner font-weight-semibold text-lg">@personalTitle @employee.FullName</span>
-                                        @*<i class="icon-arrow-right-circle icons font-weight-semibold text-lg "></i>*@
+                        <div class="pr-sm pl-sm">
+                            <a href="@Url.Action("MemberProfile", "Staff", new { id = empInDept.Employee.TranslationId })" data-ajax-on-page class="text-decoration-none">
+                                <span class="thumb-info thumb-info-no-zoom thumb-info-hide-wrapper-bg">
+                                    <span class="thumb-info-wrapper m-none">
+                                        <img alt="@empInDept.Employee.PersonalPhotoName" src="@(!File.Exists(Server.MapPath(employee.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : @employee.PersonalPhotoPath)">
+                                    </span>
+                                    <span class="thumb-info-caption p-md pt-xlg pb-xlg">
+                                        <span class="custom-thumb-info-title">
+                                            <span class="custom-thumb-info-type font-weight-light text-md">@empInDept.Department.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value</span>
+                                            <span class="custom-thumb-info-inner font-weight-semibold text-lg">@personalTitle @employee.FullName</span>
+                                            @*<i class="icon-arrow-right-circle icons font-weight-semibold text-lg "></i>*@
+                                        </span>
                                     </span>
                                 </span>
-                            </span>
-                        </a>
-                    </div>
-                   }
-               }
+                            </a>
+                        </div>
+                    }
+                }
             </div>
         </div>
     </div>

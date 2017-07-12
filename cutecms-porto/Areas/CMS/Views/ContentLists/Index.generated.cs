@@ -79,7 +79,7 @@ WriteLiteral("            ");
 
             
             #line 15 "..\..\Areas\CMS\Views\ContentLists\Index.cshtml"
-       Write(Html.DisplayNameFor(model => model.Name));
+       Write(Html.DisplayNameFor(model => model.Title));
 
             
             #line default
@@ -150,7 +150,7 @@ WriteLiteral("                ");
 
             
             #line 35 "..\..\Areas\CMS\Views\ContentLists\Index.cshtml"
-           Write(Html.DisplayFor(modelItem => item.Name));
+           Write(Html.DisplayFor(modelItem => item.Title));
 
             
             #line default

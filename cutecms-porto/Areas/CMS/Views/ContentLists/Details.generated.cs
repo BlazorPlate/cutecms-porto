@@ -101,7 +101,7 @@ WriteLiteral("            ");
 
             
             #line 21 "..\..\Areas\CMS\Views\ContentLists\Details.cshtml"
-       Write(Html.DisplayNameFor(model => model.Name));
+       Write(Html.DisplayNameFor(model => model.Title));
 
             
             #line default
@@ -112,7 +112,7 @@ WriteLiteral("            ");
 
             
             #line 24 "..\..\Areas\CMS\Views\ContentLists\Details.cshtml"
-       Write(Html.DisplayFor(model => model.Name));
+       Write(Html.DisplayFor(model => model.Title));
 
             
             #line default

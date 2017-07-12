@@ -516,7 +516,7 @@ WriteLiteral("\r\n            <div>\r\n");
                 {
                     string active = "active";
                     int count = 0;
-                    if (!contentList.Name.Equals(Model.Title))
+                    if (!contentList.Title.Equals(Model.Title))
                     {
 
             
@@ -526,7 +526,7 @@ WriteLiteral("                        <h2>");
 
             
             #line 101 "..\..\Views\Pages\Content.cshtml"
-                       Write(contentList.Name);
+                       Write(contentList.Title);
 
             
             #line default
@@ -580,15 +580,15 @@ WriteLiteral(" data-plugin-toggle>\r\n");
             #line hidden
 WriteLiteral("                            <section");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 5201), Tuple.Create("\"", 5223)
-, Tuple.Create(Tuple.Create("", 5209), Tuple.Create("toggle", 5209), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 5203), Tuple.Create("\"", 5225)
+, Tuple.Create(Tuple.Create("", 5211), Tuple.Create("toggle", 5211), true)
             
             #line 111 "..\..\Views\Pages\Content.cshtml"
-, Tuple.Create(Tuple.Create(" ", 5215), Tuple.Create<System.Object, System.Int32>(active
+, Tuple.Create(Tuple.Create(" ", 5217), Tuple.Create<System.Object, System.Int32>(active
             
             #line default
             #line hidden
-, 5216), false)
+, 5218), false)
 );
 
 WriteLiteral(">\r\n                                <label>");
@@ -644,14 +644,14 @@ WriteLiteral(":</label>\r\n");
 
 WriteLiteral("                                        <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 5656), Tuple.Create("\"", 5672)
+WriteAttribute("href", Tuple.Create(" href=\"", 5658), Tuple.Create("\"", 5674)
             
             #line 119 "..\..\Views\Pages\Content.cshtml"
-, Tuple.Create(Tuple.Create("", 5663), Tuple.Create<System.Object, System.Int32>(item.Url
+, Tuple.Create(Tuple.Create("", 5665), Tuple.Create<System.Object, System.Int32>(item.Url
             
             #line default
             #line hidden
-, 5663), false)
+, 5665), false)
 );
 
 WriteLiteral(" target=\"_blank\"");
@@ -699,14 +699,14 @@ WriteLiteral(":</label>\r\n");
 
 WriteLiteral("                                    <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 5984), Tuple.Create("\"", 6018)
+WriteAttribute("href", Tuple.Create(" href=\"", 5986), Tuple.Create("\"", 6020)
             
             #line 125 "..\..\Views\Pages\Content.cshtml"
-, Tuple.Create(Tuple.Create("", 5991), Tuple.Create<System.Object, System.Int32>(Url.Content(item.FilePath)
+, Tuple.Create(Tuple.Create("", 5993), Tuple.Create<System.Object, System.Int32>(Url.Content(item.FilePath)
             
             #line default
             #line hidden
-, 5991), false)
+, 5993), false)
 );
 
 WriteLiteral(">");
@@ -777,36 +777,36 @@ WriteLiteral(" type=\"button\"");
 
 WriteLiteral(" class=\"btn btn-primary mr-xs mb-sm\"");
 
-WriteAttribute("title", Tuple.Create(" title=\"", 6447), Tuple.Create("\"", 6480)
+WriteAttribute("title", Tuple.Create(" title=\"", 6449), Tuple.Create("\"", 6482)
             
             #line 136 "..\..\Views\Pages\Content.cshtml"
-, Tuple.Create(Tuple.Create("", 6455), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Edit
+, Tuple.Create(Tuple.Create("", 6457), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Edit
             
             #line default
             #line hidden
-, 6455), false)
+, 6457), false)
 );
 
-WriteAttribute("value", Tuple.Create(" value=\"", 6481), Tuple.Create("\"", 6514)
+WriteAttribute("value", Tuple.Create(" value=\"", 6483), Tuple.Create("\"", 6516)
             
             #line 136 "..\..\Views\Pages\Content.cshtml"
-                                  , Tuple.Create(Tuple.Create("", 6489), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Edit
+                                  , Tuple.Create(Tuple.Create("", 6491), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Edit
             
             #line default
             #line hidden
-, 6489), false)
+, 6491), false)
 );
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 6515), Tuple.Create("\"", 6608)
-, Tuple.Create(Tuple.Create("", 6525), Tuple.Create("location.href=\'", 6525), true)
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 6517), Tuple.Create("\"", 6610)
+, Tuple.Create(Tuple.Create("", 6527), Tuple.Create("location.href=\'", 6527), true)
             
             #line 136 "..\..\Views\Pages\Content.cshtml"
-                                                                                     , Tuple.Create(Tuple.Create("", 6540), Tuple.Create<System.Object, System.Int32>(Url.Action("Edit", "Contents", new { area = "CMS",id = Model.Id })
+                                                                                     , Tuple.Create(Tuple.Create("", 6542), Tuple.Create<System.Object, System.Int32>(Url.Action("Edit", "Contents", new { area = "CMS",id = Model.Id })
             
             #line default
             #line hidden
-, 6540), false)
-, Tuple.Create(Tuple.Create("", 6607), Tuple.Create("\'", 6607), true)
+, 6542), false)
+, Tuple.Create(Tuple.Create("", 6609), Tuple.Create("\'", 6609), true)
 );
 
 WriteLiteral(" />\r\n");

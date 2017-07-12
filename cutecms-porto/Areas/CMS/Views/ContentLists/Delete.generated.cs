@@ -110,7 +110,7 @@ WriteLiteral("            ");
 
             
             #line 22 "..\..\Areas\CMS\Views\ContentLists\Delete.cshtml"
-       Write(Html.DisplayNameFor(model => model.Name));
+       Write(Html.DisplayNameFor(model => model.Title));
 
             
             #line default
@@ -121,7 +121,7 @@ WriteLiteral("            ");
 
             
             #line 25 "..\..\Areas\CMS\Views\ContentLists\Delete.cshtml"
-       Write(Html.DisplayFor(model => model.Name));
+       Write(Html.DisplayFor(model => model.Title));
 
             
             #line default
@@ -186,14 +186,14 @@ WriteLiteral(">\r\n            <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=", 1098), Tuple.Create("", 1132)
+WriteAttribute("value", Tuple.Create(" value=", 1100), Tuple.Create("", 1134)
             
             #line 38 "..\..\Areas\CMS\Views\ContentLists\Delete.cshtml"
-, Tuple.Create(Tuple.Create("", 1105), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Delete
+, Tuple.Create(Tuple.Create("", 1107), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Delete
             
             #line default
             #line hidden
-, 1105), false)
+, 1107), false)
 );
 
 WriteLiteral(" class=\"btn btn-default\"");

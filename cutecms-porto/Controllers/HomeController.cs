@@ -35,7 +35,7 @@ namespace cutecms_porto.Controllers
         {
             homePage.HomeGallery = cmsDb.ImageFiles.Include("Gallery").Include("ImageFileTerms").Include("ImageFileTerms.Language").Where(i => i.TenantId.Trim().Equals(Tenant.TenantId) && i.Gallery.HomeVisible && i.Gallery.Code.Trim().Equals("gallery-02")).OrderBy(i => i.Ordinal);
             homePage.Contents = cmsDb.Contents.Include("ContentType").Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && c.Status.Code.Trim().Equals("published") && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).OrderBy(c => c.Ordinal);
-            homePage.ContentLists = cmsDb.ContentLists.Include("Content").Include("ListItems").Where(c => c.Content.TenantId.Trim().Equals(Tenant.TenantId) && c.Content.Status.Code.Trim().Equals("published") && c.Content.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && c.Content.Code.Trim().Equals("home-list") && c.Visible && c.HomeVisible).OrderBy(c=>c.Ordinal);
+            homePage.ContentLists = cmsDb.ContentLists.Include("Content").Include("ListItems").Where(c => c.Content.TenantId.Trim().Equals(Tenant.TenantId) && c.Content.Status.Code.Trim().Equals("published") && c.Content.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && c.Content.Code.Trim().Equals("home-list") && c.Visible && c.HomeVisible).OrderBy(c => c.Ordinal);
             homePage.DepartmentTerms = identityDb.IdentityDepartmentTerms.Where(d => d.Visible);
             return View(homePage);
         }
@@ -50,7 +50,12 @@ namespace cutecms_porto.Controllers
             ViewBag.KeywordFilter = keywordFilter;
             ViewBag.ContentTypeId = contentTypeIdFilter;
             ViewBag.StatusId = statusIdFilter;
-            var contents = cmsDb.Contents.Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && (c.Title.Contains(keywordFilter.Trim()) || c.MainContent.Contains(keywordFilter.Trim()) || c.ContentLists.Any(cl => cl.MainContent.Contains(keywordFilter.Trim())) || string.IsNullOrEmpty(keywordFilter)) && (c.ContentTypeId == contentTypeIdFilter || contentTypeIdFilter == 0) && (c.StatusId == statusIdFilter || statusIdFilter == 0)).OrderBy(c => c.StartDate).ThenByDescending(c => c.PublishedOn);
+            var keywords = keywordFilter.Trim().Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+            List<Content> contents = new List<Content>();
+            foreach (var keyword in keywords)
+            {
+                contents.AddRange(cmsDb.Contents.Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && (c.Title.Contains(keyword) || c.MainContent.Contains(keyword.Trim()) || c.ContentLists.Any(cl => cl.MainContent.Contains(keywordFilter.Trim())) || string.IsNullOrEmpty(keywordFilter)) && (c.ContentTypeId == contentTypeIdFilter || contentTypeIdFilter == 0) && (c.StatusId == statusIdFilter || statusIdFilter == 0)).OrderBy(c => c.StartDate).ThenByDescending(c => c.PublishedOn));
+            }
             return View(contents.ToPagedList(pageNumber, 10));
         }
         public ActionResult Contact()

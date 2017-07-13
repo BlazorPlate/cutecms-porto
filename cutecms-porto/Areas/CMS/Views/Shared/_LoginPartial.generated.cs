@@ -186,6 +186,37 @@ WriteLiteral("></i> ");
             
             #line default
             #line hidden
+WriteLiteral("</a></li>  \r\n            <li");
+
+WriteLiteral(" role=\"separator\"");
+
+WriteLiteral(" class=\"divider\"");
+
+WriteLiteral("></li>\r\n            <li><a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 1164), Tuple.Create("\"", 1215)
+            
+            #line 17 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
+, Tuple.Create(Tuple.Create("", 1171), Tuple.Create<System.Object, System.Int32>(Url.Action("Index", "Home", new { area=""})
+            
+            #line default
+            #line hidden
+, 1171), false)
+);
+
+WriteLiteral("><i");
+
+WriteLiteral(" class=\"fa fa-arrow-circle-right\"");
+
+WriteLiteral("></i> ");
+
+            
+            #line 17 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
+                                                                                                           Write(Resources.Resources.Frontend);
+
+            
+            #line default
+            #line hidden
 WriteLiteral("</a></li>\r\n            <li");
 
 WriteLiteral(" role=\"separator\"");
@@ -203,7 +234,7 @@ WriteLiteral(" class=\"ti-power-off\"");
 WriteLiteral("></i> ");
 
             
-            #line 17 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
+            #line 19 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
                                                                                                             Write(Resources.Resources.LogOff);
 
             
@@ -212,13 +243,13 @@ WriteLiteral("></i> ");
 WriteLiteral("</a></li>\r\n");
 
             
-            #line 18 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
+            #line 20 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 18 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
+            #line 20 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
              using (Html.BeginForm("LogOff", "Account", new { area = "Identity", returnUrl = Request.Url.AbsolutePath }, FormMethod.Post, new { id = "logoutForm", style = "margin:0" }))
             {
                 
@@ -226,14 +257,14 @@ WriteLiteral("</a></li>\r\n");
             #line default
             #line hidden
             
-            #line 20 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
+            #line 22 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
            Write(Html.AntiForgeryToken());
 
             
             #line default
             #line hidden
             
-            #line 20 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
+            #line 22 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
                                         
             }
 
@@ -243,7 +274,7 @@ WriteLiteral("</a></li>\r\n");
 WriteLiteral("        </ul>\r\n    </li>\r\n");
 
             
-            #line 24 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
+            #line 26 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
 }
 else
 {
@@ -273,14 +304,14 @@ WriteLiteral(" class=\"dropdown-menu dropdown-user animated flipInY\"");
 
 WriteLiteral(">\r\n            <li><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1824), Tuple.Create("\"", 1889)
+WriteAttribute("href", Tuple.Create(" href=\"", 2034), Tuple.Create("\"", 2099)
             
-            #line 32 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
-, Tuple.Create(Tuple.Create("", 1831), Tuple.Create<System.Object, System.Int32>(Url.Action("Login", "Account", new { area = "Identity" })
+            #line 34 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
+, Tuple.Create(Tuple.Create("", 2041), Tuple.Create<System.Object, System.Int32>(Url.Action("Login", "Account", new { area = "Identity" })
             
             #line default
             #line hidden
-, 1831), false)
+, 2041), false)
 );
 
 WriteLiteral("><i");
@@ -290,7 +321,7 @@ WriteLiteral(" class=\"ti-key\"");
 WriteLiteral("></i> ");
 
             
-            #line 32 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
+            #line 34 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
                                                                                                        Write(Resources.Resources.LogOn);
 
             
@@ -302,14 +333,14 @@ WriteLiteral(" class=\"divider\"");
 
 WriteLiteral("></li>\r\n            <li><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2008), Tuple.Create("\"", 2076)
+WriteAttribute("href", Tuple.Create(" href=\"", 2218), Tuple.Create("\"", 2286)
             
-            #line 34 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
-, Tuple.Create(Tuple.Create("", 2015), Tuple.Create<System.Object, System.Int32>(Url.Action("Register", "Account", new { area = "Identity" })
+            #line 36 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
+, Tuple.Create(Tuple.Create("", 2225), Tuple.Create<System.Object, System.Int32>(Url.Action("Register", "Account", new { area = "Identity" })
             
             #line default
             #line hidden
-, 2015), false)
+, 2225), false)
 );
 
 WriteLiteral("><i");
@@ -319,7 +350,7 @@ WriteLiteral(" class=\"ti-user\"");
 WriteLiteral("></i> ");
 
             
-            #line 34 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
+            #line 36 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
                                                                                                            Write(Resources.Resources.Register);
 
             
@@ -328,7 +359,7 @@ WriteLiteral("></i> ");
 WriteLiteral("</a></li>\r\n        </ul>\r\n    </li>\r\n");
 
             
-            #line 37 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
+            #line 39 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
 }
 
             
@@ -357,13 +388,13 @@ WriteLiteral(" class=\"dropdown-menu animated flipInY\"");
 WriteLiteral(">\r\n");
 
             
-            #line 43 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
+            #line 45 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 43 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
+            #line 45 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
          foreach (var item in cmsDb.CMSLanguages.Where(l => l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal))
         {
             CultureInfo itemCultureInfo = CultureInfo.CreateSpecificCulture(item.CultureName.Trim());
@@ -374,49 +405,49 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("            <li><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2705), Tuple.Create("\"", 2867)
+WriteAttribute("href", Tuple.Create(" href=\"", 2915), Tuple.Create("\"", 3077)
             
-            #line 47 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
-, Tuple.Create(Tuple.Create("", 2712), Tuple.Create<System.Object, System.Int32>(Url.RouteUrl(new RouteValueDictionary(ViewContext.RouteData.Values.ToDictionary(r => r.Key, r => r.Key == "culture" ? item.CultureName.Trim() : r.Value)))
+            #line 49 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
+, Tuple.Create(Tuple.Create("", 2922), Tuple.Create<System.Object, System.Int32>(Url.RouteUrl(new RouteValueDictionary(ViewContext.RouteData.Values.ToDictionary(r => r.Key, r => r.Key == "culture" ? item.CultureName.Trim() : r.Value)))
             
             #line default
             #line hidden
-, 2712), false)
+, 2922), false)
 );
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2873), Tuple.Create("\"", 2918)
-, Tuple.Create(Tuple.Create("", 2879), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/blank.gif")
-, 2879), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 3083), Tuple.Create("\"", 3128)
+, Tuple.Create(Tuple.Create("", 3089), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/blank.gif")
+, 3089), false)
 );
 
-WriteAttribute("class", Tuple.Create(" class=\"", 2919), Tuple.Create("\"", 2951)
-, Tuple.Create(Tuple.Create("", 2927), Tuple.Create("flag", 2927), true)
-, Tuple.Create(Tuple.Create(" ", 2931), Tuple.Create("flag-", 2932), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 3129), Tuple.Create("\"", 3161)
+, Tuple.Create(Tuple.Create("", 3137), Tuple.Create("flag", 3137), true)
+, Tuple.Create(Tuple.Create(" ", 3141), Tuple.Create("flag-", 3142), true)
             
-            #line 47 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
-                                                                                                                                                                          , Tuple.Create(Tuple.Create("", 2937), Tuple.Create<System.Object, System.Int32>(item.FlagCode
+            #line 49 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
+                                                                                                                                                                          , Tuple.Create(Tuple.Create("", 3147), Tuple.Create<System.Object, System.Int32>(item.FlagCode
             
             #line default
             #line hidden
-, 2937), false)
+, 3147), false)
 );
 
-WriteAttribute("alt", Tuple.Create(" alt=\"", 2952), Tuple.Create("\"", 2984)
+WriteAttribute("alt", Tuple.Create(" alt=\"", 3162), Tuple.Create("\"", 3194)
             
-            #line 47 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
-                                                                                                                                                                                               , Tuple.Create(Tuple.Create("", 2958), Tuple.Create<System.Object, System.Int32>(itemRegionInfo.NativeName
+            #line 49 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
+                                                                                                                                                                                               , Tuple.Create(Tuple.Create("", 3168), Tuple.Create<System.Object, System.Int32>(itemRegionInfo.NativeName
             
             #line default
             #line hidden
-, 2958), false)
+, 3168), false)
 );
 
 WriteLiteral("> ");
 
             
-            #line 47 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
+            #line 49 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
                                                                                                                                                                                                                                                                                                        Write(itemRegionInfo.NativeName);
 
             
@@ -425,7 +456,7 @@ WriteLiteral("> ");
 WriteLiteral("</a></li>\r\n");
 
             
-            #line 48 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
+            #line 50 "..\..\Areas\CMS\Views\Shared\_LoginPartial.cshtml"
         }
 
             

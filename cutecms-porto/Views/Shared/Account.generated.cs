@@ -401,7 +401,6 @@ WriteLiteral("</a></li>\r\n");
 
             
             #line 50 "..\..\Views\Shared\Account.cshtml"
-
                                                 }
 
             
@@ -410,7 +409,7 @@ WriteLiteral("</a></li>\r\n");
 WriteLiteral("                                                ");
 
             
-            #line 52 "..\..\Views\Shared\Account.cshtml"
+            #line 51 "..\..\Views\Shared\Account.cshtml"
                                                  using (Html.BeginForm("LogOff", "Account", new { area = "Identity", returnUrl = "/" }, FormMethod.Post, new { id = "logoutForm" }))
                                                 {
                                                     
@@ -418,14 +417,14 @@ WriteLiteral("                                                ");
             #line default
             #line hidden
             
-            #line 54 "..\..\Views\Shared\Account.cshtml"
+            #line 53 "..\..\Views\Shared\Account.cshtml"
                                                Write(Html.AntiForgeryToken());
 
             
             #line default
             #line hidden
             
-            #line 54 "..\..\Views\Shared\Account.cshtml"
+            #line 53 "..\..\Views\Shared\Account.cshtml"
                                                                             
 
             
@@ -442,7 +441,7 @@ WriteLiteral(" class=\"glyphicon glyphicon-off\"");
 WriteLiteral("></i> ");
 
             
-            #line 55 "..\..\Views\Shared\Account.cshtml"
+            #line 54 "..\..\Views\Shared\Account.cshtml"
                                                                                                                                                                Write(Resources.Resources.LogOff);
 
             
@@ -451,7 +450,7 @@ WriteLiteral("></i> ");
 WriteLiteral("</a></li>\r\n");
 
             
-            #line 56 "..\..\Views\Shared\Account.cshtml"
+            #line 55 "..\..\Views\Shared\Account.cshtml"
                                                 }
 
             
@@ -461,7 +460,7 @@ WriteLiteral("                                            </ul>\r\n\r\n         
 "            </li>\r\n");
 
             
-            #line 60 "..\..\Views\Shared\Account.cshtml"
+            #line 59 "..\..\Views\Shared\Account.cshtml"
                                     }
             
             #line default

@@ -47,7 +47,6 @@
                                                 @if (User.IsInRole("Admin"))
                                                 {
                                                     <li><a href="@Url.Action("Index", "Home", new { area="CMS"})"><i class="fa fa-arrow-circle-left"></i> @Resources.Resources.Backend</a></li>
-
                                                 }
                                                 @using (Html.BeginForm("LogOff", "Account", new { area = "Identity", returnUrl = "/" }, FormMethod.Post, new { id = "logoutForm" }))
                                                 {

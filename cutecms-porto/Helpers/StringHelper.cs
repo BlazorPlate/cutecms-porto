@@ -152,7 +152,7 @@ public static class StringExtensions
     {
         if (text == String.Empty || keywords == String.Empty || cssClass == String.Empty)
             return text;
-        var words = keywords.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+        var words = keywords.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
         if (!fullMatch)
             return words.Select(word => word.Trim()).Aggregate(text,
                          (current, pattern) =>

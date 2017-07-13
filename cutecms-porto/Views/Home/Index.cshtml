@@ -9,6 +9,7 @@
     var shortcutContents = Model.Contents.Where(c => c.HasShortcut);
     var insuranceList = Model.ContentLists.Where(c => c.Code.Trim().Equals("insurance"))?.FirstOrDefault() ?? new ContentList();
     var resourcesList = Model.ContentLists.Where(c => c.Code.Trim().Equals("resources"))?.FirstOrDefault() ?? new ContentList();
+    var testimonialList = Model.ContentLists.Where(c => c.Code.Trim().Equals("testimonial"))?.FirstOrDefault() ?? new ContentList();
 
     IdentityEntities identityDb = new IdentityEntities();
 
@@ -357,7 +358,25 @@
     <div class="container">
         <div class="row mt-xlg pt-md mb-xlg pb-md">
             <div class="owl-carousel owl-theme nav-bottom rounded-nav" data-plugin-options="{'items': 1, 'loop': false, 'dots': false}">
-                <div>
+                @foreach (var item in insuranceList.ListItems)
+                {                <div>
+                    <div class="col-md-8 col-md-offset-2 pt-xlg">
+                        <div class="testimonial testimonial-style-2 testimonial-with-quotes mb-none">
+                            <div class="testimonial-quote">“</div>
+                            <blockquote>
+                                <p class="font-weight-light">@item.Subtitle</p>
+                            </blockquote>
+                            <div class="testimonial-author mt-xlg">
+                                <p class="text-uppercase">
+                                    <strong>@item.Title</strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+                
+                @*<div>
                     <div class="col-md-8 col-md-offset-2 pt-xlg">
                         <div class="testimonial testimonial-style-2 testimonial-with-quotes mb-none">
                             <div class="testimonial-quote">“</div>
@@ -371,22 +390,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div>
-                    <div class="col-md-8 col-md-offset-2 pt-xlg">
-                        <div class="testimonial testimonial-style-2 testimonial-with-quotes mb-none">
-                            <div class="testimonial-quote">“</div>
-                            <blockquote>
-                                <p class="font-weight-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit, leo vitae interdum pretium, tortor risus dapibus tortor, eu suscipit orci leo sed nisl. Integer et ipsum eu nulla auctor mattis sit amet in diam. Vestibulum non.</p>
-                            </blockquote>
-                            <div class="testimonial-author mt-xlg">
-                                <p class="text-uppercase">
-                                    <strong>John Smith</strong>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </div>*@
             </div>
         </div>
     </div>

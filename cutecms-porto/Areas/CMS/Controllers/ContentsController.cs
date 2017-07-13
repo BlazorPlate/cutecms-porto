@@ -191,7 +191,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
         // properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,ContentTypeId,Code,Title,Subtitle,MainContent,Location,MetaDescription,Image,TranslationId,LanguageId,IsUrgent,UrgentExpiredOn,HasShortcut,ShortcutTitle,CssClass,Ordinal,StartDate,EndDate,PublishedOn,ExpiredOn,ParentMenuItemId,HasMenuItem,RoleVID,StatusId")] Content content)
+        public ActionResult Create([Bind(Include = "Id,ContentTypeId,Code,Title,Subtitle,MainContent,Location,MetaDescription,Image,TranslationId,LanguageId,IsUrgent,UrgentExpiredOn,HasShortcut,ShortcutTitle,CssClass,Ordinal,StartDate,EndDate,PublishedOn,ExpiredOn,ParentMenuItemId,HasMenuItem,RoleVID,StatusId")] Content content, int? width, int? height)
         {
             var contentStatus = db.CMSStatuses.Find(content.StatusId);
             if (contentStatus.Code.Trim().Equals("published"))
@@ -221,7 +221,11 @@ namespace cutecms_porto.Areas.CMS.Controllers
                 content.ImageName = newFileName;
                 using (var img = System.Drawing.Image.FromStream(content.Image.InputStream))
                 {
-                    ImageUploaderHelper.SaveImageToFolder(img, extension, new Size(361, 298), content.ImagePath);
+                    if (width == null)
+                        width = img.Width;
+                    if (height == null)
+                        height = img.Height;
+                    ImageUploaderHelper.SaveImageToFolder(img, extension, new Size(width.Value, height.Value), content.ImagePath);
                 }
             }
             if (ModelState.IsValid)
@@ -369,7 +373,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
         // properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,ContentTypeId,Title,Subtitle,Code,MainContent,Location,LanguageId,UrlCode,IsPublished,MetaDescription,Image,Author,ModifiedBy,PublishedOn,CreatedOn,ModifiedOn,TranslationId,IsTranslated,IsUrgent,UrgentExpiredOn,HasShortcut,ShortcutTitle,CssClass,Ordinal,StartDate,EndDate,PublishedOn,ExpiredOn,ParentMenuItemId,HasMenuItem,RoleVID,StatusId")] Content content, string status)
+        public ActionResult Edit([Bind(Include = "Id,ContentTypeId,Title,Subtitle,Code,MainContent,Location,LanguageId,UrlCode,IsPublished,MetaDescription,Image,Author,ModifiedBy,PublishedOn,CreatedOn,ModifiedOn,TranslationId,IsTranslated,IsUrgent,UrgentExpiredOn,HasShortcut,ShortcutTitle,CssClass,Ordinal,StartDate,EndDate,PublishedOn,ExpiredOn,ParentMenuItemId,HasMenuItem,RoleVID,StatusId")] Content content, string status, int? width, int? height)
         {
             var contentStatus = db.CMSStatuses.Find(content.StatusId);
             if (contentStatus.Code.Trim().Equals("published") && content.PublishedOn == null)
@@ -400,7 +404,11 @@ namespace cutecms_porto.Areas.CMS.Controllers
                 content.ImageName = newFileName;
                 using (var img = System.Drawing.Image.FromStream(content.Image.InputStream))
                 {
-                    ImageUploaderHelper.SaveImageToFolder(img, extension, new Size(361, 298), content.ImagePath);
+                    if (width == null)
+                        width = img.Width;
+                    if (height == null)
+                        height = img.Height;
+                    ImageUploaderHelper.SaveImageToFolder(img, extension, new Size(width.Value, height.Value), content.ImagePath);
                 }
             }
             if (ModelState.IsValid)

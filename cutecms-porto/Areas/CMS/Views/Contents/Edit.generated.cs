@@ -490,7 +490,7 @@ WriteLiteral("            ");
 
             
             #line 71 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
-       Write(Html.LabelFor(model => model.Location, new { @class = "control-label col-md-2" }));
+       Write(Html.Label(Resources.Resources.Dimensions, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
             #line default
@@ -505,7 +505,7 @@ WriteLiteral("                ");
 
             
             #line 73 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
-           Write(Html.EditorFor(model => model.Location, new { htmlAttributes = new { @class = "form-control" } }));
+           Write(Html.TextBox("width", null, new { @placeholder = @Resources.Resources.Width }));
 
             
             #line default
@@ -516,7 +516,7 @@ WriteLiteral("                ");
 
             
             #line 74 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
-           Write(Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" }));
+           Write(Html.TextBox("height", null, new { @placeholder = @Resources.Resources.Height }));
 
             
             #line default
@@ -531,7 +531,7 @@ WriteLiteral("            ");
 
             
             #line 78 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
-       Write(Html.LabelFor(model => model.MetaDescription, new { @class = "control-label col-md-2" }));
+       Write(Html.LabelFor(model => model.Location, new { @class = "control-label col-md-2" }));
 
             
             #line default
@@ -546,7 +546,7 @@ WriteLiteral("                ");
 
             
             #line 80 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
-           Write(Html.TextAreaFor(model => model.MetaDescription));
+           Write(Html.EditorFor(model => model.Location, new { htmlAttributes = new { @class = "form-control" } }));
 
             
             #line default
@@ -557,7 +557,7 @@ WriteLiteral("                ");
 
             
             #line 81 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
-           Write(Html.ValidationMessageFor(model => model.MetaDescription, "", new { @class = "text-danger" }));
+           Write(Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" }));
 
             
             #line default
@@ -572,6 +572,47 @@ WriteLiteral("            ");
 
             
             #line 85 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+       Write(Html.LabelFor(model => model.MetaDescription, new { @class = "control-label col-md-2" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            <div");
+
+WriteLiteral(" class=\"col-md-10\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 87 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+           Write(Html.TextAreaFor(model => model.MetaDescription));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 88 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+           Write(Html.ValidationMessageFor(model => model.MetaDescription, "", new { @class = "text-danger" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            </div>\r\n        </div>\r\n        <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 92 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
        Write(Html.LabelFor(model => model.HasMenuItem, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -584,13 +625,13 @@ WriteLiteral(" class=\"col-md-10\"");
 WriteLiteral(">\r\n");
 
             
-            #line 87 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 94 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 87 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 94 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
                  if (Model.HasMenuItem)
                 {
                     
@@ -598,14 +639,14 @@ WriteLiteral(">\r\n");
             #line default
             #line hidden
             
-            #line 89 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 96 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
                Write(Html.CheckBoxFor(model => model.HasMenuItem, new { @class = "js-switch", @checked = "checked" }));
 
             
             #line default
             #line hidden
             
-            #line 89 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 96 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
                                                                                                                      
                 }
                 else
@@ -615,14 +656,14 @@ WriteLiteral(">\r\n");
             #line default
             #line hidden
             
-            #line 93 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 100 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
                Write(Html.CheckBoxFor(model => model.HasMenuItem, new { @class = "js-switch" }));
 
             
             #line default
             #line hidden
             
-            #line 93 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 100 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
                                                                                                
                 }
 
@@ -640,7 +681,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 98 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 105 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
        Write(Html.LabelFor(model => model.ParentMenuItemId, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -655,7 +696,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 100 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 107 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.DropDownList("ParentMenuItemId", null, Resources.Resources.NoParentItem, htmlAttributes: new { @class = "form-control" }));
 
             
@@ -670,7 +711,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 104 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 111 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
        Write(Html.LabelFor(model => model.HasShortcut, new { @class = "control-label col-md-2" }));
 
             
@@ -685,7 +726,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 106 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 113 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.CheckBoxFor(model => model.HasShortcut, new { @class = "js-switch" }));
 
             
@@ -704,7 +745,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 111 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 118 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.LabelFor(model => model.ShortcutTitle, new { @class = "control-label col-md-2" }));
 
             
@@ -719,7 +760,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 113 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 120 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
                Write(Html.EditorFor(model => model.ShortcutTitle, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -730,7 +771,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 114 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 121 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
                Write(Html.ValidationMessageFor(model => model.ShortcutTitle, "", new { @class = "text-danger" }));
 
             
@@ -745,7 +786,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 118 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 125 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.LabelFor(model => model.CssClass, new { @class = "control-label col-md-2" }));
 
             
@@ -760,7 +801,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 120 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 127 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
                Write(Html.EditorFor(model => model.CssClass, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -771,7 +812,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 121 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 128 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
                Write(Html.ValidationMessageFor(model => model.CssClass, "", new { @class = "text-danger" }));
 
             
@@ -786,7 +827,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 125 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 132 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.LabelFor(model => model.Ordinal, new { @class = "control-label col-md-2" }));
 
             
@@ -801,7 +842,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 127 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 134 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
                Write(Html.EditorFor(model => model.Ordinal, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -812,7 +853,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 128 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 135 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
                Write(Html.ValidationMessageFor(model => model.Ordinal, "", new { @class = "text-danger" }));
 
             
@@ -829,7 +870,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 133 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 140 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
        Write(Html.LabelFor(model => model.IsUrgent, new { @class = "control-label col-md-2" }));
 
             
@@ -844,7 +885,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 135 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 142 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.CheckBoxFor(model => model.IsUrgent, new { @class = "js-switch" }));
 
             
@@ -861,7 +902,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 139 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 146 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
        Write(Html.LabelFor(model => model.UrgentExpiredOn, new { @class = "control-label col-md-2" }));
 
             
@@ -876,7 +917,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 141 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 148 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.EditorFor(model => model.UrgentExpiredOn, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -887,7 +928,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 142 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 149 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.ValidationMessageFor(model => model.UrgentExpiredOn, "", new { @class = "text-danger" }));
 
             
@@ -902,7 +943,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 146 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 153 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
        Write(Html.LabelFor(model => model.RoleVID, new { @class = "control-label col-md-2" }));
 
             
@@ -917,7 +958,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 148 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 155 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.DropDownList("RoleVID", null, Resources.Resources.ChooseRole, htmlAttributes: new { @class = "form-control" }));
 
             
@@ -928,7 +969,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 149 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 156 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.ValidationMessageFor(model => model.RoleVID, "", new { @class = "text-danger" }));
 
             
@@ -945,7 +986,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 153 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 160 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
        Write(Html.LabelFor(model => model.StartDate, new { @class = "control-label col-md-2" }));
 
             
@@ -960,7 +1001,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 155 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 162 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -971,7 +1012,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 156 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 163 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" }));
 
             
@@ -988,7 +1029,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 160 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 167 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
        Write(Html.LabelFor(model => model.EndDate, new { @class = "control-label col-md-2" }));
 
             
@@ -1003,7 +1044,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 162 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 169 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -1014,7 +1055,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 163 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 170 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" }));
 
             
@@ -1031,7 +1072,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 167 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 174 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
        Write(Html.LabelFor(model => model.StatusId, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -1046,7 +1087,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 169 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 176 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.DropDownList("StatusId", null, htmlAttributes: new { @class = "form-control" }));
 
             
@@ -1057,7 +1098,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 170 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 177 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.ValidationMessageFor(model => model.StatusId, "", new { @class = "text-danger" }));
 
             
@@ -1074,7 +1115,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 174 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 181 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
        Write(Html.LabelFor(model => model.PublishedOn, new { @class = "control-label col-md-2" }));
 
             
@@ -1089,7 +1130,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 176 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 183 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.EditorFor(model => model.PublishedOn, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -1100,7 +1141,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 177 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 184 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.ValidationMessageFor(model => model.PublishedOn, "", new { @class = "text-danger" }));
 
             
@@ -1111,7 +1152,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 178 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 185 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.ValidationMessage("InvalidPublishDate", new { @class = "text-danger" }));
 
             
@@ -1128,7 +1169,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 182 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 189 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
        Write(Html.LabelFor(model => model.ExpiredOn, new { @class = "control-label col-md-2" }));
 
             
@@ -1143,7 +1184,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 184 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 191 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.EditorFor(model => model.ExpiredOn, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -1154,7 +1195,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 185 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 192 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.ValidationMessageFor(model => model.ExpiredOn, "", new { @class = "text-danger" }));
 
             
@@ -1165,7 +1206,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 186 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 193 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.ValidationMessage("InvalidExpiryDate", new { @class = "text-danger" }));
 
             
@@ -1180,7 +1221,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 190 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 197 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
        Write(Html.LabelFor(model => model.Author, new { @class = "control-label col-md-2" }));
 
             
@@ -1195,7 +1236,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 192 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 199 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.TextBox("Author", null, htmlAttributes: new { @class = "form-control", @disabled = "disabled" }));
 
             
@@ -1206,7 +1247,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 193 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 200 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.HiddenFor(model => model.Author));
 
             
@@ -1221,7 +1262,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 197 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 204 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
        Write(Html.LabelFor(model => model.ModifiedBy, new { @class = "control-label col-md-2" }));
 
             
@@ -1236,7 +1277,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 199 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 206 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.TextBox("ModifiedBy", null, htmlAttributes: new { @class = "form-control", @disabled = "disabled" }));
 
             
@@ -1247,7 +1288,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 200 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 207 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.HiddenFor(model => model.ModifiedBy));
 
             
@@ -1262,7 +1303,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 204 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 211 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
        Write(Html.LabelFor(model => model.CreatedOn, new { @class = "control-label col-md-2" }));
 
             
@@ -1277,7 +1318,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 206 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 213 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.TextBoxFor(model => model.CreatedOn, null, htmlAttributes: new { @class = "form-control", @disabled = "disabled" }));
 
             
@@ -1292,7 +1333,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 210 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 217 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
        Write(Html.LabelFor(model => model.ModifiedOn, new { @class = "control-label col-md-2" }));
 
             
@@ -1307,7 +1348,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 212 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 219 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.TextBoxFor(model => model.ModifiedOn, null, htmlAttributes: new { @class = "form-control", @disabled = "disabled" }));
 
             
@@ -1318,7 +1359,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 213 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 220 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.HiddenFor(model => model.ModifiedOn));
 
             
@@ -1333,7 +1374,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 217 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 224 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
        Write(Html.LabelFor(model => model.PublishedOn, new { @class = "control-label col-md-2" }));
 
             
@@ -1348,7 +1389,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 219 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 226 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.TextBoxFor(model => model.PublishedOn, null, htmlAttributes: new { @class = "form-control", @disabled = "disabled" }));
 
             
@@ -1359,7 +1400,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 220 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 227 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.HiddenFor(model => model.PublishedOn));
 
             
@@ -1374,7 +1415,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 224 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 231 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
        Write(Html.LabelFor(model => model.ExpiredOn, new { @class = "control-label col-md-2" }));
 
             
@@ -1389,7 +1430,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 226 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 233 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.TextBoxFor(model => model.ExpiredOn, null, htmlAttributes: new { @class = "form-control", @disabled = "disabled" }));
 
             
@@ -1400,7 +1441,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 227 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 234 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.HiddenFor(model => model.ExpiredOn));
 
             
@@ -1418,14 +1459,14 @@ WriteLiteral(">\r\n                <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=", 13390), Tuple.Create("", 13422)
+WriteAttribute("value", Tuple.Create(" value=", 13809), Tuple.Create("", 13841)
             
-            #line 232 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 13397), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Save
+            #line 239 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+, Tuple.Create(Tuple.Create("", 13816), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Save
             
             #line default
             #line hidden
-, 13397), false)
+, 13816), false)
 );
 
 WriteLiteral(" class=\"btn btn-primary\"");
@@ -1433,13 +1474,13 @@ WriteLiteral(" class=\"btn btn-primary\"");
 WriteLiteral(" />\r\n");
 
             
-            #line 233 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 240 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 233 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 240 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
                  if (!Model.IsTranslated)
                 {
                     
@@ -1447,14 +1488,14 @@ WriteLiteral(" />\r\n");
             #line default
             #line hidden
             
-            #line 235 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 242 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
                Write(Html.ActionLink(Resources.Resources.AddTranslation, "Create", new { id = Model.TranslationId }, new { @class = "btn btn-info" }));
 
             
             #line default
             #line hidden
             
-            #line 235 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 242 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
                                                                                                                                                      
                 }
                 else
@@ -1464,14 +1505,14 @@ WriteLiteral(" />\r\n");
             #line default
             #line hidden
             
-            #line 239 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 246 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
                Write(Html.ActionLink(Resources.Resources.ViewTranslation, "Edit", new { id = Model.Id, translationId = Model.TranslationId, lang = Model.Language.CultureName }, new { @class = "btn btn-info" }));
 
             
             #line default
             #line hidden
             
-            #line 239 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 246 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
                                                                                                                                                                                                                  
                 }
 
@@ -1481,7 +1522,7 @@ WriteLiteral(" />\r\n");
 WriteLiteral("                ");
 
             
-            #line 241 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 248 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.ActionLink(Resources.Resources.ContentLists, "Index", "ContentLists", new { id = Model.Id }, new { @class = "btn btn-info" }));
 
             
@@ -1492,7 +1533,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 242 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 249 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.ActionLink(Resources.Resources.Galleries, "Index", "ContentGalleries", new { id = Model.Id }, new { @class = "btn btn-info" }));
 
             
@@ -1503,7 +1544,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 243 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 250 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.ActionLink(Resources.Resources.Delete, "Delete", new { id = Model.Id }, new { @class = "btn btn-danger" }));
 
             
@@ -1522,7 +1563,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 248 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 255 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
            Write(Html.ValidationSummary(false, "", new { @class = "text-danger" }));
 
             
@@ -1531,7 +1572,7 @@ WriteLiteral("                ");
 WriteLiteral("\r\n            </div>\r\n        </div>\r\n    </div>\r\n");
 
             
-            #line 252 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 259 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
 }
 
             
@@ -1542,7 +1583,7 @@ WriteLiteral("<div>\r\n");
 WriteLiteral("    ");
 
             
-            #line 254 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 261 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
 Write(Html.ActionLink(Resources.Resources.BackToList, "Index"));
 
             
@@ -1557,7 +1598,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 257 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 264 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
 Write(Scripts.Render("~/bundles/jqueryval"));
 
             
@@ -1579,13 +1620,13 @@ WriteLiteral(@">
 ");
 
             
-            #line 267 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 274 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 267 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 274 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
      if (CultureHelper.IsRighToLeft())
     {
 
@@ -1620,7 +1661,7 @@ WriteLiteral(">\r\n            $(\'#StartDate\').datetimepicker({\r\n           
 "   horizontal: \'right\'\r\n                }\r\n            });\r\n        </script>\r\n");
 
             
-            #line 321 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 328 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
     }
     else
     {
@@ -1667,7 +1708,7 @@ WriteLiteral(@">
 ");
 
             
-            #line 356 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
+            #line 363 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
     }
 
             

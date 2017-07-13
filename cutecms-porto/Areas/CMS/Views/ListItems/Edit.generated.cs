@@ -652,6 +652,47 @@ WriteLiteral("\r\n            </div>\r\n        </div>\r\n        <div");
 
 WriteLiteral(" class=\"form-group\"");
 
+WriteLiteral(">\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 94 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+       Write(Html.Label(Resources.Resources.Dimensions, htmlAttributes: new { @class = "control-label col-md-2" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            <div");
+
+WriteLiteral(" class=\"col-md-10\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 96 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+           Write(Html.TextBox("width", null, new { @placeholder = @Resources.Resources.Width }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 97 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+           Write(Html.TextBox("height", null, new { @placeholder = @Resources.Resources.Height }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            </div>\r\n        </div>\r\n        <div");
+
+WriteLiteral(" class=\"form-group\"");
+
 WriteLiteral(">\r\n            <div");
 
 WriteLiteral(" class=\"col-md-offset-2 col-md-10\"");
@@ -660,14 +701,14 @@ WriteLiteral(">\r\n                <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 5383), Tuple.Create("\"", 5416)
+WriteAttribute("value", Tuple.Create(" value=\"", 5802), Tuple.Create("\"", 5835)
             
-            #line 95 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 5391), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Save
+            #line 102 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+, Tuple.Create(Tuple.Create("", 5810), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Save
             
             #line default
             #line hidden
-, 5391), false)
+, 5810), false)
 );
 
 WriteLiteral(" class=\"btn btn-default\"");
@@ -685,7 +726,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 100 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 107 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
            Write(Html.ValidationSummary(false, "", new { @class = "text-danger" }));
 
             
@@ -694,7 +735,7 @@ WriteLiteral("                ");
 WriteLiteral("\r\n            </div>\r\n        </div>\r\n    </div>\r\n");
 
             
-            #line 104 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 111 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
 }
 
             
@@ -705,7 +746,7 @@ WriteLiteral("<div>\r\n");
 WriteLiteral("    ");
 
             
-            #line 106 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 113 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
 Write(Html.ActionLink(Resources.Resources.BackToList, "Index", new { id = Model.ContentListId }));
 
             
@@ -720,7 +761,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 109 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 116 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
 Write(Scripts.Render("~/bundles/jqueryval"));
 
             

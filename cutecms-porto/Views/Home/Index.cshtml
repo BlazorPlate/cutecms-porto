@@ -5,8 +5,11 @@
 @{
     CMSEntities cmsDb = new CMSEntities();
     IdentityEntities IdentityDb = new IdentityEntities();
-    var openingHours = Model.ContentLists.Where(c => c.Code.Trim().Equals("opening-hours") && c.Visible).FirstOrDefault()?.ListItems ?? new List<ListItem>();
+    var openingHours = Model.ContentLists.Where(c => c.Code.Trim().Equals("opening-hours")).FirstOrDefault()?.ListItems ?? new List<ListItem>();
     var shortcutContents = Model.Contents.Where(c => c.HasShortcut);
+    var insuranceList = Model.ContentLists.Where(c => c.Code.Trim().Equals("insurance"))?.FirstOrDefault() ?? new ContentList();
+    var resourcesList = Model.ContentLists.Where(c => c.Code.Trim().Equals("resources"))?.FirstOrDefault() ?? new ContentList();
+
     IdentityEntities identityDb = new IdentityEntities();
 
 }
@@ -279,27 +282,31 @@
     <div class="container">
         <div class="row mt-md">
             <div class="col-md-12">
-                <h2 class="font-weight-semibold m-none">Resources</h2>
-                <p class="lead font-weight-normal">List of our features resources</p>
+                <h2 class="font-weight-semibold m-none">@resourcesList.Title</h2>
+                <p class="lead font-weight-normal">@resourcesList.Subtitle</p>
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-4 col-md-4">
-                <a href="demo-medical-resources-detail.html" class="text-decoration-none">
-                    <span class="thumb-info thumb-info-side-image thumb-info-side-image-custom thumb-info-no-zoom thumb-info-no-zoom thumb-info-side-image-custom-highlight">
-                        <span class="thumb-info-side-image-wrapper">
-                            <img alt="" class="img-responsive" src="~/assets/porto/img/demos/medical/gallery/gallery-2.jpg">
-                        </span>
-                        <span class="thumb-info-caption">
-                            <span class="thumb-info-caption-text p-xl">
-                                <h4 class="font-weight-semibold mb-xs">Prepare for visit</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hend...</p>
+            @foreach (var item in resourcesList.ListItems)
+            {
+                <div class="col-sm-4 col-md-4">
+                    <a href="@item.Url" class="text-decoration-none">
+                        <span class="thumb-info thumb-info-side-image thumb-info-side-image-custom thumb-info-no-zoom thumb-info-no-zoom thumb-info-side-image-custom-highlight">
+                            <span class="thumb-info-side-image-wrapper">
+                                <img alt="" class="img-responsive" src="@item.ThumbPath">
+                            </span>
+                            <span class="thumb-info-caption">
+                                <span class="thumb-info-caption-text p-xl">
+                                    <h4 class="font-weight-semibold mb-xs">@item.Title</h4>
+                                    <p>@item.Subtitle</p>
+                                </span>
                             </span>
                         </span>
-                    </span>
-                </a>
-            </div>
-            <div class="col-sm-4 col-md-4">
+                    </a>
+                </div>
+
+            }
+            @*<div class="col-sm-4 col-md-4">
                 <a href="demo-medical-resources-detail.html" class="text-decoration-none">
                     <span class="thumb-info thumb-info-side-image thumb-info-side-image-custom thumb-info-no-zoom thumb-info-no-zoom thumb-info-side-image-custom-highlight">
                         <span class="thumb-info-side-image-wrapper">
@@ -313,22 +320,7 @@
                         </span>
                     </span>
                 </a>
-            </div>
-            <div class="col-sm-4 col-md-4">
-                <a href="demo-medical-resources-detail.html" class="text-decoration-none">
-                    <span class="thumb-info thumb-info-side-image thumb-info-side-image-custom thumb-info-no-zoom thumb-info-no-zoom thumb-info-side-image-custom-highlight">
-                        <span class="thumb-info-side-image-wrapper">
-                            <img alt="" class="img-responsive" src="~/assets/porto/img/demos/medical/gallery/gallery-4.jpg">
-                        </span>
-                        <span class="thumb-info-caption">
-                            <span class="thumb-info-caption-text p-xl">
-                                <h4 class="font-weight-semibold mb-xs">Patients</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hend...</p>
-                            </span>
-                        </span>
-                    </span>
-                </a>
-            </div>
+            </div>*@
         </div>
         <div class="row pb-xlg">
             <div class="col-md-12 center">
@@ -341,36 +333,22 @@
     <div class="container">
         <div class="row mt-md">
             <div class="col-md-12">
-                <h2 class="font-weight-semibold m-none">Insurance</h2>
-                <p class="lead font-weight-normal">Major insurance providers accepted</p>
+                <h2 class="font-weight-semibold m-none">@insuranceList.Title</h2>
+                <p class="lead font-weight-normal">@insuranceList.Subtitle</p>
             </div>
         </div>
             <div class="row center">
                 <div class="owl-carousel owl-theme" data-plugin-options="{'items': 6, 'autoplay': true, 'autoplayTimeout': 3000}">
-                    <div>
-                        <img class="img-responsive" src="img/logos/logo-1.png" alt="">
-                    </div>
-                    <div>
-                        <img class="img-responsive" src="img/logos/logo-2.png" alt="">
-                    </div>
-                    <div>
-                        <img class="img-responsive" src="img/logos/logo-3.png" alt="">
-                    </div>
-                    <div>
-                        <img class="img-responsive" src="img/logos/logo-4.png" alt="">
-                    </div>
-                    <div>
-                        <img class="img-responsive" src="img/logos/logo-5.png" alt="">
-                    </div>
-                    <div>
-                        <img class="img-responsive" src="img/logos/logo-6.png" alt="">
-                    </div>
-                    <div>
-                        <img class="img-responsive" src="img/logos/logo-4.png" alt="">
-                    </div>
-                    <div>
-                        <img class="img-responsive" src="img/logos/logo-2.png" alt="">
-                    </div>
+                    @foreach (var item in insuranceList.ListItems)
+                    {
+                        <div>
+                            <img class="img-responsive" src="@item.ThumbPath" alt="">
+                            <p>@item.Title</p>
+                        </div>
+                    }    
+                    @*<div class="content-grid-item col-sm-4 col-md-2 center">
+                        <img src="~/assets/porto/img/demos/medical/logos/insurance-logo-1.png" class="img-responsive" />
+                    </div>*@
                 </div>
             </div>
     </div>

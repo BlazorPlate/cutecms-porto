@@ -132,10 +132,11 @@ namespace cutecms_porto.Areas.CMS.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             ContentList contentList = db.ContentLists.Find(id);
+            var contentId = contentList.ContentId;
             db.ContentLists.Remove(contentList);
             db.SaveChanges();
             CacheHelper.ClearCache();
-            return RedirectToAction("Index", new { id = contentList.ContentId });
+            return RedirectToAction("Index", new { id = contentId });
         }
 
         protected override void Dispose(bool disposing)

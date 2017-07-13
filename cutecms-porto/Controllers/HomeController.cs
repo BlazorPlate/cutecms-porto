@@ -35,7 +35,7 @@ namespace cutecms_porto.Controllers
         {
             homePage.HomeGallery = cmsDb.ImageFiles.Include("Gallery").Include("ImageFileTerms").Include("ImageFileTerms.Language").Where(i => i.TenantId.Trim().Equals(Tenant.TenantId) && i.Gallery.HomeVisible && i.Gallery.Code.Trim().Equals("gallery-02")).OrderBy(i => i.Ordinal);
             homePage.Contents = cmsDb.Contents.Include("ContentType").Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && c.Status.Code.Trim().Equals("published") && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).OrderBy(c => c.Ordinal);
-            homePage.ContentLists = cmsDb.ContentLists.Include("Content").Include("ListItems").Where(c => c.Content.TenantId.Trim().Equals(Tenant.TenantId) && c.Content.Status.Code.Trim().Equals("published") && c.Content.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && (c.Content.Code.Trim().Equals("home-list"))).OrderBy(li => li.Ordinal);
+            homePage.ContentLists = cmsDb.ContentLists.Include("Content").Include("ListItems").Where(c => c.Content.TenantId.Trim().Equals(Tenant.TenantId) && c.Content.Status.Code.Trim().Equals("published") && c.Content.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && c.Content.Code.Trim().Equals("home-list") && c.Visible && c.HomeVisible).OrderBy(c=>c.Ordinal);
             homePage.DepartmentTerms = identityDb.IdentityDepartmentTerms.Where(d => d.Visible);
             return View(homePage);
         }
@@ -105,7 +105,7 @@ namespace cutecms_porto.Controllers
         public ActionResult Galleries(int? page)
         {
             var pageNumber = page ?? 1;
-            var galleries = cmsDb.Galleries.Include("GalleryTerms").Include("GalleryTerms.Language").Include("ImageFiles").Include("GalleryCategories").Include("GalleryCategories.Category").Include("GalleryCategories.Category.CategoryTerms").Include("GalleryCategories.Category.CategoryTerms.Language").Where(g => g.TenantId.Trim().Equals(Tenant.TenantId) && !g.Code.Equals("home-gallery") && g.Visible == true && g.ImageFiles.Count != 0).OrderBy(g => g.Ordinal).ToPagedList(pageNumber, 4);
+            var galleries = cmsDb.Galleries.Include("GalleryTerms").Include("GalleryTerms.Language").Include("ImageFiles").Include("GalleryCategories").Include("GalleryCategories.Category").Include("GalleryCategories.Category.CategoryTerms").Include("GalleryCategories.Category.CategoryTerms.Language").Where(g => g.TenantId.Trim().Equals(Tenant.TenantId) && !g.Code.Equals("home-gallery") && g.Visible && g.ImageFiles.Count != 0).OrderBy(g => g.Ordinal).ToPagedList(pageNumber, 4);
             return View(galleries);
         }
         public ActionResult ImageFiles(int? id, int? page, int tagIdFilter = 0, string returnUrl = null)

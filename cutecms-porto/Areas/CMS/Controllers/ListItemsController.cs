@@ -66,7 +66,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
         // properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost, ValidateInput(false)]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Subtitle,Body,Url,Class,Ordinal,Visible,File,Thumb,ContentListId")] ListItem listItem)
+        public ActionResult Create([Bind(Include = "Id,Title,Subtitle,Body,Url,Class,Ordinal,Visible,File,Thumb,ContentListId")] ListItem listItem, int? width, int? height)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +91,11 @@ namespace cutecms_porto.Areas.CMS.Controllers
                     listItem.ThumbName = newFileName;
                     using (var img = System.Drawing.Image.FromStream(listItem.Thumb.InputStream))
                     {
-                        ImageUploaderHelper.SaveThumbToFolder(img, extension, new Size(640, 424), listItem.ThumbPath);
+                        if (width == null)
+                            width = img.Width;
+                        if (height == null)
+                            height = img.Height;
+                        ImageUploaderHelper.SaveImageToFolder(img, extension, new Size(width.Value, height.Value), listItem.ThumbPath);
                     }
                 }
                 db.ListItems.Add(listItem);
@@ -124,7 +128,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
         // properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,Subtitle,Body,Url,Class,Ordinal,Visible,File,Thumb,FilePath,ThumbPath,ContentListId")] ListItem listItem)
+        public ActionResult Edit([Bind(Include = "Id,Title,Subtitle,Body,Url,Class,Ordinal,Visible,File,Thumb,FilePath,ThumbPath,ContentListId")] ListItem listItem, int? width, int? height)
         {
             if (ModelState.IsValid)
             {
@@ -150,7 +154,11 @@ namespace cutecms_porto.Areas.CMS.Controllers
                     listItem.ThumbName = newFileName;
                     using (var img = System.Drawing.Image.FromStream(listItem.Thumb.InputStream))
                     {
-                        ImageUploaderHelper.SaveThumbToFolder(img, extension, new Size(640, 424), listItem.ThumbPath);
+                        if (width == null)
+                            width = img.Width;
+                        if (height == null)
+                            height = img.Height;
+                        ImageUploaderHelper.SaveImageToFolder(img, extension, new Size(width.Value, height.Value), listItem.ThumbPath);
                     }
                 }
                 db.Entry(listItem).State = EntityState.Modified;

@@ -13,6 +13,7 @@ using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Threading;
+using System.Transactions;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
@@ -212,13 +213,13 @@ namespace cutecms_porto.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            using (IdentityEntities db = new IdentityEntities())
+            using (TransactionScope ts = new TransactionScope())
             {
-                int idTranslationSwap = new int();
-                string currentUserId = User.Identity.GetUserId();
-                Employee employee = db.Employees.Find(id);
-                using (var dbContextTransaction = db.Database.BeginTransaction())
+                using (IdentityEntities db = new IdentityEntities())
                 {
+                    int idTranslationSwap = new int();
+                    string currentUserId = User.Identity.GetUserId();
+                    Employee employee = db.Employees.Find(id);
                     try
                     {
                         db.Employees.Remove(employee);
@@ -237,15 +238,13 @@ namespace cutecms_porto.Controllers
                             }
                         }
                         db.SaveChanges();
-                        dbContextTransaction.Commit();
                     }
                     catch (Exception ex)
                     {
-                        dbContextTransaction.Rollback();
-                        ModelState.AddModelError("ERROR", ex.InnerException.ToString());
+                        ModelState.AddModelError("error", ex.ToString());
                         return View(employee);
                     }
-
+                    ts.Complete();
                     if (db.Employees.Where(e => e.LoginId.Equals(currentUserId)).FirstOrDefault() != null)
                     {
                         return RedirectToAction("Translations", new { id = idTranslationSwap == 0 ? employee.TranslationId : idTranslationSwap });
@@ -254,6 +253,7 @@ namespace cutecms_porto.Controllers
                     {
                         return RedirectToAction("Index");
                     }
+
                 }
             }
         }

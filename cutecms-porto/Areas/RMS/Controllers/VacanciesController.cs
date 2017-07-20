@@ -14,6 +14,7 @@ using System.Data.Entity.Validation;
 using System.Globalization;
 using System.Linq;
 using System.Threading;
+using System.Transactions;
 using System.Web;
 using System.Web.Mvc;
 using static cutecms_porto.Helpers.DatatableHelpers;
@@ -352,9 +353,9 @@ namespace cutecms_porto.Areas.RMS.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            using (var db = new RMSEntities())
+            using (TransactionScope ts = new TransactionScope())
             {
-                using (var dbContextTransaction = db.Database.BeginTransaction())
+                using (var db = new RMSEntities())
                 {
                     Vacancy vacancy = db.Vacancies.Include("Language").Include("Program").Include("Program.ProgramTerms").Include("Program.ProgramTerms.Language").Include("Status").Include("Status.StatusTerms").Include("Status.StatusTerms.Language").Include("JobType").Include("JobType.JobTypeTerms").Include("JobType.JobTypeTerms.Language").Include("VacancyRanks").Include("VacancyDegrees").Where(v => v.TenantId.Trim().Equals(Tenant.TenantId) && v.Id == id).FirstOrDefault();
                     try
@@ -385,12 +386,13 @@ namespace cutecms_porto.Areas.RMS.Controllers
                             translatedContent.TranslationId = null;
                             db.SaveChanges();
                         }
-                        dbContextTransaction.Commit();
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        dbContextTransaction.Rollback();
+                        ModelState.AddModelError("error", ex.ToString());
+                        return View();
                     }
+                    ts.Complete();
                 }
             }
             ReGenerateCodes();
@@ -452,7 +454,8 @@ namespace cutecms_porto.Areas.RMS.Controllers
         }
         public void ReGenerateCodes()
         {
-            var departments = (from v in db.Vacancies join d in db.RMSDepartments on v.DeptId equals d.Id
+            var departments = (from v in db.Vacancies
+                               join d in db.RMSDepartments on v.DeptId equals d.Id
                                where d.TenantId.Equals(Tenant.TenantId)
                                select d).Distinct();
             foreach (var dept in departments)

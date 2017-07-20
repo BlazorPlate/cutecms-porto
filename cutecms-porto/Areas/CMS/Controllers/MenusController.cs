@@ -88,6 +88,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
         {
             if (ModelState.IsValid)
             {
+                menu.TenantId = Tenant.TenantId;
                 db.Entry(menu).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

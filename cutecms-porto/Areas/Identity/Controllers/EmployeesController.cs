@@ -12,6 +12,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PagedList;
+using System.Transactions;
+
 namespace cutecms_porto.Areas.Identity.Controllers
 {
     [LocalizedAuthorize(Roles = "Admin")]
@@ -254,13 +256,13 @@ namespace cutecms_porto.Areas.Identity.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            using (TransactionScope ts = new TransactionScope())
+            {
             using (IdentityEntities db = new IdentityEntities())
             {
                 int idTranslationSwap = new int();
                 string currentUserId = User.Identity.GetUserId();
                 Employee employee = db.Employees.Find(id);
-                using (var dbContextTransaction = db.Database.BeginTransaction())
-                {
                     try
                     {
                         if (employee.TranslationId == employee.Id)
@@ -290,14 +292,13 @@ namespace cutecms_porto.Areas.Identity.Controllers
                             db.Employees.Remove(employee);
                         }
                         db.SaveChanges();
-                        dbContextTransaction.Commit();
                     }
                     catch (Exception ex)
                     {
-                        dbContextTransaction.Rollback();
-                        ModelState.AddModelError("ERROR", ex.InnerException.ToString());
-                        return View(employee);
+                        ModelState.AddModelError("error", ex.ToString());
+                        return View();
                     }
+                    ts.Complete();
                     return RedirectToAction("Index");
                 }
             }

@@ -110,6 +110,7 @@
     <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -2642,6 +2643,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Content.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Dept.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dept.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Publications\Create.generated.cs">
       <AutoGen>True</AutoGen>
@@ -8719,7 +8725,10 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_Layout.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Pages\Dept.cshtml" />
+    <Content Include="Views\Pages\Dept.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Dept.generated.cs</LastGenOutput>
+    </Content>
     <Content Include="Views\Shared\_DeptBreadcrumb.cshtml" />
   </ItemGroup>
   <ItemGroup>

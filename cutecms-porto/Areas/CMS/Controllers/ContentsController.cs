@@ -13,6 +13,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Threading;
+using System.Transactions;
 using System.Web;
 using System.Web.Mvc;
 
@@ -196,7 +197,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             var contentStatus = db.CMSStatuses.Find(content.StatusId);
             if (contentStatus.Code.Trim().Equals("published"))
                 content.PublishedOn = DateTime.Now;
-            content.PublishedOn = DateTime.Now; 
+            content.PublishedOn = DateTime.Now;
             if (content.PublishedOn != null && content.StartDate != null)
             {
                 if (content.PublishedOn > content.StartDate)
@@ -234,9 +235,9 @@ namespace cutecms_porto.Areas.CMS.Controllers
                 content.Title = content.Title.Trim();
                 if (string.IsNullOrEmpty(content.ShortcutTitle))
                     content.ShortcutTitle = content.Title;
-                using (var db = new CMSEntities())
+                using (TransactionScope ts = new TransactionScope())
                 {
-                    using (var dbContextTransaction = db.Database.BeginTransaction())
+                    using (var db = new CMSEntities())
                     {
                         try
                         {
@@ -284,7 +285,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                                     content.AbsolutePath = link.Item2;
                                     menuItem.Path = link.Item2;
                                 }
-                                menuItem.Name = content.Title;                              
+                                menuItem.Name = content.Title;
                                 menuItem.LanguageId = content.LanguageId;
                                 menuItem.IsCms = true;
                                 menuItem.IsLeaf = true;
@@ -315,25 +316,15 @@ namespace cutecms_porto.Areas.CMS.Controllers
                                 db.Entry(menuItem).State = EntityState.Added;
                             }
                             db.SaveChanges();
-                            dbContextTransaction.Commit();
                             CacheHelper.ClearCache();
                             statusId = contentStatus.Id;
                             return RedirectToAction("Index", new { statusId = statusId });
                         }
-                        catch (DbEntityValidationException e)
+                        catch (Exception ex)
                         {
-                            dbContextTransaction.Rollback();
-                            foreach (var eve in e.EntityValidationErrors)
-                            {
-                                Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
-                                 eve.Entry.Entity.GetType().Name, eve.Entry.State);
-                                foreach (var ve in eve.ValidationErrors)
-                                {
-                                    Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
-                                     ve.PropertyName, ve.ErrorMessage);
-                                }
-                            }
+                            ModelState.AddModelError("error", ex.ToString());
                         }
+                        ts.Complete();
                     }
                 }
             }
@@ -422,10 +413,10 @@ namespace cutecms_porto.Areas.CMS.Controllers
                     Random rnd = new Random();
                     content.UrlCode = rnd.Next(1000, 9999);
                 }
-                using (var db = new CMSEntities())
+                using (TransactionScope ts = new TransactionScope())
                 {
-                    using (var dbContextTransaction = db.Database.BeginTransaction())
-                    {
+                using (var db = new CMSEntities())
+                {     
                         try
                         {
                             MenuItem menuItem = new MenuItem();
@@ -480,14 +471,12 @@ namespace cutecms_porto.Areas.CMS.Controllers
                             content.TenantId = Tenant.TenantId;
                             db.Entry(content).State = EntityState.Modified;
                             db.SaveChanges();
-                            dbContextTransaction.Commit();
                             CacheHelper.ClearCache();
                             statusId = contentStatus.Id;
-                            return RedirectToAction("Index", new { statusId = statusId });
+
                         }
                         catch
                         {
-                            dbContextTransaction.Rollback();
                             ViewBag.Language = db.CMSLanguages.Find(content.LanguageId).Name;
                             ViewBag.ContentTypeId = new SelectList(TermsHelper.ContentTypes(), "ContentTypeId", "Value", content.ContentTypeId);
                             ViewBag.StatusId = new SelectList(TermsHelper.Statuses(), "StatusId", "Value", content.StatusId);
@@ -495,7 +484,10 @@ namespace cutecms_porto.Areas.CMS.Controllers
                             ViewBag.Author = _db.Users.Find(content.Author).UserName;
                             ViewBag.ModifiedBy = _db.Users.Find(content.ModifiedBy).UserName;
                             ViewBag.RoleVID = new SelectList(_db.Roles, "Id", "Name", content.RoleVID);
+                            return View(content);
                         }
+                        ts.Complete();
+                        return RedirectToAction("Index", new { statusId = statusId });  
                     }
                 }
             }
@@ -532,10 +524,10 @@ namespace cutecms_porto.Areas.CMS.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            using (TransactionScope ts = new TransactionScope())
+            {
             using (var db = new CMSEntities())
             {
-                using (var dbContextTransaction = db.Database.BeginTransaction())
-                {
                     try
                     {
                         Content content = db.Contents.Find(id);
@@ -558,12 +550,14 @@ namespace cutecms_porto.Areas.CMS.Controllers
                             db.MenuItems.Remove(menuItem);
                             db.SaveChanges();
                         }
-                        dbContextTransaction.Commit();
+
                     }
-                    catch (DbEntityValidationException)
+                    catch (Exception ex)
                     {
-                        dbContextTransaction.Rollback();
+                        ModelState.AddModelError("error", ex.ToString());
+                        return View();
                     }
+                    ts.Complete();
                 }
             }
             CacheHelper.ClearCache();

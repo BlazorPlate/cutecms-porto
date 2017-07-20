@@ -12,6 +12,7 @@ using System.Net;
 using System.Threading;
 using System.Web;
 using System.Web.Mvc;
+using System.Transactions;
 namespace cutecms_porto.Areas.CMS.Controllers
 {
     [LocalizedAuthorize(Roles = "Admin")]
@@ -169,77 +170,81 @@ namespace cutecms_porto.Areas.CMS.Controllers
         public ActionResult Edit([Bind(Include = "Id,Name,Path,MenuId,ParentId,CssClass,Ordinal,IsCms,IsParent,Visible,LanguageId,IsPublished,ContentId,StatusId")] MenuItem menuItem)
         {
             if (ModelState.IsValid)
-            { 
-                using (var context = new CMSEntities())
+            {
+                using (TransactionScope ts = new TransactionScope())
                 {
-                    using (var dbContextTransaction = context.Database.BeginTransaction())
+                    using (var context = new CMSEntities())
                     {
-                        context.Configuration.AutoDetectChangesEnabled = false;
-                        try
                         {
-                            menuItem.Name.Trim();
-                            if (menuItem.IsParent == true)
+                            context.Configuration.AutoDetectChangesEnabled = false;
+                            try
                             {
-                                menuItem.IsLeaf = false;
-                                menuItem.IsCms = false;
-                                if (string.IsNullOrEmpty(menuItem.Path))
-                                    menuItem.Path = "#";
-                            }
-                            else
-                            {
-                                menuItem.IsLeaf = true;
-                            }
-                            db.Entry(menuItem).State = EntityState.Modified;
-                            db.SaveChanges();
-                            if (menuItem.ContentId != null)
-                            {
-                                StringHelper.MenuItemsList.Clear();
-                                StringHelper.ParentMenuItemPath = string.Empty;
-                                var content = db.Contents.Find(menuItem.ContentId);
-                                var culture = db.CMSLanguages.Find(content.LanguageId).CultureName.Trim();
-                                content.Title = menuItem.Name;
-                                if (menuItem.ParentId != null)
+                                menuItem.Name.Trim();
+                                if (menuItem.IsParent == true)
                                 {
-                                    StringHelper.MenuItemsList.Clear();
-                                    StringHelper.ParentMenuItemPath = string.Empty;
-                                    string parentMenuItemPath = StringHelper.GetParentMenuItemPath(menuItem.ParentId, menuItem.LanguageId);
-                                    var link = StringHelper.BuildUrl(content.UrlCode, culture, content.ContentTypeId, parentMenuItemPath, content.Title.Trim(), true);
-                                    content.UrlSlug = link.Item1;
-                                    content.AbsolutePath = link.Item2;                   
-                                    menuItem.Path = link.Item2;
+                                    menuItem.IsLeaf = false;
+                                    menuItem.IsCms = false;
+                                    if (string.IsNullOrEmpty(menuItem.Path))
+                                        menuItem.Path = "#";
                                 }
                                 else
                                 {
-                                    var link = StringHelper.BuildUrl(content.UrlCode, culture, content.ContentTypeId, null, content.Title.Trim(), true);
-                                    content.UrlSlug = link.Item1;
-                                    content.AbsolutePath = link.Item2;
-                                    menuItem.Path = link.Item2;
+                                    menuItem.IsLeaf = true;
                                 }
-                                content.ParentMenuItemId = menuItem.ParentId;
-                                db.Entry(content).State = EntityState.Modified;
+                                db.Entry(menuItem).State = EntityState.Modified;
                                 db.SaveChanges();
+                                if (menuItem.ContentId != null)
+                                {
+                                    StringHelper.MenuItemsList.Clear();
+                                    StringHelper.ParentMenuItemPath = string.Empty;
+                                    var content = db.Contents.Find(menuItem.ContentId);
+                                    var culture = db.CMSLanguages.Find(content.LanguageId).CultureName.Trim();
+                                    content.Title = menuItem.Name;
+                                    if (menuItem.ParentId != null)
+                                    {
+                                        StringHelper.MenuItemsList.Clear();
+                                        StringHelper.ParentMenuItemPath = string.Empty;
+                                        string parentMenuItemPath = StringHelper.GetParentMenuItemPath(menuItem.ParentId, menuItem.LanguageId);
+                                        var link = StringHelper.BuildUrl(content.UrlCode, culture, content.ContentTypeId, parentMenuItemPath, content.Title.Trim(), true);
+                                        content.UrlSlug = link.Item1;
+                                        content.AbsolutePath = link.Item2;
+                                        menuItem.Path = link.Item2;
+                                    }
+                                    else
+                                    {
+                                        var link = StringHelper.BuildUrl(content.UrlCode, culture, content.ContentTypeId, null, content.Title.Trim(), true);
+                                        content.UrlSlug = link.Item1;
+                                        content.AbsolutePath = link.Item2;
+                                        menuItem.Path = link.Item2;
+                                    }
+                                    content.ParentMenuItemId = menuItem.ParentId;
+                                    db.Entry(content).State = EntityState.Modified;
+                                    db.SaveChanges();
+                                }
+                                else if (menuItem.IsParent)
+                                {
+                                    UpdatePath(menuItem);
+                                }
+
                             }
-                            else if (menuItem.IsParent)
+                            catch (Exception ex)
                             {
-                                UpdatePath(menuItem);
+                                ViewBag.MenuCode = db.Menus.Find(menuItem.MenuId).Code;
+                                ViewBag.LanguageName = db.CMSLanguages.Find(menuItem.LanguageId).Name;
+                                ViewBag.ParentId = new SelectList(GetMenuItemsServerSide(menuItem.LanguageId, menuItem.MenuId), "Id", "Name", menuItem.ParentId);
+                                ModelState.AddModelError("error", ex.ToString());
+                                return View(menuItem);
                             }
-                            dbContextTransaction.Commit();
-                        }
-                        catch (Exception)
-                        {
-                            dbContextTransaction.Rollback();
-                            ViewBag.MenuCode = db.Menus.Find(menuItem.MenuId).Code;
-                            ViewBag.LanguageName = db.CMSLanguages.Find(menuItem.LanguageId).Name;
-                            ViewBag.ParentId = new SelectList(GetMenuItemsServerSide(menuItem.LanguageId, menuItem.MenuId), "Id", "Name", menuItem.ParentId);
-                            return View(menuItem);
-                        }
-                        finally
-                        {
-                            context.Configuration.AutoDetectChangesEnabled = true;
-                            CacheHelper.ClearCache();
+                            finally
+                            {
+                                context.Configuration.AutoDetectChangesEnabled = true;
+                                CacheHelper.ClearCache();
+                            }
+                            ts.Complete();
                         }
                     }
                 }
+
                 return RedirectToAction("Index", new { id = menuItem.MenuId });
             }
             ViewBag.MenuCode = db.Menus.Find(menuItem.MenuId).Code;
@@ -258,9 +263,10 @@ namespace cutecms_porto.Areas.CMS.Controllers
                 StringHelper.ParentMenuItemPath = string.Empty;
                 Content content = new Content();
                 content = db.Contents.Find(item.ContentId);
-                var culture = db.CMSLanguages.Find(content.LanguageId).CultureName.Trim();
+
                 if (content != null)
                 {
+                    var culture = db.CMSLanguages.Find(content.LanguageId).CultureName.Trim();
                     string parentMenuItemPath = StringHelper.GetParentMenuItemPath(content.ParentMenuItemId, content.LanguageId);
                     var link = StringHelper.BuildUrl(content.UrlCode, culture, content.ContentTypeId, parentMenuItemPath, content.Title.Trim(), true);
                     content.UrlSlug = link.Item1;
@@ -275,7 +281,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                     foreach (var nestedItem in item.MenuItems1)
                     {
                         UpdatePath(nestedItem);
-                    }             
+                    }
                 }
             }
         }

@@ -2820,6 +2820,10 @@
     <Content Include="App_Data\CuteCMSDB_log.ldf">
       <DependentUpon>CuteCMSDB.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\old\CuteCMSDB.mdf" />
+    <Content Include="App_Data\old\CuteCMSDB_log.ldf">
+      <DependentUpon>CuteCMSDB.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data_PSUT\CuteCMSDB.mdf" />
     <Content Include="App_Data_PSUT\CuteCMSDB_log.ldf">
       <DependentUpon>CuteCMSDB.mdf</DependentUpon>
@@ -7172,6 +7176,7 @@
     <Content Include="fileman\js\utils.js" />
     <Content Include="fileman\LICENSE.txt" />
     <Content Include="fileman\third-party.txt" />
+    <Content Include="fileman\Uploads\Images\Config\Organizations\admission-primary-logo.png" />
     <Content Include="fileman\Uploads\Images\Config\Organizations\psut-primary-logo.png" />
     <Content Include="fileman\Uploads\Images\Config\Organizations\psut-secondary.jpg" />
     <Content Include="fileman\Uploads\LICENSE.txt" />

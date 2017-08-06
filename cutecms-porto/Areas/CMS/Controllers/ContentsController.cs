@@ -318,13 +318,14 @@ namespace cutecms_porto.Areas.CMS.Controllers
                             db.SaveChanges();
                             CacheHelper.ClearCache();
                             statusId = contentStatus.Id;
-                            return RedirectToAction("Index", new { statusId = statusId });
+                   
                         }
                         catch (Exception ex)
                         {
                             ModelState.AddModelError("error", ex.ToString());
                         }
                         ts.Complete();
+                        return RedirectToAction("Index", new { statusId = statusId });
                     }
                 }
             }

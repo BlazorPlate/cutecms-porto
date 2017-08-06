@@ -64,112 +64,112 @@
 </div>
 <section class="section-custom-medical">
     <div class="container">
-        <div class="row medical-schedules">
-            @if (cutecms_porto.Helpers.CultureHelper.IsRighToLeft())
-            {
-                <div class="col-lg-3 box-four background-color-secondary p-none appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1800">
-                    <a href="tel:+008001234567" class="text-decoration-none">
-                        <div class="feature-box feature-box-style-2 m-none">
+        @*<div class="row medical-schedules">
+                @if (cutecms_porto.Helpers.CultureHelper.IsRighToLeft())
+                {
+                    <div class="col-lg-3 box-four background-color-secondary p-none appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1800">
+                        <a href="tel:+008001234567" class="text-decoration-none">
+                            <div class="feature-box feature-box-style-2 m-none">
+                                <div class="feature-box-icon">
+                                    <i class="icon-call-out icons"></i>
+                                </div>
+                                <div class="feature-box-info ml-md">
+                                    <label class="font-weight-light">@Resources.Resources.EmergencyCase</label>
+                                    <strong class="font-weight-normal">@(OrganizationData.Organization?.Telephone)</strong>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 box-three background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1200">
+                        <div class="expanded-info p-xlg background-color-primary">
+                            @foreach (var item in openingHours)
+                            {
+                                <div class="info custom-info log-in-info">
+                                    <div style="color:white" class="bold">@item.Title</div>
+                                    <div style="color:white">@item.Subtitle</div>
+                                </div>
+                            }
+                        </div>
+                        <h5 class="m-none">
+                            @Resources.Resources.OpeningHours
+                            <i class="icon-arrow-right-circle icons"></i>
+                        </h5>
+                    </div>
+                    <div class="col-lg-3 box-two background-color-tertiary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="600">
+                        <h5 class="m-none">
+                            <a href="demo-medical-doctors.html" title="">
+                                @Resources.Resources.DoctorsTimetable
+                                <i class="icon-arrow-right-circle icons"></i>
+                            </a>
+                        </h5>
+                    </div>
+                    <div class="col-lg-3 box-one background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="0">
+                        <div class="feature-box feature-box-style-2 p-lg">
                             <div class="feature-box-icon">
-                                <i class="icon-call-out icons"></i>
+                                <img src="~/assets/porto/img/demos/medical/icons/medical-icon-heart.png" alt="" class="img-responsive pt-xs" />
                             </div>
                             <div class="feature-box-info ml-md">
-                                <label class="font-weight-light">@Resources.Resources.EmergencyCase</label>
-                                <strong class="font-weight-normal">@(OrganizationData.Organization?.Telephone)</strong>
+                                <h4 class="m-none">@Resources.Resources.MedicalTreatment</h4>
                             </div>
                         </div>
-                    </a>
-                </div>
-                <div class="col-lg-3 box-three background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1200">
-                    <div class="expanded-info p-xlg background-color-primary">
-                        @foreach (var item in openingHours)
-                        {
-                            <div class="info custom-info log-in-info">
-                                <div style="color:white" class="bold">@item.Title</div>
-                                <div style="color:white">@item.Subtitle</div>
-                            </div>
-                        }
                     </div>
-                    <h5 class="m-none">
-                        @Resources.Resources.OpeningHours
-                        <i class="icon-arrow-right-circle icons"></i>
-                    </h5>
-                </div>
-                <div class="col-lg-3 box-two background-color-tertiary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="600">
-                    <h5 class="m-none">
-                        <a href="demo-medical-doctors.html" title="">
-                            @Resources.Resources.DoctorsTimetable
-                            <i class="icon-arrow-right-circle icons"></i>
-                        </a>
-                    </h5>
-                </div>
-                <div class="col-lg-3 box-one background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="0">
-                    <div class="feature-box feature-box-style-2 p-lg">
-                        <div class="feature-box-icon">
-                            <img src="~/assets/porto/img/demos/medical/icons/medical-icon-heart.png" alt="" class="img-responsive pt-xs" />
-                        </div>
-                        <div class="feature-box-info ml-md">
-                            <h4 class="m-none">@Resources.Resources.MedicalTreatment</h4>
-                        </div>
-                    </div>
-                </div>
 
-            }
-            else
-            {
-                <div class="col-lg-3 box-one background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="0">
-                    <div class="feature-box feature-box-style-2 p-lg">
-                        <div class="feature-box-icon">
-                            <img src="~/assets/porto/img/demos/medical/icons/medical-icon-heart.png" alt="" class="img-responsive pt-xs" />
-                        </div>
-                        <div class="feature-box-info ml-md">
-                            <h4 class="m-none">@Resources.Resources.MedicalTreatment</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 box-two background-color-tertiary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="600">
-                    <h5 class="m-none">
-                        <a href="demo-medical-doctors.html" title="">
-                            Doctors Timetable
-                            <i class="icon-arrow-right-circle icons"></i>
-                        </a>
-                    </h5>
-                </div>
-                <div class="col-lg-3 box-three background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1200">
-                    <div class="expanded-info p-xlg background-color-primary">
-                        <div class="table">
-                            <div class="row">
-                                @foreach (var item in openingHours)
-                                {
-                                    <div class="info custom-info log-in-info">
-                                        <div style="color:white" class="bold">@item.Title</div>
-                                        <div style="color:white">@item.Subtitle</div>
-                                    </div>
-                                }
-                            </div>
-                        </div>
-                    </div>
-                    <h5 class="m-none">
-                        @Resources.Resources.OpeningHours
-                        <i class="icon-arrow-right-circle icons"></i>
-                    </h5>
-                </div>
-                <div class="col-lg-3 box-four background-color-secondary p-none appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1800">
-                    <a href="tel:+008001234567" class="text-decoration-none">
-                        <div class="feature-box feature-box-style-2 m-none">
+                }
+                else
+                {
+                    <div class="col-lg-3 box-one background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="0">
+                        <div class="feature-box feature-box-style-2 p-lg">
                             <div class="feature-box-icon">
-                                <i class="icon-call-out icons"></i>
+                                <img src="~/assets/porto/img/demos/medical/icons/medical-icon-heart.png" alt="" class="img-responsive pt-xs" />
                             </div>
                             <div class="feature-box-info ml-md">
-                                <label class="font-weight-light">@Resources.Resources.EmergencyCase</label>
-                                <strong class="font-weight-normal">@(OrganizationData.Organization?.Telephone)</strong>
+                                <h4 class="m-none">@Resources.Resources.MedicalTreatment</h4>
                             </div>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                    <div class="col-lg-3 box-two background-color-tertiary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="600">
+                        <h5 class="m-none">
+                            <a href="demo-medical-doctors.html" title="">
+                                Doctors Timetable
+                                <i class="icon-arrow-right-circle icons"></i>
+                            </a>
+                        </h5>
+                    </div>
+                    <div class="col-lg-3 box-three background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1200">
+                        <div class="expanded-info p-xlg background-color-primary">
+                            <div class="table">
+                                <div class="row">
+                                    @foreach (var item in openingHours)
+                                    {
+                                        <div class="info custom-info log-in-info">
+                                            <div style="color:white" class="bold">@item.Title</div>
+                                            <div style="color:white">@item.Subtitle</div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <h5 class="m-none">
+                            @Resources.Resources.OpeningHours
+                            <i class="icon-arrow-right-circle icons"></i>
+                        </h5>
+                    </div>
+                    <div class="col-lg-3 box-four background-color-secondary p-none appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1800">
+                        <a href="tel:+008001234567" class="text-decoration-none">
+                            <div class="feature-box feature-box-style-2 m-none">
+                                <div class="feature-box-icon">
+                                    <i class="icon-call-out icons"></i>
+                                </div>
+                                <div class="feature-box-info ml-md">
+                                    <label class="font-weight-light">@Resources.Resources.EmergencyCase</label>
+                                    <strong class="font-weight-normal">@(OrganizationData.Organization?.Telephone)</strong>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
 
-            }
-        </div>
+                }
+            </div>*@
         @foreach (var item in shortcutContents)
         {
             <div class="row mt-xlg pt-xlg mb-xlg pb-xs">
@@ -198,7 +198,7 @@
             </div>
         </div>
         @{var i = 0;}
-        @foreach (var item in IdentityDb.IdentityDepartmentTerms.Where(d => d.Department.TenantId.Trim().Equals(Tenant.TenantId) && d.HomeVisible && d.Visible && d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).OrderBy(d => d.Department.Ordinal))
+        @foreach (var item in Model.DepartmentTerms)
         {
             if (i % 3 == 0)
             {
@@ -218,7 +218,7 @@
             i++;
             if (i % 3 == 0)
             {
-                @:</div>
+                @:            </div>
             }
         }
         <div class="row mt-lg pb-xlg">
@@ -251,28 +251,32 @@
         </div>
         <div class="row mb-xlg">
             <div class="owl-carousel owl-theme nav-bottom rounded-nav pl-xs pr-xs" data-plugin-options="{'items': 4, 'loop': false, 'dots': false, 'nav': true}">
-                @foreach (var item in Model.DepartmentTerms.OrderBy(d => d.Ordinal))
+                @foreach (var item in Model.DepartmentTerms)
                 {
                     foreach (var empInDept in item.Department.EmpInDepts.OrderBy(d => d.Ordinal))
                     {
                         string personalTitle = empInDept.Employee.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault()?.Value ?? empInDept.Employee.PersonalTitle.Code;
-                        var employee = IdentityDb.Employees.Where(e => e.Language.CultureName.Equals(Thread.CurrentThread.CurrentCulture.Name) && e.TranslationId == empInDept.Employee.TranslationId).FirstOrDefault();
-                        <div class="pr-sm pl-sm">
-                            <a href="@Url.Action("MemberProfile", "Staff", new { id = empInDept.Employee.TranslationId })" data-ajax-on-page class="text-decoration-none">
-                                <span class="thumb-info thumb-info-no-zoom thumb-info-hide-wrapper-bg">
-                                    <span class="thumb-info-wrapper m-none">
-                                        <img alt="@empInDept.Employee.PersonalPhotoName" src="@(!File.Exists(Server.MapPath(employee.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : @employee.PersonalPhotoPath)">
-                                    </span>
-                                    <span class="thumb-info-caption p-md pt-xlg pb-xlg">
-                                        <span class="custom-thumb-info-title">
-                                            <span class="custom-thumb-info-type font-weight-light text-md">@empInDept.Department.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value</span>
-                                            <span class="custom-thumb-info-inner font-weight-semibold text-lg">@personalTitle @employee.FullName</span>
-                                            @*<i class="icon-arrow-right-circle icons font-weight-semibold text-lg "></i>*@
+                        var employee = identityDb.Employees.Where(e => e.Language.CultureName.Equals(Thread.CurrentThread.CurrentCulture.Name) && e.TranslationId == empInDept.Employee.TranslationId).FirstOrDefault();
+                        if (employee != null)
+                        {
+                            <div class="pr-sm pl-sm">
+                                <a href="@Url.Action("MemberProfile", "Staff", new { id = empInDept.Employee.TranslationId })" data-ajax-on-page class="text-decoration-none">
+                                    <span class="thumb-info thumb-info-no-zoom thumb-info-hide-wrapper-bg">
+                                        <span class="thumb-info-wrapper m-none">
+                                            <img alt="@empInDept.Employee.PersonalPhotoName" src="@(!File.Exists(Server.MapPath(employee.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : @employee.PersonalPhotoPath)">
+                                        </span>
+                                        <span class="thumb-info-caption p-md pt-xlg pb-xlg">
+                                            <span class="custom-thumb-info-title">
+                                                <span class="custom-thumb-info-type font-weight-light text-md">@empInDept.Department.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value</span>
+                                                <span class="custom-thumb-info-inner font-weight-semibold text-lg">@personalTitle @employee.FullName</span>
+                                                @*<i class="icon-arrow-right-circle icons font-weight-semibold text-lg "></i>*@
+                                            </span>
                                         </span>
                                     </span>
-                                </span>
-                            </a>
-                        </div>
+                                </a>
+                            </div>
+                        }
+
                     }
                 }
             </div>
@@ -308,20 +312,20 @@
 
             }
             @*<div class="col-sm-4 col-md-4">
-                <a href="demo-medical-resources-detail.html" class="text-decoration-none">
-                    <span class="thumb-info thumb-info-side-image thumb-info-side-image-custom thumb-info-no-zoom thumb-info-no-zoom thumb-info-side-image-custom-highlight">
-                        <span class="thumb-info-side-image-wrapper">
-                            <img alt="" class="img-responsive" src="~/assets/porto/img/demos/medical/gallery/gallery-3.jpg">
-                        </span>
-                        <span class="thumb-info-caption">
-                            <span class="thumb-info-caption-text p-xl">
-                                <h4 class="font-weight-semibold mb-xs">Surgery proccess</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hend...</p>
+                    <a href="demo-medical-resources-detail.html" class="text-decoration-none">
+                        <span class="thumb-info thumb-info-side-image thumb-info-side-image-custom thumb-info-no-zoom thumb-info-no-zoom thumb-info-side-image-custom-highlight">
+                            <span class="thumb-info-side-image-wrapper">
+                                <img alt="" class="img-responsive" src="~/assets/porto/img/demos/medical/gallery/gallery-3.jpg">
+                            </span>
+                            <span class="thumb-info-caption">
+                                <span class="thumb-info-caption-text p-xl">
+                                    <h4 class="font-weight-semibold mb-xs">Surgery proccess</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hend...</p>
+                                </span>
                             </span>
                         </span>
-                    </span>
-                </a>
-            </div>*@
+                    </a>
+                </div>*@
         </div>
         <div class="row pb-xlg">
             <div class="col-md-12 center">
@@ -338,20 +342,20 @@
                 <p class="lead font-weight-normal">@insuranceList.Subtitle</p>
             </div>
         </div>
-            <div class="row center">
-                <div class="owl-carousel owl-theme" data-plugin-options="{'items': 6, 'autoplay': true, 'autoplayTimeout': 3000}">
-                    @foreach (var item in insuranceList.ListItems)
-                    {
-                        <div>
-                            <img class="img-responsive" src="@item.ThumbPath" alt="">
-                            <p>@item.Title</p>
-                        </div>
-                    }    
-                    @*<div class="content-grid-item col-sm-4 col-md-2 center">
+        <div class="row center">
+            <div class="owl-carousel owl-theme" data-plugin-options="{'items': 6, 'autoplay': true, 'autoplayTimeout': 3000}">
+                @foreach (var item in insuranceList.ListItems)
+                {
+                    <div>
+                        <img class="img-responsive" src="@item.ThumbPath" alt="">
+                        <p>@item.Title</p>
+                    </div>
+                }
+                @*<div class="content-grid-item col-sm-4 col-md-2 center">
                         <img src="~/assets/porto/img/demos/medical/logos/insurance-logo-1.png" class="img-responsive" />
                     </div>*@
-                </div>
             </div>
+        </div>
     </div>
 </section>
 <section class="section-secondary">
@@ -375,22 +379,22 @@
                     </div>
                 </div>
                 }
-                
+
                 @*<div>
-                    <div class="col-md-8 col-md-offset-2 pt-xlg">
-                        <div class="testimonial testimonial-style-2 testimonial-with-quotes mb-none">
-                            <div class="testimonial-quote">“</div>
-                            <blockquote>
-                                <p class="font-weight-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit, leo vitae interdum pretium, tortor risus dapibus tortor, eu suscipit orci leo sed nisl. Integer et ipsum eu nulla auctor mattis sit amet in diam. Vestibulum non.</p>
-                            </blockquote>
-                            <div class="testimonial-author mt-xlg">
-                                <p class="text-uppercase">
-                                    <strong>John Smith</strong>
-                                </p>
+                        <div class="col-md-8 col-md-offset-2 pt-xlg">
+                            <div class="testimonial testimonial-style-2 testimonial-with-quotes mb-none">
+                                <div class="testimonial-quote">“</div>
+                                <blockquote>
+                                    <p class="font-weight-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit, leo vitae interdum pretium, tortor risus dapibus tortor, eu suscipit orci leo sed nisl. Integer et ipsum eu nulla auctor mattis sit amet in diam. Vestibulum non.</p>
+                                </blockquote>
+                                <div class="testimonial-author mt-xlg">
+                                    <p class="text-uppercase">
+                                        <strong>John Smith</strong>
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>*@
+                    </div>*@
             </div>
         </div>
     </div>

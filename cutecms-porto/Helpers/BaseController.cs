@@ -46,7 +46,7 @@ namespace cutecms_porto.Helpers
             //if (fullAddress.Length < 2)
             //    filterContext.Result = new HttpStatusCodeResult(404); //or redirect filterContext.Result = new RedirectToRouteResult(..);
             //Tenant.TenantId = fullAddress[0];
-            Tenant.TenantId = "contoso";
+            Tenant.TenantId = "admission";
             if (HttpRuntime.Cache["Organization"] == null)
             {
                 var organizations = configDb.Organizations.Include("Language").Include("SocialNetworks").Where(o => o.TenantId.Trim().Equals(Tenant.TenantId) && o.IsDefault == true).ToList();

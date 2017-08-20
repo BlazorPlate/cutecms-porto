@@ -151,6 +151,20 @@ Write(Html.HiddenFor(model => model.ContentListId));
             
             #line 14 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
                                                  
+    
+            
+            #line default
+            #line hidden
+            
+            #line 15 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+Write(Html.HiddenFor(model => model.Thumb));
+
+            
+            #line default
+            #line hidden
+            
+            #line 15 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+                                         
 
             
             #line default
@@ -168,7 +182,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 17 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 18 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
        Write(Html.LabelFor(model => model.ContentListId, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -183,7 +197,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 19 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 20 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
            Write(Html.TextBox("ContentListCode", null, htmlAttributes: new { @class = "form-control", @disabled = "disabled" }));
 
             
@@ -198,7 +212,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 23 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 24 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
        Write(Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -213,7 +227,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 25 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 26 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
            Write(Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -224,7 +238,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 26 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 27 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
            Write(Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" }));
 
             
@@ -239,7 +253,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 30 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 31 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
        Write(Html.LabelFor(model => model.Subtitle, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -254,7 +268,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 32 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 33 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
            Write(Html.EditorFor(model => model.Subtitle, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -265,7 +279,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 33 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 34 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
            Write(Html.ValidationMessageFor(model => model.Subtitle, "", new { @class = "text-danger" }));
 
             
@@ -280,7 +294,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 37 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 38 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
        Write(Html.LabelFor(model => model.Body, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -295,7 +309,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 39 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 40 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
            Write(Html.TextAreaFor(model => model.Body, new { @class = "mceEditor" }));
 
             
@@ -306,7 +320,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 40 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 41 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
            Write(Html.ValidationMessageFor(model => model.Body, "", new { @class = "text-danger" }));
 
             
@@ -321,7 +335,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 44 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 45 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
        Write(Html.LabelFor(model => model.Url, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -336,7 +350,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 46 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 47 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
            Write(Html.EditorFor(model => model.Url, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -347,7 +361,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 47 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 48 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
            Write(Html.ValidationMessageFor(model => model.Url, "", new { @class = "text-danger" }));
 
             
@@ -362,7 +376,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 51 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 52 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
        Write(Html.LabelFor(model => model.Class, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -377,7 +391,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 53 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 54 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
            Write(Html.EditorFor(model => model.Class, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -388,7 +402,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 54 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 55 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
            Write(Html.ValidationMessageFor(model => model.Class, "", new { @class = "text-danger" }));
 
             
@@ -403,7 +417,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 58 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 59 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
        Write(Html.LabelFor(model => model.Visible, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -418,7 +432,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 60 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 61 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
            Write(Html.CheckBoxFor(model => model.Visible, new { @class = "js-switch" }));
 
             
@@ -429,7 +443,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 61 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 62 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
            Write(Html.ValidationMessageFor(model => model.Visible, "", new { @class = "text-danger" }));
 
             
@@ -444,7 +458,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 65 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 66 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
        Write(Html.LabelFor(model => model.Ordinal, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -459,7 +473,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 67 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 68 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
            Write(Html.EditorFor(model => model.Ordinal, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -470,7 +484,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 68 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 69 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
            Write(Html.ValidationMessageFor(model => model.Ordinal, "", new { @class = "text-danger" }));
 
             
@@ -485,7 +499,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 72 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 73 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
        Write(Html.LabelFor(model => model.File, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -500,7 +514,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 74 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 75 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
            Write(Html.TextBoxFor(model => model.File, new { @class = "form-control", type = "file", multiple = "false", placeholder = "upload files" }));
 
             
@@ -509,13 +523,13 @@ WriteLiteral("                ");
 WriteLiteral("\r\n");
 
             
-            #line 75 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 76 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 75 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 76 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
                  if (Model.FilePath != null)
                 {
 
@@ -524,14 +538,14 @@ WriteLiteral("\r\n");
             #line hidden
 WriteLiteral("                    <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4363), Tuple.Create("\"", 4398)
+WriteAttribute("href", Tuple.Create(" href=\"", 4406), Tuple.Create("\"", 4441)
             
-            #line 77 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 4370), Tuple.Create<System.Object, System.Int32>(Url.Content(Model.FilePath)
+            #line 78 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+, Tuple.Create(Tuple.Create("", 4413), Tuple.Create<System.Object, System.Int32>(Url.Content(Model.FilePath)
             
             #line default
             #line hidden
-, 4370), false)
+, 4413), false)
 );
 
 WriteLiteral(" style=\"color:dodgerblue\"");
@@ -539,7 +553,7 @@ WriteLiteral(" style=\"color:dodgerblue\"");
 WriteLiteral(">");
 
             
-            #line 77 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 78 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
                                                                                Write(Resources.Resources.View);
 
             
@@ -548,7 +562,7 @@ WriteLiteral(">");
 WriteLiteral("</a>\r\n");
 
             
-            #line 78 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 79 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
                 }
 
             
@@ -557,7 +571,7 @@ WriteLiteral("</a>\r\n");
 WriteLiteral("                ");
 
             
-            #line 79 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 80 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
            Write(Html.ValidationMessageFor(model => model.File, "", new { @class = "text-danger" }));
 
             
@@ -572,7 +586,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 83 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 84 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
        Write(Html.LabelFor(model => model.Thumb, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -587,7 +601,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 85 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 86 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
            Write(Html.TextBoxFor(model => model.Thumb, new { @class = "form-control", type = "file", multiple = "false", placeholder = "upload files" }));
 
             
@@ -596,13 +610,13 @@ WriteLiteral("                ");
 WriteLiteral("\r\n");
 
             
-            #line 86 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 87 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 86 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 87 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
                  if (Model.ThumbPath != null)
                 {
 
@@ -611,20 +625,20 @@ WriteLiteral("\r\n");
             #line hidden
 WriteLiteral("                    <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 5034), Tuple.Create("\"", 5070)
+WriteAttribute("href", Tuple.Create(" href=\"", 5077), Tuple.Create("\"", 5113)
             
-            #line 88 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 5041), Tuple.Create<System.Object, System.Int32>(Url.Content(Model.ThumbPath)
+            #line 89 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+, Tuple.Create(Tuple.Create("", 5084), Tuple.Create<System.Object, System.Int32>(Url.Content(Model.ThumbPath)
             
             #line default
             #line hidden
-, 5041), false)
+, 5084), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 88 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 89 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
                                                        Write(Resources.Resources.View);
 
             
@@ -633,7 +647,7 @@ WriteLiteral(">");
 WriteLiteral("</a>\r\n");
 
             
-            #line 89 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 90 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
                 }
 
             
@@ -642,7 +656,7 @@ WriteLiteral("</a>\r\n");
 WriteLiteral("                ");
 
             
-            #line 90 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 91 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
            Write(Html.ValidationMessageFor(model => model.Thumb, "", new { @class = "text-danger" }));
 
             
@@ -657,7 +671,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 94 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 95 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
        Write(Html.Label(Resources.Resources.Dimensions, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -672,7 +686,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 96 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 97 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
            Write(Html.TextBox("width", null, new { @placeholder = @Resources.Resources.Width }));
 
             
@@ -683,7 +697,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 97 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 98 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
            Write(Html.TextBox("height", null, new { @placeholder = @Resources.Resources.Height }));
 
             
@@ -701,14 +715,14 @@ WriteLiteral(">\r\n                <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 5802), Tuple.Create("\"", 5835)
+WriteAttribute("value", Tuple.Create(" value=\"", 5845), Tuple.Create("\"", 5878)
             
-            #line 102 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 5810), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Save
+            #line 103 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+, Tuple.Create(Tuple.Create("", 5853), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Save
             
             #line default
             #line hidden
-, 5810), false)
+, 5853), false)
 );
 
 WriteLiteral(" class=\"btn btn-default\"");
@@ -726,7 +740,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 107 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 108 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
            Write(Html.ValidationSummary(false, "", new { @class = "text-danger" }));
 
             
@@ -735,7 +749,7 @@ WriteLiteral("                ");
 WriteLiteral("\r\n            </div>\r\n        </div>\r\n    </div>\r\n");
 
             
-            #line 111 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 112 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
 }
 
             
@@ -746,7 +760,7 @@ WriteLiteral("<div>\r\n");
 WriteLiteral("    ");
 
             
-            #line 113 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 114 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
 Write(Html.ActionLink(Resources.Resources.BackToList, "Index", new { id = Model.ContentListId }));
 
             
@@ -761,7 +775,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 116 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
+            #line 117 "..\..\Areas\CMS\Views\ListItems\Edit.cshtml"
 Write(Scripts.Render("~/bundles/jqueryval"));
 
             

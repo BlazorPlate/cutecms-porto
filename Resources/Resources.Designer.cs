@@ -4021,6 +4021,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Staff.
+        /// </summary>
+        public static string Staff {
+            get {
+                return ResourceManager.GetString("Staff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Staff Directory.
         /// </summary>
         public static string StaffDirectory {

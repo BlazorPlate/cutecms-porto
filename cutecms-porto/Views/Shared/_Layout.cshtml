@@ -8,7 +8,7 @@
     RegionInfo regionInfo = new RegionInfo(cultureInfo.LCID);
     var languages = db.CMSLanguages.Where(l => l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal).ToList();
     var organizations = (List<Organization>)HttpRuntime.Cache["Organizations"];
-    var organization = organizations.Where(o => o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
+    var organization = organizations.Where(o => o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name))?.FirstOrDefault() ?? new Organization();
 }
 <!DOCTYPE html>
 <html dir="@(CultureHelper.IsRighToLeft() ? "rtl" : "ltr")" class="boxed">
@@ -18,10 +18,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>CuteCMS.NET - Dynamic Content Management System</title>
+    <title>@(organization?.Name) - @(organization?.Description)</title>
 
-    <meta name="keywords" content="HTML5 Template" />
-    <meta name="description" content="CuteCMS.NET - Dynamic Content Management System">
+    <meta name="keywords" content="@(organization.MetaDescription)" />
+    <meta name="description" content="@(organization.MetaDescription)">
     <meta name="author" content="CuteCMS.NET">
 
     <!-- Favicon -->

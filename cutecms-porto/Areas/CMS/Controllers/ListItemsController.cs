@@ -147,12 +147,12 @@ namespace cutecms_porto.Areas.CMS.Controllers
                 if (listItem.Thumb != null && listItem.Thumb.ContentLength > 0)
                 {
                     var extension = Path.GetExtension(listItem.Thumb.FileName);
-                    var newFileName = Helpers.StringHelper.CleanFileName(listItem.Title + extension);
+                    var newFileName = StringHelper.CleanFileName(listItem.Title + extension);
                     //var newFileName = listItem.Title + extension;
                     var path = String.Format("/fileman/Uploads/Images/CMS/ListItems/Thumbs/{0}", newFileName);
                     listItem.ThumbPath = path;
                     listItem.ThumbName = newFileName;
-                    using (var img = System.Drawing.Image.FromStream(listItem.Thumb.InputStream))
+                    using (var img = Image.FromStream(listItem.Thumb.InputStream))
                     {
                         if (width == null)
                             width = img.Width;

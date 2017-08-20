@@ -1630,7 +1630,7 @@
     <value>مسار الأيقونة</value>
   </data>
   <data name="MeetOurTeam" xml:space="preserve">
-    <value>فريق العمل</value>
+    <value>تعرف على فريق العمل</value>
   </data>
   <data name="MainDepts" xml:space="preserve">
     <value>الأقسام الرئيسية</value>
@@ -1688,5 +1688,8 @@
   </data>
   <data name="OurSpecialists" xml:space="preserve">
     <value>الأخصائيين والاستشاريين</value>
+  </data>
+  <data name="Staff" xml:space="preserve">
+    <value>طاقم العمل</value>
   </data>
 </root>

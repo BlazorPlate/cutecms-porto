@@ -125,6 +125,7 @@ namespace cutecms_porto.Helpers
             if (!String.IsNullOrEmpty(fileName))
             {
                 fileName.Trim();
+                fileName = Regex.Replace(fileName, "  ", " ", RegexOptions.Compiled);
                 fileName = Regex.Replace(fileName, @"\s", "-", RegexOptions.Compiled);
             }
             return fileName;

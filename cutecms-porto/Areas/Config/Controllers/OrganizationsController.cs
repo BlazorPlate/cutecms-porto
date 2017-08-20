@@ -130,7 +130,6 @@ namespace cutecms_porto.Areas.Config.Controllers
                 if (organization.TranslationId == null)
                     organization.TranslationId = organization.Id;
                 db.Entry(organization).State = EntityState.Modified;
-
                 db.SaveChanges();
                 CacheHelper.ClearCache();
                 return RedirectToAction("Index");

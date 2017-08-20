@@ -62,7 +62,7 @@
         </ul>
     </div>
 </div>
-<section class="section-custom-medical">
+@*<section class="section-custom-medical">
     <div class="container">
         <div class="row medical-schedules">
                 @if (cutecms_porto.Helpers.CultureHelper.IsRighToLeft())
@@ -97,7 +97,7 @@
                     </div>
                     <div class="col-lg-3 box-two background-color-tertiary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="600">
                         <h5 class="m-none">
-                            <a href="demo-medical-.html" title="">
+                            <a href="demo-medical-doctors.html" title="">
                                 @Resources.Resources.DoctorsTimetable
                                 <i class="icon-arrow-right-circle icons"></i>
                             </a>
@@ -188,7 +188,7 @@
         }
 
     </div>
-</section>
+</section>*@
 <section class="section section-no-border">
     <div class="container">
         <div class="row pt-xl">
@@ -232,8 +232,8 @@
     <div class="container">
         <div class="row mt-xlg">
             <div class="col-md-12">
-                <h2 class="font-weight-semibold m-none">@Resources.Resources.Doctors</h2>
-                <p class="lead font-weight-normal">@Resources.Resources.OurSpecialists</p>
+                <h2 class="font-weight-semibold m-none">@Resources.Resources.Staff</h2>
+                <p class="lead font-weight-normal">@Resources.Resources.MeetOurTeam</p>
 
                 <div id="porfolioAjaxBoxMedical" class="ajax-box ajax-box-init mb-lg">
 
@@ -276,7 +276,6 @@
                                 </a>
                             </div>
                         }
-
                     }
                 }
             </div>
@@ -329,7 +328,7 @@
         </div>
         <div class="row pb-xlg">
             <div class="col-md-12 center">
-                <a class="btn btn-borders btn-quaternary custom-button text-uppercase font-weight-bold">view more</a>
+                <a class="btn btn-borders btn-quaternary custom-button text-uppercase font-weight-bold">@Resources.Resources.ViewMore</a>
             </div>
         </div>
     </div>
@@ -362,7 +361,7 @@
     <div class="container">
         <div class="row mt-xlg pt-md mb-xlg pb-md">
             <div class="owl-carousel owl-theme nav-bottom rounded-nav" data-plugin-options="{'items': 1, 'loop': false, 'dots': false}">
-                @foreach (var item in insuranceList.ListItems)
+                @foreach (var item in testimonialList.ListItems)
                 {                <div>
                     <div class="col-md-8 col-md-offset-2 pt-xlg">
                         <div class="testimonial testimonial-style-2 testimonial-with-quotes mb-none">

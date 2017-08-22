@@ -88,7 +88,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         {
             return View();
         }
-
+        [LocalizedAuthorize(Roles = "Admin")]
         public ActionResult Index(int? page, string userNameFilter, string emailFilter, string roleIdFilter, bool isEmailConfirmedFilter = true)
         {
             var pageNumber = page ?? 1;

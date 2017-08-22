@@ -40,7 +40,7 @@ namespace cutecms_porto.Controllers
             query.OrderBy(e => e.FirstName);
             ViewBag.EmpName = EmpName;
             ViewBag.EmpTypeId = EmpTypeId;
-            return View(query.OrderBy(e => e.FirstName).OrderBy(e => e.Ordinal).ToPagedList(pageNumber, 2));
+            return View(query.OrderBy(e => e.FirstName).OrderBy(e => e.Ordinal).ToPagedList(pageNumber, 4));
         }
 
         // GET: Identity/Employees/Details/5

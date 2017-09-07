@@ -41,3 +41,8 @@ form label {
 .thumb-info .thumb-info-title {
     font-weight: 600;
 }
+
+.owl-carousel .owl-item img {
+    width: 90%;
+}
+

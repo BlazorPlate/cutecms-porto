@@ -1689,4 +1689,19 @@
   <data name="OurSpecialists" xml:space="preserve">
     <value>ผู้เชี่ยวชาญของเรา</value>
   </data>
+  <data name="Staff" xml:space="preserve">
+    <value>พนักงาน</value>
+  </data>
+  <data name="MedicalStaff" xml:space="preserve">
+    <value>บุคลากรทางการเเพทย์</value>
+  </data>
+  <data name="LatestEvents" xml:space="preserve">
+    <value>กิจกรรมล่าสุด</value>
+  </data>
+  <data name="DoctorName" xml:space="preserve">
+    <value>ชื่อหมอ</value>
+  </data>
+  <data name="DoctorType" xml:space="preserve">
+    <value>ประเภทของแพทย์</value>
+  </data>
 </root>

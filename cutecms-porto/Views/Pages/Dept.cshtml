@@ -38,7 +38,7 @@
             <aside class="sidebar">
                 <h4 class="font-weight-semibold mb-lg">@Resources.Resources.MainDepts</h4>
                 <ul class="nav nav-list narrow mb-xlg">
-                    @foreach (var item in db.IdentityDepartmentTerms.Where(d => d.Department.TenantId.Trim().Equals(Tenant.TenantId) && d.Department.Departments1.Count > 0 && d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).Where(d => d.Visible).OrderBy(d => d.DepartmentId).ThenBy(d => d.Ordinal))
+                    @foreach (var item in db.IdentityDepartmentTerms.Where(d => d.Department.TenantId.Trim().Equals(Tenant.TenantId) && d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).Where(d => d.Visible).OrderBy(d => d.DepartmentId).ThenBy(d => d.Ordinal))
                     {
                         <li><a href="@string.Concat(item.AbsolutePath, string.Concat("#", item.Department.Code))">@item.Value</a></li>
                     }

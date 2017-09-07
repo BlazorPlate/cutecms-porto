@@ -1689,4 +1689,19 @@
   <data name="OurSpecialists" xml:space="preserve">
     <value>Unsere Spezialisten</value>
   </data>
+  <data name="Staff" xml:space="preserve">
+    <value>Mitarbeiter</value>
+  </data>
+  <data name="MedicalStaff" xml:space="preserve">
+    <value>Medizinisches Personal</value>
+  </data>
+  <data name="LatestEvents" xml:space="preserve">
+    <value>Aktuelle Veranstaltungen</value>
+  </data>
+  <data name="DoctorName" xml:space="preserve">
+    <value>Name des Arztes</value>
+  </data>
+  <data name="DoctorType" xml:space="preserve">
+    <value>Arzt-Typ</value>
+  </data>
 </root>

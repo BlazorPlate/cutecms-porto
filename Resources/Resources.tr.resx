@@ -1689,4 +1689,19 @@
   <data name="OurSpecialists" xml:space="preserve">
     <value>Uzmanlarımız</value>
   </data>
+  <data name="Staff" xml:space="preserve">
+    <value>Genelkurmay</value>
+  </data>
+  <data name="MedicalStaff" xml:space="preserve">
+    <value>Sağlık görevlisi!</value>
+  </data>
+  <data name="LatestEvents" xml:space="preserve">
+    <value>En Son Etkinlikler</value>
+  </data>
+  <data name="DoctorName" xml:space="preserve">
+    <value>Doktor Adı</value>
+  </data>
+  <data name="DoctorType" xml:space="preserve">
+    <value>Doktor Tipi</value>
+  </data>
 </root>

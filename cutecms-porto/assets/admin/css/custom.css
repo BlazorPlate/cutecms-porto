@@ -1,9 +1,4 @@
-﻿.flag {
-    width: 16px;
-    height: 11px;
-    background: url(../plugins/images/flags.png) no-repeat;
-}
-
+﻿/* Add here all your CSS customizations */
 .flag.flag-ad {
 	background-position: -16px 0;
 }

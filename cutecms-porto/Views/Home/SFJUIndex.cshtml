@@ -1,0 +1,170 @@
+﻿@using cutecms_porto.Areas.CMS.Models.DBModel;
+@using System.Threading
+@model cutecms_porto.Models.HomeViewModel
+@{
+    ViewBag.Title = Resources.Resources.Home;
+    ViewBag.Contents = Model.Contents;
+    CMSEntities cmsDb = new CMSEntities();
+}
+@section Styles{
+    <!-- Current Page CSS -->
+    <link rel="stylesheet" href="~/assets/porto/vendor/circle-flip-slideshow/css/component.css">
+    <link rel="stylesheet" href="~/assets/porto/vendor/nivo-slider/nivo-slider.css">
+    <link rel="stylesheet" href="~/assets/porto/vendor/nivo-slider/default/default.css">
+}
+<div class="container">
+    <div class="slider-container rev_slider_wrapper" style="height: 550px;">
+        <div id="revolutionSlider" class="slider rev_slider" data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'gridheight': 550, 'disableProgressBar': 'on', 'navigation': {'bullets': {'enable': true, 'direction': 'vertical', 'h_align': 'right', 'v_align': 'center', 'space': 5}, 'arrows': {'enable': false}}}">
+            <ul>
+                @foreach (var item in Model.HomeGallery)
+            {
+                    <li data-transition="fade">
+                        <img src="@item.FilePath"
+                             alt="@(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.Value ?? item.Code)"
+                             data-bgposition="center center"
+                             data-bgfit="cover"
+                             data-bgrepeat="no-repeat"
+                             class="rev-slidebg">
+
+                        <div class="tp-caption main-label"
+                             data-x="left" data-hoffset="25"
+                             data-y="center" data-voffset="-5"
+                             data-start="1500"
+                             data-whitespace="nowrap"
+                             data-transform_in="y:[100%];s:500;"
+                             data-transform_out="opacity:0;s:500;"
+                             style="z-index: 5; font-size: 1.5em; text-transform: uppercase;"
+                             data-mask_in="x:0px;y:0px;">@(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.SecondaryCaption)</div>
+
+                            <div class="tp-caption main-label"
+                                 data-x="left" data-hoffset="25"
+                                 data-y="center" data-voffset="-55"
+                                 data-start="500"
+                                 style="z-index: 5; text-transform: uppercase; font-size: 52px;"
+                                 data-transform_in="y:[-300%];opacity:0;s:500;">@(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.PrimaryCaption)</div>
+
+                                <div class="tp-caption bottom-label"
+                                     data-x="left" data-hoffset="25"
+                                     data-y="center" data-voffset="40"
+                                     data-start="2000"
+                                     style="z-index: 5; border-bottom: 1px solid #fff; padding-bottom: 3px;"
+                                     data-transform_in="y:[100%];opacity:0;s:500;" style="font-size: 1.2em;">@(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.TertiaryCaption)</div>
+                                </li>
+                }
+            </ul>
+        </div>
+    </div>
+    @*<div class="row">
+        <div class="col-md-12">
+            <div class="home-intro home-intro-compact">
+                <div class="row">
+                    <div class="col-md-8">
+                        <p>
+                            @Resources.Resources.Lorem1
+                            <span>@Resources.Resources.Lorem2</span>
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="get-started">
+                            <a href="#" class="btn btn-lg btn-primary">@Resources.Resources.GetStarted</a>
+                            <div class="learn-more">@Resources.Resources.Or <a href="/">@Resources.Resources.LearnMore</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+</div>
+
+@*<div class="container">
+
+    <div class="row center">
+        <div class="col-md-12">
+            <p class="lead">
+                @Resources.Resources.Lorem3
+            </p>
+        </div>
+    </div>
+
+</div>*@
+
+@*<div class="container">
+
+    <div class="row">
+        <hr class="tall">
+    </div>
+
+</div>*@
+
+@*<section class="section section-custom-map">*@
+    <section class="section section-default section-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="recent-posts mb-xl">
+                        <h2>@Resources.Resources.LatestNews</h2>
+                        <div class="owl-carousel owl-theme mb-none" data-plugin-options='{"items": 1}'>
+                            @{var newsIndex = 0;}
+                            @foreach (var item in Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("news")).OrderByDescending(c => c.PublishedOn).Take(12))
+                            {
+                                if (newsIndex % 2 == 0)
+                                {
+                                    @:<div class="row mt-lg">
+                        }
+                                <div class="col-md-6">
+                                    <article>
+                                        <div class="date">
+                                            <span class="day">@item.PublishedOn.Value.Day</span>
+                                            <span class="month">@item.PublishedOn.Value.Month</span>
+                                        </div>
+                                        <h4 class="heading-primary"><a href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@item.Title</a></h4>
+                                        <p>@item.MainContent.StripHtml().Chop(120)</p>
+                                        <a class="btn btn-primary btn-xs" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })"><i class="fa fa-plus"></i><span> @Resources.Resources.ReadMore</span></a>
+                                    </article>
+                                </div>
+                                newsIndex++;
+                                if (newsIndex % 2 == 0)
+                                {
+                                    @: </div>
+            }
+                            }
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="recent-posts mb-xl">
+                        <h2>@Resources.Resources.LatestEvents</h2>
+                        <div class="owl-carousel owl-theme mb-none" data-plugin-options='{"items": 1}'>
+                            @{var eventIndex = 0;}
+                            @foreach (var item in Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("events")).OrderByDescending(c=>c.PublishedOn).Take(12))
+                            {
+                                if (eventIndex % 2 == 0)
+                                {
+                                    @:<div class="row mt-lg">
+                        }
+                                <div class="col-md-6">
+                                    <article>
+                                        <div class="date">
+                                            <span class="day">@(item.StartDate?.Day ?? item.PublishedOn.Value.Day)</span>
+                                            <span class="month">@(item.StartDate?.Month ?? item.PublishedOn.Value.Month)</span>
+                                        </div>
+                                        <h4 class="heading-primary"><a href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@item.Title</a></h4>
+                                        <p>@item.MainContent.StripHtml().Chop(120)</p>
+                                        <a class="btn btn-primary btn-xs" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })"><i class="fa fa-plus"></i><span> @Resources.Resources.ReadMore</span></a>
+                                    </article>
+                                </div>
+                                eventIndex++;
+                                if (eventIndex % 2 == 0)
+                                {
+                                    @: </div>
+            }
+                            }
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+@*</section>*@

@@ -1689,4 +1689,19 @@
   <data name="OurSpecialists" xml:space="preserve">
     <value>スペシャリスト</value>
   </data>
+  <data name="Staff" xml:space="preserve">
+    <value>スタッフについて</value>
+  </data>
+  <data name="MedicalStaff" xml:space="preserve">
+    <value>医療スタッフ</value>
+  </data>
+  <data name="LatestEvents" xml:space="preserve">
+    <value>最新のイベント</value>
+  </data>
+  <data name="DoctorName" xml:space="preserve">
+    <value>ドクタ</value>
+  </data>
+  <data name="DoctorType" xml:space="preserve">
+    <value>ドクタ</value>
+  </data>
 </root>

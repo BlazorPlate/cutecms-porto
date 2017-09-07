@@ -1689,4 +1689,19 @@
   <data name="OurSpecialists" xml:space="preserve">
     <value>우리의 전문가</value>
   </data>
+  <data name="Staff" xml:space="preserve">
+    <value>스테프</value>
+  </data>
+  <data name="MedicalStaff" xml:space="preserve">
+    <value>의료 직원</value>
+  </data>
+  <data name="LatestEvents" xml:space="preserve">
+    <value>최근 등록된 클래스</value>
+  </data>
+  <data name="DoctorName" xml:space="preserve">
+    <value>박사</value>
+  </data>
+  <data name="DoctorType" xml:space="preserve">
+    <value>박사</value>
+  </data>
 </root>

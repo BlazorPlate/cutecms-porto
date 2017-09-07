@@ -1689,4 +1689,19 @@
   <data name="OurSpecialists" xml:space="preserve">
     <value>विशेषज्ञ</value>
   </data>
+  <data name="Staff" xml:space="preserve">
+    <value>स्टाफ़</value>
+  </data>
+  <data name="MedicalStaff" xml:space="preserve">
+    <value>मेडिकल स्टाफ</value>
+  </data>
+  <data name="LatestEvents" xml:space="preserve">
+    <value>नवीनतम घटनाओं</value>
+  </data>
+  <data name="DoctorName" xml:space="preserve">
+    <value>डॉक्टर का नाम!</value>
+  </data>
+  <data name="DoctorType" xml:space="preserve">
+    <value>डॉक्टर प्रकार!</value>
+  </data>
 </root>

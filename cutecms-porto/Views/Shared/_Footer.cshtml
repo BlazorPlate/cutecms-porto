@@ -4,7 +4,7 @@
 @{
     CMSEntities db = new CMSEntities();
     var organizations = (List<Organization>)HttpRuntime.Cache["Organizations"];
-    var organization = organizations.Where(o => o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
+    var organization = organizations.Where(o => o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name))?.FirstOrDefault() ?? new Organization();
     IEnumerable<MenuItem> footerMenuItems = db.MenuItems.Include("Status").Include("Menu").Include("Language").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Menu.Code.Trim().Equals("footer-menu") && m.Status.Code.Trim().Equals("published") && m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).OrderBy(o => o.Ordinal);
 }
 <footer id="footer">
@@ -41,9 +41,9 @@
                     @if (organization != null)
                     {
                         <ul class="contact">
-                            <li><p><i class="fa fa-map-marker"></i> <strong>@Resources.Resources.Address:</strong> @organization.City, @organization.State, @organization.Country</p></li>
+                            <li><p><i class="fa fa-map-marker"></i> <strong>@Resources.Resources.Address:</strong> @(organization?.AddressLine1), @(organization?.City), @(organization?.State), @(organization?.Country)</p></li>
                             <li><p><i class="fa fa-phone"></i> <strong>@Resources.Resources.Phone:</strong> @organization.Telephone</p></li>
-                            <li><p><i class="fa fa-envelope"></i> <strong>@Resources.Resources.Email:</strong> <a href="mailto:@organization.Email">@organization.Email</a></p></li>
+                            <li><p><i class="fa fa-envelope"></i> <strong>@Resources.Resources.Email:</strong> <a href="mailto:@organization.Email">@(organization?.Email)</a></p></li>
                         </ul>
                     }
                 </div>

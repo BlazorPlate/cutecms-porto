@@ -1689,4 +1689,19 @@
   <data name="OurSpecialists" xml:space="preserve">
     <value>Bác Sĩ Chuyên Khoa</value>
   </data>
+  <data name="Staff" xml:space="preserve">
+    <value>Nhân Viên</value>
+  </data>
+  <data name="MedicalStaff" xml:space="preserve">
+    <value>Nhân viên y tế</value>
+  </data>
+  <data name="LatestEvents" xml:space="preserve">
+    <value>Sự kiện mới</value>
+  </data>
+  <data name="DoctorName" xml:space="preserve">
+    <value>Tên bác sĩ</value>
+  </data>
+  <data name="DoctorType" xml:space="preserve">
+    <value>Bác sĩ loại</value>
+  </data>
 </root>

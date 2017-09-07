@@ -75,6 +75,9 @@ namespace ASP
     ViewBag.Title = Resources.Resources.ContactUs;
     IdentityEntities identityDb = new IdentityEntities();
     ConfigEntities configDb = new ConfigEntities();
+    var organizations = (List<Organization>)HttpRuntime.Cache["Organizations"];
+    var organization = organizations.Where(o => o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name))?.FirstOrDefault() ?? new Organization();
+
 
             
             #line default
@@ -102,7 +105,7 @@ WriteLiteral(" class=\"col-md-12\"");
 WriteLiteral(">\r\n                    <h1>");
 
             
-            #line 18 "..\..\Views\Home\Contact.cshtml"
+            #line 21 "..\..\Views\Home\Contact.cshtml"
                    Write(ViewBag.Title);
 
             
@@ -111,7 +114,7 @@ WriteLiteral(">\r\n                    <h1>");
 WriteLiteral("</h1>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </section>" +
 "\r\n    <div");
 
-WriteLiteral(" id=\"googlemaps\"");
+WriteLiteral(" id=\"map\"");
 
 WriteLiteral(" class=\"google-map\"");
 
@@ -139,7 +142,7 @@ WriteLiteral(" class=\"mb-sm mt-sm\"");
 WriteLiteral("><strong>");
 
             
-            #line 30 "..\..\Views\Home\Contact.cshtml"
+            #line 33 "..\..\Views\Home\Contact.cshtml"
                                        Write(Resources.Resources.ContactUs);
 
             
@@ -148,13 +151,13 @@ WriteLiteral("><strong>");
 WriteLiteral("</strong></h2>\r\n");
 
             
-            #line 31 "..\..\Views\Home\Contact.cshtml"
+            #line 34 "..\..\Views\Home\Contact.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 31 "..\..\Views\Home\Contact.cshtml"
+            #line 34 "..\..\Views\Home\Contact.cshtml"
              using (Html.BeginForm("Contact", "Home", FormMethod.Post))
             {
 
@@ -178,7 +181,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 36 "..\..\Views\Home\Contact.cshtml"
+            #line 39 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.LabelFor(model => model.SenderName));
 
             
@@ -189,7 +192,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 37 "..\..\Views\Home\Contact.cshtml"
+            #line 40 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.TextBoxFor(model => model.SenderName, "", new { @class = "form-control" }));
 
             
@@ -200,7 +203,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 38 "..\..\Views\Home\Contact.cshtml"
+            #line 41 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.ValidationMessageFor(model => model.SenderName, "", new { @class = "text-danger" }));
 
             
@@ -215,7 +218,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 41 "..\..\Views\Home\Contact.cshtml"
+            #line 44 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.LabelFor(model => model.Email));
 
             
@@ -226,7 +229,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 42 "..\..\Views\Home\Contact.cshtml"
+            #line 45 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.TextBoxFor(model => model.Email, "", new { @class = "form-control", @maxlength = "100", placeholder = "example@mail.com" }));
 
             
@@ -237,7 +240,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 43 "..\..\Views\Home\Contact.cshtml"
+            #line 46 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" }));
 
             
@@ -257,7 +260,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 48 "..\..\Views\Home\Contact.cshtml"
+            #line 51 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.LabelFor(model => model.Phone));
 
             
@@ -268,7 +271,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 49 "..\..\Views\Home\Contact.cshtml"
+            #line 52 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.TextBoxFor(model => model.Phone, "", new { @class = "form-control", @maxlength = "100" }));
 
             
@@ -294,7 +297,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 56 "..\..\Views\Home\Contact.cshtml"
+            #line 59 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.LabelFor(model => model.Subject));
 
             
@@ -305,7 +308,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 57 "..\..\Views\Home\Contact.cshtml"
+            #line 60 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.TextBoxFor(model => model.Subject, "", new { @class = "form-control", @maxlength = "100" }));
 
             
@@ -318,7 +321,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 58 "..\..\Views\Home\Contact.cshtml"
+            #line 61 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" }));
 
             
@@ -344,7 +347,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 65 "..\..\Views\Home\Contact.cshtml"
+            #line 68 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.LabelFor(model => model.Message));
 
             
@@ -355,7 +358,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 66 "..\..\Views\Home\Contact.cshtml"
+            #line 69 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.TextAreaFor(model => model.Message, new { @class = "form-control", @maxlength = "100", @rows = 14 }));
 
             
@@ -366,7 +369,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                            ");
 
             
-            #line 67 "..\..\Views\Home\Contact.cshtml"
+            #line 70 "..\..\Views\Home\Contact.cshtml"
                        Write(Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" }));
 
             
@@ -387,14 +390,14 @@ WriteLiteral(">\r\n                        <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 3558), Tuple.Create("\"", 3591)
+WriteAttribute("value", Tuple.Create(" value=\"", 3804), Tuple.Create("\"", 3837)
             
-            #line 73 "..\..\Views\Home\Contact.cshtml"
-, Tuple.Create(Tuple.Create("", 3566), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Send
+            #line 76 "..\..\Views\Home\Contact.cshtml"
+, Tuple.Create(Tuple.Create("", 3812), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Send
             
             #line default
             #line hidden
-, 3566), false)
+, 3812), false)
 );
 
 WriteLiteral(" class=\"btn btn-primary btn-lg mb-xlg\"");
@@ -404,7 +407,7 @@ WriteLiteral(" data-loading-text=\"Loading...\"");
 WriteLiteral(">\r\n                    </div>\r\n                </div>\r\n");
 
             
-            #line 76 "..\..\Views\Home\Contact.cshtml"
+            #line 79 "..\..\Views\Home\Contact.cshtml"
             }
 
             
@@ -421,7 +424,7 @@ WriteLiteral(" class=\"heading-primary mt-lg\"");
 WriteLiteral("><strong>");
 
             
-            #line 79 "..\..\Views\Home\Contact.cshtml"
+            #line 82 "..\..\Views\Home\Contact.cshtml"
                                                  Write(Resources.Resources.GetInTouch);
 
             
@@ -432,13 +435,13 @@ WriteLiteral("</strong></h4>\r\n            ");
 WriteLiteral("<p></p><p></p><p></p><p></p>\r\n            <hr>\r\n");
 
             
-            #line 82 "..\..\Views\Home\Contact.cshtml"
+            #line 85 "..\..\Views\Home\Contact.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 82 "..\..\Views\Home\Contact.cshtml"
+            #line 85 "..\..\Views\Home\Contact.cshtml"
              if (Model.Organization != null)
             {
 
@@ -452,7 +455,7 @@ WriteLiteral(" class=\"heading-primary\"");
 WriteLiteral(">");
 
             
-            #line 84 "..\..\Views\Home\Contact.cshtml"
+            #line 87 "..\..\Views\Home\Contact.cshtml"
                                        Write(Model.Organization.Name);
 
             
@@ -471,7 +474,7 @@ WriteLiteral(" class=\"fa fa-map-marker\"");
 WriteLiteral("></i> ");
 
             
-            #line 86 "..\..\Views\Home\Contact.cshtml"
+            #line 89 "..\..\Views\Home\Contact.cshtml"
                                                     Write(Model.Organization.AddressLine1);
 
             
@@ -480,7 +483,7 @@ WriteLiteral("></i> ");
 WriteLiteral("<br />");
 
             
-            #line 86 "..\..\Views\Home\Contact.cshtml"
+            #line 89 "..\..\Views\Home\Contact.cshtml"
                                                                                           Write(Model.Organization.City);
 
             
@@ -489,7 +492,7 @@ WriteLiteral("<br />");
 WriteLiteral(", ");
 
             
-            #line 86 "..\..\Views\Home\Contact.cshtml"
+            #line 89 "..\..\Views\Home\Contact.cshtml"
                                                                                                                     Write(Model.Organization.State);
 
             
@@ -498,7 +501,7 @@ WriteLiteral(", ");
 WriteLiteral(", ");
 
             
-            #line 86 "..\..\Views\Home\Contact.cshtml"
+            #line 89 "..\..\Views\Home\Contact.cshtml"
                                                                                                                                                Write(Model.Organization.ZIP);
 
             
@@ -507,7 +510,7 @@ WriteLiteral(", ");
 WriteLiteral(", ");
 
             
-            #line 86 "..\..\Views\Home\Contact.cshtml"
+            #line 89 "..\..\Views\Home\Contact.cshtml"
                                                                                                                                                                         Write(Model.Organization.Country);
 
             
@@ -520,7 +523,7 @@ WriteLiteral(" class=\"fa fa-phone\"");
 WriteLiteral("></i><span> ");
 
             
-            #line 87 "..\..\Views\Home\Contact.cshtml"
+            #line 90 "..\..\Views\Home\Contact.cshtml"
                                                       Write(Model.Organization.Telephone ?? Resources.Resources.NotAvailable);
 
             
@@ -532,21 +535,21 @@ WriteLiteral(" class=\"fa fa-envelope\"");
 
 WriteLiteral("></i> <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4776), Tuple.Create("\"", 4815)
-, Tuple.Create(Tuple.Create("", 4783), Tuple.Create("mailto:", 4783), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 5022), Tuple.Create("\"", 5061)
+, Tuple.Create(Tuple.Create("", 5029), Tuple.Create("mailto:", 5029), true)
             
-            #line 88 "..\..\Views\Home\Contact.cshtml"
-, Tuple.Create(Tuple.Create("", 4790), Tuple.Create<System.Object, System.Int32>(Model.Organization.Email
+            #line 91 "..\..\Views\Home\Contact.cshtml"
+, Tuple.Create(Tuple.Create("", 5036), Tuple.Create<System.Object, System.Int32>(Model.Organization.Email
             
             #line default
             #line hidden
-, 4790), false)
+, 5036), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 88 "..\..\Views\Home\Contact.cshtml"
+            #line 91 "..\..\Views\Home\Contact.cshtml"
                                                                                               Write(Model.Organization.Email ?? Resources.Resources.NotAvailable);
 
             
@@ -555,7 +558,7 @@ WriteLiteral(">");
 WriteLiteral("</a></li>\r\n                </ul>\r\n");
 
             
-            #line 90 "..\..\Views\Home\Contact.cshtml"
+            #line 93 "..\..\Views\Home\Contact.cshtml"
             }
 
             
@@ -564,7 +567,7 @@ WriteLiteral("</a></li>\r\n                </ul>\r\n");
 WriteLiteral("            ");
 
             
-            #line 91 "..\..\Views\Home\Contact.cshtml"
+            #line 94 "..\..\Views\Home\Contact.cshtml"
               
                 configDb.Configuration.LazyLoadingEnabled = true;
                 var query = (from p in configDb.ConfigDepartments
@@ -578,13 +581,13 @@ WriteLiteral("            ");
 WriteLiteral("\r\n");
 
             
-            #line 98 "..\..\Views\Home\Contact.cshtml"
+            #line 101 "..\..\Views\Home\Contact.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 98 "..\..\Views\Home\Contact.cshtml"
+            #line 101 "..\..\Views\Home\Contact.cshtml"
              foreach (var item in query)
             {
 
@@ -598,7 +601,7 @@ WriteLiteral(" class=\"heading-primary\"");
 WriteLiteral(">");
 
             
-            #line 100 "..\..\Views\Home\Contact.cshtml"
+            #line 103 "..\..\Views\Home\Contact.cshtml"
                                         Write(item.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && d.DepartmentId == item.Id).FirstOrDefault()?.Value ?? item.Code);
 
             
@@ -607,7 +610,7 @@ WriteLiteral(">");
 WriteLiteral("</h4>\r\n");
 
             
-            #line 101 "..\..\Views\Home\Contact.cshtml"
+            #line 104 "..\..\Views\Home\Contact.cshtml"
                 foreach (var contact in item.Contacts.Where(c => c.Organization.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).OrderBy(c => c.Ordinal))
                 {
 
@@ -625,7 +628,7 @@ WriteLiteral(" class=\"fa fa-user\"");
 WriteLiteral("></i><span> ");
 
             
-            #line 104 "..\..\Views\Home\Contact.cshtml"
+            #line 107 "..\..\Views\Home\Contact.cshtml"
                                                         Write(string.Format(contact.PersonalTitle.PersonalTitleTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.PersonalTitleId == contact.PersonalTitleId).FirstOrDefault().Value + " " + "{0}", @contact.Name));
 
             
@@ -634,7 +637,7 @@ WriteLiteral("></i><span> ");
 WriteLiteral(", ");
 
             
-            #line 104 "..\..\Views\Home\Contact.cshtml"
+            #line 107 "..\..\Views\Home\Contact.cshtml"
                                                                                                                                                                                                                                                                                                                  Write(contact.Position);
 
             
@@ -643,13 +646,13 @@ WriteLiteral(", ");
 WriteLiteral("</span></li>\r\n");
 
             
-            #line 105 "..\..\Views\Home\Contact.cshtml"
+            #line 108 "..\..\Views\Home\Contact.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 105 "..\..\Views\Home\Contact.cshtml"
+            #line 108 "..\..\Views\Home\Contact.cshtml"
                          foreach (var phoneNumber in contact.PhoneNumbers)
                         {
 
@@ -663,7 +666,7 @@ WriteLiteral(" class=\"fa fa-phone\"");
 WriteLiteral("></i><span>");
 
             
-            #line 107 "..\..\Views\Home\Contact.cshtml"
+            #line 110 "..\..\Views\Home\Contact.cshtml"
                                                              Write(phoneNumber.Number ?? Resources.Resources.NotAvailable);
 
             
@@ -672,7 +675,7 @@ WriteLiteral("></i><span>");
 WriteLiteral(", ");
 
             
-            #line 107 "..\..\Views\Home\Contact.cshtml"
+            #line 110 "..\..\Views\Home\Contact.cshtml"
                                                                                                                        Write(Resources.Resources.Extension);
 
             
@@ -681,7 +684,7 @@ WriteLiteral(", ");
 WriteLiteral(": ");
 
             
-            #line 107 "..\..\Views\Home\Contact.cshtml"
+            #line 110 "..\..\Views\Home\Contact.cshtml"
                                                                                                                                                         Write(phoneNumber.Extension ?? Resources.Resources.NotAvailable);
 
             
@@ -690,7 +693,7 @@ WriteLiteral(": ");
 WriteLiteral("</span></li>\r\n");
 
             
-            #line 108 "..\..\Views\Home\Contact.cshtml"
+            #line 111 "..\..\Views\Home\Contact.cshtml"
                         }
 
             
@@ -703,7 +706,7 @@ WriteLiteral(" class=\"fa fa-map-marker\"");
 WriteLiteral("></i><span>");
 
             
-            #line 109 "..\..\Views\Home\Contact.cshtml"
+            #line 112 "..\..\Views\Home\Contact.cshtml"
                                                              Write(contact.Office);
 
             
@@ -715,21 +718,21 @@ WriteLiteral(" class=\"fa fa-envelope\"");
 
 WriteLiteral("></i> <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 7080), Tuple.Create("\"", 7110)
-, Tuple.Create(Tuple.Create("", 7087), Tuple.Create("mailto:", 7087), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 7326), Tuple.Create("\"", 7356)
+, Tuple.Create(Tuple.Create("", 7333), Tuple.Create("mailto:", 7333), true)
             
-            #line 110 "..\..\Views\Home\Contact.cshtml"
-, Tuple.Create(Tuple.Create("", 7094), Tuple.Create<System.Object, System.Int32>(contact.Email
+            #line 113 "..\..\Views\Home\Contact.cshtml"
+, Tuple.Create(Tuple.Create("", 7340), Tuple.Create<System.Object, System.Int32>(contact.Email
             
             #line default
             #line hidden
-, 7094), false)
+, 7340), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 110 "..\..\Views\Home\Contact.cshtml"
+            #line 113 "..\..\Views\Home\Contact.cshtml"
                                                                                          Write(contact.Email ?? Resources.Resources.NotAvailable);
 
             
@@ -738,7 +741,7 @@ WriteLiteral(">");
 WriteLiteral("</a></li>\r\n                    </ul>\r\n");
 
             
-            #line 112 "..\..\Views\Home\Contact.cshtml"
+            #line 115 "..\..\Views\Home\Contact.cshtml"
                 }
             }
 
@@ -748,7 +751,7 @@ WriteLiteral("</a></li>\r\n                    </ul>\r\n");
 WriteLiteral("            ");
 
             
-            #line 114 "..\..\Views\Home\Contact.cshtml"
+            #line 117 "..\..\Views\Home\Contact.cshtml"
               configDb.Configuration.LazyLoadingEnabled = false; 
             
             #line default
@@ -768,7 +771,7 @@ WriteLiteral(" class=\"fa fa-share\"");
 WriteLiteral("></i>");
 
             
-            #line 119 "..\..\Views\Home\Contact.cshtml"
+            #line 122 "..\..\Views\Home\Contact.cshtml"
                                                           Write(Resources.Resources.Share);
 
             
@@ -806,31 +809,41 @@ WriteLiteral("></script>\r\n        <!-- AddThis Button END -->\r\n    </div>\r\
 
 DefineSection("Scripts", () => {
 
-WriteLiteral("\r\n\r\n    <script");
+WriteLiteral("\r\n<script>\r\n        function initMap() {\r\n            var uluru = { lat: ");
 
-WriteLiteral(" src=\"https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY\"");
+            
+            #line 137 "..\..\Views\Home\Contact.cshtml"
+                           Write(organization?.Latitude);
 
-WriteLiteral("></script>\r\n    <script>\r\n\r\n        /*\r\n        Map Settings\r\n\r\n            Find " +
-"the Latitude and Longitude of your address:\r\n                - http://universimm" +
-"edia.pagesperso-orange.fr/geo/loc.htm\r\n                - http://www.findlatitude" +
-"andlongitude.com/find-address-from-latitude-and-longitude/\r\n\r\n        */\r\n\r\n    " +
-"    // Map Markers\r\n        var mapMarkers = [{\r\n            address: \"New York," +
-" NY 10017\",\r\n            html: \"<strong>New York Office</strong><br>New York, NY" +
-" 10017\",\r\n            icon: {\r\n                image: \"assets/porto/img/pin.png\"" +
-",\r\n                iconsize: [26, 46],\r\n                iconanchor: [12, 46]\r\n  " +
-"          },\r\n            popup: true\r\n        }];\r\n\r\n        // Map Initial Loc" +
-"ation\r\n        var initLatitude = 40.75198;\r\n        var initLongitude = -73.969" +
-"78;\r\n\r\n        // Map Extended Settings\r\n        var mapSettings = {\r\n          " +
-"  controls: {\r\n                draggable: (($.browser.mobile) ? false : true),\r\n" +
-"                panControl: true,\r\n                zoomControl: true,\r\n         " +
-"       mapTypeControl: true,\r\n                scaleControl: true,\r\n             " +
-"   streetViewControl: true,\r\n                overviewMapControl: true\r\n         " +
-"   },\r\n            scrollwheel: false,\r\n            markers: mapMarkers,\r\n      " +
-"      latitude: initLatitude,\r\n            longitude: initLongitude,\r\n          " +
-"  zoom: 16\r\n        };\r\n\r\n        var map = $(\'#googlemaps\').gMap(mapSettings);\r" +
-"\n\r\n        // Map Center At\r\n        var mapCenterAt = function (options, e) {\r\n" +
-"            e.preventDefault();\r\n            $(\'#googlemaps\').gMap(\"centerAt\", o" +
-"ptions);\r\n        }\r\n\r\n    </script>\r\n");
+            
+            #line default
+            #line hidden
+WriteLiteral(", lng: ");
+
+            
+            #line 137 "..\..\Views\Home\Contact.cshtml"
+                                                           Write(organization?.Longitude);
+
+            
+            #line default
+            #line hidden
+WriteLiteral(@" };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 16,
+                center: uluru
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+</script>
+<script async defer");
+
+WriteLiteral("\r\n        src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyALCBCAAWZyjYD909" +
+"SSc3dCc6Z9NtEPz5E&callback=initMap\"");
+
+WriteLiteral(">\r\n</script>\r\n");
 
 });
 

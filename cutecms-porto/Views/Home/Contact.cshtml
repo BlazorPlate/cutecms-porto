@@ -8,6 +8,9 @@
     ViewBag.Title = Resources.Resources.ContactUs;
     IdentityEntities identityDb = new IdentityEntities();
     ConfigEntities configDb = new ConfigEntities();
+    var organizations = (List<Organization>)HttpRuntime.Cache["Organizations"];
+    var organization = organizations.Where(o => o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name))?.FirstOrDefault() ?? new Organization();
+
 }
 @section PageHeader
 {
@@ -20,7 +23,7 @@
             </div>
         </div>
     </section>
-    <div id="googlemaps" class="google-map"></div>
+    <div id="map" class="google-map"></div>
 }
 <!-- Google Maps - Go to the bottom of the page to change settings and map location. -->
 
@@ -129,60 +132,20 @@
     </div>
 </div>
 @section Scripts{
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
-    <script>
-
-        /*
-        Map Settings
-
-            Find the Latitude and Longitude of your address:
-                - http://universimmedia.pagesperso-orange.fr/geo/loc.htm
-                - http://www.findlatitudeandlongitude.com/find-address-from-latitude-and-longitude/
-
-        */
-
-        // Map Markers
-        var mapMarkers = [{
-            address: "New York, NY 10017",
-            html: "<strong>New York Office</strong><br>New York, NY 10017",
-            icon: {
-                image: "assets/porto/img/pin.png",
-                iconsize: [26, 46],
-                iconanchor: [12, 46]
-            },
-            popup: true
-        }];
-
-        // Map Initial Location
-        var initLatitude = 40.75198;
-        var initLongitude = -73.96978;
-
-        // Map Extended Settings
-        var mapSettings = {
-            controls: {
-                draggable: (($.browser.mobile) ? false : true),
-                panControl: true,
-                zoomControl: true,
-                mapTypeControl: true,
-                scaleControl: true,
-                streetViewControl: true,
-                overviewMapControl: true
-            },
-            scrollwheel: false,
-            markers: mapMarkers,
-            latitude: initLatitude,
-            longitude: initLongitude,
-            zoom: 16
-        };
-
-        var map = $('#googlemaps').gMap(mapSettings);
-
-        // Map Center At
-        var mapCenterAt = function (options, e) {
-            e.preventDefault();
-            $('#googlemaps').gMap("centerAt", options);
+<script>
+        function initMap() {
+            var uluru = { lat: @(organization?.Latitude), lng: @(organization?.Longitude) };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 16,
+                center: uluru
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
         }
-
-    </script>
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALCBCAAWZyjYD909SSc3dCc6Z9NtEPz5E&callback=initMap">
+</script>
 }

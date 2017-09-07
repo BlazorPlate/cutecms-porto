@@ -2569,15 +2569,15 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="Views\Home\MedicalIndex.generated.cs">
-      <DependentUpon>MedicalIndex.cshtml</DependentUpon>
-      <AutoGen>True</AutoGen>
+    <Compile Include="Views\Home\HikmaIndex.generated.cs">
+      <DependentUpon>HikmaIndex.cshtml</DependentUpon>
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Views\Home\Index.generated.cs">
-      <DependentUpon>Index.cshtml</DependentUpon>
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Home\ResetPassword.generated.cs">
       <DependentUpon>ResetPassword.cshtml</DependentUpon>
@@ -6903,6 +6903,7 @@
     <Content Include="Code_Help\Host.txt" />
     <Content Include="Code_Help\Razor.txt" />
     <Content Include="assets\identity\identity.css" />
+    <Content Include="Code_Help\SQL.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fileman\css\images\animated-overlay.gif" />
     <Content Include="fileman\css\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -8547,9 +8548,9 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>ImageFiles.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Home\Index.cshtml">
+    <Content Include="Views\Home\HikmaIndex.cshtml">
       <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
+      <LastGenOutput>HikmaIndex.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Views\Home\ResetPassword.cshtml">
       <Generator>RazorGenerator</Generator>
@@ -8916,10 +8917,6 @@
       <LastGenOutput>_Footer.generated.cs</LastGenOutput>
     </Content>
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
-    <Content Include="Views\Home\MedicalIndex.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>MedicalIndex.generated.cs</LastGenOutput>
-    </Content>
     <Content Include="Views\Shared\_Layout.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_Layout.generated.cs</LastGenOutput>
@@ -8929,6 +8926,11 @@
       <LastGenOutput>Dept.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Views\Shared\_DeptBreadcrumb.cshtml" />
+    <Content Include="Views\Home\DefaultIndex.cshtml" />
+    <Content Include="Views\Home\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />

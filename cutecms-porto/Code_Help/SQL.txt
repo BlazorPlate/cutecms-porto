@@ -1,0 +1,14 @@
+#Empty Database
+
+delete from ListItems
+delete from contentlists
+delete from ContentGalleries
+delete from contents
+delete from ImageTags
+delete from ImageFileTerms
+delete from ImageFiles
+delete from Submissions
+delete from Vacancies
+delete from Attachments
+delete from Applicants
+delete from AspNetUsers where username!='admin@boss.com '

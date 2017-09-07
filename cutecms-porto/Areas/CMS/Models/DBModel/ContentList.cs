@@ -28,7 +28,6 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
         [Display(Name = "Title", ResourceType = typeof(Resources.Resources))]
         public string Title { get; set; }
-        [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
         [Display(Name = "Subtitle", ResourceType = typeof(Resources.Resources))]
         public string Subtitle { get; set; }
         [AllowHtml]

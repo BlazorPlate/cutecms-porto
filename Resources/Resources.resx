@@ -1692,4 +1692,16 @@
   <data name="Staff" xml:space="preserve">
     <value>Staff</value>
   </data>
+  <data name="MedicalStaff" xml:space="preserve">
+    <value>Medical Staff</value>
+  </data>
+  <data name="LatestEvents" xml:space="preserve">
+    <value>Latest events</value>
+  </data>
+  <data name="DoctorName" xml:space="preserve">
+    <value>Doctor Name</value>
+  </data>
+  <data name="DoctorType" xml:space="preserve">
+    <value>Doctor Type</value>
+  </data>
 </root>

@@ -1689,4 +1689,19 @@
   <data name="OurSpecialists" xml:space="preserve">
     <value>Naši špecialisti!</value>
   </data>
+  <data name="Staff" xml:space="preserve">
+    <value>Personál</value>
+  </data>
+  <data name="MedicalStaff" xml:space="preserve">
+    <value>Lekársky personál</value>
+  </data>
+  <data name="LatestEvents" xml:space="preserve">
+    <value>Najnovšie udalosti</value>
+  </data>
+  <data name="DoctorName" xml:space="preserve">
+    <value>Meno lekára</value>
+  </data>
+  <data name="DoctorType" xml:space="preserve">
+    <value>Doktorandský typ</value>
+  </data>
 </root>

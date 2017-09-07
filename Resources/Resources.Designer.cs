@@ -19,7 +19,7 @@ namespace Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -1168,6 +1168,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Doctor Name.
+        /// </summary>
+        public static string DoctorName {
+            get {
+                return ResourceManager.GetString("DoctorName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Doctors.
         /// </summary>
         public static string Doctors {
@@ -1182,6 +1191,15 @@ namespace Resources {
         public static string DoctorsTimetable {
             get {
                 return ResourceManager.GetString("DoctorsTimetable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Doctor Type.
+        /// </summary>
+        public static string DoctorType {
+            get {
+                return ResourceManager.GetString("DoctorType", resourceCulture);
             }
         }
         
@@ -2347,6 +2365,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Latest events.
+        /// </summary>
+        public static string LatestEvents {
+            get {
+                return ResourceManager.GetString("LatestEvents", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Latest News.
         /// </summary>
         public static string LatestNews {
@@ -2640,6 +2667,15 @@ namespace Resources {
         public static string MaximumAllowedSize {
             get {
                 return ResourceManager.GetString("MaximumAllowedSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Medical Staff.
+        /// </summary>
+        public static string MedicalStaff {
+            get {
+                return ResourceManager.GetString("MedicalStaff", resourceCulture);
             }
         }
         

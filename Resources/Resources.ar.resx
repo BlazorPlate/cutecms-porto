@@ -1692,4 +1692,16 @@
   <data name="Staff" xml:space="preserve">
     <value>طاقم العمل</value>
   </data>
+  <data name="MedicalStaff" xml:space="preserve">
+    <value>الكادر الطبي</value>
+  </data>
+  <data name="LatestEvents" xml:space="preserve">
+    <value>آخر الأحداث</value>
+  </data>
+  <data name="DoctorName" xml:space="preserve">
+    <value>اسم الطبيب</value>
+  </data>
+  <data name="DoctorType" xml:space="preserve">
+    <value>نوع الطبيب</value>
+  </data>
 </root>

@@ -1689,4 +1689,19 @@
   <data name="OurSpecialists" xml:space="preserve">
     <value>Onze specialisten</value>
   </data>
+  <data name="Staff" xml:space="preserve">
+    <value>Werknemers</value>
+  </data>
+  <data name="MedicalStaff" xml:space="preserve">
+    <value>Medisch personeel</value>
+  </data>
+  <data name="LatestEvents" xml:space="preserve">
+    <value>Nieuwste evenementen</value>
+  </data>
+  <data name="DoctorName" xml:space="preserve">
+    <value>Naam arts</value>
+  </data>
+  <data name="DoctorType" xml:space="preserve">
+    <value>Dokter Type</value>
+  </data>
 </root>

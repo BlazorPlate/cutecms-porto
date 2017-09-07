@@ -1689,4 +1689,19 @@
   <data name="OurSpecialists" xml:space="preserve">
     <value>Нашите специалисти</value>
   </data>
+  <data name="Staff" xml:space="preserve">
+    <value>Personal</value>
+  </data>
+  <data name="MedicalStaff" xml:space="preserve">
+    <value>Медицински екип</value>
+  </data>
+  <data name="LatestEvents" xml:space="preserve">
+    <value>Последни събития</value>
+  </data>
+  <data name="DoctorName" xml:space="preserve">
+    <value>Име на лекар</value>
+  </data>
+  <data name="DoctorType" xml:space="preserve">
+    <value>Доктор тип</value>
+  </data>
 </root>

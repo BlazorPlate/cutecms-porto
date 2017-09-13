@@ -1402,7 +1402,7 @@
     <value>Image Tags</value>
   </data>
   <data name="SMTPSettings" xml:space="preserve">
-    <value>SMTP Settings</value>
+    <value>SMTP </value>
   </data>
   <data name="Statistics" xml:space="preserve">
     <value>Statistics</value>
@@ -1703,5 +1703,20 @@
   </data>
   <data name="DoctorType" xml:space="preserve">
     <value>Doctor Type</value>
+  </data>
+  <data name="Port" xml:space="preserve">
+    <value>Port Number</value>
+  </data>
+  <data name="EnableSsl" xml:space="preserve">
+    <value>Enable SSL</value>
+  </data>
+  <data name="SenderEmail" xml:space="preserve">
+    <value>Sender Email</value>
+  </data>
+  <data name="SenderPassword" xml:space="preserve">
+    <value>Sender Password</value>
+  </data>
+  <data name="RecipientEmail" xml:space="preserve">
+    <value>Recipient Email</value>
   </data>
 </root>

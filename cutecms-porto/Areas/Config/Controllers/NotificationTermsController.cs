@@ -54,7 +54,7 @@ namespace cutecms_porto.Areas.Config.Controllers
                 throw new HttpException(400, "Bad Request");
             }
             ViewBag.NotificationId = id;
-            ViewBag.NotificationCode = db.NotificationCodes.Find(id).Code;
+            ViewBag.NotificationCode = db.Notifications.Find(id).NotificationCode.Code;
             int[] assignedLanguages = db.NotificationTerms.Where(t => t.NotificationId == id).Select(t => t.LanguageId).ToArray();
             ViewBag.LanguageId = new SelectList(db.ConfigLanguages.Where(l => !assignedLanguages.Contains(l.Id) && l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name");
             return View();

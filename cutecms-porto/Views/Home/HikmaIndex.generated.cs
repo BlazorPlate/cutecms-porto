@@ -18,7 +18,7 @@ namespace ASP
     using System.Net;
     using System.Text;
     
-    #line 3 "..\..\Views\Home\HikmaIndex.cshtml"
+    #line 4 "..\..\Views\Home\HikmaIndex.cshtml"
     using System.Threading;
     
     #line default
@@ -41,6 +41,12 @@ namespace ASP
     #line default
     #line hidden
     
+    #line 3 "..\..\Views\Home\HikmaIndex.cshtml"
+    using cutecms_porto.Areas.Config.Models.DBModel;
+    
+    #line default
+    #line hidden
+    
     #line 2 "..\..\Views\Home\HikmaIndex.cshtml"
     using cutecms_porto.Areas.Identity.Models.DBModel;
     
@@ -58,9 +64,10 @@ namespace ASP
         public override void Execute()
         {
             
-            #line 5 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 6 "..\..\Views\Home\HikmaIndex.cshtml"
   
     CMSEntities cmsDb = new CMSEntities();
+    CMSEntities configDb = new CMSEntities();
     IdentityEntities IdentityDb = new IdentityEntities();
     var openingHours = Model.ContentLists.Where(c => c.Code.Trim().Equals("opening-hours")).FirstOrDefault()?.ListItems ?? new List<ListItem>();
     var shortcutContents = Model.Contents.Where(c => c.HasShortcut);
@@ -68,6 +75,10 @@ namespace ASP
     var resourcesList = Model.ContentLists.Where(c => c.Code.Trim().Equals("resources"))?.FirstOrDefault() ?? new ContentList();
     var testimonialList = Model.ContentLists.Where(c => c.Code.Trim().Equals("testimonial"))?.FirstOrDefault() ?? new ContentList();
     IdentityEntities identityDb = new IdentityEntities();
+    var organizations = (List<Organization>)HttpRuntime.Cache["Organizations"];
+    var organization = organizations.Where(o => o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name))?.FirstOrDefault() ?? new Organization();
+    IEnumerable<MenuItem> footerMenuItems = configDb.MenuItems.Include("Status").Include("Menu").Include("Language").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Menu.Code.Trim().Equals("footer-menu") && m.Status.Code.Trim().Equals("published") && m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).OrderBy(o => o.Ordinal);
+
 
             
             #line default
@@ -80,27 +91,27 @@ WriteLiteral("\r\n    <!-- Current Page CSS -->\r\n    <link");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1021), Tuple.Create("\"", 1076)
-, Tuple.Create(Tuple.Create("", 1028), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/rs-plugin/css/settings.css")
-, 1028), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 1743), Tuple.Create("\"", 1798)
+, Tuple.Create(Tuple.Create("", 1750), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/rs-plugin/css/settings.css")
+, 1750), false)
 );
 
 WriteLiteral(">\r\n    <link");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1106), Tuple.Create("\"", 1159)
-, Tuple.Create(Tuple.Create("", 1113), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/rs-plugin/css/layers.css")
-, 1113), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 1828), Tuple.Create("\"", 1881)
+, Tuple.Create(Tuple.Create("", 1835), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/rs-plugin/css/layers.css")
+, 1835), false)
 );
 
 WriteLiteral(">\r\n    <link");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1189), Tuple.Create("\"", 1246)
-, Tuple.Create(Tuple.Create("", 1196), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/rs-plugin/css/navigation.css")
-, 1196), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 1911), Tuple.Create("\"", 1968)
+, Tuple.Create(Tuple.Create("", 1918), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/rs-plugin/css/navigation.css")
+, 1918), false)
 );
 
 WriteLiteral(">\r\n\r\n");
@@ -126,13 +137,13 @@ WriteLiteral(@" data-plugin-options=""{'delay': 9000, 'gridwidth': 1170, 'gridhe
 WriteLiteral(">\r\n        <ul>\r\n");
 
             
-            #line 25 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 31 "..\..\Views\Home\HikmaIndex.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 25 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 31 "..\..\Views\Home\HikmaIndex.cshtml"
              foreach (var item in Model.HomeGallery)
             {
 
@@ -145,24 +156,24 @@ WriteLiteral(" data-transition=\"fade\"");
 
 WriteLiteral(">\r\n                    <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1826), Tuple.Create("\"", 1846)
+WriteAttribute("src", Tuple.Create(" src=\"", 2548), Tuple.Create("\"", 2568)
             
-            #line 28 "..\..\Views\Home\HikmaIndex.cshtml"
-, Tuple.Create(Tuple.Create("", 1832), Tuple.Create<System.Object, System.Int32>(item.FilePath
+            #line 34 "..\..\Views\Home\HikmaIndex.cshtml"
+, Tuple.Create(Tuple.Create("", 2554), Tuple.Create<System.Object, System.Int32>(item.FilePath
             
             #line default
             #line hidden
-, 1832), false)
+, 2554), false)
 );
 
-WriteAttribute("alt", Tuple.Create("\r\n                         alt=\"", 1847), Tuple.Create("\"", 2060)
+WriteAttribute("alt", Tuple.Create("\r\n                         alt=\"", 2569), Tuple.Create("\"", 2782)
             
-            #line 29 "..\..\Views\Home\HikmaIndex.cshtml"
-, Tuple.Create(Tuple.Create("", 1879), Tuple.Create<System.Object, System.Int32>(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.Value ?? item.Code
+            #line 35 "..\..\Views\Home\HikmaIndex.cshtml"
+, Tuple.Create(Tuple.Create("", 2601), Tuple.Create<System.Object, System.Int32>(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.Value ?? item.Code
             
             #line default
             #line hidden
-, 1879), false)
+, 2601), false)
 );
 
 WriteLiteral("\r\n                         data-bgposition=\"center center\"");
@@ -201,7 +212,7 @@ WriteLiteral("\r\n                         data-mask_in=\"x:0px;y:0px;\"");
 WriteLiteral(">");
 
             
-            #line 43 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 49 "..\..\Views\Home\HikmaIndex.cshtml"
                                                  Write(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.SecondaryCaption);
 
             
@@ -229,7 +240,7 @@ WriteLiteral("\r\n                             data-transform_in=\"y:[-300%];opa
 WriteLiteral(">");
 
             
-            #line 50 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 56 "..\..\Views\Home\HikmaIndex.cshtml"
                                                                         Write(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.PrimaryCaption);
 
             
@@ -259,7 +270,7 @@ WriteLiteral(" style=\"font-size: 1.2em;\"");
 WriteLiteral(">");
 
             
-            #line 57 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 63 "..\..\Views\Home\HikmaIndex.cshtml"
                                                                                                      Write(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.TertiaryCaption);
 
             
@@ -268,7 +279,7 @@ WriteLiteral(">");
 WriteLiteral("</div>\r\n                            </li>\r\n");
 
             
-            #line 59 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 65 "..\..\Views\Home\HikmaIndex.cshtml"
             }
 
             
@@ -289,13 +300,13 @@ WriteLiteral(" class=\"row medical-schedules\"");
 WriteLiteral(">\r\n");
 
             
-            #line 66 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 72 "..\..\Views\Home\HikmaIndex.cshtml"
                     
             
             #line default
             #line hidden
             
-            #line 66 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 72 "..\..\Views\Home\HikmaIndex.cshtml"
                      if (cutecms_porto.Helpers.CultureHelper.IsRighToLeft())
                     {
 
@@ -312,14 +323,14 @@ WriteLiteral(" data-appear-animation-delay=\"1800\"");
 
 WriteLiteral(">\r\n                            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4753), Tuple.Create("\"", 4803)
+WriteAttribute("href", Tuple.Create(" href=\"", 5475), Tuple.Create("\"", 5525)
             
-            #line 69 "..\..\Views\Home\HikmaIndex.cshtml"
-, Tuple.Create(Tuple.Create("", 4760), Tuple.Create<System.Object, System.Int32>(OrganizationData.Organization?.Telephone
+            #line 75 "..\..\Views\Home\HikmaIndex.cshtml"
+, Tuple.Create(Tuple.Create("", 5482), Tuple.Create<System.Object, System.Int32>(OrganizationData.Organization?.Telephone
             
             #line default
             #line hidden
-, 4760), false)
+, 5482), false)
 );
 
 WriteLiteral(" class=\"text-decoration-none\"");
@@ -348,7 +359,7 @@ WriteLiteral(" class=\"font-weight-light\"");
 WriteLiteral(">");
 
             
-            #line 75 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 81 "..\..\Views\Home\HikmaIndex.cshtml"
                                                                     Write(Resources.Resources.EmergencyCase);
 
             
@@ -361,7 +372,7 @@ WriteLiteral(" class=\"font-weight-normal\"");
 WriteLiteral(">");
 
             
-            #line 76 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 82 "..\..\Views\Home\HikmaIndex.cshtml"
                                                                        Write(OrganizationData.Organization?.Telephone);
 
             
@@ -386,13 +397,13 @@ WriteLiteral(" class=\"expanded-info p-xlg background-color-primary\"");
 WriteLiteral(">\r\n");
 
             
-            #line 83 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 89 "..\..\Views\Home\HikmaIndex.cshtml"
                                 
             
             #line default
             #line hidden
             
-            #line 83 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 89 "..\..\Views\Home\HikmaIndex.cshtml"
                                  foreach (var item in openingHours)
                                 {
 
@@ -412,7 +423,7 @@ WriteLiteral(" class=\"bold\"");
 WriteLiteral(">");
 
             
-            #line 86 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 92 "..\..\Views\Home\HikmaIndex.cshtml"
                                                                          Write(item.Title);
 
             
@@ -425,7 +436,7 @@ WriteLiteral(" style=\"color:white\"");
 WriteLiteral(">");
 
             
-            #line 87 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 93 "..\..\Views\Home\HikmaIndex.cshtml"
                                                             Write(item.Subtitle);
 
             
@@ -434,7 +445,7 @@ WriteLiteral(">");
 WriteLiteral("</div>\r\n                                    </div>\r\n");
 
             
-            #line 89 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 95 "..\..\Views\Home\HikmaIndex.cshtml"
                                 }
 
             
@@ -449,7 +460,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 92 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 98 "..\..\Views\Home\HikmaIndex.cshtml"
                            Write(Resources.Resources.OpeningHours);
 
             
@@ -484,7 +495,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                    ");
 
             
-            #line 99 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 105 "..\..\Views\Home\HikmaIndex.cshtml"
                                Write(Resources.Resources.DoctorsTimetable);
 
             
@@ -515,9 +526,9 @@ WriteLiteral(" class=\"feature-box-icon\"");
 
 WriteLiteral(">\r\n                                    <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 7492), Tuple.Create("\"", 7559)
-, Tuple.Create(Tuple.Create("", 7498), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/icons/medical-icon-heart.png")
-, 7498), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 8214), Tuple.Create("\"", 8281)
+, Tuple.Create(Tuple.Create("", 8220), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/icons/medical-icon-heart.png")
+, 8220), false)
 );
 
 WriteLiteral(" alt=\"\"");
@@ -536,7 +547,7 @@ WriteLiteral(" class=\"m-none\"");
 WriteLiteral(">");
 
             
-            #line 110 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 116 "..\..\Views\Home\HikmaIndex.cshtml"
                                                   Write(Resources.Resources.MedicalTreatment);
 
             
@@ -546,7 +557,7 @@ WriteLiteral("</h4>\r\n                                </div>\r\n               
 "\r\n                        </div>\r\n");
 
             
-            #line 114 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 120 "..\..\Views\Home\HikmaIndex.cshtml"
 
                     }
                     else
@@ -573,9 +584,9 @@ WriteLiteral(" class=\"feature-box-icon\"");
 
 WriteLiteral(">\r\n                                    <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 8341), Tuple.Create("\"", 8408)
-, Tuple.Create(Tuple.Create("", 8347), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/icons/medical-icon-heart.png")
-, 8347), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 9063), Tuple.Create("\"", 9130)
+, Tuple.Create(Tuple.Create("", 9069), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/icons/medical-icon-heart.png")
+, 9069), false)
 );
 
 WriteLiteral(" alt=\"\"");
@@ -594,7 +605,7 @@ WriteLiteral(" class=\"m-none\"");
 WriteLiteral(">");
 
             
-            #line 124 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 130 "..\..\Views\Home\HikmaIndex.cshtml"
                                                   Write(Resources.Resources.MedicalTreatment);
 
             
@@ -621,8 +632,18 @@ WriteLiteral(" href=\"demo-medical-doctors.html\"");
 
 WriteLiteral(" title=\"\"");
 
-WriteLiteral(">\r\n                                    Doctors Timetable\r\n                       " +
-"             <i");
+WriteLiteral(">\r\n");
+
+WriteLiteral("                                    ");
+
+            
+            #line 137 "..\..\Views\Home\HikmaIndex.cshtml"
+                               Write(Resources.Resources.DoctorsTimetable);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                                    <i");
 
 WriteLiteral(" class=\"icon-arrow-right-circle icons\"");
 
@@ -652,13 +673,13 @@ WriteLiteral(" class=\"row\"");
 WriteLiteral(">\r\n");
 
             
-            #line 140 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 146 "..\..\Views\Home\HikmaIndex.cshtml"
                                         
             
             #line default
             #line hidden
             
-            #line 140 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 146 "..\..\Views\Home\HikmaIndex.cshtml"
                                          foreach (var item in openingHours)
                                         {
 
@@ -678,7 +699,7 @@ WriteLiteral(" class=\"bold\"");
 WriteLiteral(">");
 
             
-            #line 143 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 149 "..\..\Views\Home\HikmaIndex.cshtml"
                                                                                  Write(item.Title);
 
             
@@ -691,7 +712,7 @@ WriteLiteral(" style=\"color:white\"");
 WriteLiteral(">");
 
             
-            #line 144 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 150 "..\..\Views\Home\HikmaIndex.cshtml"
                                                                     Write(item.Subtitle);
 
             
@@ -700,7 +721,7 @@ WriteLiteral(">");
 WriteLiteral("</div>\r\n                                            </div>\r\n");
 
             
-            #line 146 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 152 "..\..\Views\Home\HikmaIndex.cshtml"
                                         }
 
             
@@ -716,7 +737,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 151 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 157 "..\..\Views\Home\HikmaIndex.cshtml"
                            Write(Resources.Resources.OpeningHours);
 
             
@@ -738,15 +759,15 @@ WriteLiteral(" data-appear-animation-delay=\"1800\"");
 
 WriteLiteral(">\r\n                            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 10765), Tuple.Create("\"", 10819)
-, Tuple.Create(Tuple.Create("", 10772), Tuple.Create("tel:", 10772), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 11507), Tuple.Create("\"", 11561)
+, Tuple.Create(Tuple.Create("", 11514), Tuple.Create("tel:", 11514), true)
             
-            #line 156 "..\..\Views\Home\HikmaIndex.cshtml"
-, Tuple.Create(Tuple.Create("", 10776), Tuple.Create<System.Object, System.Int32>(OrganizationData.Organization?.Telephone
+            #line 162 "..\..\Views\Home\HikmaIndex.cshtml"
+, Tuple.Create(Tuple.Create("", 11518), Tuple.Create<System.Object, System.Int32>(OrganizationData.Organization?.Telephone
             
             #line default
             #line hidden
-, 10776), false)
+, 11518), false)
 );
 
 WriteLiteral(" class=\"text-decoration-none\"");
@@ -775,7 +796,7 @@ WriteLiteral(" class=\"font-weight-light\"");
 WriteLiteral(">");
 
             
-            #line 162 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 168 "..\..\Views\Home\HikmaIndex.cshtml"
                                                                     Write(Resources.Resources.EmergencyCase);
 
             
@@ -788,7 +809,7 @@ WriteLiteral(" class=\"font-weight-normal\"");
 WriteLiteral(">");
 
             
-            #line 163 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 169 "..\..\Views\Home\HikmaIndex.cshtml"
                                                                        Write(OrganizationData.Organization?.Telephone);
 
             
@@ -799,7 +820,7 @@ WriteLiteral("</strong>\r\n                                    </div>\r\n       
 "");
 
             
-            #line 168 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 174 "..\..\Views\Home\HikmaIndex.cshtml"
 
                     }
 
@@ -809,13 +830,13 @@ WriteLiteral("</strong>\r\n                                    </div>\r\n       
 WriteLiteral("                </div>\r\n");
 
             
-            #line 171 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 177 "..\..\Views\Home\HikmaIndex.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 171 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 177 "..\..\Views\Home\HikmaIndex.cshtml"
              foreach (var item in shortcutContents)
             {
 
@@ -837,7 +858,7 @@ WriteLiteral(" class=\"font-weight-semibold mb-xs\"");
 WriteLiteral(">");
 
             
-            #line 175 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 181 "..\..\Views\Home\HikmaIndex.cshtml"
                                                           Write(item.Title);
 
             
@@ -850,7 +871,7 @@ WriteLiteral(" class=\"lead font-weight-normal\"");
 WriteLiteral(">");
 
             
-            #line 176 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 182 "..\..\Views\Home\HikmaIndex.cshtml"
                                                       Write(item.Subtitle);
 
             
@@ -859,7 +880,7 @@ WriteLiteral(">");
 WriteLiteral("</p>\r\n\r\n                        <p>");
 
             
-            #line 178 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 184 "..\..\Views\Home\HikmaIndex.cshtml"
                       Write(item.MainContent.StripHtml().Chop(300).Trim());
 
             
@@ -870,14 +891,14 @@ WriteLiteral("</p>\r\n\r\n                        <a");
 WriteLiteral(" class=\"btn btn-borders btn-quaternary custom-button text-uppercase mt-lg mb-lg f" +
 "ont-weight-bold\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 12195), Tuple.Create("\"", 12262)
+WriteAttribute("href", Tuple.Create(" href=\"", 12937), Tuple.Create("\"", 13004)
             
-            #line 180 "..\..\Views\Home\HikmaIndex.cshtml"
-                                                 , Tuple.Create(Tuple.Create("", 12202), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
+            #line 186 "..\..\Views\Home\HikmaIndex.cshtml"
+                                                 , Tuple.Create(Tuple.Create("", 12944), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
             
             #line default
             #line hidden
-, 12202), false)
+, 12944), false)
 );
 
 WriteLiteral(">read more</a>\r\n                    </div>\r\n                    <div");
@@ -886,24 +907,24 @@ WriteLiteral(" class=\"col-sm-4 col-md-4\"");
 
 WriteLiteral(">\r\n                        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 12388), Tuple.Create("\"", 12409)
+WriteAttribute("src", Tuple.Create(" src=\"", 13130), Tuple.Create("\"", 13151)
             
-            #line 183 "..\..\Views\Home\HikmaIndex.cshtml"
-, Tuple.Create(Tuple.Create("", 12394), Tuple.Create<System.Object, System.Int32>(item.ImagePath
+            #line 189 "..\..\Views\Home\HikmaIndex.cshtml"
+, Tuple.Create(Tuple.Create("", 13136), Tuple.Create<System.Object, System.Int32>(item.ImagePath
             
             #line default
             #line hidden
-, 12394), false)
+, 13136), false)
 );
 
-WriteAttribute("alt", Tuple.Create(" alt=\"", 12410), Tuple.Create("\"", 12431)
+WriteAttribute("alt", Tuple.Create(" alt=\"", 13152), Tuple.Create("\"", 13173)
             
-            #line 183 "..\..\Views\Home\HikmaIndex.cshtml"
-, Tuple.Create(Tuple.Create("", 12416), Tuple.Create<System.Object, System.Int32>(item.ImageName
+            #line 189 "..\..\Views\Home\HikmaIndex.cshtml"
+, Tuple.Create(Tuple.Create("", 13158), Tuple.Create<System.Object, System.Int32>(item.ImageName
             
             #line default
             #line hidden
-, 12416), false)
+, 13158), false)
 );
 
 WriteLiteral(" class=\"img-responsive boxshadow\"");
@@ -911,7 +932,7 @@ WriteLiteral(" class=\"img-responsive boxshadow\"");
 WriteLiteral(" />\r\n                    </div>\r\n                </div>\r\n");
 
             
-            #line 186 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 192 "..\..\Views\Home\HikmaIndex.cshtml"
             }
 
             
@@ -940,7 +961,7 @@ WriteLiteral(" class=\"font-weight-semibold mb-xs\"");
 WriteLiteral(">");
 
             
-            #line 194 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 200 "..\..\Views\Home\HikmaIndex.cshtml"
                                                   Write(Resources.Resources.Departments);
 
             
@@ -951,13 +972,13 @@ WriteLiteral("</h2>\r\n                ");
 WriteLiteral("\r\n            </div>\r\n        </div>\r\n");
 
             
-            #line 198 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 204 "..\..\Views\Home\HikmaIndex.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 198 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 204 "..\..\Views\Home\HikmaIndex.cshtml"
           var i = 0;
             
             #line default
@@ -965,13 +986,13 @@ WriteLiteral("\r\n            </div>\r\n        </div>\r\n");
 WriteLiteral("\r\n");
 
             
-            #line 199 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 205 "..\..\Views\Home\HikmaIndex.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 199 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 205 "..\..\Views\Home\HikmaIndex.cshtml"
          foreach (var item in Model.DepartmentTerms)
         {
             if (i % 3 == 0)
@@ -985,7 +1006,7 @@ WriteLiteral("                ");
 WriteLiteral("<div class=\"row mt-lg\">\r\n");
 
             
-            #line 204 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 210 "..\..\Views\Home\HikmaIndex.cshtml"
                         }
 
             
@@ -1009,24 +1030,24 @@ WriteLiteral(" class=\"feature-box-icon\"");
 
 WriteLiteral(">\r\n                        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 13435), Tuple.Create("\"", 13455)
+WriteAttribute("src", Tuple.Create(" src=\"", 14177), Tuple.Create("\"", 14197)
             
-            #line 208 "..\..\Views\Home\HikmaIndex.cshtml"
-, Tuple.Create(Tuple.Create("", 13441), Tuple.Create<System.Object, System.Int32>(item.IconPath
+            #line 214 "..\..\Views\Home\HikmaIndex.cshtml"
+, Tuple.Create(Tuple.Create("", 14183), Tuple.Create<System.Object, System.Int32>(item.IconPath
             
             #line default
             #line hidden
-, 13441), false)
+, 14183), false)
 );
 
-WriteAttribute("alt", Tuple.Create(" alt=\"", 13456), Tuple.Create("\"", 13476)
+WriteAttribute("alt", Tuple.Create(" alt=\"", 14198), Tuple.Create("\"", 14218)
             
-            #line 208 "..\..\Views\Home\HikmaIndex.cshtml"
-, Tuple.Create(Tuple.Create("", 13462), Tuple.Create<System.Object, System.Int32>(item.IconName
+            #line 214 "..\..\Views\Home\HikmaIndex.cshtml"
+, Tuple.Create(Tuple.Create("", 14204), Tuple.Create<System.Object, System.Int32>(item.IconName
             
             #line default
             #line hidden
-, 13462), false)
+, 14204), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");
@@ -1041,14 +1062,14 @@ WriteLiteral(" class=\"font-weight-semibold\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 13650), Tuple.Create("\"", 13732)
+WriteAttribute("href", Tuple.Create(" href=\"", 14392), Tuple.Create("\"", 14474)
             
-            #line 211 "..\..\Views\Home\HikmaIndex.cshtml"
-, Tuple.Create(Tuple.Create("", 13657), Tuple.Create<System.Object, System.Int32>(string.Concat(item.AbsolutePath, string.Concat("#", item.Department.Code))
+            #line 217 "..\..\Views\Home\HikmaIndex.cshtml"
+, Tuple.Create(Tuple.Create("", 14399), Tuple.Create<System.Object, System.Int32>(string.Concat(item.AbsolutePath, string.Concat("#", item.Department.Code))
             
             #line default
             #line hidden
-, 13657), false)
+, 14399), false)
 );
 
 WriteLiteral(" class=\"text-decoration-none\"");
@@ -1056,7 +1077,7 @@ WriteLiteral(" class=\"text-decoration-none\"");
 WriteLiteral(">");
 
             
-            #line 211 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 217 "..\..\Views\Home\HikmaIndex.cshtml"
                                                                                                                                                                        Write(item.Value);
 
             
@@ -1066,7 +1087,7 @@ WriteLiteral("</a></h4>\r\n                    </div>\r\n                </div>\
 "\r\n");
 
             
-            #line 215 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 221 "..\..\Views\Home\HikmaIndex.cshtml"
             i++;
             if (i % 3 == 0)
             {
@@ -1079,7 +1100,7 @@ WriteLiteral("                ");
 WriteLiteral("</div>\r\n");
 
             
-            #line 219 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 225 "..\..\Views\Home\HikmaIndex.cshtml"
             }
         }
 
@@ -1099,20 +1120,20 @@ WriteLiteral(">\r\n                <a");
 WriteLiteral(" class=\"btn btn-borders btn-quaternary custom-button text-uppercase mt-lg font-we" +
 "ight-bold\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 14164), Tuple.Create("\"", 14199)
+WriteAttribute("href", Tuple.Create(" href=\"", 14906), Tuple.Create("\"", 14941)
             
-            #line 223 "..\..\Views\Home\HikmaIndex.cshtml"
-                                   , Tuple.Create(Tuple.Create("", 14171), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Staff")
+            #line 229 "..\..\Views\Home\HikmaIndex.cshtml"
+                                   , Tuple.Create(Tuple.Create("", 14913), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Staff")
             
             #line default
             #line hidden
-, 14171), false)
+, 14913), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 223 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 229 "..\..\Views\Home\HikmaIndex.cshtml"
                                                                                                                                              Write(Resources.Resources.ViewMore);
 
             
@@ -1141,7 +1162,7 @@ WriteLiteral(" class=\"font-weight-semibold m-none\"");
 WriteLiteral(">");
 
             
-            #line 232 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 238 "..\..\Views\Home\HikmaIndex.cshtml"
                                                    Write(Resources.Resources.Doctors);
 
             
@@ -1154,7 +1175,7 @@ WriteLiteral(" class=\"lead font-weight-normal\"");
 WriteLiteral(">");
 
             
-            #line 233 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 239 "..\..\Views\Home\HikmaIndex.cshtml"
                                               Write(Resources.Resources.OurSpecialists);
 
             
@@ -1202,13 +1223,13 @@ WriteLiteral(" data-plugin-options=\"{\'items\': 4, \'loop\': false, \'dots\': f
 WriteLiteral(">\r\n");
 
             
-            #line 251 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 257 "..\..\Views\Home\HikmaIndex.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 251 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 257 "..\..\Views\Home\HikmaIndex.cshtml"
                  foreach (var item in Model.DepartmentTerms)
                 {
                     foreach (var empInDept in item.Department.EmpInDepts.OrderBy(d => d.Ordinal))
@@ -1227,14 +1248,14 @@ WriteLiteral(" class=\"pr-sm pl-sm\"");
 
 WriteLiteral(">\r\n                                <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 16128), Tuple.Create("\"", 16219)
+WriteAttribute("href", Tuple.Create(" href=\"", 16870), Tuple.Create("\"", 16961)
             
-            #line 260 "..\..\Views\Home\HikmaIndex.cshtml"
-, Tuple.Create(Tuple.Create("", 16135), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", "Staff", new { id = empInDept.Employee.TranslationId })
+            #line 266 "..\..\Views\Home\HikmaIndex.cshtml"
+, Tuple.Create(Tuple.Create("", 16877), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", "Staff", new { id = empInDept.Employee.TranslationId })
             
             #line default
             #line hidden
-, 16135), false)
+, 16877), false)
 );
 
 WriteLiteral(" data-ajax-on-page");
@@ -1251,24 +1272,24 @@ WriteLiteral(" class=\"thumb-info-wrapper m-none\"");
 
 WriteLiteral(">\r\n                                            <img");
 
-WriteAttribute("alt", Tuple.Create(" alt=\"", 16509), Tuple.Create("\"", 16552)
+WriteAttribute("alt", Tuple.Create(" alt=\"", 17251), Tuple.Create("\"", 17294)
             
-            #line 263 "..\..\Views\Home\HikmaIndex.cshtml"
-, Tuple.Create(Tuple.Create("", 16515), Tuple.Create<System.Object, System.Int32>(empInDept.Employee.PersonalPhotoName
+            #line 269 "..\..\Views\Home\HikmaIndex.cshtml"
+, Tuple.Create(Tuple.Create("", 17257), Tuple.Create<System.Object, System.Int32>(empInDept.Employee.PersonalPhotoName
             
             #line default
             #line hidden
-, 16515), false)
+, 17257), false)
 );
 
-WriteAttribute("src", Tuple.Create(" src=\"", 16553), Tuple.Create("\"", 16701)
+WriteAttribute("src", Tuple.Create(" src=\"", 17295), Tuple.Create("\"", 17443)
             
-            #line 263 "..\..\Views\Home\HikmaIndex.cshtml"
-                  , Tuple.Create(Tuple.Create("", 16559), Tuple.Create<System.Object, System.Int32>(!File.Exists(Server.MapPath(employee.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : @employee.PersonalPhotoPath
+            #line 269 "..\..\Views\Home\HikmaIndex.cshtml"
+                  , Tuple.Create(Tuple.Create("", 17301), Tuple.Create<System.Object, System.Int32>(!File.Exists(Server.MapPath(employee.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : @employee.PersonalPhotoPath
             
             #line default
             #line hidden
-, 16559), false)
+, 17301), false)
 );
 
 WriteLiteral(">\r\n                                        </span>\r\n                             " +
@@ -1287,7 +1308,7 @@ WriteLiteral(" class=\"custom-thumb-info-type font-weight-light text-md\"");
 WriteLiteral(">");
 
             
-            #line 267 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 273 "..\..\Views\Home\HikmaIndex.cshtml"
                                                                                                           Write(empInDept.Department.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value);
 
             
@@ -1300,7 +1321,7 @@ WriteLiteral(" class=\"custom-thumb-info-inner font-weight-semibold text-lg\"");
 WriteLiteral(">");
 
             
-            #line 268 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 274 "..\..\Views\Home\HikmaIndex.cshtml"
                                                                                                               Write(personalTitle);
 
             
@@ -1309,7 +1330,7 @@ WriteLiteral(">");
 WriteLiteral(" ");
 
             
-            #line 268 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 274 "..\..\Views\Home\HikmaIndex.cshtml"
                                                                                                                              Write(employee.FullName);
 
             
@@ -1322,7 +1343,7 @@ WriteLiteral("\r\n                                            </span>\r\n       
 "                    </a>\r\n                            </div>\r\n");
 
             
-            #line 275 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 281 "..\..\Views\Home\HikmaIndex.cshtml"
                         }
                     }
                 }
@@ -1353,7 +1374,7 @@ WriteLiteral(" class=\"font-weight-semibold m-none\"");
 WriteLiteral(">");
 
             
-            #line 286 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 292 "..\..\Views\Home\HikmaIndex.cshtml"
                                                    Write(resourcesList.Title);
 
             
@@ -1366,7 +1387,7 @@ WriteLiteral(" class=\"lead font-weight-normal\"");
 WriteLiteral(">");
 
             
-            #line 287 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 293 "..\..\Views\Home\HikmaIndex.cshtml"
                                               Write(resourcesList.Subtitle);
 
             
@@ -1379,13 +1400,13 @@ WriteLiteral(" class=\"row\"");
 WriteLiteral(">\r\n");
 
             
-            #line 291 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 297 "..\..\Views\Home\HikmaIndex.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 291 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 297 "..\..\Views\Home\HikmaIndex.cshtml"
              foreach (var item in resourcesList.ListItems)
             {
 
@@ -1398,14 +1419,14 @@ WriteLiteral(" class=\"col-sm-4 col-md-4\"");
 
 WriteLiteral(">\r\n                    <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 18337), Tuple.Create("\"", 18353)
+WriteAttribute("href", Tuple.Create(" href=\"", 19079), Tuple.Create("\"", 19095)
             
-            #line 294 "..\..\Views\Home\HikmaIndex.cshtml"
-, Tuple.Create(Tuple.Create("", 18344), Tuple.Create<System.Object, System.Int32>(item.Url
+            #line 300 "..\..\Views\Home\HikmaIndex.cshtml"
+, Tuple.Create(Tuple.Create("", 19086), Tuple.Create<System.Object, System.Int32>(item.Url
             
             #line default
             #line hidden
-, 18344), false)
+, 19086), false)
 );
 
 WriteLiteral(" class=\"text-decoration-none\"");
@@ -1425,14 +1446,14 @@ WriteLiteral(" alt=\"\"");
 
 WriteLiteral(" class=\"img-responsive\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 18705), Tuple.Create("\"", 18726)
+WriteAttribute("src", Tuple.Create(" src=\"", 19447), Tuple.Create("\"", 19468)
             
-            #line 297 "..\..\Views\Home\HikmaIndex.cshtml"
-, Tuple.Create(Tuple.Create("", 18711), Tuple.Create<System.Object, System.Int32>(item.ThumbPath
+            #line 303 "..\..\Views\Home\HikmaIndex.cshtml"
+, Tuple.Create(Tuple.Create("", 19453), Tuple.Create<System.Object, System.Int32>(item.ThumbPath
             
             #line default
             #line hidden
-, 18711), false)
+, 19453), false)
 );
 
 WriteLiteral(">\r\n                            </span>\r\n                            <span");
@@ -1450,7 +1471,7 @@ WriteLiteral(" class=\"font-weight-semibold mb-xs\"");
 WriteLiteral(">");
 
             
-            #line 301 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 307 "..\..\Views\Home\HikmaIndex.cshtml"
                                                                       Write(item.Title);
 
             
@@ -1459,7 +1480,7 @@ WriteLiteral(">");
 WriteLiteral("</h4>\r\n                                    <p>");
 
             
-            #line 302 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 308 "..\..\Views\Home\HikmaIndex.cshtml"
                                   Write(item.Subtitle);
 
             
@@ -1470,7 +1491,7 @@ WriteLiteral("</p>\r\n                                </span>\r\n               
 "div>\r\n");
 
             
-            #line 308 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 314 "..\..\Views\Home\HikmaIndex.cshtml"
 
             }
 
@@ -1495,7 +1516,7 @@ WriteLiteral(" class=\"btn btn-borders btn-quaternary custom-button text-upperca
 WriteLiteral(">");
 
             
-            #line 328 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 334 "..\..\Views\Home\HikmaIndex.cshtml"
                                                                                                    Write(Resources.Resources.ViewMore);
 
             
@@ -1524,7 +1545,7 @@ WriteLiteral(" class=\"recent-posts mb-xl\"");
 WriteLiteral(">\r\n                    <h2>");
 
             
-            #line 338 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 344 "..\..\Views\Home\HikmaIndex.cshtml"
                    Write(Resources.Resources.LatestNews);
 
             
@@ -1539,13 +1560,13 @@ WriteLiteral(" data-plugin-options=\'{\"items\": 1}\'");
 WriteLiteral(">\r\n");
 
             
-            #line 340 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 346 "..\..\Views\Home\HikmaIndex.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 340 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 346 "..\..\Views\Home\HikmaIndex.cshtml"
                           var newsIndex = 0;
             
             #line default
@@ -1553,13 +1574,13 @@ WriteLiteral(">\r\n");
 WriteLiteral("\r\n");
 
             
-            #line 341 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 347 "..\..\Views\Home\HikmaIndex.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 341 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 347 "..\..\Views\Home\HikmaIndex.cshtml"
                          foreach (var item in Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("news")).OrderByDescending(c => c.PublishedOn).Take(12))
                         {
                             if (newsIndex % 2 == 0)
@@ -1573,7 +1594,7 @@ WriteLiteral("                                ");
 WriteLiteral("<div class=\"row mt-lg\">\r\n");
 
             
-            #line 346 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 352 "..\..\Views\Home\HikmaIndex.cshtml"
                             }
 
             
@@ -1595,7 +1616,7 @@ WriteLiteral(" class=\"day\"");
 WriteLiteral(">");
 
             
-            #line 350 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 356 "..\..\Views\Home\HikmaIndex.cshtml"
                                                      Write(item.PublishedOn.Value.Day);
 
             
@@ -1608,7 +1629,7 @@ WriteLiteral(" class=\"month\"");
 WriteLiteral(">");
 
             
-            #line 351 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 357 "..\..\Views\Home\HikmaIndex.cshtml"
                                                        Write(item.PublishedOn.Value.Month);
 
             
@@ -1621,20 +1642,20 @@ WriteLiteral(" class=\"heading-primary\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 21825), Tuple.Create("\"", 21892)
+WriteAttribute("href", Tuple.Create(" href=\"", 22567), Tuple.Create("\"", 22634)
             
-            #line 353 "..\..\Views\Home\HikmaIndex.cshtml"
-, Tuple.Create(Tuple.Create("", 21832), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
+            #line 359 "..\..\Views\Home\HikmaIndex.cshtml"
+, Tuple.Create(Tuple.Create("", 22574), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
             
             #line default
             #line hidden
-, 21832), false)
+, 22574), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 353 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 359 "..\..\Views\Home\HikmaIndex.cshtml"
                                                                                                                                   Write(item.Title);
 
             
@@ -1643,7 +1664,7 @@ WriteLiteral(">");
 WriteLiteral("</a></h4>\r\n                                    <p>");
 
             
-            #line 354 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 360 "..\..\Views\Home\HikmaIndex.cshtml"
                                   Write(item.MainContent.StripHtml().Chop(120));
 
             
@@ -1653,14 +1674,14 @@ WriteLiteral("</p>\r\n                                    <a");
 
 WriteLiteral(" class=\"btn btn-primary btn-xs\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 22069), Tuple.Create("\"", 22136)
+WriteAttribute("href", Tuple.Create(" href=\"", 22811), Tuple.Create("\"", 22878)
             
-            #line 355 "..\..\Views\Home\HikmaIndex.cshtml"
-, Tuple.Create(Tuple.Create("", 22076), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
+            #line 361 "..\..\Views\Home\HikmaIndex.cshtml"
+, Tuple.Create(Tuple.Create("", 22818), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
             
             #line default
             #line hidden
-, 22076), false)
+, 22818), false)
 );
 
 WriteLiteral("><i");
@@ -1670,7 +1691,7 @@ WriteLiteral(" class=\"fa fa-plus\"");
 WriteLiteral("></i><span> ");
 
             
-            #line 355 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 361 "..\..\Views\Home\HikmaIndex.cshtml"
                                                                                                                                                                       Write(Resources.Resources.ReadMore);
 
             
@@ -1680,7 +1701,7 @@ WriteLiteral("</span></a>\r\n                                </article>\r\n     
 "    </div>\r\n");
 
             
-            #line 358 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 364 "..\..\Views\Home\HikmaIndex.cshtml"
                             newsIndex++;
                             if (newsIndex % 2 == 0)
                             {
@@ -1693,7 +1714,7 @@ WriteLiteral("                                ");
 WriteLiteral("</div>\r\n");
 
             
-            #line 362 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 368 "..\..\Views\Home\HikmaIndex.cshtml"
                             }
                         }
 
@@ -1712,7 +1733,7 @@ WriteLiteral(" class=\"recent-posts mb-xl\"");
 WriteLiteral(">\r\n                    <h2>");
 
             
-            #line 370 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 376 "..\..\Views\Home\HikmaIndex.cshtml"
                    Write(Resources.Resources.LatestEvents);
 
             
@@ -1727,13 +1748,13 @@ WriteLiteral(" data-plugin-options=\'{\"items\": 1}\'");
 WriteLiteral(">\r\n");
 
             
-            #line 372 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 378 "..\..\Views\Home\HikmaIndex.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 372 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 378 "..\..\Views\Home\HikmaIndex.cshtml"
                           var eventIndex = 0;
             
             #line default
@@ -1741,13 +1762,13 @@ WriteLiteral(">\r\n");
 WriteLiteral("\r\n");
 
             
-            #line 373 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 379 "..\..\Views\Home\HikmaIndex.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 373 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 379 "..\..\Views\Home\HikmaIndex.cshtml"
                          foreach (var item in Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("events")).OrderByDescending(c => c.PublishedOn).Take(12))
                         {
                             if (eventIndex % 2 == 0)
@@ -1761,7 +1782,7 @@ WriteLiteral("                                ");
 WriteLiteral("<div class=\"row mt-lg\">\r\n");
 
             
-            #line 378 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 384 "..\..\Views\Home\HikmaIndex.cshtml"
                         }
 
             
@@ -1783,7 +1804,7 @@ WriteLiteral(" class=\"day\"");
 WriteLiteral(">");
 
             
-            #line 382 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 388 "..\..\Views\Home\HikmaIndex.cshtml"
                                                       Write(item.StartDate?.Day ?? item.PublishedOn.Value.Day);
 
             
@@ -1796,7 +1817,7 @@ WriteLiteral(" class=\"month\"");
 WriteLiteral(">");
 
             
-            #line 383 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 389 "..\..\Views\Home\HikmaIndex.cshtml"
                                                         Write(item.StartDate?.Month ?? item.PublishedOn.Value.Month);
 
             
@@ -1809,20 +1830,20 @@ WriteLiteral(" class=\"heading-primary\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 23760), Tuple.Create("\"", 23827)
+WriteAttribute("href", Tuple.Create(" href=\"", 24502), Tuple.Create("\"", 24569)
             
-            #line 385 "..\..\Views\Home\HikmaIndex.cshtml"
-, Tuple.Create(Tuple.Create("", 23767), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
+            #line 391 "..\..\Views\Home\HikmaIndex.cshtml"
+, Tuple.Create(Tuple.Create("", 24509), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
             
             #line default
             #line hidden
-, 23767), false)
+, 24509), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 385 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 391 "..\..\Views\Home\HikmaIndex.cshtml"
                                                                                                                                   Write(item.Title);
 
             
@@ -1831,7 +1852,7 @@ WriteLiteral(">");
 WriteLiteral("</a></h4>\r\n                                    <p>");
 
             
-            #line 386 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 392 "..\..\Views\Home\HikmaIndex.cshtml"
                                   Write(item.MainContent.StripHtml().Chop(120));
 
             
@@ -1841,14 +1862,14 @@ WriteLiteral("</p>\r\n                                    <a");
 
 WriteLiteral(" class=\"btn btn-primary btn-xs\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 24004), Tuple.Create("\"", 24071)
+WriteAttribute("href", Tuple.Create(" href=\"", 24746), Tuple.Create("\"", 24813)
             
-            #line 387 "..\..\Views\Home\HikmaIndex.cshtml"
-, Tuple.Create(Tuple.Create("", 24011), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
+            #line 393 "..\..\Views\Home\HikmaIndex.cshtml"
+, Tuple.Create(Tuple.Create("", 24753), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
             
             #line default
             #line hidden
-, 24011), false)
+, 24753), false)
 );
 
 WriteLiteral("><i");
@@ -1858,7 +1879,7 @@ WriteLiteral(" class=\"fa fa-plus\"");
 WriteLiteral("></i><span> ");
 
             
-            #line 387 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 393 "..\..\Views\Home\HikmaIndex.cshtml"
                                                                                                                                                                       Write(Resources.Resources.ReadMore);
 
             
@@ -1868,7 +1889,7 @@ WriteLiteral("</span></a>\r\n                                </article>\r\n     
 "    </div>\r\n");
 
             
-            #line 390 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 396 "..\..\Views\Home\HikmaIndex.cshtml"
                             eventIndex++;
                             if (eventIndex % 2 == 0)
                             {
@@ -1881,7 +1902,7 @@ WriteLiteral("                                ");
 WriteLiteral("</div>\r\n");
 
             
-            #line 394 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 400 "..\..\Views\Home\HikmaIndex.cshtml"
                             }
                         }
 
@@ -1908,7 +1929,7 @@ WriteLiteral(" class=\"font-weight-semibold m-none\"");
 WriteLiteral(">");
 
             
-            #line 408 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 414 "..\..\Views\Home\HikmaIndex.cshtml"
                                                    Write(insuranceList.Title);
 
             
@@ -1921,7 +1942,7 @@ WriteLiteral(" class=\"lead font-weight-normal\"");
 WriteLiteral(">");
 
             
-            #line 409 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 415 "..\..\Views\Home\HikmaIndex.cshtml"
                                               Write(insuranceList.Subtitle);
 
             
@@ -1940,13 +1961,13 @@ WriteLiteral(" data-plugin-options=\"{\'items\': 6, \'autoplay\': true, \'autopl
 WriteLiteral(">\r\n");
 
             
-            #line 414 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 420 "..\..\Views\Home\HikmaIndex.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 414 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 420 "..\..\Views\Home\HikmaIndex.cshtml"
                  foreach (var item in insuranceList.ListItems)
                 {
 
@@ -1957,14 +1978,14 @@ WriteLiteral("                    <div>\r\n                        <img");
 
 WriteLiteral(" class=\"img-responsive\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 25204), Tuple.Create("\"", 25225)
+WriteAttribute("src", Tuple.Create(" src=\"", 25946), Tuple.Create("\"", 25967)
             
-            #line 417 "..\..\Views\Home\HikmaIndex.cshtml"
-, Tuple.Create(Tuple.Create("", 25210), Tuple.Create<System.Object, System.Int32>(item.ThumbPath
+            #line 423 "..\..\Views\Home\HikmaIndex.cshtml"
+, Tuple.Create(Tuple.Create("", 25952), Tuple.Create<System.Object, System.Int32>(item.ThumbPath
             
             #line default
             #line hidden
-, 25210), false)
+, 25952), false)
 );
 
 WriteLiteral(" alt=\"\"");
@@ -1974,7 +1995,7 @@ WriteLiteral(">\r\n                        ");
 WriteLiteral("\r\n                    </div>\r\n");
 
             
-            #line 420 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 426 "..\..\Views\Home\HikmaIndex.cshtml"
                 }
 
             
@@ -2003,13 +2024,13 @@ WriteLiteral(" data-plugin-options=\"{\'items\': 1, \'loop\': false, \'dots\': f
 WriteLiteral(">\r\n");
 
             
-            #line 432 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 438 "..\..\Views\Home\HikmaIndex.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 432 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 438 "..\..\Views\Home\HikmaIndex.cshtml"
                  foreach (var item in testimonialList.ListItems)
                 {
             
@@ -2035,7 +2056,7 @@ WriteLiteral(" class=\"font-weight-light\"");
 WriteLiteral(">");
 
             
-            #line 438 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 444 "..\..\Views\Home\HikmaIndex.cshtml"
                                                         Write(item.Subtitle);
 
             
@@ -2053,7 +2074,7 @@ WriteLiteral(" class=\"text-uppercase\"");
 WriteLiteral(">\r\n                                    <strong>");
 
             
-            #line 442 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 448 "..\..\Views\Home\HikmaIndex.cshtml"
                                        Write(item.Title);
 
             
@@ -2064,7 +2085,7 @@ WriteLiteral("</strong>\r\n                                </p>\r\n             
 "</div>\r\n");
 
             
-            #line 448 "..\..\Views\Home\HikmaIndex.cshtml"
+            #line 454 "..\..\Views\Home\HikmaIndex.cshtml"
                 }
 
             

@@ -11,7 +11,7 @@ html {
 }
 body {
 	direction: rtl;
-    font-family:"DroidArabicKufiRegular", Arial, sans-serif !important;
+    font-family: Arial, sans-serif;
 }
 .flip.text-left {
 	text-align: right;

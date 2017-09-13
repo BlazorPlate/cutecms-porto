@@ -107,7 +107,7 @@
           <Property Name="State" Type="nvarchar(max)" />
           <Property Name="ZIP" Type="nvarchar" MaxLength="20" />
           <Property Name="Country" Type="nvarchar(max)" />
-          <Property Name="Telephone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Telephone" Type="nvarchar"/>
           <Property Name="Fax" Type="nvarchar" MaxLength="20" />
           <Property Name="Email" Type="nvarchar(max)" />
           <Property Name="Longitude" Type="decimal" Precision="12" Scale="9" />
@@ -896,7 +896,7 @@
           <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ZIP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Telephone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Longitude" Type="Decimal" Precision="12" Scale="9" />

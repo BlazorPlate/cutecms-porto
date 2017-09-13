@@ -88,6 +88,7 @@
                 <ul class="list list-icons list-icons-style-3 mb-xlg">
                     <li><i class="fa fa-map-marker"></i> @Model.Organization.AddressLine1<br />@Model.Organization.City, @Model.Organization.State, @Model.Organization.ZIP, @Model.Organization.Country</li>
                     <li><i class="fa fa-phone"></i><span> @(Model.Organization.Telephone ?? Resources.Resources.NotAvailable)</span></li>
+                    <li><i class="fa fa-fax"></i><span> @(Model.Organization.Fax ?? Resources.Resources.NotAvailable)</span></li>
                     <li><i class="fa fa-envelope"></i> <a href="mailto:@Model.Organization.Email">@(Model.Organization.Email ?? Resources.Resources.NotAvailable)</a></li>
                 </ul>
             }

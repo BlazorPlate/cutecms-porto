@@ -1402,7 +1402,7 @@
     <value>أوسمة الصور</value>
   </data>
   <data name="SMTPSettings" xml:space="preserve">
-    <value>اعدادات برونوكول ارسال البريد</value>
+    <value>بروتوكول البريد</value>
   </data>
   <data name="Statistics" xml:space="preserve">
     <value>الاحصائيات</value>
@@ -1703,5 +1703,20 @@
   </data>
   <data name="DoctorType" xml:space="preserve">
     <value>نوع الطبيب</value>
+  </data>
+  <data name="Port" xml:space="preserve">
+    <value>رقم المنفذ</value>
+  </data>
+  <data name="EnableSsl" xml:space="preserve">
+    <value>تفعيل شهادات الوثوقية</value>
+  </data>
+  <data name="SenderEmail" xml:space="preserve">
+    <value>ايميل المرسل</value>
+  </data>
+  <data name="SenderPassword" xml:space="preserve">
+    <value>باسورد المرسل</value>
+  </data>
+  <data name="RecipientEmail" xml:space="preserve">
+    <value>ايميل المستقبل</value>
   </data>
 </root>

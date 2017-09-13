@@ -2539,6 +2539,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NotTranslated.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Home\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Home\Calendar.generated.cs">
       <DependentUpon>Calendar.cshtml</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -2570,14 +2575,9 @@
       <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Views\Home\HikmaIndex.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <DependentUpon>HikmaIndex.cshtml</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Include="Views\Home\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Home\ResetPassword.generated.cs">
       <DependentUpon>ResetPassword.cshtml</DependentUpon>
@@ -2818,10 +2818,6 @@
   <ItemGroup>
     <Content Include="App_Data\CuteCMSDB.mdf" />
     <Content Include="App_Data\CuteCMSDB_log.ldf">
-      <DependentUpon>CuteCMSDB.mdf</DependentUpon>
-    </Content>
-    <Content Include="App_Data\old\CuteCMSDB.mdf" />
-    <Content Include="App_Data\old\CuteCMSDB_log.ldf">
       <DependentUpon>CuteCMSDB.mdf</DependentUpon>
     </Content>
     <Content Include="App_Data_PSUT\CuteCMSDB.mdf" />
@@ -8548,10 +8544,6 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>ImageFiles.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Home\HikmaIndex.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>HikmaIndex.generated.cs</LastGenOutput>
-    </Content>
     <Content Include="Views\Home\ResetPassword.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>ResetPassword.generated.cs</LastGenOutput>
@@ -8927,6 +8919,10 @@
     </Content>
     <Content Include="Views\Shared\_DeptBreadcrumb.cshtml" />
     <Content Include="Views\Home\DefaultIndex.cshtml" />
+    <Content Include="Views\Home\HikmaIndex.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>HikmaIndex.generated.cs</LastGenOutput>
+    </Content>
     <Content Include="Views\Home\Index.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Index.generated.cs</LastGenOutput>

@@ -286,7 +286,7 @@ WriteLiteral(":</strong> ");
 
             
             #line 45 "..\..\Views\Shared\_Footer.cshtml"
-                                                                                                       Write(organization.Telephone);
+                                                                                                        Write(organization?.Telephone?.Split('-')[0]);
 
             
             #line default
@@ -306,15 +306,15 @@ WriteLiteral("></i> <strong>");
             #line hidden
 WriteLiteral(":</strong> <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2880), Tuple.Create("\"", 2913)
-, Tuple.Create(Tuple.Create("", 2887), Tuple.Create("mailto:", 2887), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 2898), Tuple.Create("\"", 2931)
+, Tuple.Create(Tuple.Create("", 2905), Tuple.Create("mailto:", 2905), true)
             
             #line 46 "..\..\Views\Shared\_Footer.cshtml"
-                                               , Tuple.Create(Tuple.Create("", 2894), Tuple.Create<System.Object, System.Int32>(organization.Email
+                                               , Tuple.Create(Tuple.Create("", 2912), Tuple.Create<System.Object, System.Int32>(organization.Email
             
             #line default
             #line hidden
-, 2894), false)
+, 2912), false)
 );
 
 WriteLiteral(">");
@@ -386,52 +386,52 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                            <li");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 3412), Tuple.Create("\"", 3443)
-, Tuple.Create(Tuple.Create("", 3420), Tuple.Create("social-icons-", 3420), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 3430), Tuple.Create("\"", 3461)
+, Tuple.Create(Tuple.Create("", 3438), Tuple.Create("social-icons-", 3438), true)
             
             #line 59 "..\..\Views\Shared\_Footer.cshtml"
-, Tuple.Create(Tuple.Create("", 3433), Tuple.Create<System.Object, System.Int32>(item.Code
+, Tuple.Create(Tuple.Create("", 3451), Tuple.Create<System.Object, System.Int32>(item.Code
             
             #line default
             #line hidden
-, 3433), false)
+, 3451), false)
 );
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3447), Tuple.Create("\"", 3463)
+WriteAttribute("href", Tuple.Create(" href=\"", 3465), Tuple.Create("\"", 3481)
             
             #line 59 "..\..\Views\Shared\_Footer.cshtml"
-, Tuple.Create(Tuple.Create("", 3454), Tuple.Create<System.Object, System.Int32>(item.Url
+, Tuple.Create(Tuple.Create("", 3472), Tuple.Create<System.Object, System.Int32>(item.Url
             
             #line default
             #line hidden
-, 3454), false)
+, 3472), false)
 );
 
 WriteLiteral(" target=\"_blank\"");
 
-WriteAttribute("title", Tuple.Create(" title=\"", 3480), Tuple.Create("\"", 3498)
+WriteAttribute("title", Tuple.Create(" title=\"", 3498), Tuple.Create("\"", 3516)
             
             #line 59 "..\..\Views\Shared\_Footer.cshtml"
-                           , Tuple.Create(Tuple.Create("", 3488), Tuple.Create<System.Object, System.Int32>(item.Name
+                           , Tuple.Create(Tuple.Create("", 3506), Tuple.Create<System.Object, System.Int32>(item.Name
             
             #line default
             #line hidden
-, 3488), false)
+, 3506), false)
 );
 
 WriteLiteral("><i");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 3502), Tuple.Create("\"", 3527)
-, Tuple.Create(Tuple.Create("", 3510), Tuple.Create("fa", 3510), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 3520), Tuple.Create("\"", 3545)
+, Tuple.Create(Tuple.Create("", 3528), Tuple.Create("fa", 3528), true)
             
             #line 59 "..\..\Views\Shared\_Footer.cshtml"
-                                                   , Tuple.Create(Tuple.Create(" ", 3512), Tuple.Create<System.Object, System.Int32>(item.CssClass
+                                                   , Tuple.Create(Tuple.Create(" ", 3530), Tuple.Create<System.Object, System.Int32>(item.CssClass
             
             #line default
             #line hidden
-, 3513), false)
+, 3531), false)
 );
 
 WriteLiteral("></i></a></li>\r\n");
@@ -470,9 +470,9 @@ WriteLiteral(" class=\"col-md-1\"");
 
 WriteLiteral(">\r\n                    <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3827), Tuple.Create("\"", 3859)
-, Tuple.Create(Tuple.Create("", 3834), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/index.html")
-, 3834), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 3845), Tuple.Create("\"", 3877)
+, Tuple.Create(Tuple.Create("", 3852), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/index.html")
+, 3852), false)
 );
 
 WriteLiteral(" class=\"logo\"");
@@ -483,9 +483,9 @@ WriteLiteral(" alt=\"CuteCMS.NET\"");
 
 WriteLiteral(" class=\"img-responsive\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 3945), Tuple.Create("\"", 3985)
-, Tuple.Create(Tuple.Create("", 3951), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/footer-logo.png")
-, 3951), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 3963), Tuple.Create("\"", 4003)
+, Tuple.Create(Tuple.Create("", 3969), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/footer-logo.png")
+, 3969), false)
 );
 
 WriteLiteral(">\r\n                    </a>\r\n                </div>\r\n                <div");
@@ -545,14 +545,14 @@ WriteLiteral(">\r\n                        <ul>\r\n");
             #line hidden
 WriteLiteral("                                <li><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4456), Tuple.Create("\"", 4473)
+WriteAttribute("href", Tuple.Create(" href=\"", 4474), Tuple.Create("\"", 4491)
             
             #line 82 "..\..\Views\Shared\_Footer.cshtml"
-, Tuple.Create(Tuple.Create("", 4463), Tuple.Create<System.Object, System.Int32>(item.Path
+, Tuple.Create(Tuple.Create("", 4481), Tuple.Create<System.Object, System.Int32>(item.Path
             
             #line default
             #line hidden
-, 4463), false)
+, 4481), false)
 );
 
 WriteLiteral(">");

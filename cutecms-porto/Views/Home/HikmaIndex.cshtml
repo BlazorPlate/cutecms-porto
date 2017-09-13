@@ -1,9 +1,11 @@
 ﻿@using cutecms_porto.Areas.CMS.Models.DBModel
 @using cutecms_porto.Areas.Identity.Models.DBModel
+@using cutecms_porto.Areas.Config.Models.DBModel
 @using System.Threading
 @model cutecms_porto.Models.HomeViewModel
 @{
     CMSEntities cmsDb = new CMSEntities();
+    CMSEntities configDb = new CMSEntities();
     IdentityEntities IdentityDb = new IdentityEntities();
     var openingHours = Model.ContentLists.Where(c => c.Code.Trim().Equals("opening-hours")).FirstOrDefault()?.ListItems ?? new List<ListItem>();
     var shortcutContents = Model.Contents.Where(c => c.HasShortcut);
@@ -11,6 +13,10 @@
     var resourcesList = Model.ContentLists.Where(c => c.Code.Trim().Equals("resources"))?.FirstOrDefault() ?? new ContentList();
     var testimonialList = Model.ContentLists.Where(c => c.Code.Trim().Equals("testimonial"))?.FirstOrDefault() ?? new ContentList();
     IdentityEntities identityDb = new IdentityEntities();
+    var organizations = (List<Organization>)HttpRuntime.Cache["Organizations"];
+    var organization = organizations.Where(o => o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name))?.FirstOrDefault() ?? new Organization();
+    IEnumerable<MenuItem> footerMenuItems = configDb.MenuItems.Include("Status").Include("Menu").Include("Language").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Menu.Code.Trim().Equals("footer-menu") && m.Status.Code.Trim().Equals("published") && m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).OrderBy(o => o.Ordinal);
+
 }
 @section Styles{
     <!-- Current Page CSS -->
@@ -128,7 +134,7 @@
                         <div class="col-lg-3 box-two background-color-tertiary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="600">
                             <h5 class="m-none">
                                 <a href="demo-medical-doctors.html" title="">
-                                    Doctors Timetable
+                                    @Resources.Resources.DoctorsTimetable
                                     <i class="icon-arrow-right-circle icons"></i>
                                 </a>
                             </h5>

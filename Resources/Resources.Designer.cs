@@ -1384,6 +1384,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enable SSL.
+        /// </summary>
+        public static string EnableSsl {
+            get {
+                return ResourceManager.GetString("EnableSsl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Activity End Date.
         /// </summary>
         public static string EndDate {
@@ -3409,6 +3418,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Port Number.
+        /// </summary>
+        public static string Port {
+            get {
+                return ResourceManager.GetString("Port", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Position.
         /// </summary>
         public static string Position {
@@ -3576,6 +3594,15 @@ namespace Resources {
         public static string ReadMore {
             get {
                 return ResourceManager.GetString("ReadMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recipient Email.
+        /// </summary>
+        public static string RecipientEmail {
+            get {
+                return ResourceManager.GetString("RecipientEmail", resourceCulture);
             }
         }
         
@@ -3913,11 +3940,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sender Email.
+        /// </summary>
+        public static string SenderEmail {
+            get {
+                return ResourceManager.GetString("SenderEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your name.
         /// </summary>
         public static string SenderName {
             get {
                 return ResourceManager.GetString("SenderName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sender Password.
+        /// </summary>
+        public static string SenderPassword {
+            get {
+                return ResourceManager.GetString("SenderPassword", resourceCulture);
             }
         }
         
@@ -4030,7 +4075,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SMTP Settings.
+        ///   Looks up a localized string similar to SMTP .
         /// </summary>
         public static string SMTPSettings {
             get {

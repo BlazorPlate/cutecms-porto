@@ -8,6 +8,8 @@ delete from ImageTags
 delete from ImageFileTerms
 delete from ImageFiles
 delete from Submissions
+delete from VacancyRanks
+delete from VacancyDegrees
 delete from Vacancies
 delete from Attachments
 delete from Applicants

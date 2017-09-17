@@ -1769,7 +1769,7 @@ WriteLiteral("\r\n");
             #line hidden
             
             #line 379 "..\..\Views\Home\HikmaIndex.cshtml"
-                         foreach (var item in Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("events")).OrderByDescending(c => c.PublishedOn).Take(12))
+                         foreach (var item in Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("event")).OrderByDescending(c => c.PublishedOn).Take(12))
                         {
                             if (eventIndex % 2 == 0)
                             {
@@ -1830,14 +1830,14 @@ WriteLiteral(" class=\"heading-primary\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 24502), Tuple.Create("\"", 24569)
+WriteAttribute("href", Tuple.Create(" href=\"", 24501), Tuple.Create("\"", 24568)
             
             #line 391 "..\..\Views\Home\HikmaIndex.cshtml"
-, Tuple.Create(Tuple.Create("", 24509), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
+, Tuple.Create(Tuple.Create("", 24508), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
             
             #line default
             #line hidden
-, 24509), false)
+, 24508), false)
 );
 
 WriteLiteral(">");
@@ -1862,14 +1862,14 @@ WriteLiteral("</p>\r\n                                    <a");
 
 WriteLiteral(" class=\"btn btn-primary btn-xs\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 24746), Tuple.Create("\"", 24813)
+WriteAttribute("href", Tuple.Create(" href=\"", 24745), Tuple.Create("\"", 24812)
             
             #line 393 "..\..\Views\Home\HikmaIndex.cshtml"
-, Tuple.Create(Tuple.Create("", 24753), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
+, Tuple.Create(Tuple.Create("", 24752), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
             
             #line default
             #line hidden
-, 24753), false)
+, 24752), false)
 );
 
 WriteLiteral("><i");
@@ -1978,14 +1978,14 @@ WriteLiteral("                    <div>\r\n                        <img");
 
 WriteLiteral(" class=\"img-responsive\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 25946), Tuple.Create("\"", 25967)
+WriteAttribute("src", Tuple.Create(" src=\"", 25945), Tuple.Create("\"", 25966)
             
             #line 423 "..\..\Views\Home\HikmaIndex.cshtml"
-, Tuple.Create(Tuple.Create("", 25952), Tuple.Create<System.Object, System.Int32>(item.ThumbPath
+, Tuple.Create(Tuple.Create("", 25951), Tuple.Create<System.Object, System.Int32>(item.ThumbPath
             
             #line default
             #line hidden
-, 25952), false)
+, 25951), false)
 );
 
 WriteLiteral(" alt=\"\"");

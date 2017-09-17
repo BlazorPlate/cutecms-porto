@@ -1752,7 +1752,7 @@ WriteLiteral("\r\n");
             #line hidden
             
             #line 379 "..\..\Views\Home\Index.cshtml"
-                         foreach (var item in Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("events")).OrderByDescending(c => c.PublishedOn).Take(12))
+                         foreach (var item in Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("event")).OrderByDescending(c => c.PublishedOn).Take(12))
                         {
                             if (eventIndex % 2 == 0)
                             {
@@ -1813,14 +1813,14 @@ WriteLiteral(" class=\"heading-primary\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 23817), Tuple.Create("\"", 23884)
+WriteAttribute("href", Tuple.Create(" href=\"", 23816), Tuple.Create("\"", 23883)
             
             #line 391 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 23824), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
+, Tuple.Create(Tuple.Create("", 23823), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
             
             #line default
             #line hidden
-, 23824), false)
+, 23823), false)
 );
 
 WriteLiteral(">");
@@ -1845,14 +1845,14 @@ WriteLiteral("</p>\r\n                                    <a");
 
 WriteLiteral(" class=\"btn btn-primary btn-xs\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 24061), Tuple.Create("\"", 24128)
+WriteAttribute("href", Tuple.Create(" href=\"", 24060), Tuple.Create("\"", 24127)
             
             #line 393 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 24068), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
+, Tuple.Create(Tuple.Create("", 24067), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
             
             #line default
             #line hidden
-, 24068), false)
+, 24067), false)
 );
 
 WriteLiteral("><i");
@@ -1961,14 +1961,14 @@ WriteLiteral("                    <div>\r\n                        <img");
 
 WriteLiteral(" class=\"img-responsive\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 25286), Tuple.Create("\"", 25307)
+WriteAttribute("src", Tuple.Create(" src=\"", 25285), Tuple.Create("\"", 25306)
             
             #line 423 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 25292), Tuple.Create<System.Object, System.Int32>(item.ThumbPath
+, Tuple.Create(Tuple.Create("", 25291), Tuple.Create<System.Object, System.Int32>(item.ThumbPath
             
             #line default
             #line hidden
-, 25292), false)
+, 25291), false)
 );
 
 WriteLiteral(" alt=\"\"");

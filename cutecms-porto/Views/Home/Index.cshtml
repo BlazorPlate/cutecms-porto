@@ -376,7 +376,7 @@
                     <h2>@Resources.Resources.LatestEvents</h2>
                     <div class="owl-carousel owl-theme mb-none" data-plugin-options='{"items": 1}'>
                         @{var eventIndex = 0;}
-                        @foreach (var item in Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("events")).OrderByDescending(c => c.PublishedOn).Take(12))
+                        @foreach (var item in Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("event")).OrderByDescending(c => c.PublishedOn).Take(12))
                         {
                             if (eventIndex % 2 == 0)
                             {

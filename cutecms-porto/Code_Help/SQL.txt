@@ -14,3 +14,16 @@ delete from Vacancies
 delete from Attachments
 delete from Applicants
 delete from AspNetUsers where username!='admin@boss.com '
+
+
+select * from INFORMATION_SCHEMA.COLUMNS where  COLUMN_NAME = 'TenantId'
+
+update contents set TenantId='www'
+update Tags set TenantId='www'
+update Organization set TenantId='www'
+update ImageFiles set TenantId='www'
+update Galleries set TenantId='www'
+update Departments set TenantId='www'
+update Categories set TenantId='www'
+update Menus set TenantId='www'
+update Vacancies set TenantId='www'

@@ -191,23 +191,11 @@ WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" />\r\n");
 
-WriteLiteral("        <link");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteLiteral(" media=\"screen\"");
-
-WriteLiteral(" href=\"https://fontlibrary.org/face/droid-arabic-kufi\"");
-
-WriteLiteral(" type=\"text/css\"");
-
-WriteLiteral(" />\r\n");
-
 WriteLiteral("        <style>\r\n            .dropdown-menu {\r\n                right: 0px !import" +
 "ant;\r\n                left: auto !important;\r\n            }\r\n        </style>\r\n");
 
             
-            #line 33 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
+            #line 32 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
     }
     else
     {
@@ -241,7 +229,7 @@ WriteLiteral(@"        <style>
 ");
 
             
-            #line 59 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
+            #line 58 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
     }
 
             
@@ -309,7 +297,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 83 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
+            #line 82 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
                        Write(Html.Partial("_LoginPartial"));
 
             
@@ -318,28 +306,28 @@ WriteLiteral("                            ");
 WriteLiteral("\r\n                        </ul>\r\n                    </div>\r\n                    " +
 "<div>\r\n                        <ul");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 3544), Tuple.Create("\"", 3632)
-, Tuple.Create(Tuple.Create("", 3552), Tuple.Create("nav", 3552), true)
-, Tuple.Create(Tuple.Create(" ", 3555), Tuple.Create("navbar-nav", 3556), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 3424), Tuple.Create("\"", 3512)
+, Tuple.Create(Tuple.Create("", 3432), Tuple.Create("nav", 3432), true)
+, Tuple.Create(Tuple.Create(" ", 3435), Tuple.Create("navbar-nav", 3436), true)
             
-            #line 87 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("  ", 3566), Tuple.Create<System.Object, System.Int32>(CultureHelper.IsRighToLeft() ? "navbar-left" : "navbar-right"
+            #line 86 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("  ", 3446), Tuple.Create<System.Object, System.Int32>(CultureHelper.IsRighToLeft() ? "navbar-left" : "navbar-right"
             
             #line default
             #line hidden
-, 3568), false)
+, 3448), false)
 );
 
 WriteLiteral(">\r\n");
 
             
-            #line 88 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
+            #line 87 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
                             
             
             #line default
             #line hidden
             
-            #line 88 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
+            #line 87 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
                              if (organization != null)
                             {
                                 foreach (var item in organization.SocialNetworks)
@@ -355,34 +343,34 @@ WriteLiteral(" class=\"li-social\"");
 
 WriteLiteral(">\r\n                                            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3995), Tuple.Create("\"", 4011)
+WriteAttribute("href", Tuple.Create(" href=\"", 3875), Tuple.Create("\"", 3891)
             
-            #line 94 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 4002), Tuple.Create<System.Object, System.Int32>(item.Url
+            #line 93 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 3882), Tuple.Create<System.Object, System.Int32>(item.Url
             
             #line default
             #line hidden
-, 4002), false)
+, 3882), false)
 );
 
 WriteLiteral("><i");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 4015), Tuple.Create("\"", 4040)
-, Tuple.Create(Tuple.Create("", 4023), Tuple.Create("fa", 4023), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 3895), Tuple.Create("\"", 3920)
+, Tuple.Create(Tuple.Create("", 3903), Tuple.Create("fa", 3903), true)
             
-            #line 94 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create(" ", 4025), Tuple.Create<System.Object, System.Int32>(item.CssClass
+            #line 93 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create(" ", 3905), Tuple.Create<System.Object, System.Int32>(item.CssClass
             
             #line default
             #line hidden
-, 4026), false)
+, 3906), false)
 );
 
 WriteLiteral("></i></a>\r\n                                        </span>\r\n                     " +
 "               </li>\r\n");
 
             
-            #line 97 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
+            #line 96 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
                                 }
                             }
 
@@ -417,7 +405,7 @@ WriteLiteral(" class=\"form-top-left\"");
 WriteLiteral(" ");
 
             
-            #line 109 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
+            #line 108 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
                                                    Write(cutecms_porto.Helpers.CultureHelper.IsRighToLeft() ? "style=text-align:right" : "style=text-align:left");
 
             
@@ -426,7 +414,7 @@ WriteLiteral(" ");
 WriteLiteral(">\r\n                                <h3>");
 
             
-            #line 110 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
+            #line 109 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
                                Write(ViewBag.MainTitle);
 
             
@@ -435,7 +423,7 @@ WriteLiteral(">\r\n                                <h3>");
 WriteLiteral("</h3>\r\n                                <p>");
 
             
-            #line 111 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
+            #line 110 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
                               Write(ViewBag.SubTitle);
 
             
@@ -447,14 +435,14 @@ WriteLiteral(" class=\"form-top-right\"");
 
 WriteLiteral(">\r\n                                <i");
 
-WriteAttribute("class", Tuple.Create(" class=\'", 4978), Tuple.Create("\'", 5004)
+WriteAttribute("class", Tuple.Create(" class=\'", 4858), Tuple.Create("\'", 4884)
             
-            #line 114 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 4986), Tuple.Create<System.Object, System.Int32>(ViewBag.IconTitle
+            #line 113 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 4866), Tuple.Create<System.Object, System.Int32>(ViewBag.IconTitle
             
             #line default
             #line hidden
-, 4986), false)
+, 4866), false)
 );
 
 WriteLiteral("></i>\r\n                            </div>\r\n                        </div>\r\n      " +
@@ -469,7 +457,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 118 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
+            #line 117 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
                        Write(RenderBody());
 
             
@@ -481,7 +469,7 @@ WriteLiteral("\r\n                        </div>\r\n                    </div>\r
 WriteLiteral("                ");
 
             
-            #line 122 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
+            #line 121 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
            Write(RenderSection("SocialLinks", required: false));
 
             
@@ -497,23 +485,23 @@ WriteLiteral("><img");
 WriteLiteral(" style=\"margin: 0; padding: 0; border: medium; left: 0; width: 100%; height: 960p" +
 "x; position: absolute; z-index: -999999; max-height: none; max-width: none;\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 5679), Tuple.Create("\"", 5722)
-, Tuple.Create(Tuple.Create("", 5685), Tuple.Create<System.Object, System.Int32>(Href("~/assets/identity/images/login-bg.jpg")
-, 5685), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 5559), Tuple.Create("\"", 5602)
+, Tuple.Create(Tuple.Create("", 5565), Tuple.Create<System.Object, System.Int32>(Href("~/assets/identity/images/login-bg.jpg")
+, 5565), false)
 );
 
 WriteLiteral("></div>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 5743), Tuple.Create("\"", 5791)
-, Tuple.Create(Tuple.Create("", 5749), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/jquery/jquery.min.js")
-, 5749), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 5623), Tuple.Create("\"", 5671)
+, Tuple.Create(Tuple.Create("", 5629), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/jquery/jquery.min.js")
+, 5629), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 5815), Tuple.Create("\"", 5866)
-, Tuple.Create(Tuple.Create("", 5821), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/bootstrap/dist/js/bootstrap.js")
-, 5821), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 5695), Tuple.Create("\"", 5746)
+, Tuple.Create(Tuple.Create("", 5701), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/bootstrap/dist/js/bootstrap.js")
+, 5701), false)
 );
 
 WriteLiteral("></script>\r\n");
@@ -521,7 +509,7 @@ WriteLiteral("></script>\r\n");
 WriteLiteral("    ");
 
             
-            #line 129 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
+            #line 128 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
 Write(RenderSection("scripts", required: false));
 
             
@@ -536,7 +524,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 133 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
+            #line 132 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
 Write(Scripts.Render("~/bundles/jqueryval"));
 
             

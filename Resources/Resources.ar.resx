@@ -1719,4 +1719,7 @@
   <data name="RecipientEmail" xml:space="preserve">
     <value>ايميل المستقبل</value>
   </data>
+  <data name="VisitorCounter" xml:space="preserve">
+    <value>عداد الزوار</value>
+  </data>
 </root>

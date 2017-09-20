@@ -42,13 +42,16 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.Extended.6.1.0.168\lib\net45\EntityFramework.Extended.dll</HintPath>
+    </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.4.9.5, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.4.9.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
       <Private>True</Private>
@@ -2589,6 +2592,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Include="Views\Home\SFJUIndex.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SFJUIndex.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Home\Subscribed.generated.cs">
       <DependentUpon>Subscribed.cshtml</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -5059,6 +5067,7 @@
     <Content Include="assets\porto\css\demos\demo-shop-8.css" />
     <Content Include="assets\porto\css\demos\demo-shop-9.css" />
     <Content Include="assets\porto\css\demos\demo-wedding.css" />
+    <Content Include="assets\porto\css\fonts\digital-clock\readme.txt" />
     <Content Include="assets\porto\css\fonts\minicart-font.svg" />
     <Content Include="assets\porto\css\fonts\star.eot" />
     <Content Include="assets\porto\css\fonts\star.svg" />
@@ -6850,6 +6859,12 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Index.generated.cs</LastGenOutput>
     </Content>
+    <Content Include="assets\porto\vendor\smarticker\css\smarticker-ar.css" />
+    <Content Include="assets\porto\vendor\smarticker\css\smarticker.css" />
+    <Content Include="assets\porto\vendor\smarticker\images\controller.png" />
+    <Content Include="assets\porto\vendor\smarticker\images\controller1.png" />
+    <Content Include="assets\porto\vendor\smarticker\js\jquery.smarticker-ar.min.js" />
+    <Content Include="assets\porto\vendor\smarticker\js\jquery.smarticker.min.js" />
     <Content Include="assets\porto\vendor\style-switcher\bootstrap-colorpicker\css\bootstrap-colorpicker.css.map" />
     <Content Include="assets\porto\vendor\style-switcher\bootstrap-colorpicker\css\bootstrap-colorpicker.min.css.map" />
     <Content Include="Areas\Config\Views\SocialNetworks\Create.cshtml">
@@ -6872,6 +6887,10 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Index.generated.cs</LastGenOutput>
     </Content>
+    <Content Include="assets\porto\css\fonts\digital-clock\digital-7 %28italic%29.ttf" />
+    <Content Include="assets\porto\css\fonts\digital-clock\digital-7 %28mono italic%29.ttf" />
+    <Content Include="assets\porto\css\fonts\digital-clock\digital-7 %28mono%29.ttf" />
+    <Content Include="assets\porto\css\fonts\digital-clock\digital-7.ttf" />
     <None Include="assets\porto\vendor\validation\jquery.validate-vsdoc.js" />
     <Content Include="assets\porto\vendor\style-switcher\bootstrap-colorpicker\css\bootstrap-colorpicker.css" />
     <Content Include="assets\porto\vendor\style-switcher\bootstrap-colorpicker\css\bootstrap-colorpicker.min.css" />
@@ -7174,160 +7193,160 @@
     <Content Include="fileman\LICENSE.txt" />
     <Content Include="fileman\third-party.txt" />
     <Content Include="fileman\Uploads\Images\CMS\Contents\Images\Overview.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\embedded-1895.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\embedded-2567.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\embedded-2800.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\embedded-3323.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\embedded-4403.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\embedded-6354.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\embedded-7226.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\embedded-7783.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\embedded-1895.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\embedded-2567.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\embedded-2800.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\embedded-3323.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\embedded-4403.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\embedded-6354.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\embedded-7226.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\embedded-7783.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-1-2291.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-1-3054.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-1-3120.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-1-1451.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-1-2465.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-1-263.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-1-2705.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-1-3687.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-1-372.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-1-3720.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-1-5180.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-1-6958.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-1-9193.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-1-928.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-2-1311.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-2-2043.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-2-2708.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-2-4452.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-2-5183.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-2-6644.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-2-7549.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-2-7756.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-2-8563.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-2-8694.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-2-9817.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-3-3397.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-3-397.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-3-4715.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-3-4999.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-3-6046.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-3-7125.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-3-7190.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-3-7605.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-3-81.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-3-9350.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-3-9459.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-4-258.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-4-4892.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-4-5274.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-4-541.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-4-6114.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-4-7051.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-4-7510.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-4-7574.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-4-7891.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-4-8763.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-4-8905.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-5-2256.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-5-2419.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-5-2671.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-5-2845.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-5-3782.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-5-4306.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-5-5069.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-5-544.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-5-5974.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-5-8384.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-5-9955.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-6-1091.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-6-2061.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-6-2835.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-6-4187.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-6-5997.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-6-7328.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-6-7458.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-6-8265.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-6-839.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-6-8712.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\Thumbs\صور-معرض-6-916.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-1-2291.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-1-3054.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-1-3120.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-1-1451.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-1-2465.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-1-263.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-1-2705.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-1-3687.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-1-372.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-1-3720.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-1-5180.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-1-6958.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-1-9193.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-1-928.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-2-1311.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-2-2043.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-2-2708.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-2-4452.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-2-5183.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-2-6644.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-2-7549.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-2-7756.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-2-8563.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-2-8694.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-2-9817.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-3-3397.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-3-397.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-3-4715.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-3-4999.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-3-6046.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-3-7125.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-3-7190.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-3-7605.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-3-81.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-3-9350.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-3-9459.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-4-258.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-4-4892.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-4-5274.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-4-541.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-4-6114.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-4-7051.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-4-7510.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-4-7574.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-4-7891.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-4-8763.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-4-8905.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-5-2256.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-5-2419.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-5-2671.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-5-2845.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-5-3782.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-5-4306.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-5-5069.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-5-544.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-5-5974.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-5-8384.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-5-9955.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-6-1091.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-6-2061.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-6-2835.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-6-4187.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-6-5997.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-6-7328.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-6-7458.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-6-8265.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-6-839.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-6-8712.jpg" />
-    <Content Include="fileman\Uploads\Images\CMS\Images\صور-معرض-6-916.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\embedded-1895.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\embedded-2567.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\embedded-2800.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\embedded-3323.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\embedded-4403.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\embedded-6354.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\embedded-7226.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\embedded-7783.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\embedded-1895.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\embedded-2567.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\embedded-2800.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\embedded-3323.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\embedded-4403.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\embedded-6354.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\embedded-7226.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\embedded-7783.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-1-2291.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-1-3054.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-1-3120.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-1-1451.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-1-2465.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-1-263.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-1-2705.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-1-3687.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-1-372.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-1-3720.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-1-5180.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-1-6958.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-1-9193.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-1-928.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-2-1311.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-2-2043.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-2-2708.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-2-4452.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-2-5183.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-2-6644.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-2-7549.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-2-7756.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-2-8563.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-2-8694.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-2-9817.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-3-3397.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-3-397.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-3-4715.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-3-4999.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-3-6046.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-3-7125.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-3-7190.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-3-7605.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-3-81.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-3-9350.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-3-9459.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-4-258.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-4-4892.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-4-5274.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-4-541.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-4-6114.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-4-7051.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-4-7510.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-4-7574.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-4-7891.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-4-8763.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-4-8905.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-5-2256.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-5-2419.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-5-2671.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-5-2845.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-5-3782.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-5-4306.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-5-5069.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-5-544.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-5-5974.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-5-8384.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-5-9955.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-6-1091.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-6-2061.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-6-2835.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-6-4187.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-6-5997.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-6-7328.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-6-7458.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-6-8265.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-6-839.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-6-8712.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\Thumbs\صور-معرض-6-916.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-1-2291.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-1-3054.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-1-3120.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-1-1451.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-1-2465.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-1-263.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-1-2705.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-1-3687.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-1-372.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-1-3720.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-1-5180.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-1-6958.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-1-9193.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-1-928.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-2-1311.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-2-2043.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-2-2708.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-2-4452.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-2-5183.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-2-6644.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-2-7549.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-2-7756.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-2-8563.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-2-8694.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-2-9817.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-3-3397.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-3-397.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-3-4715.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-3-4999.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-3-6046.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-3-7125.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-3-7190.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-3-7605.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-3-81.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-3-9350.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-3-9459.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-4-258.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-4-4892.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-4-5274.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-4-541.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-4-6114.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-4-7051.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-4-7510.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-4-7574.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-4-7891.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-4-8763.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-4-8905.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-5-2256.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-5-2419.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-5-2671.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-5-2845.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-5-3782.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-5-4306.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-5-5069.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-5-544.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-5-5974.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-5-8384.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-5-9955.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-6-1091.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-6-2061.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-6-2835.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-6-4187.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-6-5997.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-6-7328.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-6-7458.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-6-8265.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-6-839.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-6-8712.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ImageFiles\صور-معرض-6-916.jpg" />
     <Content Include="fileman\Uploads\Images\Config\Organizations\admission-primary-logo.png" />
     <Content Include="fileman\Uploads\Images\Config\Organizations\psut-primary-logo.png" />
     <Content Include="fileman\Uploads\Images\Config\Organizations\psut-secondary.jpg" />
@@ -8926,6 +8945,10 @@
     <Content Include="Views\Home\Index.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\SFJUIndex.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SFJUIndex.generated.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

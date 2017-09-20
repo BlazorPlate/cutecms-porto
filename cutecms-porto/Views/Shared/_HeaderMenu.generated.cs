@@ -82,14 +82,14 @@ WriteLiteralTo(__razor_helper_writer, ">\r\n                    <a");
 
 WriteLiteralTo(__razor_helper_writer, " class=\"dropdown-toggle\"");
 
-WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 1012), Tuple.Create("\"", 1029)
+WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 1056), Tuple.Create("\"", 1073)
 
 #line 26 "..\..\Views\Shared\_HeaderMenu.cshtml"
-, Tuple.Create(Tuple.Create("", 1019), Tuple.Create<System.Object, System.Int32>(item.Path
+, Tuple.Create(Tuple.Create("", 1063), Tuple.Create<System.Object, System.Int32>(item.Path
 
 #line default
 #line hidden
-, 1019), false)
+, 1063), false)
 );
 
 WriteLiteralTo(__razor_helper_writer, ">");
@@ -161,14 +161,14 @@ WriteLiteralTo(__razor_helper_writer, " class=\"dropdown-submenu\"");
 
 WriteLiteralTo(__razor_helper_writer, ">\r\n                    <a");
 
-WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 1497), Tuple.Create("\"", 1514)
+WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 1541), Tuple.Create("\"", 1558)
 
 #line 40 "..\..\Views\Shared\_HeaderMenu.cshtml"
-, Tuple.Create(Tuple.Create("", 1504), Tuple.Create<System.Object, System.Int32>(item.Path
+, Tuple.Create(Tuple.Create("", 1548), Tuple.Create<System.Object, System.Int32>(item.Path
 
 #line default
 #line hidden
-, 1504), false)
+, 1548), false)
 );
 
 WriteLiteralTo(__razor_helper_writer, ">");
@@ -236,14 +236,14 @@ WriteLiteralTo(__razor_helper_writer, "                </li>\r\n");
 #line hidden
 WriteLiteralTo(__razor_helper_writer, "            <li>\r\n                <a");
 
-WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=", 1936), Tuple.Create("", 1952)
+WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=", 1980), Tuple.Create("", 1996)
 
 #line 55 "..\..\Views\Shared\_HeaderMenu.cshtml"
-, Tuple.Create(Tuple.Create("", 1942), Tuple.Create<System.Object, System.Int32>(item.Path
+, Tuple.Create(Tuple.Create("", 1986), Tuple.Create<System.Object, System.Int32>(item.Path
 
 #line default
 #line hidden
-, 1942), false)
+, 1986), false)
 );
 
 WriteLiteralTo(__razor_helper_writer, ">");
@@ -283,7 +283,7 @@ WriteLiteralTo(__razor_helper_writer, "</a>\r\n            </li>\r\n");
   
     int count = 0;
     CMSEntities db = new CMSEntities();
-    IEnumerable<MenuItem> menuItems = db.MenuItems.Include("Status").Include("Menu").Include("Language").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Menu.Code.Trim().Equals("header") && m.Visible && m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name));
+    IEnumerable<MenuItem> menuItems = db.MenuItems.Include("Status").Include("Menu").Include("Language").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Menu.Code.Trim().Equals("header") && m.Visible && m.Status.Code.Trim().Equals("published") && m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name));
     count = menuItems.Count();
 
             

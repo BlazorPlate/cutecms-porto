@@ -4,7 +4,7 @@
 @{
     int count = 0;
     CMSEntities db = new CMSEntities();
-    IEnumerable<MenuItem> menuItems = db.MenuItems.Include("Status").Include("Menu").Include("Language").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Menu.Code.Trim().Equals("header") && m.Visible && m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name));
+    IEnumerable<MenuItem> menuItems = db.MenuItems.Include("Status").Include("Menu").Include("Language").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Menu.Code.Trim().Equals("header") && m.Visible && m.Status.Code.Trim().Equals("published") && m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name));
     count = menuItems.Count();
 }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using cutecms_porto.Areas.CMS.Models.DBModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Caching;
@@ -19,7 +20,6 @@ namespace cutecms_porto.Helpers
                 cacheItems.Add(enumerator.Key.ToString(), enumerator.Value);
             foreach (string key in cacheItems.Keys)
                 HttpRuntime.Cache.Remove(key);
-
             OutputCacheAttribute.ChildActionCache = new MemoryCache("NewDefault");
         }
         #endregion Methods

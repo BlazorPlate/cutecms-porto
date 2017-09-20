@@ -132,8 +132,8 @@ WriteLiteral("        </ul>\r\n    </div>\r\n");
 
 WriteLiteral("    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 723), Tuple.Create("\"", 784)
-, Tuple.Create(Tuple.Create("", 729), Tuple.Create<System.Object, System.Int32>(Href("~/assets/plugins/smarticker/js/jquery.smarticker.min.js")
+WriteAttribute("src", Tuple.Create(" src=\"", 723), Tuple.Create("\"", 789)
+, Tuple.Create(Tuple.Create("", 729), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/smarticker/js/jquery.smarticker.min.js")
 , 729), false)
 );
 
@@ -147,50 +147,61 @@ WriteLiteral("></script>\r\n");
             
             #line default
             #line hidden
+WriteLiteral("        <link");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 861), Tuple.Create("\"", 922)
+, Tuple.Create(Tuple.Create("", 868), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/smarticker/css/smarticker-ar.css")
+, 868), false)
+);
+
+WriteLiteral(" rel=\"stylesheet\"");
+
+WriteLiteral(" />\r\n");
+
 WriteLiteral("        <script");
 
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral(@">
-            $('.smarticker').smarticker({
-                theme: 2, 				// Defines SmarTicker Style: 1, 2, 3, 4 ...
-                direction: 'rtl',
-                layout: 'horizontal',
-                animation: 'slide',	    // Defines transition of news titles: default, fade, slide, ...
-                speed: 3000,			// Defines speed of transition for subcategory, category and news
-                startindex: 0,			// Starter index
-                pausetime: 5000,		// Pause time on each news
-                rounded: false,			// Add border radius to parent node
-                shadow: true,			// Add box-shadow to parent node
-                border: false,			// Add 1px solid border to parent node
-                category: true,			// If change this to false, the Category section will not be created
-                subcategory: true,		// If change this to false, the Subcategory section will not be created
-                titlesection: true,		// Define a title section before news title section
-                title: '");
+        $('.smarticker').smarticker({
+        theme: 2, 				// Defines SmarTicker Style: 1, 2, 3, 4 ...
+        direction: 'rtl',
+        layout: 'horizontal',
+        animation: 'slide',	    // Defines transition of news titles: default, fade, slide, ...
+        speed: 3000,			// Defines speed of transition for subcategory, category and news
+        startindex: 0,			// Starter index
+        pausetime: 5000,		// Pause time on each news
+        rounded: false,			// Add border radius to parent node
+        shadow: true,			// Add box-shadow to parent node
+        border: false,			// Add 1px solid border to parent node
+        category: true,			// If change this to false, the Category section will not be created
+        subcategory: true,		// If change this to false, the Subcategory section will not be created
+        titlesection: true,		// Define a title section before news title section
+        title: '");
 
             
-            #line 36 "..\..\Views\Shared\_NewsBar.cshtml"
-                   Write(Resources.Resources.BreakingNews);
+            #line 37 "..\..\Views\Shared\_NewsBar.cshtml"
+           Write(Resources.Resources.BreakingNews);
 
             
             #line default
             #line hidden
 WriteLiteral(@"',	// When category and subcategory not available this section will show
-                progressbar: true,		// Add a progress bar
-                catcolor: true,			// Animate category section background color
-                subcatcolor: true,		// Animate sub category section background color
-                shuffle: true,			// Shuffles news titles sort order
-                showDate: true,			// If this be true, the date will show after news title
-                feedsOrder: 'older',		// Change sort order of news titles
-                controllerType: true,	// Change controller panel themes
-                developerMode: false,	// If this be true, You can see some logs in console
-                controllerType: 2,
-            });
+        progressbar: true,		// Add a progress bar
+        catcolor: true,			// Animate category section background color
+        subcatcolor: true,		// Animate sub category section background color
+        shuffle: true,			// Shuffles news titles sort order
+        showDate: true,			// If this be true, the date will show after news title
+        feedsOrder: 'older',		// Change sort order of news titles
+        controllerType: true,	// Change controller panel themes
+        developerMode: false,	// If this be true, You can see some logs in console
+        controllerType: 2,
+        });
         </script>
 ");
 
             
-            #line 48 "..\..\Views\Shared\_NewsBar.cshtml"
+            #line 49 "..\..\Views\Shared\_NewsBar.cshtml"
     }
     else
     {
@@ -198,50 +209,62 @@ WriteLiteral(@"',	// When category and subcategory not available this section wi
             
             #line default
             #line hidden
+WriteLiteral("        <link");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 2680), Tuple.Create("\"", 2738)
+, Tuple.Create(Tuple.Create("", 2687), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/smarticker/css/smarticker.css")
+, 2687), false)
+);
+
+WriteLiteral(" rel=\"stylesheet\"");
+
+WriteLiteral(" />\r\n");
+
 WriteLiteral("        <script");
 
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral(@">
-            $('.smarticker').smarticker({
-                theme: 2, 				// Defines SmarTicker Style: 1, 2, 3, 4 ...
-                direction: 'ltr',
-                layout: 'horizontal',
-                animation: 'slide',	    // Defines transition of news titles: default, fade, slide, ...
-                speed: 3000,			// Defines speed of transition for subcategory, category and news
-                startindex: 0,			// Starter index
-                pausetime: 5000,		// Pause time on each news
-                rounded: false,			// Add border radius to parent node
-                shadow: true,			// Add box-shadow to parent node
-                border: false,			// Add 1px solid border to parent node
-                category: true,			// If change this to false, the Category section will not be created
-                subcategory: true,		// If change this to false, the Subcategory section will not be created
-                titlesection: true,		// Define a title section before news title section
-                title: '");
+        $('.smarticker').smarticker({
+        theme: 2, 				// Defines SmarTicker Style: 1, 2, 3, 4 ...
+        direction: 'ltr',
+        layout: 'horizontal',
+        animation: 'slide',	    // Defines transition of news titles: default, fade, slide, ...
+        speed: 3000,			// Defines speed of transition for subcategory, category and news
+        startindex: 0,			// Starter index
+        pausetime: 5000,		// Pause time on each news
+        rounded: false,			// Add border radius to parent node
+        shadow: true,			// Add box-shadow to parent node
+        border: false,			// Add 1px solid border to parent node
+        category: true,			// If change this to false, the Category section will not be created
+        subcategory: true,		// If change this to false, the Subcategory section will not be created
+        titlesection: true,		// Define a title section before news title section
+        title: '");
 
             
-            #line 66 "..\..\Views\Shared\_NewsBar.cshtml"
-                   Write(Resources.Resources.BreakingNews);
+            #line 68 "..\..\Views\Shared\_NewsBar.cshtml"
+           Write(Resources.Resources.BreakingNews);
 
             
             #line default
             #line hidden
 WriteLiteral(@"',	// When category and subcategory not available this section will show
-                progressbar: true,		// Add a progress bar
-                catcolor: true,			// Animate category section background color
-                subcatcolor: true,		// Animate sub category section background color
-                shuffle: true,			// Shuffles news titles sort order
-                showDate: true,			// If this be true, the date will show after news title
-                feedsOrder: 'older',		// Change sort order of news titles
-                controllerType: true,	// Change controller panel themes
-                developerMode: false,	// If this be true, You can see some logs in console
-                controllerType: 2,
-            });
+        progressbar: true,		// Add a progress bar
+        catcolor: true,			// Animate category section background color
+        subcatcolor: true,		// Animate sub category section background color
+        shuffle: true,			// Shuffles news titles sort order
+        showDate: true,			// If this be true, the date will show after news title
+        feedsOrder: 'older',		// Change sort order of news titles
+        controllerType: true,	// Change controller panel themes
+        developerMode: false,	// If this be true, You can see some logs in console
+        controllerType: 2,
+        });
         </script>
 ");
 
             
-            #line 78 "..\..\Views\Shared\_NewsBar.cshtml"
+            #line 80 "..\..\Views\Shared\_NewsBar.cshtml"
+
     }
 }
 

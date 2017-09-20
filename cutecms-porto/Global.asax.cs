@@ -1,22 +1,16 @@
-﻿using cutecms_porto.Areas.CMS.Models.DBModel;
-using cutecms_porto.Areas.Config.Models.DBModel;
-using cutecms_porto.Areas.Identity.Models;
-using cutecms_porto.Areas.Identity.Models.DBModel;
-using cutecms_porto.Helpers;
-using Microsoft.AspNet.Identity;
+﻿using cutecms_porto.Areas.Config.Models.DBModel;
 using System;
-using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Linq;
 using System.Net.Mail;
-using System.Threading;
 using System.Web;
-using System.Web.Caching;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using System.Web.Optimization;
 using System.Web.Routing;
 using System.Text;
+using cutecms_porto.Areas.CMS.Models.DBModel;
+using cutecms_porto.Helpers;
 
 namespace cutecms_porto
 {
@@ -42,30 +36,39 @@ namespace cutecms_porto
         }
         protected void Session_Start()
         {
-            //string userIPAddress = null;
-            //userIPAddress = Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
-            //if (userIPAddress == "" || userIPAddress == null)
-            //    userIPAddress = Request.ServerVariables["REMOTE_ADDR"];
-            //DataTable locationDT = new DataTable();
-            //locationDT = GeoIPHelper.GetLocation(userIPAddress);
-            //CMSEntities db = new CMSEntities();
-            //Statistic statistic = new Statistic();
-            //statistic.IP = locationDT.Rows[0]["IP"].ToString();
-            //statistic.CountryCode = locationDT.Rows[0]["CountryCode"].ToString();
-            //statistic.CountryName = locationDT.Rows[0]["CountryName"].ToString();
-            //statistic.RegionCode = locationDT.Rows[0]["RegionCode"].ToString();
-            //statistic.RegionName = locationDT.Rows[0]["RegionName"].ToString();
-            //statistic.City = locationDT.Rows[0]["City"].ToString();
-            //statistic.TimeZone = locationDT.Rows[0]["TimeZone"].ToString();
-            //statistic.Latitude = Convert.ToDecimal(locationDT.Rows[0]["Latitude"]);
-            //statistic.Longitude = Convert.ToDecimal(locationDT.Rows[0]["Longitude"]);
-            //statistic.MetroCode = locationDT.Rows[0]["MetroCode"].ToString();
-            //statistic.RequestDate = DateTime.UtcNow.ToLocalTime();
-            //db.Statistics.Add(statistic);
-            //db.SaveChanges();
-            //Application.Lock();
-            //Application["VistorCounter"] = db.Statistics.Count();
-            //Application.UnLock();
+            string userIPAddress = null;
+            userIPAddress = Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+            if (userIPAddress == "" || userIPAddress == null)
+                userIPAddress = Request.ServerVariables["REMOTE_ADDR"];
+            DataTable locationDT = new DataTable();
+            locationDT = GeoIPHelper.GetLocation(userIPAddress);
+            ConfigEntities configDb = new ConfigEntities();
+            CMSEntities cmsDb = new CMSEntities();
+
+            Statistic statistic = new Statistic();
+            statistic.IP = locationDT.Rows[0]["IP"].ToString();
+            statistic.CountryCode = locationDT.Rows[0]["CountryCode"].ToString();
+            statistic.CountryName = locationDT.Rows[0]["CountryName"].ToString();
+            statistic.RegionCode = locationDT.Rows[0]["RegionCode"].ToString();
+            statistic.RegionName = locationDT.Rows[0]["RegionName"].ToString();
+            statistic.City = locationDT.Rows[0]["City"].ToString();
+            statistic.TimeZone = locationDT.Rows[0]["TimeZone"].ToString();
+            statistic.Latitude = Convert.ToDecimal(locationDT.Rows[0]["Latitude"]);
+            statistic.Longitude = Convert.ToDecimal(locationDT.Rows[0]["Longitude"]);
+            statistic.MetroCode = locationDT.Rows[0]["MetroCode"].ToString();
+            statistic.RequestDate = DateTime.UtcNow.ToLocalTime();
+            configDb.Statistics.Add(statistic);
+            configDb.SaveChanges();
+            Application.Lock();
+            Application["counter"] = configDb.Statistics.Count();
+            Application.UnLock();
+
+            var currentDateTime = DateTime.Now;
+            cmsDb.Database.ExecuteSqlCommand("UPDATE Contents SET StatusId = 2 WHERE ExpiredOn <= {0}", currentDateTime);
+            cmsDb.Database.ExecuteSqlCommand("UPDATE Contents SET StatusId = 1 WHERE PublishedOn <= {0} AND ExpiredOn >= {0}", currentDateTime);
+            cmsDb.Database.ExecuteSqlCommand("UPDATE MenuItems SET MenuItems.StatusId = Contents.StatusId FROM MenuItems INNER JOIN Contents ON MenuItems.ContentId = Contents.Id;");
+            CacheHelper.ClearCache();
+
         }
         protected void Application_Error(object sender, EventArgs e)
         {

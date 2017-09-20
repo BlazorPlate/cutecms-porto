@@ -37,8 +37,8 @@ namespace cutecms_porto.Controllers
             translatedContent = cmsDb.Contents.Include("Status").Include("ContentType").Include("ContentLists").Include("ContentLists.ListItems").Include("ContentGalleries").Include("ContentGalleries.Gallery").Include("ContentGalleries.Gallery.GalleryTerms").Include("ContentGalleries.Gallery.GalleryTerms.Language").Include("ContentGalleries.Gallery.ImageFiles").Include("ContentGalleries.Gallery.ImageFiles.ImageFileTerms").Include("ContentGalleries.Gallery.ImageFiles.ImageFileTerms.Language").Where(c => c.TenantId.Trim().Equals(Tenant.TenantId) && c.TranslationId == contentTranslationId && c.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
             if (translatedContent == null)
                 throw new HttpException(602, "Page Not Translated");
-            if (translatedContent.Status.Code.Equals("unpublished"))
-                throw new HttpException(601, "Page Not Published");
+            //if (!translatedContent.Status.Code.Trim().Equals("published"))
+            //    throw new HttpException(601, "Page Not Published");
             if (flag == true && !slug.Trim().Equals(translatedContent.UrlSlug.Trim()))
             {
                 flag = false;
@@ -59,8 +59,6 @@ namespace cutecms_porto.Controllers
             departmentTerm = identityDb.IdentityDepartmentTerms.Where(d => d.Department.TenantId.Trim().Equals(Tenant.TenantId) && d.DepartmentId == deptId && d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault();
             if (departmentTerm == null)
                 throw new HttpException(602, "Page Not Translated");
-            //if (!departmentTerm.HomeVisible)
-            //    throw new HttpException(601, "Page Not Published");
             if (flag == true && !slug.Trim().Equals(departmentTerm.UrlSlug.Trim()))
             {
                 flag = false;

@@ -4840,7 +4840,7 @@ ul.comments .comment-block,
 .product-info + .product-info,
 .img-thumbnail.img-thumbnail-hover-icon:before,
 .product-thumb-info {
-	border-radius: 0;
+	/*border-radius: 0;*/
 }
 
 @media (max-width: 479px) {

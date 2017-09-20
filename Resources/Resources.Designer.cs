@@ -4768,6 +4768,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Visitor Counter.
+        /// </summary>
+        public static string VisitorCounter {
+            get {
+                return ResourceManager.GetString("VisitorCounter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Website Developer Name.
         /// </summary>
         public static string WebDevelopedBy {

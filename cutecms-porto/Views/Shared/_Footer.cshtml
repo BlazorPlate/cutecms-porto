@@ -67,25 +67,26 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-1">
-                    <a href="~/assets/porto/index.html" class="logo">
-                        <img alt="CuteCMS.NET" class="img-responsive" src="~/assets/porto/img/footer-logo.png">
+                    <a href="~/@Thread.CurrentThread.CurrentCulture.Name" class="logo">
+                        <img alt="@(organization?.PrimaryLogoName)" class="img-responsive" src="@(organization?.PrimaryLogoPath)">
                     </a>
                 </div>
                 <div class="col-md-7">
-                    <p>© @DateTime.Now.Year @(organization?.Name) - @Resources.Resources.CopyRights</p>
+ 
+                        <p>© @DateTime.Now.Year @(organization?.Name) - @Resources.Resources.CopyRights</p>
+
+                        <p class="mt-md">@Resources.Resources.PoweredBy <a href="@(organization?.DeveloperURL) ">@(organization?.Developer) </a> </p>
                 </div>
                 <div class="col-md-4">
-                    <nav id="sub-menu">
-                        <ul>
-                            @foreach (var item in footerMenuItems)
-                            {
-                                <li><a href="@item.Path">@item.Name</a></li>
-                            }
-                            @*<li><a href="~/assets/porto/page-faq.html">FAQ's</a></li>
-                                <li><a href="~/assets/porto/sitemap.html">Sitemap</a></li>
-                                <li><a href="~/assets/porto/contact-us.html">Contact</a></li>*@
-                        </ul>
-                    </nav>
+                        <nav id="sub-menu">
+                            <ul>
+                                @foreach (var item in footerMenuItems)
+                                {
+                                    <li><a href="@item.Path">@item.Name</a></li>
+                                }
+                            </ul>
+                            <p class="mt-md">@Resources.Resources.VisitorCounter: <span style="font-family:digital-7; font-size:13pt;color:white"> @HttpContext.Current.ApplicationInstance.Application["counter"]</span></p>
+                        </nav>
                 </div>
             </div>
         </div>

@@ -1,9 +1,5 @@
-﻿using cutecms_porto.Areas.CMS.Models.DBModel;
-using Microsoft.Owin;
+﻿using Microsoft.Owin;
 using Owin;
-using System;
-using System.Data.Entity;
-using System.Linq;
 
 [assembly: OwinStartupAttribute(typeof(cutecms_porto.Startup))]
 namespace cutecms_porto

@@ -470,33 +470,53 @@ WriteLiteral(" class=\"col-md-1\"");
 
 WriteLiteral(">\r\n                    <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3845), Tuple.Create("\"", 3877)
-, Tuple.Create(Tuple.Create("", 3852), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/index.html")
+WriteAttribute("href", Tuple.Create(" href=\"", 3845), Tuple.Create("\"", 3895)
+, Tuple.Create(Tuple.Create("", 3852), Tuple.Create<System.Object, System.Int32>(Href("~/")
 , 3852), false)
+            
+            #line 70 "..\..\Views\Shared\_Footer.cshtml"
+, Tuple.Create(Tuple.Create("", 3854), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture.Name
+            
+            #line default
+            #line hidden
+, 3854), false)
 );
 
 WriteLiteral(" class=\"logo\"");
 
 WriteLiteral(">\r\n                        <img");
 
-WriteLiteral(" alt=\"CuteCMS.NET\"");
+WriteAttribute("alt", Tuple.Create(" alt=\"", 3940), Tuple.Create("\"", 3978)
+            
+            #line 71 "..\..\Views\Shared\_Footer.cshtml"
+, Tuple.Create(Tuple.Create("", 3946), Tuple.Create<System.Object, System.Int32>(organization?.PrimaryLogoName
+            
+            #line default
+            #line hidden
+, 3946), false)
+);
 
 WriteLiteral(" class=\"img-responsive\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 3963), Tuple.Create("\"", 4003)
-, Tuple.Create(Tuple.Create("", 3969), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/footer-logo.png")
-, 3969), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 4002), Tuple.Create("\"", 4040)
+            
+            #line 71 "..\..\Views\Shared\_Footer.cshtml"
+                 , Tuple.Create(Tuple.Create("", 4008), Tuple.Create<System.Object, System.Int32>(organization?.PrimaryLogoPath
+            
+            #line default
+            #line hidden
+, 4008), false)
 );
 
 WriteLiteral(">\r\n                    </a>\r\n                </div>\r\n                <div");
 
 WriteLiteral(" class=\"col-md-7\"");
 
-WriteLiteral(">\r\n                    <p>© ");
+WriteLiteral(">\r\n \r\n                        <p>© ");
 
             
-            #line 75 "..\..\Views\Shared\_Footer.cshtml"
-                    Write(DateTime.Now.Year);
+            #line 76 "..\..\Views\Shared\_Footer.cshtml"
+                        Write(DateTime.Now.Year);
 
             
             #line default
@@ -504,8 +524,8 @@ WriteLiteral(">\r\n                    <p>© ");
 WriteLiteral(" ");
 
             
-            #line 75 "..\..\Views\Shared\_Footer.cshtml"
-                                        Write(organization?.Name);
+            #line 76 "..\..\Views\Shared\_Footer.cshtml"
+                                            Write(organization?.Name);
 
             
             #line default
@@ -513,53 +533,88 @@ WriteLiteral(" ");
 WriteLiteral(" - ");
 
             
-            #line 75 "..\..\Views\Shared\_Footer.cshtml"
-                                                               Write(Resources.Resources.CopyRights);
+            #line 76 "..\..\Views\Shared\_Footer.cshtml"
+                                                                   Write(Resources.Resources.CopyRights);
 
             
             #line default
             #line hidden
-WriteLiteral("</p>\r\n                </div>\r\n                <div");
+WriteLiteral("</p>\r\n\r\n                        <p");
 
-WriteLiteral(" class=\"col-md-4\"");
+WriteLiteral(" class=\"mt-md\"");
 
-WriteLiteral(">\r\n                    <nav");
-
-WriteLiteral(" id=\"sub-menu\"");
-
-WriteLiteral(">\r\n                        <ul>\r\n");
+WriteLiteral(">");
 
             
-            #line 80 "..\..\Views\Shared\_Footer.cshtml"
-                            
-            
-            #line default
-            #line hidden
-            
-            #line 80 "..\..\Views\Shared\_Footer.cshtml"
-                             foreach (var item in footerMenuItems)
-                            {
+            #line 78 "..\..\Views\Shared\_Footer.cshtml"
+                                    Write(Resources.Resources.PoweredBy);
 
             
             #line default
             #line hidden
-WriteLiteral("                                <li><a");
+WriteLiteral(" <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4474), Tuple.Create("\"", 4491)
+WriteAttribute("href", Tuple.Create(" href=\"", 4322), Tuple.Create("\"", 4359)
             
-            #line 82 "..\..\Views\Shared\_Footer.cshtml"
-, Tuple.Create(Tuple.Create("", 4481), Tuple.Create<System.Object, System.Int32>(item.Path
+            #line 78 "..\..\Views\Shared\_Footer.cshtml"
+  , Tuple.Create(Tuple.Create("", 4329), Tuple.Create<System.Object, System.Int32>(organization?.DeveloperURL
             
             #line default
             #line hidden
-, 4481), false)
+, 4329), false)
+, Tuple.Create(Tuple.Create(" ", 4358), Tuple.Create("", 4358), true)
 );
 
 WriteLiteral(">");
 
             
-            #line 82 "..\..\Views\Shared\_Footer.cshtml"
-                                                    Write(item.Name);
+            #line 78 "..\..\Views\Shared\_Footer.cshtml"
+                                                                                                             Write(organization?.Developer);
+
+            
+            #line default
+            #line hidden
+WriteLiteral(" </a> </p>\r\n                </div>\r\n                <div");
+
+WriteLiteral(" class=\"col-md-4\"");
+
+WriteLiteral(">\r\n                        <nav");
+
+WriteLiteral(" id=\"sub-menu\"");
+
+WriteLiteral(">\r\n                            <ul>\r\n");
+
+            
+            #line 83 "..\..\Views\Shared\_Footer.cshtml"
+                                
+            
+            #line default
+            #line hidden
+            
+            #line 83 "..\..\Views\Shared\_Footer.cshtml"
+                                 foreach (var item in footerMenuItems)
+                                {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                    <li><a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 4691), Tuple.Create("\"", 4708)
+            
+            #line 85 "..\..\Views\Shared\_Footer.cshtml"
+, Tuple.Create(Tuple.Create("", 4698), Tuple.Create<System.Object, System.Int32>(item.Path
+            
+            #line default
+            #line hidden
+, 4698), false)
+);
+
+WriteLiteral(">");
+
+            
+            #line 85 "..\..\Views\Shared\_Footer.cshtml"
+                                                        Write(item.Name);
 
             
             #line default
@@ -567,16 +622,40 @@ WriteLiteral(">");
 WriteLiteral("</a></li>\r\n");
 
             
-            #line 83 "..\..\Views\Shared\_Footer.cshtml"
-                            }
+            #line 86 "..\..\Views\Shared\_Footer.cshtml"
+                                }
 
             
             #line default
             #line hidden
-WriteLiteral("                            ");
+WriteLiteral("                            </ul>\r\n                            <p");
 
-WriteLiteral("\r\n                        </ul>\r\n                    </nav>\r\n                </di" +
-"v>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</footer>\r\n");
+WriteLiteral(" class=\"mt-md\"");
+
+WriteLiteral(">");
+
+            
+            #line 88 "..\..\Views\Shared\_Footer.cshtml"
+                                        Write(Resources.Resources.VisitorCounter);
+
+            
+            #line default
+            #line hidden
+WriteLiteral(": <span");
+
+WriteLiteral(" style=\"font-family:digital-7; font-size:13pt;color:white\"");
+
+WriteLiteral("> ");
+
+            
+            #line 88 "..\..\Views\Shared\_Footer.cshtml"
+                                                                                                                                              Write(HttpContext.Current.ApplicationInstance.Application["counter"]);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</span></p>\r\n                        </nav>\r\n                </div>\r\n            " +
+"</div>\r\n        </div>\r\n    </div>\r\n</footer>\r\n");
 
         }
     }

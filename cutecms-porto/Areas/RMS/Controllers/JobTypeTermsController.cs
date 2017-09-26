@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace cutecms_porto.Areas.RMS.Controllers
 {
-    [LocalizedAuthorize(Roles = "Admin")]
+    [LocalizedAuthorize(Roles = "Admin,RMS,JobTypes")]
     public class JobTypeTermsController : BaseController
     {
         #region Fields

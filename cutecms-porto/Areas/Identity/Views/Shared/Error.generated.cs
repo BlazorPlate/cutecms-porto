@@ -13,12 +13,6 @@ namespace ASP
 {
     using System;
     using System.Collections.Generic;
-    
-    #line 1 "..\..\Areas\Identity\Views\Shared\Error.cshtml"
-    using System.Diagnostics;
-    
-    #line default
-    #line hidden
     using System.IO;
     using System.Linq;
     using System.Net;
@@ -37,7 +31,7 @@ namespace ASP
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Areas/Identity/Views/Shared/Error.cshtml")]
-    public partial class _Areas_Identity_Views_Shared_Error_cshtml : System.Web.Mvc.WebViewPage<System.Web.Mvc.HandleErrorInfo>
+    public partial class _Areas_Identity_Views_Shared_Error_cshtml : System.Web.Mvc.WebViewPage<dynamic>
     {
         public _Areas_Identity_Views_Shared_Error_cshtml()
         {
@@ -45,12 +39,9 @@ namespace ASP
         public override void Execute()
         {
             
-            #line 3 "..\..\Areas\Identity\Views\Shared\Error.cshtml"
+            #line 1 "..\..\Areas\Identity\Views\Shared\Error.cshtml"
   
-    ViewBag.Title = "Error";
-    var message = string.Format("Error in Controller ({0}), Action Method ({1}). Exception: {2}",
-        Model.ControllerName, Model.ActionName, Model.Exception.InnerException.InnerException.Message);
-    ViewBag.Error = message;
+    ViewBag.Title = Resources.Resources.NotFound;
 
             
             #line default
@@ -59,20 +50,29 @@ WriteLiteral("\r\n<h1");
 
 WriteLiteral(" class=\"text-danger\"");
 
-WriteLiteral(">Error.</h1>\r\n<h5");
+WriteLiteral(">");
+
+            
+            #line 4 "..\..\Areas\Identity\Views\Shared\Error.cshtml"
+                   Write(Resources.Resources.Oops);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</h1>\r\n<h2");
 
 WriteLiteral(" class=\"text-danger\"");
 
 WriteLiteral(">");
 
             
-            #line 10 "..\..\Areas\Identity\Views\Shared\Error.cshtml"
-                   Write(ViewBag.Error);
+            #line 5 "..\..\Areas\Identity\Views\Shared\Error.cshtml"
+                   Write(Resources.Resources.NotFound);
 
             
             #line default
             #line hidden
-WriteLiteral("</h5>");
+WriteLiteral("</h2>\r\n");
 
         }
     }

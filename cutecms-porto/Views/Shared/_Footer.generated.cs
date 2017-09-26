@@ -641,15 +641,11 @@ WriteLiteral(">");
             
             #line default
             #line hidden
-WriteLiteral(": <span");
-
-WriteLiteral(" style=\"font-family:digital-7; font-size:13pt;color:white\"");
-
-WriteLiteral("> ");
+WriteLiteral(": <span> ");
 
             
             #line 88 "..\..\Views\Shared\_Footer.cshtml"
-                                                                                                                                              Write(HttpContext.Current.ApplicationInstance.Application["counter"]);
+                                                                                    Write(HttpContext.Current.ApplicationInstance.Application["counter"]);
 
             
             #line default

@@ -179,7 +179,7 @@ WriteLiteral("                ");
 
             
             #line 26 "..\..\Areas\Identity\Views\Account\UserRoles.cshtml"
-           Write(Resources.Resources.Name);
+           Write(Resources.Resources.Description);
 
             
             #line default
@@ -190,7 +190,7 @@ WriteLiteral("                ");
 
             
             #line 29 "..\..\Areas\Identity\Views\Account\UserRoles.cshtml"
-           Write(Resources.Resources.Description);
+           Write(Resources.Resources.Name);
 
             
             #line default
@@ -213,7 +213,7 @@ WriteLiteral("                        ");
 
             
             #line 39 "..\..\Areas\Identity\Views\Account\UserRoles.cshtml"
-                   Write(Html.DisplayFor(modelItem => item.RoleName));
+                   Write(Html.DisplayFor(modelItem => item.RoleDescription));
 
             
             #line default
@@ -224,7 +224,7 @@ WriteLiteral("                        ");
 
             
             #line 42 "..\..\Areas\Identity\Views\Account\UserRoles.cshtml"
-                   Write(Html.DisplayFor(modelItem => item.RoleDescription));
+                   Write(Html.DisplayFor(modelItem => item.RoleName));
 
             
             #line default

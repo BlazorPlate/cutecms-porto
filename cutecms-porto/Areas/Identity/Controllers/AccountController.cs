@@ -220,7 +220,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
                     // please visit http://go.microsoft.com/fwlink/?LinkID=320771 Send an email with
                     // this link
                     string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { area = "Identity", userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
                     return RedirectToAction("Welcome", "Home", new { area = "" });
                 }
@@ -240,7 +240,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         {
             if (userId == null || code == null)
             {
-                return View("Error");
+                throw new HttpException(400, "Bad Request");
             }
             var result = await UserManager.ConfirmEmailAsync(userId, code);
             return View(result.Succeeded ? "ConfirmEmail" : "Error");

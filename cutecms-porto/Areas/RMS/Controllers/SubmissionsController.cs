@@ -16,7 +16,7 @@ using static cutecms_porto.Helpers.DatatableHelpers;
 
 namespace cutecms_porto.Areas.RMS.Controllers
 {
-    [LocalizedAuthorize(Roles = "Admin, HR, Dean")]
+    [LocalizedAuthorize(Roles = "Admin,RMS,Submissions")]
     public class SubmissionsController : BaseController
     {
         #region Fields

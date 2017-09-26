@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace cutecms_porto.Areas.Identity.Controllers
 {
-    [LocalizedAuthorize(Roles = "Admin")]
+    [LocalizedAuthorize(Roles = "Admin,Identity,Groups")]
     public class GroupsController : BaseController
     {
         #region Fields
@@ -118,11 +118,11 @@ namespace cutecms_porto.Areas.Identity.Controllers
         {
             if (ModelState.IsValid)
             {
+           
                 var idManager = new IdentityManager();
+                idManager.ClearGroupRoles(model.GroupId);
                 var Db = new ApplicationDbContext();
                 var group = Db.Groups.Find(model.GroupId);
-                idManager.ClearGroupRoles(model.GroupId);
-
                 // Add each selected role to this group:
                 foreach (var role in model.Roles)
                 {

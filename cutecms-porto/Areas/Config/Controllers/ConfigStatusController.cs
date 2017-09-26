@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
-using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using cutecms_porto.Areas.Config.Models.DBModel;
@@ -11,7 +7,7 @@ using cutecms_porto.Helpers;
 
 namespace cutecms_porto.Areas.Config.Controllers
 {
-    [LocalizedAuthorize(Roles = "Admin")]
+    [LocalizedAuthorize(Roles = "Admin,Config,Statuses")]
     public class ConfigStatusController : BaseController
     {
         private ConfigEntities db = new ConfigEntities();

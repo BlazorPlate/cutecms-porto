@@ -1,11 +1,11 @@
 ﻿@model cutecms_porto.Areas.Identity.Models.SelectRoleEditorViewModel
 @Html.HiddenFor(model => model.RoleName)
 @Html.HiddenFor(model => model.RoleDescription)
-<tr></tr>
 <table>
     <tr>
         <td>
             @Html.CheckBoxFor(model => model.Selected, new { @class = "js-switch"})
+            &nbsp;
         </td>
         <td>
             @Html.DisplayFor(model => model.RoleDescription)

@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace cutecms_porto.Areas.Identity.Controllers
 {
-    [LocalizedAuthorize(Roles = "Admin")]
+    [LocalizedAuthorize(Roles = "Admin,Identity,Roles")]
     public class RolesController : BaseController
     {
         #region Fields
@@ -19,7 +19,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         public ActionResult Index()
         {
             var rolesList = new List<RoleViewModel>();
-            foreach (var role in _db.Roles)
+            foreach (var role in _db.Roles.OrderBy(r => r.Description).ThenBy(r => r.Name))
             {
                 var roleModel = new RoleViewModel(role);
                 rolesList.Add(roleModel);
@@ -37,7 +37,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         public ActionResult Create([Bind(Include =
             "RoleName,Description")]RoleViewModel model)
         {
-            string message = "That role name has already been used";
+            string message = Resources.Resources.RoleInUse;
             if (ModelState.IsValid)
             {
                 var role = new ApplicationRole(model.RoleName, model.Description);
@@ -45,7 +45,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
 
                 if (idManager.RoleExists(model.RoleName))
                 {
-                    return View(message);
+                    ModelState.AddModelError("error", message);
                 }
                 else
                 {

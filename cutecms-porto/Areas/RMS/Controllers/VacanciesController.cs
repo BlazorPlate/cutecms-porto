@@ -22,7 +22,7 @@ using static cutecms_porto.Helpers.DatatableHelpers;
 namespace cutecms_porto.Areas.RMS.Controllers
 {
     [ValidateInput(false)]
-    [LocalizedAuthorize(Roles = "Admin, HR")]
+    [LocalizedAuthorize(Roles = "Admin,RMS,Vacancies")]
     public class VacanciesController : BaseController
     {
         #region Fields

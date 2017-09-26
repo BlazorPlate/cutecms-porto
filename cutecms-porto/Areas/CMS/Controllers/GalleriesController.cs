@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace cutecms_porto.Areas.CMS.Controllers
 {
-    [LocalizedAuthorize(Roles = "Admin")]
+    [LocalizedAuthorize(Roles = "Admin,CMS,Galleries")]
     public class GalleriesController : BaseController
     {
         #region Fields

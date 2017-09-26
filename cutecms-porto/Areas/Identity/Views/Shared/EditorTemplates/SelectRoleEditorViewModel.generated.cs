@@ -54,18 +54,18 @@ Write(Html.HiddenFor(model => model.RoleDescription));
             
             #line default
             #line hidden
-WriteLiteral("\r\n<tr></tr>\r\n<table>\r\n    <tr>\r\n        <td>\r\n");
+WriteLiteral("\r\n<table>\r\n    <tr>\r\n        <td>\r\n");
 
 WriteLiteral("            ");
 
             
-            #line 8 "..\..\Areas\Identity\Views\Shared\EditorTemplates\SelectRoleEditorViewModel.cshtml"
+            #line 7 "..\..\Areas\Identity\Views\Shared\EditorTemplates\SelectRoleEditorViewModel.cshtml"
        Write(Html.CheckBoxFor(model => model.Selected, new { @class = "js-switch"}));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n        </td>\r\n        <td>\r\n");
+WriteLiteral("\r\n            &nbsp;\r\n        </td>\r\n        <td>\r\n");
 
 WriteLiteral("            ");
 
@@ -76,7 +76,7 @@ WriteLiteral("            ");
             
             #line default
             #line hidden
-WriteLiteral("\r\n        </td>\r\n    </tr>\r\n</table>");
+WriteLiteral("\r\n        </td>\r\n    </tr>\r\n</table>\r\n");
 
         }
     }

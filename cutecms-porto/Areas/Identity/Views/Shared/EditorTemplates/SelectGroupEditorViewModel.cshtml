@@ -2,7 +2,8 @@
 @Html.HiddenFor(model => model.GroupId)
 <tr>
     <td>
-        @Html.CheckBoxFor(model => model.Selected, new { @class = "js-switch"})
+        @Html.CheckBoxFor(model => model.Selected, new { @class = "js-switch" })
+        &nbsp;
     </td>
     <td>
         @Html.DisplayFor(model => model.GroupName)

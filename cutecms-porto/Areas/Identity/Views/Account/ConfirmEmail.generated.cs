@@ -43,28 +43,18 @@ namespace ASP
   
     ViewBag.Title = Resources.Resources.ConfirmEmail;
     ViewBag.MainTitle = Resources.Resources.ConfirmEmail;
-    ViewBag.SubTitle = Resources.Resources.ConfirmEmail;
     ViewBag.IconTitle = "fa fa-envelope";
     Layout = "~/Areas/Identity/Views/Shared/_Layout.cshtml";
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n<h2>");
-
-            
-            #line 8 "..\..\Areas\Identity\Views\Account\ConfirmEmail.cshtml"
-Write(ViewBag.Title);
-
-            
-            #line default
-            #line hidden
-WriteLiteral(".</h2>\r\n<div>\r\n    <p>\r\n");
+WriteLiteral("\r\n<div>\r\n    <p>\r\n");
 
 WriteLiteral("        ");
 
             
-            #line 11 "..\..\Areas\Identity\Views\Account\ConfirmEmail.cshtml"
+            #line 9 "..\..\Areas\Identity\Views\Account\ConfirmEmail.cshtml"
    Write(Resources.Resources.ConfirmEmailThanks);
 
             
@@ -73,7 +63,7 @@ WriteLiteral("        ");
 WriteLiteral(" ");
 
             
-            #line 11 "..\..\Areas\Identity\Views\Account\ConfirmEmail.cshtml"
+            #line 9 "..\..\Areas\Identity\Views\Account\ConfirmEmail.cshtml"
                                            Write(Resources.Resources.Please);
 
             
@@ -82,7 +72,7 @@ WriteLiteral(" ");
 WriteLiteral(" ");
 
             
-            #line 11 "..\..\Areas\Identity\Views\Account\ConfirmEmail.cshtml"
+            #line 9 "..\..\Areas\Identity\Views\Account\ConfirmEmail.cshtml"
                                                                        Write(Html.ActionLink(@Resources.Resources.ClickHereToLogin, "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" }));
 
             

@@ -16,7 +16,7 @@ using System.Transactions;
 
 namespace cutecms_porto.Areas.Identity.Controllers
 {
-    [LocalizedAuthorize(Roles = "Admin")]
+    [LocalizedAuthorize(Roles = "Admin,Identity,Employees")]
     public class EmployeesController : BaseController
     {
         #region Fields

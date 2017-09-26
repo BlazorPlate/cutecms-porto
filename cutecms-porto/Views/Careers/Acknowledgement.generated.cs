@@ -76,30 +76,8 @@ WriteLiteral(">\r\n                    <h1>");
             
             #line default
             #line hidden
-WriteLiteral("</h1>\r\n                    <h2>");
-
-            
-            #line 12 "..\..\Views\Careers\Acknowledgement.cshtml"
-                   Write(Resources.Resources.ApplicationNumber);
-
-            
-            #line default
-            #line hidden
-WriteLiteral(" <span");
-
-WriteLiteral(" style=\"color:yellow;font-weight:bold\"");
-
-WriteLiteral(">");
-
-            
-            #line 12 "..\..\Views\Careers\Acknowledgement.cshtml"
-                                                                                                      Write(Model.ApplicationNumber);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</span></h2>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </s" +
-"ection>\r\n");
+WriteLiteral("</h1>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </section>" +
+"\r\n");
 
 });
 
@@ -107,7 +85,29 @@ WriteLiteral("    <div");
 
 WriteLiteral(" class=\"container text-justify\"");
 
-WriteLiteral(">\r\n");
+WriteLiteral(">\r\n        <h4>");
+
+            
+            #line 18 "..\..\Views\Careers\Acknowledgement.cshtml"
+       Write(Resources.Resources.ApplicationNumber);
+
+            
+            #line default
+            #line hidden
+WriteLiteral(" <span");
+
+WriteLiteral(" style=\"color:red;font-weight:bold\"");
+
+WriteLiteral(">");
+
+            
+            #line 18 "..\..\Views\Careers\Acknowledgement.cshtml"
+                                                                                       Write(Model.ApplicationNumber);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</span></h4>\r\n");
 
             
             #line 19 "..\..\Views\Careers\Acknowledgement.cshtml"

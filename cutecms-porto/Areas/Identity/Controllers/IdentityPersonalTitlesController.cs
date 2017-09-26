@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace cutecms_porto.Areas.Identity.Controllers
 {
-    [LocalizedAuthorize(Roles = "Admin")]
+    [LocalizedAuthorize(Roles = "Admin,Identity,PersonalTitles")]
     public class IdentityPersonalTitlesController : BaseController
     {
         #region Fields

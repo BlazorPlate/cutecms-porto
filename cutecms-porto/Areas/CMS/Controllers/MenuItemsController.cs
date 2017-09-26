@@ -15,7 +15,7 @@ using System.Web.Mvc;
 using System.Transactions;
 namespace cutecms_porto.Areas.CMS.Controllers
 {
-    [LocalizedAuthorize(Roles = "Admin")]
+    [LocalizedAuthorize(Roles = "Admin,CMS,Menus")]
     public class MenuItemsController : BaseController
     {
         #region Fields

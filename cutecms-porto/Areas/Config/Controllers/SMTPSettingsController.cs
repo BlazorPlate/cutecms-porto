@@ -11,7 +11,7 @@ using cutecms_porto.Helpers;
 
 namespace cutecms_porto.Areas.Config.Controllers
 {
-    [LocalizedAuthorize(Roles = "Admin")]
+    [LocalizedAuthorize(Roles = "Admin,Config,SMTP")]
     public class SMTPSettingsController : BaseController
     {
         private ConfigEntities db = new ConfigEntities();

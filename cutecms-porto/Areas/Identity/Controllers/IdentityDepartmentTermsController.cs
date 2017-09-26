@@ -14,7 +14,7 @@ using System.Globalization;
 
 namespace cutecms_porto.Areas.Identity.Controllers
 {
-    [LocalizedAuthorize(Roles = "Admin")]
+    [LocalizedAuthorize(Roles = "Admin,Identity,Departments")]
     public class IdentityDepartmentTermsController : BaseController
     {
         private IdentityEntities db = new IdentityEntities();

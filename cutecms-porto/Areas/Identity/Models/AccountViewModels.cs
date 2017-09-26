@@ -326,7 +326,7 @@ namespace cutecms_porto.Areas.Identity.Models
             this.GroupId = group.Id;
             this.GroupName = group.Name;
             // Add all available roles to the list of EditorViewModels:
-            var allRoles = _db.Roles;
+            var allRoles = _db.Roles.OrderBy(r => r.Description).ThenBy(r => r.Name);
             foreach (var role in allRoles)
             {
                 // An EditorViewModel will be used by Editor Template:
@@ -371,7 +371,7 @@ namespace cutecms_porto.Areas.Identity.Models
             this.Id = user.Id;
             this.UserName = user.UserName;
             // Add all available roles to the list of EditorViewModels:
-            var allRoles = _db.Roles;
+            var allRoles = _db.Roles.OrderBy(r => r.Description).ThenBy(r => r.Name);
             foreach (var role in allRoles)
             {
                 // An EditorViewModel will be used by Editor Template:

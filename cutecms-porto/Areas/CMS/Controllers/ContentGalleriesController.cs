@@ -8,7 +8,7 @@ using cutecms_porto.Helpers;
 
 namespace cutecms_porto.Areas.CMS.Controllers
 {
-    [LocalizedAuthorize(Roles = "Admin")]
+    [LocalizedAuthorize(Roles = "Admin,CMS,Contents")]
     public class ContentGalleriesController : BaseController
     {
         private CMSEntities db = new CMSEntities();

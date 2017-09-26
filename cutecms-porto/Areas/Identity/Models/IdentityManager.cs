@@ -119,25 +119,16 @@ namespace cutecms_porto.Areas.Identity.Models
             user.Groups.Add(userGroup);
             _db.SaveChanges();
         }
-
         public void ClearGroupRoles(int groupId)
         {
-            Group group = _db.Groups.Find(groupId);
-            IQueryable<ApplicationUser> groupUsers = _db.Users.Where(u => u.Groups.Any(g => g.GroupId == group.Id));
-
-            foreach (ApplicationRoleGroup role in group.Roles)
+            var group = _db.Groups.Find(groupId);
+            var rolesToRemove = group.Roles.ToList();
+            var groupUsers = _db.Users.Where(u => u.Groups.Any(g => g.GroupId == group.Id)).ToList();
+            foreach (var user in groupUsers)
             {
-                string currentRoleId = role.RoleId;
-                foreach (ApplicationUser user in groupUsers)
+                foreach (var role in group.Roles)
                 {
-                    // Is the user a member of any other groups with this role?
-                    int groupsWithRole = user.Groups.Count(g => g.Group.Roles.Any(r => r.RoleId == currentRoleId));
-
-                    // This will be 1 if the current group is the only one:
-                    if (groupsWithRole == 1)
-                    {
-                        RemoveFromRole(user.Id, role.Role.Name);
-                    }
+                    this.RemoveFromRole(user.Id, role.Role.Name);
                 }
             }
             group.Roles.Clear();

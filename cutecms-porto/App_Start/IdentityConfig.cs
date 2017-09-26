@@ -30,14 +30,14 @@ namespace cutecms_porto
                 using (var client = new SmtpClient(notification.SMTPSetting.SMTP))
                 {
                     client.Port = notification.SMTPSetting.Port;
-                    client.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+                    client.DeliveryMethod = SmtpDeliveryMethod.Network;
                     client.UseDefaultCredentials = false;
                     // Create the credentials:
                     System.Net.NetworkCredential credentials = new System.Net.NetworkCredential(FromAddress, FromAddressPasswordHash);
-                    client.EnableSsl = true;
+                    client.EnableSsl = notification.SMTPSetting.EnableSsl;
                     client.Credentials = credentials;
                     // Create the message:
-                    var mail = new System.Net.Mail.MailMessage(FromAddress, message.Destination);
+                    var mail = new MailMessage(FromAddress, message.Destination);
                     mail.Subject = message.Subject;
                     mail.Body = message.Body;
                     mail.IsBodyHtml = true;

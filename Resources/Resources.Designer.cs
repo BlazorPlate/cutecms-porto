@@ -3310,7 +3310,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PersonalTitles.
+        ///   Looks up a localized string similar to Personal Titles.
         /// </summary>
         public static string PersonalTitles {
             get {
@@ -3792,6 +3792,15 @@ namespace Resources {
         public static string Role {
             get {
                 return ResourceManager.GetString("Role", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to That role name has already been used..
+        /// </summary>
+        public static string RoleInUse {
+            get {
+                return ResourceManager.GetString("RoleInUse", resourceCulture);
             }
         }
         

@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace cutecms_porto.Areas.RMS.Controllers
 {
-    [LocalizedAuthorize(Roles = "Admin")]
+    [LocalizedAuthorize(Roles = "Admin,RMS,Programs")]
     public class RMSProgramsController : BaseController
     {
         #region Fields

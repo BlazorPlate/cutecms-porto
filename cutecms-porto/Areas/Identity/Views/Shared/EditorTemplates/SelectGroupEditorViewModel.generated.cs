@@ -51,23 +51,23 @@ WriteLiteral("        ");
 
             
             #line 5 "..\..\Areas\Identity\Views\Shared\EditorTemplates\SelectGroupEditorViewModel.cshtml"
-   Write(Html.CheckBoxFor(model => model.Selected, new { @class = "js-switch"}));
+   Write(Html.CheckBoxFor(model => model.Selected, new { @class = "js-switch" }));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n    </td>\r\n    <td>\r\n");
+WriteLiteral("\r\n        &nbsp;\r\n    </td>\r\n    <td>\r\n");
 
 WriteLiteral("        ");
 
             
-            #line 8 "..\..\Areas\Identity\Views\Shared\EditorTemplates\SelectGroupEditorViewModel.cshtml"
+            #line 9 "..\..\Areas\Identity\Views\Shared\EditorTemplates\SelectGroupEditorViewModel.cshtml"
    Write(Html.DisplayFor(model => model.GroupName));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n    </td>\r\n</tr>");
+WriteLiteral("\r\n    </td>\r\n</tr>\r\n");
 
         }
     }

@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace cutecms_porto.Areas.RMS.Controllers
 {
-    [LocalizedAuthorize(Roles = "Admin, HR")]
+    [LocalizedAuthorize(Roles = "Admin,RMS,Submissions")]
     public class AttachmentsController : BaseController
     {
         #region Fields

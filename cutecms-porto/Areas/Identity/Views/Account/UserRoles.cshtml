@@ -23,10 +23,10 @@
     {
         <tr>
             <th>
-                @Resources.Resources.Name
+                @Resources.Resources.Description
             </th>
             <th>
-                @Resources.Resources.Description
+                @Resources.Resources.Name
             </th>
             <th></th>
         </tr>
@@ -36,10 +36,10 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.RoleName)
+                        @Html.DisplayFor(modelItem => item.RoleDescription)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.RoleDescription)
+                        @Html.DisplayFor(modelItem => item.RoleName)
                     </td>
                 </tr>
             }

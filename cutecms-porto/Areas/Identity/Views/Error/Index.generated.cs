@@ -42,6 +42,7 @@ namespace ASP
             #line 1 "..\..\Areas\Identity\Views\Error\Index.cshtml"
   
     ViewBag.Title = Resources.Resources.Error;
+    Layout = "~/Areas/Identity/Views/Shared/_Layout.cshtml";
 
             
             #line default
@@ -53,7 +54,7 @@ WriteLiteral(" class=\"text-danger\"");
 WriteLiteral(">");
 
             
-            #line 4 "..\..\Areas\Identity\Views\Error\Index.cshtml"
+            #line 5 "..\..\Areas\Identity\Views\Error\Index.cshtml"
                    Write(Resources.Resources.Oops);
 
             
@@ -66,7 +67,7 @@ WriteLiteral(" class=\"text-danger\"");
 WriteLiteral(">");
 
             
-            #line 5 "..\..\Areas\Identity\Views\Error\Index.cshtml"
+            #line 6 "..\..\Areas\Identity\Views\Error\Index.cshtml"
                    Write(Resources.Resources.GenericError);
 
             
@@ -79,7 +80,7 @@ WriteLiteral(" class=\"text-danger\"");
 WriteLiteral(">");
 
             
-            #line 6 "..\..\Areas\Identity\Views\Error\Index.cshtml"
+            #line 7 "..\..\Areas\Identity\Views\Error\Index.cshtml"
                   Write(Resources.Resources.ErrorNotification);
 
             

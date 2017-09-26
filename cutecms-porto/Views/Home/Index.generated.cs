@@ -71,7 +71,7 @@ namespace ASP
     IdentityEntities IdentityDb = new IdentityEntities();
     var openingHours = Model.ContentLists.Where(c => c.Code.Trim().Equals("opening-hours")).FirstOrDefault()?.ListItems ?? new List<ListItem>();
     var shortcutContents = Model.Contents.Where(c => c.HasShortcut);
-    var partnersList = Model.ContentLists.Where(c => c.Code.Trim().Equals("partners"))?.FirstOrDefault() ?? new ContentList();
+    var insuranceList = Model.ContentLists.Where(c => c.Code.Trim().Equals("insurance"))?.FirstOrDefault() ?? new ContentList();
     var resourcesList = Model.ContentLists.Where(c => c.Code.Trim().Equals("resources"))?.FirstOrDefault() ?? new ContentList();
     var testimonialList = Model.ContentLists.Where(c => c.Code.Trim().Equals("testimonial"))?.FirstOrDefault() ?? new ContentList();
     IdentityEntities identityDb = new IdentityEntities();
@@ -91,27 +91,27 @@ WriteLiteral("\r\n    <!-- Current Page CSS -->\r\n    <link");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1741), Tuple.Create("\"", 1796)
-, Tuple.Create(Tuple.Create("", 1748), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/rs-plugin/css/settings.css")
-, 1748), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 1743), Tuple.Create("\"", 1798)
+, Tuple.Create(Tuple.Create("", 1750), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/rs-plugin/css/settings.css")
+, 1750), false)
 );
 
 WriteLiteral(">\r\n    <link");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1826), Tuple.Create("\"", 1879)
-, Tuple.Create(Tuple.Create("", 1833), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/rs-plugin/css/layers.css")
-, 1833), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 1828), Tuple.Create("\"", 1881)
+, Tuple.Create(Tuple.Create("", 1835), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/rs-plugin/css/layers.css")
+, 1835), false)
 );
 
 WriteLiteral(">\r\n    <link");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1909), Tuple.Create("\"", 1966)
-, Tuple.Create(Tuple.Create("", 1916), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/rs-plugin/css/navigation.css")
-, 1916), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 1911), Tuple.Create("\"", 1968)
+, Tuple.Create(Tuple.Create("", 1918), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/rs-plugin/css/navigation.css")
+, 1918), false)
 );
 
 WriteLiteral(">\r\n\r\n");
@@ -156,24 +156,24 @@ WriteLiteral(" data-transition=\"fade\"");
 
 WriteLiteral(">\r\n                    <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2546), Tuple.Create("\"", 2566)
+WriteAttribute("src", Tuple.Create(" src=\"", 2548), Tuple.Create("\"", 2568)
             
             #line 34 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 2552), Tuple.Create<System.Object, System.Int32>(item.FilePath
+, Tuple.Create(Tuple.Create("", 2554), Tuple.Create<System.Object, System.Int32>(item.FilePath
             
             #line default
             #line hidden
-, 2552), false)
+, 2554), false)
 );
 
-WriteAttribute("alt", Tuple.Create("\r\n                         alt=\"", 2567), Tuple.Create("\"", 2780)
+WriteAttribute("alt", Tuple.Create("\r\n                         alt=\"", 2569), Tuple.Create("\"", 2782)
             
             #line 35 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 2599), Tuple.Create<System.Object, System.Int32>(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.Value ?? item.Code
+, Tuple.Create(Tuple.Create("", 2601), Tuple.Create<System.Object, System.Int32>(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.Value ?? item.Code
             
             #line default
             #line hidden
-, 2599), false)
+, 2601), false)
 );
 
 WriteLiteral("\r\n                         data-bgposition=\"center center\"");
@@ -323,14 +323,14 @@ WriteLiteral(" data-appear-animation-delay=\"1800\"");
 
 WriteLiteral(">\r\n                    <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 5433), Tuple.Create("\"", 5483)
+WriteAttribute("href", Tuple.Create(" href=\"", 5435), Tuple.Create("\"", 5468)
             
             #line 75 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 5440), Tuple.Create<System.Object, System.Int32>(OrganizationData.Organization?.Telephone
+, Tuple.Create(Tuple.Create("", 5442), Tuple.Create<System.Object, System.Int32>(organization?.Telephone
             
             #line default
             #line hidden
-, 5440), false)
+, 5442), false)
 );
 
 WriteLiteral(" class=\"text-decoration-none\"");
@@ -359,7 +359,7 @@ WriteLiteral(">");
 
             
             #line 81 "..\..\Views\Home\Index.cshtml"
-                                                            Write(Resources.Resources.ContactUs);
+                                                            Write(Resources.Resources.EmergencyCase);
 
             
             #line default
@@ -372,7 +372,7 @@ WriteLiteral(">");
 
             
             #line 82 "..\..\Views\Home\Index.cshtml"
-                                                               Write(OrganizationData.Organization?.Telephone);
+                                                               Write(organization?.Telephone);
 
             
             #line default
@@ -380,7 +380,7 @@ WriteLiteral(">");
 WriteLiteral("</strong>\r\n                            </div>\r\n                        </div>\r\n  " +
 "                  </a>\r\n                </div>\r\n");
 
-WriteLiteral("                <div");
+WriteLiteral("                        <div");
 
 WriteLiteral(" class=\"col-lg-3 box-three background-color-primary appear-animation\"");
 
@@ -388,7 +388,7 @@ WriteLiteral(" data-appear-animation=\"fadeInLeft\"");
 
 WriteLiteral(" data-appear-animation-delay=\"1200\"");
 
-WriteLiteral(">\r\n                    <div");
+WriteLiteral(">\r\n                            <div");
 
 WriteLiteral(" class=\"expanded-info p-xlg background-color-primary\"");
 
@@ -396,23 +396,23 @@ WriteLiteral(">\r\n");
 
             
             #line 89 "..\..\Views\Home\Index.cshtml"
-                        
+                                
             
             #line default
             #line hidden
             
             #line 89 "..\..\Views\Home\Index.cshtml"
-                         foreach (var item in openingHours)
-                        {
+                                 foreach (var item in openingHours)
+                                {
 
             
             #line default
             #line hidden
-WriteLiteral("                            <div");
+WriteLiteral("                                    <div");
 
 WriteLiteral(" class=\"info custom-info log-in-info\"");
 
-WriteLiteral(">\r\n                                <div");
+WriteLiteral(">\r\n                                        <div");
 
 WriteLiteral(" style=\"color:white\"");
 
@@ -422,12 +422,12 @@ WriteLiteral(">");
 
             
             #line 92 "..\..\Views\Home\Index.cshtml"
-                                                                 Write(item.Title);
+                                                                         Write(item.Title);
 
             
             #line default
             #line hidden
-WriteLiteral("</div>\r\n                                <div");
+WriteLiteral("</div>\r\n                                        <div");
 
 WriteLiteral(" style=\"color:white\"");
 
@@ -435,40 +435,40 @@ WriteLiteral(">");
 
             
             #line 93 "..\..\Views\Home\Index.cshtml"
-                                                    Write(item.Subtitle);
+                                                            Write(item.Subtitle);
 
             
             #line default
             #line hidden
-WriteLiteral("</div>\r\n                            </div>\r\n");
+WriteLiteral("</div>\r\n                                    </div>\r\n");
 
             
             #line 95 "..\..\Views\Home\Index.cshtml"
-                        }
+                                }
 
             
             #line default
             #line hidden
-WriteLiteral("                    </div>\r\n                    <h5");
+WriteLiteral("                            </div>\r\n                            <h5");
 
 WriteLiteral(" class=\"m-none\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("                        ");
+WriteLiteral("                                ");
 
             
             #line 98 "..\..\Views\Home\Index.cshtml"
-                   Write(Resources.Resources.OpeningHours);
+                           Write(Resources.Resources.OpeningHours);
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n                        <i");
+WriteLiteral("\r\n                                <i");
 
 WriteLiteral(" class=\"icon-arrow-right-circle icons\"");
 
-WriteLiteral("></i>\r\n                    </h5>\r\n                </div>\r\n");
+WriteLiteral("></i>\r\n                            </h5>\r\n                        </div>\r\n");
 
 WriteLiteral("                        <div");
 
@@ -484,7 +484,7 @@ WriteLiteral(" class=\"m-none\"");
 
 WriteLiteral(">\r\n                                <a");
 
-WriteLiteral(" href=\"#\"");
+WriteLiteral(" href=\"demo-medical-doctors.html\"");
 
 WriteLiteral(" title=\"\"");
 
@@ -494,7 +494,7 @@ WriteLiteral("                                    ");
 
             
             #line 105 "..\..\Views\Home\Index.cshtml"
-                               Write(Resources.Resources.Programs);
+                               Write(Resources.Resources.DoctorsTimetable);
 
             
             #line default
@@ -522,12 +522,19 @@ WriteLiteral(">\r\n                                <div");
 
 WriteLiteral(" class=\"feature-box-icon\"");
 
-WriteLiteral(">\r\n                                    <i");
+WriteLiteral(">\r\n                                    <img");
 
-WriteLiteral(" class=\"icon-graduation icons\"");
+WriteAttribute("src", Tuple.Create(" src=\"", 8052), Tuple.Create("\"", 8119)
+, Tuple.Create(Tuple.Create("", 8058), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/icons/medical-icon-heart.png")
+, 8058), false)
+);
 
-WriteLiteral("></i>\r\n                                </div>\r\n                                <d" +
-"iv");
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" class=\"img-responsive pt-xs\"");
+
+WriteLiteral(" />\r\n                                </div>\r\n                                <div" +
+"");
 
 WriteLiteral(" class=\"feature-box-info ml-md\"");
 
@@ -539,7 +546,7 @@ WriteLiteral(">");
 
             
             #line 116 "..\..\Views\Home\Index.cshtml"
-                                                   Write(organization?.Name);
+                                                  Write(Resources.Resources.MedicalTreatment);
 
             
             #line default
@@ -573,11 +580,18 @@ WriteLiteral(">\r\n                        <div");
 
 WriteLiteral(" class=\"feature-box-icon\"");
 
-WriteLiteral(">\r\n                            <i");
+WriteLiteral(">\r\n                            <img");
 
-WriteLiteral(" class=\"icon-graduation icons\"");
+WriteAttribute("src", Tuple.Create(" src=\"", 8845), Tuple.Create("\"", 8912)
+, Tuple.Create(Tuple.Create("", 8851), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/img/demos/medical/icons/medical-icon-heart.png")
+, 8851), false)
+);
 
-WriteLiteral("></i>\r\n                        </div>\r\n                        <div");
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" class=\"img-responsive pt-xs\"");
+
+WriteLiteral(" />\r\n                        </div>\r\n                        <div");
 
 WriteLiteral(" class=\"feature-box-info ml-md\"");
 
@@ -589,7 +603,7 @@ WriteLiteral(">");
 
             
             #line 130 "..\..\Views\Home\Index.cshtml"
-                                           Write(organization?.Name);
+                                          Write(Resources.Resources.MedicalTreatment);
 
             
             #line default
@@ -597,7 +611,7 @@ WriteLiteral(">");
 WriteLiteral("</h4>\r\n                        </div>\r\n                    </div>\r\n              " +
 "  </div>\r\n");
 
-WriteLiteral("                <div");
+WriteLiteral("                        <div");
 
 WriteLiteral(" class=\"col-lg-3 box-two background-color-tertiary appear-animation\"");
 
@@ -605,11 +619,11 @@ WriteLiteral(" data-appear-animation=\"fadeInLeft\"");
 
 WriteLiteral(" data-appear-animation-delay=\"600\"");
 
-WriteLiteral(">\r\n                    <h5");
+WriteLiteral(">\r\n                            <h5");
 
 WriteLiteral(" class=\"m-none\"");
 
-WriteLiteral(">\r\n                        <a");
+WriteLiteral(">\r\n                                <a");
 
 WriteLiteral(" href=\"demo-medical-doctors.html\"");
 
@@ -617,21 +631,21 @@ WriteLiteral(" title=\"\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("                            ");
+WriteLiteral("                                    ");
 
             
             #line 137 "..\..\Views\Home\Index.cshtml"
-                       Write(Resources.Resources.Programs);
+                               Write(Resources.Resources.DoctorsTimetable);
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n                            <i");
+WriteLiteral("\r\n                                    <i");
 
 WriteLiteral(" class=\"icon-arrow-right-circle icons\"");
 
-WriteLiteral("></i>\r\n                        </a>\r\n                    </h5>\r\n                <" +
-"/div>\r\n");
+WriteLiteral("></i>\r\n                                </a>\r\n                            </h5>\r\n " +
+"                       </div>\r\n");
 
 WriteLiteral("                        <div");
 
@@ -742,15 +756,15 @@ WriteLiteral(" data-appear-animation-delay=\"1800\"");
 
 WriteLiteral(">\r\n                            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 10865), Tuple.Create("\"", 10919)
-, Tuple.Create(Tuple.Create("", 10872), Tuple.Create("tel:", 10872), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 11241), Tuple.Create("\"", 11278)
+, Tuple.Create(Tuple.Create("", 11248), Tuple.Create("tel:", 11248), true)
             
             #line 162 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 10876), Tuple.Create<System.Object, System.Int32>(OrganizationData.Organization?.Telephone
+, Tuple.Create(Tuple.Create("", 11252), Tuple.Create<System.Object, System.Int32>(organization?.Telephone
             
             #line default
             #line hidden
-, 10876), false)
+, 11252), false)
 );
 
 WriteLiteral(" class=\"text-decoration-none\"");
@@ -780,7 +794,7 @@ WriteLiteral(">");
 
             
             #line 168 "..\..\Views\Home\Index.cshtml"
-                                                                    Write(Resources.Resources.ContactUs);
+                                                                    Write(Resources.Resources.EmergencyCase);
 
             
             #line default
@@ -793,7 +807,7 @@ WriteLiteral(">");
 
             
             #line 169 "..\..\Views\Home\Index.cshtml"
-                                                                       Write(OrganizationData.Organization?.Telephone);
+                                                                       Write(organization?.Telephone);
 
             
             #line default
@@ -804,7 +818,6 @@ WriteLiteral("</strong>\r\n                                    </div>\r\n       
 
             
             #line 174 "..\..\Views\Home\Index.cshtml"
-
             }
 
             
@@ -813,13 +826,13 @@ WriteLiteral("</strong>\r\n                                    </div>\r\n       
 WriteLiteral("        </div>\r\n");
 
             
-            #line 177 "..\..\Views\Home\Index.cshtml"
+            #line 176 "..\..\Views\Home\Index.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 177 "..\..\Views\Home\Index.cshtml"
+            #line 176 "..\..\Views\Home\Index.cshtml"
          foreach (var item in shortcutContents)
             {
 
@@ -841,7 +854,7 @@ WriteLiteral(" class=\"font-weight-semibold mb-xs\"");
 WriteLiteral(">");
 
             
-            #line 181 "..\..\Views\Home\Index.cshtml"
+            #line 180 "..\..\Views\Home\Index.cshtml"
                                                       Write(item.Title);
 
             
@@ -854,60 +867,69 @@ WriteLiteral(" class=\"lead font-weight-normal\"");
 WriteLiteral(">");
 
             
-            #line 182 "..\..\Views\Home\Index.cshtml"
+            #line 181 "..\..\Views\Home\Index.cshtml"
                                                   Write(item.Subtitle);
 
             
             #line default
             #line hidden
-WriteLiteral("</p>\r\n\r\n                    <p>");
+WriteLiteral("</p>\r\n                    <p>");
 
             
-            #line 184 "..\..\Views\Home\Index.cshtml"
+            #line 182 "..\..\Views\Home\Index.cshtml"
                   Write(item.MainContent.StripHtml().Chop(300).Trim());
 
             
             #line default
             #line hidden
-WriteLiteral("</p>\r\n\r\n                    <a");
+WriteLiteral("</p>\r\n                    <a");
 
 WriteLiteral(" class=\"btn btn-borders btn-quaternary custom-button text-uppercase mt-lg mb-lg f" +
 "ont-weight-bold\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 12247), Tuple.Create("\"", 12314)
+WriteAttribute("href", Tuple.Create(" href=\"", 12587), Tuple.Create("\"", 12654)
             
-            #line 186 "..\..\Views\Home\Index.cshtml"
-                                             , Tuple.Create(Tuple.Create("", 12254), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
+            #line 183 "..\..\Views\Home\Index.cshtml"
+                                             , Tuple.Create(Tuple.Create("", 12594), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
             
             #line default
             #line hidden
-, 12254), false)
+, 12594), false)
 );
 
-WriteLiteral(">read more</a>\r\n                </div>\r\n                <div");
+WriteLiteral(">");
+
+            
+            #line 183 "..\..\Views\Home\Index.cshtml"
+                                                                                                                                                                                       Write(Resources.Resources.ReadMore);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</a>\r\n                </div>\r\n                <div");
 
 WriteLiteral(" class=\"col-sm-4 col-md-4\"");
 
 WriteLiteral(">\r\n                    <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 12428), Tuple.Create("\"", 12449)
+WriteAttribute("src", Tuple.Create(" src=\"", 12788), Tuple.Create("\"", 12809)
             
-            #line 189 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 12434), Tuple.Create<System.Object, System.Int32>(item.ImagePath
+            #line 186 "..\..\Views\Home\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 12794), Tuple.Create<System.Object, System.Int32>(item.ImagePath
             
             #line default
             #line hidden
-, 12434), false)
+, 12794), false)
 );
 
-WriteAttribute("alt", Tuple.Create(" alt=\"", 12450), Tuple.Create("\"", 12471)
+WriteAttribute("alt", Tuple.Create(" alt=\"", 12810), Tuple.Create("\"", 12831)
             
-            #line 189 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 12456), Tuple.Create<System.Object, System.Int32>(item.ImageName
+            #line 186 "..\..\Views\Home\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 12816), Tuple.Create<System.Object, System.Int32>(item.ImageName
             
             #line default
             #line hidden
-, 12456), false)
+, 12816), false)
 );
 
 WriteLiteral(" class=\"img-responsive boxshadow\"");
@@ -915,7 +937,7 @@ WriteLiteral(" class=\"img-responsive boxshadow\"");
 WriteLiteral(" />\r\n                </div>\r\n            </div>\r\n");
 
             
-            #line 192 "..\..\Views\Home\Index.cshtml"
+            #line 189 "..\..\Views\Home\Index.cshtml"
         }
 
             
@@ -944,7 +966,7 @@ WriteLiteral(" class=\"font-weight-semibold mb-xs\"");
 WriteLiteral(">");
 
             
-            #line 200 "..\..\Views\Home\Index.cshtml"
+            #line 197 "..\..\Views\Home\Index.cshtml"
                                                   Write(Resources.Resources.Departments);
 
             
@@ -955,13 +977,13 @@ WriteLiteral("</h2>\r\n                ");
 WriteLiteral("\r\n            </div>\r\n        </div>\r\n");
 
             
-            #line 204 "..\..\Views\Home\Index.cshtml"
+            #line 201 "..\..\Views\Home\Index.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 204 "..\..\Views\Home\Index.cshtml"
+            #line 201 "..\..\Views\Home\Index.cshtml"
           var i = 0;
             
             #line default
@@ -969,13 +991,13 @@ WriteLiteral("\r\n            </div>\r\n        </div>\r\n");
 WriteLiteral("\r\n");
 
             
-            #line 205 "..\..\Views\Home\Index.cshtml"
+            #line 202 "..\..\Views\Home\Index.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 205 "..\..\Views\Home\Index.cshtml"
+            #line 202 "..\..\Views\Home\Index.cshtml"
          foreach (var item in Model.DepartmentTerms)
         {
             if (i % 3 == 0)
@@ -989,7 +1011,7 @@ WriteLiteral("                ");
 WriteLiteral("<div class=\"row mt-lg\">\r\n");
 
             
-            #line 210 "..\..\Views\Home\Index.cshtml"
+            #line 207 "..\..\Views\Home\Index.cshtml"
                         }
 
             
@@ -1013,24 +1035,24 @@ WriteLiteral(" class=\"feature-box-icon\"");
 
 WriteLiteral(">\r\n                        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 13455), Tuple.Create("\"", 13475)
+WriteAttribute("src", Tuple.Create(" src=\"", 13815), Tuple.Create("\"", 13835)
             
-            #line 214 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 13461), Tuple.Create<System.Object, System.Int32>(item.IconPath
+            #line 211 "..\..\Views\Home\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 13821), Tuple.Create<System.Object, System.Int32>(item.IconPath
             
             #line default
             #line hidden
-, 13461), false)
+, 13821), false)
 );
 
-WriteAttribute("alt", Tuple.Create(" alt=\"", 13476), Tuple.Create("\"", 13496)
+WriteAttribute("alt", Tuple.Create(" alt=\"", 13836), Tuple.Create("\"", 13856)
             
-            #line 214 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 13482), Tuple.Create<System.Object, System.Int32>(item.IconName
+            #line 211 "..\..\Views\Home\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 13842), Tuple.Create<System.Object, System.Int32>(item.IconName
             
             #line default
             #line hidden
-, 13482), false)
+, 13842), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");
@@ -1045,14 +1067,14 @@ WriteLiteral(" class=\"font-weight-semibold\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 13670), Tuple.Create("\"", 13752)
+WriteAttribute("href", Tuple.Create(" href=\"", 14030), Tuple.Create("\"", 14112)
             
-            #line 217 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 13677), Tuple.Create<System.Object, System.Int32>(string.Concat(item.AbsolutePath, string.Concat("#", item.Department.Code))
+            #line 214 "..\..\Views\Home\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 14037), Tuple.Create<System.Object, System.Int32>(string.Concat(item.AbsolutePath, string.Concat("#", item.Department.Code))
             
             #line default
             #line hidden
-, 13677), false)
+, 14037), false)
 );
 
 WriteLiteral(" class=\"text-decoration-none\"");
@@ -1060,7 +1082,7 @@ WriteLiteral(" class=\"text-decoration-none\"");
 WriteLiteral(">");
 
             
-            #line 217 "..\..\Views\Home\Index.cshtml"
+            #line 214 "..\..\Views\Home\Index.cshtml"
                                                                                                                                                                        Write(item.Value);
 
             
@@ -1070,7 +1092,7 @@ WriteLiteral("</a></h4>\r\n                    </div>\r\n                </div>\
 "\r\n");
 
             
-            #line 221 "..\..\Views\Home\Index.cshtml"
+            #line 218 "..\..\Views\Home\Index.cshtml"
             i++;
             if (i % 3 == 0)
             {
@@ -1083,7 +1105,7 @@ WriteLiteral("                ");
 WriteLiteral("            </div>\r\n");
 
             
-            #line 225 "..\..\Views\Home\Index.cshtml"
+            #line 222 "..\..\Views\Home\Index.cshtml"
             }
         }
 
@@ -1103,20 +1125,20 @@ WriteLiteral(">\r\n                <a");
 WriteLiteral(" class=\"btn btn-borders btn-quaternary custom-button text-uppercase mt-lg font-we" +
 "ight-bold\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 14196), Tuple.Create("\"", 14231)
+WriteAttribute("href", Tuple.Create(" href=\"", 14556), Tuple.Create("\"", 14591)
             
-            #line 229 "..\..\Views\Home\Index.cshtml"
-                                   , Tuple.Create(Tuple.Create("", 14203), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Staff")
+            #line 226 "..\..\Views\Home\Index.cshtml"
+                                   , Tuple.Create(Tuple.Create("", 14563), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Staff")
             
             #line default
             #line hidden
-, 14203), false)
+, 14563), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 229 "..\..\Views\Home\Index.cshtml"
+            #line 226 "..\..\Views\Home\Index.cshtml"
                                                                                                                                              Write(Resources.Resources.ViewMore);
 
             
@@ -1145,8 +1167,8 @@ WriteLiteral(" class=\"font-weight-semibold m-none\"");
 WriteLiteral(">");
 
             
-            #line 238 "..\..\Views\Home\Index.cshtml"
-                                                   Write(Resources.Resources.Staff);
+            #line 235 "..\..\Views\Home\Index.cshtml"
+                                                   Write(Resources.Resources.Doctors);
 
             
             #line default
@@ -1158,8 +1180,8 @@ WriteLiteral(" class=\"lead font-weight-normal\"");
 WriteLiteral(">");
 
             
-            #line 239 "..\..\Views\Home\Index.cshtml"
-                                              Write(Resources.Resources.Employees);
+            #line 236 "..\..\Views\Home\Index.cshtml"
+                                              Write(Resources.Resources.OurSpecialists);
 
             
             #line default
@@ -1206,13 +1228,13 @@ WriteLiteral(" data-plugin-options=\"{\'items\': 4, \'loop\': false, \'dots\': f
 WriteLiteral(">\r\n");
 
             
-            #line 257 "..\..\Views\Home\Index.cshtml"
+            #line 254 "..\..\Views\Home\Index.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 257 "..\..\Views\Home\Index.cshtml"
+            #line 254 "..\..\Views\Home\Index.cshtml"
                  foreach (var item in Model.DepartmentTerms)
                 {
                     foreach (var empInDept in item.Department.EmpInDepts.OrderBy(d => d.Ordinal))
@@ -1231,14 +1253,14 @@ WriteLiteral(" class=\"pr-sm pl-sm\"");
 
 WriteLiteral(">\r\n                                <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 16153), Tuple.Create("\"", 16244)
+WriteAttribute("href", Tuple.Create(" href=\"", 16520), Tuple.Create("\"", 16611)
             
-            #line 266 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 16160), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", "Staff", new { id = empInDept.Employee.TranslationId })
+            #line 263 "..\..\Views\Home\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 16527), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", "Staff", new { id = empInDept.Employee.TranslationId })
             
             #line default
             #line hidden
-, 16160), false)
+, 16527), false)
 );
 
 WriteLiteral(" data-ajax-on-page");
@@ -1255,24 +1277,24 @@ WriteLiteral(" class=\"thumb-info-wrapper m-none\"");
 
 WriteLiteral(">\r\n                                            <img");
 
-WriteAttribute("alt", Tuple.Create(" alt=\"", 16534), Tuple.Create("\"", 16577)
+WriteAttribute("alt", Tuple.Create(" alt=\"", 16901), Tuple.Create("\"", 16944)
             
-            #line 269 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 16540), Tuple.Create<System.Object, System.Int32>(empInDept.Employee.PersonalPhotoName
+            #line 266 "..\..\Views\Home\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 16907), Tuple.Create<System.Object, System.Int32>(empInDept.Employee.PersonalPhotoName
             
             #line default
             #line hidden
-, 16540), false)
+, 16907), false)
 );
 
-WriteAttribute("src", Tuple.Create(" src=\"", 16578), Tuple.Create("\"", 16726)
+WriteAttribute("src", Tuple.Create(" src=\"", 16945), Tuple.Create("\"", 17093)
             
-            #line 269 "..\..\Views\Home\Index.cshtml"
-                  , Tuple.Create(Tuple.Create("", 16584), Tuple.Create<System.Object, System.Int32>(!File.Exists(Server.MapPath(employee.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : @employee.PersonalPhotoPath
+            #line 266 "..\..\Views\Home\Index.cshtml"
+                  , Tuple.Create(Tuple.Create("", 16951), Tuple.Create<System.Object, System.Int32>(!File.Exists(Server.MapPath(employee.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : @employee.PersonalPhotoPath
             
             #line default
             #line hidden
-, 16584), false)
+, 16951), false)
 );
 
 WriteLiteral(">\r\n                                        </span>\r\n                             " +
@@ -1291,7 +1313,7 @@ WriteLiteral(" class=\"custom-thumb-info-type font-weight-light text-md\"");
 WriteLiteral(">");
 
             
-            #line 273 "..\..\Views\Home\Index.cshtml"
+            #line 270 "..\..\Views\Home\Index.cshtml"
                                                                                                           Write(empInDept.Department.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value);
 
             
@@ -1304,7 +1326,7 @@ WriteLiteral(" class=\"custom-thumb-info-inner font-weight-semibold text-lg\"");
 WriteLiteral(">");
 
             
-            #line 274 "..\..\Views\Home\Index.cshtml"
+            #line 271 "..\..\Views\Home\Index.cshtml"
                                                                                                               Write(personalTitle);
 
             
@@ -1313,7 +1335,7 @@ WriteLiteral(">");
 WriteLiteral(" ");
 
             
-            #line 274 "..\..\Views\Home\Index.cshtml"
+            #line 271 "..\..\Views\Home\Index.cshtml"
                                                                                                                              Write(employee.FullName);
 
             
@@ -1326,7 +1348,7 @@ WriteLiteral("\r\n                                            </span>\r\n       
 "                    </a>\r\n                            </div>\r\n");
 
             
-            #line 281 "..\..\Views\Home\Index.cshtml"
+            #line 278 "..\..\Views\Home\Index.cshtml"
                         }
                     }
                 }
@@ -1357,7 +1379,7 @@ WriteLiteral(" class=\"font-weight-semibold m-none\"");
 WriteLiteral(">");
 
             
-            #line 292 "..\..\Views\Home\Index.cshtml"
+            #line 289 "..\..\Views\Home\Index.cshtml"
                                                    Write(resourcesList.Title);
 
             
@@ -1370,7 +1392,7 @@ WriteLiteral(" class=\"lead font-weight-normal\"");
 WriteLiteral(">");
 
             
-            #line 293 "..\..\Views\Home\Index.cshtml"
+            #line 290 "..\..\Views\Home\Index.cshtml"
                                               Write(resourcesList.Subtitle);
 
             
@@ -1383,129 +1405,103 @@ WriteLiteral(" class=\"row\"");
 WriteLiteral(">\r\n");
 
             
-            #line 297 "..\..\Views\Home\Index.cshtml"
+            #line 294 "..\..\Views\Home\Index.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 297 "..\..\Views\Home\Index.cshtml"
+            #line 294 "..\..\Views\Home\Index.cshtml"
              foreach (var item in resourcesList.ListItems)
             {
 
             
             #line default
             #line hidden
-WriteLiteral("                <div");
+WriteLiteral("            <div");
 
 WriteLiteral(" class=\"col-sm-4 col-md-4\"");
 
-WriteLiteral(">\r\n                    <a");
+WriteLiteral(">\r\n                <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 18362), Tuple.Create("\"", 18378)
+WriteAttribute("href", Tuple.Create(" href=\"", 18721), Tuple.Create("\"", 18737)
             
-            #line 300 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 18369), Tuple.Create<System.Object, System.Int32>(item.Url
+            #line 297 "..\..\Views\Home\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 18728), Tuple.Create<System.Object, System.Int32>(item.Url
             
             #line default
             #line hidden
-, 18369), false)
+, 18728), false)
 );
 
 WriteLiteral(" class=\"text-decoration-none\"");
 
-WriteLiteral(">\r\n                        <span");
+WriteLiteral(">\r\n                    <span");
 
 WriteLiteral(" class=\"thumb-info thumb-info-side-image thumb-info-side-image-custom thumb-info-" +
 "no-zoom thumb-info-no-zoom thumb-info-side-image-custom-highlight\"");
 
-WriteLiteral(">\r\n                            <span");
+WriteLiteral(">\r\n                        <span");
 
 WriteLiteral(" class=\"thumb-info-side-image-wrapper\"");
 
-WriteLiteral(">\r\n                                <img");
+WriteLiteral(">\r\n                            <img");
 
 WriteLiteral(" alt=\"\"");
 
 WriteLiteral(" class=\"img-responsive\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 18730), Tuple.Create("\"", 18751)
+WriteAttribute("src", Tuple.Create(" src=\"", 19077), Tuple.Create("\"", 19098)
             
-            #line 303 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 18736), Tuple.Create<System.Object, System.Int32>(item.ThumbPath
+            #line 300 "..\..\Views\Home\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 19083), Tuple.Create<System.Object, System.Int32>(item.ThumbPath
             
             #line default
             #line hidden
-, 18736), false)
+, 19083), false)
 );
 
-WriteLiteral(">\r\n                            </span>\r\n                            <span");
+WriteLiteral(">\r\n                        </span>\r\n                        <span");
 
 WriteLiteral(" class=\"thumb-info-caption\"");
 
-WriteLiteral(">\r\n                                <span");
+WriteLiteral(">\r\n                            <span");
 
 WriteLiteral(" class=\"thumb-info-caption-text p-xl\"");
 
-WriteLiteral(">\r\n                                    <h4");
+WriteLiteral(">\r\n                                <h4");
 
 WriteLiteral(" class=\"font-weight-semibold mb-xs\"");
 
 WriteLiteral(">");
 
             
-            #line 307 "..\..\Views\Home\Index.cshtml"
-                                                                      Write(item.Title);
+            #line 304 "..\..\Views\Home\Index.cshtml"
+                                                                  Write(item.Title);
 
             
             #line default
             #line hidden
-WriteLiteral("</h4>\r\n                                    <p>");
+WriteLiteral("</h4>\r\n                                <p>");
 
             
-            #line 308 "..\..\Views\Home\Index.cshtml"
-                                  Write(item.Subtitle);
+            #line 305 "..\..\Views\Home\Index.cshtml"
+                              Write(item.Subtitle);
 
             
             #line default
             #line hidden
-WriteLiteral("</p>\r\n                                </span>\r\n                            </span" +
-">\r\n                        </span>\r\n                    </a>\r\n                </" +
-"div>\r\n");
+WriteLiteral("</p>\r\n                            </span>\r\n                        </span>\r\n     " +
+"               </span>\r\n                </a>\r\n            </div>\r\n");
 
             
-            #line 314 "..\..\Views\Home\Index.cshtml"
-
+            #line 311 "..\..\Views\Home\Index.cshtml"
             }
 
             
             #line default
             #line hidden
-WriteLiteral("            ");
-
-WriteLiteral("\r\n        </div>\r\n        <div");
-
-WriteLiteral(" class=\"row pb-xlg\"");
-
-WriteLiteral(">\r\n            <div");
-
-WriteLiteral(" class=\"col-md-12 center\"");
-
-WriteLiteral(">\r\n                <a");
-
-WriteLiteral(" class=\"btn btn-borders btn-quaternary custom-button text-uppercase font-weight-b" +
-"old\"");
-
-WriteLiteral(">");
-
-            
-            #line 334 "..\..\Views\Home\Index.cshtml"
-                                                                                                   Write(Resources.Resources.ViewMore);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</section>\r\n<section");
+WriteLiteral("        </div>\r\n    </div>\r\n</section>\r\n<section");
 
 WriteLiteral(" class=\"section section-default\"");
 
@@ -1528,7 +1524,7 @@ WriteLiteral(" class=\"recent-posts mb-xl\"");
 WriteLiteral(">\r\n                    <h2>");
 
             
-            #line 344 "..\..\Views\Home\Index.cshtml"
+            #line 320 "..\..\Views\Home\Index.cshtml"
                    Write(Resources.Resources.LatestNews);
 
             
@@ -1543,13 +1539,13 @@ WriteLiteral(" data-plugin-options=\'{\"items\": 1}\'");
 WriteLiteral(">\r\n");
 
             
-            #line 346 "..\..\Views\Home\Index.cshtml"
+            #line 322 "..\..\Views\Home\Index.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 346 "..\..\Views\Home\Index.cshtml"
+            #line 322 "..\..\Views\Home\Index.cshtml"
                           var newsIndex = 0;
             
             #line default
@@ -1557,13 +1553,13 @@ WriteLiteral(">\r\n");
 WriteLiteral("\r\n");
 
             
-            #line 347 "..\..\Views\Home\Index.cshtml"
+            #line 323 "..\..\Views\Home\Index.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 347 "..\..\Views\Home\Index.cshtml"
+            #line 323 "..\..\Views\Home\Index.cshtml"
                          foreach (var item in Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("news")).OrderByDescending(c => c.PublishedOn).Take(12))
                         {
                             if (newsIndex % 2 == 0)
@@ -1577,7 +1573,7 @@ WriteLiteral("                                ");
 WriteLiteral("<div class=\"row mt-lg\">\r\n");
 
             
-            #line 352 "..\..\Views\Home\Index.cshtml"
+            #line 328 "..\..\Views\Home\Index.cshtml"
                             }
 
             
@@ -1599,7 +1595,7 @@ WriteLiteral(" class=\"day\"");
 WriteLiteral(">");
 
             
-            #line 356 "..\..\Views\Home\Index.cshtml"
+            #line 332 "..\..\Views\Home\Index.cshtml"
                                                      Write(item.PublishedOn.Value.Day);
 
             
@@ -1612,7 +1608,7 @@ WriteLiteral(" class=\"month\"");
 WriteLiteral(">");
 
             
-            #line 357 "..\..\Views\Home\Index.cshtml"
+            #line 333 "..\..\Views\Home\Index.cshtml"
                                                        Write(item.PublishedOn.Value.Month);
 
             
@@ -1625,20 +1621,20 @@ WriteLiteral(" class=\"heading-primary\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 21850), Tuple.Create("\"", 21917)
+WriteAttribute("href", Tuple.Create(" href=\"", 20819), Tuple.Create("\"", 20886)
             
-            #line 359 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 21857), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
+            #line 335 "..\..\Views\Home\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 20826), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
             
             #line default
             #line hidden
-, 21857), false)
+, 20826), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 359 "..\..\Views\Home\Index.cshtml"
+            #line 335 "..\..\Views\Home\Index.cshtml"
                                                                                                                                   Write(item.Title);
 
             
@@ -1647,7 +1643,7 @@ WriteLiteral(">");
 WriteLiteral("</a></h4>\r\n                                    <p>");
 
             
-            #line 360 "..\..\Views\Home\Index.cshtml"
+            #line 336 "..\..\Views\Home\Index.cshtml"
                                   Write(item.MainContent.StripHtml().Chop(120));
 
             
@@ -1657,14 +1653,14 @@ WriteLiteral("</p>\r\n                                    <a");
 
 WriteLiteral(" class=\"btn btn-primary btn-xs\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 22094), Tuple.Create("\"", 22161)
+WriteAttribute("href", Tuple.Create(" href=\"", 21063), Tuple.Create("\"", 21130)
             
-            #line 361 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 22101), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
+            #line 337 "..\..\Views\Home\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 21070), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
             
             #line default
             #line hidden
-, 22101), false)
+, 21070), false)
 );
 
 WriteLiteral("><i");
@@ -1674,7 +1670,7 @@ WriteLiteral(" class=\"fa fa-plus\"");
 WriteLiteral("></i><span> ");
 
             
-            #line 361 "..\..\Views\Home\Index.cshtml"
+            #line 337 "..\..\Views\Home\Index.cshtml"
                                                                                                                                                                       Write(Resources.Resources.ReadMore);
 
             
@@ -1684,7 +1680,7 @@ WriteLiteral("</span></a>\r\n                                </article>\r\n     
 "    </div>\r\n");
 
             
-            #line 364 "..\..\Views\Home\Index.cshtml"
+            #line 340 "..\..\Views\Home\Index.cshtml"
                             newsIndex++;
                             if (newsIndex % 2 == 0)
                             {
@@ -1697,7 +1693,7 @@ WriteLiteral("                                ");
 WriteLiteral("                            </div>\r\n");
 
             
-            #line 368 "..\..\Views\Home\Index.cshtml"
+            #line 344 "..\..\Views\Home\Index.cshtml"
                             }
                         }
 
@@ -1716,7 +1712,7 @@ WriteLiteral(" class=\"recent-posts mb-xl\"");
 WriteLiteral(">\r\n                    <h2>");
 
             
-            #line 376 "..\..\Views\Home\Index.cshtml"
+            #line 352 "..\..\Views\Home\Index.cshtml"
                    Write(Resources.Resources.LatestEvents);
 
             
@@ -1731,13 +1727,13 @@ WriteLiteral(" data-plugin-options=\'{\"items\": 1}\'");
 WriteLiteral(">\r\n");
 
             
-            #line 378 "..\..\Views\Home\Index.cshtml"
+            #line 354 "..\..\Views\Home\Index.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 378 "..\..\Views\Home\Index.cshtml"
+            #line 354 "..\..\Views\Home\Index.cshtml"
                           var eventIndex = 0;
             
             #line default
@@ -1745,13 +1741,13 @@ WriteLiteral(">\r\n");
 WriteLiteral("\r\n");
 
             
-            #line 379 "..\..\Views\Home\Index.cshtml"
+            #line 355 "..\..\Views\Home\Index.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 379 "..\..\Views\Home\Index.cshtml"
+            #line 355 "..\..\Views\Home\Index.cshtml"
                          foreach (var item in Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("event")).OrderByDescending(c => c.PublishedOn).Take(12))
                         {
                             if (eventIndex % 2 == 0)
@@ -1765,7 +1761,7 @@ WriteLiteral("                                ");
 WriteLiteral("<div class=\"row mt-lg\">\r\n");
 
             
-            #line 384 "..\..\Views\Home\Index.cshtml"
+            #line 360 "..\..\Views\Home\Index.cshtml"
                         }
 
             
@@ -1787,7 +1783,7 @@ WriteLiteral(" class=\"day\"");
 WriteLiteral(">");
 
             
-            #line 388 "..\..\Views\Home\Index.cshtml"
+            #line 364 "..\..\Views\Home\Index.cshtml"
                                                       Write(item.StartDate?.Day ?? item.PublishedOn.Value.Day);
 
             
@@ -1800,7 +1796,7 @@ WriteLiteral(" class=\"month\"");
 WriteLiteral(">");
 
             
-            #line 389 "..\..\Views\Home\Index.cshtml"
+            #line 365 "..\..\Views\Home\Index.cshtml"
                                                         Write(item.StartDate?.Month ?? item.PublishedOn.Value.Month);
 
             
@@ -1813,20 +1809,20 @@ WriteLiteral(" class=\"heading-primary\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 23812), Tuple.Create("\"", 23879)
+WriteAttribute("href", Tuple.Create(" href=\"", 22781), Tuple.Create("\"", 22848)
             
-            #line 391 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 23819), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
+            #line 367 "..\..\Views\Home\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 22788), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
             
             #line default
             #line hidden
-, 23819), false)
+, 22788), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 391 "..\..\Views\Home\Index.cshtml"
+            #line 367 "..\..\Views\Home\Index.cshtml"
                                                                                                                                   Write(item.Title);
 
             
@@ -1835,7 +1831,7 @@ WriteLiteral(">");
 WriteLiteral("</a></h4>\r\n                                    <p>");
 
             
-            #line 392 "..\..\Views\Home\Index.cshtml"
+            #line 368 "..\..\Views\Home\Index.cshtml"
                                   Write(item.MainContent.StripHtml().Chop(120));
 
             
@@ -1845,14 +1841,14 @@ WriteLiteral("</p>\r\n                                    <a");
 
 WriteLiteral(" class=\"btn btn-primary btn-xs\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 24056), Tuple.Create("\"", 24123)
+WriteAttribute("href", Tuple.Create(" href=\"", 23025), Tuple.Create("\"", 23092)
             
-            #line 393 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 24063), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
+            #line 369 "..\..\Views\Home\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 23032), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
             
             #line default
             #line hidden
-, 24063), false)
+, 23032), false)
 );
 
 WriteLiteral("><i");
@@ -1862,7 +1858,7 @@ WriteLiteral(" class=\"fa fa-plus\"");
 WriteLiteral("></i><span> ");
 
             
-            #line 393 "..\..\Views\Home\Index.cshtml"
+            #line 369 "..\..\Views\Home\Index.cshtml"
                                                                                                                                                                       Write(Resources.Resources.ReadMore);
 
             
@@ -1872,7 +1868,7 @@ WriteLiteral("</span></a>\r\n                                </article>\r\n     
 "    </div>\r\n");
 
             
-            #line 396 "..\..\Views\Home\Index.cshtml"
+            #line 372 "..\..\Views\Home\Index.cshtml"
                             eventIndex++;
                             if (eventIndex % 2 == 0)
                             {
@@ -1885,7 +1881,7 @@ WriteLiteral("                                ");
 WriteLiteral("                            </div>\r\n");
 
             
-            #line 400 "..\..\Views\Home\Index.cshtml"
+            #line 376 "..\..\Views\Home\Index.cshtml"
                             }
                         }
 
@@ -1912,8 +1908,8 @@ WriteLiteral(" class=\"font-weight-semibold m-none\"");
 WriteLiteral(">");
 
             
-            #line 414 "..\..\Views\Home\Index.cshtml"
-                                                   Write(partnersList.Title);
+            #line 390 "..\..\Views\Home\Index.cshtml"
+                                                   Write(insuranceList.Title);
 
             
             #line default
@@ -1925,8 +1921,8 @@ WriteLiteral(" class=\"lead font-weight-normal\"");
 WriteLiteral(">");
 
             
-            #line 415 "..\..\Views\Home\Index.cshtml"
-                                              Write(partnersList.Subtitle);
+            #line 391 "..\..\Views\Home\Index.cshtml"
+                                              Write(insuranceList.Subtitle);
 
             
             #line default
@@ -1944,14 +1940,14 @@ WriteLiteral(" data-plugin-options=\"{\'items\': 6, \'autoplay\': true, \'autopl
 WriteLiteral(">\r\n");
 
             
-            #line 420 "..\..\Views\Home\Index.cshtml"
+            #line 396 "..\..\Views\Home\Index.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 420 "..\..\Views\Home\Index.cshtml"
-                 foreach (var item in partnersList.ListItems)
+            #line 396 "..\..\Views\Home\Index.cshtml"
+                 foreach (var item in insuranceList.ListItems)
                 {
 
             
@@ -1961,14 +1957,14 @@ WriteLiteral("                    <div>\r\n                        <img");
 
 WriteLiteral(" class=\"img-responsive\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 25281), Tuple.Create("\"", 25302)
+WriteAttribute("src", Tuple.Create(" src=\"", 24253), Tuple.Create("\"", 24274)
             
-            #line 423 "..\..\Views\Home\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 25287), Tuple.Create<System.Object, System.Int32>(item.ThumbPath
+            #line 399 "..\..\Views\Home\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 24259), Tuple.Create<System.Object, System.Int32>(item.ThumbPath
             
             #line default
             #line hidden
-, 25287), false)
+, 24259), false)
 );
 
 WriteLiteral(" alt=\"\"");
@@ -1978,7 +1974,7 @@ WriteLiteral(">\r\n                        ");
 WriteLiteral("\r\n                    </div>\r\n");
 
             
-            #line 426 "..\..\Views\Home\Index.cshtml"
+            #line 402 "..\..\Views\Home\Index.cshtml"
                 }
 
             
@@ -2007,13 +2003,13 @@ WriteLiteral(" data-plugin-options=\"{\'items\': 1, \'loop\': false, \'dots\': f
 WriteLiteral(">\r\n");
 
             
-            #line 438 "..\..\Views\Home\Index.cshtml"
+            #line 414 "..\..\Views\Home\Index.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 438 "..\..\Views\Home\Index.cshtml"
+            #line 414 "..\..\Views\Home\Index.cshtml"
                  foreach (var item in testimonialList.ListItems)
                 {
             
@@ -2039,7 +2035,7 @@ WriteLiteral(" class=\"font-weight-light\"");
 WriteLiteral(">");
 
             
-            #line 444 "..\..\Views\Home\Index.cshtml"
+            #line 420 "..\..\Views\Home\Index.cshtml"
                                                         Write(item.Subtitle);
 
             
@@ -2057,7 +2053,7 @@ WriteLiteral(" class=\"text-uppercase\"");
 WriteLiteral(">\r\n                                    <strong>");
 
             
-            #line 448 "..\..\Views\Home\Index.cshtml"
+            #line 424 "..\..\Views\Home\Index.cshtml"
                                        Write(item.Title);
 
             
@@ -2068,7 +2064,7 @@ WriteLiteral("</strong>\r\n                                </p>\r\n             
 "</div>\r\n");
 
             
-            #line 454 "..\..\Views\Home\Index.cshtml"
+            #line 430 "..\..\Views\Home\Index.cshtml"
                 }
 
             

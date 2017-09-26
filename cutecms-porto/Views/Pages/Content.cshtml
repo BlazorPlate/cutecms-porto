@@ -8,7 +8,7 @@
         CMSEntities db = new CMSEntities();
         ViewBag.Title = Model.Title;
         ViewBag.Description = Model.MetaDescription;
-        ViewBag.Author = _db.Users.Find(Model.Author).UserName;
+        ViewBag.Author = _db.Users.Find(Model?.Author)?.UserName ?? Resources.Resources.NotAvailable;
         Layout = "~/Views/Shared/_Layout.cshtml";
         var menuItem = db.MenuItems.FirstOrDefault(m => m.ContentId == Model.Id);
         if (menuItem!=null)

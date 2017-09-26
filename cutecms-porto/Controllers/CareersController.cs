@@ -204,7 +204,7 @@ namespace cutecms_porto.Controllers
                     // Create the message:
                     MailMessage message = new MailMessage(notification.SenderEmail, notification.RecepientEmail);
                     message.Subject = notification.Subject;
-                    message.Body = CultureHelper.IsRighToLeft() ? @"<p dir=RTL><strong style=""color:brown"">" + Resources.Resources.YourAppNumber + " [" + notification.ApplicationNumber + "]</strong><br>" + notification.Body + "</p>" : @"<p><strong style=""color:brown"">" + Resources.Resources.YourAppNumber + "[" + notification.ApplicationNumber + "]</strong><br>" + notification.Body + "</p>";
+                    message.Body = CultureHelper.IsRighToLeft() ? @"<p dir=RTL><strong style=""color:brown"">" + Resources.Resources.YourAppNumber + "  [" + notification.ApplicationNumber + "]</strong><br>" + notification.Body + "</p>" : @"<p><strong style=""color:brown"">" + Resources.Resources.YourAppNumber + "[" + notification.ApplicationNumber + "]</strong><br>" + notification.Body + "</p>";
                     message.IsBodyHtml = true;
                     message.Priority = MailPriority.High;
                     try

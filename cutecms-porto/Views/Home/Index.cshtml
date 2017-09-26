@@ -9,7 +9,7 @@
     IdentityEntities IdentityDb = new IdentityEntities();
     var openingHours = Model.ContentLists.Where(c => c.Code.Trim().Equals("opening-hours")).FirstOrDefault()?.ListItems ?? new List<ListItem>();
     var shortcutContents = Model.Contents.Where(c => c.HasShortcut);
-    var partnersList = Model.ContentLists.Where(c => c.Code.Trim().Equals("partners"))?.FirstOrDefault() ?? new ContentList();
+    var insuranceList = Model.ContentLists.Where(c => c.Code.Trim().Equals("insurance"))?.FirstOrDefault() ?? new ContentList();
     var resourcesList = Model.ContentLists.Where(c => c.Code.Trim().Equals("resources"))?.FirstOrDefault() ?? new ContentList();
     var testimonialList = Model.ContentLists.Where(c => c.Code.Trim().Equals("testimonial"))?.FirstOrDefault() ?? new ContentList();
     IdentityEntities identityDb = new IdentityEntities();
@@ -72,37 +72,37 @@
             @if (cutecms_porto.Helpers.CultureHelper.IsRighToLeft())
             {
                 <div class="col-lg-3 box-four background-color-secondary p-none appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1800">
-                    <a href="@(OrganizationData.Organization?.Telephone)" class="text-decoration-none">
+                    <a href="@(organization?.Telephone)" class="text-decoration-none">
                         <div class="feature-box feature-box-style-2 m-none">
                             <div class="feature-box-icon">
                                 <i class="icon-call-out icons"></i>
                             </div>
                             <div class="feature-box-info ml-md">
-                                <label class="font-weight-light">@Resources.Resources.ContactUs</label>
-                                <strong class="font-weight-normal">@(OrganizationData.Organization?.Telephone)</strong>
+                                <label class="font-weight-light">@Resources.Resources.EmergencyCase</label>
+                                <strong class="font-weight-normal">@(organization?.Telephone)</strong>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-3 box-three background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1200">
-                    <div class="expanded-info p-xlg background-color-primary">
-                        @foreach (var item in openingHours)
-                        {
-                            <div class="info custom-info log-in-info">
-                                <div style="color:white" class="bold">@item.Title</div>
-                                <div style="color:white">@item.Subtitle</div>
+                        <div class="col-lg-3 box-three background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1200">
+                            <div class="expanded-info p-xlg background-color-primary">
+                                @foreach (var item in openingHours)
+                                {
+                                    <div class="info custom-info log-in-info">
+                                        <div style="color:white" class="bold">@item.Title</div>
+                                        <div style="color:white">@item.Subtitle</div>
+                                    </div>
+                                }
                             </div>
-                        }
-                    </div>
-                    <h5 class="m-none">
-                        @Resources.Resources.OpeningHours
-                        <i class="icon-arrow-right-circle icons"></i>
-                    </h5>
-                </div>
+                            <h5 class="m-none">
+                                @Resources.Resources.OpeningHours
+                                <i class="icon-arrow-right-circle icons"></i>
+                            </h5>
+                        </div>
                         <div class="col-lg-3 box-two background-color-tertiary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="600">
                             <h5 class="m-none">
-                                <a href="#" title="">
-                                    @Resources.Resources.Programs
+                                <a href="demo-medical-doctors.html" title="">
+                                    @Resources.Resources.DoctorsTimetable
                                     <i class="icon-arrow-right-circle icons"></i>
                                 </a>
                             </h5>
@@ -110,10 +110,10 @@
                         <div class="col-lg-3 box-one background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="0">
                             <div class="feature-box feature-box-style-2 p-lg">
                                 <div class="feature-box-icon">
-                                    <i class="icon-graduation icons"></i>
+                                    <img src="~/assets/porto/img/demos/medical/icons/medical-icon-heart.png" alt="" class="img-responsive pt-xs" />
                                 </div>
                                 <div class="feature-box-info ml-md">
-                                    <h4 class="m-none">@(organization?.Name)</h4>
+                                    <h4 class="m-none">@Resources.Resources.MedicalTreatment</h4>
                                 </div>
                             </div>
                         </div>
@@ -124,21 +124,21 @@
                 <div class="col-lg-3 box-one background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="0">
                     <div class="feature-box feature-box-style-2 p-lg">
                         <div class="feature-box-icon">
-                            <i class="icon-graduation icons"></i>
+                            <img src="~/assets/porto/img/demos/medical/icons/medical-icon-heart.png" alt="" class="img-responsive pt-xs" />
                         </div>
                         <div class="feature-box-info ml-md">
-                            <h4 class="m-none">@(organization?.Name)</h4>
+                            <h4 class="m-none">@Resources.Resources.MedicalTreatment</h4>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 box-two background-color-tertiary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="600">
-                    <h5 class="m-none">
-                        <a href="demo-medical-doctors.html" title="">
-                            @Resources.Resources.Programs
-                            <i class="icon-arrow-right-circle icons"></i>
-                        </a>
-                    </h5>
-                </div>
+                        <div class="col-lg-3 box-two background-color-tertiary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="600">
+                            <h5 class="m-none">
+                                <a href="demo-medical-doctors.html" title="">
+                                    @Resources.Resources.DoctorsTimetable
+                                    <i class="icon-arrow-right-circle icons"></i>
+                                </a>
+                            </h5>
+                        </div>
                         <div class="col-lg-3 box-three background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1200">
                             <div class="expanded-info p-xlg background-color-primary">
                                 <div class="table">
@@ -159,19 +159,18 @@
                             </h5>
                         </div>
                         <div class="col-lg-3 box-four background-color-secondary p-none appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1800">
-                            <a href="tel:@(OrganizationData.Organization?.Telephone)" class="text-decoration-none">
+                            <a href="tel:@(organization?.Telephone)" class="text-decoration-none">
                                 <div class="feature-box feature-box-style-2 m-none">
                                     <div class="feature-box-icon">
                                         <i class="icon-call-out icons"></i>
                                     </div>
                                     <div class="feature-box-info ml-md">
-                                        <label class="font-weight-light">@Resources.Resources.ContactUs</label>
-                                        <strong class="font-weight-normal">@(OrganizationData.Organization?.Telephone)</strong>
+                                        <label class="font-weight-light">@Resources.Resources.EmergencyCase</label>
+                                        <strong class="font-weight-normal">@(organization?.Telephone)</strong>
                                     </div>
                                 </div>
                             </a>
                         </div>
-
             }
         </div>
         @foreach (var item in shortcutContents)
@@ -180,10 +179,8 @@
                 <div class="col-sm-8 col-md-8">
                     <h2 class="font-weight-semibold mb-xs">@item.Title</h2>
                     <p class="lead font-weight-normal">@item.Subtitle</p>
-
                     <p>@item.MainContent.StripHtml().Chop(300).Trim()</p>
-
-                    <a class="btn btn-borders btn-quaternary custom-button text-uppercase mt-lg mb-lg font-weight-bold" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">read more</a>
+                    <a class="btn btn-borders btn-quaternary custom-button text-uppercase mt-lg mb-lg font-weight-bold" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@Resources.Resources.ReadMore</a>
                 </div>
                 <div class="col-sm-4 col-md-4">
                     <img src="@item.ImagePath" alt="@item.ImageName" class="img-responsive boxshadow" />
@@ -235,8 +232,8 @@
     <div class="container">
         <div class="row mt-xlg">
             <div class="col-md-12">
-                <h2 class="font-weight-semibold m-none">@Resources.Resources.Staff</h2>
-                <p class="lead font-weight-normal">@Resources.Resources.Employees</p>
+                <h2 class="font-weight-semibold m-none">@Resources.Resources.Doctors</h2>
+                <p class="lead font-weight-normal">@Resources.Resources.OurSpecialists</p>
 
                 <div id="porfolioAjaxBoxMedical" class="ajax-box ajax-box-init mb-lg">
 
@@ -296,43 +293,22 @@
         <div class="row">
             @foreach (var item in resourcesList.ListItems)
             {
-                <div class="col-sm-4 col-md-4">
-                    <a href="@item.Url" class="text-decoration-none">
-                        <span class="thumb-info thumb-info-side-image thumb-info-side-image-custom thumb-info-no-zoom thumb-info-no-zoom thumb-info-side-image-custom-highlight">
-                            <span class="thumb-info-side-image-wrapper">
-                                <img alt="" class="img-responsive" src="@item.ThumbPath">
-                            </span>
-                            <span class="thumb-info-caption">
-                                <span class="thumb-info-caption-text p-xl">
-                                    <h4 class="font-weight-semibold mb-xs">@item.Title</h4>
-                                    <p>@item.Subtitle</p>
-                                </span>
+            <div class="col-sm-4 col-md-4">
+                <a href="@item.Url" class="text-decoration-none">
+                    <span class="thumb-info thumb-info-side-image thumb-info-side-image-custom thumb-info-no-zoom thumb-info-no-zoom thumb-info-side-image-custom-highlight">
+                        <span class="thumb-info-side-image-wrapper">
+                            <img alt="" class="img-responsive" src="@item.ThumbPath">
+                        </span>
+                        <span class="thumb-info-caption">
+                            <span class="thumb-info-caption-text p-xl">
+                                <h4 class="font-weight-semibold mb-xs">@item.Title</h4>
+                                <p>@item.Subtitle</p>
                             </span>
                         </span>
-                    </a>
-                </div>
-
-            }
-            @*<div class="col-sm-4 col-md-4">
-                    <a href="demo-medical-resources-detail.html" class="text-decoration-none">
-                        <span class="thumb-info thumb-info-side-image thumb-info-side-image-custom thumb-info-no-zoom thumb-info-no-zoom thumb-info-side-image-custom-highlight">
-                            <span class="thumb-info-side-image-wrapper">
-                                <img alt="" class="img-responsive" src="~/assets/porto/img/demos/medical/gallery/gallery-3.jpg">
-                            </span>
-                            <span class="thumb-info-caption">
-                                <span class="thumb-info-caption-text p-xl">
-                                    <h4 class="font-weight-semibold mb-xs">Surgery proccess</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hend...</p>
-                                </span>
-                            </span>
-                        </span>
-                    </a>
-                </div>*@
-        </div>
-        <div class="row pb-xlg">
-            <div class="col-md-12 center">
-                <a class="btn btn-borders btn-quaternary custom-button text-uppercase font-weight-bold">@Resources.Resources.ViewMore</a>
+                    </span>
+                </a>
             </div>
+            }
         </div>
     </div>
 </section>
@@ -411,13 +387,13 @@
     <div class="container">
         <div class="row mt-md">
             <div class="col-md-12">
-                <h2 class="font-weight-semibold m-none">@partnersList.Title</h2>
-                <p class="lead font-weight-normal">@partnersList.Subtitle</p>
+                <h2 class="font-weight-semibold m-none">@insuranceList.Title</h2>
+                <p class="lead font-weight-normal">@insuranceList.Subtitle</p>
             </div>
         </div>
         <div class="row center">
             <div class="owl-carousel owl-theme" data-plugin-options="{'items': 6, 'autoplay': true, 'autoplayTimeout': 3000}">
-                @foreach (var item in partnersList.ListItems)
+                @foreach (var item in insuranceList.ListItems)
                 {
                     <div>
                         <img class="img-responsive" src="@item.ThumbPath" alt="">
@@ -425,7 +401,7 @@
                     </div>
                 }
                 @*<div class="content-grid-item col-sm-4 col-md-2 center">
-                        <img src="~/assets/porto/img/demos/medical/logos/partners-logo-1.png" class="img-responsive" />
+                        <img src="~/assets/porto/img/demos/medical/logos/insurance-logo-1.png" class="img-responsive" />
                     </div>*@
             </div>
         </div>

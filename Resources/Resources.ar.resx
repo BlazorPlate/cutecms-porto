@@ -193,7 +193,7 @@
     <value>عودة للقائمة</value>
   </data>
   <data name="Biography" xml:space="preserve">
-    <value>التاريخ المهني</value>
+    <value>السيرة الذاتية المختصرة</value>
   </data>
   <data name="Browse" xml:space="preserve">
     <value>بحث</value>
@@ -226,7 +226,7 @@
     <value>--اختر القائمة--</value>
   </data>
   <data name="ChooseParentMenuItem" xml:space="preserve">
-    <value>--اختر الرابط الأب--</value>
+    <value>--اختر العنصر الأب--</value>
   </data>
   <data name="ChooseVacancy" xml:space="preserve">
     <value>--اختر المسمى الوظيفي--</value>
@@ -445,7 +445,7 @@
     <value>هل نسيت كلمة المرور؟</value>
   </data>
   <data name="FullName" xml:space="preserve">
-    <value>اسم المستخدم</value>
+    <value>اسم الموظف</value>
   </data>
   <data name="Gender" xml:space="preserve">
     <value>الجنس</value>
@@ -466,7 +466,7 @@
     <value>المجموعات المحددة للمستخدم:</value>
   </data>
   <data name="HasMenuItem" xml:space="preserve">
-    <value>انشاء رابط؟</value>
+    <value>انشاء عنصر للقائمة؟</value>
   </data>
   <data name="HasShortcut" xml:space="preserve">
     <value>اظهار على الصفحة الرئيسية</value>
@@ -730,7 +730,7 @@
     <value>العنصر الرئيسي</value>
   </data>
   <data name="ParentMenuItem" xml:space="preserve">
-    <value>الرابط الأب</value>
+    <value>العنصر الأب</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>كلمة المرور</value>
@@ -1721,5 +1721,8 @@
   </data>
   <data name="VisitorCounter" xml:space="preserve">
     <value>عداد الزوار</value>
+  </data>
+  <data name="RoleInUse" xml:space="preserve">
+    <value>اسم الدور تم إدخاله مسبقاً.</value>
   </data>
 </root>

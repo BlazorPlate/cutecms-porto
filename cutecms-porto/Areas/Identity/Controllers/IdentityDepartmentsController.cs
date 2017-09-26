@@ -13,7 +13,7 @@ using System.Web.Mvc;
 
 namespace cutecms_porto.Areas.Identity.Controllers
 {
-    [LocalizedAuthorize(Roles = "Admin")]
+    [LocalizedAuthorize(Roles = "Admin,Identity,Departments")]
     public class IdentityDepartmentsController : BaseController
     {
         #region Fields

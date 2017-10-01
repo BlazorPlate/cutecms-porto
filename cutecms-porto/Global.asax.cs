@@ -34,42 +34,42 @@ namespace cutecms_porto
             //Add Razor Engine (which we are using)
             ViewEngines.Engines.Add(new RazorViewEngine());
         }
-        protected void Session_Start()
-        {
-            string userIPAddress = null;
-            userIPAddress = Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
-            if (userIPAddress == "" || userIPAddress == null)
-                userIPAddress = Request.ServerVariables["REMOTE_ADDR"];
-            DataTable locationDT = new DataTable();
-            locationDT = GeoIPHelper.GetLocation(userIPAddress);
-            ConfigEntities configDb = new ConfigEntities();
-            CMSEntities cmsDb = new CMSEntities();
+        //protected void Session_Start()
+        //{
+        //    string userIPAddress = null;
+        //    userIPAddress = Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+        //    if (userIPAddress == "" || userIPAddress == null)
+        //        userIPAddress = Request.ServerVariables["REMOTE_ADDR"];
+        //    DataTable locationDT = new DataTable();
+        //    locationDT = GeoIPHelper.GetLocation(userIPAddress);
+        //    ConfigEntities configDb = new ConfigEntities();
+        //    CMSEntities cmsDb = new CMSEntities();
 
-            Statistic statistic = new Statistic();
-            statistic.IP = locationDT.Rows[0]["IP"].ToString();
-            statistic.CountryCode = locationDT.Rows[0]["CountryCode"].ToString();
-            statistic.CountryName = locationDT.Rows[0]["CountryName"].ToString();
-            statistic.RegionCode = locationDT.Rows[0]["RegionCode"].ToString();
-            statistic.RegionName = locationDT.Rows[0]["RegionName"].ToString();
-            statistic.City = locationDT.Rows[0]["City"].ToString();
-            statistic.TimeZone = locationDT.Rows[0]["TimeZone"].ToString();
-            statistic.Latitude = Convert.ToDecimal(locationDT.Rows[0]["Latitude"]);
-            statistic.Longitude = Convert.ToDecimal(locationDT.Rows[0]["Longitude"]);
-            statistic.MetroCode = locationDT.Rows[0]["MetroCode"].ToString();
-            statistic.RequestDate = DateTime.UtcNow.ToLocalTime();
-            configDb.Statistics.Add(statistic);
-            configDb.SaveChanges();
-            Application.Lock();
-            Application["counter"] = configDb.Statistics.Count();
-            Application.UnLock();
+        //    Statistic statistic = new Statistic();
+        //    statistic.IP = locationDT.Rows[0]["IP"].ToString();
+        //    statistic.CountryCode = locationDT.Rows[0]["CountryCode"].ToString();
+        //    statistic.CountryName = locationDT.Rows[0]["CountryName"].ToString();
+        //    statistic.RegionCode = locationDT.Rows[0]["RegionCode"].ToString();
+        //    statistic.RegionName = locationDT.Rows[0]["RegionName"].ToString();
+        //    statistic.City = locationDT.Rows[0]["City"].ToString();
+        //    statistic.TimeZone = locationDT.Rows[0]["TimeZone"].ToString();
+        //    statistic.Latitude = Convert.ToDecimal(locationDT.Rows[0]["Latitude"]);
+        //    statistic.Longitude = Convert.ToDecimal(locationDT.Rows[0]["Longitude"]);
+        //    statistic.MetroCode = locationDT.Rows[0]["MetroCode"].ToString();
+        //    statistic.RequestDate = DateTime.UtcNow.ToLocalTime();
+        //    configDb.Statistics.Add(statistic);
+        //    configDb.SaveChanges();
+        //    Application.Lock();
+        //    Application["counter"] = configDb.Statistics.Count();
+        //    Application.UnLock();
 
-            var currentDateTime = DateTime.Now;
-            cmsDb.Database.ExecuteSqlCommand("UPDATE Contents SET StatusId = 2 WHERE ExpiredOn <= {0}", currentDateTime);
-            cmsDb.Database.ExecuteSqlCommand("UPDATE Contents SET StatusId = 1 WHERE PublishedOn <= {0} AND ExpiredOn >= {0}", currentDateTime);
-            cmsDb.Database.ExecuteSqlCommand("UPDATE MenuItems SET MenuItems.StatusId = Contents.StatusId FROM MenuItems INNER JOIN Contents ON MenuItems.ContentId = Contents.Id;");
-            CacheHelper.ClearCache();
+        //    var currentDateTime = DateTime.Now;
+        //    cmsDb.Database.ExecuteSqlCommand("UPDATE Contents SET StatusId = 2 WHERE ExpiredOn <= {0}", currentDateTime);
+        //    cmsDb.Database.ExecuteSqlCommand("UPDATE Contents SET StatusId = 1 WHERE PublishedOn <= {0} AND ExpiredOn >= {0}", currentDateTime);
+        //    cmsDb.Database.ExecuteSqlCommand("UPDATE MenuItems SET MenuItems.StatusId = Contents.StatusId FROM MenuItems INNER JOIN Contents ON MenuItems.ContentId = Contents.Id;");
+        //    CacheHelper.ClearCache();
 
-        }
+        //}
         protected void Application_Error(object sender, EventArgs e)
         {
             var httpContext = ((MvcApplication)sender).Context;

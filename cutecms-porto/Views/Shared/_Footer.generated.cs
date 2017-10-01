@@ -628,30 +628,10 @@ WriteLiteral("</a></li>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("                            </ul>\r\n                            <p");
+WriteLiteral("                            </ul>\r\n                            ");
 
-WriteLiteral(" class=\"mt-md\"");
-
-WriteLiteral(">");
-
-            
-            #line 88 "..\..\Views\Shared\_Footer.cshtml"
-                                        Write(Resources.Resources.VisitorCounter);
-
-            
-            #line default
-            #line hidden
-WriteLiteral(": <span> ");
-
-            
-            #line 88 "..\..\Views\Shared\_Footer.cshtml"
-                                                                                    Write(HttpContext.Current.ApplicationInstance.Application["counter"]);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</span></p>\r\n                        </nav>\r\n                </div>\r\n            " +
-"</div>\r\n        </div>\r\n    </div>\r\n</footer>\r\n");
+WriteLiteral("\r\n                        </nav>\r\n                </div>\r\n            </div>\r\n   " +
+"     </div>\r\n    </div>\r\n</footer>\r\n");
 
         }
     }

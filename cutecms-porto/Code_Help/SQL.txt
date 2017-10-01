@@ -13,6 +13,8 @@ delete from VacancyDegrees
 delete from Vacancies
 delete from Attachments
 delete from Applicants
+delete from [Statistics]
+select * from AspNetUserRoles
 delete from AspNetUsers where username!='admin@boss.com '
 
 

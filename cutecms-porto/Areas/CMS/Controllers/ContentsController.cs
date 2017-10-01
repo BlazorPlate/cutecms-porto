@@ -372,20 +372,20 @@ namespace cutecms_porto.Areas.CMS.Controllers
                 content.PublishedOn = DateTime.Now;
             else if (contentStatus.Code.Trim().Equals("archived"))
                 content.PublishedOn = null;
-            if (content.PublishedOn != null && content.StartDate != null)
-            {
-                if (content.PublishedOn > content.StartDate)
-                {
-                    ModelState.AddModelError("InvalidPublishDate", Resources.Resources.InvalidPublishDate);
-                }
-            }
-            if (content.ExpiredOn != null && content.EndDate != null)
-            {
-                if (content.ExpiredOn < content.EndDate)
-                {
-                    ModelState.AddModelError("InvalidExpiryDate", Resources.Resources.InvalidExpiryDate);
-                }
-            }
+            //if (content.PublishedOn != null && content.StartDate != null)
+            //{
+            //    if (content.PublishedOn > content.StartDate)
+            //    {
+            //        ModelState.AddModelError("InvalidPublishDate", Resources.Resources.InvalidPublishDate);
+            //    }
+            //}
+            //if (content.ExpiredOn != null && content.EndDate != null)
+            //{
+            //    if (content.ExpiredOn < content.EndDate)
+            //    {
+            //        ModelState.AddModelError("InvalidExpiryDate", Resources.Resources.InvalidExpiryDate);
+            //    }
+            //}
             if (content.Image != null && content.Image.ContentLength > 0)
             {
                 var extension = Path.GetExtension(content.Image.FileName);

@@ -2542,15 +2542,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NotTranslated.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Home\Index.generated.cs">
+    <Compile Include="Views\Home\MedicalIndex.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Home\OldIndex.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OldIndex.cshtml</DependentUpon>
+      <DependentUpon>MedicalIndex.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Home\Calendar.generated.cs">
       <DependentUpon>Calendar.cshtml</DependentUpon>
@@ -2592,10 +2587,10 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="Views\Home\SFJUIndex.generated.cs">
+    <Compile Include="Views\Home\Index.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SFJUIndex.cshtml</DependentUpon>
+      <DependentUpon>Index.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Home\Subscribed.generated.cs">
       <DependentUpon>Subscribed.cshtml</DependentUpon>
@@ -5028,6 +5023,7 @@
     <Content Include="assets\identity\images\flags.png" />
     <Content Include="assets\identity\images\login-bg.jpg" />
     <Content Include="assets\identity\images\register-bg.jpg" />
+    <Content Include="assets\optimized\vendor.css" />
     <Content Include="assets\porto\css\custom.css" />
     <Content Include="assets\porto\css\demos\demo-app-landing.css" />
     <Content Include="assets\porto\css\demos\demo-business-consulting.css" />
@@ -8938,17 +8934,13 @@
     </Content>
     <Content Include="Views\Shared\_DeptBreadcrumb.cshtml" />
     <Content Include="Views\Home\DefaultIndex.cshtml" />
+    <Content Include="Views\Home\MedicalIndex.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>MedicalIndex.generated.cs</LastGenOutput>
+    </Content>
     <Content Include="Views\Home\Index.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Home\OldIndex.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>OldIndex.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Home\SFJUIndex.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>SFJUIndex.generated.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

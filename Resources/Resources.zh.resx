@@ -1704,4 +1704,25 @@
   <data name="DoctorType" xml:space="preserve">
     <value>医生</value>
   </data>
+  <data name="Port" xml:space="preserve">
+    <value>端口号</value>
+  </data>
+  <data name="EnableSsl" xml:space="preserve">
+    <value>启用SSL：</value>
+  </data>
+  <data name="SenderEmail" xml:space="preserve">
+    <value>发送者邮箱</value>
+  </data>
+  <data name="SenderPassword" xml:space="preserve">
+    <value>发件人的密码 </value>
+  </data>
+  <data name="RecipientEmail" xml:space="preserve">
+    <value>收件人电子邮件</value>
+  </data>
+  <data name="VisitorCounter" xml:space="preserve">
+    <value>访问者计数器 </value>
+  </data>
+  <data name="RoleInUse" xml:space="preserve">
+    <value>那角色名称已被使用。 </value>
+  </data>
 </root>

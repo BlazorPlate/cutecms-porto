@@ -1704,4 +1704,25 @@
   <data name="DoctorType" xml:space="preserve">
     <value>Dokter Type</value>
   </data>
+  <data name="Port" xml:space="preserve">
+    <value>Poortnummer</value>
+  </data>
+  <data name="EnableSsl" xml:space="preserve">
+    <value>Schakel in</value>
+  </data>
+  <data name="SenderEmail" xml:space="preserve">
+    <value>E-mail Afzender</value>
+  </data>
+  <data name="SenderPassword" xml:space="preserve">
+    <value>Afzender wachtwoord!</value>
+  </data>
+  <data name="RecipientEmail" xml:space="preserve">
+    <value>Ontvanger-e-mailadres</value>
+  </data>
+  <data name="VisitorCounter" xml:space="preserve">
+    <value>Bezoekersteller</value>
+  </data>
+  <data name="RoleInUse" xml:space="preserve">
+    <value>Die rolnaam wordt al gebruikt.</value>
+  </data>
 </root>

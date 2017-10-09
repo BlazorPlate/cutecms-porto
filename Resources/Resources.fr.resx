@@ -1704,4 +1704,25 @@
   <data name="DoctorType" xml:space="preserve">
     <value>MÉDECIN</value>
   </data>
+  <data name="Port" xml:space="preserve">
+    <value>Numéro de port</value>
+  </data>
+  <data name="EnableSsl" xml:space="preserve">
+    <value>Activer SSL</value>
+  </data>
+  <data name="SenderEmail" xml:space="preserve">
+    <value>E-mail de l'expéditeur</value>
+  </data>
+  <data name="SenderPassword" xml:space="preserve">
+    <value>Mot de passe de l’expéditeur</value>
+  </data>
+  <data name="RecipientEmail" xml:space="preserve">
+    <value>E-mail du bénéficiaire</value>
+  </data>
+  <data name="VisitorCounter" xml:space="preserve">
+    <value>Compteur de visites</value>
+  </data>
+  <data name="RoleInUse" xml:space="preserve">
+    <value>Ce nom de rôle a déjà été utilisé. </value>
+  </data>
 </root>

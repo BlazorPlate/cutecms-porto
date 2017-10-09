@@ -1704,4 +1704,25 @@
   <data name="DoctorType" xml:space="preserve">
     <value>Dr.</value>
   </data>
+  <data name="Port" xml:space="preserve">
+    <value>Număr port</value>
+  </data>
+  <data name="EnableSsl" xml:space="preserve">
+    <value>Activare</value>
+  </data>
+  <data name="SenderEmail" xml:space="preserve">
+    <value>Email Expeditor</value>
+  </data>
+  <data name="SenderPassword" xml:space="preserve">
+    <value>Parola de expeditor!</value>
+  </data>
+  <data name="RecipientEmail" xml:space="preserve">
+    <value>E-mail destinatar</value>
+  </data>
+  <data name="VisitorCounter" xml:space="preserve">
+    <value>Contor vizitatori</value>
+  </data>
+  <data name="RoleInUse" xml:space="preserve">
+    <value>Acest nume de rol a fost deja folosit.</value>
+  </data>
 </root>

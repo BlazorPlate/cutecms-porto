@@ -1704,4 +1704,25 @@
   <data name="DoctorType" xml:space="preserve">
     <value>Doktorandský typ</value>
   </data>
+  <data name="Port" xml:space="preserve">
+    <value>Číslo portu</value>
+  </data>
+  <data name="EnableSsl" xml:space="preserve">
+    <value>Zapnúť SSL!</value>
+  </data>
+  <data name="SenderEmail" xml:space="preserve">
+    <value>Odosielateľa e-mailu</value>
+  </data>
+  <data name="SenderPassword" xml:space="preserve">
+    <value>Odosielateľ heslo!</value>
+  </data>
+  <data name="RecipientEmail" xml:space="preserve">
+    <value>E-mail príjemcu</value>
+  </data>
+  <data name="VisitorCounter" xml:space="preserve">
+    <value>Počítadlo návštevníkov!</value>
+  </data>
+  <data name="RoleInUse" xml:space="preserve">
+    <value>Táto úloha názov už používal.</value>
+  </data>
 </root>

@@ -1704,4 +1704,25 @@
   <data name="DoctorType" xml:space="preserve">
     <value>lékařem</value>
   </data>
+  <data name="Port" xml:space="preserve">
+    <value>Síťový port</value>
+  </data>
+  <data name="EnableSsl" xml:space="preserve">
+    <value>ZAPNOUT / POVOLIT</value>
+  </data>
+  <data name="SenderEmail" xml:space="preserve">
+    <value>Email odesílatele</value>
+  </data>
+  <data name="SenderPassword" xml:space="preserve">
+    <value>Odesílatel heslo!</value>
+  </data>
+  <data name="RecipientEmail" xml:space="preserve">
+    <value>Email příjemce</value>
+  </data>
+  <data name="VisitorCounter" xml:space="preserve">
+    <value>Počítadlo návštěvníků</value>
+  </data>
+  <data name="RoleInUse" xml:space="preserve">
+    <value>Tento název úlohy již byl použit.</value>
+  </data>
 </root>

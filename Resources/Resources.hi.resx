@@ -1704,4 +1704,25 @@
   <data name="DoctorType" xml:space="preserve">
     <value>डॉक्टर प्रकार!</value>
   </data>
+  <data name="Port" xml:space="preserve">
+    <value>पोर्ट संख्या</value>
+  </data>
+  <data name="EnableSsl" xml:space="preserve">
+    <value>SSL सक्षम करें!</value>
+  </data>
+  <data name="SenderEmail" xml:space="preserve">
+    <value>प्रेषक ईमेल!</value>
+  </data>
+  <data name="SenderPassword" xml:space="preserve">
+    <value>प्रेषक पासवर्ड!</value>
+  </data>
+  <data name="RecipientEmail" xml:space="preserve">
+    <value>प्राप्तकर्ता ईमेल!</value>
+  </data>
+  <data name="VisitorCounter" xml:space="preserve">
+    <value>आगंतुक काउंटर!</value>
+  </data>
+  <data name="RoleInUse" xml:space="preserve">
+    <value>वह भूमिका नाम पहले से उपयोग में है.</value>
+  </data>
 </root>

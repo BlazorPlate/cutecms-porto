@@ -1704,4 +1704,25 @@
   <data name="DoctorType" xml:space="preserve">
     <value>پزشک</value>
   </data>
+  <data name="Port" xml:space="preserve">
+    <value>شماره پورت SMTP</value>
+  </data>
+  <data name="EnableSsl" xml:space="preserve">
+    <value>&amp; فعال‌سازی SSL‌</value>
+  </data>
+  <data name="SenderEmail" xml:space="preserve">
+    <value>ایمیل فرستنده</value>
+  </data>
+  <data name="SenderPassword" xml:space="preserve">
+    <value>فرستنده رمز عبور!</value>
+  </data>
+  <data name="RecipientEmail" xml:space="preserve">
+    <value>ایمیل گیرنده</value>
+  </data>
+  <data name="VisitorCounter" xml:space="preserve">
+    <value>شمارنده بازدید</value>
+  </data>
+  <data name="RoleInUse" xml:space="preserve">
+    <value>نام نقش که در حال حاضر استفاده شده است.</value>
+  </data>
 </root>

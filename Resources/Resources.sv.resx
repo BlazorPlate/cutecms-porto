@@ -1704,4 +1704,25 @@
   <data name="DoctorType" xml:space="preserve">
     <value>Läkare typ</value>
   </data>
+  <data name="Port" xml:space="preserve">
+    <value>Portnummer</value>
+  </data>
+  <data name="EnableSsl" xml:space="preserve">
+    <value>Aktivera SSL</value>
+  </data>
+  <data name="SenderEmail" xml:space="preserve">
+    <value>e-post</value>
+  </data>
+  <data name="SenderPassword" xml:space="preserve">
+    <value>Avsändaren lösenord</value>
+  </data>
+  <data name="RecipientEmail" xml:space="preserve">
+    <value>Mottagarens e-post</value>
+  </data>
+  <data name="VisitorCounter" xml:space="preserve">
+    <value>Besöksräknare!</value>
+  </data>
+  <data name="RoleInUse" xml:space="preserve">
+    <value>Det rollnamnet har redan använts.</value>
+  </data>
 </root>

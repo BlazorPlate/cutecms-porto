@@ -1704,4 +1704,25 @@
   <data name="DoctorType" xml:space="preserve">
     <value>Bác sĩ loại</value>
   </data>
+  <data name="Port" xml:space="preserve">
+    <value>Mã cổng</value>
+  </data>
+  <data name="EnableSsl" xml:space="preserve">
+    <value>Cho phép</value>
+  </data>
+  <data name="SenderEmail" xml:space="preserve">
+    <value>Tên mail gửi</value>
+  </data>
+  <data name="SenderPassword" xml:space="preserve">
+    <value>Gửi mật khẩu!</value>
+  </data>
+  <data name="RecipientEmail" xml:space="preserve">
+    <value>Email người nhận</value>
+  </data>
+  <data name="VisitorCounter" xml:space="preserve">
+    <value>Lượt truy cập!</value>
+  </data>
+  <data name="RoleInUse" xml:space="preserve">
+    <value>Tên vai trò đó đã được sử dụng.</value>
+  </data>
 </root>

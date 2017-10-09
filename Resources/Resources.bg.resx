@@ -1704,4 +1704,25 @@
   <data name="DoctorType" xml:space="preserve">
     <value>Доктор тип</value>
   </data>
+  <data name="Port" xml:space="preserve">
+    <value>Номер на порт</value>
+  </data>
+  <data name="EnableSsl" xml:space="preserve">
+    <value>Разреши</value>
+  </data>
+  <data name="SenderEmail" xml:space="preserve">
+    <value>Имейл на подателя</value>
+  </data>
+  <data name="SenderPassword" xml:space="preserve">
+    <value>Подателя парола</value>
+  </data>
+  <data name="RecipientEmail" xml:space="preserve">
+    <value>Имейл на получателя</value>
+  </data>
+  <data name="VisitorCounter" xml:space="preserve">
+    <value>Брояч на посетителите</value>
+  </data>
+  <data name="RoleInUse" xml:space="preserve">
+    <value>Това име на роля вече е бил използван.!</value>
+  </data>
 </root>

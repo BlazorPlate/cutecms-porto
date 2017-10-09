@@ -1704,4 +1704,25 @@
   <data name="DoctorType" xml:space="preserve">
     <value>doktor</value>
   </data>
+  <data name="Port" xml:space="preserve">
+    <value>broj priključka</value>
+  </data>
+  <data name="EnableSsl" xml:space="preserve">
+    <value>Omogući</value>
+  </data>
+  <data name="SenderEmail" xml:space="preserve">
+    <value>E-adresa pošiljatelja</value>
+  </data>
+  <data name="SenderPassword" xml:space="preserve">
+    <value>Zaporka</value>
+  </data>
+  <data name="RecipientEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="VisitorCounter" xml:space="preserve">
+    <value>PBR brojač</value>
+  </data>
+  <data name="RoleInUse" xml:space="preserve">
+    <value>Već je učinjeno mnogo.</value>
+  </data>
 </root>

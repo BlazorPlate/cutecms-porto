@@ -1704,4 +1704,25 @@
   <data name="DoctorType" xml:space="preserve">
     <value>Jenis doktor</value>
   </data>
+  <data name="Port" xml:space="preserve">
+    <value>Nombor</value>
+  </data>
+  <data name="EnableSsl" xml:space="preserve">
+    <value>Aktifkan</value>
+  </data>
+  <data name="SenderEmail" xml:space="preserve">
+    <value>Emel pengirim!</value>
+  </data>
+  <data name="SenderPassword" xml:space="preserve">
+    <value>Kata laluan pengirim!</value>
+  </data>
+  <data name="RecipientEmail" xml:space="preserve">
+    <value>E-mel penerima!</value>
+  </data>
+  <data name="VisitorCounter" xml:space="preserve">
+    <value>Bilangan pelawat!</value>
+  </data>
+  <data name="RoleInUse" xml:space="preserve">
+    <value>Nama peranan tersebut telah sedia ada.</value>
+  </data>
 </root>

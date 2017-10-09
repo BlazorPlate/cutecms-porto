@@ -1704,4 +1704,25 @@
   <data name="DoctorType" xml:space="preserve">
     <value>Doktor Tipi</value>
   </data>
+  <data name="Port" xml:space="preserve">
+    <value>Kapı numarası</value>
+  </data>
+  <data name="EnableSsl" xml:space="preserve">
+    <value>SSL Aktif</value>
+  </data>
+  <data name="SenderEmail" xml:space="preserve">
+    <value>Gönderen E-postası</value>
+  </data>
+  <data name="SenderPassword" xml:space="preserve">
+    <value>Gönderen şifre!</value>
+  </data>
+  <data name="RecipientEmail" xml:space="preserve">
+    <value>Alıcı E-Posta</value>
+  </data>
+  <data name="VisitorCounter" xml:space="preserve">
+    <value>Ziyaretçi sayacı!</value>
+  </data>
+  <data name="RoleInUse" xml:space="preserve">
+    <value>Bu rol adı zaten kullanılıyor.</value>
+  </data>
 </root>

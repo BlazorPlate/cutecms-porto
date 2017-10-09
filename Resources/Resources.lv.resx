@@ -1704,4 +1704,25 @@
   <data name="DoctorType" xml:space="preserve">
     <value>false</value>
   </data>
+  <data name="Port" xml:space="preserve">
+    <value>Numurs</value>
+  </data>
+  <data name="EnableSsl" xml:space="preserve">
+    <value>Iespējot</value>
+  </data>
+  <data name="SenderEmail" xml:space="preserve">
+    <value>Sūtītāja epasts:</value>
+  </data>
+  <data name="SenderPassword" xml:space="preserve">
+    <value>Sūtītājs paroli!</value>
+  </data>
+  <data name="RecipientEmail" xml:space="preserve">
+    <value>Adresāta e-pasts</value>
+  </data>
+  <data name="VisitorCounter" xml:space="preserve">
+    <value>Apmeklētājs Counter</value>
+  </data>
+  <data name="RoleInUse" xml:space="preserve">
+    <value>Šīs lomas nosaukums jau ir ticis lietots.</value>
+  </data>
 </root>

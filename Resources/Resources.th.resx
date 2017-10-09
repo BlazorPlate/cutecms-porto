@@ -1704,4 +1704,25 @@
   <data name="DoctorType" xml:space="preserve">
     <value>ประเภทของแพทย์</value>
   </data>
+  <data name="Port" xml:space="preserve">
+    <value>หมายเลขพอร์ต</value>
+  </data>
+  <data name="EnableSsl" xml:space="preserve">
+    <value>Enable</value>
+  </data>
+  <data name="SenderEmail" xml:space="preserve">
+    <value>ผู้ส่งอีเมล</value>
+  </data>
+  <data name="SenderPassword" xml:space="preserve">
+    <value>ส่งรหัสผ่าน</value>
+  </data>
+  <data name="RecipientEmail" xml:space="preserve">
+    <value>อีเมลของผู้รับ MMM</value>
+  </data>
+  <data name="VisitorCounter" xml:space="preserve">
+    <value>ชม</value>
+  </data>
+  <data name="RoleInUse" xml:space="preserve">
+    <value>ใช้ชื่อบทบาทแล้วกัน</value>
+  </data>
 </root>

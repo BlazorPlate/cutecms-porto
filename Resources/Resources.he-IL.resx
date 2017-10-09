@@ -1704,4 +1704,25 @@
   <data name="DoctorType" xml:space="preserve">
     <value>סוּג הרופא</value>
   </data>
+  <data name="Port" xml:space="preserve">
+    <value>מספר</value>
+  </data>
+  <data name="EnableSsl" xml:space="preserve">
+    <value>אפשר</value>
+  </data>
+  <data name="SenderEmail" xml:space="preserve">
+    <value>אימייל השולח</value>
+  </data>
+  <data name="SenderPassword" xml:space="preserve">
+    <value>שולח סיסמה!</value>
+  </data>
+  <data name="RecipientEmail" xml:space="preserve">
+    <value>דוא״ל נמען</value>
+  </data>
+  <data name="VisitorCounter" xml:space="preserve">
+    <value>מונה מבקרים!</value>
+  </data>
+  <data name="RoleInUse" xml:space="preserve">
+    <value>שם תפקיד זה כבר היה בשימוש.</value>
+  </data>
 </root>

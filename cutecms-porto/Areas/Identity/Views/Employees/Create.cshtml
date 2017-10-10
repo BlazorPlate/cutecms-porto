@@ -30,6 +30,7 @@
             <div class="col-md-10">
                 @Html.TextBoxFor(model => model.Image, new { @class = "form-control", type = "file", multiple = "false", placeholder = "upload files" })
                 <small class="text-muted block">@Resources.Resources.ImageNotes</small>
+                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">

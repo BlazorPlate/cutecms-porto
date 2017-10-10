@@ -90,6 +90,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
+            <img src="@Model.ImagePath" style="max-width: 260px;" alt="@Model.ImageName" class="pull-right ml-xl mb-xl img-responsive box-shadow-custom" />
             @Html.Raw(HttpUtility.HtmlDecode(Model.MainContent))
             <div>
                 @foreach (var contentList in Model.ContentLists.Where(c => c.Visible).OrderBy(c => c.Ordinal))

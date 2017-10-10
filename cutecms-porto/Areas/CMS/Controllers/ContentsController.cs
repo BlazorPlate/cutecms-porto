@@ -365,7 +365,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
         // properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,ContentTypeId,Title,Subtitle,Code,MainContent,Location,LanguageId,UrlCode,IsPublished,MetaDescription,Image,Author,ModifiedBy,PublishedOn,CreatedOn,ModifiedOn,TranslationId,IsTranslated,IsUrgent,UrgentExpiredOn,HasShortcut,ShortcutTitle,CssClass,Ordinal,StartDate,EndDate,PublishedOn,ExpiredOn,ParentMenuItemId,HasMenuItem,RoleVID,StatusId")] Content content, string status, int? width, int? height)
+        public ActionResult Edit([Bind(Include = "Id,ContentTypeId,Title,Subtitle,Code,MainContent,Location,LanguageId,UrlCode,IsPublished,MetaDescription,Image,ImagePath,ImageName,Author,ModifiedBy,PublishedOn,CreatedOn,ModifiedOn,TranslationId,IsTranslated,IsUrgent,UrgentExpiredOn,HasShortcut,ShortcutTitle,CssClass,Ordinal,StartDate,EndDate,PublishedOn,ExpiredOn,ParentMenuItemId,HasMenuItem,RoleVID,StatusId")] Content content, string status, int? width, int? height)
         {
             var contentStatus = db.CMSStatuses.Find(content.StatusId);
             if (contentStatus.Code.Trim().Equals("published") && content.PublishedOn == null)
@@ -386,25 +386,26 @@ namespace cutecms_porto.Areas.CMS.Controllers
             //        ModelState.AddModelError("InvalidExpiryDate", Resources.Resources.InvalidExpiryDate);
             //    }
             //}
-            if (content.Image != null && content.Image.ContentLength > 0)
-            {
-                var extension = Path.GetExtension(content.Image.FileName);
-                var newFileName = Helpers.StringHelper.CleanFileName(content.Title + extension);
-                //var newFileName = listItem.Title + extension;
-                var path = String.Format("/fileman/Uploads/Images/CMS/Contents/Images/{0}", newFileName);
-                content.ImagePath = path;
-                content.ImageName = newFileName;
-                using (var img = System.Drawing.Image.FromStream(content.Image.InputStream))
-                {
-                    if (width == null)
-                        width = img.Width;
-                    if (height == null)
-                        height = img.Height;
-                    ImageUploaderHelper.SaveImageToFolder(img, extension, new Size(width.Value, height.Value), content.ImagePath);
-                }
-            }
+
             if (ModelState.IsValid)
             {
+                if (content.Image != null && content.Image.ContentLength > 0)
+                {
+                    var extension = Path.GetExtension(content.Image.FileName);
+                    var newFileName = Helpers.StringHelper.CleanFileName(content.Title + extension);
+                    //var newFileName = listItem.Title + extension;
+                    var path = String.Format("/fileman/Uploads/Images/CMS/Contents/Images/{0}", newFileName);
+                    content.ImagePath = path;
+                    content.ImageName = newFileName;
+                    using (var img = System.Drawing.Image.FromStream(content.Image.InputStream))
+                    {
+                        if (width == null)
+                            width = img.Width;
+                        if (height == null)
+                            height = img.Height;
+                        ImageUploaderHelper.SaveImageToFolder(img, extension, new Size(width.Value, height.Value), content.ImagePath);
+                    }
+                }
                 var culture = db.CMSLanguages.Find(content.LanguageId).CultureName.Trim();
                 content.Title = content.Title.Trim();
                 if (string.IsNullOrEmpty(content.ShortcutTitle))

@@ -33,7 +33,8 @@
             @Html.Label(Resources.Resources.UploadIcon, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.TextBoxFor(model => model.Icon, new { @class = "form-control", type = "file", multiple = "false", placeholder = "upload files" })
-                <small class="text-muted block">@Resources.Resources.ImageNotes</small>
+                <div><small class="text-muted block">@Resources.Resources.IconNotes</small></div>
+                @Html.ValidationMessageFor(model => model.Icon, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -57,7 +58,8 @@
             @Html.Label(Resources.Resources.UploadImage, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.TextBoxFor(model => model.Image, new { @class = "form-control", type = "file", multiple = "false", placeholder = "upload files" })
-                <small class="text-muted block">@Resources.Resources.ImageNotes</small>
+                <div><small class="text-muted block">@Resources.Resources.ImageNotes</small></div>
+                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
             </div>
         </div>
 

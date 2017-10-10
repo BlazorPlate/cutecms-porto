@@ -29,7 +29,7 @@ namespace cutecms_porto.Areas.Identity.Models.DBModel
         public string UrlSlug { get; set; }
         [Display(Name = "AbsolutePath", ResourceType = typeof(Resources.Resources))]
         public string AbsolutePath { get; set; }
-        [ValidateImage]
+        [ValidateIcon]
         [Display(Name = "Icon", ResourceType = typeof(Resources.Resources))]
         public HttpPostedFileBase Icon { get; set; }
         [Display(Name = "IconName", ResourceType = typeof(Resources.Resources))]

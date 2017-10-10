@@ -95,6 +95,7 @@
     </Reference>
     <Reference Include="RazorGenerator.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
       <HintPath>..\packages\RazorGenerator.Mvc.2.4.9\lib\net40\RazorGenerator.Mvc.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="RestSharp, Version=105.2.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.105.2.2\lib\net46\RestSharp.dll</HintPath>
@@ -2542,11 +2543,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NotTranslated.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Home\MedicalIndex.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MedicalIndex.cshtml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Home\Calendar.generated.cs">
       <DependentUpon>Calendar.cshtml</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -2577,6 +2573,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Include="Views\Home\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Home\ResetPassword.generated.cs">
       <DependentUpon>ResetPassword.cshtml</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -2587,10 +2588,10 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="Views\Home\Index.generated.cs">
+    <Compile Include="Views\Home\SFJUIndex.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
+      <DependentUpon>SFJUIndex.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Home\Subscribed.generated.cs">
       <DependentUpon>Subscribed.cshtml</DependentUpon>
@@ -8923,6 +8924,7 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_Footer.generated.cs</LastGenOutput>
     </Content>
+    <None Include="Properties\PublishProfiles\cutecms.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Views\Shared\_Layout.cshtml">
       <Generator>RazorGenerator</Generator>
@@ -8934,9 +8936,12 @@
     </Content>
     <Content Include="Views\Shared\_DeptBreadcrumb.cshtml" />
     <Content Include="Views\Home\DefaultIndex.cshtml" />
-    <Content Include="Views\Home\MedicalIndex.cshtml">
+    <Content Include="Views\Home\SFJUIndex.cshtml">
       <Generator>RazorGenerator</Generator>
-      <LastGenOutput>MedicalIndex.generated.cs</LastGenOutput>
+      <LastGenOutput>SFJUIndex.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\DemoIndex.cshtml">
+      <Generator>RazorGenerator</Generator>
     </Content>
     <Content Include="Views\Home\Index.cshtml">
       <Generator>RazorGenerator</Generator>

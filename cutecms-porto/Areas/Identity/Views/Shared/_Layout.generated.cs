@@ -298,7 +298,7 @@ WriteLiteral("                            ");
 
             
             #line 82 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
-                       Write(Html.Partial("_LoginPartial"));
+                       Write(Html.Partial("~/Areas/Identity/Views/Shared/_LoginPartial.cshtml"));
 
             
             #line default
@@ -306,16 +306,16 @@ WriteLiteral("                            ");
 WriteLiteral("\r\n                        </ul>\r\n                    </div>\r\n                    " +
 "<div>\r\n                        <ul");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 3424), Tuple.Create("\"", 3512)
-, Tuple.Create(Tuple.Create("", 3432), Tuple.Create("nav", 3432), true)
-, Tuple.Create(Tuple.Create(" ", 3435), Tuple.Create("navbar-nav", 3436), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 3461), Tuple.Create("\"", 3549)
+, Tuple.Create(Tuple.Create("", 3469), Tuple.Create("nav", 3469), true)
+, Tuple.Create(Tuple.Create(" ", 3472), Tuple.Create("navbar-nav", 3473), true)
             
             #line 86 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("  ", 3446), Tuple.Create<System.Object, System.Int32>(CultureHelper.IsRighToLeft() ? "navbar-left" : "navbar-right"
+, Tuple.Create(Tuple.Create("  ", 3483), Tuple.Create<System.Object, System.Int32>(CultureHelper.IsRighToLeft() ? "navbar-left" : "navbar-right"
             
             #line default
             #line hidden
-, 3448), false)
+, 3485), false)
 );
 
 WriteLiteral(">\r\n");
@@ -343,27 +343,27 @@ WriteLiteral(" class=\"li-social\"");
 
 WriteLiteral(">\r\n                                            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3875), Tuple.Create("\"", 3891)
+WriteAttribute("href", Tuple.Create(" href=\"", 3912), Tuple.Create("\"", 3928)
             
             #line 93 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 3882), Tuple.Create<System.Object, System.Int32>(item.Url
+, Tuple.Create(Tuple.Create("", 3919), Tuple.Create<System.Object, System.Int32>(item.Url
             
             #line default
             #line hidden
-, 3882), false)
+, 3919), false)
 );
 
 WriteLiteral("><i");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 3895), Tuple.Create("\"", 3920)
-, Tuple.Create(Tuple.Create("", 3903), Tuple.Create("fa", 3903), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 3932), Tuple.Create("\"", 3957)
+, Tuple.Create(Tuple.Create("", 3940), Tuple.Create("fa", 3940), true)
             
             #line 93 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create(" ", 3905), Tuple.Create<System.Object, System.Int32>(item.CssClass
+, Tuple.Create(Tuple.Create(" ", 3942), Tuple.Create<System.Object, System.Int32>(item.CssClass
             
             #line default
             #line hidden
-, 3906), false)
+, 3943), false)
 );
 
 WriteLiteral("></i></a>\r\n                                        </span>\r\n                     " +
@@ -435,14 +435,14 @@ WriteLiteral(" class=\"form-top-right\"");
 
 WriteLiteral(">\r\n                                <i");
 
-WriteAttribute("class", Tuple.Create(" class=\'", 4858), Tuple.Create("\'", 4884)
+WriteAttribute("class", Tuple.Create(" class=\'", 4895), Tuple.Create("\'", 4921)
             
             #line 113 "..\..\Areas\Identity\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 4866), Tuple.Create<System.Object, System.Int32>(ViewBag.IconTitle
+, Tuple.Create(Tuple.Create("", 4903), Tuple.Create<System.Object, System.Int32>(ViewBag.IconTitle
             
             #line default
             #line hidden
-, 4866), false)
+, 4903), false)
 );
 
 WriteLiteral("></i>\r\n                            </div>\r\n                        </div>\r\n      " +
@@ -485,23 +485,23 @@ WriteLiteral("><img");
 WriteLiteral(" style=\"margin: 0; padding: 0; border: medium; left: 0; width: 100%; height: 960p" +
 "x; position: absolute; z-index: -999999; max-height: none; max-width: none;\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 5559), Tuple.Create("\"", 5602)
-, Tuple.Create(Tuple.Create("", 5565), Tuple.Create<System.Object, System.Int32>(Href("~/assets/identity/images/login-bg.jpg")
-, 5565), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 5596), Tuple.Create("\"", 5639)
+, Tuple.Create(Tuple.Create("", 5602), Tuple.Create<System.Object, System.Int32>(Href("~/assets/identity/images/login-bg.jpg")
+, 5602), false)
 );
 
 WriteLiteral("></div>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 5623), Tuple.Create("\"", 5671)
-, Tuple.Create(Tuple.Create("", 5629), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/jquery/jquery.min.js")
-, 5629), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 5660), Tuple.Create("\"", 5708)
+, Tuple.Create(Tuple.Create("", 5666), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/jquery/jquery.min.js")
+, 5666), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 5695), Tuple.Create("\"", 5746)
-, Tuple.Create(Tuple.Create("", 5701), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/bootstrap/dist/js/bootstrap.js")
-, 5701), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 5732), Tuple.Create("\"", 5783)
+, Tuple.Create(Tuple.Create("", 5738), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/bootstrap/dist/js/bootstrap.js")
+, 5738), false)
 );
 
 WriteLiteral("></script>\r\n");

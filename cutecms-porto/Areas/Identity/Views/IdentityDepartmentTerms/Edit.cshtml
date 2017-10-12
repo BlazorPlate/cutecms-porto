@@ -38,11 +38,11 @@
             @Html.Label(Resources.Resources.UploadIcon, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.TextBoxFor(model => model.Icon, new { @class = "form-control", type = "file", multiple = "false", placeholder = "upload files" })
-                <div><small class="text-muted block">@Resources.Resources.IconNotes</small></div>
                 @if (Model.IconPath != null)
                 {
                     <a href="@Url.Content(Model.IconPath)" style="color:dodgerblue">@Resources.Resources.View</a>
                 }
+                <div><small class="text-muted block">@Resources.Resources.IconNotes</small></div>
                 @Html.ValidationMessageFor(model => model.Icon, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -65,15 +65,14 @@
 
         <div class="form-group">
             @Html.Label(Resources.Resources.UploadImage, new { @class = "control-label col-md-2" })
+
             <div class="col-md-10">
                 @Html.TextBoxFor(model => model.Image, new { @class = "form-control", type = "file", multiple = "false", placeholder = "upload files" })
-                <div><small class="text-muted block">@Resources.Resources.ImageNotes</small></div>
                 @if (Model.ImagePath != null)
                 {
-                    <div>
-                        <a href="@Url.Content(Model.ImagePath)" style="color:dodgerblue">@Resources.Resources.View</a>
-                    </div>
+                    <a href="@Url.Content(Model.ImagePath)" style="color:dodgerblue">@Resources.Resources.View</a>
                 }
+                <div><small class="text-muted block">@Resources.Resources.ImageNotes</small></div>
                 @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
             </div>
         </div>

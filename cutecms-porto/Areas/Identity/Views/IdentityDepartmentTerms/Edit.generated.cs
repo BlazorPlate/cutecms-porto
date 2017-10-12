@@ -306,20 +306,79 @@ WriteLiteral("                ");
             
             #line default
             #line hidden
-WriteLiteral("\r\n                <small");
+WriteLiteral("\r\n");
+
+            
+            #line 41 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+                
+            
+            #line default
+            #line hidden
+            
+            #line 41 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+                 if (Model.IconPath != null)
+                {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                    <a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 2427), Tuple.Create("\"", 2462)
+            
+            #line 43 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+, Tuple.Create(Tuple.Create("", 2434), Tuple.Create<System.Object, System.Int32>(Url.Content(Model.IconPath)
+            
+            #line default
+            #line hidden
+, 2434), false)
+);
+
+WriteLiteral(" style=\"color:dodgerblue\"");
+
+WriteLiteral(">");
+
+            
+            #line 43 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+                                                                               Write(Resources.Resources.View);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</a>\r\n");
+
+            
+            #line 44 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+                }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                <div><small");
 
 WriteLiteral(" class=\"text-muted block\"");
 
 WriteLiteral(">");
 
             
-            #line 41 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
-                                           Write(Resources.Resources.IconNotes);
+            #line 45 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+                                                Write(Resources.Resources.IconNotes);
 
             
             #line default
             #line hidden
-WriteLiteral("</small>\r\n            </div>\r\n        </div>\r\n\r\n        <div");
+WriteLiteral("</small></div>\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 46 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+           Write(Html.ValidationMessageFor(model => model.Icon, "", new { @class = "text-danger" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            </div>\r\n        </div>\r\n\r\n        <div");
 
 WriteLiteral(" class=\"form-group\"");
 
@@ -328,7 +387,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 46 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+            #line 51 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
        Write(Html.LabelFor(model => model.Summary, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -343,7 +402,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 48 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+            #line 53 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
            Write(Html.TextAreaFor(model => model.Summary, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -354,7 +413,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 49 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+            #line 54 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
            Write(Html.ValidationMessageFor(model => model.Summary, "", new { @class = "text-danger" }));
 
             
@@ -369,7 +428,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 54 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+            #line 59 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
        Write(Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -384,7 +443,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 56 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+            #line 61 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
            Write(Html.TextAreaFor(model => model.Description, new { @class = "mceEditor" }));
 
             
@@ -395,7 +454,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 57 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+            #line 62 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
            Write(Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" }));
 
             
@@ -410,13 +469,13 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 62 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+            #line 67 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
        Write(Html.Label(Resources.Resources.UploadImage, new { @class = "control-label col-md-2" }));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n            <div");
+WriteLiteral("\r\n\r\n            <div");
 
 WriteLiteral(" class=\"col-md-10\"");
 
@@ -425,26 +484,85 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 64 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+            #line 70 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
            Write(Html.TextBoxFor(model => model.Image, new { @class = "form-control", type = "file", multiple = "false", placeholder = "upload files" }));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n                <small");
+WriteLiteral("\r\n");
+
+            
+            #line 71 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+                
+            
+            #line default
+            #line hidden
+            
+            #line 71 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+                 if (Model.ImagePath != null)
+                {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                    <a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 4059), Tuple.Create("\"", 4095)
+            
+            #line 73 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+, Tuple.Create(Tuple.Create("", 4066), Tuple.Create<System.Object, System.Int32>(Url.Content(Model.ImagePath)
+            
+            #line default
+            #line hidden
+, 4066), false)
+);
+
+WriteLiteral(" style=\"color:dodgerblue\"");
+
+WriteLiteral(">");
+
+            
+            #line 73 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+                                                                                Write(Resources.Resources.View);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</a>\r\n");
+
+            
+            #line 74 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+                }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                <div><small");
 
 WriteLiteral(" class=\"text-muted block\"");
 
 WriteLiteral(">");
 
             
-            #line 65 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
-                                           Write(Resources.Resources.ImageNotes);
+            #line 75 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+                                                Write(Resources.Resources.ImageNotes);
 
             
             #line default
             #line hidden
-WriteLiteral("</small>\r\n            </div>\r\n        </div>\r\n\r\n        <div");
+WriteLiteral("</small></div>\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 76 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+           Write(Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            </div>\r\n        </div>\r\n\r\n        <div");
 
 WriteLiteral(" class=\"form-group\"");
 
@@ -453,7 +571,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 70 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+            #line 81 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
        Write(Html.LabelFor(model => model.Visible, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -472,7 +590,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 73 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+            #line 84 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
                Write(Html.CheckBoxFor(model => model.Visible, new { @class = "js-switch" }));
 
             
@@ -483,7 +601,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 74 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+            #line 85 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
                Write(Html.ValidationMessageFor(model => model.Visible, "", new { @class = "text-danger" }));
 
             
@@ -498,7 +616,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 80 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+            #line 91 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
        Write(Html.LabelFor(model => model.HomeVisible, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -517,7 +635,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 83 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+            #line 94 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
                Write(Html.CheckBoxFor(model => model.HomeVisible, new { @class = "js-switch" }));
 
             
@@ -528,7 +646,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                    ");
 
             
-            #line 84 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+            #line 95 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
                Write(Html.ValidationMessageFor(model => model.HomeVisible, "", new { @class = "text-danger" }));
 
             
@@ -547,7 +665,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 90 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+            #line 101 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
            Write(Html.LabelFor(model => model.Ordinal, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -566,7 +684,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 93 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+            #line 104 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
                    Write(Html.EditorFor(model => model.Ordinal, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -577,7 +695,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                        ");
 
             
-            #line 94 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+            #line 105 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
                    Write(Html.ValidationMessageFor(model => model.Ordinal, "", new { @class = "text-danger" }));
 
             
@@ -596,14 +714,14 @@ WriteLiteral(">\r\n                <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=", 5480), Tuple.Create("", 5512)
+WriteAttribute("value", Tuple.Create(" value=", 6107), Tuple.Create("", 6139)
             
-            #line 101 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 5487), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Save
+            #line 112 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+, Tuple.Create(Tuple.Create("", 6114), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Save
             
             #line default
             #line hidden
-, 5487), false)
+, 6114), false)
 );
 
 WriteLiteral(" class=\"btn btn-default\"");
@@ -621,7 +739,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 106 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+            #line 117 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
            Write(Html.ValidationSummary(false, "", new { @class = "text-danger" }));
 
             
@@ -630,7 +748,7 @@ WriteLiteral("                ");
 WriteLiteral("\r\n            </div>\r\n        </div>\r\n    </div>\r\n");
 
             
-            #line 110 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+            #line 121 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
 }
 
             
@@ -641,7 +759,7 @@ WriteLiteral("<div>\r\n");
 WriteLiteral("    ");
 
             
-            #line 112 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
+            #line 123 "..\..\Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml"
 Write(Html.ActionLink(Resources.Resources.BackToList, "Index", new { id = Model.DepartmentId }));
 
             

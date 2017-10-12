@@ -1522,11 +1522,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UserRoles.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Areas\Identity\Views\Account\VerifyCode.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VerifyCode.cshtml</DependentUpon>
-    </Compile>
     <Compile Include="Areas\Identity\Views\Account\Welcome.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2727,6 +2722,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Subscribe.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\VerifyCode.generated.cs">
+      <DependentUpon>VerifyCode.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Views\Shared\_Breadcrumb.generated.cs">
       <AutoGen>True</AutoGen>
@@ -8946,6 +8946,14 @@
     <Content Include="Views\Home\Index.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\SendCode.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SendCode.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\VerifyCode.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>VerifyCode.generated.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

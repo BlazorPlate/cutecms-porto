@@ -193,7 +193,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                 {
                     if (item.Selected)
                     {
-                        AddRankToFile(vacancy.Id, item.RankId);
+                        AddRankToVacancy(vacancy.Id, item.RankId);
                     }
                 }
                 StatusId = vacancyStatus.Id;
@@ -314,7 +314,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                 {
                     if (rank.Selected)
                     {
-                        AddRankToFile(vacancy.Id, rank.RankId);
+                        AddRankToVacancy(vacancy.Id, rank.RankId);
                     }
                 }
                 StatusId = vacancyStatus.Id;
@@ -360,17 +360,17 @@ namespace cutecms_porto.Areas.RMS.Controllers
                     Vacancy vacancy = db.Vacancies.Include("Language").Include("Program").Include("Program.ProgramTerms").Include("Program.ProgramTerms.Language").Include("Status").Include("Status.StatusTerms").Include("Status.StatusTerms.Language").Include("JobType").Include("JobType.JobTypeTerms").Include("JobType.JobTypeTerms.Language").Include("VacancyRanks").Include("VacancyDegrees").Where(v => v.TenantId.Trim().Equals(Tenant.TenantId) && v.Id == id).FirstOrDefault();
                     try
                     {
-                        if (vacancy.Submissions.Count() > 0)
-                        {
-                            ModelState.AddModelError("ERROR", Resources.Resources.VacancyUnableToDelete);
-                            return View(vacancy);
-                        }
-                        foreach (var item in vacancy.VacancyRanks)
+                        //if (vacancy.Submissions.Count() > 0)
+                        //{
+                        //    ModelState.AddModelError("ERROR", Resources.Resources.VacancyUnableToDelete);
+                        //    return View(vacancy);
+                        //}
+                        foreach (var item in vacancy.VacancyRanks.ToList())
                         {
                             db.Entry(item).State = EntityState.Deleted;
                             db.VacancyRanks.Remove(item);
                         }
-                        foreach (var item in vacancy.VacancyDegrees)
+                        foreach (var item in vacancy.VacancyDegrees.ToList())
                         {
                             db.Entry(item).State = System.Data.Entity.EntityState.Deleted;
                             db.VacancyDegrees.Remove(item);
@@ -390,7 +390,9 @@ namespace cutecms_porto.Areas.RMS.Controllers
                     catch (Exception ex)
                     {
                         ModelState.AddModelError("error", ex.ToString());
-                        return View();
+                        ViewBag.Author = _db.Users.Find(vacancy.Author).UserName;
+                        ViewBag.ModifiedBy = string.IsNullOrEmpty(vacancy.ModifiedBy) ? Resources.Resources.NotAvailable : ViewBag.ModifiedBy = _db.Users.Find(vacancy.ModifiedBy).UserName;
+                        return View(vacancy);
                     }
                     ts.Complete();
                 }
@@ -416,7 +418,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                 db.SaveChanges();
             }
         }
-        public void AddRankToFile(int vacancyId, int rankId)
+        public void AddRankToVacancy(int vacancyId, int rankId)
         {
             Vacancy vacancy = db.Vacancies.Find(vacancyId);
             RMSRank Rank = db.RMSRanks.First(r => r.Id == rankId);

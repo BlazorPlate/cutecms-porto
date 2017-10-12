@@ -1,0 +1,26 @@
+﻿@model cutecms_porto.Areas.Identity.Models.SendCodeViewModel
+@{
+    ViewBag.Title = Resources.Resources.TwoFactor;
+    ViewBag.MainTitle = Resources.Resources.TwoFactor;
+    ViewBag.SubTitle = Resources.Resources.SelectTwoFactor;
+    ViewBag.IconTitle = "fa fa-lock";
+    Layout = "~/Areas/Identity/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("SendCode", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.Label(Resources.Resources.TwoFactorType)
+            @Html.DropDownListFor(model => model.SelectedProvider, Model.Providers, new { @style = "background-color:rgba(153, 153, 153, 1);color:#fff" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            <input type="submit" value='@Resources.Resources.Send' class="btn btn-primary"/>
+        </div>
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

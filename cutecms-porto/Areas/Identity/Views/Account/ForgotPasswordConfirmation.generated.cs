@@ -43,45 +43,18 @@ namespace ASP
   
     ViewBag.Title = Resources.Resources.ResetPasswordConfirmation;
     ViewBag.MainTitle = Resources.Resources.ResetPasswordConfirmation;
-    ViewBag.SubTitle = Resources.Resources.ResetPasswordConfirmation;
     ViewBag.IconTitle = "fa fa-key";
     Layout = "~/Areas/Identity/Views/Shared/_Layout.cshtml";
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n<section");
-
-WriteLiteral(" class=\"page-header\"");
-
-WriteLiteral(">\r\n    <div");
-
-WriteLiteral(" class=\"container\"");
-
-WriteLiteral(">\r\n        <div");
-
-WriteLiteral(" class=\"row\"");
-
-WriteLiteral(">\r\n            <div");
-
-WriteLiteral(" class=\"col-md-12\"");
-
-WriteLiteral(">\r\n                <h1>");
-
-            
-            #line 12 "..\..\Areas\Identity\Views\Account\ForgotPasswordConfirmation.cshtml"
-               Write(Resources.Resources.ForgotPasswordConfirmation);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</h1>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</section>\r\n<div>\r\n    <p>" +
-"\r\n");
+WriteLiteral("\r\n<div>\r\n    <p>\r\n");
 
 WriteLiteral("        ");
 
             
-            #line 19 "..\..\Areas\Identity\Views\Account\ForgotPasswordConfirmation.cshtml"
+            #line 9 "..\..\Areas\Identity\Views\Account\ForgotPasswordConfirmation.cshtml"
    Write(Resources.Resources.ForgotPasswordCheck);
 
             

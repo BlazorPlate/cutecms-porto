@@ -1932,6 +1932,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Areas\Identity\Views\Shared\InvalidToken.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvalidToken.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Areas\Identity\Views\Shared\_Layout.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -6891,6 +6896,11 @@
     <Content Include="Areas\Identity\Views\Shared\Error.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Error.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Identity\Views\Error\InvalidToken.cshtml" />
+    <Content Include="Areas\Identity\Views\Shared\InvalidToken.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>InvalidToken.generated.cs</LastGenOutput>
     </Content>
     <None Include="assets\porto\vendor\validation\jquery.validate-vsdoc.js" />
     <Content Include="assets\porto\vendor\style-switcher\bootstrap-colorpicker\css\bootstrap-colorpicker.css" />

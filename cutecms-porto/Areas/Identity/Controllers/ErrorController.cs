@@ -27,6 +27,10 @@ namespace cutecms_porto.Areas.Identity.Controllers
         {
             return View();
         }
+        public ActionResult IvalidToken()
+        {
+            return View();
+        }
         #endregion Methods
     }
 }

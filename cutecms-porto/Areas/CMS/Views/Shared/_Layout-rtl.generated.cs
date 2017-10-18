@@ -61,7 +61,7 @@ namespace ASP
             #line hidden
 WriteLiteral("\r\n<!DOCTYPE html>\r\n<html");
 
-WriteLiteral(" lang=\"en\"");
+WriteLiteral(" lang=\"ar\"");
 
 WriteLiteral(" dir=\"rtl\"");
 

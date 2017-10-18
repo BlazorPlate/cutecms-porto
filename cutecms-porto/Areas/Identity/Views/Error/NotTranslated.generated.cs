@@ -42,7 +42,6 @@ namespace ASP
             #line 1 "..\..\Areas\Identity\Views\Error\NotTranslated.cshtml"
   
     ViewBag.Title = Resources.Resources.NotTranslated;
-    Layout = "~/Areas/Identity/Views/Shared/_Layout.cshtml";
 
             
             #line default
@@ -54,7 +53,7 @@ WriteLiteral(" class=\"text-danger\"");
 WriteLiteral(">");
 
             
-            #line 5 "..\..\Areas\Identity\Views\Error\NotTranslated.cshtml"
+            #line 4 "..\..\Areas\Identity\Views\Error\NotTranslated.cshtml"
                    Write(Resources.Resources.Oops);
 
             
@@ -67,7 +66,7 @@ WriteLiteral(" class=\"text-danger\"");
 WriteLiteral(">");
 
             
-            #line 6 "..\..\Areas\Identity\Views\Error\NotTranslated.cshtml"
+            #line 5 "..\..\Areas\Identity\Views\Error\NotTranslated.cshtml"
                    Write(Resources.Resources.NotTranslated);
 
             

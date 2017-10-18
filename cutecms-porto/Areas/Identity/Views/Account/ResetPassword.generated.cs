@@ -76,27 +76,13 @@ Write(Html.AntiForgeryToken());
             #line hidden
             
             #line 12 "..\..\Areas\Identity\Views\Account\ResetPassword.cshtml"
-Write(Html.ValidationSummary("", new { @class = "text-danger" }));
-
-            
-            #line default
-            #line hidden
-            
-            #line 12 "..\..\Areas\Identity\Views\Account\ResetPassword.cshtml"
-                                                               
-    
-            
-            #line default
-            #line hidden
-            
-            #line 13 "..\..\Areas\Identity\Views\Account\ResetPassword.cshtml"
 Write(Html.HiddenFor(model => model.Code));
 
             
             #line default
             #line hidden
             
-            #line 13 "..\..\Areas\Identity\Views\Account\ResetPassword.cshtml"
+            #line 12 "..\..\Areas\Identity\Views\Account\ResetPassword.cshtml"
                                         
 
             
@@ -115,7 +101,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 16 "..\..\Areas\Identity\Views\Account\ResetPassword.cshtml"
+            #line 15 "..\..\Areas\Identity\Views\Account\ResetPassword.cshtml"
        Write(Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = Resources.Resources.Email + "..." }));
 
             
@@ -136,7 +122,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 21 "..\..\Areas\Identity\Views\Account\ResetPassword.cshtml"
+            #line 20 "..\..\Areas\Identity\Views\Account\ResetPassword.cshtml"
        Write(Html.PasswordFor(m => m.Password,new { @class = "form-control", @placeholder = Resources.Resources.Password + "..." }));
 
             
@@ -157,7 +143,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 26 "..\..\Areas\Identity\Views\Account\ResetPassword.cshtml"
+            #line 25 "..\..\Areas\Identity\Views\Account\ResetPassword.cshtml"
        Write(Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", @placeholder = Resources.Resources.ConfirmPassword + "..." }));
 
             
@@ -179,14 +165,14 @@ WriteLiteral(" type=\"submit\"");
 
 WriteLiteral(" class=\"btn btn-primary\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 1414), Tuple.Create("\"", 1448)
+WriteAttribute("value", Tuple.Create(" value=\"", 1349), Tuple.Create("\"", 1383)
             
-            #line 31 "..\..\Areas\Identity\Views\Account\ResetPassword.cshtml"
-, Tuple.Create(Tuple.Create("", 1422), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Reset
+            #line 30 "..\..\Areas\Identity\Views\Account\ResetPassword.cshtml"
+, Tuple.Create(Tuple.Create("", 1357), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Reset
             
             #line default
             #line hidden
-, 1422), false)
+, 1357), false)
 );
 
 WriteLiteral("/>\r\n        </div>\r\n    </div>\r\n");
@@ -204,7 +190,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 36 "..\..\Areas\Identity\Views\Account\ResetPassword.cshtml"
+            #line 35 "..\..\Areas\Identity\Views\Account\ResetPassword.cshtml"
        Write(Html.ValidationSummary(false, "", new { @class = "text-danger" }));
 
             
@@ -213,7 +199,7 @@ WriteLiteral("            ");
 WriteLiteral("\r\n        </div>\r\n    </div>\r\n");
 
             
-            #line 39 "..\..\Areas\Identity\Views\Account\ResetPassword.cshtml"
+            #line 38 "..\..\Areas\Identity\Views\Account\ResetPassword.cshtml"
 }
 
             
@@ -226,7 +212,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 41 "..\..\Areas\Identity\Views\Account\ResetPassword.cshtml"
+            #line 40 "..\..\Areas\Identity\Views\Account\ResetPassword.cshtml"
 Write(Scripts.Render("~/bundles/jqueryval"));
 
             

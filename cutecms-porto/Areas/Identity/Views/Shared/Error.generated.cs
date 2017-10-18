@@ -41,7 +41,7 @@ namespace ASP
             
             #line 1 "..\..\Areas\Identity\Views\Shared\Error.cshtml"
   
-    ViewBag.Title = Resources.Resources.NotFound;
+    ViewBag.Title = Resources.Resources.Error;
 
             
             #line default
@@ -67,12 +67,25 @@ WriteLiteral(">");
 
             
             #line 5 "..\..\Areas\Identity\Views\Shared\Error.cshtml"
-                   Write(Resources.Resources.NotFound);
+                   Write(Resources.Resources.GenericError);
 
             
             #line default
             #line hidden
-WriteLiteral("</h2>\r\n");
+WriteLiteral("</h2>\r\n<p");
+
+WriteLiteral(" class=\"text-danger\"");
+
+WriteLiteral(">");
+
+            
+            #line 6 "..\..\Areas\Identity\Views\Shared\Error.cshtml"
+                  Write(Resources.Resources.ErrorNotification);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</p>\r\n");
 
         }
     }

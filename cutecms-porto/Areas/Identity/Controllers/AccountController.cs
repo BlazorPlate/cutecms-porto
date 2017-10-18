@@ -265,7 +265,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 if (user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)))
                 {
                     // Don't reveal that the user does not exist or is not confirmed
-                    return RedirectToAction("ForgotPasswordConfirmation", "Home", new { area = "" });
+                    return RedirectToAction("ForgotPasswordConfirmation", "Account", new { area = "Identity" });
                 }
                 // For more information on how to enable account confirmation and password reset
                 // please visit http://go.microsoft.com/fwlink/?LinkID=320771 Send an email with this link
@@ -273,11 +273,11 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
                 var callbackUrl = Url.Action("ResetPassword", "Account", new { area = "Identity", userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                 await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                return RedirectToAction("ForgotPasswordConfirmation", "Home", new { area = "" });
+                return RedirectToAction("ForgotPasswordConfirmation", "Account", new { area = "Identity" });
             }
             // If we got this far, something failed, redisplay form
-            if (RouteData.DataTokens["area"] == null)
-                return View("~/Views/Shared/ForgotPasswordAjax.cshtml", model);
+            //if (RouteData.DataTokens["area"] == null)
+            //    return RedirectToAction("ForgotPasswordConfirmation", "Account", new { area = "Identity" });
             return View(model);
         }
 
@@ -293,7 +293,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         public ActionResult ResetPassword(string code)
         {
 
-            return code == null ? RedirectToAction("NotFound", "Error", new { area = "" }) : RedirectToAction("ResetPassword", "Home", new { code = code, area = "" });
+            return code == null ? View("InvalidToken") : View();
         }
 
         // POST: /Account/ResetPassword
@@ -310,22 +310,22 @@ namespace cutecms_porto.Areas.Identity.Controllers
             if (user == null)
             {
                 // Don't reveal that the user does not exist
-                return RedirectToAction("ResetPasswordConfirmation", "Home", new { area = "" });
+                return View("ResetPasswordConfirmation");
             }
             var result = await UserManager.ResetPasswordAsync(user.Id, model.Code, model.Password);
             if (result.Succeeded)
             {
-                return RedirectToAction("ResetPasswordConfirmation", "Home", new { area = "" });
+                return View("ResetPasswordConfirmation");
             }
-            AddErrors(result);
-            return RedirectToAction("InvalidToken", "Error", new { area = "" });
+            ModelState.AddModelError("InvalidToken", Resources.Resources.InvalidToken);
+            return View(model);
         }
 
         // GET: /Account/ResetPasswordConfirmation
         [AllowAnonymous]
         public ActionResult ResetPasswordConfirmation()
         {
-            return RedirectToAction("ResetPasswordConfirmation", "Home", new { area = "" });
+            return View();
         }
 
         // POST: /Account/ExternalLogin

@@ -42,6 +42,7 @@ namespace ASP
             #line 1 "..\..\Areas\Identity\Views\Error\NotFound.cshtml"
   
     ViewBag.Title = Resources.Resources.NotFound;
+    ViewBag.IconTitle = "fa fa-key";
     Layout = "~/Areas/Identity/Views/Shared/_Layout.cshtml";
 
             
@@ -54,7 +55,7 @@ WriteLiteral(" class=\"text-danger\"");
 WriteLiteral(">");
 
             
-            #line 5 "..\..\Areas\Identity\Views\Error\NotFound.cshtml"
+            #line 6 "..\..\Areas\Identity\Views\Error\NotFound.cshtml"
                    Write(Resources.Resources.Oops);
 
             
@@ -67,7 +68,7 @@ WriteLiteral(" class=\"text-danger\"");
 WriteLiteral(">");
 
             
-            #line 6 "..\..\Areas\Identity\Views\Error\NotFound.cshtml"
+            #line 7 "..\..\Areas\Identity\Views\Error\NotFound.cshtml"
                    Write(Resources.Resources.NotFound);
 
             

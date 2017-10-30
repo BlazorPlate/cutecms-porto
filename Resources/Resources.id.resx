@@ -1725,4 +1725,10 @@
   <data name="RoleInUse" xml:space="preserve">
     <value>Nama peran itu telah digunakan.</value>
   </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>Tidak memiliki akun!</value>
+  </data>
+  <data name="InvalidCode" xml:space="preserve">
+    <value>Kode Pembayaran Tidak Valid</value>
+  </data>
 </root>

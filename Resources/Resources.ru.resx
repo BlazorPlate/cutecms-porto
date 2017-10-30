@@ -1725,4 +1725,10 @@
   <data name="RoleInUse" xml:space="preserve">
     <value>Это имя роли уже используется.</value>
   </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>Уже зарегистрировались?</value>
+  </data>
+  <data name="InvalidCode" xml:space="preserve">
+    <value>Неверный код!</value>
+  </data>
 </root>

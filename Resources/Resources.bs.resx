@@ -1725,4 +1725,10 @@
   <data name="RoleInUse" xml:space="preserve">
     <value>Komentar je već obrisan.</value>
   </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>Već imate korisnički račun?</value>
+  </data>
+  <data name="InvalidCode" xml:space="preserve">
+    <value>greška</value>
+  </data>
 </root>

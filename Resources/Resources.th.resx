@@ -1725,4 +1725,10 @@
   <data name="RoleInUse" xml:space="preserve">
     <value>ใช้ชื่อบทบาทแล้วกัน</value>
   </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>ยังไม่มีบัญชีใช่ไหม?</value>
+  </data>
+  <data name="InvalidCode" xml:space="preserve">
+    <value>รหัสไม่ถูกต้อง</value>
+  </data>
 </root>

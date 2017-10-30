@@ -1725,4 +1725,10 @@
   <data name="RoleInUse" xml:space="preserve">
     <value>שם תפקיד זה כבר היה בשימוש.</value>
   </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>אין לך חשבון?</value>
+  </data>
+  <data name="InvalidCode" xml:space="preserve">
+    <value>קוד שגוי!</value>
+  </data>
 </root>

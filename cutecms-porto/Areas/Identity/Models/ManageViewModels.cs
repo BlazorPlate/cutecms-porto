@@ -64,7 +64,7 @@ namespace cutecms_porto.Areas.Identity.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "ConfirmPassword", ResourceType = typeof(Resources.Resources))]
-        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        [Compare("NewPassword", ErrorMessageResourceType = typeof(Resources.Resources), ErrorMessageResourceName = "PasswordMatch")]
         public string ConfirmPassword { get; set; }
         #endregion Properties
     }

@@ -1,11 +1,12 @@
 ﻿@using cutecms_porto.Areas.CMS.Models.DBModel
 @using Microsoft.AspNet.Identity
+@using cutecms_porto.Helpers
 @{
     CMSEntities cmsDb = new CMSEntities();
     ViewBag.IsUserImageExist = File.Exists(Server.MapPath(ViewBag.PersonalPhotoPath));
 }
 <!DOCTYPE html>
-<html lang="en">
+<html dir="@(CultureHelper.IsRighToLeft() ? "rtl" : "ltr")">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,8 +17,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="~/assets/admin/plugins/images/favicon.png">
     <title>CuteCMS - @ViewBag.MainTitle</title>
     <!-- Bootstrap Core CSS -->
-    <link href="~/assets/admin/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    @*<link href="~/assets/admin/plugins/bower_components/bootstrap-rtl-master/dist/css/bootstrap-rtl.min.css" rel="stylesheet">*@
+    <link href="@(CultureHelper.IsRighToLeft() ? "/assets/admin/plugins/bower_components/bootstrap-rtl-master/dist/css/bootstrap-rtl.min.css" : "/assets/admin/bootstrap/dist/css/bootstrap.min.css")" rel="stylesheet">
+    <link href="" rel="stylesheet">
+    <link href="@(CultureHelper.IsRighToLeft() ? "/assets/admin/css/style-rtl.css" : "/assets/admin/css/style.css")" rel="stylesheet">
     <!-- animation CSS -->
     <link href="~/assets/admin/css/animate.css" rel="stylesheet">
     <!-- Menu CSS -->
@@ -34,13 +36,14 @@
     <link href="~/assets/admin/css/animate.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="~/assets/admin/css/custom.css" rel="stylesheet" />
-    <link href="~/assets/admin/css/style.css" rel="stylesheet">
     <!-- color CSS -->
     <link href="~/assets/admin/css/colors/blue-dark.css" id="theme" rel="stylesheet">
     <!-- Datetimepicker -->
     <link href="~/assets/admin/plugins/bower_components/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
     <!-- Treeview -->
     <link href="~/assets/admin/plugins/bower_components/treeview/css/treeview.css" rel="stylesheet" />
+
+    <link href="~/assets/admin/plugins/bower_components/toast-master/css/jquery.toast.css" rel="stylesheet" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -66,7 +69,7 @@
                     <li><a href="javascript:void(0)" class="open-close hidden-xs waves-effect waves-light"><i class="icon-arrow-left-circle ti-menu"></i></a></li>
                     <li>
                         <form role="search" class="app-search hidden-xs">
-                            <input type="text" placeholder="Search..." class="form-control">
+                            <input type="text" placeholder="@Resources.Resources.Search" class="form-control">
                             <a href=""><i class="fa fa-search"></i></a>
                         </form>
                     </li>
@@ -169,6 +172,7 @@
                         </ul>
                         <!-- /.dropdown-tasks -->
                     </li>
+                    <!-- /.dropdown -->
                     <!-- /.login-partial -->
                     @Html.Partial("~/Areas/CMS/Views/Shared/_LoginPartial.cshtml")
                     <!-- /.login-partial -->
@@ -281,7 +285,6 @@
                             </ul>
                         </li>
                     }
-
                     @Html.Partial("~/Areas/CMS/Views/Shared/_SideNavBar.cshtml")
                 </ul>
             </div>
@@ -370,10 +373,10 @@
     </div>
     <!-- /#wrapper -->
     <!-- jQuery -->
-    <script src="~/assets/admin/plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="~/assets/admin/plugins/bower_components/jquery/dist/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="~/assets/admin/bootstrap/dist/js/bootstrap.min.js"></script>
-    @*<script src="~/assets/admin/plugins/bower_components/bootstrap-rtl-master/dist/js/bootstrap-rtl.min.js"></script>*@
+    @*<script src="~/assets/admin/bootstrap/dist/js/bootstrap.min.js"></script>*@
+    <script src=@(CultureHelper.IsRighToLeft() ? "/assets/admin/plugins/bower_components/bootstrap-rtl-master/dist/js/bootstrap-rtl.min.js" : "/assets/admin/bootstrap/dist/js/bootstrap.min.js")></script>
     <!-- Menu Plugin JavaScript -->
     <script src="~/assets/admin/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
     <!--slimscroll JavaScript -->
@@ -395,10 +398,10 @@
     <script src="~/assets/admin/plugins/bower_components/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
     <!-- Tiny MCE -->
     <script src="~/assets/admin/plugins/bower_components/tinymce/tinymce.min.js"></script>
-    <script src="~/assets/admin/plugins/bower_components/tinymce/jquery.tinymce.min.js"></script>
     <script src="~/assets/admin/plugins/bower_components/tinymce/tinymce-layout.js"></script>
     <!-- Treeview -->
     <script src="~/assets/admin/plugins/bower_components/treeview/js/treeview.js"></script>
+    <!-- Switchery -->
     <script>
         jQuery(document).ready(function () {
             // Switchery
@@ -469,7 +472,6 @@
     </script>
     <!--Style Switcher -->
     <script src="~/assets/admin/plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
-    @Scripts.Render("~/bundles/jqueryval")
     @RenderSection("scripts", required: false)
 </body>
 </html>

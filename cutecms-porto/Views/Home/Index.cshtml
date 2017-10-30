@@ -8,10 +8,10 @@
     CMSEntities cmsDb = new CMSEntities();
     CMSEntities configDb = new CMSEntities();
     IdentityEntities IdentityDb = new IdentityEntities();
-    var openingHours = Model.ContentLists.Where(c => c.Code.Trim().Equals("opening-hours")).FirstOrDefault()?.ListItems ?? new List<ListItem>();
+    var openingHours = Model.ContentLists.Where(c => c.Code.Trim().Equals("opening-hour")).FirstOrDefault()?.ListItems ?? new List<ListItem>();
     var shortcutContents = Model.Contents.Where(c => c.HasShortcut);
-    var insuranceList = Model.ContentLists.Where(c => c.Code.Trim().Equals("insurance"))?.FirstOrDefault() ?? new ContentList();
-    var resourcesList = Model.ContentLists.Where(c => c.Code.Trim().Equals("resources"))?.FirstOrDefault() ?? new ContentList();
+    var partnerList = Model.ContentLists.Where(c => c.Code.Trim().Equals("partner"))?.FirstOrDefault() ?? new ContentList();
+    var resourcesList = Model.ContentLists.Where(c => c.Code.Trim().Equals("resource"))?.FirstOrDefault() ?? new ContentList();
     var testimonialList = Model.ContentLists.Where(c => c.Code.Trim().Equals("testimonial"))?.FirstOrDefault() ?? new ContentList();
     IdentityEntities identityDb = new IdentityEntities();
     var organizations = (List<Organization>)HttpRuntime.Cache["Organizations"];
@@ -102,8 +102,8 @@
                         </div>
                         <div class="col-lg-3 box-two background-color-tertiary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="600">
                             <h5 class="m-none">
-                                <a href="demo-medical-doctors.html" title="">
-                                    @Resources.Resources.DoctorsTimetable
+                                <a href="#" title="">
+                                    Lorem #2
                                     <i class="icon-arrow-right-circle icons"></i>
                                 </a>
                             </h5>
@@ -111,10 +111,10 @@
                         <div class="col-lg-3 box-one background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="0">
                             <div class="feature-box feature-box-style-2 p-lg">
                                 <div class="feature-box-icon">
-                                    <img src="~/assets/porto/img/demos/medical/icons/medical-icon-heart.png" alt="" class="img-responsive pt-xs" />
+                                    @*<img src="~/assets/porto/img/demos/medical/icons/medical-icon-heart.png" alt="" class="img-responsive pt-xs" />*@
                                 </div>
                                 <div class="feature-box-info ml-md">
-                                    <h4 class="m-none">@Resources.Resources.MedicalTreatment</h4>
+                                    <h4 class="m-none">Lorem #1</h4>
                                 </div>
                             </div>
                         </div>
@@ -125,17 +125,17 @@
                 <div class="col-lg-3 box-one background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="0">
                     <div class="feature-box feature-box-style-2 p-lg">
                         <div class="feature-box-icon">
-                            <img src="~/assets/porto/img/demos/medical/icons/medical-icon-heart.png" alt="" class="img-responsive pt-xs" />
+                            @*<img src="~/assets/porto/img/demos/medical/icons/medical-icon-heart.png" alt="" class="img-responsive pt-xs" />*@
                         </div>
                         <div class="feature-box-info ml-md">
-                            <h4 class="m-none">@Resources.Resources.MedicalTreatment</h4>
+                            <h4 class="m-none"> Lorem #1</h4>
                         </div>
                     </div>
                 </div>
                         <div class="col-lg-3 box-two background-color-tertiary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="600">
                             <h5 class="m-none">
-                                <a href="demo-medical-doctors.html" title="">
-                                    @Resources.Resources.DoctorsTimetable
+                                <a href="#" title="">
+                                    Lorem #2
                                     <i class="icon-arrow-right-circle icons"></i>
                                 </a>
                             </h5>
@@ -166,7 +166,7 @@
                                         <i class="icon-call-out icons"></i>
                                     </div>
                                     <div class="feature-box-info ml-md">
-                                        <label class="font-weight-light">@Resources.Resources.EmergencyCase</label>
+                                        <label class="font-weight-light">@Resources.Resources.ContactUs</label>
                                         <strong class="font-weight-normal">@(organization?.Telephone)</strong>
                                     </div>
                                 </div>
@@ -233,8 +233,8 @@
     <div class="container">
         <div class="row mt-xlg">
             <div class="col-md-12">
-                <h2 class="font-weight-semibold m-none">@Resources.Resources.Doctors</h2>
-                <p class="lead font-weight-normal">@Resources.Resources.OurSpecialists</p>
+                <h2 class="font-weight-semibold m-none">@Resources.Resources.OurSpecialists</h2>
+               @* <p class="lead font-weight-normal">@Resources.Resources.OurSpecialists</p>*@
 
                 <div id="porfolioAjaxBoxMedical" class="ajax-box ajax-box-init mb-lg">
 
@@ -388,13 +388,13 @@
     <div class="container">
         <div class="row mt-md">
             <div class="col-md-12">
-                <h2 class="font-weight-semibold m-none">@insuranceList.Title</h2>
-                <p class="lead font-weight-normal">@insuranceList.Subtitle</p>
+                <h2 class="font-weight-semibold m-none">@partnerList.Title</h2>
+                <p class="lead font-weight-normal">@partnerList.Subtitle</p>
             </div>
         </div>
         <div class="row center">
             <div class="owl-carousel owl-theme" data-plugin-options="{'items': 6, 'autoplay': true, 'autoplayTimeout': 3000}">
-                @foreach (var item in insuranceList.ListItems)
+                @foreach (var item in partnerList.ListItems)
                 {
                     <div>
                         <img class="img-responsive" src="@item.ThumbPath" alt="">
@@ -429,22 +429,6 @@
                     </div>
                 </div>
                 }
-
-                @*<div>
-                        <div class="col-md-8 col-md-offset-2 pt-xlg">
-                            <div class="testimonial testimonial-style-2 testimonial-with-quotes mb-none">
-                                <div class="testimonial-quote">“</div>
-                                <blockquote>
-                                    <p class="font-weight-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit, leo vitae interdum pretium, tortor risus dapibus tortor, eu suscipit orci leo sed nisl. Integer et ipsum eu nulla auctor mattis sit amet in diam. Vestibulum non.</p>
-                                </blockquote>
-                                <div class="testimonial-author mt-xlg">
-                                    <p class="text-uppercase">
-                                        <strong>John Smith</strong>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>*@
             </div>
         </div>
     </div>

@@ -1725,4 +1725,10 @@
   <data name="RoleInUse" xml:space="preserve">
     <value>Tento název úlohy již byl použit.</value>
   </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>Nemáte účet?</value>
+  </data>
+  <data name="InvalidCode" xml:space="preserve">
+    <value>Neplatný kód</value>
+  </data>
 </root>

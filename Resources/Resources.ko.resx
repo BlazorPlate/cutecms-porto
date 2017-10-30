@@ -1725,4 +1725,10 @@
   <data name="RoleInUse" xml:space="preserve">
     <value>역할 이름이 이미 사용 되었습니다.</value>
   </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>계정이 없으신가요?</value>
+  </data>
+  <data name="InvalidCode" xml:space="preserve">
+    <value>유효하지 않은 코드</value>
+  </data>
 </root>

@@ -1725,4 +1725,10 @@
   <data name="RoleInUse" xml:space="preserve">
     <value>そのロール名は既に使用されています!。</value>
   </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>アカウントはお持ちですか?</value>
+  </data>
+  <data name="InvalidCode" xml:space="preserve">
+    <value>無効なコード</value>
+  </data>
 </root>

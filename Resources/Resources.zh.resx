@@ -1725,4 +1725,10 @@
   <data name="RoleInUse" xml:space="preserve">
     <value>那角色名称已被使用。 </value>
   </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>还没有账户</value>
+  </data>
+  <data name="InvalidCode" xml:space="preserve">
+    <value>无效code</value>
+  </data>
 </root>

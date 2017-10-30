@@ -190,7 +190,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
 
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Invalid code.");
+                    ModelState.AddModelError("",Resources.Resources.InvalidCode);
                     return View(model);
             }
         }

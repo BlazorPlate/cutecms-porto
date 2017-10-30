@@ -28,18 +28,19 @@ namespace ASP
     using System.Web.UI;
     using System.Web.WebPages;
     using cutecms_porto;
+    using cutecms_porto.Helpers;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Areas/Identity/Views/Account/VerifyCode.cshtml")]
-    public partial class _Areas_Identity_Views_Account_VerifyCode_cshtml : System.Web.Mvc.WebViewPage<cutecms_porto.Areas.Identity.Models.VerifyCodeViewModel>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/VerifyCode.cshtml")]
+    public partial class _Views_Shared_VerifyCode_cshtml : System.Web.Mvc.WebViewPage<cutecms_porto.Areas.Identity.Models.VerifyCodeViewModel>
     {
-        public _Areas_Identity_Views_Account_VerifyCode_cshtml()
+        public _Views_Shared_VerifyCode_cshtml()
         {
         }
         public override void Execute()
         {
             
-            #line 2 "..\..\Areas\Identity\Views\Account\VerifyCode.cshtml"
+            #line 2 "..\..\Views\Shared\VerifyCode.cshtml"
   
     ViewBag.Title = Resources.Resources.VerificationCode;
     ViewBag.MainTitle = Resources.Resources.VerificationCode;
@@ -53,7 +54,7 @@ namespace ASP
 WriteLiteral("\r\n");
 
             
-            #line 9 "..\..\Areas\Identity\Views\Account\VerifyCode.cshtml"
+            #line 9 "..\..\Views\Shared\VerifyCode.cshtml"
  using (Html.BeginForm("VerifyCode", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     
@@ -61,42 +62,42 @@ WriteLiteral("\r\n");
             #line default
             #line hidden
             
-            #line 11 "..\..\Areas\Identity\Views\Account\VerifyCode.cshtml"
+            #line 11 "..\..\Views\Shared\VerifyCode.cshtml"
 Write(Html.Hidden("provider", @Model.Provider));
 
             
             #line default
             #line hidden
             
-            #line 11 "..\..\Areas\Identity\Views\Account\VerifyCode.cshtml"
+            #line 11 "..\..\Views\Shared\VerifyCode.cshtml"
                                              
     
             
             #line default
             #line hidden
             
-            #line 12 "..\..\Areas\Identity\Views\Account\VerifyCode.cshtml"
+            #line 12 "..\..\Views\Shared\VerifyCode.cshtml"
 Write(Html.Hidden("rememberMe", @Model.RememberMe));
 
             
             #line default
             #line hidden
             
-            #line 12 "..\..\Areas\Identity\Views\Account\VerifyCode.cshtml"
+            #line 12 "..\..\Views\Shared\VerifyCode.cshtml"
                                                  
     
             
             #line default
             #line hidden
             
-            #line 13 "..\..\Areas\Identity\Views\Account\VerifyCode.cshtml"
+            #line 13 "..\..\Views\Shared\VerifyCode.cshtml"
 Write(Html.AntiForgeryToken());
 
             
             #line default
             #line hidden
             
-            #line 13 "..\..\Areas\Identity\Views\Account\VerifyCode.cshtml"
+            #line 13 "..\..\Views\Shared\VerifyCode.cshtml"
                             
 
             
@@ -115,7 +116,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 16 "..\..\Areas\Identity\Views\Account\VerifyCode.cshtml"
+            #line 16 "..\..\Views\Shared\VerifyCode.cshtml"
        Write(Html.TextBoxFor(m => m.Code, new { @class = "form-control", @placeholder = Resources.Resources.VerificationCode + "..." }));
 
             
@@ -136,7 +137,7 @@ WriteLiteral(">\r\n            <div>\r\n");
 WriteLiteral("                ");
 
             
-            #line 22 "..\..\Areas\Identity\Views\Account\VerifyCode.cshtml"
+            #line 22 "..\..\Views\Shared\VerifyCode.cshtml"
            Write(Html.CheckBoxFor(m => m.RememberBrowser));
 
             
@@ -147,7 +148,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 23 "..\..\Areas\Identity\Views\Account\VerifyCode.cshtml"
+            #line 23 "..\..\Views\Shared\VerifyCode.cshtml"
            Write(Html.LabelFor(m => m.RememberBrowser));
 
             
@@ -169,7 +170,7 @@ WriteLiteral(" type=\"submit\"");
 
 WriteAttribute("value", Tuple.Create(" value=\'", 1217), Tuple.Create("\'", 1252)
             
-            #line 29 "..\..\Areas\Identity\Views\Account\VerifyCode.cshtml"
+            #line 29 "..\..\Views\Shared\VerifyCode.cshtml"
 , Tuple.Create(Tuple.Create("", 1225), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Verify
             
             #line default
@@ -194,7 +195,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 34 "..\..\Areas\Identity\Views\Account\VerifyCode.cshtml"
+            #line 34 "..\..\Views\Shared\VerifyCode.cshtml"
        Write(Html.ValidationSummary(false, "", new { @class = "text-danger" }));
 
             
@@ -203,7 +204,7 @@ WriteLiteral("            ");
 WriteLiteral("\r\n        </div>\r\n    </div>\r\n");
 
             
-            #line 37 "..\..\Areas\Identity\Views\Account\VerifyCode.cshtml"
+            #line 37 "..\..\Views\Shared\VerifyCode.cshtml"
 }
 
             
@@ -216,7 +217,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 39 "..\..\Areas\Identity\Views\Account\VerifyCode.cshtml"
+            #line 39 "..\..\Views\Shared\VerifyCode.cshtml"
 Write(Scripts.Render("~/bundles/jqueryval"));
 
             

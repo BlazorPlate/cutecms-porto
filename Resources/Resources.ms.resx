@@ -1725,4 +1725,10 @@
   <data name="RoleInUse" xml:space="preserve">
     <value>Nama peranan tersebut telah sedia ada.</value>
   </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>Belum ada akaun?</value>
+  </data>
+  <data name="InvalidCode" xml:space="preserve">
+    <value>Kod tidak sah!</value>
+  </data>
 </root>

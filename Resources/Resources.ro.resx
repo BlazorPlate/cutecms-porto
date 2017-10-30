@@ -1725,4 +1725,10 @@
   <data name="RoleInUse" xml:space="preserve">
     <value>Acest nume de rol a fost deja folosit.</value>
   </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>Nu aveți înca un cont!</value>
+  </data>
+  <data name="InvalidCode" xml:space="preserve">
+    <value>Invalid</value>
+  </data>
 </root>

@@ -1725,4 +1725,10 @@
   <data name="RoleInUse" xml:space="preserve">
     <value>Tên vai trò đó đã được sử dụng.</value>
   </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>Chưa có tài khoản?</value>
+  </data>
+  <data name="InvalidCode" xml:space="preserve">
+    <value>Không hợp lệ</value>
+  </data>
 </root>

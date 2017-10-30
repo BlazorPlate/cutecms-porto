@@ -22,7 +22,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             var galleries = db.Galleries.Where(g => g.TenantId.Trim().Equals(Tenant.TenantId)).OrderBy(g => g.Ordinal).ToList();
             return View(galleries);
         }
-
+        [LocalizedAuthorize(Roles = "GalleriesDetails")]
         // GET: CMS/Galleries/Details/5
         public ActionResult Details(int? id)
         {

@@ -35,6 +35,12 @@ namespace ASP
     #line default
     #line hidden
     
+    #line 3 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+    using cutecms_porto.Helpers;
+    
+    #line default
+    #line hidden
+    
     #line 2 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
     using Microsoft.AspNet.Identity;
     
@@ -51,7 +57,7 @@ namespace ASP
         public override void Execute()
         {
             
-            #line 3 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+            #line 4 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
   
     CMSEntities cmsDb = new CMSEntities();
     ViewBag.IsUserImageExist = File.Exists(Server.MapPath(ViewBag.PersonalPhotoPath));
@@ -61,7 +67,15 @@ namespace ASP
             #line hidden
 WriteLiteral("\r\n<!DOCTYPE html>\r\n<html");
 
-WriteLiteral(" lang=\"en\"");
+WriteAttribute("dir", Tuple.Create(" dir=\"", 272), Tuple.Create("\"", 325)
+            
+            #line 9 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 278), Tuple.Create<System.Object, System.Int32>(CultureHelper.IsRighToLeft() ? "rtl" : "ltr"
+            
+            #line default
+            #line hidden
+, 278), false)
+);
 
 WriteLiteral(">\r\n<head>\r\n    <meta");
 
@@ -105,15 +119,15 @@ WriteLiteral(" type=\"image/png\"");
 
 WriteLiteral(" sizes=\"16x16\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 614), Tuple.Create("\"", 662)
-, Tuple.Create(Tuple.Create("", 621), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/favicon.png")
-, 621), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 688), Tuple.Create("\"", 736)
+, Tuple.Create(Tuple.Create("", 695), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/favicon.png")
+, 695), false)
 );
 
 WriteLiteral(">\r\n    <title>CuteCMS - ");
 
             
-            #line 17 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+            #line 18 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
                 Write(ViewBag.MainTitle);
 
             
@@ -121,29 +135,52 @@ WriteLiteral(">\r\n    <title>CuteCMS - ");
             #line hidden
 WriteLiteral("</title>\r\n    <!-- Bootstrap Core CSS -->\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 757), Tuple.Create("\"", 815)
-, Tuple.Create(Tuple.Create("", 764), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/bootstrap/dist/css/bootstrap.min.css")
-, 764), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 831), Tuple.Create("\"", 1019)
+            
+            #line 20 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 838), Tuple.Create<System.Object, System.Int32>(CultureHelper.IsRighToLeft() ? "/assets/admin/plugins/bower_components/bootstrap-rtl-master/dist/css/bootstrap-rtl.min.css" : "/assets/admin/bootstrap/dist/css/bootstrap.min.css"
+            
+            #line default
+            #line hidden
+, 838), false)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
 
-WriteLiteral(">\r\n    ");
+WriteLiteral(">\r\n    <link");
 
-WriteLiteral("\r\n    <!-- animation CSS -->\r\n    <link");
+WriteLiteral(" href=\"\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1005), Tuple.Create("\"", 1042)
-, Tuple.Create(Tuple.Create("", 1012), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/css/animate.css")
-, 1012), false)
+WriteLiteral(" rel=\"stylesheet\"");
+
+WriteLiteral(">\r\n    <link");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 1086), Tuple.Create("\"", 1192)
+            
+            #line 22 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 1093), Tuple.Create<System.Object, System.Int32>(CultureHelper.IsRighToLeft() ? "/assets/admin/css/style-rtl.css" : "/assets/admin/css/style.css"
+            
+            #line default
+            #line hidden
+, 1093), false)
+);
+
+WriteLiteral(" rel=\"stylesheet\"");
+
+WriteLiteral(">\r\n    <!-- animation CSS -->\r\n    <link");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 1250), Tuple.Create("\"", 1287)
+, Tuple.Create(Tuple.Create("", 1257), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/css/animate.css")
+, 1257), false)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(">\r\n    <!-- Menu CSS -->\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1095), Tuple.Create("\"", 1178)
-, Tuple.Create(Tuple.Create("", 1102), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css")
-, 1102), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 1340), Tuple.Create("\"", 1423)
+, Tuple.Create(Tuple.Create("", 1347), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css")
+, 1347), false)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
@@ -152,9 +189,9 @@ WriteLiteral(">\r\n    <!-- page CSS -->\r\n    ");
 
 WriteLiteral("\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1379), Tuple.Create("\"", 1457)
-, Tuple.Create(Tuple.Create("", 1386), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/custom-select/custom-select.css")
-, 1386), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 1624), Tuple.Create("\"", 1702)
+, Tuple.Create(Tuple.Create("", 1631), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/custom-select/custom-select.css")
+, 1631), false)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
@@ -163,48 +200,48 @@ WriteLiteral(" type=\"text/css\"");
 
 WriteLiteral(" />\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1505), Tuple.Create("\"", 1584)
-, Tuple.Create(Tuple.Create("", 1512), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/switchery/dist/switchery.min.css")
-, 1512), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 1750), Tuple.Create("\"", 1829)
+, Tuple.Create(Tuple.Create("", 1757), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/switchery/dist/switchery.min.css")
+, 1757), false)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" />\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1616), Tuple.Create("\"", 1704)
-, Tuple.Create(Tuple.Create("", 1623), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/bootstrap-select/bootstrap-select.min.css" +
+WriteAttribute("href", Tuple.Create(" href=\"", 1861), Tuple.Create("\"", 1949)
+, Tuple.Create(Tuple.Create("", 1868), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/bootstrap-select/bootstrap-select.min.css" +
 "")
-, 1623), false)
+, 1868), false)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" />\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1736), Tuple.Create("\"", 1831)
-, Tuple.Create(Tuple.Create("", 1743), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsin" +
+WriteAttribute("href", Tuple.Create(" href=\"", 1981), Tuple.Create("\"", 2076)
+, Tuple.Create(Tuple.Create("", 1988), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsin" +
 "put.css")
-, 1743), false)
+, 1988), false)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" />\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1863), Tuple.Create("\"", 1969)
-, Tuple.Create(Tuple.Create("", 1870), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/bootstrap-touchspin/dist/jquery.bootstrap" +
+WriteAttribute("href", Tuple.Create(" href=\"", 2108), Tuple.Create("\"", 2214)
+, Tuple.Create(Tuple.Create("", 2115), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/bootstrap-touchspin/dist/jquery.bootstrap" +
 "-touchspin.min.css")
-, 1870), false)
+, 2115), false)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" />\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2001), Tuple.Create("\"", 2080)
-, Tuple.Create(Tuple.Create("", 2008), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/multiselect/css/multi-select.css")
-, 2008), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 2246), Tuple.Create("\"", 2325)
+, Tuple.Create(Tuple.Create("", 2253), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/multiselect/css/multi-select.css")
+, 2253), false)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
@@ -213,36 +250,27 @@ WriteLiteral(" type=\"text/css\"");
 
 WriteLiteral(" />\r\n    <!-- animation CSS -->\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2156), Tuple.Create("\"", 2193)
-, Tuple.Create(Tuple.Create("", 2163), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/css/animate.css")
-, 2163), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 2401), Tuple.Create("\"", 2438)
+, Tuple.Create(Tuple.Create("", 2408), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/css/animate.css")
+, 2408), false)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(">\r\n    <!-- Custom CSS -->\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2248), Tuple.Create("\"", 2284)
-, Tuple.Create(Tuple.Create("", 2255), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/css/custom.css")
-, 2255), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 2493), Tuple.Create("\"", 2529)
+, Tuple.Create(Tuple.Create("", 2500), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/css/custom.css")
+, 2500), false)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
 
-WriteLiteral(" />\r\n    <link");
+WriteLiteral(" />\r\n    <!-- color CSS -->\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2316), Tuple.Create("\"", 2351)
-, Tuple.Create(Tuple.Create("", 2323), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/css/style.css")
-, 2323), false)
-);
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteLiteral(">\r\n    <!-- color CSS -->\r\n    <link");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 2405), Tuple.Create("\"", 2451)
-, Tuple.Create(Tuple.Create("", 2412), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/css/colors/blue-dark.css")
-, 2412), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 2585), Tuple.Create("\"", 2631)
+, Tuple.Create(Tuple.Create("", 2592), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/css/colors/blue-dark.css")
+, 2592), false)
 );
 
 WriteLiteral(" id=\"theme\"");
@@ -251,19 +279,28 @@ WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(">\r\n    <!-- Datetimepicker -->\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2521), Tuple.Create("\"", 2629)
-, Tuple.Create(Tuple.Create("", 2528), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/bootstrap-datetimepicker/css/bootstrap-da" +
+WriteAttribute("href", Tuple.Create(" href=\"", 2701), Tuple.Create("\"", 2809)
+, Tuple.Create(Tuple.Create("", 2708), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/bootstrap-datetimepicker/css/bootstrap-da" +
 "tetimepicker.min.css")
-, 2528), false)
+, 2708), false)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" />\r\n    <!-- Treeview -->\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2684), Tuple.Create("\"", 2756)
-, Tuple.Create(Tuple.Create("", 2691), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/treeview/css/treeview.css")
-, 2691), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 2864), Tuple.Create("\"", 2936)
+, Tuple.Create(Tuple.Create("", 2871), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/treeview/css/treeview.css")
+, 2871), false)
+);
+
+WriteLiteral(" rel=\"stylesheet\"");
+
+WriteLiteral(" />\r\n\r\n    <link");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 2970), Tuple.Create("\"", 3050)
+, Tuple.Create(Tuple.Create("", 2977), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/toast-master/css/jquery.toast.css")
+, 2977), false)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
@@ -280,7 +317,7 @@ WriteLiteral(@" />
 WriteLiteral("    ");
 
             
-            #line 50 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+            #line 53 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
 Write(RenderSection("styles", required: false));
 
             
@@ -354,9 +391,9 @@ WriteLiteral(" href=\"index.html\"");
 
 WriteLiteral("><b><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 3951), Tuple.Create("\"", 4006)
-, Tuple.Create(Tuple.Create("", 3957), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/eliteadmin-logo.png")
-, 3957), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 4245), Tuple.Create("\"", 4300)
+, Tuple.Create(Tuple.Create("", 4251), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/eliteadmin-logo.png")
+, 4251), false)
 );
 
 WriteLiteral(" alt=\"home\"");
@@ -367,9 +404,9 @@ WriteLiteral(" class=\"hidden-xs\"");
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 4053), Tuple.Create("\"", 4108)
-, Tuple.Create(Tuple.Create("", 4059), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/eliteadmin-text.png")
-, 4059), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 4347), Tuple.Create("\"", 4402)
+, Tuple.Create(Tuple.Create("", 4353), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/eliteadmin-text.png")
+, 4353), false)
 );
 
 WriteLiteral(" alt=\"home\"");
@@ -398,7 +435,15 @@ WriteLiteral(">\r\n                            <input");
 
 WriteLiteral(" type=\"text\"");
 
-WriteLiteral(" placeholder=\"Search...\"");
+WriteAttribute("placeholder", Tuple.Create(" placeholder=\"", 4820), Tuple.Create("\"", 4861)
+            
+            #line 72 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 4834), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Search
+            
+            #line default
+            #line hidden
+, 4834), false)
+);
 
 WriteLiteral(" class=\"form-control\"");
 
@@ -466,9 +511,9 @@ WriteLiteral(" class=\"user-img\"");
 
 WriteLiteral("> <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 5598), Tuple.Create("\"", 5653)
-, Tuple.Create(Tuple.Create("", 5604), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/users/pawandeep.jpg")
-, 5604), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 5910), Tuple.Create("\"", 5965)
+, Tuple.Create(Tuple.Create("", 5916), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/users/pawandeep.jpg")
+, 5916), false)
 );
 
 WriteLiteral(" alt=\"user\"");
@@ -503,9 +548,9 @@ WriteLiteral(" class=\"user-img\"");
 
 WriteLiteral("> <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 6186), Tuple.Create("\"", 6236)
-, Tuple.Create(Tuple.Create("", 6192), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/users/sonu.jpg")
-, 6192), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 6498), Tuple.Create("\"", 6548)
+, Tuple.Create(Tuple.Create("", 6504), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/users/sonu.jpg")
+, 6504), false)
 );
 
 WriteLiteral(" alt=\"user\"");
@@ -540,9 +585,9 @@ WriteLiteral(" class=\"user-img\"");
 
 WriteLiteral("> <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 6772), Tuple.Create("\"", 6824)
-, Tuple.Create(Tuple.Create("", 6778), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/users/arijit.jpg")
-, 6778), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 7084), Tuple.Create("\"", 7136)
+, Tuple.Create(Tuple.Create("", 7090), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/users/arijit.jpg")
+, 7090), false)
 );
 
 WriteLiteral(" alt=\"user\"");
@@ -577,9 +622,9 @@ WriteLiteral(" class=\"user-img\"");
 
 WriteLiteral("> <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 7347), Tuple.Create("\"", 7402)
-, Tuple.Create(Tuple.Create("", 7353), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/users/pawandeep.jpg")
-, 7353), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 7659), Tuple.Create("\"", 7714)
+, Tuple.Create(Tuple.Create("", 7665), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/users/pawandeep.jpg")
+, 7665), false)
 );
 
 WriteLiteral(" alt=\"user\"");
@@ -808,13 +853,13 @@ WriteLiteral("> <strong>See All Tasks</strong> <i");
 WriteLiteral(" class=\"fa fa-angle-right\"");
 
 WriteLiteral("></i> </a> </li>\r\n                        </ul>\r\n                        <!-- /.d" +
-"ropdown-tasks -->\r\n                    </li>\r\n                    <!-- /.login-p" +
-"artial -->\r\n");
+"ropdown-tasks -->\r\n                    </li>\r\n                    <!-- /.dropdow" +
+"n -->\r\n                    <!-- /.login-partial -->\r\n");
 
 WriteLiteral("                    ");
 
             
-            #line 173 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+            #line 177 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
                Write(Html.Partial("~/Areas/CMS/Views/Shared/_LoginPartial.cshtml"));
 
             
@@ -1027,9 +1072,9 @@ WriteLiteral(" class=\"white-box text-center bg-purple\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 16860), Tuple.Create("\"", 16911)
-, Tuple.Create(Tuple.Create("", 16867), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/eliteadmin-inverse/index.html")
-, 16867), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 17213), Tuple.Create("\"", 17264)
+, Tuple.Create(Tuple.Create("", 17220), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/eliteadmin-inverse/index.html")
+, 17220), false)
 );
 
 WriteLiteral(" target=\"_blank\"");
@@ -1052,9 +1097,9 @@ WriteLiteral(" class=\"white-box text-center bg-success\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 17142), Tuple.Create("\"", 17185)
-, Tuple.Create(Tuple.Create("", 17149), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/eliteadmin/index.html")
-, 17149), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 17495), Tuple.Create("\"", 17538)
+, Tuple.Create(Tuple.Create("", 17502), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/eliteadmin/index.html")
+, 17502), false)
 );
 
 WriteLiteral(" target=\"_blank\"");
@@ -1077,9 +1122,9 @@ WriteLiteral(" class=\"white-box text-center bg-info\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 17413), Tuple.Create("\"", 17466)
-, Tuple.Create(Tuple.Create("", 17420), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/eliteadmin-ecommerce/index.html")
-, 17420), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 17766), Tuple.Create("\"", 17819)
+, Tuple.Create(Tuple.Create("", 17773), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/eliteadmin-ecommerce/index.html")
+, 17773), false)
 );
 
 WriteLiteral(" target=\"_blank\"");
@@ -1102,9 +1147,9 @@ WriteLiteral(" class=\"white-box text-center bg-inverse\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 17697), Tuple.Create("\"", 17759)
-, Tuple.Create(Tuple.Create("", 17704), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/eliteadmin-horizontal-navbar/index3.html")
-, 17704), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 18050), Tuple.Create("\"", 18112)
+, Tuple.Create(Tuple.Create("", 18057), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/eliteadmin-horizontal-navbar/index3.html")
+, 18057), false)
 );
 
 WriteLiteral(" target=\"_blank\"");
@@ -1127,9 +1172,9 @@ WriteLiteral(" class=\"white-box text-center bg-warning\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 17990), Tuple.Create("\"", 18042)
-, Tuple.Create(Tuple.Create("", 17997), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/eliteadmin-iconbar/index4.html")
-, 17997), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 18343), Tuple.Create("\"", 18395)
+, Tuple.Create(Tuple.Create("", 18350), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/eliteadmin-iconbar/index4.html")
+, 18350), false)
 );
 
 WriteLiteral(" target=\"_blank\"");
@@ -1241,13 +1286,13 @@ WriteLiteral("></i> </button>\r\n                            </span>\r\n        
 "iv>\r\n                        <!-- /input-group -->\r\n                    </li>\r\n");
 
             
-            #line 267 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+            #line 271 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
                     
             
             #line default
             #line hidden
             
-            #line 267 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+            #line 271 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
                      if (Request.IsAuthenticated)
                     {
 
@@ -1266,14 +1311,14 @@ WriteLiteral(" class=\"waves-effect\"");
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 20086), Tuple.Create("\"", 20209)
+WriteAttribute("src", Tuple.Create(" src=\"", 20439), Tuple.Create("\"", 20562)
             
-            #line 270 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 20092), Tuple.Create<System.Object, System.Int32>((ViewBag.IsExist==null || false) ? "/assets/admin/plugins/images/users/user-icon.png" : @ViewBag.PersonalPhotoPath
+            #line 274 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 20445), Tuple.Create<System.Object, System.Int32>((ViewBag.IsExist==null || false) ? "/assets/admin/plugins/images/users/user-icon.png" : @ViewBag.PersonalPhotoPath
             
             #line default
             #line hidden
-, 20092), false)
+, 20445), false)
 );
 
 WriteLiteral(" alt=\"user-img\"");
@@ -1287,7 +1332,7 @@ WriteLiteral(" class=\"hide-menu\"");
 WriteLiteral("> ");
 
             
-            #line 270 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+            #line 274 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
                                                                                                                                                                                                                                                      Write(User.Identity.GetUserName().Substring(0, User.Identity.GetUserName().LastIndexOf("@")).ToUpper());
 
             
@@ -1303,14 +1348,14 @@ WriteLiteral(" class=\"nav nav-second-level\"");
 
 WriteLiteral(">\r\n                                <li><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 20512), Tuple.Create("\"", 20571)
+WriteAttribute("href", Tuple.Create(" href=\"", 20865), Tuple.Create("\"", 20924)
             
-            #line 272 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 20519), Tuple.Create<System.Object, System.Int32>(Url.Action("Index", "MyProfile", new { area = "" })
+            #line 276 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 20872), Tuple.Create<System.Object, System.Int32>(Url.Action("Index", "MyProfile", new { area = "" })
             
             #line default
             #line hidden
-, 20519), false)
+, 20872), false)
 );
 
 WriteLiteral("><i");
@@ -1320,7 +1365,7 @@ WriteLiteral(" class=\"ti-user\"");
 WriteLiteral("></i> ");
 
             
-            #line 272 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+            #line 276 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
                                                                                                                       Write(Resources.Resources.MyProfile);
 
             
@@ -1334,14 +1379,14 @@ WriteLiteral(" class=\"divider\"");
 
 WriteLiteral("></li>\r\n                                <li><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 20752), Tuple.Create("\"", 20816)
+WriteAttribute("href", Tuple.Create(" href=\"", 21105), Tuple.Create("\"", 21169)
             
-            #line 274 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 20759), Tuple.Create<System.Object, System.Int32>(Url.Action("Index", "Manage", new { area = "Identity" })
+            #line 278 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 21112), Tuple.Create<System.Object, System.Int32>(Url.Action("Index", "Manage", new { area = "Identity" })
             
             #line default
             #line hidden
-, 20759), false)
+, 21112), false)
 );
 
 WriteLiteral("><i");
@@ -1351,7 +1396,7 @@ WriteLiteral(" class=\"ti-settings\"");
 WriteLiteral("></i> ");
 
             
-            #line 274 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+            #line 278 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
                                                                                                                                Write(Resources.Resources.AccountSettings);
 
             
@@ -1374,7 +1419,7 @@ WriteLiteral(" class=\"ti-power-off\"");
 WriteLiteral("></i> ");
 
             
-            #line 276 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+            #line 280 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
                                                                                                                                 Write(Resources.Resources.LogOff);
 
             
@@ -1383,13 +1428,13 @@ WriteLiteral("></i> ");
 WriteLiteral("</a></li>\r\n");
 
             
-            #line 277 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+            #line 281 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
                                 
             
             #line default
             #line hidden
             
-            #line 277 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+            #line 281 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
                                  using (Html.BeginForm("LogOff", "Account", new { area = "Identity" }, FormMethod.Post, new { id = "logoutForm" }))
                                 {
                                     
@@ -1397,14 +1442,14 @@ WriteLiteral("</a></li>\r\n");
             #line default
             #line hidden
             
-            #line 279 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+            #line 283 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
                                Write(Html.AntiForgeryToken());
 
             
             #line default
             #line hidden
             
-            #line 279 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+            #line 283 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
                                                             
                                 }
 
@@ -1414,18 +1459,16 @@ WriteLiteral("</a></li>\r\n");
 WriteLiteral("                            </ul>\r\n                        </li>\r\n");
 
             
-            #line 283 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+            #line 287 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
                     }
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n");
-
 WriteLiteral("                    ");
 
             
-            #line 285 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+            #line 288 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
                Write(Html.Partial("~/Areas/CMS/Views/Shared/_SideNavBar.cshtml"));
 
             
@@ -1455,7 +1498,7 @@ WriteLiteral(" class=\"page-title\"");
 WriteLiteral(">");
 
             
-            #line 295 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+            #line 298 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
                                           Write(ViewBag.Title);
 
             
@@ -1464,7 +1507,7 @@ WriteLiteral(">");
 WriteLiteral(" - ");
 
             
-            #line 295 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+            #line 298 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
                                                            Write(ViewBag.MainTitle);
 
             
@@ -1481,7 +1524,7 @@ WriteLiteral(" class=\"breadcrumb\"");
 WriteLiteral(">\r\n                            <li>");
 
             
-            #line 299 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+            #line 302 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
                            Write(ViewBag.Title);
 
             
@@ -1494,7 +1537,7 @@ WriteLiteral(" class=\"active\"");
 WriteLiteral(">");
 
             
-            #line 300 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+            #line 303 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
                                           Write(ViewBag.MainTitle);
 
             
@@ -1506,7 +1549,7 @@ WriteLiteral("</li>\r\n                        </ol>\r\n                    </di
 WriteLiteral("                ");
 
             
-            #line 305 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+            #line 308 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
            Write(RenderBody());
 
             
@@ -1703,9 +1746,9 @@ WriteLiteral(" href=\"javascript:void(0)\"");
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 25902), Tuple.Create("\"", 25953)
-, Tuple.Create(Tuple.Create("", 25908), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/users/varun.jpg")
-, 25908), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 26253), Tuple.Create("\"", 26304)
+, Tuple.Create(Tuple.Create("", 26259), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/users/varun.jpg")
+, 26259), false)
 );
 
 WriteLiteral(" alt=\"user-img\"");
@@ -1722,9 +1765,9 @@ WriteLiteral(" href=\"javascript:void(0)\"");
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 26138), Tuple.Create("\"", 26188)
-, Tuple.Create(Tuple.Create("", 26144), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/users/genu.jpg")
-, 26144), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 26489), Tuple.Create("\"", 26539)
+, Tuple.Create(Tuple.Create("", 26495), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/users/genu.jpg")
+, 26495), false)
 );
 
 WriteLiteral(" alt=\"user-img\"");
@@ -1741,9 +1784,9 @@ WriteLiteral(" href=\"javascript:void(0)\"");
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 26375), Tuple.Create("\"", 26427)
-, Tuple.Create(Tuple.Create("", 26381), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/users/ritesh.jpg")
-, 26381), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 26726), Tuple.Create("\"", 26778)
+, Tuple.Create(Tuple.Create("", 26732), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/users/ritesh.jpg")
+, 26732), false)
 );
 
 WriteLiteral(" alt=\"user-img\"");
@@ -1760,9 +1803,9 @@ WriteLiteral(" href=\"javascript:void(0)\"");
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 26612), Tuple.Create("\"", 26664)
-, Tuple.Create(Tuple.Create("", 26618), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/users/arijit.jpg")
-, 26618), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 26963), Tuple.Create("\"", 27015)
+, Tuple.Create(Tuple.Create("", 26969), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/users/arijit.jpg")
+, 26969), false)
 );
 
 WriteLiteral(" alt=\"user-img\"");
@@ -1779,9 +1822,9 @@ WriteLiteral(" href=\"javascript:void(0)\"");
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 26847), Tuple.Create("\"", 26900)
-, Tuple.Create(Tuple.Create("", 26853), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/users/govinda.jpg")
-, 26853), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 27198), Tuple.Create("\"", 27251)
+, Tuple.Create(Tuple.Create("", 27204), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/users/govinda.jpg")
+, 27204), false)
 );
 
 WriteLiteral(" alt=\"user-img\"");
@@ -1798,9 +1841,9 @@ WriteLiteral(" href=\"javascript:void(0)\"");
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 27085), Tuple.Create("\"", 27137)
-, Tuple.Create(Tuple.Create("", 27091), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/users/hritik.jpg")
-, 27091), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 27436), Tuple.Create("\"", 27488)
+, Tuple.Create(Tuple.Create("", 27442), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/users/hritik.jpg")
+, 27442), false)
 );
 
 WriteLiteral(" alt=\"user-img\"");
@@ -1817,9 +1860,9 @@ WriteLiteral(" href=\"javascript:void(0)\"");
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 27321), Tuple.Create("\"", 27371)
-, Tuple.Create(Tuple.Create("", 27327), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/users/john.jpg")
-, 27327), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 27672), Tuple.Create("\"", 27722)
+, Tuple.Create(Tuple.Create("", 27678), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/users/john.jpg")
+, 27678), false)
 );
 
 WriteLiteral(" alt=\"user-img\"");
@@ -1836,9 +1879,9 @@ WriteLiteral(" href=\"javascript:void(0)\"");
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 27556), Tuple.Create("\"", 27611)
-, Tuple.Create(Tuple.Create("", 27562), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/users/pawandeep.jpg")
-, 27562), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 27907), Tuple.Create("\"", 27962)
+, Tuple.Create(Tuple.Create("", 27913), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/images/users/pawandeep.jpg")
+, 27913), false)
 );
 
 WriteLiteral(" alt=\"user-img\"");
@@ -1863,7 +1906,7 @@ WriteLiteral(" class=\"footer text-center\"");
 WriteLiteral("> ");
 
             
-            #line 365 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+            #line 368 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
                                                Write(DateTime.Now.Year);
 
             
@@ -1873,101 +1916,106 @@ WriteLiteral(" &copy; CuteCMS</footer>\r\n            </div>\r\n            <!--
 "\r\n        </div>\r\n        <!-- /#page-wrapper -->\r\n    </div>\r\n    <!-- /#wrappe" +
 "r -->\r\n    <!-- jQuery -->\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 28204), Tuple.Create("\"", 28275)
-, Tuple.Create(Tuple.Create("", 28210), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/jquery/dist/jquery.min.js")
-, 28210), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 28555), Tuple.Create("\"", 28622)
+, Tuple.Create(Tuple.Create("", 28561), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/jquery/dist/jquery.js")
+, 28561), false)
 );
 
-WriteLiteral("></script>\r\n    <!-- Bootstrap Core JavaScript -->\r\n    <script");
+WriteLiteral("></script>\r\n    <!-- Bootstrap Core JavaScript -->\r\n    ");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 28339), Tuple.Create("\"", 28394)
-, Tuple.Create(Tuple.Create("", 28345), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/bootstrap/dist/js/bootstrap.min.js")
-, 28345), false)
+WriteLiteral("\r\n    <script");
+
+WriteAttribute("src", Tuple.Create(" src=", 28769), Tuple.Create("", 28951)
+            
+            #line 379 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 28774), Tuple.Create<System.Object, System.Int32>(CultureHelper.IsRighToLeft() ? "/assets/admin/plugins/bower_components/bootstrap-rtl-master/dist/js/bootstrap-rtl.min.js" : "/assets/admin/bootstrap/dist/js/bootstrap.min.js"
+            
+            #line default
+            #line hidden
+, 28774), false)
 );
 
-WriteLiteral("></script>\r\n    ");
+WriteLiteral("></script>\r\n    <!-- Menu Plugin JavaScript -->\r\n    <script");
 
-WriteLiteral("\r\n    <!-- Menu Plugin JavaScript -->\r\n    <script");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 28578), Tuple.Create("\"", 28659)
-, Tuple.Create(Tuple.Create("", 28584), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js")
-, 28584), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 29011), Tuple.Create("\"", 29092)
+, Tuple.Create(Tuple.Create("", 29017), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js")
+, 29017), false)
 );
 
 WriteLiteral("></script>\r\n    <!--slimscroll JavaScript -->\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 28718), Tuple.Create("\"", 28762)
-, Tuple.Create(Tuple.Create("", 28724), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/js/jquery.slimscroll.js")
-, 28724), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 29151), Tuple.Create("\"", 29195)
+, Tuple.Create(Tuple.Create("", 29157), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/js/jquery.slimscroll.js")
+, 29157), false)
 );
 
 WriteLiteral("></script>\r\n    <!--Wave Effects -->\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 28812), Tuple.Create("\"", 28844)
-, Tuple.Create(Tuple.Create("", 28818), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/js/waves.js")
-, 28818), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 29245), Tuple.Create("\"", 29277)
+, Tuple.Create(Tuple.Create("", 29251), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/js/waves.js")
+, 29251), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 28868), Tuple.Create("\"", 28945)
-, Tuple.Create(Tuple.Create("", 28874), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/toast-master/js/jquery.toast.js")
-, 28874), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 29301), Tuple.Create("\"", 29378)
+, Tuple.Create(Tuple.Create("", 29307), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/toast-master/js/jquery.toast.js")
+, 29307), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 28969), Tuple.Create("\"", 29002)
-, Tuple.Create(Tuple.Create("", 28975), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/js/toastr.js")
-, 28975), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 29402), Tuple.Create("\"", 29435)
+, Tuple.Create(Tuple.Create("", 29408), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/js/toastr.js")
+, 29408), false)
 );
 
 WriteLiteral("></script>\r\n    <!-- Custom Theme JavaScript -->\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 29064), Tuple.Create("\"", 29101)
-, Tuple.Create(Tuple.Create("", 29070), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/js/custom.min.js")
-, 29070), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 29497), Tuple.Create("\"", 29534)
+, Tuple.Create(Tuple.Create("", 29503), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/js/custom.min.js")
+, 29503), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 29125), Tuple.Create("\"", 29202)
-, Tuple.Create(Tuple.Create("", 29131), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/switchery/dist/switchery.min.js")
-, 29131), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 29558), Tuple.Create("\"", 29635)
+, Tuple.Create(Tuple.Create("", 29564), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/switchery/dist/switchery.min.js")
+, 29564), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 29226), Tuple.Create("\"", 29306)
-, Tuple.Create(Tuple.Create("", 29232), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/custom-select/custom-select.min.js")
-, 29232), false)
-);
-
-WriteLiteral(" type=\"text/javascript\"");
-
-WriteLiteral("></script>\r\n    <script");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 29353), Tuple.Create("\"", 29439)
-, Tuple.Create(Tuple.Create("", 29359), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/bootstrap-select/bootstrap-select.min.js")
-, 29359), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 29659), Tuple.Create("\"", 29739)
+, Tuple.Create(Tuple.Create("", 29665), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/custom-select/custom-select.min.js")
+, 29665), false)
 );
 
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 29486), Tuple.Create("\"", 29583)
-, Tuple.Create(Tuple.Create("", 29492), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsin" +
+WriteAttribute("src", Tuple.Create(" src=\"", 29786), Tuple.Create("\"", 29872)
+, Tuple.Create(Tuple.Create("", 29792), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/bootstrap-select/bootstrap-select.min.js")
+, 29792), false)
+);
+
+WriteLiteral(" type=\"text/javascript\"");
+
+WriteLiteral("></script>\r\n    <script");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 29919), Tuple.Create("\"", 30016)
+, Tuple.Create(Tuple.Create("", 29925), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsin" +
 "put.min.js")
-, 29492), false)
+, 29925), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 29607), Tuple.Create("\"", 29711)
-, Tuple.Create(Tuple.Create("", 29613), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/bootstrap-touchspin/dist/jquery.bootstrap" +
+WriteAttribute("src", Tuple.Create(" src=\"", 30040), Tuple.Create("\"", 30144)
+, Tuple.Create(Tuple.Create("", 30046), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/bootstrap-touchspin/dist/jquery.bootstrap" +
 "-touchspin.min.js")
-, 29613), false)
+, 30046), false)
 );
 
 WriteLiteral(" type=\"text/javascript\"");
@@ -1976,93 +2024,86 @@ WriteLiteral("></script>\r\n    <script");
 
 WriteLiteral(" type=\"text/javascript\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 29781), Tuple.Create("\"", 29864)
-, Tuple.Create(Tuple.Create("", 29787), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/multiselect/js/jquery.multi-select.js")
-, 29787), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 30214), Tuple.Create("\"", 30297)
+, Tuple.Create(Tuple.Create("", 30220), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/multiselect/js/jquery.multi-select.js")
+, 30220), false)
 );
 
 WriteLiteral("></script>\r\n    <!-- Datetimepicker -->\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 29917), Tuple.Create("\"", 30017)
-, Tuple.Create(Tuple.Create("", 29923), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/bootstrap-datetimepicker/js/moment-with-l" +
+WriteAttribute("src", Tuple.Create(" src=\"", 30350), Tuple.Create("\"", 30450)
+, Tuple.Create(Tuple.Create("", 30356), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/bootstrap-datetimepicker/js/moment-with-l" +
 "ocales.min.js")
-, 29923), false)
+, 30356), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 30041), Tuple.Create("\"", 30146)
-, Tuple.Create(Tuple.Create("", 30047), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/bootstrap-datetimepicker/js/bootstrap-dat" +
+WriteAttribute("src", Tuple.Create(" src=\"", 30474), Tuple.Create("\"", 30579)
+, Tuple.Create(Tuple.Create("", 30480), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/bootstrap-datetimepicker/js/bootstrap-dat" +
 "etimepicker.min.js")
-, 30047), false)
+, 30480), false)
 );
 
 WriteLiteral("></script>\r\n    <!-- Tiny MCE -->\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 30193), Tuple.Create("\"", 30261)
-, Tuple.Create(Tuple.Create("", 30199), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/tinymce/tinymce.min.js")
-, 30199), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 30626), Tuple.Create("\"", 30694)
+, Tuple.Create(Tuple.Create("", 30632), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/tinymce/tinymce.min.js")
+, 30632), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 30285), Tuple.Create("\"", 30360)
-, Tuple.Create(Tuple.Create("", 30291), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/tinymce/jquery.tinymce.min.js")
-, 30291), false)
-);
-
-WriteLiteral("></script>\r\n    <script");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 30384), Tuple.Create("\"", 30455)
-, Tuple.Create(Tuple.Create("", 30390), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/tinymce/tinymce-layout.js")
-, 30390), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 30718), Tuple.Create("\"", 30789)
+, Tuple.Create(Tuple.Create("", 30724), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/tinymce/tinymce-layout.js")
+, 30724), false)
 );
 
 WriteLiteral("></script>\r\n    <!-- Treeview -->\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 30502), Tuple.Create("\"", 30571)
-, Tuple.Create(Tuple.Create("", 30508), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/treeview/js/treeview.js")
-, 30508), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 30836), Tuple.Create("\"", 30905)
+, Tuple.Create(Tuple.Create("", 30842), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/treeview/js/treeview.js")
+, 30842), false)
 );
 
-WriteLiteral("></script>\r\n    <script>\r\n        jQuery(document).ready(function () {\r\n         " +
-"   // Switchery\r\n            var elems = Array.prototype.slice.call(document.que" +
-"rySelectorAll(\'.js-switch\'));\r\n            $(\'.js-switch\').each(function () {\r\n " +
-"               new Switchery($(this)[0], $(this).data());\r\n            });\r\n    " +
-"        // For select 2\r\n            $(\".select2\").select2();\r\n            $(\'.s" +
-"electpicker\').selectpicker();\r\n            //Bootstrap-TouchSpin\r\n            $(" +
-"\".vertical-spin\").TouchSpin({\r\n                verticalbuttons: true,\r\n         " +
-"       verticalupclass: \'ti-plus\',\r\n                verticaldownclass: \'ti-minus" +
-"\'\r\n            });\r\n            var vspinTrue = $(\".vertical-spin\").TouchSpin({\r" +
-"\n                verticalbuttons: true\r\n            });\r\n            if (vspinTr" +
-"ue) {\r\n                $(\'.vertical-spin\').prev(\'.bootstrap-touchspin-prefix\').r" +
-"emove();\r\n            }\r\n            $(\"input[name=\'tch1\']\").TouchSpin({\r\n      " +
-"          min: 0,\r\n                max: 100,\r\n                step: 0.1,\r\n      " +
-"          decimals: 2,\r\n                boostat: 5,\r\n                maxboosteds" +
-"tep: 10,\r\n                postfix: \'%\'\r\n            });\r\n            $(\"input[na" +
-"me=\'tch2\']\").TouchSpin({\r\n                min: -1000000000,\r\n                max" +
-": 1000000000,\r\n                stepinterval: 50,\r\n                maxboostedstep" +
-": 10000000,\r\n                prefix: \'$\'\r\n            });\r\n            $(\"input[" +
-"name=\'tch3\']\").TouchSpin();\r\n            $(\"input[name=\'tch3_22\']\").TouchSpin({\r" +
-"\n                initval: 40\r\n            });\r\n            $(\"input[name=\'tch5\']" +
-"\").TouchSpin({\r\n                prefix: \"pre\",\r\n                postfix: \"post\"\r" +
-"\n            });\r\n            // For multiselect\r\n            $(\'#pre-selected-o" +
-"ptions\').multiSelect();\r\n            $(\'#optgroup\').multiSelect({ selectableOptg" +
-"roup: true });\r\n            $(\'#public-methods\').multiSelect();\r\n            $(\'" +
-"#select-all\').click(function () {\r\n                $(\'#public-methods\').multiSel" +
-"ect(\'select_all\');\r\n                return false;\r\n            });\r\n            " +
-"$(\'#deselect-all\').click(function () {\r\n                $(\'#public-methods\').mul" +
-"tiSelect(\'deselect_all\');\r\n                return false;\r\n            });\r\n     " +
-"       $(\'#refresh\').on(\'click\', function () {\r\n                $(\'#public-metho" +
-"ds\').multiSelect(\'refresh\');\r\n                return false;\r\n            });\r\n  " +
-"          $(\'#add-option\').on(\'click\', function () {\r\n                $(\'#public" +
-"-methods\').multiSelect(\'addOption\', { value: 42, text: \'test 42\', index: 0 });\r\n" +
-"                return false;\r\n            });\r\n        });\r\n    </script>\r\n    " +
-"<!--Style Switcher -->\r\n    <script");
+WriteLiteral("></script>\r\n    <!-- Switchery -->\r\n    <script>\r\n        jQuery(document).ready(" +
+"function () {\r\n            // Switchery\r\n            var elems = Array.prototype" +
+".slice.call(document.querySelectorAll(\'.js-switch\'));\r\n            $(\'.js-switch" +
+"\').each(function () {\r\n                new Switchery($(this)[0], $(this).data())" +
+";\r\n            });\r\n            // For select 2\r\n            $(\".select2\").selec" +
+"t2();\r\n            $(\'.selectpicker\').selectpicker();\r\n            //Bootstrap-T" +
+"ouchSpin\r\n            $(\".vertical-spin\").TouchSpin({\r\n                verticalb" +
+"uttons: true,\r\n                verticalupclass: \'ti-plus\',\r\n                vert" +
+"icaldownclass: \'ti-minus\'\r\n            });\r\n            var vspinTrue = $(\".vert" +
+"ical-spin\").TouchSpin({\r\n                verticalbuttons: true\r\n            });\r" +
+"\n            if (vspinTrue) {\r\n                $(\'.vertical-spin\').prev(\'.bootst" +
+"rap-touchspin-prefix\').remove();\r\n            }\r\n            $(\"input[name=\'tch1" +
+"\']\").TouchSpin({\r\n                min: 0,\r\n                max: 100,\r\n          " +
+"      step: 0.1,\r\n                decimals: 2,\r\n                boostat: 5,\r\n   " +
+"             maxboostedstep: 10,\r\n                postfix: \'%\'\r\n            });\r" +
+"\n            $(\"input[name=\'tch2\']\").TouchSpin({\r\n                min: -10000000" +
+"00,\r\n                max: 1000000000,\r\n                stepinterval: 50,\r\n      " +
+"          maxboostedstep: 10000000,\r\n                prefix: \'$\'\r\n            })" +
+";\r\n            $(\"input[name=\'tch3\']\").TouchSpin();\r\n            $(\"input[name=\'" +
+"tch3_22\']\").TouchSpin({\r\n                initval: 40\r\n            });\r\n         " +
+"   $(\"input[name=\'tch5\']\").TouchSpin({\r\n                prefix: \"pre\",\r\n        " +
+"        postfix: \"post\"\r\n            });\r\n            // For multiselect\r\n      " +
+"      $(\'#pre-selected-options\').multiSelect();\r\n            $(\'#optgroup\').mult" +
+"iSelect({ selectableOptgroup: true });\r\n            $(\'#public-methods\').multiSe" +
+"lect();\r\n            $(\'#select-all\').click(function () {\r\n                $(\'#p" +
+"ublic-methods\').multiSelect(\'select_all\');\r\n                return false;\r\n     " +
+"       });\r\n            $(\'#deselect-all\').click(function () {\r\n                " +
+"$(\'#public-methods\').multiSelect(\'deselect_all\');\r\n                return false;" +
+"\r\n            });\r\n            $(\'#refresh\').on(\'click\', function () {\r\n        " +
+"        $(\'#public-methods\').multiSelect(\'refresh\');\r\n                return fal" +
+"se;\r\n            });\r\n            $(\'#add-option\').on(\'click\', function () {\r\n  " +
+"              $(\'#public-methods\').multiSelect(\'addOption\', { value: 42, text: \'" +
+"test 42\', index: 0 });\r\n                return false;\r\n            });\r\n        " +
+"});\r\n    </script>\r\n    <!--Style Switcher -->\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 33248), Tuple.Create("\"", 33332)
-, Tuple.Create(Tuple.Create("", 33254), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/styleswitcher/jQuery.style.switcher.js")
-, 33254), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 33606), Tuple.Create("\"", 33690)
+, Tuple.Create(Tuple.Create("", 33612), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/styleswitcher/jQuery.style.switcher.js")
+, 33612), false)
 );
 
 WriteLiteral("></script>\r\n");
@@ -2070,18 +2111,7 @@ WriteLiteral("></script>\r\n");
 WriteLiteral("    ");
 
             
-            #line 472 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
-Write(Scripts.Render("~/bundles/jqueryval"));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-WriteLiteral("    ");
-
-            
-            #line 473 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+            #line 475 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
 Write(RenderSection("scripts", required: false));
 
             

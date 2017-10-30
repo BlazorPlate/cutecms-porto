@@ -1725,4 +1725,10 @@
   <data name="RoleInUse" xml:space="preserve">
     <value>Bu rol adı zaten kullanılıyor.</value>
   </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>Hesabınız yok mu?</value>
+  </data>
+  <data name="InvalidCode" xml:space="preserve">
+    <value>Geçersiz kod</value>
+  </data>
 </root>

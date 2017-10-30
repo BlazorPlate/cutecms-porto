@@ -1725,4 +1725,10 @@
   <data name="RoleInUse" xml:space="preserve">
     <value>Това име на роля вече е бил използван.!</value>
   </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>Нямате профил?</value>
+  </data>
+  <data name="InvalidCode" xml:space="preserve">
+    <value>Невалиден Zip</value>
+  </data>
 </root>

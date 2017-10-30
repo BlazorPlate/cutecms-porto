@@ -1725,4 +1725,10 @@
   <data name="RoleInUse" xml:space="preserve">
     <value>اس کردار کے نام کو پہلے ہی استعمال کیا گیا ہے ۔</value>
   </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>ایک اکاؤنٹ نہیں ہے؟</value>
+  </data>
+  <data name="InvalidCode" xml:space="preserve">
+    <value>ناجائز ضابطہ!</value>
+  </data>
 </root>

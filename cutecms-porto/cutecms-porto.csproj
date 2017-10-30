@@ -872,11 +872,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Error.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Areas\CMS\Views\Shared\_Layout-rtl.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Layout-rtl.cshtml</DependentUpon>
-    </Compile>
     <Compile Include="Areas\CMS\Views\Shared\_Layout.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1521,6 +1516,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UserRoles.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Identity\Views\Account\VerifyCode.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VerifyCode.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Areas\Identity\Views\Account\Welcome.generated.cs">
       <AutoGen>True</AutoGen>
@@ -2723,15 +2723,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RegisterAjax.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Shared\SendCode.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SendCode.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Shared\Subscribe.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Subscribe.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Shared\VerifyCode.generated.cs">
-      <DependentUpon>VerifyCode.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>VerifyCode.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Shared\_Breadcrumb.generated.cs">
       <AutoGen>True</AutoGen>
@@ -2878,125 +2883,7 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
-    <Content Include="assets\admin-rtl\bootstrap\dist\css\bootstrap-theme.css" />
-    <Content Include="assets\admin-rtl\bootstrap\dist\css\bootstrap-theme.min.css" />
-    <Content Include="assets\admin-rtl\bootstrap\dist\css\bootstrap.css" />
-    <Content Include="assets\admin-rtl\bootstrap\dist\css\bootstrap.min.css" />
-    <Content Include="assets\admin-rtl\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="assets\admin-rtl\bootstrap\dist\js\bootstrap.js" />
-    <Content Include="assets\admin-rtl\bootstrap\dist\js\bootstrap.min.js" />
-    <Content Include="assets\admin-rtl\bootstrap\dist\js\npm.js" />
-    <Content Include="assets\admin-rtl\bootstrap\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="assets\admin-rtl\bootstrap\Gruntfile.js" />
-    <Content Include="assets\admin-rtl\bootstrap\grunt\bs-commonjs-generator.js" />
-    <Content Include="assets\admin-rtl\bootstrap\grunt\bs-glyphicons-data-generator.js" />
-    <Content Include="assets\admin-rtl\bootstrap\grunt\bs-lessdoc-parser.js" />
-    <Content Include="assets\admin-rtl\bootstrap\grunt\bs-raw-files-generator.js" />
-    <Content Include="assets\admin-rtl\bootstrap\js\affix.js" />
-    <Content Include="assets\admin-rtl\bootstrap\js\alert.js" />
-    <Content Include="assets\admin-rtl\bootstrap\js\button.js" />
-    <Content Include="assets\admin-rtl\bootstrap\js\carousel.js" />
-    <Content Include="assets\admin-rtl\bootstrap\js\collapse.js" />
-    <Content Include="assets\admin-rtl\bootstrap\js\dropdown.js" />
-    <Content Include="assets\admin-rtl\bootstrap\js\modal.js" />
-    <Content Include="assets\admin-rtl\bootstrap\js\popover.js" />
-    <Content Include="assets\admin-rtl\bootstrap\js\scrollspy.js" />
-    <Content Include="assets\admin-rtl\bootstrap\js\tab.js" />
-    <Content Include="assets\admin-rtl\bootstrap\js\tooltip.js" />
-    <Content Include="assets\admin-rtl\bootstrap\js\transition.js" />
-    <Content Include="assets\admin-rtl\css\animate.css" />
-    <Content Include="assets\admin-rtl\css\colors\blue-dark.css" />
-    <Content Include="assets\admin-rtl\css\colors\blue.css" />
-    <Content Include="assets\admin-rtl\css\colors\default-dark.css" />
-    <Content Include="assets\admin-rtl\css\colors\default.css" />
-    <Content Include="assets\admin-rtl\css\colors\gray-dark.css" />
-    <Content Include="assets\admin-rtl\css\colors\gray.css" />
-    <Content Include="assets\admin-rtl\css\colors\green-dark.css" />
-    <Content Include="assets\admin-rtl\css\colors\green.css" />
-    <Content Include="assets\admin-rtl\css\colors\megna-dark.css" />
-    <Content Include="assets\admin-rtl\css\colors\megna.css" />
-    <Content Include="assets\admin-rtl\css\colors\purple-dark.css" />
-    <Content Include="assets\admin-rtl\css\colors\purple.css" />
-    <Content Include="assets\admin-rtl\css\icons\linea-icons\linea.css" />
-    <Content Include="assets\admin-rtl\css\responsive.css" />
-    <Content Include="assets\admin-rtl\css\spinners.css" />
-    <Content Include="assets\admin-rtl\css\style.css" />
-    <Content Include="assets\admin-rtl\js\cbpFWTabs.js" />
-    <Content Include="assets\admin-rtl\js\chat.js" />
-    <Content Include="assets\admin-rtl\js\custom.js" />
-    <Content Include="assets\admin-rtl\js\custom.min.js" />
-    <Content Include="assets\admin-rtl\js\dashboard1.js" />
-    <Content Include="assets\admin-rtl\js\dashboard2.js" />
-    <Content Include="assets\admin-rtl\js\dashboard3.js" />
-    <Content Include="assets\admin-rtl\js\dashboard4.js" />
-    <Content Include="assets\admin-rtl\js\flot-data.js" />
-    <Content Include="assets\admin-rtl\js\footable-init.js" />
-    <Content Include="assets\admin-rtl\js\jasny-bootstrap.js" />
-    <Content Include="assets\admin-rtl\js\jquery.PrintArea.js" />
-    <Content Include="assets\admin-rtl\js\jquery.slimscroll.js" />
-    <Content Include="assets\admin-rtl\js\jsgrid-init.js" />
-    <Content Include="assets\admin-rtl\js\mask.js" />
-    <Content Include="assets\admin-rtl\js\morris-data.js" />
-    <Content Include="assets\admin-rtl\js\real-estate.js" />
-    <Content Include="assets\admin-rtl\js\toastr.js" />
-    <Content Include="assets\admin-rtl\js\validator.js" />
-    <Content Include="assets\admin-rtl\js\waves.js" />
-    <Content Include="assets\admin-rtl\js\widget.js" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\css\font-awesome.css" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\css\font-awesome.min.css" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\fonts\fontawesome-webfont.svg" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\HELP-US-OUT.txt" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\less\extras.css" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\less\font-awesome.css" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\less\mixins.css" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\less\variables.css" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-arrows-10.svg" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-basic-10.svg" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-basic-elaboration-10.svg" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-ecommerce-10.svg" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-music-10.svg" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-software-10.svg" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-weather-10.svg" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\linea.css" />
-    <Content Include="assets\admin-rtl\less\icons\simple-line-icons\css\simple-line-icons.css" />
-    <Content Include="assets\admin-rtl\less\icons\simple-line-icons\fonts\Simple-Line-Icons.svg" />
-    <Content Include="assets\admin-rtl\less\icons\simple-line-icons\less\simple-line-icons.css" />
-    <Content Include="assets\admin-rtl\less\icons\themify-icons\fonts\themify.svg" />
-    <Content Include="assets\admin-rtl\less\icons\themify-icons\ie7\ie7.css" />
-    <Content Include="assets\admin-rtl\less\icons\themify-icons\ie7\ie7.js" />
-    <Content Include="assets\admin-rtl\less\icons\themify-icons\themify-icons.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\css\weather-icons-core.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\css\weather-icons-variables.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\css\weather-icons-wind.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\css\weather-icons-wind.min.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\css\weather-icons.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\css\weather-icons.min.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\font\weathericons-regular-webfont.svg" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\css\variables-beaufort.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\css\variables-day.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\css\variables-direction.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\css\variables-misc.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\css\variables-moon.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\css\variables-neutral.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\css\variables-night.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\css\variables-time.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\css\variables-wind-names.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-variables\variables-beaufort.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-variables\variables-day.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-variables\variables-direction.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-variables\variables-misc.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-variables\variables-moon.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-variables\variables-neutral.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-variables\variables-night.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-variables\variables-time.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-variables\variables-wind-names.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\weather-icons-core.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\weather-icons-variables.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\weather-icons-wind.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\weather-icons-wind.min.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\weather-icons.css" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\weather-icons.min.css" />
-    <Content Include="assets\admin-rtl\less\spinners.css" />
+    <Content Include="assets\admin\css\style-rtl.css" />
     <Content Include="assets\admin\bootstrap\dist\css\bootstrap-theme.css" />
     <Content Include="assets\admin\bootstrap\dist\css\bootstrap-theme.min.css" />
     <Content Include="assets\admin\bootstrap\dist\css\bootstrap.css" />
@@ -8953,10 +8840,6 @@
     <Content Include="Views\Home\DemoIndex.cshtml">
       <Generator>RazorGenerator</Generator>
     </Content>
-    <Content Include="Views\Home\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
     <Content Include="Views\Shared\SendCode.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>SendCode.generated.cs</LastGenOutput>
@@ -8964,6 +8847,10 @@
     <Content Include="Views\Shared\VerifyCode.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>VerifyCode.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
@@ -9774,261 +9661,6 @@
     <Content Include="assets\admin\plugins\bower_components\typeahead.js-master\typeahead.js.jquery.json" />
     <Content Include="assets\admin\plugins\images\assets\photothumb.db" />
     <Content Include="assets\admin\plugins\images\large\.DS_Store" />
-    <Content Include="assets\admin-rtl\less\colors\blue-dark.less" />
-    <Content Include="assets\admin-rtl\less\colors\blue.less" />
-    <Content Include="assets\admin-rtl\less\colors\default-dark.less" />
-    <Content Include="assets\admin-rtl\less\colors\default.less" />
-    <Content Include="assets\admin-rtl\less\colors\gray-dark.less" />
-    <Content Include="assets\admin-rtl\less\colors\gray.less" />
-    <Content Include="assets\admin-rtl\less\colors\green-dark.less" />
-    <Content Include="assets\admin-rtl\less\colors\green.less" />
-    <Content Include="assets\admin-rtl\less\colors\megna-dark.less" />
-    <Content Include="assets\admin-rtl\less\colors\megna.less" />
-    <Content Include="assets\admin-rtl\less\colors\purple-dark.less" />
-    <Content Include="assets\admin-rtl\less\colors\purple.less" />
-    <Content Include="assets\admin-rtl\less\eliteadmin.less" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\.bower.json" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\.gitignore" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\.npmignore" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\bower.json" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\fonts\fontawesome-webfont-old.ttf" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\fonts\fontawesome-webfont.eot" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\fonts\fontawesome-webfont.ttf" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\fonts\fontawesome-webfont.woff" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\fonts\fontawesome-webfont.woff2" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\fonts\FontAwesome.otf" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\less\animated.less" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\less\bordered-pulled.less" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\less\core.less" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\less\extras.less" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\less\fixed-width.less" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\less\font-awesome.less" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\less\icons.less" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\less\larger.less" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\less\list.less" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\less\mixins.less" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\less\path.less" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\less\rotated-flipped.less" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\less\spinning.less" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\less\stacked.less" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\less\variables.less" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\scss\font-awesome.scss" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\scss\_animated.scss" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\scss\_bordered-pulled.scss" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\scss\_core.scss" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\scss\_extras.scss" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\scss\_fixed-width.scss" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\scss\_icons.scss" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\scss\_larger.scss" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\scss\_list.scss" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\scss\_mixins.scss" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\scss\_path.scss" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\scss\_rotated-flipped.scss" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\scss\_spinning.scss" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\scss\_stacked.scss" />
-    <Content Include="assets\admin-rtl\less\icons\font-awesome\scss\_variables.scss" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-arrows-10.eot" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-arrows-10.ttf" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-arrows-10.woff" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-basic-10.eot" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-basic-10.ttf" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-basic-10.woff" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-basic-elaboration-10.eot" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-basic-elaboration-10.ttf" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-basic-elaboration-10.woff" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-ecommerce-10.eot" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-ecommerce-10.ttf" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-ecommerce-10.woff" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-music-10.eot" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-music-10.ttf" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-music-10.woff" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-software-10.eot" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-software-10.ttf" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-software-10.woff" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-weather-10.eot" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-weather-10.ttf" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\fonts\linea-weather-10.woff" />
-    <Content Include="assets\admin-rtl\less\icons\linea-icons\linea.less" />
-    <Content Include="assets\admin-rtl\less\icons\simple-line-icons\fonts\Simple-Line-Icons.eot" />
-    <Content Include="assets\admin-rtl\less\icons\simple-line-icons\fonts\Simple-Line-Icons.ttf" />
-    <Content Include="assets\admin-rtl\less\icons\simple-line-icons\fonts\Simple-Line-Icons.woff" />
-    <Content Include="assets\admin-rtl\less\icons\simple-line-icons\fonts\Simple-Line-Icons.woff2" />
-    <Content Include="assets\admin-rtl\less\icons\simple-line-icons\less\simple-line-icons.less" />
-    <Content Include="assets\admin-rtl\less\icons\simple-line-icons\scss\simple-line-icons.scss" />
-    <Content Include="assets\admin-rtl\less\icons\themify-icons\fonts\themify.eot" />
-    <Content Include="assets\admin-rtl\less\icons\themify-icons\fonts\themify.ttf" />
-    <Content Include="assets\admin-rtl\less\icons\themify-icons\fonts\themify.woff" />
-    <Content Include="assets\admin-rtl\less\icons\themify-icons\themify-icons.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\font\weathericons-regular-webfont.eot" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\font\weathericons-regular-webfont.ttf" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\font\weathericons-regular-webfont.woff" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\font\weathericons-regular-webfont.woff2" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-classes\classes-beaufort.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-classes\classes-day.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-classes\classes-direction.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-classes\classes-misc.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-classes\classes-moon-aliases.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-classes\classes-moon.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-classes\classes-neutral.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-classes\classes-night.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-classes\classes-time.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-classes\classes-wind-aliases.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-classes\classes-wind-degrees.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-classes\classes-wind.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-variables\variables-beaufort.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-variables\variables-day.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-variables\variables-direction.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-variables\variables-misc.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-variables\variables-moon.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-variables\variables-neutral.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-variables\variables-night.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-variables\variables-time.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\icon-variables\variables-wind-names.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\mappings\wi-forecast-io.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\mappings\wi-owm.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\mappings\wi-wmo4680.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\mappings\wi-yahoo.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\weather-icons-classes.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\weather-icons-core.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\weather-icons-variables.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\weather-icons-wind.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\weather-icons-wind.min.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\weather-icons.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\less\weather-icons.min.less" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\icon-classes\classes-beaufort.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\icon-classes\classes-day.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\icon-classes\classes-direction.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\icon-classes\classes-misc.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\icon-classes\classes-moon-aliases.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\icon-classes\classes-moon.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\icon-classes\classes-neutral.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\icon-classes\classes-night.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\icon-classes\classes-time.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\icon-classes\classes-wind-aliases.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\icon-classes\classes-wind-degrees.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\icon-classes\classes-wind.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\icon-variables\variables-beaufort.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\icon-variables\variables-day.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\icon-variables\variables-direction.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\icon-variables\variables-misc.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\icon-variables\variables-moon.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\icon-variables\variables-neutral.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\icon-variables\variables-night.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\icon-variables\variables-time.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\icon-variables\variables-wind-names.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\mappings\wi-forecast-io.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\mappings\wi-owm.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\mappings\wi-wmo4680.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\mappings\wi-yahoo.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\weather-icons-classes.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\weather-icons-core.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\weather-icons-variables.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\weather-icons-wind.min.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\weather-icons-wind.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\weather-icons.min.scss" />
-    <Content Include="assets\admin-rtl\less\icons\weather-icons\sass\weather-icons.scss" />
-    <Content Include="assets\admin-rtl\less\pages.less" />
-    <Content Include="assets\admin-rtl\less\responsive.less" />
-    <Content Include="assets\admin-rtl\less\rtl.less" />
-    <Content Include="assets\admin-rtl\less\sidebar-nav.less" />
-    <Content Include="assets\admin-rtl\less\style.less" />
-    <Content Include="assets\admin-rtl\less\variables.less" />
-    <Content Include="assets\admin-rtl\less\widgets.less" />
-    <Content Include="assets\admin-rtl\js\bootstrap-test.json" />
-    <Content Include="assets\admin-rtl\bootstrap\CHANGELOG.md" />
-    <Content Include="assets\admin-rtl\bootstrap\dist\css\bootstrap-theme.css.map" />
-    <Content Include="assets\admin-rtl\bootstrap\dist\css\bootstrap-theme.min.css.map" />
-    <Content Include="assets\admin-rtl\bootstrap\dist\css\bootstrap.css.map" />
-    <Content Include="assets\admin-rtl\bootstrap\dist\css\bootstrap.min.css.map" />
-    <Content Include="assets\admin-rtl\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="assets\admin-rtl\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="assets\admin-rtl\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="assets\admin-rtl\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="assets\admin-rtl\bootstrap\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="assets\admin-rtl\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="assets\admin-rtl\bootstrap\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="assets\admin-rtl\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="assets\admin-rtl\bootstrap\grunt\.jshintrc" />
-    <Content Include="assets\admin-rtl\bootstrap\grunt\configBridge.json" />
-    <Content Include="assets\admin-rtl\bootstrap\grunt\sauce_browsers.yml" />
-    <Content Include="assets\admin-rtl\bootstrap\less\alerts.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\badges.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\bootstrap.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\breadcrumbs.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\button-groups.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\buttons.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\carousel.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\close.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\code.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\component-animations.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\dropdowns.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\forms.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\glyphicons.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\grid.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\input-groups.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\jumbotron.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\labels.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\list-group.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\media.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\alerts.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\background-variant.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\border-radius.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\buttons.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\center-block.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\clearfix.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\forms.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\gradients.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\grid-framework.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\grid.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\hide-text.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\image.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\labels.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\list-group.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\nav-divider.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\nav-vertical-align.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\opacity.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\pagination.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\panels.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\progress-bar.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\reset-filter.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\reset-text.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\resize.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\responsive-visibility.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\size.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\tab-focus.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\table-row.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\text-emphasis.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\text-overflow.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\mixins\vendor-prefixes.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\modals.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\navbar.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\navs.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\normalize.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\pager.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\pagination.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\panels.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\popovers.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\print.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\progress-bars.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\responsive-embed.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\responsive-utilities.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\scaffolding.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\tables.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\theme.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\thumbnails.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\tooltip.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\type.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\utilities.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\variables.less" />
-    <Content Include="assets\admin-rtl\bootstrap\less\wells.less" />
-    <Content Include="assets\admin-rtl\bootstrap\LICENSE" />
-    <Content Include="assets\admin-rtl\bootstrap\package.json" />
-    <Content Include="assets\admin-rtl\bootstrap\README.md" />
-    <Content Include="Areas\CMS\Views\Shared\_Layout-rtl.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Layout-rtl.generated.cs</LastGenOutput>
-    </Content>
     <Content Include="assets\porto\css\fonts\minicart-font.eot" />
     <Content Include="assets\porto\css\fonts\minicart-font.ttf" />
     <Content Include="assets\porto\css\fonts\minicart-font.woff" />

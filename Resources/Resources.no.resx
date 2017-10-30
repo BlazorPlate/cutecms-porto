@@ -1725,4 +1725,10 @@
   <data name="RoleInUse" xml:space="preserve">
     <value>Det rollenavnet er allerede brukt.</value>
   </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>Har ikke opprettet en konto</value>
+  </data>
+  <data name="InvalidCode" xml:space="preserve">
+    <value>Koden er ugyldig</value>
+  </data>
 </root>

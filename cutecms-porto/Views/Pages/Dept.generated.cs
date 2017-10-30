@@ -310,36 +310,36 @@ WriteLiteral(">");
             
             #line default
             #line hidden
-WriteLiteral("</p>\r\n\r\n                    <img");
+WriteLiteral("</p>\r\n                    <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2623), Tuple.Create("\"", 2645)
+WriteAttribute("src", Tuple.Create(" src=\"", 2621), Tuple.Create("\"", 2643)
             
-            #line 57 "..\..\Views\Pages\Dept.cshtml"
-, Tuple.Create(Tuple.Create("", 2629), Tuple.Create<System.Object, System.Int32>(Model.ImagePath
+            #line 56 "..\..\Views\Pages\Dept.cshtml"
+, Tuple.Create(Tuple.Create("", 2627), Tuple.Create<System.Object, System.Int32>(Model.ImagePath
             
             #line default
             #line hidden
-, 2629), false)
+, 2627), false)
 );
 
 WriteLiteral(" style=\"max-width: 260px;\"");
 
-WriteAttribute("alt", Tuple.Create(" alt=\"", 2672), Tuple.Create("\"", 2694)
+WriteAttribute("alt", Tuple.Create(" alt=\"", 2670), Tuple.Create("\"", 2692)
             
-            #line 57 "..\..\Views\Pages\Dept.cshtml"
-, Tuple.Create(Tuple.Create("", 2678), Tuple.Create<System.Object, System.Int32>(Model.ImageName
+            #line 56 "..\..\Views\Pages\Dept.cshtml"
+, Tuple.Create(Tuple.Create("", 2676), Tuple.Create<System.Object, System.Int32>(Model.ImageName
             
             #line default
             #line hidden
-, 2678), false)
+, 2676), false)
 );
 
 WriteLiteral(" class=\"pull-right ml-xl mb-xl img-responsive box-shadow-custom\"");
 
-WriteLiteral(" />\r\n\r\n                    <p>");
+WriteLiteral(" />\r\n                    <p>");
 
             
-            #line 59 "..\..\Views\Pages\Dept.cshtml"
+            #line 57 "..\..\Views\Pages\Dept.cshtml"
                   Write(Html.Raw(HttpUtility.HtmlDecode(Model.Description)));
 
             
@@ -348,13 +348,13 @@ WriteLiteral(" />\r\n\r\n                    <p>");
 WriteLiteral(" </p>\r\n                </div>\r\n\r\n            </div>\r\n");
 
             
-            #line 63 "..\..\Views\Pages\Dept.cshtml"
+            #line 61 "..\..\Views\Pages\Dept.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 63 "..\..\Views\Pages\Dept.cshtml"
+            #line 61 "..\..\Views\Pages\Dept.cshtml"
              if (User.IsInRole("Admin"))
             {
 
@@ -367,42 +367,42 @@ WriteLiteral(" type=\"button\"");
 
 WriteLiteral(" class=\"btn btn-primary mr-xs mb-sm\"");
 
-WriteAttribute("title", Tuple.Create(" title=\"", 3023), Tuple.Create("\"", 3056)
+WriteAttribute("title", Tuple.Create(" title=\"", 3019), Tuple.Create("\"", 3052)
             
-            #line 65 "..\..\Views\Pages\Dept.cshtml"
-, Tuple.Create(Tuple.Create("", 3031), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Edit
+            #line 63 "..\..\Views\Pages\Dept.cshtml"
+, Tuple.Create(Tuple.Create("", 3027), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Edit
             
             #line default
             #line hidden
-, 3031), false)
+, 3027), false)
 );
 
-WriteAttribute("value", Tuple.Create(" value=\"", 3057), Tuple.Create("\"", 3090)
+WriteAttribute("value", Tuple.Create(" value=\"", 3053), Tuple.Create("\"", 3086)
             
-            #line 65 "..\..\Views\Pages\Dept.cshtml"
-                                  , Tuple.Create(Tuple.Create("", 3065), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Edit
+            #line 63 "..\..\Views\Pages\Dept.cshtml"
+                                  , Tuple.Create(Tuple.Create("", 3061), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Edit
             
             #line default
             #line hidden
-, 3065), false)
+, 3061), false)
 );
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 3091), Tuple.Create("\"", 3204)
-, Tuple.Create(Tuple.Create("", 3101), Tuple.Create("location.href=\'", 3101), true)
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 3087), Tuple.Create("\"", 3200)
+, Tuple.Create(Tuple.Create("", 3097), Tuple.Create("location.href=\'", 3097), true)
             
-            #line 65 "..\..\Views\Pages\Dept.cshtml"
-                                                                                     , Tuple.Create(Tuple.Create("", 3116), Tuple.Create<System.Object, System.Int32>(Url.Action("Edit", "IdentityDepartmentTerms", new { area = "Identity",id = Model.Id })
+            #line 63 "..\..\Views\Pages\Dept.cshtml"
+                                                                                     , Tuple.Create(Tuple.Create("", 3112), Tuple.Create<System.Object, System.Int32>(Url.Action("Edit", "IdentityDepartmentTerms", new { area = "Identity",id = Model.Id })
             
             #line default
             #line hidden
-, 3116), false)
-, Tuple.Create(Tuple.Create("", 3203), Tuple.Create("\'", 3203), true)
+, 3112), false)
+, Tuple.Create(Tuple.Create("", 3199), Tuple.Create("\'", 3199), true)
 );
 
 WriteLiteral(" />\r\n");
 
             
-            #line 66 "..\..\Views\Pages\Dept.cshtml"
+            #line 64 "..\..\Views\Pages\Dept.cshtml"
             }
 
             
@@ -414,36 +414,36 @@ WriteLiteral(" type=\"button\"");
 
 WriteLiteral(" class=\"btn btn-default mr-xs mb-sm\"");
 
-WriteAttribute("title", Tuple.Create(" title=\"", 3293), Tuple.Create("\"", 3326)
+WriteAttribute("title", Tuple.Create(" title=\"", 3289), Tuple.Create("\"", 3322)
             
-            #line 67 "..\..\Views\Pages\Dept.cshtml"
-, Tuple.Create(Tuple.Create("", 3301), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Back
+            #line 65 "..\..\Views\Pages\Dept.cshtml"
+, Tuple.Create(Tuple.Create("", 3297), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Back
             
             #line default
             #line hidden
-, 3301), false)
+, 3297), false)
 );
 
-WriteAttribute("value", Tuple.Create(" value=\"", 3327), Tuple.Create("\"", 3360)
+WriteAttribute("value", Tuple.Create(" value=\"", 3323), Tuple.Create("\"", 3356)
             
-            #line 67 "..\..\Views\Pages\Dept.cshtml"
-                              , Tuple.Create(Tuple.Create("", 3335), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Back
+            #line 65 "..\..\Views\Pages\Dept.cshtml"
+                              , Tuple.Create(Tuple.Create("", 3331), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Back
             
             #line default
             #line hidden
-, 3335), false)
+, 3331), false)
 );
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 3361), Tuple.Create("\"", 3433)
-, Tuple.Create(Tuple.Create("", 3371), Tuple.Create("location.href=\'", 3371), true)
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 3357), Tuple.Create("\"", 3429)
+, Tuple.Create(Tuple.Create("", 3367), Tuple.Create("location.href=\'", 3367), true)
             
-            #line 67 "..\..\Views\Pages\Dept.cshtml"
-                                                                                 , Tuple.Create(Tuple.Create("", 3386), Tuple.Create<System.Object, System.Int32>(Url.Action("Index", "Home", new { area = ""})
+            #line 65 "..\..\Views\Pages\Dept.cshtml"
+                                                                                 , Tuple.Create(Tuple.Create("", 3382), Tuple.Create<System.Object, System.Int32>(Url.Action("Index", "Home", new { area = ""})
             
             #line default
             #line hidden
-, 3386), false)
-, Tuple.Create(Tuple.Create("", 3432), Tuple.Create("\'", 3432), true)
+, 3382), false)
+, Tuple.Create(Tuple.Create("", 3428), Tuple.Create("\'", 3428), true)
 );
 
 WriteLiteral(" />\r\n            <section");
@@ -465,7 +465,7 @@ WriteLiteral(" class=\"font-weight-semibold mb-xs\"");
 WriteLiteral(">");
 
             
-            #line 71 "..\..\Views\Pages\Dept.cshtml"
+            #line 69 "..\..\Views\Pages\Dept.cshtml"
                                                           Write(Resources.Resources.MeetOurTeam);
 
             
@@ -488,13 +488,13 @@ WriteLiteral(">\r\n                            ");
 WriteLiteral("\r\n");
 
             
-            #line 75 "..\..\Views\Pages\Dept.cshtml"
+            #line 73 "..\..\Views\Pages\Dept.cshtml"
                             
             
             #line default
             #line hidden
             
-            #line 75 "..\..\Views\Pages\Dept.cshtml"
+            #line 73 "..\..\Views\Pages\Dept.cshtml"
                              foreach (var item in TreeHelper.Traversal(Model.Department, x => x.Departments1).OrderBy(d => d.Ordinal))
                             {
                                 if (activeFlag)
@@ -512,7 +512,7 @@ WriteLiteral(" class=\"active\"");
 WriteLiteral(" data-option-value=\".");
 
             
-            #line 79 "..\..\Views\Pages\Dept.cshtml"
+            #line 77 "..\..\Views\Pages\Dept.cshtml"
                                                                                    Write(item.Code);
 
             
@@ -527,7 +527,7 @@ WriteLiteral(" href=\"#\"");
 WriteLiteral(">");
 
             
-            #line 79 "..\..\Views\Pages\Dept.cshtml"
+            #line 77 "..\..\Views\Pages\Dept.cshtml"
                                                                                                            Write(item.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value);
 
             
@@ -536,7 +536,7 @@ WriteLiteral(">");
 WriteLiteral("</a></li>\r\n");
 
             
-            #line 80 "..\..\Views\Pages\Dept.cshtml"
+            #line 78 "..\..\Views\Pages\Dept.cshtml"
                                     activeFlag = false;
                                 }
                                 else
@@ -550,7 +550,7 @@ WriteLiteral("                                    <li");
 WriteLiteral(" data-option-value=\".");
 
             
-            #line 84 "..\..\Views\Pages\Dept.cshtml"
+            #line 82 "..\..\Views\Pages\Dept.cshtml"
                                                        Write(item.Code);
 
             
@@ -565,7 +565,7 @@ WriteLiteral(" href=\"#\"");
 WriteLiteral(">");
 
             
-            #line 84 "..\..\Views\Pages\Dept.cshtml"
+            #line 82 "..\..\Views\Pages\Dept.cshtml"
                                                                                Write(item.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value);
 
             
@@ -574,7 +574,7 @@ WriteLiteral(">");
 WriteLiteral("</a></li>\r\n");
 
             
-            #line 85 "..\..\Views\Pages\Dept.cshtml"
+            #line 83 "..\..\Views\Pages\Dept.cshtml"
 
                                 }
                             }
@@ -603,13 +603,13 @@ WriteLiteral(" data-sort-id=\"portfolio\"");
 WriteLiteral(">\r\n");
 
             
-            #line 93 "..\..\Views\Pages\Dept.cshtml"
+            #line 91 "..\..\Views\Pages\Dept.cshtml"
                                     
             
             #line default
             #line hidden
             
-            #line 93 "..\..\Views\Pages\Dept.cshtml"
+            #line 91 "..\..\Views\Pages\Dept.cshtml"
                                      foreach (var item in TreeHelper.Traversal(Model.Department, x => x.Departments1))
                                     {
                                         var deptList = TreeHelper.Traversal(item, x => x.Departments1);
@@ -626,18 +626,18 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                                                <li");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 6659), Tuple.Create("\"", 6718)
-, Tuple.Create(Tuple.Create("", 6667), Tuple.Create("col-md-3", 6667), true)
-, Tuple.Create(Tuple.Create(" ", 6675), Tuple.Create("col-sm-6", 6676), true)
-, Tuple.Create(Tuple.Create(" ", 6684), Tuple.Create("col-xs-12", 6685), true)
-, Tuple.Create(Tuple.Create(" ", 6694), Tuple.Create("isotope-item", 6695), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 6655), Tuple.Create("\"", 6714)
+, Tuple.Create(Tuple.Create("", 6663), Tuple.Create("col-md-3", 6663), true)
+, Tuple.Create(Tuple.Create(" ", 6671), Tuple.Create("col-sm-6", 6672), true)
+, Tuple.Create(Tuple.Create(" ", 6680), Tuple.Create("col-xs-12", 6681), true)
+, Tuple.Create(Tuple.Create(" ", 6690), Tuple.Create("isotope-item", 6691), true)
             
-            #line 103 "..\..\Views\Pages\Dept.cshtml"
-                   , Tuple.Create(Tuple.Create(" ", 6707), Tuple.Create<System.Object, System.Int32>(item.Code
+            #line 101 "..\..\Views\Pages\Dept.cshtml"
+                   , Tuple.Create(Tuple.Create(" ", 6703), Tuple.Create<System.Object, System.Int32>(item.Code
             
             #line default
             #line hidden
-, 6708), false)
+, 6704), false)
 );
 
 WriteLiteral(">\r\n                                                    <div");
@@ -646,14 +646,14 @@ WriteLiteral(" class=\"portfolio-item\"");
 
 WriteLiteral(">\r\n                                                        <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 6862), Tuple.Create("\"", 6953)
+WriteAttribute("href", Tuple.Create(" href=\"", 6858), Tuple.Create("\"", 6949)
             
-            #line 105 "..\..\Views\Pages\Dept.cshtml"
-, Tuple.Create(Tuple.Create("", 6869), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", "Staff", new { id = empInDept.Employee.TranslationId })
+            #line 103 "..\..\Views\Pages\Dept.cshtml"
+, Tuple.Create(Tuple.Create("", 6865), Tuple.Create<System.Object, System.Int32>(Url.Action("MemberProfile", "Staff", new { id = empInDept.Employee.TranslationId })
             
             #line default
             #line hidden
-, 6869), false)
+, 6865), false)
 );
 
 WriteLiteral(" data-ajax-on-page");
@@ -670,24 +670,24 @@ WriteLiteral(" class=\"thumb-info-wrapper m-none\"");
 
 WriteLiteral(">\r\n                                                                    <img");
 
-WriteAttribute("alt", Tuple.Create(" alt=\"", 7315), Tuple.Create("\"", 7358)
+WriteAttribute("alt", Tuple.Create(" alt=\"", 7311), Tuple.Create("\"", 7354)
             
-            #line 108 "..\..\Views\Pages\Dept.cshtml"
-, Tuple.Create(Tuple.Create("", 7321), Tuple.Create<System.Object, System.Int32>(empInDept.Employee.PersonalPhotoName
+            #line 106 "..\..\Views\Pages\Dept.cshtml"
+, Tuple.Create(Tuple.Create("", 7317), Tuple.Create<System.Object, System.Int32>(empInDept.Employee.PersonalPhotoName
             
             #line default
             #line hidden
-, 7321), false)
+, 7317), false)
 );
 
-WriteAttribute("src", Tuple.Create(" src=\"", 7359), Tuple.Create("\"", 7507)
+WriteAttribute("src", Tuple.Create(" src=\"", 7355), Tuple.Create("\"", 7503)
             
-            #line 108 "..\..\Views\Pages\Dept.cshtml"
-                                           , Tuple.Create(Tuple.Create("", 7365), Tuple.Create<System.Object, System.Int32>(!File.Exists(Server.MapPath(employee.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : @employee.PersonalPhotoPath
+            #line 106 "..\..\Views\Pages\Dept.cshtml"
+                                           , Tuple.Create(Tuple.Create("", 7361), Tuple.Create<System.Object, System.Int32>(!File.Exists(Server.MapPath(employee.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : @employee.PersonalPhotoPath
             
             #line default
             #line hidden
-, 7365), false)
+, 7361), false)
 );
 
 WriteLiteral(">\r\n                                                                </span>\r\n     " +
@@ -706,7 +706,7 @@ WriteLiteral(" class=\"custom-thumb-info-type font-weight-light text-md\"");
 WriteLiteral(">");
 
             
-            #line 112 "..\..\Views\Pages\Dept.cshtml"
+            #line 110 "..\..\Views\Pages\Dept.cshtml"
                                                                                                                                   Write(empInDept.Department.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value);
 
             
@@ -720,7 +720,7 @@ WriteLiteral(" class=\"custom-thumb-info-inner font-weight-semibold text-lg\"");
 WriteLiteral(">");
 
             
-            #line 113 "..\..\Views\Pages\Dept.cshtml"
+            #line 111 "..\..\Views\Pages\Dept.cshtml"
                                                                                                                                       Write(personalTitle);
 
             
@@ -729,7 +729,7 @@ WriteLiteral(">");
 WriteLiteral(" ");
 
             
-            #line 113 "..\..\Views\Pages\Dept.cshtml"
+            #line 111 "..\..\Views\Pages\Dept.cshtml"
                                                                                                                                                      Write(employee.FullName);
 
             
@@ -738,13 +738,13 @@ WriteLiteral(" ");
 WriteLiteral("</span>\r\n");
 
             
-            #line 114 "..\..\Views\Pages\Dept.cshtml"
+            #line 112 "..\..\Views\Pages\Dept.cshtml"
                                                                         
             
             #line default
             #line hidden
             
-            #line 114 "..\..\Views\Pages\Dept.cshtml"
+            #line 112 "..\..\Views\Pages\Dept.cshtml"
                                                                           string occupation = (empInDept.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault() != null) ? empInDept.Occupation.OccupationTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value : empInDept.Occupation.Code;
             
             #line default
@@ -756,7 +756,7 @@ WriteLiteral(" class=\"custom-thumb-info-type font-weight-light text-sm\"");
 WriteLiteral(">");
 
             
-            #line 115 "..\..\Views\Pages\Dept.cshtml"
+            #line 113 "..\..\Views\Pages\Dept.cshtml"
                                                                                                                                   Write(occupation);
 
             
@@ -773,7 +773,7 @@ WriteLiteral(@"</span>
 ");
 
             
-            #line 123 "..\..\Views\Pages\Dept.cshtml"
+            #line 121 "..\..\Views\Pages\Dept.cshtml"
                                             }
                                         }
                                     }

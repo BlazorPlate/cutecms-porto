@@ -1725,4 +1725,10 @@
   <data name="RoleInUse" xml:space="preserve">
     <value>نام نقش که در حال حاضر استفاده شده است.</value>
   </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>آیاحساب کاربری ندارید ؟</value>
+  </data>
+  <data name="InvalidCode" xml:space="preserve">
+    <value>کد نامعتبر</value>
+  </data>
 </root>

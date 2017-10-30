@@ -1725,4 +1725,10 @@
   <data name="RoleInUse" xml:space="preserve">
     <value>اسم الدور تم إدخاله مسبقاً.</value>
   </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>أنت لا تملك حساب ؟</value>
+  </data>
+  <data name="InvalidCode" xml:space="preserve">
+    <value>رمز غير صحيح</value>
+  </data>
 </root>

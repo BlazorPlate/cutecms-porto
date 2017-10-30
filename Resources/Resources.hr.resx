@@ -1725,4 +1725,10 @@
   <data name="RoleInUse" xml:space="preserve">
     <value>Već je učinjeno mnogo.</value>
   </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>Nemate korisnički račun?</value>
+  </data>
+  <data name="InvalidCode" xml:space="preserve">
+    <value>Nevažeća šifra</value>
+  </data>
 </root>

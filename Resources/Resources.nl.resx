@@ -1725,4 +1725,10 @@
   <data name="RoleInUse" xml:space="preserve">
     <value>Die rolnaam wordt al gebruikt.</value>
   </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>Ik heb nog geen account</value>
+  </data>
+  <data name="InvalidCode" xml:space="preserve">
+    <value>Ongeldige code</value>
+  </data>
 </root>

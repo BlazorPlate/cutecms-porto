@@ -79,7 +79,7 @@ WriteLiteral(" class=\"nav nav-second-level collapse\"");
 
 WriteLiteral(">\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1812), Tuple.Create("\"", 1879)
+WriteAttribute("href", Tuple.Create(" href=\"", 1812), Tuple.Create("\"", 1873)
 , Tuple.Create(Tuple.Create("", 1819), Tuple.Create("/", 1819), true)
             
             #line 45 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
@@ -88,7 +88,7 @@ WriteAttribute("href", Tuple.Create(" href=\"", 1812), Tuple.Create("\"", 1879)
             #line default
             #line hidden
 , 1820), false)
-, Tuple.Create(Tuple.Create("", 1856), Tuple.Create("/identity/account/index", 1856), true)
+, Tuple.Create(Tuple.Create("", 1856), Tuple.Create("/identity/account", 1856), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");
@@ -102,16 +102,16 @@ WriteLiteral(">\r\n                <i></i> ");
             #line hidden
 WriteLiteral("\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1996), Tuple.Create("\"", 2056)
-, Tuple.Create(Tuple.Create("", 2003), Tuple.Create("/", 2003), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 1990), Tuple.Create("\"", 2050)
+, Tuple.Create(Tuple.Create("", 1997), Tuple.Create("/", 1997), true)
             
             #line 50 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
-, Tuple.Create(Tuple.Create("", 2004), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
+, Tuple.Create(Tuple.Create("", 1998), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
             
             #line default
             #line hidden
-, 2004), false)
-, Tuple.Create(Tuple.Create("", 2040), Tuple.Create("/identity/groups", 2040), true)
+, 1998), false)
+, Tuple.Create(Tuple.Create("", 2034), Tuple.Create("/identity/groups", 2034), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");
@@ -125,16 +125,16 @@ WriteLiteral(">\r\n                <i></i> ");
             #line hidden
 WriteLiteral("\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2174), Tuple.Create("\"", 2233)
-, Tuple.Create(Tuple.Create("", 2181), Tuple.Create("/", 2181), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 2168), Tuple.Create("\"", 2227)
+, Tuple.Create(Tuple.Create("", 2175), Tuple.Create("/", 2175), true)
             
             #line 55 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
-, Tuple.Create(Tuple.Create("", 2182), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
+, Tuple.Create(Tuple.Create("", 2176), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
             
             #line default
             #line hidden
-, 2182), false)
-, Tuple.Create(Tuple.Create("", 2218), Tuple.Create("/identity/roles", 2218), true)
+, 2176), false)
+, Tuple.Create(Tuple.Create("", 2212), Tuple.Create("/identity/roles", 2212), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");
@@ -148,16 +148,16 @@ WriteLiteral(">\r\n                <i></i> ");
             #line hidden
 WriteLiteral("\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2350), Tuple.Create("\"", 2413)
-, Tuple.Create(Tuple.Create("", 2357), Tuple.Create("/", 2357), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 2344), Tuple.Create("\"", 2407)
+, Tuple.Create(Tuple.Create("", 2351), Tuple.Create("/", 2351), true)
             
             #line 60 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
-, Tuple.Create(Tuple.Create("", 2358), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
+, Tuple.Create(Tuple.Create("", 2352), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
             
             #line default
             #line hidden
-, 2358), false)
-, Tuple.Create(Tuple.Create("", 2394), Tuple.Create("/identity/employees", 2394), true)
+, 2352), false)
+, Tuple.Create(Tuple.Create("", 2388), Tuple.Create("/identity/employees", 2388), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");
@@ -190,16 +190,16 @@ WriteLiteral("></i> ");
             #line hidden
 WriteLiteral("\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2697), Tuple.Create("\"", 2770)
-, Tuple.Create(Tuple.Create("", 2704), Tuple.Create("/", 2704), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 2691), Tuple.Create("\"", 2764)
+, Tuple.Create(Tuple.Create("", 2698), Tuple.Create("/", 2698), true)
             
             #line 70 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
-, Tuple.Create(Tuple.Create("", 2705), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
+, Tuple.Create(Tuple.Create("", 2699), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
             
             #line default
             #line hidden
-, 2705), false)
-, Tuple.Create(Tuple.Create("", 2741), Tuple.Create("/identity/identitydepartments", 2741), true)
+, 2699), false)
+, Tuple.Create(Tuple.Create("", 2735), Tuple.Create("/identity/identitydepartments", 2735), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");
@@ -213,16 +213,16 @@ WriteLiteral(">\r\n                <i></i> ");
             #line hidden
 WriteLiteral("\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2893), Tuple.Create("\"", 2960)
-, Tuple.Create(Tuple.Create("", 2900), Tuple.Create("/", 2900), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 2887), Tuple.Create("\"", 2954)
+, Tuple.Create(Tuple.Create("", 2894), Tuple.Create("/", 2894), true)
             
             #line 75 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
-, Tuple.Create(Tuple.Create("", 2901), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
+, Tuple.Create(Tuple.Create("", 2895), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
             
             #line default
             #line hidden
-, 2901), false)
-, Tuple.Create(Tuple.Create("", 2937), Tuple.Create("/identity/employeetypes", 2937), true)
+, 2895), false)
+, Tuple.Create(Tuple.Create("", 2931), Tuple.Create("/identity/employeetypes", 2931), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");
@@ -236,16 +236,16 @@ WriteLiteral(">\r\n                <i></i> ");
             #line hidden
 WriteLiteral("\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3085), Tuple.Create("\"", 3150)
-, Tuple.Create(Tuple.Create("", 3092), Tuple.Create("/", 3092), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 3079), Tuple.Create("\"", 3144)
+, Tuple.Create(Tuple.Create("", 3086), Tuple.Create("/", 3086), true)
             
             #line 80 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
-, Tuple.Create(Tuple.Create("", 3093), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
+, Tuple.Create(Tuple.Create("", 3087), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
             
             #line default
             #line hidden
-, 3093), false)
-, Tuple.Create(Tuple.Create("", 3129), Tuple.Create("/identity/occupations", 3129), true)
+, 3087), false)
+, Tuple.Create(Tuple.Create("", 3123), Tuple.Create("/identity/occupations", 3123), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");
@@ -259,16 +259,16 @@ WriteLiteral(">\r\n                <i></i> ");
             #line hidden
 WriteLiteral("\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3273), Tuple.Create("\"", 3349)
-, Tuple.Create(Tuple.Create("", 3280), Tuple.Create("/", 3280), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 3267), Tuple.Create("\"", 3343)
+, Tuple.Create(Tuple.Create("", 3274), Tuple.Create("/", 3274), true)
             
             #line 85 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
-, Tuple.Create(Tuple.Create("", 3281), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
+, Tuple.Create(Tuple.Create("", 3275), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
             
             #line default
             #line hidden
-, 3281), false)
-, Tuple.Create(Tuple.Create("", 3317), Tuple.Create("/identity/identitypersonaltitles", 3317), true)
+, 3275), false)
+, Tuple.Create(Tuple.Create("", 3311), Tuple.Create("/identity/identitypersonaltitles", 3311), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");
@@ -313,16 +313,16 @@ WriteLiteral(" class=\"nav nav-second-level collapse\"");
 
 WriteLiteral(">\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3706), Tuple.Create("\"", 3763)
-, Tuple.Create(Tuple.Create("", 3713), Tuple.Create("/", 3713), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 3700), Tuple.Create("\"", 3757)
+, Tuple.Create(Tuple.Create("", 3707), Tuple.Create("/", 3707), true)
             
             #line 95 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
-, Tuple.Create(Tuple.Create("", 3714), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
+, Tuple.Create(Tuple.Create("", 3708), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
             
             #line default
             #line hidden
-, 3714), false)
-, Tuple.Create(Tuple.Create("", 3750), Tuple.Create("/cms/contents", 3750), true)
+, 3708), false)
+, Tuple.Create(Tuple.Create("", 3744), Tuple.Create("/cms/contents", 3744), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");
@@ -336,16 +336,16 @@ WriteLiteral(">\r\n                <i></i> ");
             #line hidden
 WriteLiteral("\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3887), Tuple.Create("\"", 3946)
-, Tuple.Create(Tuple.Create("", 3894), Tuple.Create("/", 3894), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 3881), Tuple.Create("\"", 3940)
+, Tuple.Create(Tuple.Create("", 3888), Tuple.Create("/", 3888), true)
             
             #line 100 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
-, Tuple.Create(Tuple.Create("", 3895), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
+, Tuple.Create(Tuple.Create("", 3889), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
             
             #line default
             #line hidden
-, 3895), false)
-, Tuple.Create(Tuple.Create("", 3931), Tuple.Create("/cms/Imagefiles", 3931), true)
+, 3889), false)
+, Tuple.Create(Tuple.Create("", 3925), Tuple.Create("/cms/Imagefiles", 3925), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");
@@ -359,16 +359,16 @@ WriteLiteral(">\r\n                <i></i> ");
             #line hidden
 WriteLiteral("\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4064), Tuple.Create("\"", 4118)
-, Tuple.Create(Tuple.Create("", 4071), Tuple.Create("/", 4071), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 4058), Tuple.Create("\"", 4112)
+, Tuple.Create(Tuple.Create("", 4065), Tuple.Create("/", 4065), true)
             
             #line 105 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
-, Tuple.Create(Tuple.Create("", 4072), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
+, Tuple.Create(Tuple.Create("", 4066), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
             
             #line default
             #line hidden
-, 4072), false)
-, Tuple.Create(Tuple.Create("", 4108), Tuple.Create("/cms/menus", 4108), true)
+, 4066), false)
+, Tuple.Create(Tuple.Create("", 4102), Tuple.Create("/cms/menus", 4102), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");
@@ -401,16 +401,16 @@ WriteLiteral("></i> ");
             #line hidden
 WriteLiteral("\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4398), Tuple.Create("\"", 4459)
-, Tuple.Create(Tuple.Create("", 4405), Tuple.Create("/", 4405), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 4392), Tuple.Create("\"", 4453)
+, Tuple.Create(Tuple.Create("", 4399), Tuple.Create("/", 4399), true)
             
             #line 115 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
-, Tuple.Create(Tuple.Create("", 4406), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
+, Tuple.Create(Tuple.Create("", 4400), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
             
             #line default
             #line hidden
-, 4406), false)
-, Tuple.Create(Tuple.Create("", 4442), Tuple.Create("/cms/contenttypes", 4442), true)
+, 4400), false)
+, Tuple.Create(Tuple.Create("", 4436), Tuple.Create("/cms/contenttypes", 4436), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");
@@ -424,16 +424,16 @@ WriteLiteral(">\r\n                <i></i> ");
             #line hidden
 WriteLiteral("\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4583), Tuple.Create("\"", 4642)
-, Tuple.Create(Tuple.Create("", 4590), Tuple.Create("/", 4590), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 4577), Tuple.Create("\"", 4636)
+, Tuple.Create(Tuple.Create("", 4584), Tuple.Create("/", 4584), true)
             
             #line 120 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
-, Tuple.Create(Tuple.Create("", 4591), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
+, Tuple.Create(Tuple.Create("", 4585), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
             
             #line default
             #line hidden
-, 4591), false)
-, Tuple.Create(Tuple.Create("", 4627), Tuple.Create("/cms/categories", 4627), true)
+, 4585), false)
+, Tuple.Create(Tuple.Create("", 4621), Tuple.Create("/cms/categories", 4621), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");
@@ -447,16 +447,16 @@ WriteLiteral(">\r\n                <i></i> ");
             #line hidden
 WriteLiteral("\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4764), Tuple.Create("\"", 4822)
-, Tuple.Create(Tuple.Create("", 4771), Tuple.Create("/", 4771), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 4758), Tuple.Create("\"", 4816)
+, Tuple.Create(Tuple.Create("", 4765), Tuple.Create("/", 4765), true)
             
             #line 125 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
-, Tuple.Create(Tuple.Create("", 4772), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
+, Tuple.Create(Tuple.Create("", 4766), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
             
             #line default
             #line hidden
-, 4772), false)
-, Tuple.Create(Tuple.Create("", 4808), Tuple.Create("/cms/galleries", 4808), true)
+, 4766), false)
+, Tuple.Create(Tuple.Create("", 4802), Tuple.Create("/cms/galleries", 4802), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");
@@ -470,16 +470,16 @@ WriteLiteral(">\r\n                <i></i> ");
             #line hidden
 WriteLiteral("\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4943), Tuple.Create("\"", 4996)
-, Tuple.Create(Tuple.Create("", 4950), Tuple.Create("/", 4950), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 4937), Tuple.Create("\"", 4990)
+, Tuple.Create(Tuple.Create("", 4944), Tuple.Create("/", 4944), true)
             
             #line 130 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
-, Tuple.Create(Tuple.Create("", 4951), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
+, Tuple.Create(Tuple.Create("", 4945), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
             
             #line default
             #line hidden
-, 4951), false)
-, Tuple.Create(Tuple.Create("", 4987), Tuple.Create("/cms/tags", 4987), true)
+, 4945), false)
+, Tuple.Create(Tuple.Create("", 4981), Tuple.Create("/cms/tags", 4981), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");
@@ -524,16 +524,16 @@ WriteLiteral(" class=\"nav nav-second-level collapse\"");
 
 WriteLiteral(">\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 5345), Tuple.Create("\"", 5403)
-, Tuple.Create(Tuple.Create("", 5352), Tuple.Create("/", 5352), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 5339), Tuple.Create("\"", 5397)
+, Tuple.Create(Tuple.Create("", 5346), Tuple.Create("/", 5346), true)
             
             #line 140 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
-, Tuple.Create(Tuple.Create("", 5353), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
+, Tuple.Create(Tuple.Create("", 5347), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
             
             #line default
             #line hidden
-, 5353), false)
-, Tuple.Create(Tuple.Create("", 5389), Tuple.Create("/rms/vacancies", 5389), true)
+, 5347), false)
+, Tuple.Create(Tuple.Create("", 5383), Tuple.Create("/rms/vacancies", 5383), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");
@@ -547,16 +547,16 @@ WriteLiteral(">\r\n                <i></i> ");
             #line hidden
 WriteLiteral("\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 5524), Tuple.Create("\"", 5584)
-, Tuple.Create(Tuple.Create("", 5531), Tuple.Create("/", 5531), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 5518), Tuple.Create("\"", 5578)
+, Tuple.Create(Tuple.Create("", 5525), Tuple.Create("/", 5525), true)
             
             #line 145 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
-, Tuple.Create(Tuple.Create("", 5532), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
+, Tuple.Create(Tuple.Create("", 5526), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
             
             #line default
             #line hidden
-, 5532), false)
-, Tuple.Create(Tuple.Create("", 5568), Tuple.Create("/rms/submissions", 5568), true)
+, 5526), false)
+, Tuple.Create(Tuple.Create("", 5562), Tuple.Create("/rms/submissions", 5562), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");
@@ -589,16 +589,16 @@ WriteLiteral("></i> ");
             #line hidden
 WriteLiteral("\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 5870), Tuple.Create("\"", 5929)
-, Tuple.Create(Tuple.Create("", 5877), Tuple.Create("/", 5877), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 5864), Tuple.Create("\"", 5923)
+, Tuple.Create(Tuple.Create("", 5871), Tuple.Create("/", 5871), true)
             
             #line 155 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
-, Tuple.Create(Tuple.Create("", 5878), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
+, Tuple.Create(Tuple.Create("", 5872), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
             
             #line default
             #line hidden
-, 5878), false)
-, Tuple.Create(Tuple.Create("", 5914), Tuple.Create("/rms/rmsdegrees", 5914), true)
+, 5872), false)
+, Tuple.Create(Tuple.Create("", 5908), Tuple.Create("/rms/rmsdegrees", 5908), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");
@@ -612,16 +612,16 @@ WriteLiteral(">\r\n                <i></i> ");
             #line hidden
 WriteLiteral("\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 6048), Tuple.Create("\"", 6105)
-, Tuple.Create(Tuple.Create("", 6055), Tuple.Create("/", 6055), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 6042), Tuple.Create("\"", 6099)
+, Tuple.Create(Tuple.Create("", 6049), Tuple.Create("/", 6049), true)
             
             #line 160 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
-, Tuple.Create(Tuple.Create("", 6056), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
+, Tuple.Create(Tuple.Create("", 6050), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
             
             #line default
             #line hidden
-, 6056), false)
-, Tuple.Create(Tuple.Create("", 6092), Tuple.Create("/rms/jobtypes", 6092), true)
+, 6050), false)
+, Tuple.Create(Tuple.Create("", 6086), Tuple.Create("/rms/jobtypes", 6086), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");
@@ -635,16 +635,16 @@ WriteLiteral(">\r\n                <i></i> ");
             #line hidden
 WriteLiteral("\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 6225), Tuple.Create("\"", 6282)
-, Tuple.Create(Tuple.Create("", 6232), Tuple.Create("/", 6232), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 6219), Tuple.Create("\"", 6276)
+, Tuple.Create(Tuple.Create("", 6226), Tuple.Create("/", 6226), true)
             
             #line 165 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
-, Tuple.Create(Tuple.Create("", 6233), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
+, Tuple.Create(Tuple.Create("", 6227), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
             
             #line default
             #line hidden
-, 6233), false)
-, Tuple.Create(Tuple.Create("", 6269), Tuple.Create("/rms/rmsranks", 6269), true)
+, 6227), false)
+, Tuple.Create(Tuple.Create("", 6263), Tuple.Create("/rms/rmsranks", 6263), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");
@@ -658,16 +658,16 @@ WriteLiteral(">\r\n                <i></i> ");
             #line hidden
 WriteLiteral("\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 6399), Tuple.Create("\"", 6459)
-, Tuple.Create(Tuple.Create("", 6406), Tuple.Create("/", 6406), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 6393), Tuple.Create("\"", 6453)
+, Tuple.Create(Tuple.Create("", 6400), Tuple.Create("/", 6400), true)
             
             #line 170 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
-, Tuple.Create(Tuple.Create("", 6407), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
+, Tuple.Create(Tuple.Create("", 6401), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
             
             #line default
             #line hidden
-, 6407), false)
-, Tuple.Create(Tuple.Create("", 6443), Tuple.Create("/rms/rmsprograms", 6443), true)
+, 6401), false)
+, Tuple.Create(Tuple.Create("", 6437), Tuple.Create("/rms/rmsprograms", 6437), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");
@@ -681,16 +681,16 @@ WriteLiteral(">\r\n                <i></i> ");
             #line hidden
 WriteLiteral("\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 6579), Tuple.Create("\"", 6635)
-, Tuple.Create(Tuple.Create("", 6586), Tuple.Create("/", 6586), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 6573), Tuple.Create("\"", 6629)
+, Tuple.Create(Tuple.Create("", 6580), Tuple.Create("/", 6580), true)
             
             #line 175 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
-, Tuple.Create(Tuple.Create("", 6587), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
+, Tuple.Create(Tuple.Create("", 6581), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
             
             #line default
             #line hidden
-, 6587), false)
-, Tuple.Create(Tuple.Create("", 6623), Tuple.Create("/rms/genders", 6623), true)
+, 6581), false)
+, Tuple.Create(Tuple.Create("", 6617), Tuple.Create("/rms/genders", 6617), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");
@@ -735,16 +735,16 @@ WriteLiteral(" class=\"nav nav-second-level collapse\"");
 
 WriteLiteral(">\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 6992), Tuple.Create("\"", 7057)
-, Tuple.Create(Tuple.Create("", 6999), Tuple.Create("/", 6999), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 6986), Tuple.Create("\"", 7051)
+, Tuple.Create(Tuple.Create("", 6993), Tuple.Create("/", 6993), true)
             
             #line 185 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
-, Tuple.Create(Tuple.Create("", 7000), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
+, Tuple.Create(Tuple.Create("", 6994), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
             
             #line default
             #line hidden
-, 7000), false)
-, Tuple.Create(Tuple.Create("", 7036), Tuple.Create("/config/organizations", 7036), true)
+, 6994), false)
+, Tuple.Create(Tuple.Create("", 7030), Tuple.Create("/config/organizations", 7030), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");
@@ -758,16 +758,16 @@ WriteLiteral(">\r\n                <i></i> ");
             #line hidden
 WriteLiteral("\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 7182), Tuple.Create("\"", 7244)
-, Tuple.Create(Tuple.Create("", 7189), Tuple.Create("/", 7189), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 7176), Tuple.Create("\"", 7238)
+, Tuple.Create(Tuple.Create("", 7183), Tuple.Create("/", 7183), true)
             
             #line 190 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
-, Tuple.Create(Tuple.Create("", 7190), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
+, Tuple.Create(Tuple.Create("", 7184), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
             
             #line default
             #line hidden
-, 7190), false)
-, Tuple.Create(Tuple.Create("", 7226), Tuple.Create("/config/statistics", 7226), true)
+, 7184), false)
+, Tuple.Create(Tuple.Create("", 7220), Tuple.Create("/config/statistics", 7220), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");
@@ -781,16 +781,16 @@ WriteLiteral(">\r\n                <i></i> ");
             #line hidden
 WriteLiteral("\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 7366), Tuple.Create("\"", 7430)
-, Tuple.Create(Tuple.Create("", 7373), Tuple.Create("/", 7373), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 7360), Tuple.Create("\"", 7424)
+, Tuple.Create(Tuple.Create("", 7367), Tuple.Create("/", 7367), true)
             
             #line 195 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
-, Tuple.Create(Tuple.Create("", 7374), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
+, Tuple.Create(Tuple.Create("", 7368), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
             
             #line default
             #line hidden
-, 7374), false)
-, Tuple.Create(Tuple.Create("", 7410), Tuple.Create("/config/SMTPSettings", 7410), true)
+, 7368), false)
+, Tuple.Create(Tuple.Create("", 7404), Tuple.Create("/config/SMTPSettings", 7404), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");
@@ -804,16 +804,16 @@ WriteLiteral(">\r\n                <i></i> ");
             #line hidden
 WriteLiteral("\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 7554), Tuple.Create("\"", 7619)
-, Tuple.Create(Tuple.Create("", 7561), Tuple.Create("/", 7561), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 7548), Tuple.Create("\"", 7613)
+, Tuple.Create(Tuple.Create("", 7555), Tuple.Create("/", 7555), true)
             
             #line 200 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
-, Tuple.Create(Tuple.Create("", 7562), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
+, Tuple.Create(Tuple.Create("", 7556), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
             
             #line default
             #line hidden
-, 7562), false)
-, Tuple.Create(Tuple.Create("", 7598), Tuple.Create("/config/notifications", 7598), true)
+, 7556), false)
+, Tuple.Create(Tuple.Create("", 7592), Tuple.Create("/config/notifications", 7592), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");
@@ -827,16 +827,16 @@ WriteLiteral(">\r\n                <i></i> ");
             #line hidden
 WriteLiteral("\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 7744), Tuple.Create("\"", 7805)
-, Tuple.Create(Tuple.Create("", 7751), Tuple.Create("/", 7751), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 7738), Tuple.Create("\"", 7799)
+, Tuple.Create(Tuple.Create("", 7745), Tuple.Create("/", 7745), true)
             
             #line 205 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
-, Tuple.Create(Tuple.Create("", 7752), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
+, Tuple.Create(Tuple.Create("", 7746), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
             
             #line default
             #line hidden
-, 7752), false)
-, Tuple.Create(Tuple.Create("", 7788), Tuple.Create("/config/languages", 7788), true)
+, 7746), false)
+, Tuple.Create(Tuple.Create("", 7782), Tuple.Create("/config/languages", 7782), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");
@@ -850,16 +850,16 @@ WriteLiteral(">\r\n                <i></i> ");
             #line hidden
 WriteLiteral("\r\n            </a>\r\n        </li>\r\n        <li>\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 7926), Tuple.Create("\"", 7990)
-, Tuple.Create(Tuple.Create("", 7933), Tuple.Create("/", 7933), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 7920), Tuple.Create("\"", 7984)
+, Tuple.Create(Tuple.Create("", 7927), Tuple.Create("/", 7927), true)
             
             #line 210 "..\..\Areas\CMS\Views\Shared\_SideNavBar.cshtml"
-, Tuple.Create(Tuple.Create("", 7934), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
+, Tuple.Create(Tuple.Create("", 7928), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture
             
             #line default
             #line hidden
-, 7934), false)
-, Tuple.Create(Tuple.Create("", 7970), Tuple.Create("/config/configstatus", 7970), true)
+, 7928), false)
+, Tuple.Create(Tuple.Create("", 7964), Tuple.Create("/config/configstatus", 7964), true)
 );
 
 WriteLiteral(">\r\n                <i></i> ");

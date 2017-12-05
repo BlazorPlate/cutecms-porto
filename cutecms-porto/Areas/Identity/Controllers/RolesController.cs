@@ -12,14 +12,15 @@ namespace cutecms_porto.Areas.Identity.Controllers
     public class RolesController : BaseController
     {
         #region Fields
-        private ApplicationDbContext _db = new ApplicationDbContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
         #endregion Fields
 
         #region Methods
         public ActionResult Index()
         {
             var rolesList = new List<RoleViewModel>();
-            foreach (var role in _db.Roles.OrderBy(r => r.Description).ThenBy(r => r.Name))
+            var roles = db.Roles.OrderBy(r => r.Description).ThenBy(r => r.Name).ToList();
+            foreach (var role in roles)
             {
                 var roleModel = new RoleViewModel(role);
                 rolesList.Add(roleModel);
@@ -34,8 +35,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create([Bind(Include =
-            "RoleName,Description")]RoleViewModel model)
+        public ActionResult Create([Bind(Include = "RoleName,Description")]RoleViewModel model)
         {
             string message = Resources.Resources.RoleInUse;
             if (ModelState.IsValid)
@@ -45,7 +45,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
 
                 if (idManager.RoleExists(model.RoleName))
                 {
-                    ModelState.AddModelError("error", message);
+                    ModelState.AddModelError("error", Resources.Resources.RoleInUse);
                 }
                 else
                 {
@@ -59,22 +59,30 @@ namespace cutecms_porto.Areas.Identity.Controllers
         public ActionResult Edit(string id)
         {
             // It's actually the Role.Name tucked into the id param:
-            var role = _db.Roles.First(r => r.Name == id);
+            var role = db.Roles.First(r => r.Name == id);
             var roleModel = new EditRoleViewModel(role);
             return View(roleModel);
         }
 
         [HttpPost]
-        public ActionResult Edit([Bind(Include =
-            "RoleName,OriginalRoleName,Description")] EditRoleViewModel model)
+        public ActionResult Edit([Bind(Include = "RoleName,OriginalRoleName,Description")] EditRoleViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var role = _db.Roles.First(r => r.Name == model.OriginalRoleName);
-                role.Name = model.RoleName;
-                role.Description = model.Description;
-                _db.Entry(role).State = EntityState.Modified;
-                _db.SaveChanges();
+                var idManager = new IdentityManager();
+                if (idManager.RoleExists(model.RoleName))
+                {
+                    ModelState.AddModelError("error", Resources.Resources.RoleInUse);
+                }
+                else
+                {
+                    var role = db.Roles.First(r => r.Name == model.OriginalRoleName);
+                    role.Name = model.RoleName;
+                    role.Description = model.Description;
+                    db.Entry(role).State = EntityState.Modified;
+                    db.SaveChanges();
+                }
+
                 return RedirectToAction("Index");
             }
             return View(model);
@@ -86,7 +94,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            var role = _db.Roles.First(r => r.Name == id);
+            var role = db.Roles.First(r => r.Name == id);
             var model = new RoleViewModel(role);
             if (role == null)
             {
@@ -98,7 +106,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(string id)
         {
-            var role = _db.Roles.First(r => r.Name == id);
+            var role = db.Roles.First(r => r.Name == id);
             var idManager = new IdentityManager();
             idManager.DeleteRole(role.Id);
             return RedirectToAction("Index");

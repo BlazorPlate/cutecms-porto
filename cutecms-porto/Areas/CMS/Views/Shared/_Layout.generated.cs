@@ -147,34 +147,20 @@ WriteAttribute("href", Tuple.Create(" href=\"", 831), Tuple.Create("\"", 1019)
 
 WriteLiteral(" rel=\"stylesheet\"");
 
-WriteLiteral(">\r\n    <link");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 1049), Tuple.Create("\"", 1155)
-            
-            #line 21 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
-, Tuple.Create(Tuple.Create("", 1056), Tuple.Create<System.Object, System.Int32>(CultureHelper.IsRighToLeft() ? "/assets/admin/css/style-rtl.css" : "/assets/admin/css/style.css"
-            
-            #line default
-            #line hidden
-, 1056), false)
-);
-
-WriteLiteral(" rel=\"stylesheet\"");
-
 WriteLiteral(">\r\n    <!-- animation CSS -->\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1213), Tuple.Create("\"", 1250)
-, Tuple.Create(Tuple.Create("", 1220), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/css/animate.css")
-, 1220), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 1077), Tuple.Create("\"", 1114)
+, Tuple.Create(Tuple.Create("", 1084), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/css/animate.css")
+, 1084), false)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(">\r\n    <!-- Menu CSS -->\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1303), Tuple.Create("\"", 1386)
-, Tuple.Create(Tuple.Create("", 1310), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css")
-, 1310), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 1167), Tuple.Create("\"", 1250)
+, Tuple.Create(Tuple.Create("", 1174), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css")
+, 1174), false)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
@@ -183,9 +169,9 @@ WriteLiteral(">\r\n    <!-- page CSS -->\r\n    ");
 
 WriteLiteral("\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1587), Tuple.Create("\"", 1665)
-, Tuple.Create(Tuple.Create("", 1594), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/custom-select/custom-select.css")
-, 1594), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 1451), Tuple.Create("\"", 1529)
+, Tuple.Create(Tuple.Create("", 1458), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/custom-select/custom-select.css")
+, 1458), false)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
@@ -194,48 +180,48 @@ WriteLiteral(" type=\"text/css\"");
 
 WriteLiteral(" />\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1713), Tuple.Create("\"", 1792)
-, Tuple.Create(Tuple.Create("", 1720), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/switchery/dist/switchery.min.css")
-, 1720), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 1577), Tuple.Create("\"", 1656)
+, Tuple.Create(Tuple.Create("", 1584), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/switchery/dist/switchery.min.css")
+, 1584), false)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" />\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1824), Tuple.Create("\"", 1912)
-, Tuple.Create(Tuple.Create("", 1831), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/bootstrap-select/bootstrap-select.min.css" +
+WriteAttribute("href", Tuple.Create(" href=\"", 1688), Tuple.Create("\"", 1776)
+, Tuple.Create(Tuple.Create("", 1695), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/bootstrap-select/bootstrap-select.min.css" +
 "")
-, 1831), false)
+, 1695), false)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" />\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1944), Tuple.Create("\"", 2039)
-, Tuple.Create(Tuple.Create("", 1951), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsin" +
+WriteAttribute("href", Tuple.Create(" href=\"", 1808), Tuple.Create("\"", 1903)
+, Tuple.Create(Tuple.Create("", 1815), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsin" +
 "put.css")
-, 1951), false)
+, 1815), false)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" />\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2071), Tuple.Create("\"", 2177)
-, Tuple.Create(Tuple.Create("", 2078), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/bootstrap-touchspin/dist/jquery.bootstrap" +
+WriteAttribute("href", Tuple.Create(" href=\"", 1935), Tuple.Create("\"", 2041)
+, Tuple.Create(Tuple.Create("", 1942), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/bootstrap-touchspin/dist/jquery.bootstrap" +
 "-touchspin.min.css")
-, 2078), false)
+, 1942), false)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" />\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2209), Tuple.Create("\"", 2288)
-, Tuple.Create(Tuple.Create("", 2216), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/multiselect/css/multi-select.css")
-, 2216), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 2073), Tuple.Create("\"", 2152)
+, Tuple.Create(Tuple.Create("", 2080), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/multiselect/css/multi-select.css")
+, 2080), false)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
@@ -244,14 +230,28 @@ WriteLiteral(" type=\"text/css\"");
 
 WriteLiteral(" />\r\n    <!-- animation CSS -->\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2364), Tuple.Create("\"", 2401)
-, Tuple.Create(Tuple.Create("", 2371), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/css/animate.css")
-, 2371), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 2228), Tuple.Create("\"", 2265)
+, Tuple.Create(Tuple.Create("", 2235), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/css/animate.css")
+, 2235), false)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(">\r\n    <!-- Custom CSS -->\r\n    <link");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 2320), Tuple.Create("\"", 2426)
+            
+            #line 36 "..\..\Areas\CMS\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 2327), Tuple.Create<System.Object, System.Int32>(CultureHelper.IsRighToLeft() ? "/assets/admin/css/style-rtl.css" : "/assets/admin/css/style.css"
+            
+            #line default
+            #line hidden
+, 2327), false)
+);
+
+WriteLiteral(" rel=\"stylesheet\"");
+
+WriteLiteral(">\r\n    <link");
 
 WriteAttribute("href", Tuple.Create(" href=\"", 2456), Tuple.Create("\"", 2492)
 , Tuple.Create(Tuple.Create("", 2463), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/css/custom.css")

@@ -123,7 +123,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                 authorIdFilter = null;
             }
             ViewBag.ContentTypeIdFilter = new SelectList(TermsHelper.ContentTypes(), "ContentTypeId", "Value", contentTypeIdFilter);
-            ViewBag.AuthorIdFilter = new SelectList(_db.Users, "Id", "Email", statusIdFilter);
+            ViewBag.AuthorIdFilter = new SelectList(_db.Users, "Id", "Email", authorIdFilter);
             ViewBag.LanguageIdFilter = new SelectList(db.CMSLanguages.Where(l => l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal), "Id", "Name", languageIdFilter);
             ViewBag.StatusIdFilter = new SelectList(TermsHelper.Statuses(), "StatusId", "Value", statusIdFilter);
             ViewBag.PageTitleFilter = pageTitleFilter;

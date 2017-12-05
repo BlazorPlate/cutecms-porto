@@ -46,9 +46,19 @@ namespace cutecms_porto.Areas.Identity.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Groups.Add(group);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (!db.Groups.Any(gr => gr.Name == group.Name))
+                {
+                    db.Groups.Add(group);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Group is already exist.");
+                    return View(group);
+                }
+
+
             }
 
             return View(group);
@@ -74,9 +84,17 @@ namespace cutecms_porto.Areas.Identity.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(group).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (!db.Groups.Any(gr => gr.Name == group.Name))
+                {
+                    db.Entry(group).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Group is already exist.");
+                    return View(group);
+                }
             }
             return View(group);
         }
@@ -118,7 +136,7 @@ namespace cutecms_porto.Areas.Identity.Controllers
         {
             if (ModelState.IsValid)
             {
-           
+
                 var idManager = new IdentityManager();
                 idManager.ClearGroupRoles(model.GroupId);
                 var Db = new ApplicationDbContext();

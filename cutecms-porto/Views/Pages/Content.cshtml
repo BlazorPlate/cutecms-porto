@@ -11,7 +11,7 @@
         ViewBag.Author = _db.Users.Find(Model?.Author)?.UserName ?? Resources.Resources.NotAvailable;
         Layout = "~/Views/Shared/_Layout.cshtml";
         var menuItem = db.MenuItems.FirstOrDefault(m => m.ContentId == Model.Id);
-        if (menuItem!=null)
+        if (menuItem != null)
         {
             ViewBag.ParentMenuItems = BreadcrumbsHelper.GetParentMenuItems(menuItem, Thread.CurrentThread.CurrentCulture.Name);
         }
@@ -91,6 +91,10 @@
     <div class="row">
         <div class="col-md-12">
             <img src="@Model.ImagePath" style="max-width: 260px;" alt="@Model.ImageName" class="pull-right ml-xl mb-xl img-responsive box-shadow-custom" />
+            @if (!string.IsNullOrEmpty(Model.Subtitle))
+            {
+                <p class="lead font-weight-normal">@Model.Subtitle</p>
+            }
             @Html.Raw(HttpUtility.HtmlDecode(Model.MainContent))
             <div>
                 @foreach (var contentList in Model.ContentLists.Where(c => c.Visible).OrderBy(c => c.Ordinal))
@@ -113,7 +117,6 @@
                                 <label>@item.Title</label>
                                 <div class="toggle-content">
                                     @Html.Raw(HttpUtility.HtmlDecode(item.Body))
-
                                     @if (item.Url != null)
                                     {
                                         <label>@Resources.Resources.Url:</label>

@@ -1,5 +1,6 @@
 #Empty Database
 
+
 delete from ListItems
 delete from contentlists
 delete from ContentGalleries
@@ -14,9 +15,18 @@ delete from Vacancies
 delete from Attachments
 delete from Applicants
 delete from [Statistics]
-select * from AspNetUserRoles
-delete from AspNetUsers where username!='admin@boss.com '
-
+delete from EmpInDept
+delete from DepartmentTerms
+delete from PhoneNumbers
+delete from Contacts
+delete from Departments
+delete from Employees
+delete from GalleryCategories
+delete from GalleryTerms
+delete from Galleries
+delete from CategoryTerms
+delete from Categories
+delete from AspNetUsers where username!='admin@boss.com'
 
 select * from INFORMATION_SCHEMA.COLUMNS where  COLUMN_NAME = 'TenantId'
 

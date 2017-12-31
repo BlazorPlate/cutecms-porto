@@ -85,21 +85,21 @@
                         </div>
                     </a>
                 </div>
-                        <div class="col-lg-3 box-three background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1200">
-                            <div class="expanded-info p-xlg background-color-primary">
-                                @foreach (var item in openingHours)
-                                {
-                                    <div class="info custom-info log-in-info">
-                                        <div style="color:white" class="bold">@item.Title</div>
-                                        <div style="color:white">@item.Subtitle</div>
-                                    </div>
-                                }
+                <div class="col-lg-3 box-three background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1200">
+                    <div class="expanded-info p-xlg background-color-primary">
+                        @foreach (var item in openingHours)
+                        {
+                            <div class="info custom-info log-in-info">
+                                <div style="color:white" class="bold">@item.Title</div>
+                                <div style="color:white">@item.Subtitle</div>
                             </div>
-                            <h5 class="m-none">
-                                @Resources.Resources.OpeningHours
-                                <i class="icon-arrow-right-circle icons"></i>
-                            </h5>
-                        </div>
+                        }
+                    </div>
+                    <h5 class="m-none">
+                        @Resources.Resources.OpeningHours
+                        <i class="icon-arrow-right-circle icons"></i>
+                    </h5>
+                </div>
                         <div class="col-lg-3 box-two background-color-tertiary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="600">
                             <h5 class="m-none">
                                 <a href="#" title="">
@@ -132,14 +132,14 @@
                         </div>
                     </div>
                 </div>
-                        <div class="col-lg-3 box-two background-color-tertiary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="600">
-                            <h5 class="m-none">
-                                <a href="#" title="">
-                                    Lorem #2
-                                    <i class="icon-arrow-right-circle icons"></i>
-                                </a>
-                            </h5>
-                        </div>
+                <div class="col-lg-3 box-two background-color-tertiary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="600">
+                    <h5 class="m-none">
+                        <a href="#" title="">
+                            Lorem #2
+                            <i class="icon-arrow-right-circle icons"></i>
+                        </a>
+                    </h5>
+                </div>
                         <div class="col-lg-3 box-three background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1200">
                             <div class="expanded-info p-xlg background-color-primary">
                                 <div class="table">
@@ -219,7 +219,7 @@
             i++;
             if (i % 3 == 0)
             {
-                @:            </div>
+                @:</div>
             }
         }
         <div class="row mt-lg pb-xlg">
@@ -233,8 +233,8 @@
     <div class="container">
         <div class="row mt-xlg">
             <div class="col-md-12">
-                <h2 class="font-weight-semibold m-none">@Resources.Resources.OurSpecialists</h2>
-               @* <p class="lead font-weight-normal">@Resources.Resources.OurSpecialists</p>*@
+                <h2 class="font-weight-semibold m-none">@Resources.Resources.MeetOurTeam</h2>
+                @* <p class="lead font-weight-normal">@Resources.Resources.OurSpecialists</p>*@
 
                 <div id="porfolioAjaxBoxMedical" class="ajax-box ajax-box-init mb-lg">
 
@@ -283,36 +283,40 @@
         </div>
     </div>
 </section>
-<section class="section">
-    <div class="container">
-        <div class="row mt-md">
-            <div class="col-md-12">
-                <h2 class="font-weight-semibold m-none">@resourcesList.Title</h2>
-                <p class="lead font-weight-normal">@resourcesList.Subtitle</p>
+@if (resourcesList.ListItems.Count > 0)
+{
+    <section class="section">
+        <div class="container">
+            <div class="row mt-md">
+                <div class="col-md-12">
+                    <h2 class="font-weight-semibold m-none">@resourcesList.Title</h2>
+                    <p class="lead font-weight-normal">@resourcesList.Subtitle</p>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            @foreach (var item in resourcesList.ListItems)
-            {
-            <div class="col-sm-4 col-md-4">
-                <a href="@item.Url" class="text-decoration-none">
-                    <span class="thumb-info thumb-info-side-image thumb-info-side-image-custom thumb-info-no-zoom thumb-info-no-zoom thumb-info-side-image-custom-highlight">
-                        <span class="thumb-info-side-image-wrapper">
-                            <img alt="" class="img-responsive" src="@item.ThumbPath">
-                        </span>
-                        <span class="thumb-info-caption">
-                            <span class="thumb-info-caption-text p-xl">
-                                <h4 class="font-weight-semibold mb-xs">@item.Title</h4>
-                                <p>@item.Subtitle</p>
+            <div class="row">
+                @foreach (var item in resourcesList.ListItems)
+                {
+                    <div class="col-sm-4 col-md-4">
+                        <a href="@item.Url" class="text-decoration-none">
+                            <span class="thumb-info thumb-info-side-image thumb-info-side-image-custom thumb-info-no-zoom thumb-info-no-zoom thumb-info-side-image-custom-highlight">
+                                <span class="thumb-info-side-image-wrapper">
+                                    <img alt="" class="img-responsive" src="@item.ThumbPath">
+                                </span>
+                                <span class="thumb-info-caption">
+                                    <span class="thumb-info-caption-text p-xl">
+                                        <h4 class="font-weight-semibold mb-xs">@item.Title</h4>
+                                        <p>@item.Subtitle</p>
+                                    </span>
+                                </span>
                             </span>
-                        </span>
-                    </span>
-                </a>
+                        </a>
+                    </div>
+                }
             </div>
-            }
         </div>
-    </div>
-</section>
+    </section>
+}
+
 <section class="section section-default">
     <div class="container">
         <div class="row">
@@ -320,9 +324,10 @@
                 <div class="recent-posts mb-xl">
                     <h2>@Resources.Resources.LatestNews</h2>
                     <div class="owl-carousel owl-theme mb-none" data-plugin-options='{"items": 1}'>
-                        @{var newsIndex = 0;}
+                        @{var newsIndex = 0; bool newsDivClosed = false; }
                         @foreach (var item in Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("news")).OrderByDescending(c => c.PublishedOn).Take(12))
                         {
+                            newsDivClosed = false;
                             if (newsIndex % 2 == 0)
                             {
                                 @:<div class="row mt-lg">
@@ -341,10 +346,16 @@
                             newsIndex++;
                             if (newsIndex % 2 == 0)
                             {
+                                newsDivClosed = true;
                                 @:                            </div>
                             }
                         }
                     </div>
+                    @if (!newsDivClosed)
+                    {
+                        newsDivClosed = true;
+                        @:                    </div>
+                    }
 
                 </div>
             </div>
@@ -352,9 +363,10 @@
                 <div class="recent-posts mb-xl">
                     <h2>@Resources.Resources.LatestEvents</h2>
                     <div class="owl-carousel owl-theme mb-none" data-plugin-options='{"items": 1}'>
-                        @{var eventIndex = 0;}
+                        @{var eventIndex = 0; bool eventDivClosed = false; }
                         @foreach (var item in Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("event")).OrderByDescending(c => c.PublishedOn).Take(12))
                         {
+                            eventDivClosed = false;
                             if (eventIndex % 2 == 0)
                             {
                                 @:<div class="row mt-lg">
@@ -373,63 +385,75 @@
                             eventIndex++;
                             if (eventIndex % 2 == 0)
                             {
+                                eventDivClosed = true;
                                 @:                            </div>
                             }
                         }
                     </div>
-
+                    @if (!eventDivClosed)
+                    {
+                        eventDivClosed = true;
+                        @:                    </div>
+                    }
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-<section>
-    <div class="container">
-        <div class="row mt-md">
-            <div class="col-md-12">
-                <h2 class="font-weight-semibold m-none">@partnerList.Title</h2>
-                <p class="lead font-weight-normal">@partnerList.Subtitle</p>
+@if (partnerList.ListItems.Count > 0)
+{
+    <section>
+        <div class="container">
+            <div class="row mt-md">
+                <div class="col-md-12">
+                    <h2 class="font-weight-semibold m-none">@partnerList.Title</h2>
+                    <p class="lead font-weight-normal">@partnerList.Subtitle</p>
+                </div>
             </div>
-        </div>
-        <div class="row center">
-            <div class="owl-carousel owl-theme" data-plugin-options="{'items': 6, 'autoplay': true, 'autoplayTimeout': 3000}">
-                @foreach (var item in partnerList.ListItems)
+            <div class="row center">
+                <div class="owl-carousel owl-theme" data-plugin-options="{'items': 6, 'autoplay': true, 'autoplayTimeout': 3000}">
+                    @foreach (var item in partnerList.ListItems)
                 {
-                    <div>
-                        <img class="img-responsive" src="@item.ThumbPath" alt="">
-                        @*<p>@item.Title</p>*@
-                    </div>
-                }
-                @*<div class="content-grid-item col-sm-4 col-md-2 center">
-                        <img src="~/assets/porto/img/demos/medical/logos/insurance-logo-1.png" class="img-responsive" />
-                    </div>*@
+                        <div>
+                            <img class="img-responsive" src="@item.ThumbPath" alt="">
+                            @*<p>@item.Title</p>*@
+                        </div>
+                    }
+                    @*<div class="content-grid-item col-sm-4 col-md-2 center">
+                            <img src="~/assets/porto/img/demos/medical/logos/insurance-logo-1.png" class="img-responsive" />
+                        </div>*@
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<section class="section-secondary">
-    <div class="container">
-        <div class="row mt-xlg pt-md mb-xlg pb-md">
-            <div class="owl-carousel owl-theme nav-bottom rounded-nav" data-plugin-options="{'items': 1, 'loop': false, 'dots': false}">
-                @foreach (var item in testimonialList.ListItems)
+    </section>
+
+}
+@if (testimonialList.ListItems.Count > 0)
+{
+    <section class="section-secondary">
+        <div class="container">
+            <div class="row mt-xlg pt-md mb-xlg pb-md">
+                <div class="owl-carousel owl-theme nav-bottom rounded-nav" data-plugin-options="{'items': 1, 'loop': false, 'dots': false}">
+                    @foreach (var item in testimonialList.ListItems)
                 {                <div>
-                    <div class="col-md-8 col-md-offset-2 pt-xlg">
-                        <div class="testimonial testimonial-style-2 testimonial-with-quotes mb-none">
-                            <div class="testimonial-quote">“</div>
-                            <blockquote>
-                                <p class="font-weight-light">@item.Subtitle</p>
-                            </blockquote>
-                            <div class="testimonial-author mt-xlg">
-                                <p class="text-uppercase">
-                                    <strong>@item.Title</strong>
-                                </p>
+                        <div class="col-md-8 col-md-offset-2 pt-xlg">
+                            <div class="testimonial testimonial-style-2 testimonial-with-quotes mb-none">
+                                <div class="testimonial-quote">“</div>
+                                <blockquote>
+                                    <p class="font-weight-light">@item.Subtitle</p>
+                                </blockquote>
+                                <div class="testimonial-author mt-xlg">
+                                    <p class="text-uppercase">
+                                        <strong>@item.Title</strong>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    }
                 </div>
-                }
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+}

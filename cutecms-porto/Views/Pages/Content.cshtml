@@ -105,6 +105,11 @@
                     {
                         <h2>@contentList.Title</h2>
                     }
+                    <img src="@contentList.ImagePath" style="max-width: 260px;" alt="@contentList.ImageName" class="pull-right ml-xl mb-xl img-responsive box-shadow-custom" />
+                    if (!string.IsNullOrEmpty(contentList.Subtitle))
+                    {
+                        <p class="lead font-weight-normal">@contentList.Subtitle</p>
+                    }
                     @Html.Raw(HttpUtility.HtmlDecode(contentList.MainContent))
                     <div class="toggle toggle-quaternary" data-plugin-toggle>
                         @foreach (var item in contentList.ListItems.Where(l => l.Visible).OrderBy(l => l.Ordinal))
@@ -116,6 +121,11 @@
                             <section class="toggle @active">
                                 <label>@item.Title</label>
                                 <div class="toggle-content">
+                                    <img src="@item.ThumbPath" style="max-width: 260px;" alt="@item.ThumbName" class="pull-right ml-xl mb-xl img-responsive box-shadow-custom" />
+                                    @if (!string.IsNullOrEmpty(Model.Subtitle))
+                                    {
+                                        <p class="lead font-weight-normal">@item.Subtitle</p>
+                                    }
                                     @Html.Raw(HttpUtility.HtmlDecode(item.Body))
                                     @if (item.Url != null)
                                     {

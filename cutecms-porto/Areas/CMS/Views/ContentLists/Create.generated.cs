@@ -51,7 +51,7 @@ WriteLiteral("\r\n");
 
             
             #line 6 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
- using (Html.BeginForm())
+ using (Html.BeginForm("Create", "ContentLists", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     
             
@@ -304,7 +304,7 @@ WriteLiteral("            ");
 
             
             #line 47 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
-       Write(Html.LabelFor(model => model.Visible, htmlAttributes: new { @class = "control-label col-md-2" }));
+       Write(Html.LabelFor(model => model.ImagePath, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
             #line default
@@ -319,6 +319,60 @@ WriteLiteral("                ");
 
             
             #line 49 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
+           Write(Html.TextBoxFor(model => model.Image, new { @class = "form-control", type = "file", multiple = "false", placeholder = "upload files" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                <div><small");
+
+WriteLiteral(" class=\"text-muted block\"");
+
+WriteLiteral(">");
+
+            
+            #line 50 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
+                                                Write(Resources.Resources.ImageNotes);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</small></div>\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 51 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
+           Write(Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            </div>\r\n        </div>\r\n        <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 55 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
+       Write(Html.LabelFor(model => model.Visible, htmlAttributes: new { @class = "control-label col-md-2" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            <div");
+
+WriteLiteral(" class=\"col-md-10\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 57 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
            Write(Html.CheckBoxFor(model => model.Visible, new { @class = "js-switch" }));
 
             
@@ -329,7 +383,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 50 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
+            #line 58 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
            Write(Html.ValidationMessageFor(model => model.Visible, "", new { @class = "text-danger" }));
 
             
@@ -344,7 +398,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 54 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
+            #line 62 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
        Write(Html.LabelFor(model => model.HomeVisible, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -359,7 +413,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 56 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
+            #line 64 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
            Write(Html.CheckBoxFor(model => model.HomeVisible, new { @class = "js-switch" }));
 
             
@@ -370,7 +424,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 57 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
+            #line 65 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
            Write(Html.ValidationMessageFor(model => model.HomeVisible, "", new { @class = "text-danger" }));
 
             
@@ -385,7 +439,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 61 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
+            #line 69 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
        Write(Html.LabelFor(model => model.Ordinal, htmlAttributes: new { @class = "control-label col-md-2" }));
 
             
@@ -400,7 +454,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 63 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
+            #line 71 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
            Write(Html.EditorFor(model => model.Ordinal, new { htmlAttributes = new { @class = "form-control" } }));
 
             
@@ -411,7 +465,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ");
 
             
-            #line 64 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
+            #line 72 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
            Write(Html.ValidationMessageFor(model => model.Ordinal, "", new { @class = "text-danger" }));
 
             
@@ -429,14 +483,14 @@ WriteLiteral(">\r\n                <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 3852), Tuple.Create("\"", 3887)
+WriteAttribute("value", Tuple.Create(" value=\"", 4510), Tuple.Create("\"", 4545)
             
-            #line 69 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
-, Tuple.Create(Tuple.Create("", 3860), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Create
+            #line 77 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
+, Tuple.Create(Tuple.Create("", 4518), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Create
             
             #line default
             #line hidden
-, 3860), false)
+, 4518), false)
 );
 
 WriteLiteral(" class=\"btn btn-default\"");
@@ -454,7 +508,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 74 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
+            #line 82 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
            Write(Html.ValidationSummary(false, "", new { @class = "text-danger" }));
 
             
@@ -463,7 +517,7 @@ WriteLiteral("                ");
 WriteLiteral("\r\n            </div>\r\n        </div>\r\n    </div>\r\n");
 
             
-            #line 78 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
+            #line 86 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
 }
 
             
@@ -474,7 +528,7 @@ WriteLiteral("<div>\r\n");
 WriteLiteral("    ");
 
             
-            #line 80 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
+            #line 88 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
 Write(Html.ActionLink(Resources.Resources.BackToList, "Index", new { id = ViewBag.ContentId }));
 
             
@@ -489,7 +543,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 83 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
+            #line 91 "..\..\Areas\CMS\Views\ContentLists\Create.cshtml"
 Write(Scripts.Render("~/bundles/jqueryval"));
 
             

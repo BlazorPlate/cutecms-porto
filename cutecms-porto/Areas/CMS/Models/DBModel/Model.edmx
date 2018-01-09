@@ -42,6 +42,8 @@
           <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Subtitle" Type="nvarchar(max)" />
           <Property Name="MainContent" Type="nvarchar(max)" />
+          <Property Name="ImageName" Type="nvarchar(max)" />
+          <Property Name="ImagePath" Type="nvarchar(max)" />
           <Property Name="ContentId" Type="int" />
           <Property Name="Ordinal" Type="int" Nullable="false" />
           <Property Name="Visible" Type="bit" Nullable="false" />
@@ -1702,6 +1704,8 @@
           <Property Name="Title" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Subtitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="MainContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImageName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ContentId" Type="Int32" />
           <Property Name="Ordinal" Type="Int32" Nullable="false" />
           <Property Name="Visible" Type="Boolean" Nullable="false" />
@@ -2132,6 +2136,8 @@
                 <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
                 <ScalarProperty Name="ContentId" ColumnName="ContentId" />
                 <ScalarProperty Name="MainContent" ColumnName="MainContent" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="ImageName" ColumnName="ImageName" />
                 <ScalarProperty Name="Subtitle" ColumnName="Subtitle" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Code" ColumnName="Code" />

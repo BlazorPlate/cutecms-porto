@@ -36,7 +36,7 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
         public string ThumbName { get; set; }
         [Display(Name = "ThumbPath", ResourceType = typeof(Resources.Resources))]
         public string ThumbPath { get; set; }
-        [Display(Name = "UrlSlug", ResourceType = typeof(Resources.Resources))]
+        [Display(Name = "Url", ResourceType = typeof(Resources.Resources))]
         public string Url { get; set; }
         [Display(Name = "Class", ResourceType = typeof(Resources.Resources))]
         public string Class { get; set; }

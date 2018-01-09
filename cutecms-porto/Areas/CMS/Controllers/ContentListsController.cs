@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -62,8 +64,25 @@ namespace cutecms_porto.Areas.CMS.Controllers
         // specific properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Code,Title,Subtitle,MainContent,Ordinal,Visible,HomeVisible,ContentId")] ContentList contentList)
+        public ActionResult Create([Bind(Include = "Id,Code,Title,Subtitle,MainContent,Image,Ordinal,Visible,HomeVisible,ContentId")] ContentList contentList, int? width, int? height)
         {
+            if (contentList.Image != null && contentList.Image.ContentLength > 0)
+            {
+                var extension = Path.GetExtension(contentList.Image.FileName);
+                var newFileName = Helpers.StringHelper.CleanFileName(contentList.Title + extension);
+                //var newFileName = listItem.Title + extension;
+                var path = String.Format("/fileman/Uploads/Images/CMS/ContentLists/Images/{0}", newFileName);
+                contentList.ImagePath = path;
+                contentList.ImageName = newFileName;
+                using (var img = System.Drawing.Image.FromStream(contentList.Image.InputStream))
+                {
+                    if (width == null)
+                        width = img.Width;
+                    if (height == null)
+                        height = img.Height;
+                    ImageUploaderHelper.SaveImageToFolder(img, extension, new Size(width.Value, height.Value), contentList.ImagePath);
+                }
+            }
             if (ModelState.IsValid)
             {
                 db.ContentLists.Add(contentList);
@@ -97,8 +116,25 @@ namespace cutecms_porto.Areas.CMS.Controllers
         // specific properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Code,Title,Subtitle,MainContent,Ordinal,Visible,HomeVisible,ContentId")] ContentList contentList)
+        public ActionResult Edit([Bind(Include = "Id,Code,Title,Subtitle,MainContent,Image,Ordinal,Visible,HomeVisible,ContentId")] ContentList contentList, int? width, int? height)
         {
+            if (contentList.Image != null && contentList.Image.ContentLength > 0)
+            {
+                var extension = Path.GetExtension(contentList.Image.FileName);
+                var newFileName = Helpers.StringHelper.CleanFileName(contentList.Title + extension);
+                //var newFileName = listItem.Title + extension;
+                var path = String.Format("/fileman/Uploads/Images/CMS/ContentLists/Images/{0}", newFileName);
+                contentList.ImagePath = path;
+                contentList.ImageName = newFileName;
+                using (var img = System.Drawing.Image.FromStream(contentList.Image.InputStream))
+                {
+                    if (width == null)
+                        width = img.Width;
+                    if (height == null)
+                        height = img.Height;
+                    ImageUploaderHelper.SaveImageToFolder(img, extension, new Size(width.Value, height.Value), contentList.ImagePath);
+                }
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(contentList).State = EntityState.Modified;

@@ -3,7 +3,7 @@
     ViewBag.MainTitle = Resources.Resources.ContentList;
     ViewBag.Title = Resources.Resources.Create;
 }
-@using (Html.BeginForm())
+@using (Html.BeginForm("Create", "ContentLists", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     @Html.Hidden("ContentId");
@@ -41,6 +41,14 @@
             <div class="col-md-10">
                 @Html.TextAreaFor(model => model.MainContent, new { @class = "mceEditor" })
                 @Html.ValidationMessageFor(model => model.MainContent, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ImagePath, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Image, new { @class = "form-control", type = "file", multiple = "false", placeholder = "upload files" })
+                <div><small class="text-muted block">@Resources.Resources.ImageNotes</small></div>
+                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">

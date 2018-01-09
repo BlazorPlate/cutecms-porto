@@ -9,9 +9,12 @@
 
 namespace cutecms_porto.Areas.CMS.Models.DBModel
 {
+    using Helpers;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Web;
     using System.Web.Mvc;
     public partial class ContentList
     {
@@ -33,6 +36,10 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
         [AllowHtml]
         [Display(Name = "MainContent", ResourceType = typeof(Resources.Resources))]
         public string MainContent { get; set; }
+        [Display(Name = "ImageName", ResourceType = typeof(Resources.Resources))]
+        public string ImageName { get; set; }
+        [Display(Name = "ImagePath", ResourceType = typeof(Resources.Resources))]
+        public string ImagePath { get; set; }
         [Display(Name = "Content", ResourceType = typeof(Resources.Resources))]
         public Nullable<int> ContentId { get; set; }
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
@@ -42,6 +49,10 @@ namespace cutecms_porto.Areas.CMS.Models.DBModel
         public bool Visible { get; set; }
         [Display(Name = "HomeVisible", ResourceType = typeof(Resources.Resources))]
         public bool HomeVisible { get; set; }
+        [ValidateImage]
+        [Display(Name = "ImagePath", ResourceType = typeof(Resources.Resources))]
+        [NotMapped]
+        public HttpPostedFileBase Image { get; set; }
         public virtual Content Content { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ListItem> ListItems { get; set; }

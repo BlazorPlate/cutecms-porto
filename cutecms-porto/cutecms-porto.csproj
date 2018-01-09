@@ -7090,6 +7090,10 @@
     <Content Include="fileman\js\utils.js" />
     <Content Include="fileman\LICENSE.txt" />
     <Content Include="fileman\third-party.txt" />
+    <Content Include="fileman\Uploads\Images\CMS\ContentLists\Images\Overview.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ContentLists\Images\Overview.PNG" />
+    <Content Include="fileman\Uploads\Images\CMS\ContentLists\Images\كلمة-رئيس-مجلس-الأمناء.jpg" />
+    <Content Include="fileman\Uploads\Images\CMS\ContentLists\Images\وادي-رم.jpg" />
     <Content Include="fileman\Uploads\Images\CMS\Contents\Images\Overview.jpg" />
     <Content Include="fileman\Uploads\Images\CMS\ImageFiles\embedded-1895.jpg" />
     <Content Include="fileman\Uploads\Images\CMS\ImageFiles\embedded-2567.jpg" />

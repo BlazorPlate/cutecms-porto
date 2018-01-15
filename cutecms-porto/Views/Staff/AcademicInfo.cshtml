@@ -1,10 +1,13 @@
 ﻿@model cutecms_porto.Areas.Identity.Models.DBModel.Employee
 @using System.Threading
 <form role="form" action="#" method="post">
-    <div class="form-group">
-        @Html.LabelFor(model => model.RankId)
-        <br>@Html.DisplayFor(model => model.Rank.RankTerms.Where(r => r.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value)
-    </div>
+    @if (Model.RankId != null)
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.RankId)
+            <br>@Html.DisplayFor(model => model.Rank.RankTerms.Where(r => r.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value)
+        </div>
+    }
     <div class="form-group">
         @Html.LabelFor(model => model.DegreeId)
         <br>@Html.DisplayFor(model => model.Degree.DegreeTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value)

@@ -138,10 +138,14 @@ namespace cutecms_porto.Controllers
                         db.SaveChanges();
                         return RedirectToAction("Acknowledgement", new { id = submission.Id });
                     }
+                    else
+                    {
+                        ModelState.AddModelError("InvalidFile","Please uploud non-empty CV");
+                    }
                 }
             }
             ViewBag.VacancyTitle = db.Vacancies.Find(id).Title.ToString();
-            return View();
+            return View(submission);
         }
         public ActionResult Acknowledgement(int? id)
         {

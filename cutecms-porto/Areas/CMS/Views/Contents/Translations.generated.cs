@@ -237,6 +237,17 @@ WriteLiteral("                ");
 
             
             #line 50 "..\..\Areas\CMS\Views\Contents\Translations.cshtml"
+           Write(Html.ActionLink(" ", "Index", "ContentGalleries", new { id = item.Id }, new { @class = "fa fa-2x fa-photo", @title = Resources.Resources.Galleries }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 51 "..\..\Areas\CMS\Views\Contents\Translations.cshtml"
            Write(Html.ActionLink(" ", "Delete", new { id = item.Id }, new { @class = "fa fa-2x fa-times", @title = Resources.Resources.Delete }));
 
             
@@ -245,7 +256,7 @@ WriteLiteral("                ");
 WriteLiteral("\r\n            </td>\r\n        </tr>\r\n");
 
             
-            #line 53 "..\..\Areas\CMS\Views\Contents\Translations.cshtml"
+            #line 54 "..\..\Areas\CMS\Views\Contents\Translations.cshtml"
     }
 
             
@@ -256,7 +267,7 @@ WriteLiteral("</table>\r\n<div>\r\n");
 WriteLiteral("    ");
 
             
-            #line 56 "..\..\Areas\CMS\Views\Contents\Translations.cshtml"
+            #line 57 "..\..\Areas\CMS\Views\Contents\Translations.cshtml"
 Write(Html.ActionLink(Resources.Resources.BackToList, "Index"));
 
             

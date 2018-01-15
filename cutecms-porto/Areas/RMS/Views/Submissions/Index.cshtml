@@ -111,7 +111,7 @@
                 //"responsive": true,
                 "ajax": {
                     "type": "POST",
-                    "url": "@Url.Action("DataHandler", "Submissions", new { area = "RMS" })",
+                    "url": "@Url.Action("DataHandler", "Submissions", new { area = "RMS",id=ViewBag.VacancyId })",
                     "contentType": 'application/json; charset=utf-8',
                     'data': function (data) {
                         return data = JSON.stringify(data);

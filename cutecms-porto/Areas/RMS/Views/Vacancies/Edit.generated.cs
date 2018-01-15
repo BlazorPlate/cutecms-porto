@@ -903,7 +903,7 @@ WriteLiteral("                ");
 
             
             #line 145 "..\..\Areas\RMS\Views\Vacancies\Edit.cshtml"
-           Write(Html.TextBox("Author", null, htmlAttributes: new { @class = "form-control", @disabled = "disabled" }));
+           Write(Html.TextBox("VacancyAuthor", (String)ViewBag.Author, htmlAttributes: new { @class = "form-control", @disabled = "disabled" }));
 
             
             #line default
@@ -944,7 +944,7 @@ WriteLiteral("                ");
 
             
             #line 152 "..\..\Areas\RMS\Views\Vacancies\Edit.cshtml"
-           Write(Html.TextBox("ModifiedBy", null, htmlAttributes: new { @class = "form-control", @disabled = "disabled" }));
+           Write(Html.TextBox("VacancyModifiedBy", (String)ViewBag.ModifiedBy, htmlAttributes: new { @class = "form-control", @disabled = "disabled" }));
 
             
             #line default
@@ -1136,14 +1136,14 @@ WriteLiteral(">\r\n                <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=", 10570), Tuple.Create("", 10602)
+WriteAttribute("value", Tuple.Create(" value=", 10624), Tuple.Create("", 10656)
             
             #line 186 "..\..\Areas\RMS\Views\Vacancies\Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 10577), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Save
+, Tuple.Create(Tuple.Create("", 10631), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Save
             
             #line default
             #line hidden
-, 10577), false)
+, 10631), false)
 );
 
 WriteLiteral(" class=\"btn btn-primary\"");

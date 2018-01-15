@@ -417,44 +417,69 @@ WriteLiteral(" action=\"#\"");
 
 WriteLiteral(" method=\"post\"");
 
-WriteLiteral(">\r\n        <div");
+WriteLiteral(">\r\n");
+
+            
+            #line 42 "..\..\Views\MyProfile\AcademicInfo.cshtml"
+        
+            
+            #line default
+            #line hidden
+            
+            #line 42 "..\..\Views\MyProfile\AcademicInfo.cshtml"
+         if (Model.RankId != null)
+        {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("            <div");
 
 WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("            ");
-
-            
-            #line 43 "..\..\Views\MyProfile\AcademicInfo.cshtml"
-       Write(Html.LabelFor(model => model.RankId));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-WriteLiteral("            ");
-
-            
-            #line 44 "..\..\Views\MyProfile\AcademicInfo.cshtml"
-       Write(Html.DropDownList("RankId", null, string.Empty, htmlAttributes: new { @class = "form-control" }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-WriteLiteral("            ");
+WriteLiteral("                ");
 
             
             #line 45 "..\..\Views\MyProfile\AcademicInfo.cshtml"
-       Write(Html.ValidationMessageFor(model => model.RankId, "", new { @class = "text-danger" }));
+           Write(Html.LabelFor(model => model.RankId));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n        </div>\r\n        <div");
+WriteLiteral("\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 46 "..\..\Views\MyProfile\AcademicInfo.cshtml"
+           Write(Html.DropDownList("RankId", null, string.Empty, htmlAttributes: new { @class = "form-control" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 47 "..\..\Views\MyProfile\AcademicInfo.cshtml"
+           Write(Html.ValidationMessageFor(model => model.RankId, "", new { @class = "text-danger" }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            </div>\r\n");
+
+            
+            #line 49 "..\..\Views\MyProfile\AcademicInfo.cshtml"
+        }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("        <div");
 
 WriteLiteral(" class=\"form-group\"");
 
@@ -463,7 +488,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 48 "..\..\Views\MyProfile\AcademicInfo.cshtml"
+            #line 51 "..\..\Views\MyProfile\AcademicInfo.cshtml"
        Write(Html.LabelFor(model => model.DegreeId));
 
             
@@ -474,7 +499,7 @@ WriteLiteral("\r\n");
 WriteLiteral("            ");
 
             
-            #line 49 "..\..\Views\MyProfile\AcademicInfo.cshtml"
+            #line 52 "..\..\Views\MyProfile\AcademicInfo.cshtml"
        Write(Html.DropDownList("DegreeId", null, string.Empty, htmlAttributes: new { @class = "form-control" }));
 
             
@@ -485,7 +510,7 @@ WriteLiteral("\r\n");
 WriteLiteral("            ");
 
             
-            #line 50 "..\..\Views\MyProfile\AcademicInfo.cshtml"
+            #line 53 "..\..\Views\MyProfile\AcademicInfo.cshtml"
        Write(Html.ValidationMessageFor(model => model.DegreeId, "", new { @class = "text-danger" }));
 
             
@@ -500,7 +525,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 53 "..\..\Views\MyProfile\AcademicInfo.cshtml"
+            #line 56 "..\..\Views\MyProfile\AcademicInfo.cshtml"
        Write(Html.LabelFor(model => model.ProgramId));
 
             
@@ -511,7 +536,7 @@ WriteLiteral("\r\n");
 WriteLiteral("            ");
 
             
-            #line 54 "..\..\Views\MyProfile\AcademicInfo.cshtml"
+            #line 57 "..\..\Views\MyProfile\AcademicInfo.cshtml"
        Write(Html.DropDownList("ProgramId", null, string.Empty, htmlAttributes: new { @class = "form-control" }));
 
             
@@ -522,7 +547,7 @@ WriteLiteral("\r\n");
 WriteLiteral("            ");
 
             
-            #line 55 "..\..\Views\MyProfile\AcademicInfo.cshtml"
+            #line 58 "..\..\Views\MyProfile\AcademicInfo.cshtml"
        Write(Html.ValidationMessageFor(model => model.ProgramId, "", new { @class = "text-danger" }));
 
             
@@ -545,7 +570,7 @@ WriteLiteral(" class=\"btn btn-primary\"");
 WriteLiteral(">");
 
             
-            #line 58 "..\..\Views\MyProfile\AcademicInfo.cshtml"
+            #line 61 "..\..\Views\MyProfile\AcademicInfo.cshtml"
                                                                                         Write(Resources.Resources.Save);
 
             
@@ -560,7 +585,7 @@ WriteLiteral(">\r\n            <br />\r\n");
 WriteLiteral("            ");
 
             
-            #line 62 "..\..\Views\MyProfile\AcademicInfo.cshtml"
+            #line 65 "..\..\Views\MyProfile\AcademicInfo.cshtml"
        Write(Html.ValidationSummary(false, "", new { @class = "text-danger" }));
 
             
@@ -569,7 +594,7 @@ WriteLiteral("            ");
 WriteLiteral("\r\n        </div>\r\n    </form>\r\n");
 
             
-            #line 65 "..\..\Views\MyProfile\AcademicInfo.cshtml"
+            #line 68 "..\..\Views\MyProfile\AcademicInfo.cshtml"
 }
             
             #line default

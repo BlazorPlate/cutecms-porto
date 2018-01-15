@@ -53,7 +53,56 @@ WriteLiteral(" action=\"#\"");
 
 WriteLiteral(" method=\"post\"");
 
-WriteLiteral(">\r\n    <div");
+WriteLiteral(">\r\n");
+
+            
+            #line 4 "..\..\Views\Staff\AcademicInfo.cshtml"
+    
+            
+            #line default
+            #line hidden
+            
+            #line 4 "..\..\Views\Staff\AcademicInfo.cshtml"
+     if (Model.RankId != null)
+    {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("        <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("            ");
+
+            
+            #line 7 "..\..\Views\Staff\AcademicInfo.cshtml"
+       Write(Html.LabelFor(model => model.RankId));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n            <br>");
+
+            
+            #line 8 "..\..\Views\Staff\AcademicInfo.cshtml"
+           Write(Html.DisplayFor(model => model.Rank.RankTerms.Where(r => r.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        </div>\r\n");
+
+            
+            #line 10 "..\..\Views\Staff\AcademicInfo.cshtml"
+    }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("    <div");
 
 WriteLiteral(" class=\"form-group\"");
 
@@ -62,31 +111,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 5 "..\..\Views\Staff\AcademicInfo.cshtml"
-   Write(Html.LabelFor(model => model.RankId));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        <br>");
-
-            
-            #line 6 "..\..\Views\Staff\AcademicInfo.cshtml"
-       Write(Html.DisplayFor(model => model.Rank.RankTerms.Where(r => r.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n    </div>\r\n    <div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("        ");
-
-            
-            #line 9 "..\..\Views\Staff\AcademicInfo.cshtml"
+            #line 12 "..\..\Views\Staff\AcademicInfo.cshtml"
    Write(Html.LabelFor(model => model.DegreeId));
 
             
@@ -95,7 +120,7 @@ WriteLiteral("        ");
 WriteLiteral("\r\n        <br>");
 
             
-            #line 10 "..\..\Views\Staff\AcademicInfo.cshtml"
+            #line 13 "..\..\Views\Staff\AcademicInfo.cshtml"
        Write(Html.DisplayFor(model => model.Degree.DegreeTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value));
 
             
@@ -110,7 +135,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 13 "..\..\Views\Staff\AcademicInfo.cshtml"
+            #line 16 "..\..\Views\Staff\AcademicInfo.cshtml"
    Write(Html.LabelFor(model => model.ProgramId));
 
             
@@ -119,7 +144,7 @@ WriteLiteral("        ");
 WriteLiteral("\r\n        <br>");
 
             
-            #line 14 "..\..\Views\Staff\AcademicInfo.cshtml"
+            #line 17 "..\..\Views\Staff\AcademicInfo.cshtml"
        Write(Html.DisplayFor(model => model.Program.ProgramTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value));
 
             

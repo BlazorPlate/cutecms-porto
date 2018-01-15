@@ -17,14 +17,12 @@
     var organizations = (List<Organization>)HttpRuntime.Cache["Organizations"];
     var organization = organizations.Where(o => o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name))?.FirstOrDefault() ?? new Organization();
     IEnumerable<MenuItem> footerMenuItems = configDb.MenuItems.Include("Status").Include("Menu").Include("Language").Where(m => m.Menu.TenantId.Trim().Equals(Tenant.TenantId) && m.Menu.Code.Trim().Equals("footer-menu") && m.Status.Code.Trim().Equals("published") && m.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).OrderBy(o => o.Ordinal);
-
 }
 @section Styles{
     <!-- Current Page CSS -->
     <link rel="stylesheet" href="~/assets/porto/vendor/rs-plugin/css/settings.css">
     <link rel="stylesheet" href="~/assets/porto/vendor/rs-plugin/css/layers.css">
     <link rel="stylesheet" href="~/assets/porto/vendor/rs-plugin/css/navigation.css">
-
 }
 <div class="slider-container rev_slider_wrapper" style="height: 650px;">
     <div id="revolutionSlider" class="slider rev_slider" data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'gridheight': 650, 'disableProgressBar': 'on', 'navigation': {'bullets': {'enable': true, 'direction': 'vertical', 'h_align': 'right', 'v_align': 'center', 'space': 5}, 'arrows': {'enable': false}}}">
@@ -72,121 +70,121 @@
         <div class="row medical-schedules">
             @if (cutecms_porto.Helpers.CultureHelper.IsRighToLeft())
             {
-                <div class="col-lg-3 box-four background-color-secondary p-none appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1800">
-                    <a href="@(organization?.Telephone)" class="text-decoration-none">
-                        <div class="feature-box feature-box-style-2 m-none">
-                            <div class="feature-box-icon">
-                                <i class="icon-call-out icons"></i>
-                            </div>
-                            <div class="feature-box-info ml-md">
-                                <label class="font-weight-light">@Resources.Resources.EmergencyCase</label>
-                                <strong class="font-weight-normal">@(organization?.Telephone)</strong>
-                            </div>
+            <div class="col-lg-3 box-four background-color-secondary p-none appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1800">
+                <a href="@(organization?.Telephone)" class="text-decoration-none">
+                    <div class="feature-box feature-box-style-2 m-none">
+                        <div class="feature-box-icon">
+                            <i class="icon-call-out icons"></i>
                         </div>
-                    </a>
-                </div>
-                <div class="col-lg-3 box-three background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1200">
-                    <div class="expanded-info p-xlg background-color-primary">
-                        @foreach (var item in openingHours)
-                        {
-                            <div class="info custom-info log-in-info">
-                                <div style="color:white" class="bold">@item.Title</div>
-                                <div style="color:white">@item.Subtitle</div>
-                            </div>
-                        }
+                        <div class="feature-box-info ml-md">
+                            <label class="font-weight-light">@Resources.Resources.ContactUs</label>
+                            <strong class="font-weight-normal">@(organization?.Telephone)</strong>
+                        </div>
                     </div>
-                    <h5 class="m-none">
-                        @Resources.Resources.OpeningHours
-                        <i class="icon-arrow-right-circle icons"></i>
-                    </h5>
+                </a>
+            </div>
+            <div class="col-lg-3 box-three background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1200">
+                <div class="expanded-info p-xlg background-color-primary">
+                    @foreach (var item in openingHours)
+                        {
+                        <div class="info custom-info log-in-info">
+                            <div style="color:white" class="bold">@item.Title</div>
+                            <div style="color:white">@item.Subtitle</div>
+                        </div>
+                        }
                 </div>
-                        <div class="col-lg-3 box-two background-color-tertiary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="600">
-                            <h5 class="m-none">
-                                <a href="#" title="">
-                                    Lorem #2
-                                    <i class="icon-arrow-right-circle icons"></i>
-                                </a>
-                            </h5>
-                        </div>
-                        <div class="col-lg-3 box-one background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="0">
-                            <div class="feature-box feature-box-style-2 p-lg">
-                                <div class="feature-box-icon">
-                                    @*<img src="~/assets/porto/img/demos/medical/icons/medical-icon-heart.png" alt="" class="img-responsive pt-xs" />*@
-                                </div>
-                                <div class="feature-box-info ml-md">
-                                    <h4 class="m-none">Lorem #1</h4>
-                                </div>
-                            </div>
-                        </div>
+                <h5 class="m-none">
+                    @Resources.Resources.OpeningHours
+                    <i class="icon-arrow-right-circle icons"></i>
+                </h5>
+            </div>
+            <div class="col-lg-3 box-two background-color-tertiary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="600">
+                <h5 class="m-none">
+                    <a href="#" title="">
+                        Lorem #2
+                        <i class="icon-arrow-right-circle icons"></i>
+                    </a>
+                </h5>
+            </div>
+            <div class="col-lg-3 box-one background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="0">
+                <div class="feature-box feature-box-style-2 p-lg">
+                    <div class="feature-box-icon">
+                        @*<img src="~/assets/porto/img/demos/medical/icons/medical-icon-heart.png" alt="" class="img-responsive pt-xs" />*@
+                    </div>
+                    <div class="feature-box-info ml-md">
+                        <h4 class="m-none">Lorem #1</h4>
+                    </div>
+                </div>
+            </div>
 
             }
             else
             {
-                <div class="col-lg-3 box-one background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="0">
-                    <div class="feature-box feature-box-style-2 p-lg">
-                        <div class="feature-box-icon">
-                            @*<img src="~/assets/porto/img/demos/medical/icons/medical-icon-heart.png" alt="" class="img-responsive pt-xs" />*@
-                        </div>
-                        <div class="feature-box-info ml-md">
-                            <h4 class="m-none"> Lorem #1</h4>
+            <div class="col-lg-3 box-one background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="0">
+                <div class="feature-box feature-box-style-2 p-lg">
+                    <div class="feature-box-icon">
+                        @*<img src="~/assets/porto/img/demos/medical/icons/medical-icon-heart.png" alt="" class="img-responsive pt-xs" />*@
+                    </div>
+                    <div class="feature-box-info ml-md">
+                        <h4 class="m-none"> Lorem #1</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 box-two background-color-tertiary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="600">
+                <h5 class="m-none">
+                    <a href="#" title="">
+                        Lorem #2
+                        <i class="icon-arrow-right-circle icons"></i>
+                    </a>
+                </h5>
+            </div>
+            <div class="col-lg-3 box-three background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1200">
+                <div class="expanded-info p-xlg background-color-primary">
+                    <div class="table">
+                        <div class="row">
+                            @foreach (var item in openingHours)
+                                        {
+                                        <div class="info custom-info log-in-info">
+                                            <div style="color:white" class="bold">@item.Title</div>
+                                            <div style="color:white">@item.Subtitle</div>
+                                        </div>
+                                        }
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 box-two background-color-tertiary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="600">
-                    <h5 class="m-none">
-                        <a href="#" title="">
-                            Lorem #2
-                            <i class="icon-arrow-right-circle icons"></i>
-                        </a>
-                    </h5>
-                </div>
-                        <div class="col-lg-3 box-three background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1200">
-                            <div class="expanded-info p-xlg background-color-primary">
-                                <div class="table">
-                                    <div class="row">
-                                        @foreach (var item in openingHours)
-                                        {
-                                            <div class="info custom-info log-in-info">
-                                                <div style="color:white" class="bold">@item.Title</div>
-                                                <div style="color:white">@item.Subtitle</div>
-                                            </div>
-                                        }
-                                    </div>
-                                </div>
-                            </div>
-                            <h5 class="m-none">
-                                @Resources.Resources.OpeningHours
-                                <i class="icon-arrow-right-circle icons"></i>
-                            </h5>
+                <h5 class="m-none">
+                    @Resources.Resources.OpeningHours
+                    <i class="icon-arrow-right-circle icons"></i>
+                </h5>
+            </div>
+            <div class="col-lg-3 box-four background-color-secondary p-none appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1800">
+                <a href="tel:@(organization?.Telephone)" class="text-decoration-none">
+                    <div class="feature-box feature-box-style-2 m-none">
+                        <div class="feature-box-icon">
+                            <i class="icon-call-out icons"></i>
                         </div>
-                        <div class="col-lg-3 box-four background-color-secondary p-none appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1800">
-                            <a href="tel:@(organization?.Telephone)" class="text-decoration-none">
-                                <div class="feature-box feature-box-style-2 m-none">
-                                    <div class="feature-box-icon">
-                                        <i class="icon-call-out icons"></i>
-                                    </div>
-                                    <div class="feature-box-info ml-md">
-                                        <label class="font-weight-light">@Resources.Resources.ContactUs</label>
-                                        <strong class="font-weight-normal">@(organization?.Telephone)</strong>
-                                    </div>
-                                </div>
-                            </a>
+                        <div class="feature-box-info ml-md">
+                            <label class="font-weight-light">@Resources.Resources.ContactUs</label>
+                            <strong class="font-weight-normal">@(organization?.Telephone)</strong>
                         </div>
+                    </div>
+                </a>
+            </div>
             }
         </div>
         @foreach (var item in shortcutContents)
             {
-            <div class="row mt-xlg pt-xlg mb-xlg pb-xs">
-                <div class="col-sm-8 col-md-8">
-                    <h2 class="font-weight-semibold mb-xs">@item.Title</h2>
-                    <p class="lead font-weight-normal">@item.Subtitle</p>
-                    <p class="text-justify">@item.MainContent.StripHtml().Chop(300).Trim()</p>
-                    <a class="btn btn-borders btn-quaternary custom-button text-uppercase mt-lg mb-lg font-weight-bold" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@Resources.Resources.ReadMore</a>
-                </div>
-                <div class="col-sm-4 col-md-4">
-                    <img src="@item.ImagePath" alt="@item.ImageName" class="img-responsive boxshadow" />
-                </div>
+        <div class="row mt-xlg pt-xlg mb-xlg pb-xs">
+            <div class="col-sm-8 col-md-8">
+                <h2 class="font-weight-semibold mb-xs">@item.Title</h2>
+                <p class="lead font-weight-normal">@item.Subtitle</p>
+                <p class="text-justify">@item.MainContent.StripHtml().Chop(300).Trim()</p>
+                <a class="btn btn-borders btn-quaternary custom-button text-uppercase mt-lg mb-lg font-weight-bold" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@Resources.Resources.ReadMore</a>
             </div>
+            <div class="col-sm-4 col-md-4">
+                <img src="@item.ImagePath" alt="@item.ImageName" class="img-responsive boxshadow" />
+            </div>
+        </div>
         }
 
     </div>
@@ -204,22 +202,22 @@
         {
             if (i % 3 == 0)
             {
-                @:<div class="row mt-lg">
+        @:<div class="row mt-lg">
                         }
-            <div class="col-md-4">
-                <div class="feature-box feature-box-style-2 mb-xl appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
-                    <div class="feature-box-icon">
-                        <img src="@item.IconPath" alt="@item.IconName" class="img-responsive" />
-                    </div>
-                    <div class="feature-box-info ml-md">
-                        <h4 class="font-weight-semibold"><a href="@string.Concat(item.AbsolutePath, string.Concat("#", item.Department.Code))" class="text-decoration-none">@item.Value</a></h4>
-                    </div>
+        <div class="col-md-4">
+            <div class="feature-box feature-box-style-2 mb-xl appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
+                <div class="feature-box-icon">
+                    <img src="@item.IconPath" alt="@item.IconName" class="img-responsive" />
+                </div>
+                <div class="feature-box-info ml-md">
+                    <h4 class="font-weight-semibold"><a href="@string.Concat(item.AbsolutePath, string.Concat("#", item.Department.Code))" class="text-decoration-none">@item.Value</a></h4>
                 </div>
             </div>
+        </div>
             i++;
             if (i % 3 == 0)
             {
-                @:</div>
+        @:</div>
             }
         }
         <div class="row mt-lg pb-xlg">
@@ -260,22 +258,22 @@
                         var employee = identityDb.Employees.Where(e => e.Language.CultureName.Equals(Thread.CurrentThread.CurrentCulture.Name) && e.TranslationId == empInDept.Employee.TranslationId).FirstOrDefault();
                         if (employee != null)
                         {
-                            <div class="pr-sm pl-sm">
-                                <a href="@Url.Action("MemberProfile", "Staff", new { id = empInDept.Employee.TranslationId })" data-ajax-on-page class="text-decoration-none">
-                                    <span class="thumb-info thumb-info-no-zoom thumb-info-hide-wrapper-bg">
-                                        <span class="thumb-info-wrapper m-none">
-                                            <img alt="@empInDept.Employee.PersonalPhotoName" src="@(!File.Exists(Server.MapPath(employee.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : @employee.PersonalPhotoPath)">
-                                        </span>
-                                        <span class="thumb-info-caption p-md pt-xlg pb-xlg">
-                                            <span class="custom-thumb-info-title">
-                                                <span class="custom-thumb-info-type font-weight-light text-md">@empInDept.Department.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value</span>
-                                                <span class="custom-thumb-info-inner font-weight-semibold text-lg">@personalTitle @employee.FullName</span>
-                                                @*<i class="icon-arrow-right-circle icons font-weight-semibold text-lg "></i>*@
-                                            </span>
-                                        </span>
-                                    </span>
-                                </a>
-                            </div>
+                <div class="pr-sm pl-sm">
+                    <a href="@Url.Action("MemberProfile", "Staff", new { id = empInDept.Employee.TranslationId })" data-ajax-on-page class="text-decoration-none">
+                        <span class="thumb-info thumb-info-no-zoom thumb-info-hide-wrapper-bg">
+                            <span class="thumb-info-wrapper m-none">
+                                <img alt="@empInDept.Employee.PersonalPhotoName" src="@(!File.Exists(Server.MapPath(employee.PersonalPhotoPath)) ? "/assets/admin/plugins/images/users/user-icon.png" : @employee.PersonalPhotoPath)">
+                            </span>
+                            <span class="thumb-info-caption p-md pt-xlg pb-xlg">
+                                <span class="custom-thumb-info-title">
+                                    <span class="custom-thumb-info-type font-weight-light text-md">@empInDept.Department.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name)).FirstOrDefault().Value</span>
+                                    <span class="custom-thumb-info-inner font-weight-semibold text-lg">@personalTitle @employee.FullName</span>
+                                    @*<i class="icon-arrow-right-circle icons font-weight-semibold text-lg "></i>*@
+                                </span>
+                            </span>
+                        </span>
+                    </a>
+                </div>
                         }
                     }
                 }
@@ -296,27 +294,26 @@
             <div class="row">
                 @foreach (var item in resourcesList.ListItems)
                 {
-                    <div class="col-sm-4 col-md-4">
-                        <a href="@item.Url" class="text-decoration-none">
-                            <span class="thumb-info thumb-info-side-image thumb-info-side-image-custom thumb-info-no-zoom thumb-info-no-zoom thumb-info-side-image-custom-highlight">
-                                <span class="thumb-info-side-image-wrapper">
-                                    <img alt="" class="img-responsive" src="@item.ThumbPath">
-                                </span>
-                                <span class="thumb-info-caption">
-                                    <span class="thumb-info-caption-text p-xl">
-                                        <h4 class="font-weight-semibold mb-xs">@item.Title</h4>
-                                        <p>@item.Subtitle</p>
-                                    </span>
+                <div class="col-sm-4 col-md-4">
+                    <a href="@item.Url" class="text-decoration-none">
+                        <span class="thumb-info thumb-info-side-image thumb-info-side-image-custom thumb-info-no-zoom thumb-info-no-zoom thumb-info-side-image-custom-highlight">
+                            <span class="thumb-info-side-image-wrapper">
+                                <img alt="" class="img-responsive" src="@item.ThumbPath">
+                            </span>
+                            <span class="thumb-info-caption">
+                                <span class="thumb-info-caption-text p-xl">
+                                    <h4 class="font-weight-semibold mb-xs">@item.Title</h4>
+                                    <p>@item.Subtitle</p>
                                 </span>
                             </span>
-                        </a>
-                    </div>
+                        </span>
+                    </a>
+                </div>
                 }
             </div>
         </div>
     </section>
 }
-
 <section class="section section-default">
     <div class="container">
         <div class="row">
@@ -330,31 +327,31 @@
                             newsDivClosed = false;
                             if (newsIndex % 2 == 0)
                             {
-                                @:<div class="row mt-lg">
+                        @:<div class="row mt-lg">
                             }
-                            <div class="col-md-6">
-                                <article>
-                                    <div class="date">
-                                        <span class="day">@item.PublishedOn.Value.Day</span>
-                                        <span class="month">@item.PublishedOn.Value.Month</span>
-                                    </div>
-                                    <h4 class="heading-primary"><a href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@item.Title</a></h4>
-                                    <p class="text-justify">@item.MainContent.StripHtml().Chop(120)</p>
-                                    <a class="btn btn-primary btn-xs" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })"><i class="fa fa-plus"></i><span> @Resources.Resources.ReadMore</span></a>
-                                </article>
-                            </div>
+                        <div class="col-md-6">
+                            <article>
+                                <div class="date">
+                                    <span class="day">@item.PublishedOn.Value.Day</span>
+                                    <span class="month">@item.PublishedOn.Value.Month</span>
+                                </div>
+                                <h4 class="heading-primary"><a href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@item.Title</a></h4>
+                                <p class="text-justify">@item.MainContent.StripHtml().Chop(120)</p>
+                                <a class="btn btn-primary btn-xs" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })"><i class="fa fa-plus"></i><span> @Resources.Resources.ReadMore</span></a>
+                            </article>
+                        </div>
                             newsIndex++;
                             if (newsIndex % 2 == 0)
                             {
                                 newsDivClosed = true;
-                                @:                            </div>
+                        @: </div>
                             }
                         }
                     </div>
                     @if (!newsDivClosed)
                     {
                         newsDivClosed = true;
-                        @:                    </div>
+                @: </div>
                     }
 
                 </div>
@@ -369,72 +366,71 @@
                             eventDivClosed = false;
                             if (eventIndex % 2 == 0)
                             {
-                                @:<div class="row mt-lg">
+                        @:<div class="row mt-lg">
                         }
-                            <div class="col-md-6">
-                                <article>
-                                    <div class="date">
-                                        <span class="day">@(item.StartDate?.Day ?? item.PublishedOn.Value.Day)</span>
-                                        <span class="month">@(item.StartDate?.Month ?? item.PublishedOn.Value.Month)</span>
-                                    </div>
-                                    <h4 class="heading-primary"><a href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@item.Title</a></h4>
-                                    <p class="text-justify">@item.MainContent.StripHtml().Chop(120)</p>
-                                    <a class="btn btn-primary btn-xs" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })"><i class="fa fa-plus"></i><span> @Resources.Resources.ReadMore</span></a>
-                                </article>
-                            </div>
+                        <div class="col-md-6">
+                            <article>
+                                <div class="date">
+                                    <span class="day">@(item.StartDate?.Day ?? item.PublishedOn.Value.Day)</span>
+                                    <span class="month">@(item.StartDate?.Month ?? item.PublishedOn.Value.Month)</span>
+                                </div>
+                                <h4 class="heading-primary"><a href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@item.Title</a></h4>
+                                <p class="text-justify">@item.MainContent.StripHtml().Chop(120)</p>
+                                <a class="btn btn-primary btn-xs" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })"><i class="fa fa-plus"></i><span> @Resources.Resources.ReadMore</span></a>
+                            </article>
+                        </div>
                             eventIndex++;
                             if (eventIndex % 2 == 0)
                             {
                                 eventDivClosed = true;
-                                @:                            </div>
+                        @: </div>
                             }
                         }
                     </div>
                     @if (!eventDivClosed)
                     {
                         eventDivClosed = true;
-                        @:                    </div>
+                @: </div>
                     }
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-@if (partnerList.ListItems.Count > 0)
-{
-    <section>
-        <div class="container">
-            <div class="row mt-md">
-                <div class="col-md-12">
-                    <h2 class="font-weight-semibold m-none">@partnerList.Title</h2>
-                    <p class="lead font-weight-normal">@partnerList.Subtitle</p>
-                </div>
             </div>
-            <div class="row center">
-                <div class="owl-carousel owl-theme" data-plugin-options="{'items': 6, 'autoplay': true, 'autoplayTimeout': 3000}">
-                    @foreach (var item in partnerList.ListItems)
-                {
-                        <div>
-                            <img class="img-responsive" src="@item.ThumbPath" alt="">
-                            @*<p>@item.Title</p>*@
+            </div>
+        </section>
+        @if (partnerList.ListItems.Count > 0)
+        {
+            <section>
+                <div class="container">
+                    <div class="row mt-md">
+                        <div class="col-md-12">
+                            <h2 class="font-weight-semibold m-none">@partnerList.Title</h2>
+                            <p class="lead font-weight-normal">@partnerList.Subtitle</p>
                         </div>
+                    </div>
+                    <div class="row center">
+                        <div class="owl-carousel owl-theme" data-plugin-options="{'items': 6, 'autoplay': true, 'autoplayTimeout': 3000}">
+                            @foreach (var item in partnerList.ListItems)
+                {
+                    <div>
+                        <img class="img-responsive" src="@item.ThumbPath" alt="">
+                        @*<p>@item.Title</p>*@
+                    </div>
                     }
-                    @*<div class="content-grid-item col-sm-4 col-md-2 center">
-                            <img src="~/assets/porto/img/demos/medical/logos/insurance-logo-1.png" class="img-responsive" />
-                        </div>*@
+                            @*<div class="content-grid-item col-sm-4 col-md-2 center">
+                                    <img src="~/assets/porto/img/demos/medical/logos/insurance-logo-1.png" class="img-responsive" />
+                                </div>*@
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-}
-@if (testimonialList.ListItems.Count > 0)
-{
-    <section class="section-secondary">
-        <div class="container">
-            <div class="row mt-xlg pt-md mb-xlg pb-md">
-                <div class="owl-carousel owl-theme nav-bottom rounded-nav" data-plugin-options="{'items': 1, 'loop': false, 'dots': false}">
-                    @foreach (var item in testimonialList.ListItems)
+            </section>
+        }
+        @if (testimonialList.ListItems.Count > 0)
+        {
+            <section class="section-secondary">
+                <div class="container">
+                    <div class="row mt-xlg pt-md mb-xlg pb-md">
+                        <div class="owl-carousel owl-theme nav-bottom rounded-nav" data-plugin-options="{'items': 1, 'loop': false, 'dots': false}">
+                            @foreach (var item in testimonialList.ListItems)
                 {                <div>
                         <div class="col-md-8 col-md-offset-2 pt-xlg">
                             <div class="testimonial testimonial-style-2 testimonial-with-quotes mb-none">
@@ -451,9 +447,8 @@
                         </div>
                     </div>
                     }
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-}
+            </section>
+        }

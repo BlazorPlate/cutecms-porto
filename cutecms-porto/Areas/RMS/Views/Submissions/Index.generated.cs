@@ -340,7 +340,7 @@ WriteLiteral("\"\r\n                },\r\n                //\"responsive\": true
 
             
             #line 114 "..\..\Areas\RMS\Views\Submissions\Index.cshtml"
-                       Write(Url.Action("DataHandler", "Submissions", new { area = "RMS" }));
+                       Write(Url.Action("DataHandler", "Submissions", new { area = "RMS",id=ViewBag.VacancyId }));
 
             
             #line default

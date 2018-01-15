@@ -118,7 +118,7 @@ WriteLiteral(" class=\"row text-justify\"");
 
 WriteLiteral(">\r\n        <div");
 
-WriteLiteral(" class=\"col-md-6\"");
+WriteLiteral(" class=\"col-md-12\"");
 
 WriteLiteral(">\r\n            <div");
 
@@ -671,14 +671,14 @@ WriteLiteral(">\r\n                <a");
 
 WriteLiteral(" class=\"btn btn-primary mb-xl\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 6015), Tuple.Create("\"", 6076)
+WriteAttribute("href", Tuple.Create(" href=\"", 6016), Tuple.Create("\"", 6077)
             
             #line 135 "..\..\Views\Careers\Details.cshtml"
-, Tuple.Create(Tuple.Create("", 6022), Tuple.Create<System.Object, System.Int32>(Url.Action("Apply", "Careers", new { id = Model.Id })
+, Tuple.Create(Tuple.Create("", 6023), Tuple.Create<System.Object, System.Int32>(Url.Action("Apply", "Careers", new { id = Model.Id })
             
             #line default
             #line hidden
-, 6022), false)
+, 6023), false)
 );
 
 WriteLiteral(">");
@@ -694,14 +694,14 @@ WriteLiteral("</a>\r\n                <a");
 
 WriteLiteral(" class=\"btn btn-primary mb-xl\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 6161), Tuple.Create("\"", 6199)
+WriteAttribute("href", Tuple.Create(" href=\"", 6162), Tuple.Create("\"", 6200)
             
             #line 136 "..\..\Views\Careers\Details.cshtml"
-, Tuple.Create(Tuple.Create("", 6168), Tuple.Create<System.Object, System.Int32>(Url.Action("Index", "Careers")
+, Tuple.Create(Tuple.Create("", 6169), Tuple.Create<System.Object, System.Int32>(Url.Action("Index", "Careers")
             
             #line default
             #line hidden
-, 6168), false)
+, 6169), false)
 );
 
 WriteLiteral("><i");

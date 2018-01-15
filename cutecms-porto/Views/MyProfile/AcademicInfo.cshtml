@@ -39,11 +39,14 @@
     }
 
     <form role="form" action="#" method="post">
-        <div class="form-group">
-            @Html.LabelFor(model => model.RankId)
-            @Html.DropDownList("RankId", null, string.Empty, htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.RankId, "", new { @class = "text-danger" })
-        </div>
+        @if (Model.RankId != null)
+        {
+            <div class="form-group">
+                @Html.LabelFor(model => model.RankId)
+                @Html.DropDownList("RankId", null, string.Empty, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.RankId, "", new { @class = "text-danger" })
+            </div>
+        }
         <div class="form-group">
             @Html.LabelFor(model => model.DegreeId)
             @Html.DropDownList("DegreeId", null, string.Empty, htmlAttributes: new { @class = "form-control" })

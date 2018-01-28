@@ -628,7 +628,7 @@
     <value>margin-right-10</value>
   </data>
   <data name="MaximumAllowedSize" xml:space="preserve">
-    <value>الحد المسموح به لحجم الصوره هو:</value>
+    <value>الحد المسموح به لحجم الملف هو:</value>
   </data>
   <data name="Menu" xml:space="preserve">
     <value>القائمة</value>

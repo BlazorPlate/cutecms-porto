@@ -36,7 +36,7 @@
         @Html.AntiForgeryToken()
         <div class="form-actions no-color">
             <input type="submit" value=@Resources.Resources.Delete class="btn btn-primary" /> |
-            @Html.ActionLink(Resources.Resources.BackToList, "Index")
+            @Html.ActionLink(Resources.Resources.BackToList, "Index", new { id = Model.GalleryId })
         </div>
     }
 </div>

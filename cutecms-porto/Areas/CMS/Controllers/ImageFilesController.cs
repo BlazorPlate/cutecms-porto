@@ -95,7 +95,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
                         }
                     }
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { });
             }
             ViewBag.GalleryId = new SelectList(db.Galleries.Where(g => g.TenantId.Trim().Equals(Tenant.TenantId)), "Id", "Code", imageWithTagsVM.GalleryId);
             return View(imageWithTagsVM);
@@ -171,7 +171,7 @@ namespace cutecms_porto.Areas.CMS.Controllers
             }
             db.ImageFiles.Remove(imageFile);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { id = imageFile.GalleryId });
         }
 
         public void AddTagToFile(int imageId, int TagId)

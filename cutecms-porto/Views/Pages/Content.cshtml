@@ -50,6 +50,20 @@
         </div>
     </section>
 }
+<div class="row">
+    <div class="col-md-12">
+        <p style="color:brown">
+            @if (Model.StartDate == null)
+            {
+                <small><i class="fa fa-clock-o"></i> @Resources.Resources.LastUpdatedOn @Model.ModifiedOn.Value.ToString("dddd, d MMMM, yyyy")</small>
+            }
+            else
+            {
+                <small><i class="fa fa-clock-o"></i> @Resources.Resources.From @Model.StartDate.Value.ToString("dddd, d MMMM, yyyy") @(Model.EndDate == null ? "" : @Resources.Resources.Till + " " + Model.EndDate.Value.ToString("dddd, d MMMM, yyyy")) @(Model.Location == null ? "" : "@ " + Model.Location)</small>
+            }
+        </p>
+    </div>
+</div>
 <div class="container text-justify">
     @if (Model.ContentGalleries.Count != 0)
     {
@@ -72,22 +86,6 @@
             </div>
         </div>
     }
-
-
-    <div class="row">
-        <div class="col-md-12">
-            <p style="color:brown">
-                @if (Model.StartDate == null)
-                {
-                    <small><i class="fa fa-clock-o"></i> @Resources.Resources.LastUpdatedOn @Model.ModifiedOn.Value.ToString("dddd, d MMMM, yyyy")</small>
-                }
-                else
-                {
-                    <small><i class="fa fa-clock-o"></i> @Resources.Resources.From @Model.StartDate.Value.ToString("dddd, d MMMM, yyyy") @(Model.EndDate == null ? "" : @Resources.Resources.Till + " " + Model.EndDate.Value.ToString("dddd, d MMMM, yyyy")) @(Model.Location == null ? "" : "@ " + Model.Location)</small>
-                }
-            </p>
-        </div>
-    </div>
     <div class="row">
         <div class="col-md-12">
             <img src="@Model.ImagePath" style="max-width: 260px;" alt="@Model.ImageName" class="pull-right ml-xl mb-xl img-responsive box-shadow-custom" />

@@ -204,7 +204,7 @@ WriteLiteral("            ");
 
             
             #line 39 "..\..\Areas\CMS\Views\ImageFiles\Delete.cshtml"
-       Write(Html.ActionLink(Resources.Resources.BackToList, "Index"));
+       Write(Html.ActionLink(Resources.Resources.BackToList, "Index", new { id = Model.GalleryId }));
 
             
             #line default

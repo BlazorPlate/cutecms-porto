@@ -17,9 +17,9 @@ namespace cutecms_porto.Areas.CMS.Controllers
 
         #region Methods
         // GET: CMS/Galleries
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
-            var galleries = db.Galleries.Where(g => g.TenantId.Trim().Equals(Tenant.TenantId)).OrderBy(g => g.Ordinal).ToList();
+            var galleries = db.Galleries.Where(g => g.TenantId.Trim().Equals(Tenant.TenantId) && (g.Id == id || id == null)).OrderBy(g => g.Ordinal).ToList();
             return View(galleries);
         }
         [LocalizedAuthorize(Roles = "GalleriesDetails")]

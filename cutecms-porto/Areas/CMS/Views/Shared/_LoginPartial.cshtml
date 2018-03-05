@@ -12,12 +12,15 @@
         <ul class="dropdown-menu dropdown-user animated flipInY">
             <li><a href="@Url.Action("Index", "MyProfile", new { area = "" })"><i class="ti-user"></i> @Resources.Resources.MyProfile</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="@Url.Action("Index", "Manage", new { area = "Identity" })"><i class="ti-settings"></i> @Resources.Resources.AccountSettings</a></li>  
+            <li><a href="@Url.Action("Index", "Manage", new { area = "Identity" })"><i class="ti-settings"></i> @Resources.Resources.AccountSettings</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="@Url.Action("Index", "Home", new { area=""})"><i class="fa fa-arrow-circle-right"></i> @Resources.Resources.Frontend</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="javascript:document.getElementById('logoutForm').submit()"><i class="ti-power-off"></i> @Resources.Resources.LogOff</a></li>
-            @using (Html.BeginForm("LogOff", "Account", new { area = "Identity", returnUrl = Request.Url.AbsolutePath }, FormMethod.Post, new { id = "logoutForm", style = "margin:0" }))
+            @using (Html.BeginForm("LogOff", "Account", new
+            {
+                area = "Identity",
+                returnUrl = HttpUtility.UrlEncode(Request.Url.PathAndQuery) @*returnUrl = Request.Url.AbsolutePath*@ }, FormMethod.Post, new { id = "logoutForm", style = "margin:0" }))
             {
                 @Html.AntiForgeryToken()
             }

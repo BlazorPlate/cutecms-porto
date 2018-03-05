@@ -1,10 +1,5 @@
 /* Add here all your CSS customizations */
 
-@font-face {
-    font-family: 'digital-7';
-    src: url('fonts/digital-clock/digital-7.ttf') format('truetype');
-}
-
 form label {
     font-weight: 700;
 }

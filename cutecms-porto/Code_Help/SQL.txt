@@ -30,12 +30,25 @@ delete from AspNetUsers where username!='admin@boss.com'
 
 select * from INFORMATION_SCHEMA.COLUMNS where  COLUMN_NAME = 'TenantId'
 
-update contents set TenantId='www'
-update Tags set TenantId='www'
-update Organization set TenantId='www'
-update ImageFiles set TenantId='www'
-update Galleries set TenantId='www'
-update Departments set TenantId='www'
-update Categories set TenantId='www'
-update Menus set TenantId='www'
-update Vacancies set TenantId='www'
+update contents set TenantId='www' where TenantId=@@
+update Tags set TenantId='www' where TenantId=@@
+update Organization set TenantId='www' where TenantId=@@
+update ImageFiles set TenantId='www' where TenantId=@@
+update Galleries set TenantId='www' where TenantId=@@
+update Departments set TenantId='www' where TenantId=@@
+update Categories set TenantId='www' where TenantId=@@
+update Menus set TenantId='www' where TenantId=@@
+update MenuItems set TenantId='www' where TenantId=@@
+update Vacancies set TenantId='www' where TenantId=@@
+
+
+delete from contents where TenantId=@@
+delete from Tags  where TenantId=@@
+delete from Organization where TenantId=@@
+delete from ImageFiles where TenantId=@@
+delete from Galleries  where TenantId=@@
+delete from Departments  where TenantId=@@
+delete from Categories  where TenantId=@@
+delete from Menus  where TenantId=@@
+delete from MenuItems where TenantId=@@
+delete from Vacancies where TenantId=@@

@@ -34,7 +34,7 @@
                             <p style="color:brown">
                                 @if (item.StartDate == null)
                                 {
-                                    <small><i class="fa fa-clock-o"></i> @Resources.Resources.LastUpdatedOn @item.ModifiedOn.Value.ToString("dddd, d MMMM, yyyy")</small>
+                                    <small><i class="fa fa-clock-o"></i> @Resources.Resources.PublishedOn @item.ModifiedOn.Value.ToString("dddd, d MMMM, yyyy")</small>
                                 }
                                 else
                                 {
@@ -44,6 +44,8 @@
                         </div>
                         <div class="row">
                             <div class="text-justify">
+                                <img src="@item.ImagePath" style="max-width: 260px;" alt="@item.ImageName" class="pull-right ml-xl mb-xl img-responsive box-shadow-custom" />
+
                                 <p>
                                     @Html.Raw(item.MainContent.StripHtml().Chop(500).HighlightKeyWords(ViewBag.KeywordFilter as string, "yellow", false))
                                 </p>

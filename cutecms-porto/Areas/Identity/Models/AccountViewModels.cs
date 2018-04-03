@@ -384,7 +384,8 @@ namespace cutecms_porto.Areas.Identity.Models
             var roles = UserManager.GetRoles(user.Id);
             foreach (var userRole in roles)
             {
-                var checkUserRole = this.Roles.Find(r => r.RoleName == _db.Roles.Where(rn => rn.Name.Equals(userRole)).First().Name);
+                var RoleName = _db.Roles.Where(r => r.Name.Equals(userRole)).First().Name;
+                var checkUserRole = this.Roles.Find(r => r.RoleName == RoleName);
                 checkUserRole.Selected = true;
             }
         }

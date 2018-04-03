@@ -189,7 +189,7 @@ WriteLiteral("></i> ");
 
             
             #line 37 "..\..\Views\Home\Contents.cshtml"
-                                                                    Write(Resources.Resources.LastUpdatedOn);
+                                                                    Write(Resources.Resources.PublishedOn);
 
             
             #line default
@@ -198,7 +198,7 @@ WriteLiteral(" ");
 
             
             #line 37 "..\..\Views\Home\Contents.cshtml"
-                                                                                                       Write(item.ModifiedOn.Value.ToString("dddd, d MMMM, yyyy"));
+                                                                                                     Write(item.ModifiedOn.Value.ToString("dddd, d MMMM, yyyy"));
 
             
             #line default
@@ -273,12 +273,38 @@ WriteLiteral(">\r\n                            <div");
 
 WriteLiteral(" class=\"text-justify\"");
 
-WriteLiteral(">\r\n                                <p>\r\n");
+WriteLiteral(">\r\n                                <img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 2083), Tuple.Create("\"", 2104)
+            
+            #line 47 "..\..\Views\Home\Contents.cshtml"
+, Tuple.Create(Tuple.Create("", 2089), Tuple.Create<System.Object, System.Int32>(item.ImagePath
+            
+            #line default
+            #line hidden
+, 2089), false)
+);
+
+WriteLiteral(" style=\"max-width: 260px;\"");
+
+WriteAttribute("alt", Tuple.Create(" alt=\"", 2131), Tuple.Create("\"", 2152)
+            
+            #line 47 "..\..\Views\Home\Contents.cshtml"
+          , Tuple.Create(Tuple.Create("", 2137), Tuple.Create<System.Object, System.Int32>(item.ImageName
+            
+            #line default
+            #line hidden
+, 2137), false)
+);
+
+WriteLiteral(" class=\"pull-right ml-xl mb-xl img-responsive box-shadow-custom\"");
+
+WriteLiteral(" />\r\n\r\n                                <p>\r\n");
 
 WriteLiteral("                                    ");
 
             
-            #line 48 "..\..\Views\Home\Contents.cshtml"
+            #line 50 "..\..\Views\Home\Contents.cshtml"
                                Write(Html.Raw(item.MainContent.StripHtml().Chop(500).HighlightKeyWords(ViewBag.KeywordFilter as string, "yellow", false)));
 
             
@@ -288,14 +314,14 @@ WriteLiteral("\r\n                                </p>\r\n                      
 
 WriteLiteral(" class=\"btn btn-primary btn-xs\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2344), Tuple.Create("\"", 2411)
+WriteAttribute("href", Tuple.Create(" href=\"", 2519), Tuple.Create("\"", 2586)
             
-            #line 50 "..\..\Views\Home\Contents.cshtml"
-, Tuple.Create(Tuple.Create("", 2351), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
+            #line 52 "..\..\Views\Home\Contents.cshtml"
+, Tuple.Create(Tuple.Create("", 2526), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })
             
             #line default
             #line hidden
-, 2351), false)
+, 2526), false)
 );
 
 WriteLiteral("><i");
@@ -305,7 +331,7 @@ WriteLiteral(" class=\"fa fa-plus\"");
 WriteLiteral("></i><span> ");
 
             
-            #line 50 "..\..\Views\Home\Contents.cshtml"
+            #line 52 "..\..\Views\Home\Contents.cshtml"
                                                                                                                                                                   Write(Resources.Resources.ReadMore);
 
             
@@ -317,7 +343,7 @@ WriteLiteral("</span></a>\r\n                            </div>\r\n             
 WriteLiteral("                        <hr />\r\n");
 
             
-            #line 54 "..\..\Views\Home\Contents.cshtml"
+            #line 56 "..\..\Views\Home\Contents.cshtml"
                     }
                 }
                 else
@@ -337,7 +363,7 @@ WriteLiteral(" class=\"text-danger\"");
 WriteLiteral(">");
 
             
-            #line 59 "..\..\Views\Home\Contents.cshtml"
+            #line 61 "..\..\Views\Home\Contents.cshtml"
                                           Write(Resources.Resources.NoResult);
 
             
@@ -347,16 +373,16 @@ WriteLiteral("</p>\r\n                        <br />\r\n                        
 
 WriteLiteral(" class=\"text-blue\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2902), Tuple.Create("\"", 2952)
-, Tuple.Create(Tuple.Create("", 2909), Tuple.Create<System.Object, System.Int32>(Href("~/")
-, 2909), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 3077), Tuple.Create("\"", 3127)
+, Tuple.Create(Tuple.Create("", 3084), Tuple.Create<System.Object, System.Int32>(Href("~/")
+, 3084), false)
             
-            #line 61 "..\..\Views\Home\Contents.cshtml"
-, Tuple.Create(Tuple.Create("", 2911), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture.Name
+            #line 63 "..\..\Views\Home\Contents.cshtml"
+, Tuple.Create(Tuple.Create("", 3086), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture.Name
             
             #line default
             #line hidden
-, 2911), false)
+, 3086), false)
 );
 
 WriteLiteral("><i");
@@ -366,7 +392,7 @@ WriteLiteral(" class=\"glyphicon glyphicon-menu-left margin-right-10 size-16\"")
 WriteLiteral("></i>");
 
             
-            #line 61 "..\..\Views\Home\Contents.cshtml"
+            #line 63 "..\..\Views\Home\Contents.cshtml"
                                                                                                                                                                    Write(Resources.Resources.BackToHome);
 
             
@@ -375,7 +401,7 @@ WriteLiteral("></i>");
 WriteLiteral("</a></p>\r\n                    </div>\r\n");
 
             
-            #line 63 "..\..\Views\Home\Contents.cshtml"
+            #line 65 "..\..\Views\Home\Contents.cshtml"
                 }
 
             
@@ -386,7 +412,7 @@ WriteLiteral("                <!-- /SEARCH RESULTS -->\r\n");
 WriteLiteral("                ");
 
             
-            #line 65 "..\..\Views\Home\Contents.cshtml"
+            #line 67 "..\..\Views\Home\Contents.cshtml"
            Write(Html.PagedListPager((IPagedList)Model, page => Url.Action("Contents", new { page, keywordFilter = ViewBag.KeywordFilter, contentTypeIdFilter = ViewBag.ContentTypeId, statusIdFilter = ViewBag.StatusId })));
 
             
@@ -400,7 +426,7 @@ WriteLiteral(" class=\"col-md-3 col-sm-3 col-md-pull-9 col-sm-pull-9\"");
 WriteLiteral(">\r\n                <h4>");
 
             
-            #line 70 "..\..\Views\Home\Contents.cshtml"
+            #line 72 "..\..\Views\Home\Contents.cshtml"
                Write(Resources.Resources.Search);
 
             
@@ -409,13 +435,13 @@ WriteLiteral(">\r\n                <h4>");
 WriteLiteral("</h4>\r\n");
 
             
-            #line 71 "..\..\Views\Home\Contents.cshtml"
+            #line 73 "..\..\Views\Home\Contents.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 71 "..\..\Views\Home\Contents.cshtml"
+            #line 73 "..\..\Views\Home\Contents.cshtml"
                  using (Html.BeginForm("Contents", "Home", FormMethod.Get))
                 {
                     
@@ -423,14 +449,14 @@ WriteLiteral("</h4>\r\n");
             #line default
             #line hidden
             
-            #line 73 "..\..\Views\Home\Contents.cshtml"
+            #line 75 "..\..\Views\Home\Contents.cshtml"
                Write(Html.TextBox("keywordFilter", ViewBag.KeywordFilter as string, new { @class = "form-control", @placeholder = Resources.Resources.Keywords }));
 
             
             #line default
             #line hidden
             
-            #line 73 "..\..\Views\Home\Contents.cshtml"
+            #line 75 "..\..\Views\Home\Contents.cshtml"
                                                                                                                                                                  
 
             
@@ -439,7 +465,7 @@ WriteLiteral("</h4>\r\n");
 WriteLiteral("                    <b>");
 
             
-            #line 74 "..\..\Views\Home\Contents.cshtml"
+            #line 76 "..\..\Views\Home\Contents.cshtml"
                   Write(Resources.Resources.Category);
 
             
@@ -448,20 +474,20 @@ WriteLiteral("                    <b>");
 WriteLiteral("</b>\r\n");
 
             
-            #line 75 "..\..\Views\Home\Contents.cshtml"
+            #line 77 "..\..\Views\Home\Contents.cshtml"
                     
             
             #line default
             #line hidden
             
-            #line 75 "..\..\Views\Home\Contents.cshtml"
+            #line 77 "..\..\Views\Home\Contents.cshtml"
                Write(Html.DropDownList("contentTypeIdFilter", new SelectList(ViewBag.ContentTypeIdFilter, "Value", "Text"), Resources.Resources.ChooseCategory, new { @class = "form-control" }));
 
             
             #line default
             #line hidden
             
-            #line 75 "..\..\Views\Home\Contents.cshtml"
+            #line 77 "..\..\Views\Home\Contents.cshtml"
                                                                                                                                                                                                 
 
             
@@ -470,7 +496,7 @@ WriteLiteral("</b>\r\n");
 WriteLiteral("                    <b>");
 
             
-            #line 76 "..\..\Views\Home\Contents.cshtml"
+            #line 78 "..\..\Views\Home\Contents.cshtml"
                   Write(Resources.Resources.Status);
 
             
@@ -479,20 +505,20 @@ WriteLiteral("                    <b>");
 WriteLiteral("</b>\r\n");
 
             
-            #line 77 "..\..\Views\Home\Contents.cshtml"
+            #line 79 "..\..\Views\Home\Contents.cshtml"
                     
             
             #line default
             #line hidden
             
-            #line 77 "..\..\Views\Home\Contents.cshtml"
+            #line 79 "..\..\Views\Home\Contents.cshtml"
                Write(Html.DropDownList("statusIdFilter", new SelectList(ViewBag.StatusIdFilter, "Value", "Text"), Resources.Resources.ChooseStatus, new { @class = "form-control" }));
 
             
             #line default
             #line hidden
             
-            #line 77 "..\..\Views\Home\Contents.cshtml"
+            #line 79 "..\..\Views\Home\Contents.cshtml"
                                                                                                                                                                                     
 
             
@@ -504,14 +530,14 @@ WriteLiteral("                    <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 4411), Tuple.Create("\"", 4446)
+WriteAttribute("value", Tuple.Create(" value=\"", 4586), Tuple.Create("\"", 4621)
             
-            #line 79 "..\..\Views\Home\Contents.cshtml"
-, Tuple.Create(Tuple.Create("", 4419), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Search
+            #line 81 "..\..\Views\Home\Contents.cshtml"
+, Tuple.Create(Tuple.Create("", 4594), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Search
             
             #line default
             #line hidden
-, 4419), false)
+, 4594), false)
 );
 
 WriteLiteral(" class=\"btn btn-primary form-control\"");
@@ -519,7 +545,7 @@ WriteLiteral(" class=\"btn btn-primary form-control\"");
 WriteLiteral(" />\r\n");
 
             
-            #line 80 "..\..\Views\Home\Contents.cshtml"
+            #line 82 "..\..\Views\Home\Contents.cshtml"
                 }
 
             
@@ -541,7 +567,7 @@ WriteLiteral(" class=\"fa fa-share\"");
 WriteLiteral("></i>");
 
             
-            #line 85 "..\..\Views\Home\Contents.cshtml"
+            #line 87 "..\..\Views\Home\Contents.cshtml"
                                                               Write(Resources.Resources.Share);
 
             

@@ -260,7 +260,7 @@ li {
 }
 
 #header .header-search .form-control {
-	border-radius: 20px;
+	border-radius: 20px !important;
 	font-size: 0.9em;
 	height: 34px;
 	margin: 0;
@@ -659,7 +659,7 @@ html:not(.sticky-header-active) #header.header-transparent-sticky-deactive .head
 	}
 
 	#header .header-nav-main.header-nav-main-square nav > ul > li.dropdown .dropdown-menu {
-		margin-top: 0;
+		/*margin*/-top: 0;
 		border-radius: 0;
 	}
 
@@ -2317,7 +2317,8 @@ html.boxed .slider-container {
 
 /* Home Slider - Nivo Slider */
 .nivo-slider {
-	position: relative;
+    position: relative;
+
 }
 
 .nivo-slider .theme-default .nivoSlider {
@@ -2326,9 +2327,10 @@ html.boxed .slider-container {
 	margin-top: 10px;
 }
 
-.nivo-slider .theme-default .nivoSlider img {
-	border-radius: 10px 10px 0 0;
-}
+    .nivo-slider .theme-default .nivoSlider img {
+        border-radius: 10px 10px 0 0;
+        height: 520px !important;
+    }
 
 .nivo-slider .theme-default .nivo-controlNav {
 	margin-top: -72px;

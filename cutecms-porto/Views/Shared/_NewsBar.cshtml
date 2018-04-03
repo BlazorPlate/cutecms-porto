@@ -6,22 +6,22 @@
 }
 @if (news.Count() != 0)
 {
-    <div class="smarticker blink">
-        <ul>
-            <li style="color:white"><i class="fa fa-flash fa-2x"></i></li>
-            @foreach (var item in news)
-            {
-                <li><a href="@Url.Action("Content", "Pages", new { slug = @item.UrlSlug })">@item.Title</a></li>
-            }
-        </ul>
-    </div>
+<div class="smarticker blink">
+    <ul>
+        <li style="color:white"><i class="fa fa-flash fa-2x"></i></li>
+        @foreach (var item in news)
+        {
+            <li><a href="@Url.Action("Content", "Pages", new { slug = @item.UrlSlug })">@item.Title</a></li>
+        }
+    </ul>
+</div>
     <script src="~/assets/porto/vendor/smarticker/js/jquery.smarticker.min.js"></script>
     if (CultureHelper.IsRighToLeft())
     {
         <link href="~/assets/porto/vendor/smarticker/css/smarticker-ar.css" rel="stylesheet" />
         <script type="text/javascript">
         $('.smarticker').smarticker({
-        theme: 2, 				// Defines SmarTicker Style: 1, 2, 3, 4 ...
+        theme: 1, 				// Defines SmarTicker Style: 1, 2, 3, 4 ...
         direction: 'rtl',
         layout: 'horizontal',
         animation: 'slide',	    // Defines transition of news titles: default, fade, slide, ...

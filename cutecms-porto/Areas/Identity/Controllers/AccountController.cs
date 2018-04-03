@@ -488,12 +488,9 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 var idManager = new IdentityManager();
                 var user = _db.Users.First(u => u.UserName == model.UserName);
                 idManager.ClearUserGroups(user.Id);
-                foreach (var group in model.Groups)
+                foreach (var group in model.Groups.Where(g => g.Selected))
                 {
-                    if (group.Selected)
-                    {
-                        idManager.AddUserToGroup(user.Id, group.GroupId);
-                    }
+                    idManager.AddUserToGroup(user.Id, group.GroupId);
                 }
                 return RedirectToAction("index");
             }
@@ -516,12 +513,9 @@ namespace cutecms_porto.Areas.Identity.Controllers
                 var idManager = new IdentityManager();
                 var user = _db.Users.First(u => u.Id == model.Id);
                 idManager.ClearUserRoles(user.Id);
-                foreach (var role in model.Roles)
+                foreach (var role in model.Roles.Where(r => r.Selected))
                 {
-                    if (role.Selected)
-                    {
                         idManager.AddUserToRole(user.Id, role.RoleName);
-                    }
                 }
             }
             return View(model);

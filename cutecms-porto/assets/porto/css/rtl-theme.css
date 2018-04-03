@@ -44,7 +44,7 @@ li{line-height:24px;}
 #header .header-nav-top .dropdown-menu a{color:#999;padding:6px 12px;font-size:0.9em;}
 #header .header-nav-top .flag{margin-right:2px;}
 #header .header-search{float:left;margin-top:10px;margin-right:10px;}
-#header .header-search .form-control{border-radius:20px;font-size:0.9em;height:34px;margin:0;padding:6px 12px;-webkit-transition:width 0.3s ease;-moz-transition:width 0.3s ease;transition:width 0.3s ease;-webkit-transform:translate3d(0, 0, 0);-webkit-backface-visibility:hidden;-webkit-perspective:1000px;perspective:1000px;width:170px;}
+#header .header-search .form-control{border-radius:20px !important;font-size:0.9em;height:34px;margin:0;padding:6px 12px;-webkit-transition:width 0.3s ease;-moz-transition:width 0.3s ease;transition:width 0.3s ease;-webkit-transform:translate3d(0, 0, 0);-webkit-backface-visibility:hidden;-webkit-perspective:1000px;perspective:1000px;width:170px;}
 #header .header-search .btn-default{background:transparent;border:0 none;color:#CCC;position:absolute;right:0;top:0;z-index:3;}
 #header .header-search .btn-default:hover{color:#000;}
 #header .header-social-icons{float:left;margin:15px 10px 0 0;}
@@ -105,7 +105,7 @@ html:not(.sticky-header-active) #header.header-transparent-sticky-deactive .head
 #header .header-nav-main.header-nav-main-no-arrows nav > ul > li a.dropdown-toggle:after{display:none;}
 #header .header-nav-main.header-nav-main-square{margin-bottom:-9px;}
 #header .header-nav-main.header-nav-main-square nav > ul > li > a{border-radius:0;}
-#header .header-nav-main.header-nav-main-square nav > ul > li.dropdown .dropdown-menu{margin-top:0;border-radius:0;}
+#header .header-nav-main.header-nav-main-square nav > ul > li.dropdown .dropdown-menu{/*margin-top:0;*/border-radius:0;}
 #header .header-nav-main.header-nav-main-square nav > ul > li.dropdown .dropdown-menu li.dropdown-submenu > .dropdown-menu{border-radius:0;}
 #header .header-nav-main.header-nav-main-square nav > ul > li.dropdown-mega > .dropdown-menu{border-radius:0;}
 #header .header-nav-main.header-nav-main-square nav > ul > li.dropdown-mega .dropdown-mega-sub-nav > li > a{border-radius:0;}

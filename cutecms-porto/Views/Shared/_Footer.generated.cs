@@ -286,7 +286,7 @@ WriteLiteral(":</strong> ");
 
             
             #line 45 "..\..\Views\Shared\_Footer.cshtml"
-                                                                                                        Write(organization?.Telephone?.Split('-')[0]);
+                                                                                                        Write(organization?.Telephone);
 
             
             #line default
@@ -306,15 +306,15 @@ WriteLiteral("></i> <strong>");
             #line hidden
 WriteLiteral(":</strong> <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2898), Tuple.Create("\"", 2931)
-, Tuple.Create(Tuple.Create("", 2905), Tuple.Create("mailto:", 2905), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 2883), Tuple.Create("\"", 2916)
+, Tuple.Create(Tuple.Create("", 2890), Tuple.Create("mailto:", 2890), true)
             
             #line 46 "..\..\Views\Shared\_Footer.cshtml"
-                                               , Tuple.Create(Tuple.Create("", 2912), Tuple.Create<System.Object, System.Int32>(organization.Email
+                                               , Tuple.Create(Tuple.Create("", 2897), Tuple.Create<System.Object, System.Int32>(organization.Email
             
             #line default
             #line hidden
-, 2912), false)
+, 2897), false)
 );
 
 WriteLiteral(">");
@@ -386,52 +386,52 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                            <li");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 3430), Tuple.Create("\"", 3461)
-, Tuple.Create(Tuple.Create("", 3438), Tuple.Create("social-icons-", 3438), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 3415), Tuple.Create("\"", 3446)
+, Tuple.Create(Tuple.Create("", 3423), Tuple.Create("social-icons-", 3423), true)
             
             #line 59 "..\..\Views\Shared\_Footer.cshtml"
-, Tuple.Create(Tuple.Create("", 3451), Tuple.Create<System.Object, System.Int32>(item.Code
+, Tuple.Create(Tuple.Create("", 3436), Tuple.Create<System.Object, System.Int32>(item.Code
             
             #line default
             #line hidden
-, 3451), false)
+, 3436), false)
 );
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3465), Tuple.Create("\"", 3481)
+WriteAttribute("href", Tuple.Create(" href=\"", 3450), Tuple.Create("\"", 3466)
             
             #line 59 "..\..\Views\Shared\_Footer.cshtml"
-, Tuple.Create(Tuple.Create("", 3472), Tuple.Create<System.Object, System.Int32>(item.Url
+, Tuple.Create(Tuple.Create("", 3457), Tuple.Create<System.Object, System.Int32>(item.Url
             
             #line default
             #line hidden
-, 3472), false)
+, 3457), false)
 );
 
 WriteLiteral(" target=\"_blank\"");
 
-WriteAttribute("title", Tuple.Create(" title=\"", 3498), Tuple.Create("\"", 3516)
+WriteAttribute("title", Tuple.Create(" title=\"", 3483), Tuple.Create("\"", 3501)
             
             #line 59 "..\..\Views\Shared\_Footer.cshtml"
-                           , Tuple.Create(Tuple.Create("", 3506), Tuple.Create<System.Object, System.Int32>(item.Name
+                           , Tuple.Create(Tuple.Create("", 3491), Tuple.Create<System.Object, System.Int32>(item.Name
             
             #line default
             #line hidden
-, 3506), false)
+, 3491), false)
 );
 
 WriteLiteral("><i");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 3520), Tuple.Create("\"", 3545)
-, Tuple.Create(Tuple.Create("", 3528), Tuple.Create("fa", 3528), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 3505), Tuple.Create("\"", 3530)
+, Tuple.Create(Tuple.Create("", 3513), Tuple.Create("fa", 3513), true)
             
             #line 59 "..\..\Views\Shared\_Footer.cshtml"
-                                                   , Tuple.Create(Tuple.Create(" ", 3530), Tuple.Create<System.Object, System.Int32>(item.CssClass
+                                                   , Tuple.Create(Tuple.Create(" ", 3515), Tuple.Create<System.Object, System.Int32>(item.CssClass
             
             #line default
             #line hidden
-, 3531), false)
+, 3516), false)
 );
 
 WriteLiteral("></i></a></li>\r\n");
@@ -470,42 +470,42 @@ WriteLiteral(" class=\"col-md-1\"");
 
 WriteLiteral(">\r\n                    <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3845), Tuple.Create("\"", 3895)
-, Tuple.Create(Tuple.Create("", 3852), Tuple.Create<System.Object, System.Int32>(Href("~/")
-, 3852), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 3830), Tuple.Create("\"", 3880)
+, Tuple.Create(Tuple.Create("", 3837), Tuple.Create<System.Object, System.Int32>(Href("~/")
+, 3837), false)
             
             #line 70 "..\..\Views\Shared\_Footer.cshtml"
-, Tuple.Create(Tuple.Create("", 3854), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture.Name
+, Tuple.Create(Tuple.Create("", 3839), Tuple.Create<System.Object, System.Int32>(Thread.CurrentThread.CurrentCulture.Name
             
             #line default
             #line hidden
-, 3854), false)
+, 3839), false)
 );
 
 WriteLiteral(" class=\"logo\"");
 
 WriteLiteral(">\r\n                        <img");
 
-WriteAttribute("alt", Tuple.Create(" alt=\"", 3940), Tuple.Create("\"", 3978)
+WriteAttribute("alt", Tuple.Create(" alt=\"", 3925), Tuple.Create("\"", 3963)
             
             #line 71 "..\..\Views\Shared\_Footer.cshtml"
-, Tuple.Create(Tuple.Create("", 3946), Tuple.Create<System.Object, System.Int32>(organization?.PrimaryLogoName
+, Tuple.Create(Tuple.Create("", 3931), Tuple.Create<System.Object, System.Int32>(organization?.PrimaryLogoName
             
             #line default
             #line hidden
-, 3946), false)
+, 3931), false)
 );
 
 WriteLiteral(" class=\"img-responsive\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 4002), Tuple.Create("\"", 4040)
+WriteAttribute("src", Tuple.Create(" src=\"", 3987), Tuple.Create("\"", 4025)
             
             #line 71 "..\..\Views\Shared\_Footer.cshtml"
-                 , Tuple.Create(Tuple.Create("", 4008), Tuple.Create<System.Object, System.Int32>(organization?.PrimaryLogoPath
+                 , Tuple.Create(Tuple.Create("", 3993), Tuple.Create<System.Object, System.Int32>(organization?.PrimaryLogoPath
             
             #line default
             #line hidden
-, 4008), false)
+, 3993), false)
 );
 
 WriteLiteral(">\r\n                    </a>\r\n                </div>\r\n                <div");
@@ -554,15 +554,15 @@ WriteLiteral(">");
             #line hidden
 WriteLiteral(" <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4322), Tuple.Create("\"", 4359)
+WriteAttribute("href", Tuple.Create(" href=\"", 4307), Tuple.Create("\"", 4344)
             
             #line 78 "..\..\Views\Shared\_Footer.cshtml"
-  , Tuple.Create(Tuple.Create("", 4329), Tuple.Create<System.Object, System.Int32>(organization?.DeveloperURL
+  , Tuple.Create(Tuple.Create("", 4314), Tuple.Create<System.Object, System.Int32>(organization?.DeveloperURL
             
             #line default
             #line hidden
-, 4329), false)
-, Tuple.Create(Tuple.Create(" ", 4358), Tuple.Create("", 4358), true)
+, 4314), false)
+, Tuple.Create(Tuple.Create(" ", 4343), Tuple.Create("", 4343), true)
 );
 
 WriteLiteral(">");
@@ -600,14 +600,14 @@ WriteLiteral(">\r\n                            <ul>\r\n");
             #line hidden
 WriteLiteral("                                    <li><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4691), Tuple.Create("\"", 4708)
+WriteAttribute("href", Tuple.Create(" href=\"", 4676), Tuple.Create("\"", 4693)
             
             #line 85 "..\..\Views\Shared\_Footer.cshtml"
-, Tuple.Create(Tuple.Create("", 4698), Tuple.Create<System.Object, System.Int32>(item.Path
+, Tuple.Create(Tuple.Create("", 4683), Tuple.Create<System.Object, System.Int32>(item.Path
             
             #line default
             #line hidden
-, 4698), false)
+, 4683), false)
 );
 
 WriteLiteral(">");

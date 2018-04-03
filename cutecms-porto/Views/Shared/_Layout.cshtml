@@ -3,15 +3,11 @@
 @using System.Globalization
 @using System.Threading
 @{
-    CMSEntities db = new CMSEntities();
-    CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
-    RegionInfo regionInfo = new RegionInfo(cultureInfo.LCID);
-    var languages = db.CMSLanguages.Where(l => l.IsEnabled == true).OrderByDescending(l => l.IsDefault).ThenBy(l => l.Ordinal).ToList();
     var organizations = (List<Organization>)HttpRuntime.Cache["Organizations"];
     var organization = organizations.Where(o => o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name))?.FirstOrDefault() ?? new Organization();
 }
 <!DOCTYPE html>
-<html dir="@(CultureHelper.IsRighToLeft() ? "rtl" : "ltr")" class="boxed">
+<html dir="@(CultureHelper.IsRighToLeft() ? "rtl" : "ltr")">
 <head>
     <!-- Basic -->
     <meta charset="utf-8">
@@ -65,22 +61,8 @@
     <link rel="stylesheet" href="~/assets/porto/vendor/rs-plugin/css/navigation.css">
 
     <!-- Skin CSS -->
-    @* <link rel="stylesheet" href="~/assets/porto/css/skins/default.css">*@
-    @*<link rel="stylesheet" href="~/assets/porto/css/skins/skin-medical.css">*@
-    <link href="~/assets/porto/css/skins/skin-hotel.css" rel="stylesheet" />
-    <style>
-        html .background-color-tertiary {
-	background-color: #bc9552 !important
-}
-    .medical-schedules .box-one::after {
-
-    border-left: 40px solid #D8A64D !important;
-
-
-}
-    </style>
+    <link href="~/assets/porto/css/skins/skin-corporate-7.css" rel="stylesheet" />
     <!-- Demo CSS -->
-    <link rel="stylesheet" href="~/assets/porto/css/demos/demo-medical.css">
 
 
     <!-- Theme Custom CSS -->
@@ -142,35 +124,17 @@
             <div class="header-body" style="top:0px">
                 <div class="header-top">
                     <div class="container">
-                        <nav class="header-nav-top" style="margin-left:0px;">
-                            <ul class="nav nav-pills">
-                                <li>
-                                    <a href="#" id="dropdownLanguage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <img src="~/assets/porto/img/blank.gif" class="flag flag-@regionInfo.TwoLetterISORegionName.ToLower()" alt="@regionInfo.DisplayName"> @regionInfo.NativeName
-                                        <i class="fa fa-globe"></i>
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownLanguage">
-                                        @foreach (var item in languages)
-                                        {
-                                            CultureInfo itemCultureInfo = CultureInfo.CreateSpecificCulture(item.CultureName.Trim());
-                                            RegionInfo itemRegionInfo = new RegionInfo(itemCultureInfo.LCID);
-                                            <li><a href="@Url.RouteUrl(new RouteValueDictionary(ViewContext.RouteData.Values.ToDictionary(r => r.Key, r => r.Key == "culture" ? item.CultureName.Trim() : r.Value)))"><img src="~/assets/porto/img/blank.gif" class="flag flag-@item.FlagCode" alt="@itemRegionInfo.NativeName"> @itemRegionInfo.NativeName</a></li>
-                                        }
-                                    </ul>
-                                </li>
-                            </ul>
-                        </nav>
                         @{Html.RenderAction("GetTopMenu", "Home", new { area = "" });}
                         <div class="header-search hidden-xs">
                             @using (Html.BeginForm("Contents", "Home", new { area = "" }, FormMethod.Post))
-                            {
-                                <div class="input-group">
-                                    @Html.Editor("keywordFilter", new { htmlAttributes = new { @placeholder = Resources.Resources.Search, @class = "form-control" } })
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
-                                    </span>
-                                </div>
-                            }
+                    {
+                        <div class="input-group">
+                            @Html.Editor("keywordFilter", new { htmlAttributes = new { @placeholder = Resources.Resources.Search, @class = "form-control" } })
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+            }
                         </div>
 
                     </div>
@@ -204,6 +168,7 @@
                                                 @{Html.RenderPartial("~/Views/Shared/Account.cshtml");}
                                             </ul>
                                         </nav>
+
                                     </div>
                                 </div>
                             </div>

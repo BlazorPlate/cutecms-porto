@@ -1321,7 +1321,7 @@
     <value>Expired On</value>
   </data>
   <data name="PublishedOn" xml:space="preserve">
-    <value>Published On</value>
+    <value>Published on</value>
   </data>
   <data name="LastUpdatedOn" xml:space="preserve">
     <value>Last updated on</value>

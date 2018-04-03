@@ -70,11 +70,11 @@ WriteLiteral("\r\n");
             
             #line default
             #line hidden
-WriteLiteral("    <div");
+WriteLiteral("<div");
 
 WriteLiteral(" class=\"smarticker blink\"");
 
-WriteLiteral(">\r\n        <ul>\r\n            <li");
+WriteLiteral(">\r\n    <ul>\r\n        <li");
 
 WriteLiteral(" style=\"color:white\"");
 
@@ -86,35 +86,35 @@ WriteLiteral("></i></li>\r\n");
 
             
             #line 12 "..\..\Views\Shared\_NewsBar.cshtml"
-            
+        
             
             #line default
             #line hidden
             
             #line 12 "..\..\Views\Shared\_NewsBar.cshtml"
-             foreach (var item in news)
-            {
+         foreach (var item in news)
+        {
 
             
             #line default
             #line hidden
-WriteLiteral("                <li><a");
+WriteLiteral("            <li><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 578), Tuple.Create("\"", 646)
+WriteAttribute("href", Tuple.Create(" href=\"", 554), Tuple.Create("\"", 622)
             
             #line 14 "..\..\Views\Shared\_NewsBar.cshtml"
-, Tuple.Create(Tuple.Create("", 585), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages", new { slug = @item.UrlSlug })
+, Tuple.Create(Tuple.Create("", 561), Tuple.Create<System.Object, System.Int32>(Url.Action("Content", "Pages", new { slug = @item.UrlSlug })
             
             #line default
             #line hidden
-, 585), false)
+, 561), false)
 );
 
 WriteLiteral(">");
 
             
             #line 14 "..\..\Views\Shared\_NewsBar.cshtml"
-                                                                                       Write(item.Title);
+                                                                                   Write(item.Title);
 
             
             #line default
@@ -123,18 +123,18 @@ WriteLiteral("</a></li>\r\n");
 
             
             #line 15 "..\..\Views\Shared\_NewsBar.cshtml"
-            }
+        }
 
             
             #line default
             #line hidden
-WriteLiteral("        </ul>\r\n    </div>\r\n");
+WriteLiteral("    </ul>\r\n</div>\r\n");
 
 WriteLiteral("    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 723), Tuple.Create("\"", 789)
-, Tuple.Create(Tuple.Create("", 729), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/smarticker/js/jquery.smarticker.min.js")
-, 729), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 687), Tuple.Create("\"", 753)
+, Tuple.Create(Tuple.Create("", 693), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/smarticker/js/jquery.smarticker.min.js")
+, 693), false)
 );
 
 WriteLiteral("></script>\r\n");
@@ -149,9 +149,9 @@ WriteLiteral("></script>\r\n");
             #line hidden
 WriteLiteral("        <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 861), Tuple.Create("\"", 922)
-, Tuple.Create(Tuple.Create("", 868), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/smarticker/css/smarticker-ar.css")
-, 868), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 825), Tuple.Create("\"", 886)
+, Tuple.Create(Tuple.Create("", 832), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/smarticker/css/smarticker-ar.css")
+, 832), false)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
@@ -164,7 +164,7 @@ WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral(@">
         $('.smarticker').smarticker({
-        theme: 2, 				// Defines SmarTicker Style: 1, 2, 3, 4 ...
+        theme: 1, 				// Defines SmarTicker Style: 1, 2, 3, 4 ...
         direction: 'rtl',
         layout: 'horizontal',
         animation: 'slide',	    // Defines transition of news titles: default, fade, slide, ...
@@ -211,9 +211,9 @@ WriteLiteral(@"',	// When category and subcategory not available this section wi
             #line hidden
 WriteLiteral("        <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2680), Tuple.Create("\"", 2738)
-, Tuple.Create(Tuple.Create("", 2687), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/smarticker/css/smarticker.css")
-, 2687), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 2644), Tuple.Create("\"", 2702)
+, Tuple.Create(Tuple.Create("", 2651), Tuple.Create<System.Object, System.Int32>(Href("~/assets/porto/vendor/smarticker/css/smarticker.css")
+, 2651), false)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");

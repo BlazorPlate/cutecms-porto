@@ -37,60 +37,65 @@
                              data-bgfit="cover"
                              data-bgrepeat="no-repeat"
                              class="rev-slidebg">
+                        @{
+                            var primaryCaption = item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.PrimaryCaption;
 
-                        <div class="tp-caption"
-                             data-x="center" data-hoffset="-150"
-                             data-y="center" data-voffset="-95"
-                             data-start="1000"
-                             style="z-index: 5"
-                             data-transform_in="x:[-300%];opacity:0;s:500;"><img src="~/assets/porto/img/slides/slide-title-border.png" alt=""></div>
-
-                        <div class="tp-caption top-label"
-                             data-x="center" data-hoffset="0"
-                             data-y="center" data-voffset="-95"
-                             data-start="500"
-                             style="z-index: 5"
-                             data-transform_in="y:[-300%];opacity:0;s:500;">@(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.PrimaryCaption)</div>
-
-                            <div class="tp-caption"
-                                 data-x="center" data-hoffset="150"
-                                 data-y="center" data-voffset="-95"
-                                 data-start="1000"
-                                 style="z-index: 5"
-                                 data-transform_in="x:[300%];opacity:0;s:500;"><img src="~/assets/porto/img/slides/slide-title-border.png" alt=""></div>
-
-                            <div class="tp-caption main-label"
-                                 data-x="center" data-hoffset="0"
-                                 data-y="center" data-voffset="-45"
-                                 data-start="1500"
-                                 data-whitespace="nowrap"
-                                 data-transform_in="y:[100%];s:500;"
-                                 data-transform_out="opacity:0;s:500;"
-                                 style="z-index: 5"
-                                 data-mask_in="x:0px;y:0px;">@(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.SecondaryCaption)</div>
-
-                                <div class="tp-caption bottom-label"
-                                     data-x="center" data-hoffset="0"
-                                     data-y="center" data-voffset="5"
-                                     data-start="2000"
+                            if (!string.IsNullOrEmpty(primaryCaption))
+                            {
+                                <div class="tp-caption"
+                                     data-x="center" data-hoffset="-450"
+                                     data-y="center" data-voffset="-95"
+                                     data-start="1000"
                                      style="z-index: 5"
-                                     data-transform_in="y:[100%];opacity:0;s:500;">@(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.TertiaryCaption)</div>
+                                     data-transform_in="x:[-300%];opacity:0;s:500;"><img src="~/assets/porto/img/slides/slide-title-border.png" alt=""></div>
 
-                                    <a class="tp-caption btn btn-lg btn-primary btn-slider-action"
-                                       data-hash
-                                       data-hash-offset="85"
-                                       href="#home-intro"
-                                       data-x="center" data-hoffset="0"
-                                       data-y="center" data-voffset="80"
-                                       data-start="2200"
-                                       data-whitespace="nowrap"
-                                       data-transform_in="y:[100%];s:500;"
-                                       data-transform_out="opacity:0;s:500;"
-                                       style="z-index: 5"
-                                       data-mask_in="x:0px;y:0px;">Get Started Now!</a>
+                                    <div class="tp-caption top-label"
+                                         data-x="center" data-hoffset="0"
+                                         data-y="center" data-voffset="-95"
+                                         data-start="500"
+                                         style="z-index: 5"
+                                         data-transform_in="y:[-300%];opacity:0;s:500;">@primaryCaption</div>
 
-                                </li>
-                }
+                                        <div class="tp-caption"
+                                             data-x="center" data-hoffset="450"
+                                             data-y="center" data-voffset="-95"
+                                             data-start="1000"
+                                             style="z-index: 5"
+                                             data-transform_in="x:[300%];opacity:0;s:500;"><img src="~/assets/porto/img/slides/slide-title-border.png" alt=""></div>
+                            }
+                        }
+                        <div class="tp-caption main-label"
+                             data-x="center" data-hoffset="0"
+                             data-y="center" data-voffset="-45"
+                             data-start="1500"
+                             data-whitespace="nowrap"
+                             data-transform_in="y:[100%];s:500;"
+                             data-transform_out="opacity:0;s:500;"
+                             style="z-index: 5"
+                             data-mask_in="x:0px;y:0px;">@(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.SecondaryCaption)</div>
+
+                            <div class="tp-caption bottom-label"
+                                 data-x="center" data-hoffset="0"
+                                 data-y="center" data-voffset="5"
+                                 data-start="2000"
+                                 style="z-index: 5"
+                                 data-transform_in="y:[100%];opacity:0;s:500;">@(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.TertiaryCaption)</div>
+
+                                <a class="tp-caption btn btn-lg btn-primary btn-slider-action"
+                                   data-hash
+                                   data-hash-offset="85"
+                                   href="#home-intro"
+                                   data-x="center" data-hoffset="0"
+                                   data-y="center" data-voffset="80"
+                                   data-start="2200"
+                                   data-whitespace="nowrap"
+                                   data-transform_in="y:[100%];s:500;"
+                                   data-transform_out="opacity:0;s:500;"
+                                   style="z-index: 5"
+                                   data-mask_in="x:0px;y:0px;">@Resources.Resources.ExploreOurSite!</a>
+
+                            </li>
+                            }
             </ul>
         </div>
     </div>
@@ -115,116 +120,125 @@
         </div>
     </div>
     @*<div class="container">
-        <div class="row mb-lg">
-            <div class="col-md-12 center">
-                <h2 class="mb-xl">Our <strong>Services</strong></h2>
+            <div class="row mb-lg">
+                <div class="col-md-12 center">
+                    <h2 class="mb-xl">Our <strong>Services</strong></h2>
+                </div>
+                <div class="row pt-xl clearfix">
+                    <div class="col-md-6">
+                        <div class="feature-box feature-box-style-2 reverse appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="0">
+                            <div class="feature-box-icon">
+                                <i class="icon-user-following icons text-color-quaternary"></i>
+                            </div>
+                            <div class="feature-box-info">
+                                <h4 class="mb-sm">Customer Support</h4>
+                                <p class="mb-lg">Lorem ipsum dolor sit amet, consectetur adipiscing metus elit. Quisque rutrum pellentesque imperdiet.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="feature-box feature-box-style-2 appear-animation" data-appear-animation="fadeInRight" data-appear-animation-delay="0">
+                            <div class="feature-box-icon">
+                                <i class="icon-layers icons text-color-quaternary"></i>
+                            </div>
+                            <div class="feature-box-info">
+                                <h4 class="mb-sm">Sliders</h4>
+                                <p class="mb-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="feature-box feature-box-style-2 reverse appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="300">
+                            <div class="feature-box-icon">
+                                <i class="icon-calculator icons text-color-quaternary"></i>
+                            </div>
+                            <div class="feature-box-info">
+                                <h4 class="mb-sm">HTML5</h4>
+                                <p class="mb-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="feature-box feature-box-style-2 appear-animation" data-appear-animation="fadeInRight" data-appear-animation-delay="300">
+                            <div class="feature-box-icon">
+                                <i class="icon-star icons text-color-quaternary"></i>
+                            </div>
+                            <div class="feature-box-info">
+                                <h4 class="mb-sm">Icons</h4>
+                                <p class="mb-lg">Lorem ipsum dolor sit amet, consectetur adipiscing metus elit. Quisque rutrum pellentesque imperdiet.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="feature-box feature-box-style-2 reverse appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="600">
+                            <div class="feature-box-icon">
+                                <i class="icon-drop icons text-color-quaternary"></i>
+                            </div>
+                            <div class="feature-box-info">
+                                <h4 class="mb-sm">Colors</h4>
+                                <p class="mb-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="feature-box feature-box-style-2 appear-animation" data-appear-animation="fadeInRight" data-appear-animation-delay="600">
+                            <div class="feature-box-icon">
+                                <i class="icon-mouse icons text-color-quaternary"></i>
+                            </div>
+                            <div class="feature-box-info">
+                                <h4 class="mb-sm">Buttons</h4>
+                                <p class="mb-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 center mt-xl mb-sm">
+                    <a class="btn btn-secondary mr-xs mb-sm appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="900">View More</a>
+                </div>
             </div>
-            <div class="row pt-xl clearfix">
-                <div class="col-md-6">
-                    <div class="feature-box feature-box-style-2 reverse appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="0">
-                        <div class="feature-box-icon">
-                            <i class="icon-user-following icons text-color-quaternary"></i>
-                        </div>
-                        <div class="feature-box-info">
-                            <h4 class="mb-sm">Customer Support</h4>
-                            <p class="mb-lg">Lorem ipsum dolor sit amet, consectetur adipiscing metus elit. Quisque rutrum pellentesque imperdiet.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="feature-box feature-box-style-2 appear-animation" data-appear-animation="fadeInRight" data-appear-animation-delay="0">
-                        <div class="feature-box-icon">
-                            <i class="icon-layers icons text-color-quaternary"></i>
-                        </div>
-                        <div class="feature-box-info">
-                            <h4 class="mb-sm">Sliders</h4>
-                            <p class="mb-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="feature-box feature-box-style-2 reverse appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="300">
-                        <div class="feature-box-icon">
-                            <i class="icon-calculator icons text-color-quaternary"></i>
-                        </div>
-                        <div class="feature-box-info">
-                            <h4 class="mb-sm">HTML5</h4>
-                            <p class="mb-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="feature-box feature-box-style-2 appear-animation" data-appear-animation="fadeInRight" data-appear-animation-delay="300">
-                        <div class="feature-box-icon">
-                            <i class="icon-star icons text-color-quaternary"></i>
-                        </div>
-                        <div class="feature-box-info">
-                            <h4 class="mb-sm">Icons</h4>
-                            <p class="mb-lg">Lorem ipsum dolor sit amet, consectetur adipiscing metus elit. Quisque rutrum pellentesque imperdiet.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="feature-box feature-box-style-2 reverse appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="600">
-                        <div class="feature-box-icon">
-                            <i class="icon-drop icons text-color-quaternary"></i>
-                        </div>
-                        <div class="feature-box-info">
-                            <h4 class="mb-sm">Colors</h4>
-                            <p class="mb-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="feature-box feature-box-style-2 appear-animation" data-appear-animation="fadeInRight" data-appear-animation-delay="600">
-                        <div class="feature-box-icon">
-                            <i class="icon-mouse icons text-color-quaternary"></i>
-                        </div>
-                        <div class="feature-box-info">
-                            <h4 class="mb-sm">Buttons</h4>
-                            <p class="mb-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12 center mt-xl mb-sm">
-                <a class="btn btn-secondary mr-xs mb-sm appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="900">View More</a>
-            </div>
-        </div>
-    </div>*@
+        </div>*@
     <section class="section section-background section-center mt-none" style="background-image: url(~/assets/porto/img/patterns/swirl_pattern.png);">
         <div class="container">
             <h2 class="mb-xl">Our <strong>Services</strong></h2>
-            @foreach (var item in shortcutContents)
+            <hr />
+            @foreach (var item in shortcutContents.Where(c => c.ContentType.Code.Trim().Equals("service")))
             {
-                <div class="row mt-xlg pt-xlg mb-xlg pb-xs">
-                    <div class="col-sm-8 col-md-8">
-                        <h2 class="font-weight-semibold mb-xs">@item.Title</h2>
-                        <p class="lead font-weight-normal">@item.Subtitle</p>
-                        <p class="text-justify">@item.MainContent.StripHtml().Chop(300).Trim()</p>
-                        <a class="btn btn-borders btn-quaternary custom-button text-uppercase mt-lg mb-lg font-weight-bold" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@Resources.Resources.ReadMore</a>
-                    </div>
-                    <div class="col-sm-4 col-md-4">
-                        <img src="@item.ImagePath" alt="@item.ImageName" class="img-responsive boxshadow" />
+                <div class="row">
+                    <div class="col-md-12">
+                        <div>
+                            <h3 class="mb-sm">@item.Title</h3>>
+                            <img width="300" height="225" src="@item.ImagePath" alt="@item.ImageName" class=" boxshadow" />
+                            <p class="bold mt-lg">@item.Subtitle</p>
+                            <p class="text-center">@item.MainContent.StripHtml().Chop(300).Trim()</p>
+                            <a class="btn btn-borders btn-quaternary custom-button text-uppercase mb-lg font-weight-bold" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@Resources.Resources.ReadMore</a>
+                        </div>
+                        @*<div class="col-sm-4 col-md-4">
+                                <img src="@item.ImagePath" alt="@item.ImageName" class="img-responsive boxshadow" />
+                            </div>*@
                     </div>
                 </div>
+                <hr />
             }
         </div>
     </section>
     <section class="section section-tertiary pb-none mb-none">
+        @{ 
+           var about= cmsDb.Contents.Where(c => c.Code.Trim().Equals("about")).FirstOrDefault();
+        }
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
                     <h2 class="text-light"><strong>Who</strong> We Are</h2>
-                    <p class="text-light">@(Model.ContentLists.Where(c => c.Code.Trim().Equals("about")).FirstOrDefault()?.Content) </p>
-                    <a class="btn btn-secondary mt-lg mb-sm">@(Model.ContentLists.Where(c => c.Code.Trim().Equals("about")).FirstOrDefault()?.Subtitle)</a>
+                    <p class="bold">@(about?.Subtitle)</p>
+                    <p class="text-light">@(about?.MainContent.StripHtml().Chop(350))</p>
+                    <a class="btn btn-secondary mt-lg mb-sm" href="@Url.Action("Content", "Pages" , new { slug=@about.UrlSlug })">@Resources.Resources.ReadMore</a>
                 </div>
                 <div class="col-md-4 col-md-offset-1">
-                    <img class="img-responsive appear-animation" src="@(Model.ContentLists.Where(c => c.Code.Trim().Equals("about")).FirstOrDefault()?.ImagePath)" alt="" data-appear-animation="fadeInUp">
+                    <img class="img-responsive appear-animation" src="@(about?.ImagePath)" alt="" data-appear-animation="fadeInUp">
                 </div>
             </div>
         </div>
@@ -235,70 +249,70 @@
                 <div class="col-md-10 col-md-offset-1">
                     <h2 class="heading-dark mt-xl">Our <strong>Clients</strong></h2>
                     <div class="owl-carousel owl-theme nav-bottom rounded-nav" data-plugin-options="{'items': 1, 'loop': false}">
-                     @foreach (var item in testimonialList.ListItems)
+                        @foreach (var item in testimonialList.ListItems)
             {
-                        <div>
-                            <div class="col-md-12">
-                                <div class="testimonial testimonial-style-2 testimonial-with-quotes mb-none">
-                                    <div class="testimonial-author">
-                                        <img src="@item.ThumbPath" class="img-responsive img-circle" alt="">
-                                    </div>
-                                    <blockquote>
-                                        <p>@item.Body</p>
-                                    </blockquote>
-                                    <div class="testimonial-author">
-                                        <p><strong>@item.Title</strong><span>@item.Subtitle</span></p>
+                            <div>
+                                <div class="col-md-12">
+                                    <div class="testimonial testimonial-style-2 testimonial-with-quotes mb-none">
+                                        <div class="testimonial-author">
+                                            <img src="@item.ThumbPath" class="img-responsive img-circle" alt="">
+                                        </div>
+                                        <blockquote>
+                                            <p>@item.Body</p>
+                                        </blockquote>
+                                        <div class="testimonial-author">
+                                            <p><strong>@item.Title</strong><span>@item.Subtitle</span></p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-}
+                        }
                     </div>
                 </div>
             </div>
         </div>
     </section>
     @*<div class="container">
-        <div class="row">
-            <div class="col-md-12 center mb-xl">
-                <h2 class="mt-xl">Our <strong>Brands</strong></h2>
+            <div class="row">
+                <div class="col-md-12 center mb-xl">
+                    <h2 class="mt-xl">Our <strong>Brands</strong></h2>
 
-                <div class="owl-carousel owl-theme mb-none" data-plugin-options="{'items': 4, 'margin': 0, 'loop': false}">
-                    <div>
-                        <a href="portfolio-single.html">
-                            <img src="~/assets/porto/img/projects/project-9.jpg" class="img-responsive" alt="">
-                        </a>
+                    <div class="owl-carousel owl-theme mb-none" data-plugin-options="{'items': 4, 'margin': 0, 'loop': false}">
+                        <div>
+                            <a href="portfolio-single.html">
+                                <img src="~/assets/porto/img/projects/project-9.jpg" class="img-responsive" alt="">
+                            </a>
+                        </div>
+                        <div>
+                            <a href="portfolio-single.html">
+                                <img src="~/assets/porto/img/projects/project-12.jpg" class="img-responsive" alt="">
+                            </a>
+                        </div>
+                        <div>
+                            <a href="portfolio-single.html">
+                                <img src="~/assets/porto/img/projects/project-11.jpg" class="img-responsive" alt="">
+                            </a>
+                        </div>
+                        <div>
+                            <a href="portfolio-single.html">
+                                <img src="~/assets/porto/img/projects/project-8.jpg" class="img-responsive" alt="">
+                            </a>
+                        </div>
+                        <div>
+                            <a href="portfolio-single.html">
+                                <img src="~/assets/porto/img/projects/project-9.jpg" class="img-responsive" alt="">
+                            </a>
+                        </div>
+                        <div>
+                            <a href="portfolio-single.html">
+                                <img src="~/assets/porto/img/projects/project-12.jpg" class="img-responsive" alt="">
+                            </a>
+                        </div>
                     </div>
-                    <div>
-                        <a href="portfolio-single.html">
-                            <img src="~/assets/porto/img/projects/project-12.jpg" class="img-responsive" alt="">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="portfolio-single.html">
-                            <img src="~/assets/porto/img/projects/project-11.jpg" class="img-responsive" alt="">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="portfolio-single.html">
-                            <img src="~/assets/porto/img/projects/project-8.jpg" class="img-responsive" alt="">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="portfolio-single.html">
-                            <img src="~/assets/porto/img/projects/project-9.jpg" class="img-responsive" alt="">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="portfolio-single.html">
-                            <img src="~/assets/porto/img/projects/project-12.jpg" class="img-responsive" alt="">
-                        </a>
-                    </div>
+
                 </div>
-
             </div>
-        </div>
-    </div>*@
+        </div>*@
     <section class="section section-primary">
         <div class="container">
             <div class="row">
@@ -388,119 +402,119 @@
             </div>
         </section>
         @*<div class="container">
-            <div class="row center mt-xl">
-                <div class="owl-carousel owl-theme" data-plugin-options="{'items': 6, 'autoplay': true, 'autoplayTimeout': 3000}">
-                    <div>
-                        <img class="img-responsive" src="~/assets/porto/img/logos/logo-1.png" alt="">
-                    </div>
-                    <div>
-                        <img class="img-responsive" src="~/assets/porto/img/logos/logo-2.png" alt="">
-                    </div>
-                    <div>
-                        <img class="img-responsive" src="~/assets/porto/img/logos/logo-3.png" alt="">
-                    </div>
-                    <div>
-                        <img class="img-responsive" src="~/assets/porto/img/logos/logo-4.png" alt="">
-                    </div>
-                    <div>
-                        <img class="img-responsive" src="~/assets/porto/img/logos/logo-5.png" alt="">
-                    </div>
-                    <div>
-                        <img class="img-responsive" src="~/assets/porto/img/logos/logo-6.png" alt="">
-                    </div>
-                    <div>
-                        <img class="img-responsive" src="~/assets/porto/img/logos/logo-4.png" alt="">
-                    </div>
-                    <div>
-                        <img class="img-responsive" src="~/assets/porto/img/logos/logo-2.png" alt="">
+                <div class="row center mt-xl">
+                    <div class="owl-carousel owl-theme" data-plugin-options="{'items': 6, 'autoplay': true, 'autoplayTimeout': 3000}">
+                        <div>
+                            <img class="img-responsive" src="~/assets/porto/img/logos/logo-1.png" alt="">
+                        </div>
+                        <div>
+                            <img class="img-responsive" src="~/assets/porto/img/logos/logo-2.png" alt="">
+                        </div>
+                        <div>
+                            <img class="img-responsive" src="~/assets/porto/img/logos/logo-3.png" alt="">
+                        </div>
+                        <div>
+                            <img class="img-responsive" src="~/assets/porto/img/logos/logo-4.png" alt="">
+                        </div>
+                        <div>
+                            <img class="img-responsive" src="~/assets/porto/img/logos/logo-5.png" alt="">
+                        </div>
+                        <div>
+                            <img class="img-responsive" src="~/assets/porto/img/logos/logo-6.png" alt="">
+                        </div>
+                        <div>
+                            <img class="img-responsive" src="~/assets/porto/img/logos/logo-4.png" alt="">
+                        </div>
+                        <div>
+                            <img class="img-responsive" src="~/assets/porto/img/logos/logo-2.png" alt="">
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>*@
+            </div>*@
     </div>
 
 
 
-@*<section class="section section-default">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="recent-posts mb-xl">
-                    <h2>@Resources.Resources.LatestNews</h2>
-                    <div class="owl-carousel owl-theme mb-none" data-plugin-options='{"items": 1}'>
-                        @{var newsIndex = 0; bool newsDivClosed = false; }
-                        @foreach (var item in Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("news")).OrderByDescending(c => c.PublishedOn).Take(12))
-                        {
-                            newsDivClosed = false;
-                            if (newsIndex % 2 == 0)
-                            {
-                                @:<div class="row mt-lg">
-                            }
-                            <div class="col-md-6">
-                                <article>
-                                    <div class="date">
-                                        <span class="day">@item.PublishedOn.Value.Day</span>
-                                        <span class="month">@item.PublishedOn.Value.Month</span>
-                                    </div>
-                                    <h4 class="heading-primary"><a href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@item.Title</a></h4>
-                                    <p class="text-justify">@item.MainContent.StripHtml().Chop(120)</p>
-                                    <a class="btn btn-primary btn-xs" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })"><i class="fa fa-plus"></i><span> @Resources.Resources.ReadMore</span></a>
-                                </article>
-                            </div>
-                            newsIndex++;
-                            if (newsIndex % 2 == 0)
-                            {
-                                newsDivClosed = true;
-                                @:                            </div>
-                            }
-                        }
-                    </div>
-                    @if (!newsDivClosed)
-                    {
-                        newsDivClosed = true;
-                        @:                    </div>
-                    }
-
-                </div>
-
+    @*<section class="section section-default">
+        <div class="container">
+            <div class="row">
                 <div class="col-md-6">
                     <div class="recent-posts mb-xl">
-                        <h2>@Resources.Resources.LatestEvents</h2>
+                        <h2>@Resources.Resources.LatestNews</h2>
                         <div class="owl-carousel owl-theme mb-none" data-plugin-options='{"items": 1}'>
-                            @{var eventIndex = 0; bool eventDivClosed = false; }
-                            @foreach (var item in Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("event")).OrderByDescending(c => c.PublishedOn).Take(12))
+                            @{var newsIndex = 0; bool newsDivClosed = false; }
+                            @foreach (var item in Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("news")).OrderByDescending(c => c.PublishedOn).Take(12))
                             {
-                                eventDivClosed = false;
-                                if (eventIndex % 2 == 0)
+                                newsDivClosed = false;
+                                if (newsIndex % 2 == 0)
                                 {
                                     @:<div class="row mt-lg">
-                        }
+                                }
                                 <div class="col-md-6">
                                     <article>
                                         <div class="date">
-                                            <span class="day">@(item.StartDate?.Day ?? item.PublishedOn.Value.Day)</span>
-                                            <span class="month">@(item.StartDate?.Month ?? item.PublishedOn.Value.Month)</span>
+                                            <span class="day">@item.PublishedOn.Value.Day</span>
+                                            <span class="month">@item.PublishedOn.Value.Month</span>
                                         </div>
                                         <h4 class="heading-primary"><a href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@item.Title</a></h4>
                                         <p class="text-justify">@item.MainContent.StripHtml().Chop(120)</p>
                                         <a class="btn btn-primary btn-xs" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })"><i class="fa fa-plus"></i><span> @Resources.Resources.ReadMore</span></a>
                                     </article>
                                 </div>
-                                eventIndex++;
-                                if (eventIndex % 2 == 0)
+                                newsIndex++;
+                                if (newsIndex % 2 == 0)
                                 {
-                                    eventDivClosed = true;
-                                    @:                                </div>
-                            }
+                                    newsDivClosed = true;
+                                    @:                            </div>
+                                }
                             }
                         </div>
-                        @if (!eventDivClosed)
+                        @if (!newsDivClosed)
                         {
-                            eventDivClosed = true;
-                            @:                        </div>
-                    }
+                            newsDivClosed = true;
+                            @:                    </div>
+                        }
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="recent-posts mb-xl">
+                            <h2>@Resources.Resources.LatestEvents</h2>
+                            <div class="owl-carousel owl-theme mb-none" data-plugin-options='{"items": 1}'>
+                                @{var eventIndex = 0; bool eventDivClosed = false; }
+                                @foreach (var item in Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("event")).OrderByDescending(c => c.PublishedOn).Take(12))
+                                {
+                                    eventDivClosed = false;
+                                    if (eventIndex % 2 == 0)
+                                    {
+                                        @:<div class="row mt-lg">
+                            }
+                                    <div class="col-md-6">
+                                        <article>
+                                            <div class="date">
+                                                <span class="day">@(item.StartDate?.Day ?? item.PublishedOn.Value.Day)</span>
+                                                <span class="month">@(item.StartDate?.Month ?? item.PublishedOn.Value.Month)</span>
+                                            </div>
+                                            <h4 class="heading-primary"><a href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@item.Title</a></h4>
+                                            <p class="text-justify">@item.MainContent.StripHtml().Chop(120)</p>
+                                            <a class="btn btn-primary btn-xs" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })"><i class="fa fa-plus"></i><span> @Resources.Resources.ReadMore</span></a>
+                                        </article>
+                                    </div>
+                                    eventIndex++;
+                                    if (eventIndex % 2 == 0)
+                                    {
+                                        eventDivClosed = true;
+                                        @:                                </div>
+                                }
+                                }
+                            </div>
+                            @if (!eventDivClosed)
+                            {
+                                eventDivClosed = true;
+                                @:                        </div>
+                        }
+                        </div>
                     </div>
                 </div>
-            </div>
-            </div>
-        </section>*@
+                </div>
+            </section>*@

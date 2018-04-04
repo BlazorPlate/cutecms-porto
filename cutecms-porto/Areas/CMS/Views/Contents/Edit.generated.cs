@@ -433,7 +433,7 @@ WriteLiteral("\r\n");
             #line hidden
             
             #line 63 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
-                 if (Model.ImagePath != null)
+                 if (!string.IsNullOrEmpty(Model.ImagePath))
                 {
 
             
@@ -441,14 +441,14 @@ WriteLiteral("\r\n");
             #line hidden
 WriteLiteral("                    <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3566), Tuple.Create("\"", 3602)
+WriteAttribute("href", Tuple.Create(" href=\"", 3581), Tuple.Create("\"", 3617)
             
             #line 65 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 3573), Tuple.Create<System.Object, System.Int32>(Url.Content(Model.ImagePath)
+, Tuple.Create(Tuple.Create("", 3588), Tuple.Create<System.Object, System.Int32>(Url.Content(Model.ImagePath)
             
             #line default
             #line hidden
-, 3573), false)
+, 3588), false)
 );
 
 WriteLiteral(" style=\"color:dodgerblue\"");
@@ -1474,14 +1474,14 @@ WriteLiteral(">\r\n                <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=", 13967), Tuple.Create("", 13999)
+WriteAttribute("value", Tuple.Create(" value=", 13982), Tuple.Create("", 14014)
             
             #line 240 "..\..\Areas\CMS\Views\Contents\Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 13974), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Save
+, Tuple.Create(Tuple.Create("", 13989), Tuple.Create<System.Object, System.Int32>(Resources.Resources.Save
             
             #line default
             #line hidden
-, 13974), false)
+, 13989), false)
 );
 
 WriteLiteral(" class=\"btn btn-primary\"");

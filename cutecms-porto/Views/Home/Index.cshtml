@@ -12,7 +12,7 @@
     var shortcutContents = Model.Contents.Where(c => c.HasShortcut);
     var partnerList = Model.ContentLists.Where(c => c.Code.Trim().Equals("partner"))?.FirstOrDefault() ?? new ContentList();
     var resourcesList = Model.ContentLists.Where(c => c.Code.Trim().Equals("resource"))?.FirstOrDefault() ?? new ContentList();
-    var testimonialList = Model.ContentLists.Where(c => c.Code.Trim().Equals("testimonial"))?.FirstOrDefault() ?? new ContentList();
+    var testimonialList = Model.ContentLists.Where(c => c.Code.Trim().Equals("testimonials"))?.FirstOrDefault() ?? new ContentList();
     IdentityEntities identityDb = new IdentityEntities();
     var organizations = (List<Organization>)HttpRuntime.Cache["Organizations"];
     var organization = organizations.Where(o => o.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name))?.FirstOrDefault() ?? new Organization();
@@ -29,7 +29,7 @@
         <div id="revolutionSlider" class="slider rev_slider" data-plugin-revolution-slider data-plugin-options="{'delay': 5000, 'gridwidth': 800, 'gridheight': 600}">
             <ul>
                 @foreach (var item in Model.HomeGallery)
-            {
+                {
                     <li data-transition="fade">
                         <img src="@item.FilePath"
                              alt="@(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.Value ?? item.Code)"
@@ -49,20 +49,20 @@
                                      style="z-index: 5"
                                      data-transform_in="x:[-300%];opacity:0;s:500;"><img src="~/assets/porto/img/slides/slide-title-border.png" alt=""></div>
 
-                                    <div class="tp-caption top-label"
-                                         data-x="center" data-hoffset="0"
-                                         data-y="center" data-voffset="-95"
-                                         data-start="500"
-                                         style="z-index: 5"
-                                         data-transform_in="y:[-300%];opacity:0;s:500;">@primaryCaption</div>
+                                <div class="tp-caption top-label"
+                                     data-x="center" data-hoffset="0"
+                                     data-y="center" data-voffset="-95"
+                                     data-start="500"
+                                     style="z-index: 5"
+                                     data-transform_in="y:[-300%];opacity:0;s:500;">@primaryCaption</div>
 
-                                        <div class="tp-caption"
-                                             data-x="center" data-hoffset="450"
-                                             data-y="center" data-voffset="-95"
-                                             data-start="1000"
-                                             style="z-index: 5"
-                                             data-transform_in="x:[300%];opacity:0;s:500;"><img src="~/assets/porto/img/slides/slide-title-border.png" alt=""></div>
-                            }
+                                    <div class="tp-caption"
+                                         data-x="center" data-hoffset="450"
+                                         data-y="center" data-voffset="-95"
+                                         data-start="1000"
+                                         style="z-index: 5"
+                                         data-transform_in="x:[300%];opacity:0;s:500;"><img src="~/assets/porto/img/slides/slide-title-border.png" alt=""></div>
+                                }
                         }
                         <div class="tp-caption main-label"
                              data-x="center" data-hoffset="0"
@@ -95,7 +95,7 @@
                                    data-mask_in="x:0px;y:0px;">@Resources.Resources.ExploreOurSite!</a>
 
                             </li>
-                            }
+                        }
             </ul>
         </div>
     </div>
@@ -210,7 +210,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div>
-                            <h3 class="mb-sm">@item.Title</h3>>
+                            <h3 class="mb-sm">@item.Title</h3>
                             <img width="300" height="225" src="@item.ImagePath" alt="@item.ImageName" class=" boxshadow" />
                             <p class="bold mt-lg">@item.Subtitle</p>
                             <p class="text-center">@item.MainContent.StripHtml().Chop(300).Trim()</p>
@@ -226,8 +226,8 @@
         </div>
     </section>
     <section class="section section-tertiary pb-none mb-none">
-        @{ 
-           var about= cmsDb.Contents.Where(c => c.Code.Trim().Equals("about")).FirstOrDefault();
+        @{
+            var about = cmsDb.Contents.Where(c => c.Code.Trim().Equals("about")).FirstOrDefault();
         }
         <div class="container">
             <div class="row">
@@ -250,7 +250,7 @@
                     <h2 class="heading-dark mt-xl">Our <strong>Clients</strong></h2>
                     <div class="owl-carousel owl-theme nav-bottom rounded-nav" data-plugin-options="{'items': 1, 'loop': false}">
                         @foreach (var item in testimonialList.ListItems)
-            {
+                        {
                             <div>
                                 <div class="col-md-12">
                                     <div class="testimonial testimonial-style-2 testimonial-with-quotes mb-none">
@@ -258,7 +258,7 @@
                                             <img src="@item.ThumbPath" class="img-responsive img-circle" alt="">
                                         </div>
                                         <blockquote>
-                                            <p>@item.Body</p>
+                                            <p>@Html.Raw(HttpUtility.HtmlDecode(item.Body))</p>
                                         </blockquote>
                                         <div class="testimonial-author">
                                             <p><strong>@item.Title</strong><span>@item.Subtitle</span></p>
@@ -272,132 +272,93 @@
             </div>
         </div>
     </section>
-    @*<div class="container">
-            <div class="row">
-                <div class="col-md-12 center mb-xl">
-                    <h2 class="mt-xl">Our <strong>Brands</strong></h2>
 
-                    <div class="owl-carousel owl-theme mb-none" data-plugin-options="{'items': 4, 'margin': 0, 'loop': false}">
-                        <div>
-                            <a href="portfolio-single.html">
-                                <img src="~/assets/porto/img/projects/project-9.jpg" class="img-responsive" alt="">
-                            </a>
-                        </div>
-                        <div>
-                            <a href="portfolio-single.html">
-                                <img src="~/assets/porto/img/projects/project-12.jpg" class="img-responsive" alt="">
-                            </a>
-                        </div>
-                        <div>
-                            <a href="portfolio-single.html">
-                                <img src="~/assets/porto/img/projects/project-11.jpg" class="img-responsive" alt="">
-                            </a>
-                        </div>
-                        <div>
-                            <a href="portfolio-single.html">
-                                <img src="~/assets/porto/img/projects/project-8.jpg" class="img-responsive" alt="">
-                            </a>
-                        </div>
-                        <div>
-                            <a href="portfolio-single.html">
-                                <img src="~/assets/porto/img/projects/project-9.jpg" class="img-responsive" alt="">
-                            </a>
-                        </div>
-                        <div>
-                            <a href="portfolio-single.html">
-                                <img src="~/assets/porto/img/projects/project-12.jpg" class="img-responsive" alt="">
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>*@
     <section class="section section-primary">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
                     <div class="recent-posts mb-xl">
                         <h2 class="mb-xs">Our <strong>Blog</strong></h2>
-                        <div class="owl-carousel owl-theme mb-none" data-plugin-options='{"items": 1}'>
+                        <div class="owl-carousel owl-theme nav-bottom rounded-nav pl-xs pr-xs" data-plugin-options="{'delay': 5000, 'items': 1, 'loop': true, 'dots': false, 'nav': true}">
+
                             @{var newsIndex = 0; bool newsDivClosed = false; }
-                            @foreach (var item in Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("article")).OrderByDescending(c => c.PublishedOn).Take(12))
-                            {
-                                newsDivClosed = false;
-                                if (newsIndex % 2 == 0)
-                                {
-                                    @:<div class="row mt-lg">
-                            }
-                                <div class="col-md-6">
-                                    <article>
-                                        <div class="date">
-                                            <span class="day">@item.PublishedOn.Value.Day</span>
-                                            <span class="month">@item.PublishedOn.Value.Month</span>
-                                        </div>
-                                        <h4 class="heading-primary"><a href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@item.Title</a></h4>
-                                        <p class="text-justify">@item.MainContent.StripHtml().Chop(120)</p>
-                                        <a class="btn btn-primary btn-xs" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })"><i class="fa fa-plus"></i><span> @Resources.Resources.ReadMore</span></a>
-                                    </article>
-                                </div>
-                                newsIndex++;
-                                if (newsIndex % 2 == 0)
-                                {
-                                    newsDivClosed = true;
-                                    @:                                </div>
-                            }
-                            }
+                            @foreach (var item in Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("blog")).OrderByDescending(c => c.PublishedOn).Take(12))
+                    {
+                        newsDivClosed = false;
+                        if (newsIndex % 2 == 0)
+                        {
+                            @:<div class="row mt-lg">
+    }
+                    <div class="col-md-6">
+                        <article>
+                            <div class="date">
+                                <span class="day">@item.PublishedOn.Value.Day</span>
+                                <span class="month month background-color-secondary">@item.PublishedOn.Value.Month</span>
+                            </div>
+                            <h4><a class="text-light" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@item.Title</a></h4>
+                            <p class="text-justify">@item.MainContent.StripHtml().Chop(120)</p>
+                            <a class="btn btn-secondary mt-3 mb-2 mb-lg-0" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })"><i class="fa fa-plus"></i><span> @Resources.Resources.ReadMore</span></a>
+                        </article>
+                    </div>
+            newsIndex++;
+            if (newsIndex % 2 == 0)
+            {
+                newsDivClosed = true;
+                @:            </div>
+}
+}
                         </div>
                         @if (!newsDivClosed)
-                        {
-                            newsDivClosed = true;
-                            @:                        </div>
-                    }
+                {
+                    newsDivClosed = true;
+                    @:                </div>
+    }
 
                     </div>
-                    <div class="col-md-6">
 
-                        <h2 class="mb-xs">Our <strong>Stats</strong></h2>
+                </div>     <div class="col-md-6">
 
-                        <div class="content-grid content-grid-dashed mt-xlg mb-lg">
-                            <div class="row content-grid-row">
-                                <div class="content-grid-item col-md-6 center">
-                                    <div class="counters">
-                                        <div class="counter text-color-light">
-                                            <strong data-to="25000" data-append="+">0</strong>
-                                            <label>Happy Clients</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="content-grid-item col-md-6 center">
-                                    <div class="counters">
-                                        <div class="counter text-color-light">
-                                            <strong data-to="15">0</strong>
-                                            <label>Years in Business</label>
-                                        </div>
+                    <h2 class="mb-xs">Our <strong>Stats</strong></h2>
+
+                    <div class="content-grid content-grid-dashed mt-xlg mb-lg">
+                        <div class="row content-grid-row">
+                            <div class="content-grid-item col-md-6 center">
+                                <div class="counters">
+                                    <div class="counter text-color-light">
+                                        <strong data-to="25000" data-append="+">0</strong>
+                                        <label>Happy Clients</label>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row content-grid-row">
-                                <div class="content-grid-item col-md-6 center">
-                                    <div class="counters">
-                                        <div class="counter text-color-light">
-                                            <strong data-to="352">0</strong>
-                                            <label>Cups of Coffee</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="content-grid-item col-md-6 center">
-                                    <div class="counters">
-                                        <div class="counter text-color-light">
-                                            <strong data-to="178">0</strong>
-                                            <label>High Score</label>
-                                        </div>
+                            <div class="content-grid-item col-md-6 center">
+                                <div class="counters">
+                                    <div class="counter text-color-light">
+                                        <strong data-to="15">0</strong>
+                                        <label>Years in Business</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
+                        <div class="row content-grid-row">
+                            <div class="content-grid-item col-md-6 center">
+                                <div class="counters">
+                                    <div class="counter text-color-light">
+                                        <strong data-to="12">0</strong>
+                                        <label>Awards</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-grid-item col-md-6 center">
+                                <div class="counters">
+                                    <div class="counter text-color-light">
+                                        <strong data-to="178">0</strong>
+                                        <label>High Score</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </section>

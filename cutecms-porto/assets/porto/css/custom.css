@@ -1,5 +1,10 @@
 /* Add here all your CSS customizations */
-
+.slider-container .main-label {
+    margin: 10px !important;
+}
+.tp-caption bottom-label {
+    margin: 25px !important;
+}
 form label {
     font-weight: 700;
 }

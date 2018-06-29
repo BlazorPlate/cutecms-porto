@@ -50,116 +50,146 @@
         </div>
     </section>
 }
-<div class="container text-justify">
-    <p style="color:brown">
-        @if (Model.StartDate != null)
+    <div class="container text-justify">
+        <p style="color:brown">
+            @if (Model.StartDate != null)
         {
             <small><i class="fa fa-clock-o"></i> @Resources.Resources.From @Model.StartDate.Value.ToString("dddd, d MMMM, yyyy") @(Model.EndDate == null ? "" : @Resources.Resources.Till + " " + Model.EndDate.Value.ToString("dddd, d MMMM, yyyy")) @(Model.Location == null ? "" : "@ " + Model.Location)</small>
 
-        }
+    }
 
-    </p>
-    @if (Model.ContentGalleries.Count != 0)
+        </p>
+        @if (Model.ContentGalleries.Count != 0)
     {
         <div class="row">
-            <div class="nivo-slider">
-                <div class="slider-wrapper theme-default">
-                    <div id="nivoSlider" class="nivoSlider">
+            <div class="slider-container rev_slider_wrapper">
+                <div id="revolutionSlider" class="slider rev_slider" data-plugin-revolution-slider data-plugin-options="{'delay': 4000, 'gridheight': 500, 'disableProgressBar': 'off', 'navigation': {'bullets': {'enable': true, 'direction': 'vertical', 'h_align': 'right', 'v_align': 'center', 'space': 5}, 'arrows': {'enable': false}}}">
+                    <ul>
                         @foreach (var contentGallery in Model.ContentGalleries.OrderBy(c => c.Ordinal))
+                    {
+                        var items = contentGallery.Gallery.ImageFiles.OrderBy(i => i.Ordinal);
+                        foreach (var item in items)
                         {
-                            var images = contentGallery.Gallery.ImageFiles.Take(5).OrderBy(i => i.Ordinal);
-                            foreach (var image in images)
-                            {
-                                var description = image.ImageFileTerms.Where(p => p.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && p.ImageFileId == image.Id).FirstOrDefault()?.Value ?? db.ImageFiles.Where(i => i.Id == image.Id).FirstOrDefault().Code;
-                                <img src="@image.FilePath" data-thumb="@image.ThumbPath" alt="@description" />
+                            <li data-transition="fade">
+                                <img src="@item.FilePath"
+                                     alt="@(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.Value ?? item.Code)"
+                                     data-bgposition="center center"
+                                     data-bgfit="cover"
+                                     data-bgrepeat="no-repeat"
+                                     class="rev-slidebg">
+
+                                <div class="tp-caption main-label"
+                                     data-x="left" data-hoffset="25"
+                                     data-y="center" data-voffset="-5"
+                                     data-start="1500"
+                                     data-whitespace="nowrap"
+                                     data-transform_in="y:[100%];s:500;"
+                                     data-transform_out="opacity:0;s:500;"
+                                     style="z-index: 5; font-size: 1.5em; text-transform: uppercase;"
+                                     data-mask_in="x:0px;y:0px;">@(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.SecondaryCaption)</div>
+
+                                    <div class="tp-caption main-label"
+                                         data-x="left" data-hoffset="25"
+                                         data-y="center" data-voffset="-55"
+                                         data-start="500"
+                                         style="z-index: 5; text-transform: uppercase; font-size: 52px;"
+                                         data-transform_in="y:[-300%];opacity:0;s:500;">@(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.PrimaryCaption)</div>
+
+                                        <div class="tp-caption bottom-label"
+                                             data-x="left" data-hoffset="25"
+                                             data-y="center" data-voffset="40"
+                                             data-start="2000"
+                                             style="z-index: 5; border-bottom: 1px solid #fff; padding-bottom: 3px;"
+                                             data-transform_in="y:[100%];opacity:0;s:500;" style="font-size: 1.2em;">@(item.ImageFileTerms.Where(it => it.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture.Name) && it.ImageFileId == item.Id).FirstOrDefault()?.TertiaryCaption)</div>
+                                        </li>
+                                }
+
                             }
-                        }
-                    </div>
-                    <div id="htmlcaption" class="nivo-html-caption"></div>
+                    </ul>
                 </div>
             </div>
         </div>
-    }
-    <div class="row">
-        <div class="col-md-12">
-            <img src="@Model.ImagePath" style="max-width: 260px;" alt="@Model.ImageName" class="pull-right ml-xl mb-xl img-responsive box-shadow-custom" />
-            @if (!string.IsNullOrEmpty(Model.Subtitle))
+}
+        <div style="margin-top:10px" class="row">
+            <div class="col-md-12">
+                <img src="@Model.ImagePath" style="max-width: 260px;" alt="@Model.ImageName" class="pull-right ml-xl mb-xl img-responsive box-shadow-custom" />
+                @if (!string.IsNullOrEmpty(Model.Subtitle))
             {
                 <p class="lead font-weight-normal">@Model.Subtitle</p>
-            }
-            @Html.Raw(HttpUtility.HtmlDecode(Model.MainContent))
-            <div>
-                @foreach (var contentList in Model.ContentLists.Where(c => c.Visible).OrderBy(c => c.Ordinal))
+        }
+                @Html.Raw(HttpUtility.HtmlDecode(Model.MainContent))
+                <div>
+                    @foreach (var contentList in Model.ContentLists.Where(c => c.Visible).OrderBy(c => c.Ordinal))
                 {
                     string active = "active";
                     int count = 0;
                     if (!contentList.Title.Equals(Model.Title))
                     {
                         <h2>@contentList.Title</h2>
-                    }
-                    <img src="@contentList.ImagePath" style="max-width: 260px;" alt="@contentList.ImageName" class="pull-right ml-xl mb-xl img-responsive box-shadow-custom" />
-                    if (!string.IsNullOrEmpty(contentList.Subtitle))
-                    {
-                        <p class="lead font-weight-normal">@contentList.Subtitle</p>
-                    }
-                    @Html.Raw(HttpUtility.HtmlDecode(contentList.MainContent))
-                    <div class="toggle toggle-quaternary" data-plugin-toggle>
-                        @foreach (var item in contentList.ListItems.Where(l => l.Visible).OrderBy(l => l.Ordinal))
-                        {
-                            if (count != 0)
-                            {
-                                active = "";
-                            }
-                            <section class="toggle @active">
-                                <label>@item.Title</label>
-                                <div class="toggle-content">
-                                    <img src="@item.ThumbPath" style="max-width: 260px;" alt="@item.ThumbName" class="pull-right ml-xl mb-xl img-responsive box-shadow-custom" />
-                                    @if (!string.IsNullOrEmpty(Model.Subtitle))
-                                    {
-                                        <p class="lead font-weight-normal">@item.Subtitle</p>
-                                    }
-                                    @Html.Raw(HttpUtility.HtmlDecode(item.Body))
-                                    @if (item.Url != null)
-                                    {
-                                        <label>@Resources.Resources.Url:</label>
-                                        <a href="@item.Url" target="_blank">@item.Url</a>
-
-                                    }
-                                    @if (item.FilePath != null)
-                                    {<br />
-                                        <label>@Resources.Resources.Attachments:</label>
-                                        <a href="@Url.Content(item.FilePath)">@Resources.Resources.Download @item.Title</a>
-                                    }
-                                </div>
-                            </section>
-                            count++;
-                        }
-                    </div>
                 }
-            </div>
-            @if (User.IsInRole("Admin"))
+                <img src="@contentList.ImagePath" style="max-width: 260px;" alt="@contentList.ImageName" class="pull-right ml-xl mb-xl img-responsive box-shadow-custom" />
+            if (!string.IsNullOrEmpty(contentList.Subtitle))
+            {
+                <p class="lead font-weight-normal">@contentList.Subtitle</p>
+        }
+        @Html.Raw(HttpUtility.HtmlDecode(contentList.MainContent))
+        <div class="toggle toggle-quaternary" data-plugin-toggle>
+            @foreach (var item in contentList.ListItems.Where(l => l.Visible).OrderBy(l => l.Ordinal))
+        {
+            if (count != 0)
+            {
+                active = "";
+            }
+            <section class="toggle @active">
+                <label>@item.Title</label>
+                <div class="toggle-content">
+                    <img src="@item.ThumbPath" style="max-width: 260px;" alt="@item.ThumbName" class="pull-right ml-xl mb-xl img-responsive box-shadow-custom" />
+                    @if (!string.IsNullOrEmpty(Model.Subtitle))
+                {
+                    <p class="lead font-weight-normal">@item.Subtitle</p>
+            }
+                    @Html.Raw(HttpUtility.HtmlDecode(item.Body))
+                    @if (item.Url != null)
+                {
+                    <label>@Resources.Resources.Url:</label>
+                    <a href="@item.Url" target="_blank">@item.Url</a>
+
+            }
+                    @if (item.FilePath != null)
+                {<br />
+                    <label>@Resources.Resources.Attachments:</label>
+                    <a href="@Url.Content(item.FilePath)">@Resources.Resources.Download @item.Title</a>
+            }
+                </div>
+            </section>
+        count++;
+    }
+        </div>
+}
+                </div>
+                @if (User.IsInRole("Admin"))
             {
                 <p style="color:brown">
                     <small><i class="fa fa-clock-o"></i> @Resources.Resources.LastUpdatedOn @Model.ModifiedOn.Value.ToString("dddd, d MMMM, yyyy")</small>
                 </p>
                 <input type="button" class="btn btn-primary mr-xs mb-sm" title="@Resources.Resources.Edit" value="@Resources.Resources.Edit" onclick="location.href='@Url.Action("Edit", "Contents", new { area = "CMS",id = Model.Id })'" />
-            }
+        }
 
+            </div>
+        </div>
+        <div class="post-block post-share">
+            <h3 class="heading-primary"><i class="fa fa-share"></i>@Resources.Resources.Share</h3>
+            <!-- AddThis Button BEGIN -->
+            <div class="addthis_toolbox addthis_default_style ">
+                <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                <a class="addthis_button_tweet"></a>
+                <a class="addthis_button_pinterest_pinit"></a>
+                <a class="addthis_counter addthis_pill_style"></a>
+            </div>
+            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50faf75173aadc53"></script>
+            <!-- AddThis Button END -->
         </div>
     </div>
-    <div class="post-block post-share">
-        <h3 class="heading-primary"><i class="fa fa-share"></i>@Resources.Resources.Share</h3>
-        <!-- AddThis Button BEGIN -->
-        <div class="addthis_toolbox addthis_default_style ">
-            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-            <a class="addthis_button_tweet"></a>
-            <a class="addthis_button_pinterest_pinit"></a>
-            <a class="addthis_counter addthis_pill_style"></a>
-        </div>
-        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50faf75173aadc53"></script>
-        <!-- AddThis Button END -->
-    </div>
-</div>
 @section Scripts{
     <script>
         $(document).ready(function () {

@@ -99,6 +99,51 @@ Write(Html.ActionLink(Resources.Resources.Create, "Create", null, new { @class =
             #line hidden
 WriteLiteral("\r\n</div>\r\n<div");
 
+WriteLiteral(" style=\"background-color:#f5f5f5; padding:20px\"");
+
+WriteLiteral(">\r\n    <h2>Search Panel</h2>\r\n    <table>\r\n        <tbody>\r\n            <tr>\r\n   " +
+"             <td>Employee Name</td>\r\n                <td><input");
+
+WriteLiteral(" type=\"text\"");
+
+WriteLiteral(" id=\"txtID\"");
+
+WriteLiteral(" /></td>\r\n                <td>Country</td>\r\n                <td>\r\n               " +
+"     <select");
+
+WriteLiteral(" id=\"ddCountry\"");
+
+WriteLiteral(" style=\"width:200px\"");
+
+WriteLiteral(">\r\n                        <option");
+
+WriteLiteral(" value=\"\"");
+
+WriteLiteral(">All Country</option>\r\n                        <option");
+
+WriteLiteral(" value=\"USA\"");
+
+WriteLiteral(">USA</option>\r\n                        <option");
+
+WriteLiteral(" value=\"Poland\"");
+
+WriteLiteral(">Poland</option>\r\n                        <option");
+
+WriteLiteral(" value=\"Finland\"");
+
+WriteLiteral(">Finland</option>\r\n                    </select>\r\n                    ");
+
+WriteLiteral("\r\n                </td>\r\n                <td>\r\n                    <input");
+
+WriteLiteral(" type=\"button\"");
+
+WriteLiteral(" value=\"Search\"");
+
+WriteLiteral(" id=\"btnSearch\"");
+
+WriteLiteral(" />\r\n                </td>\r\n            </tr>\r\n        </tbody>\r\n    </table>\r\n</" +
+"div>\r\n<div");
+
 WriteLiteral(" class=\"row\"");
 
 WriteLiteral(">\r\n    <div");
@@ -131,7 +176,7 @@ WriteLiteral(">\r\n                    <thead>\r\n                        <tr>\r
 WriteLiteral("                                ");
 
             
-            #line 27 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 52 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                            Write(Html.DisplayNameFor(model => model.Id));
 
             
@@ -142,7 +187,7 @@ WriteLiteral("\r\n                            </th>\r\n                         
 WriteLiteral("                                ");
 
             
-            #line 30 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 55 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                            Write(Html.DisplayNameFor(model => model.Code));
 
             
@@ -153,7 +198,7 @@ WriteLiteral("\r\n                            </th>\r\n                         
 WriteLiteral("                                ");
 
             
-            #line 33 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 58 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                            Write(Html.DisplayNameFor(model => model.Title));
 
             
@@ -168,7 +213,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 36 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 61 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                            Write(Html.DisplayNameFor(model => model.Language));
 
             
@@ -179,7 +224,7 @@ WriteLiteral("\r\n                            </th>\r\n                         
 WriteLiteral("                                ");
 
             
-            #line 39 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 64 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                            Write(Html.DisplayNameFor(model => model.LanguageId));
 
             
@@ -194,7 +239,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 42 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 67 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                            Write(Html.DisplayNameFor(model => model.Department));
 
             
@@ -209,7 +254,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 45 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 70 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                            Write(Html.DisplayNameFor(model => model.JobType));
 
             
@@ -220,7 +265,7 @@ WriteLiteral("\r\n                            </th>\r\n                         
 WriteLiteral("                                ");
 
             
-            #line 48 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 73 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                            Write(Html.DisplayNameFor(model => model.PublishedOn));
 
             
@@ -231,7 +276,7 @@ WriteLiteral("\r\n                            </th>\r\n                         
 WriteLiteral("                                ");
 
             
-            #line 51 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 76 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                            Write(Html.DisplayNameFor(model => model.ExpiredOn));
 
             
@@ -246,7 +291,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 54 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 79 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                            Write(Html.DisplayNameFor(model => model.IsTranslated));
 
             
@@ -257,7 +302,7 @@ WriteLiteral("\r\n                            </th>\r\n                         
 WriteLiteral("                                ");
 
             
-            #line 57 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 82 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                            Write(Html.DisplayNameFor(model => model.TranslationId));
 
             
@@ -272,7 +317,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 60 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 85 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                            Write(Html.DisplayNameFor(model => model.Status));
 
             
@@ -281,7 +326,7 @@ WriteLiteral("                                ");
 WriteLiteral("\r\n                            </th>\r\n                            <th>");
 
             
-            #line 62 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 87 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                            Write(Resources.Resources.Actions);
 
             
@@ -301,7 +346,7 @@ WriteLiteral(@"</th>
 WriteLiteral("                                ");
 
             
-            #line 71 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 96 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                            Write(Html.DisplayNameFor(model => model.Language));
 
             
@@ -312,7 +357,7 @@ WriteLiteral("\r\n                            </th>\r\n                         
 WriteLiteral("                                ");
 
             
-            #line 74 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 99 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                            Write(Html.DisplayNameFor(model => model.Department));
 
             
@@ -323,7 +368,7 @@ WriteLiteral("\r\n                            </th>\r\n                         
 WriteLiteral("                                ");
 
             
-            #line 77 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 102 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                            Write(Html.DisplayNameFor(model => model.JobType));
 
             
@@ -336,7 +381,7 @@ WriteLiteral("\r\n                            </th>\r\n                         
 WriteLiteral("                                ");
 
             
-            #line 83 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 108 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                            Write(Html.DisplayNameFor(model => model.Status));
 
             
@@ -359,17 +404,14 @@ DefineSection("scripts", () => {
 
 WriteLiteral("\r\n    <!-- Custom Theme JavaScript -->\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 4295), Tuple.Create("\"", 4332)
-, Tuple.Create(Tuple.Create("", 4301), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/js/custom.min.js")
-, 4301), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 5305), Tuple.Create("\"", 5342)
+, Tuple.Create(Tuple.Create("", 5311), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/js/custom.min.js")
+, 5311), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 4356), Tuple.Create("\"", 4437)
-, Tuple.Create(Tuple.Create("", 4362), Tuple.Create<System.Object, System.Int32>(Href("~/assets/admin/plugins/bower_components/datatables/jquery.dataTables.min.js")
-, 4362), false)
-);
+WriteLiteral(" src=\"https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js\"");
 
 WriteLiteral("></script>\r\n    <!-- start - This is for export functionality only -->\r\n    <scri" +
 "pt");
@@ -413,6 +455,13 @@ WriteLiteral(@"></script>
         $(document).ready(function () {
             var oTable = $('#vacanciesTable').DataTable({
                 ""serverSide"": true,
+
+                ""fnServerParams"": function(aoData) {
+            aoData.push({
+                ""name"": ""ID"",
+                ""value"": $('txtID').val()
+            });
+        }  ,
                 ""scrollX"": true,
                 ""scrollX"": true,
                 ""lengthMenu"": [[5,10, 25, 50, -1], [5,10, 25, 50, ""All""]],
@@ -422,7 +471,7 @@ WriteLiteral(@"></script>
                        text: '");
 
             
-            #line 121 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 153 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                          Write(Resources.Resources.Reload);
 
             
@@ -433,7 +482,7 @@ WriteLiteral("\',\r\n                       action: function (e, dt, node, confi
 ",\r\n                   {\r\n                       text: \'");
 
             
-            #line 127 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 159 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                          Write(Resources.Resources.Copy);
 
             
@@ -444,7 +493,7 @@ WriteLiteral("\',\r\n                       extend: \'copyHtml5\',\r\n          
 "}\r\n                   },\r\n                  {\r\n                      text: \'");
 
             
-            #line 134 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 166 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                         Write(Resources.Resources.ExportExcel);
 
             
@@ -455,7 +504,7 @@ WriteLiteral("\',\r\n                      extend: \'excelHtml5\',\r\n          
 "                  },\r\n                  {\r\n                      text: \'");
 
             
-            #line 141 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 173 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                         Write(Resources.Resources.ExportPDF);
 
             
@@ -466,7 +515,7 @@ WriteLiteral("\',\r\n                      extend: \'pdfHtml5\',\r\n            
 "                },\r\n                  {\r\n                      text: \'");
 
             
-            #line 148 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 180 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                         Write(Resources.Resources.Print);
 
             
@@ -477,7 +526,7 @@ WriteLiteral("\',\r\n                      extend: \'print\',\r\n               
 "             },\r\n                  {\r\n                      text: \'");
 
             
-            #line 155 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 187 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                         Write(Resources.Resources.ColVis);
 
             
@@ -487,7 +536,7 @@ WriteLiteral("\',\r\n                      extend: \'colvis\',\r\n              
 "  ],\r\n                \"language\": {\r\n                    \"url\": \"");
 
             
-            #line 160 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 192 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                        Write(Resources.Resources.DataTableLanguage);
 
             
@@ -497,7 +546,7 @@ WriteLiteral("\"\r\n                },\r\n                //\"responsive\": true
 "ax\": {\r\n                    \"type\": \"POST\",\r\n                    \"url\": \"");
 
             
-            #line 165 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 197 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                        Write(Url.Action("DataHandler", "Vacancies", new { area = "RMS" }));
 
             
@@ -532,7 +581,7 @@ WriteLiteral(@""",
                        return '<a class=\'btn\' href=\'' + '");
 
             
-            #line 191 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 223 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                                                        Write(Url.Action("Index", "Submissions"));
 
             
@@ -541,7 +590,7 @@ WriteLiteral(@""",
 WriteLiteral("/\' + \"index/\" + col[\"Id\"] + \'\\\'>");
 
             
-            #line 191 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 223 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                                                                                                                           Write(Resources.Resources.Submissions);
 
             
@@ -550,7 +599,7 @@ WriteLiteral("/\' + \"index/\" + col[\"Id\"] + \'\\\'>");
 WriteLiteral("</a>\'\r\n                           //+ \'|<a class=\\\'btn\\\' href=\\\'\' + \'");
 
             
-            #line 192 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 224 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                                                          Write(Url.Action("Translations", "Vacancies"));
 
             
@@ -559,7 +608,7 @@ WriteLiteral("</a>\'\r\n                           //+ \'|<a class=\\\'btn\\\' h
 WriteLiteral("/\' + col[\"TranslationId\"] + \'\\\'>");
 
             
-            #line 192 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 224 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                                                                                                                                  Write(Resources.Resources.Translations);
 
             
@@ -568,7 +617,7 @@ WriteLiteral("/\' + col[\"TranslationId\"] + \'\\\'>");
 WriteLiteral("</a>\'\r\n                           + \'|<a class=\\\'btn\\\' href=\\\'\' + \'");
 
             
-            #line 193 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 225 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                                                        Write(Url.Action("Edit", "Vacancies"));
 
             
@@ -577,7 +626,7 @@ WriteLiteral("</a>\'\r\n                           + \'|<a class=\\\'btn\\\' hre
 WriteLiteral("/\' + col[\"Id\"] + \'\\\'>");
 
             
-            #line 193 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 225 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                                                                                                             Write(Resources.Resources.Edit);
 
             
@@ -588,7 +637,7 @@ WriteLiteral("</a>\'\r\n                           ");
 WriteLiteral("\r\n                           + \'|<a class=\\\'btn\\\' href=\\\'\' + \'");
 
             
-            #line 195 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 227 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                                                        Write(Url.Action("Delete", "Vacancies"));
 
             
@@ -597,7 +646,7 @@ WriteLiteral("\r\n                           + \'|<a class=\\\'btn\\\' href=\\\'
 WriteLiteral("/\' + col[\"Id\"] + \'\\\'>");
 
             
-            #line 195 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
+            #line 227 "..\..\Areas\RMS\Views\Vacancies\Index.cshtml"
                                                                                                               Write(Resources.Resources.Delete);
 
             
@@ -623,8 +672,8 @@ WriteLiteral("\r\n                   }\r\n                   //\"render\": funct
 " oTable.columns().every(function () {\r\n                var that = this;\r\n       " +
 "         $(\'input\', this.footer()).on(\'keyup change\', function () {\r\n           " +
 "         that\r\n                        .search(this.value)\r\n                    " +
-"    .draw();\r\n                });\r\n            });\r\n        });\r\n    </script>\r\n" +
-"");
+"    .draw();\r\n                });\r\n            });\r\n\r\n        });\r\n    </script>" +
+"\r\n");
 
 });
 

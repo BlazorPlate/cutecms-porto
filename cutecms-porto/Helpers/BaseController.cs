@@ -44,7 +44,6 @@ namespace cutecms_porto.Helpers
             //var fullAddress = filterContext.HttpContext.Request.Headers["Host"].Split('.');
             //if (fullAddress.Length < 2)
             //    filterContext.Result = new HttpStatusCodeResult(404); //or redirect filterContext.Result = new RedirectToRouteResult(..);
-            //Tenant.TenantId = fullAddress[0];
             Tenant.TenantId = "www";
             if (HttpRuntime.Cache["Organization"] == null)
             {

@@ -65,130 +65,6 @@
         </ul>
     </div>
 </div>
-<section class="section-custom-medical">
-    <div class="container">
-        <div class="row medical-schedules">
-            @if (cutecms_porto.Helpers.CultureHelper.IsRighToLeft())
-            {
-                <div class="col-lg-3 box-four background-color-secondary p-none appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1800">
-                    <a href="@(organization?.Telephone)" class="text-decoration-none">
-                        <div class="feature-box feature-box-style-2 m-none">
-                            <div class="feature-box-icon">
-                                <i class="icon-call-out icons"></i>
-                            </div>
-                            <div class="feature-box-info ml-md">
-                                <label class="font-weight-light">@Resources.Resources.ContactUs</label>
-                                <strong class="font-weight-normal">@(organization?.Telephone)</strong>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-3 box-three background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1200">
-                    <div class="expanded-info p-xlg background-color-primary">
-                        @foreach (var item in openingHours)
-                        {
-                            <div class="info custom-info log-in-info">
-                                <div style="color:white" class="bold">@item.Title</div>
-                                <div style="color:white">@item.Subtitle</div>
-                            </div>
-                        }
-                    </div>
-                    <h5 class="m-none">
-                        @Resources.Resources.OpeningHours
-                        <i class="icon-arrow-right-circle icons"></i>
-                    </h5>
-                </div>
-                <div class="col-lg-3 box-two background-color-tertiary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="600">
-                    <h5 class="m-none">
-                        <a href="#" title="">
-                            عمرة
-                            <i class="icon-arrow-right-circle icons"></i>
-                        </a>
-                    </h5>
-                </div>
-                <div class="col-lg-3 box-one background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="0">
-                    <div class="feature-box feature-box-style-2 p-lg">
-                        <div class="feature-box-icon">
-                            @*<img src="~/assets/porto/img/demos/medical/icons/medical-icon-heart.png" alt="" class="img-responsive pt-xs" />*@
-                        </div>
-                        <div class="feature-box-info ml-md">
-                            <h4 class="m-none">حج</h4>
-                        </div>
-                    </div>
-                </div>
-
-            }
-            else
-            {
-                <div class="col-lg-3 box-one background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="0">
-                    <div class="feature-box feature-box-style-2 p-lg">
-                        <div class="feature-box-icon">
-                            @*<img src="~/assets/porto/img/demos/medical/icons/medical-icon-heart.png" alt="" class="img-responsive pt-xs" />*@
-                        </div>
-                        <div class="feature-box-info ml-md">
-                            <h4 class="m-none"> Hajj</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 box-two background-color-tertiary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="600">
-                    <h5 class="m-none">
-                        <a href="#" title="">
-                            Omrah
-                            <i class="icon-arrow-right-circle icons"></i>
-                        </a>
-                    </h5>
-                </div>
-                <div class="col-lg-3 box-three background-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1200">
-                    <div class="expanded-info p-xlg background-color-primary">
-                        <div class="table">
-                            <div class="row">
-                                @foreach (var item in openingHours)
-                                {
-                                    <div class="info custom-info log-in-info">
-                                        <div style="color:white" class="bold">@item.Title</div>
-                                        <div style="color:white">@item.Subtitle</div>
-                                    </div>
-                                }
-                            </div>
-                        </div>
-                    </div>
-                    <h5 class="m-none">
-                        @Resources.Resources.OpeningHours
-                        <i class="icon-arrow-right-circle icons"></i>
-                    </h5>
-                </div>
-                <div class="col-lg-3 box-four background-color-secondary p-none appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="1800">
-                    <a href="tel:@(organization?.Telephone)" class="text-decoration-none">
-                        <div class="feature-box feature-box-style-2 m-none">
-                            <div class="feature-box-icon">
-                                <i class="icon-call-out icons"></i>
-                            </div>
-                            <div class="feature-box-info ml-md">
-                                <label class="font-weight-light">@Resources.Resources.ContactUs</label>
-                                <strong class="font-weight-normal">@(organization?.Telephone)</strong>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            }
-        </div>
-        @foreach (var item in shortcutContents)
-        {
-            <div class="row mt-xlg pt-xlg mb-xlg pb-xs">
-                <div class="col-sm-8 col-md-8">
-                    <h2 class="font-weight-semibold mb-xs">@item.Title</h2>
-                    <p class="lead font-weight-normal">@item.Subtitle</p>
-                    <p class="text-justify">@item.MainContent.StripHtml().Chop(300).Trim()</p>
-                    <a class="btn btn-borders btn-quaternary custom-button text-uppercase mt-lg mb-lg font-weight-bold" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@Resources.Resources.ReadMore</a>
-                </div>
-                <div class="col-sm-4 col-md-4">
-                    <img src="@item.ImagePath" alt="@item.ImageName" class="img-responsive boxshadow" />
-                </div>
-            </div>
-        }
-
-    </div>
-</section>
 <section class="section section-no-border">
     <div class="container">
         <div class="row pt-xl">
@@ -323,76 +199,77 @@
                     <div class="owl-carousel owl-theme mb-none" data-plugin-options='{"items": 1}'>
                         @{var newsIndex = 0; bool newsDivClosed = false; }
                         @foreach (var item in Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("news")).OrderByDescending(c => c.PublishedOn).Take(12))
-                        {
-                            newsDivClosed = false;
-                            if (newsIndex % 2 == 0)
-                            {
-                                @:<div class="row mt-lg">
-                                }
-                                <div class="col-md-6">
-                                    <article>
-                                        <div class="date">
-                                            <span class="day">@item.PublishedOn.Value.Day</span>
-                                            <span class="month">@item.PublishedOn.Value.Month</span>
-                                        </div>
-                                        <h4 class="heading-primary"><a href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@item.Title</a></h4>
-                                        <p class="text-justify">@item.MainContent.StripHtml().Chop(120)</p>
-                                        <a class="btn btn-primary btn-xs" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })"><i class="fa fa-plus"></i><span> @Resources.Resources.ReadMore</span></a>
-                                    </article>
-                                </div>
-                                newsIndex++;
-                                if (newsIndex % 2 == 0)
-                                {
-                                    newsDivClosed = true;
-                                    @:                                </div>
-                            }
-                        }
+                {
+                    newsDivClosed = false;
+                    if (newsIndex % 2 == 0)
+                    {
+                        @:<div class="row mt-lg">
+                }
+                <div class="col-md-6">
+                    <article>
+                        <div class="date">
+                            <span class="day">@item.PublishedOn.Value.Day</span>
+                            <span class="month">@item.PublishedOn.Value.Month</span>
+                        </div>
+                        <h4 class="heading-primary"><a href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@item.Title</a></h4>
+                        <p class="text-justify">@item.MainContent.StripHtml().Chop(120)</p>
+                        <a class="btn btn-primary btn-xs" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })"><i class="fa fa-plus"></i><span> @Resources.Resources.ReadMore</span></a>
+                    </article>
+                </div>
+        newsIndex++;
+        if (newsIndex % 2 == 0)
+        {
+            newsDivClosed = true;
+            @:        </div>
+}
+}
                     </div>
                     @if (!newsDivClosed)
-                    {
-                        newsDivClosed = true;
-                        @:                    </div>
-                }
+            {
+                newsDivClosed = true;
+                @:            </div>
+}
 
                 </div>
-            </div>
             <div class="col-md-6">
-                <div class="recent-posts mb-xl">
-                    <h2>@Resources.Resources.LatestEvents</h2>
-                    <div class="owl-carousel owl-theme mb-none" data-plugin-options='{"items": 1}'>
-                        @{var eventIndex = 0; bool eventDivClosed = false; }
-                        @foreach (var item in Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("event")).OrderByDescending(c => c.PublishedOn).Take(12))
-                        {
-                            eventDivClosed = false;
-                            if (eventIndex % 2 == 0)
-                            {
-                                @:<div class="row mt-lg">
-                                }
-                                <div class="col-md-6">
-                                    <article>
-                                        <div class="date">
-                                            <span class="day">@(item.StartDate?.Day ?? item.PublishedOn.Value.Day)</span>
-                                            <span class="month">@(item.StartDate?.Month ?? item.PublishedOn.Value.Month)</span>
-                                        </div>
-                                        <h4 class="heading-primary"><a href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@item.Title</a></h4>
-                                        <p class="text-justify">@item.MainContent.StripHtml().Chop(120)</p>
-                                        <a class="btn btn-primary btn-xs" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })"><i class="fa fa-plus"></i><span> @Resources.Resources.ReadMore</span></a>
-                                    </article>
-                                </div>
-                                eventIndex++;
-                                if (eventIndex % 2 == 0)
-                                {
-                                    eventDivClosed = true;
-                                    @:                                </div>
-                            }
-                        }
-                    </div>
-                    @if (!eventDivClosed)
+                    <div class="recent-posts mb-xl">
+                        <h2>@Resources.Resources.LatestEvents</h2>
+                        <div class="owl-carousel owl-theme mb-none" data-plugin-options='{"items": 1}'>
+                            @{var eventIndex = 0; bool eventDivClosed = false; }
+                            @foreach (var item in Model.Contents.Where(c => c.ContentType.Code.Trim().Equals("event")).OrderByDescending(c => c.PublishedOn).Take(12))
                     {
-                        eventDivClosed = true;
-                        @:                    </div>
-                }
+                        eventDivClosed = false;
+                        if (eventIndex % 2 == 0)
+                        {
+                            @:<div class="row mt-lg">
+                    }
+                    <div class="col-md-6">
+                        <article>
+                            <div class="date">
+                                <span class="day">@(item.StartDate?.Day ?? item.PublishedOn.Value.Day)</span>
+                                <span class="month">@(item.StartDate?.Month ?? item.PublishedOn.Value.Month)</span>
+                            </div>
+                            <h4 class="heading-primary"><a href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })">@item.Title</a></h4>
+                            <p class="text-justify">@item.MainContent.StripHtml().Chop(120)</p>
+                            <a class="btn btn-primary btn-xs" href="@Url.Action("Content", "Pages" , new { slug=@item.UrlSlug })"><i class="fa fa-plus"></i><span> @Resources.Resources.ReadMore</span></a>
+                        </article>
+                    </div>
+            eventIndex++;
+            if (eventIndex % 2 == 0)
+            {
+                eventDivClosed = true;
+                @:            </div>
+}
+}
+                        </div>
+                        @if (!eventDivClosed)
+                {
+                    eventDivClosed = true;
+                    @:                </div>
+    }
+                    </div>
                 </div>
+           
             </div>
             </div>
             </div>

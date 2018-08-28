@@ -134,7 +134,7 @@
     </div>
 </section>
 @section Scripts{
-    @Scripts.Render("~/bundles/jqueryval")
+    @*@Scripts.Render("~/bundles/jqueryval")
     <script>
         $(document).on('invalid-form.validate', 'form', function () {
             var button = $(this).find('input[type="submit"]');
@@ -148,5 +148,25 @@
                 button.attr('disabled', 'disabled');
             }, 0);
         });
+    </script>*@
+    <script>
+        $.validator.unobtrusive.adapters.add('filetype', ['validtypes'], function (options) {
+            options.rules['filetype'] = { validtypes: options.params.validtypes.split(',') };
+            options.messages['filetype'] = options.message;
+        });
+        $.validator.addMethod("filetype", function (value, element, param) {
+            if (!value) {
+                return true;
+            }
+            var extension = getFileExtension(value);
+            return $.inArray(extension, param.validtypes) !== -1;
+        });
+
+        function getFileExtension(fileName) {
+            if (/[.]/.exec(fileName)) {
+                return /[^.]+$/.exec(fileName)[0].toLowerCase();
+            }
+            return null;
+        }
     </script>
 }

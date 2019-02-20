@@ -1,97 +1,97 @@
 ﻿@model IEnumerable<cutecms_porto.Areas.RMS.Models.VacancyViewModel>
-@using cutecms_porto.Areas.RMS.Models.DBModel
-@using System.Threading
-@using cutecms_porto.Helpers
-@{
+    @using cutecms_porto.Areas.RMS.Models.DBModel
+    @using System.Threading
+    @using cutecms_porto.Helpers
+    @{
     ViewBag.MainTitle = Resources.Resources.Vacancies;
     ViewBag.Title = Resources.Resources.Index;
     RMSEntities db = new RMSEntities();
-}
-@section styles{
+    }
+    @section styles{
     <link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/buttons/1.2.1/css/buttons.dataTables.min.css" rel="stylesheet" />}
 
-<div>
-    @Html.ActionLink(Resources.Resources.Create, "Create", null, new { @class = "btn btn-danger" })
-</div>
-<div class="row">
-    <div class="col-sm-12">
-        <div class="white-box">
-            @*<h3 class="box-title m-b-0">Data Export</h3>
-            <p class="text-muted m-b-30">Export data to Copy, CSV, Excel, PDF & Print</p>*@
-            <div class="table-responsive">
-                <table id="vacanciesTable" class="display nowrap" cellspacing="0" width="100%">
-                    <thead>
-                        <tr>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Id)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Code)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Title)
-                            </th>
-                            <th class="select-filter">
-                                @Html.DisplayNameFor(model => model.Language)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.LanguageId)
-                            </th>
-                            <th class="select-filter">
-                                @Html.DisplayNameFor(model => model.Department)
-                            </th>
-                            <th class="select-filter">
-                                @Html.DisplayNameFor(model => model.JobType)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.PublishedOn)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.ExpiredOn)
-                            </th>
-                            <th class="select-filter">
-                                @Html.DisplayNameFor(model => model.IsTranslated)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.TranslationId)
-                            </th>
-                            <th class="select-filter">
-                                @Html.DisplayNameFor(model => model.Status)
-                            </th>
-                            <th>@Resources.Resources.Actions</th>
-                        </tr>
-                    </thead>
-                    <tfoot>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Language)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Department)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.JobType)
-                            </th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Status)
-                            </th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </tfoot>
-                </table>
+    <div>
+        @Html.ActionLink(Resources.Resources.Create, "Create", null, new { @class = "btn btn-danger" })
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="white-box">
+                @*<h3 class="box-title m-b-0">Data Export</h3>
+                <p class="text-muted m-b-30">Export data to Copy, CSV, Excel, PDF & Print</p>*@
+                <div class="table-responsive">
+                    <table id="vacanciesTable" class="display nowrap" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Id)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Code)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Title)
+                                </th>
+                                <th class="select-filter">
+                                    @Html.DisplayNameFor(model => model.Language)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.LanguageId)
+                                </th>
+                                <th class="select-filter">
+                                    @Html.DisplayNameFor(model => model.Department)
+                                </th>
+                                <th class="select-filter">
+                                    @Html.DisplayNameFor(model => model.JobType)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PublishedOn)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ExpiredOn)
+                                </th>
+                                <th class="select-filter">
+                                    @Html.DisplayNameFor(model => model.IsTranslated)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.TranslationId)
+                                </th>
+                                <th class="select-filter">
+                                    @Html.DisplayNameFor(model => model.Status)
+                                </th>
+                                <th>@Resources.Resources.Actions</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Language)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Department)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.JobType)
+                                </th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Status)
+                                </th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
-</div>
-@section scripts{
+    @section scripts{
     <!-- Custom Theme JavaScript -->
     <script src="~/assets/admin/js/custom.min.js"></script>
     <script src="~/assets/admin/plugins/bower_components/datatables/jquery.dataTables.min.js"></script>
@@ -114,47 +114,47 @@
                 "serverSide": true,
                 "scrollX": true,
                 "scrollX": true,
-                "lengthMenu": [[5,10, 25, 50, -1], [5,10, 25, 50, "All"]],
+                "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
                 dom: 'lBfrtip',
                 buttons: [
-                   {
-                       text: '@Resources.Resources.Reload',
-                       action: function (e, dt, node, config) {
-                           dt.ajax.reload();
-                       }
-                   },
-                   {
-                       text: '@Resources.Resources.Copy',
-                       extend: 'copyHtml5',
-                       exportOptions: {
-                           columns: ':visible'
-                       }
-                   },
-                  {
-                      text: '@Resources.Resources.ExportExcel',
-                      extend: 'excelHtml5',
-                      exportOptions: {
-                          columns: ':visible'
-                      }
-                  },
-                  {
-                      text: '@Resources.Resources.ExportPDF',
-                      extend: 'pdfHtml5',
-                      exportOptions: {
-                          columns: ':visible'
-                      }
-                  },
-                  {
-                      text: '@Resources.Resources.Print',
-                      extend: 'print',
-                      exportOptions: {
-                          columns: ':visible'
-                      }
-                  },
-                  {
-                      text: '@Resources.Resources.ColVis',
-                      extend: 'colvis',
-                  },
+                    {
+                        text: '@Resources.Resources.Reload',
+                        action: function (e, dt, node, config) {
+                            dt.ajax.reload();
+                        }
+                    },
+                    {
+                        text: '@Resources.Resources.Copy',
+                        extend: 'copyHtml5',
+                        exportOptions: {
+                            columns: ':visible'
+                        }
+                    },
+                    {
+                        text: '@Resources.Resources.ExportExcel',
+                        extend: 'excelHtml5',
+                        exportOptions: {
+                            columns: ':visible'
+                        }
+                    },
+                    {
+                        text: '@Resources.Resources.ExportPDF',
+                        extend: 'pdfHtml5',
+                        exportOptions: {
+                            columns: ':visible'
+                        }
+                    },
+                    {
+                        text: '@Resources.Resources.Print',
+                        extend: 'print',
+                        exportOptions: {
+                            columns: ':visible'
+                        }
+                    },
+                    {
+                        text: '@Resources.Resources.ColVis',
+                        extend: 'colvis',
+                    },
                 ],
                 "language": {
                     "url": "@Resources.Resources.DataTableLanguage"
@@ -172,44 +172,44 @@
                 "paging": true,
                 "deferRender": true,
                 "columns": [
-               { "data": "Id", "visible": false },
-               { "data": "Code" },
-               { "data": "Title" },
-               { "data": "Language" },
-               { "data": "LanguageId", "visible": false },
-               { "data": "Department", "visible": false },
-               { "data": "JobType", "visible": false },
-               { "data": "PublishedOn", "visible": false },
-               { "data": "ExpiredOn", "visible": false },
-               { "data": "IsTranslated", "visible": false },
-               { "data": "TranslationId", "visible": false },
-               { "data": "Status" },
-               {
-                   "data": null,
-                   "sortable": false,
-                   "render": function (data, type, col) {
-                       return '<a class=\'btn\' href=\'' + '@Url.Action("Index", "Submissions")/' + "index/" + col["Id"] + '\'>@Resources.Resources.Submissions</a>'
-                           //+ '|<a class=\'btn\' href=\'' + '@Url.Action("Translations", "Vacancies")/' + col["TranslationId"] + '\'>@Resources.Resources.Translations</a>'
-                           + '|<a class=\'btn\' href=\'' + '@Url.Action("Edit", "Vacancies")/' + col["Id"] + '\'>@Resources.Resources.Edit</a>'
-                           @*+ '|<a class=\'btn\' href=\'' + '@Url.Action("Details", "Vacancies")/' + col["Id"] + '\'>@Resources.Resources.Details</a>'*@
-                           + '|<a class=\'btn\' href=\'' + '@Url.Action("Delete", "Vacancies")/' + col["Id"] + '\'>@Resources.Resources.Delete</a>';
-                       @*+ '<a class=\'btn\' href=\'' + '@Url.Action("Delete", "Vacancies")/' + col["Id"] + '\'>Delete</a>';*@
-                   }
-                   //"render": function (o) { return '<i class="ui-tooltip fa fa-pencil" style="font-size: 22px;" data-original-title="Edit"></i><i class="ui-tooltip fa fa-trash-o" style="font-size: 22px;" data-original-title="Delete"></i>'; }
-               },
+                    { "data": "Id", "visible": false },
+                    { "data": "Code" },
+                    { "data": "Title" },
+                    { "data": "Language" },
+                    { "data": "LanguageId", "visible": false },
+                    { "data": "Department", "visible": false },
+                    { "data": "JobType", "visible": false },
+                    { "data": "PublishedOn", "visible": false },
+                    { "data": "ExpiredOn", "visible": false },
+                    { "data": "IsTranslated", "visible": false },
+                    { "data": "TranslationId", "visible": false },
+                    { "data": "Status" },
+                    {
+                        "data": null,
+                        "sortable": false,
+                        "render": function (data, type, col) {
+                            return '<a class=\'btn\' href=\'' + '@Url.Action("Index", "Submissions")/' + "index/" + col["Id"] + '\'>@Resources.Resources.Submissions</a>'
+                                + '|<a class=\'btn\' href=\'' + '@Url.Action("Translations", "Vacancies")/' + col["TranslationId"] + '\'>@Resources.Resources.Translations</a>'
+                                + '|<a class=\'btn\' href=\'' + '@Url.Action("Edit", "Vacancies")/' + col["Id"] + '\'>@Resources.Resources.Edit</a>'
+                            @* + '|<a class=\'btn\' href=\'' + '@Url.Action("Details", "Vacancies")/' + col["Id"] + '\'>@Resources.Resources.Details</a>' *@
+                               + '|<a class=\'btn\' href=\'' + '@Url.Action("Delete", "Vacancies")/' + col["Id"] + '\'>@Resources.Resources.Delete</a>';
+                            @* + '<a class=\'btn\' href=\'' + '@Url.Action("Delete", "Vacancies")/' + col["Id"] + '\'>Delete</a>';*@
+                       }
+                        //"render": function (o) { return '<i class="ui-tooltip fa fa-pencil" style="font-size: 22px;" data-original-title="Edit"></i><i class="ui-tooltip fa fa-trash-o" style="font-size: 22px;" data-original-title="Delete"></i>'; }
+                    },
                 ],
                 "order": [0, "asc"],
                 "initComplete": function () {
                     this.api().columns('.select-filter').every(function () {
                         var column = this;
                         var select = $('<select><option value=""></option></select>')
-                       .appendTo($(column.footer()).empty())
-                       .on('change', function () {
-                           var val = $(this).val();
-                           column
-                               .search(val, true, false)
-                               .draw();
-                       });
+                            .appendTo($(column.footer()).empty())
+                            .on('change', function () {
+                                var val = $(this).val();
+                                column
+                                    .search(val, true, false)
+                                    .draw();
+                            });
                         column.data().unique().sort().each(function (d, j) {
                             select.append('<option value="' + d + '">' + d + '</option>')
                         });
@@ -226,4 +226,5 @@
             });
         });
     </script>
-}
+    }
+

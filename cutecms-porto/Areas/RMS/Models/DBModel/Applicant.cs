@@ -72,7 +72,7 @@ namespace cutecms_porto.Areas.RMS.Models.DBModel
         public string Email { get; set; }
 
         //[ValidateCV]
-        [FileType("JPG,JPEG,PNG")]
+        [FileType("PDF,DOC,DOCX")]
         [Required(ErrorMessageResourceType = typeof(App_GlobalResources.ValidationResources), ErrorMessageResourceName = "PropertyValueRequired")]
         [Display(Name = "CurriculumVitae", ResourceType = typeof(Resources.Resources))]
         [NotMapped]

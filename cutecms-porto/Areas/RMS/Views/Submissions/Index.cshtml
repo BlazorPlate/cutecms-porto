@@ -5,13 +5,14 @@
 }
 <div>@Html.ActionLink(Resources.Resources.DownloadApplications, "ExportApplicants", null, new { @class = "btn btn-danger" })</div>
 @section styles{
-
+    <link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/buttons/1.2.1/css/buttons.dataTables.min.css" rel="stylesheet" />
 }
 <div class="row">
     <div class="col-sm-12">
         <div class="white-box">
             @*<h3 class="box-title m-b-0">Data Export</h3>
-            <p class="text-muted m-b-30">Export data to Copy, CSV, Excel, PDF & Print</p>*@
+                <p class="text-muted m-b-30">Export data to Copy, CSV, Excel, PDF & Print</p>*@
             <div class="table-responsive">
                 <table id="submissionTable" class="display nowrap" cellspacing="0" width="100%">
                     <thead>

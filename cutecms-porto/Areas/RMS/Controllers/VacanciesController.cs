@@ -48,6 +48,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
         public ActionResult Index(int? statusId = null)
         {
             ViewBag.StatusMessageId = statusId;
+            //var vacancies = db.Vacancies.ToList();
             return View();
         }
         public JsonResult DataHandler(DTParameters param)
@@ -58,7 +59,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                 using (RMSEntities db = new RMSEntities())
                 {
                     List<string> roles = GetUserRoles();
-                    var vacancies = db.Vacancies.Include("Language").Include("Department").Include("Department.DepartmentTerms").Include("Department.DepartmentTerms.Language").Include("JobType").Include("JobType.JobTypeTerms").Include("JobType.JobTypeTerms.Language").Include("Status").Include("Status.StatusTerms").Include("Status.StatusTerms.Language").Where(v => v.TenantId.Trim().Equals(Tenant.TenantId) && (roles.Any(r => v.RoleVID.Equals(r)) || v.RoleVID == null) || v.RoleVID == null).OrderBy(v => v.Title);
+                    var vacancies = db.Vacancies.Include("Language").Include("Department").Include("Department.DepartmentTerms").Include("Department.DepartmentTerms.Language").Include("JobType").Include("JobType.JobTypeTerms").Include("JobType.JobTypeTerms.Language").Include("Status").Include("Status.StatusTerms").Include("Status.StatusTerms.Language").OrderBy(v => v.Title);
                     foreach (var item in vacancies)
                     {
                         string departmentName = item.Department.DepartmentTerms.Where(d => d.Language.CultureName.Trim().Equals(Thread.CurrentThread.CurrentCulture)).FirstOrDefault()?.Value ?? item.Department.Code;
@@ -112,7 +113,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                 throw new HttpException(400, "Bad Request");
             }
             List<string> roles = GetUserRoles();
-            Vacancy vacancy = db.Vacancies.Include("Language").Include("Program").Include("Program.ProgramTerms").Include("Program.ProgramTerms.Language").Include("Status").Include("Status.StatusTerms").Include("Status.StatusTerms.Language").Include("JobType").Include("JobType.JobTypeTerms").Include("JobType.JobTypeTerms.Language").Where(v => v.TenantId.Trim().Equals(Tenant.TenantId) && (roles.Any(r => v.RoleVID.Equals(r)) || v.RoleVID == null) && v.Id == id).FirstOrDefault();
+            Vacancy vacancy = db.Vacancies.Include("Language").Include("Program").Include("Program.ProgramTerms").Include("Program.ProgramTerms.Language").Include("Status").Include("Status.StatusTerms").Include("Status.StatusTerms.Language").Include("JobType").Include("JobType.JobTypeTerms").Include("JobType.JobTypeTerms.Language").Where(v => v.Id == id).FirstOrDefault();
             if (vacancy == null)
             {
                 throw new HttpException(404, "Page Not Found");
@@ -217,7 +218,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
             }
             List<string> roles = GetUserRoles();
             Vacancy vacancy = new Vacancy();
-            vacancy = db.Vacancies.Include("Language").Include("VacancyDegrees").Include("VacancyRanks").Include("VacancyDegrees.Degree").Include("VacancyRanks.Rank").Where(v => v.TenantId.Trim().Equals(Tenant.TenantId) && (roles.Any(r => v.RoleVID.Equals(r)) || v.RoleVID == null) && v.Id == id).FirstOrDefault();
+            vacancy = db.Vacancies.Include("Language").Include("VacancyDegrees").Include("VacancyRanks").Include("VacancyDegrees.Degree").Include("VacancyRanks.Rank").Where(v => v.Id == id).FirstOrDefault();
             if (vacancy == null)
             {
                 throw new HttpException(404, "Page Not Found");
@@ -339,7 +340,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                 throw new HttpException(400, "Bad Request");
             }
             List<string> roles = GetUserRoles();
-            Vacancy vacancy = db.Vacancies.Include("Language").Include("Program").Include("Program.ProgramTerms").Include("Program.ProgramTerms.Language").Include("Status").Include("Status.StatusTerms").Include("Status.StatusTerms.Language").Include("JobType").Include("JobType.JobTypeTerms").Include("JobType.JobTypeTerms.Language").Include("VacancyRanks").Include("VacancyDegrees").Where(v => v.TenantId.Trim().Equals(Tenant.TenantId) && (roles.Any(r => v.RoleVID.Equals(r)) || v.RoleVID == null) && v.Id == id).FirstOrDefault();
+            Vacancy vacancy = db.Vacancies.Include("Language").Include("Program").Include("Program.ProgramTerms").Include("Program.ProgramTerms.Language").Include("Status").Include("Status.StatusTerms").Include("Status.StatusTerms.Language").Include("JobType").Include("JobType.JobTypeTerms").Include("JobType.JobTypeTerms.Language").Include("VacancyRanks").Include("VacancyDegrees").Where(v => v.Id == id).FirstOrDefault();
             if (vacancy == null)
             {
                 throw new HttpException(404, "Page Not Found");

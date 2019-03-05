@@ -31,7 +31,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
             ViewBag.VacancyId = id;
             return View();
         }
-        public JsonResult DataHandler(DTParameters param,int? id)
+        public JsonResult DataHandler(DTParameters param, int? id)
         {
             try
             {
@@ -41,7 +41,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                 {
                     var vacancyId = id;
                     List<string> roles = GetUserRoles();
-                    var submissions = db.Submissions.Include("Vacancy").Include("Applicant").Include("Vacancy.Department").Include("Vacancy.Department.DepartmentTerms").Include("Vacancy.Department.DepartmentTerms.Language").Where(s => roles.Any(r => s.Vacancy.TenantId.Trim().Equals(Tenant.TenantId) && s.Vacancy.RoleVID.Equals(r)) && ((s.VacancyId.Equals(vacancyId.Value)) || vacancyId == null));
+                    var submissions = db.Submissions.Include("Vacancy").Include("Applicant").Include("Vacancy.Department").Include("Vacancy.Department.DepartmentTerms").Include("Vacancy.Department.DepartmentTerms.Language").Where(s => ((s.VacancyId.Equals(vacancyId.Value)) || vacancyId == null));
                     foreach (var item in submissions)
                     {
                         SubmissionViewModel submissionViewModel = new SubmissionViewModel();
@@ -131,7 +131,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
             {
                 throw new HttpException(400, "Bad Request");
             }
-            Submission submission = db.Submissions.Include("Applicant").Where(s => s.Vacancy.TenantId.Trim().Equals(Tenant.TenantId) && s.Id == id).FirstOrDefault();
+            Submission submission = db.Submissions.Include("Applicant").Where(s => s.Id == id).FirstOrDefault();
             return File(submission.Applicant.ResumeFilePath, submission.Applicant.ResumeFileName);
         }
 
@@ -146,7 +146,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                 zip.AlternateEncodingUsage = ZipOption.Always;
                 zip.AlternateEncoding = Encoding.UTF8;
                 zip.AddDirectoryByName("Applicants_CVs");
-                Submission submission = db.Submissions.Include("Applicant").Include("Applicant.Attachments").Where(s => s.Vacancy.TenantId.Trim().Equals(Tenant.TenantId) && s.Id == id).FirstOrDefault();
+                Submission submission = db.Submissions.Include("Applicant").Include("Applicant.Attachments").Where(s => s.Id == id).FirstOrDefault();
                 if (submission == null)
                 {
                     throw new HttpException(400, "Bad Request");
@@ -182,7 +182,7 @@ namespace cutecms_porto.Areas.RMS.Controllers
                 List<int> submissionIds = (List<int>)TempData["submissionIds"];
                 foreach (var submissionId in submissionIds)
                 {
-                    var submission = db.Submissions.Include("Applicant").Include("Applicant.Attachments").Where(s => s.Vacancy.TenantId.Trim().Equals(Tenant.TenantId) && s.Id == submissionId).FirstOrDefault();
+                    var submission = db.Submissions.Include("Applicant").Include("Applicant.Attachments").Where(s => s.Id == submissionId).FirstOrDefault();
                     if (System.IO.File.Exists(System.Web.Hosting.HostingEnvironment.MapPath(submission.Applicant.ResumeFilePath)))
                         zip.AddFile(System.Web.Hosting.HostingEnvironment.MapPath(submission.Applicant.ResumeFilePath), String.Format("Applicants_CVs\\{0}", submission.Id + "-" + submission.Applicant.FullName));
                     if (submission.Applicant.Attachments.Count() != 0)

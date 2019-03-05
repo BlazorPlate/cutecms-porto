@@ -442,501 +442,6 @@
     <Compile Include="Areas\CMS\Models\DBModel\GalleryCategory.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Areas\CMS\Views\Categories\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Categories\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Categories\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Categories\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Categories\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\CategoryTerms\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\CategoryTerms\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\CategoryTerms\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\CategoryTerms\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\CategoryTerms\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ContentGalleries\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ContentGalleries\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ContentGalleries\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ContentGalleries\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ContentGalleries\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ContentLists\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ContentLists\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ContentLists\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ContentLists\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ContentLists\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Contents\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Contents\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Contents\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Contents\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Contents\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Contents\Translations.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Translations.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ContentTypes\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ContentTypes\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ContentTypes\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ContentTypes\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ContentTypes\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ContentTypeTerms\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ContentTypeTerms\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ContentTypeTerms\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ContentTypeTerms\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ContentTypeTerms\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Error\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Error\NotFound.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NotFound.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Error\NotPublished.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NotPublished.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Error\NotTranslated.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NotTranslated.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Galleries\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Galleries\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Galleries\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Galleries\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Galleries\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\GalleryCategories\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\GalleryCategories\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\GalleryCategories\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\GalleryCategories\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\GalleryCategories\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\GalleryTerms\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\GalleryTerms\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\GalleryTerms\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\GalleryTerms\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\GalleryTerms\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Home\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ImageFiles\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ImageFiles\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ImageFiles\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ImageFiles\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ImageFileTerms\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ImageFileTerms\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ImageFileTerms\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ImageFileTerms\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ImageFileTerms\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ImageTags\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ImageTags\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ImageTags\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ImageTags\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ImageTags\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ListItems\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ListItems\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ListItems\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ListItems\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\ListItems\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\MenuItems\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\MenuItems\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\MenuItems\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\MenuItems\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Menus\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Menus\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Menus\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Menus\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Menus\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Shared\EditorTemplates\SelectTagEditorViewModel.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SelectTagEditorViewModel.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Shared\Error.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Error.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Shared\_Layout.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Layout.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Shared\_LoginPartial.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_LoginPartial.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Shared\_SideNavBar.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_SideNavBar.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Tags\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Tags\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Tags\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Tags\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\Tags\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\TagTerms\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\TagTerms\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\TagTerms\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\TagTerms\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\CMS\Views\TagTerms\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
     <Compile Include="Areas\Config\Controllers\ConfigStatusController.cs" />
     <Compile Include="Areas\Config\Controllers\ConfigStatusTermsController.cs" />
     <Compile Include="Areas\Config\Controllers\ErrorController.cs" />
@@ -1101,296 +606,6 @@
     <Compile Include="Areas\Config\Models\DBModel\Statistic.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Areas\Config\Views\ConfigStatusTerms\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\ConfigStatusTerms\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\ConfigStatusTerms\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\ConfigStatusTerms\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\ConfigStatusTerms\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\ConfigStatus\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\ConfigStatus\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\ConfigStatus\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\ConfigStatus\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\ConfigStatus\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Contacts\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Contacts\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Contacts\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Contacts\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Contacts\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Error\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Error\NotFound.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NotFound.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Error\NotPublished.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NotPublished.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Error\NotTranslated.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NotTranslated.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Languages\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Languages\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Languages\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Languages\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Languages\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Notifications\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Notifications\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Notifications\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Notifications\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Notifications\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\NotificationTerms\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\NotificationTerms\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\NotificationTerms\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\NotificationTerms\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\NotificationTerms\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Organizations\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Organizations\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Organizations\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Organizations\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Organizations\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Organizations\Translations.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Translations.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\PhoneNumbers\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\PhoneNumbers\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\PhoneNumbers\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\PhoneNumbers\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\PhoneNumbers\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\SMTPSettings\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\SMTPSettings\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\SMTPSettings\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\SMTPSettings\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\SMTPSettings\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\SocialNetworks\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\SocialNetworks\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\SocialNetworks\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\SocialNetworks\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\SocialNetworks\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Statistics\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Statistics\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Config\Views\Statistics\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
     <Compile Include="Areas\Identity\Controllers\EmployeeTypesController.cs" />
     <Compile Include="Areas\Identity\Controllers\EmployeeTypeTermsController.cs" />
     <Compile Include="Areas\Identity\Controllers\ErrorController.cs" />
@@ -1442,481 +657,6 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Identity\Models\DepartmentsViewModel.cs" />
-    <Compile Include="Areas\Identity\Views\Account\ConfirmEmail.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ConfirmEmail.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Account\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Account\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Account\ExternalLoginConfirmation.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ExternalLoginConfirmation.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Account\ExternalLoginFailure.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ExternalLoginFailure.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Account\ForgotPassword.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ForgotPassword.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Account\ForgotPasswordConfirmation.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ForgotPasswordConfirmation.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Account\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Account\Login.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Login.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Account\Register.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Register.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Account\ResetPassword.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ResetPassword.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Account\ResetPasswordConfirmation.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ResetPasswordConfirmation.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Account\SendCode.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SendCode.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Account\UserGroups.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserGroups.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Account\UserRoles.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserRoles.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Account\VerifyCode.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VerifyCode.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Account\Welcome.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Welcome.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Account\_ExternalLoginsListPartial.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ExternalLoginsListPartial.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\EmpInDepts\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\EmpInDepts\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\EmpInDepts\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\EmpInDepts\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\EmpInDepts\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Employees\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Employees\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Employees\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Employees\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Employees\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Employees\Translations.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Translations.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\EmployeeTypes\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\EmployeeTypes\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\EmployeeTypes\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\EmployeeTypes\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\EmployeeTypes\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\EmployeeTypeTerms\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\EmployeeTypeTerms\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\EmployeeTypeTerms\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\EmployeeTypeTerms\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\EmployeeTypeTerms\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Error\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Error\NotFound.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NotFound.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Error\NotPublished.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NotPublished.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Error\NotTranslated.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NotTranslated.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Groups\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Groups\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Groups\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Groups\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Groups\GroupRoles.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GroupRoles.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Groups\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Home\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\IdentityDepartments\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\IdentityDepartments\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\IdentityDepartments\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\IdentityDepartments\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\IdentityDepartments\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\IdentityDepartmentTerms\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\IdentityDepartmentTerms\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\IdentityDepartmentTerms\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\IdentityDepartmentTerms\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\IdentityDepartmentTerms\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\IdentityPersonalTitles\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\IdentityPersonalTitles\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\IdentityPersonalTitles\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\IdentityPersonalTitles\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\IdentityPersonalTitles\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\IdentityPersonalTitleTerms\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\IdentityPersonalTitleTerms\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\IdentityPersonalTitleTerms\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\IdentityPersonalTitleTerms\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\IdentityPersonalTitleTerms\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Manage\AddPhoneNumber.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AddPhoneNumber.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Manage\ChangePassword.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ChangePassword.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Manage\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Manage\ManageLogins.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ManageLogins.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Manage\SetPassword.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SetPassword.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Manage\VerifyPhoneNumber.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VerifyPhoneNumber.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Occupations\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Occupations\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Occupations\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Occupations\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Occupations\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\OccupationTerms\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\OccupationTerms\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\OccupationTerms\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\OccupationTerms\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\OccupationTerms\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Publications\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Publications\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Publications\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Publications\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Publications\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Roles\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Roles\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Roles\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Identity\Views\Roles\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
     <Compile Include="Areas\Identity\Views\Shared\EditorTemplates\SelectGroupEditorViewModel.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2078,356 +818,6 @@
     </Compile>
     <Compile Include="Areas\RMS\Models\VacancyDRViewModel.cs" />
     <Compile Include="Areas\RMS\RMSAreaRegistration.cs" />
-    <Compile Include="Areas\RMS\Views\Attachments\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\Attachments\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\Attachments\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\Attachments\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\Attachments\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\Error\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\Error\NotFound.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NotFound.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\Error\NotPublished.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NotPublished.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\Error\NotTranslated.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NotTranslated.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\Genders\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\Genders\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\Genders\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\Genders\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\Genders\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\GenderTerms\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\GenderTerms\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\GenderTerms\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\GenderTerms\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\GenderTerms\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\JobTypes\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\JobTypes\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\JobTypes\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\JobTypes\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\JobTypes\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\JobTypeTerms\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\JobTypeTerms\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\JobTypeTerms\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\JobTypeTerms\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\JobTypeTerms\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSDegrees\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSDegrees\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSDegrees\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSDegrees\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSDegrees\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSDegreeTerms\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSDegreeTerms\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSDegreeTerms\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSDegreeTerms\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSDegreeTerms\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSPrograms\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSPrograms\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSPrograms\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSPrograms\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSPrograms\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSProgramTerms\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSProgramTerms\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSProgramTerms\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSProgramTerms\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSProgramTerms\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSRanks\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSRanks\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSRanks\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSRanks\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSRanks\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSRankTerms\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSRankTerms\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSRankTerms\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSRankTerms\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\RMSRankTerms\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\Shared\EditorTemplates\SelectDegreeEditorViewModel.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SelectDegreeEditorViewModel.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\Shared\EditorTemplates\SelectRankEditorViewModel.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SelectRankEditorViewModel.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\Submissions\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\Submissions\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\Submissions\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\Vacancies\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\Vacancies\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\Vacancies\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\Vacancies\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\Vacancies\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\RMS\Views\Vacancies\Translations.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Translations.cshtml</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\EmpInDeptsController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\StaffController.cs" />
@@ -2464,6 +854,7 @@
     <Compile Include="Areas\Identity\Models\ApplicationRoleGroup.cs" />
     <Compile Include="Areas\Identity\Models\ApplicationUserGroup.cs" />
     <Compile Include="Areas\Identity\Models\Group.cs" />
+    <Compile Include="Models\ErrorLog.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Areas\Identity\Models\IdentityManager.cs" />
     <Compile Include="Areas\Identity\Models\IdentityModels.cs" />
@@ -2473,361 +864,6 @@
     <Compile Include="Models\SubscriberViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Views\Careers\Acknowledgement.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Acknowledgement.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Careers\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Careers\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EmpInDepts\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EmpInDepts\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EmpInDepts\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EmpInDepts\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EmpInDepts\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Error\CatchAll.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CatchAll.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Error\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Error\InvalidToken.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>InvalidToken.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Error\NotFound.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NotFound.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Error\NotPublished.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NotPublished.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Error\NotTranslated.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NotTranslated.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Home\Calendar.generated.cs">
-      <DependentUpon>Calendar.cshtml</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Include="Views\Home\Contact.generated.cs">
-      <DependentUpon>Contact.cshtml</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Include="Views\Home\Contents.generated.cs">
-      <DependentUpon>Contents.cshtml</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Include="Views\Home\ForgotPasswordConfirmation.generated.cs">
-      <DependentUpon>ForgotPasswordConfirmation.cshtml</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Include="Views\Home\Galleries.generated.cs">
-      <DependentUpon>Galleries.cshtml</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Include="Views\Home\ImageFiles.generated.cs">
-      <DependentUpon>ImageFiles.cshtml</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Include="Views\Home\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Home\ResetPassword.generated.cs">
-      <DependentUpon>ResetPassword.cshtml</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Include="Views\Home\ResetPasswordConfirmation.generated.cs">
-      <DependentUpon>ResetPasswordConfirmation.cshtml</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Include="Views\Home\SFJUIndex.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SFJUIndex.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Home\Subscribed.generated.cs">
-      <DependentUpon>Subscribed.cshtml</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Include="Views\Home\Welcome.generated.cs">
-      <DependentUpon>Welcome.cshtml</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Include="Views\MyProfile\AcademicInfo.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AcademicInfo.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\MyProfile\Biography.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Biography.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\MyProfile\ContactInfo.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ContactInfo.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\MyProfile\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\MyProfile\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\MyProfile\PersonalInfo.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PersonalInfo.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\MyProfile\PersonalPhoto.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PersonalPhoto.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\MyProfile\Translations.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Translations.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Pages\Content.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Content.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Pages\Dept.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Dept.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Publications\Create.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Create.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Publications\Delete.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Delete.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Publications\Details.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Publications\Edit.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Edit.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Publications\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\Account.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Account.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\EditorTemplates\SelectTagEditorViewModel.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SelectTagEditorViewModel.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\ForgotPassword.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ForgotPassword.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\ForgotPasswordAjax.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ForgotPasswordAjax.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\Lockout.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Lockout.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\Login.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Login.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\LoginAjax.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LoginAjax.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\Register.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Register.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\RegisterAjax.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RegisterAjax.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\SendCode.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SendCode.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\Subscribe.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Subscribe.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\VerifyCode.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VerifyCode.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\_Breadcrumb.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Breadcrumb.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\_Footer.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Footer.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\_HeaderMenu.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_HeaderMenu.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\_Layout.generated.cs">
-      <DependentUpon>_Layout.cshtml</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Views\Shared\_MyProfile.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_MyProfile.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\_NewsBar.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_NewsBar.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\_Profile.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Profile.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shared\_TopMenu.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_TopMenu.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Staff\AcademicInfo.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AcademicInfo.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Staff\Biography.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Biography.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Staff\ContactInfo.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ContactInfo.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Staff\Departments.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Departments.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Staff\EmpInDepts.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EmpInDepts.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Staff\EmpsInDept.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EmpsInDept.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Staff\Index.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Staff\MemberProfile.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MemberProfile.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Staff\Publications.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Publications.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Staff\Search.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Search.cshtml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\CuteCMSDB.mdf" />
@@ -6704,66 +4740,21 @@
     <Content Include="assets\porto\vendor\simple-line-icons\README.md" />
     <Content Include="assets\porto\vendor\simple-line-icons\scss\simple-line-icons.scss" />
     <Content Include="assets\porto\vendor\jquery-ui-1.12.1.custom\package.json" />
-    <Content Include="Areas\CMS\Views\Categories\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Categories\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Categories\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Categories\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Categories\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\GalleryCategories\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\GalleryCategories\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\GalleryCategories\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\GalleryCategories\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\GalleryCategories\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\CategoryTerms\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\CategoryTerms\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\CategoryTerms\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\CategoryTerms\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\CategoryTerms\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
+    <Content Include="Areas\CMS\Views\Categories\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\Categories\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\Categories\Details.cshtml" />
+    <Content Include="Areas\CMS\Views\Categories\Edit.cshtml" />
+    <Content Include="Areas\CMS\Views\Categories\Index.cshtml" />
+    <Content Include="Areas\CMS\Views\GalleryCategories\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\GalleryCategories\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\GalleryCategories\Details.cshtml" />
+    <Content Include="Areas\CMS\Views\GalleryCategories\Edit.cshtml" />
+    <Content Include="Areas\CMS\Views\GalleryCategories\Index.cshtml" />
+    <Content Include="Areas\CMS\Views\CategoryTerms\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\CategoryTerms\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\CategoryTerms\Details.cshtml" />
+    <Content Include="Areas\CMS\Views\CategoryTerms\Edit.cshtml" />
+    <Content Include="Areas\CMS\Views\CategoryTerms\Index.cshtml" />
     <Content Include="assets\porto\vendor\smarticker\css\smarticker-ar.css" />
     <Content Include="assets\porto\vendor\smarticker\css\smarticker.css" />
     <Content Include="assets\porto\vendor\smarticker\images\controller.png" />
@@ -6772,26 +4763,11 @@
     <Content Include="assets\porto\vendor\smarticker\js\jquery.smarticker.min.js" />
     <Content Include="assets\porto\vendor\style-switcher\bootstrap-colorpicker\css\bootstrap-colorpicker.css.map" />
     <Content Include="assets\porto\vendor\style-switcher\bootstrap-colorpicker\css\bootstrap-colorpicker.min.css.map" />
-    <Content Include="Areas\Config\Views\SocialNetworks\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\SocialNetworks\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\SocialNetworks\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\SocialNetworks\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\SocialNetworks\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
+    <Content Include="Areas\Config\Views\SocialNetworks\Create.cshtml" />
+    <Content Include="Areas\Config\Views\SocialNetworks\Delete.cshtml" />
+    <Content Include="Areas\Config\Views\SocialNetworks\Details.cshtml" />
+    <Content Include="Areas\Config\Views\SocialNetworks\Edit.cshtml" />
+    <Content Include="Areas\Config\Views\SocialNetworks\Index.cshtml" />
     <Content Include="assets\porto\css\fonts\digital-clock\digital-7 %28italic%29.ttf" />
     <Content Include="assets\porto\css\fonts\digital-clock\digital-7 %28mono italic%29.ttf" />
     <Content Include="assets\porto\css\fonts\digital-clock\digital-7 %28mono%29.ttf" />
@@ -7310,118 +5286,34 @@
     <Content Include="fileman\Uploads\LICENSE.txt" />
     <Content Include="fileman\Uploads\roxy-fileman-logo.gif" />
     <Content Include="Global.asax" />
-    <Content Include="Areas\CMS\Views\Galleries\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Galleries\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Galleries\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Galleries\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Galleries\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Contents\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Contents\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Contents\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Contents\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Contents\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Home\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ImageFiles\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ImageFiles\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ImageFiles\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ImageFiles\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ImageTags\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ImageTags\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ImageTags\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ImageTags\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ImageTags\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\MenuItems\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\MenuItems\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\MenuItems\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\MenuItems\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Shared\EditorTemplates\SelectTagEditorViewModel.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>SelectTagEditorViewModel.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Shared\Error.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Error.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Shared\_Layout.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Layout.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Shared\_LoginPartial.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_LoginPartial.generated.cs</LastGenOutput>
-    </Content>
+    <Content Include="Areas\CMS\Views\Galleries\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\Galleries\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\Galleries\Details.cshtml" />
+    <Content Include="Areas\CMS\Views\Galleries\Edit.cshtml" />
+    <Content Include="Areas\CMS\Views\Galleries\Index.cshtml" />
+    <Content Include="Areas\CMS\Views\Contents\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\Contents\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\Contents\Details.cshtml" />
+    <Content Include="Areas\CMS\Views\Contents\Edit.cshtml" />
+    <Content Include="Areas\CMS\Views\Contents\Index.cshtml" />
+    <Content Include="Areas\CMS\Views\Home\Index.cshtml" />
+    <Content Include="Areas\CMS\Views\ImageFiles\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\ImageFiles\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\ImageFiles\Edit.cshtml" />
+    <Content Include="Areas\CMS\Views\ImageFiles\Index.cshtml" />
+    <Content Include="Areas\CMS\Views\ImageTags\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\ImageTags\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\ImageTags\Details.cshtml" />
+    <Content Include="Areas\CMS\Views\ImageTags\Edit.cshtml" />
+    <Content Include="Areas\CMS\Views\ImageTags\Index.cshtml" />
+    <Content Include="Areas\CMS\Views\MenuItems\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\MenuItems\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\MenuItems\Edit.cshtml" />
+    <Content Include="Areas\CMS\Views\MenuItems\Index.cshtml" />
+    <Content Include="Areas\CMS\Views\Shared\EditorTemplates\SelectTagEditorViewModel.cshtml" />
+    <Content Include="Areas\CMS\Views\Shared\Error.cshtml" />
+    <Content Include="Areas\CMS\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\CMS\Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Areas\CMS\Views\web.config" />
     <Content Include="Areas\CMS\Views\_ViewStart.cshtml" />
     <EntityDeploy Include="Areas\CMS\Models\DBModel\Model.edmx">
@@ -7455,86 +5347,26 @@
     <Content Include="fileman\lang\pl.json" />
     <Content Include="fileman\lang\pt.json" />
     <Content Include="fileman\web.config" />
-    <Content Include="Areas\Identity\Views\Home\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Account\Welcome.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Welcome.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ContentTypes\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ContentTypes\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ContentTypes\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ContentTypes\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ContentTypes\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Menus\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Menus\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Menus\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Menus\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Menus\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\Submissions\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\Submissions\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\Submissions\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\Vacancies\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\Vacancies\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\Vacancies\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\Vacancies\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\Vacancies\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
+    <Content Include="Areas\Identity\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Identity\Views\Account\Welcome.cshtml" />
+    <Content Include="Areas\CMS\Views\ContentTypes\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\ContentTypes\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\ContentTypes\Details.cshtml" />
+    <Content Include="Areas\CMS\Views\ContentTypes\Edit.cshtml" />
+    <Content Include="Areas\CMS\Views\ContentTypes\Index.cshtml" />
+    <Content Include="Areas\CMS\Views\Menus\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\Menus\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\Menus\Details.cshtml" />
+    <Content Include="Areas\CMS\Views\Menus\Edit.cshtml" />
+    <Content Include="Areas\CMS\Views\Menus\Index.cshtml" />
+    <Content Include="Areas\RMS\Views\Submissions\Delete.cshtml" />
+    <Content Include="Areas\RMS\Views\Submissions\Details.cshtml" />
+    <Content Include="Areas\RMS\Views\Submissions\Index.cshtml" />
+    <Content Include="Areas\RMS\Views\Vacancies\Create.cshtml" />
+    <Content Include="Areas\RMS\Views\Vacancies\Delete.cshtml" />
+    <Content Include="Areas\RMS\Views\Vacancies\Details.cshtml" />
+    <Content Include="Areas\RMS\Views\Vacancies\Edit.cshtml" />
+    <Content Include="Areas\RMS\Views\Vacancies\Index.cshtml" />
     <Content Include="Areas\RMS\Views\web.config" />
     <EntityDeploy Include="Areas\RMS\Models\DBModel\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -7552,126 +5384,36 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>SelectRoleEditorViewModel.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Areas\RMS\Views\Attachments\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\Attachments\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\Attachments\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\Attachments\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\Attachments\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ContentLists\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ContentLists\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ContentLists\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ContentLists\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ContentLists\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ListItems\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ListItems\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ListItems\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ListItems\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ListItems\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\Organizations\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\Organizations\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\Organizations\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\Organizations\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\Organizations\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\Contacts\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\Contacts\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\Contacts\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\Contacts\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\Contacts\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\PhoneNumbers\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\PhoneNumbers\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\PhoneNumbers\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\PhoneNumbers\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\PhoneNumbers\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
+    <Content Include="Areas\RMS\Views\Attachments\Create.cshtml" />
+    <Content Include="Areas\RMS\Views\Attachments\Delete.cshtml" />
+    <Content Include="Areas\RMS\Views\Attachments\Details.cshtml" />
+    <Content Include="Areas\RMS\Views\Attachments\Edit.cshtml" />
+    <Content Include="Areas\RMS\Views\Attachments\Index.cshtml" />
+    <Content Include="Areas\CMS\Views\ContentLists\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\ContentLists\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\ContentLists\Details.cshtml" />
+    <Content Include="Areas\CMS\Views\ContentLists\Edit.cshtml" />
+    <Content Include="Areas\CMS\Views\ContentLists\Index.cshtml" />
+    <Content Include="Areas\CMS\Views\ListItems\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\ListItems\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\ListItems\Details.cshtml" />
+    <Content Include="Areas\CMS\Views\ListItems\Edit.cshtml" />
+    <Content Include="Areas\CMS\Views\ListItems\Index.cshtml" />
+    <Content Include="Areas\Config\Views\Organizations\Create.cshtml" />
+    <Content Include="Areas\Config\Views\Organizations\Delete.cshtml" />
+    <Content Include="Areas\Config\Views\Organizations\Details.cshtml" />
+    <Content Include="Areas\Config\Views\Organizations\Edit.cshtml" />
+    <Content Include="Areas\Config\Views\Organizations\Index.cshtml" />
+    <Content Include="Areas\Config\Views\Contacts\Create.cshtml" />
+    <Content Include="Areas\Config\Views\Contacts\Delete.cshtml" />
+    <Content Include="Areas\Config\Views\Contacts\Details.cshtml" />
+    <Content Include="Areas\Config\Views\Contacts\Edit.cshtml" />
+    <Content Include="Areas\Config\Views\Contacts\Index.cshtml" />
+    <Content Include="Areas\Config\Views\PhoneNumbers\Create.cshtml" />
+    <Content Include="Areas\Config\Views\PhoneNumbers\Delete.cshtml" />
+    <Content Include="Areas\Config\Views\PhoneNumbers\Details.cshtml" />
+    <Content Include="Areas\Config\Views\PhoneNumbers\Edit.cshtml" />
+    <Content Include="Areas\Config\Views\PhoneNumbers\Index.cshtml" />
     <EntityDeploy Include="Areas\Identity\Models\DBModel\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
@@ -7679,574 +5421,148 @@
     <Content Include="Areas\Identity\Models\DBModel\Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\Identity\Views\IdentityDepartments\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\IdentityDepartments\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\IdentityDepartments\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\IdentityDepartments\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\IdentityDepartments\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\EmpInDepts\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\EmpInDepts\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\EmpInDepts\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\EmpInDepts\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\EmpInDepts\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Employees\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Employees\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Employees\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Employees\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Employees\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Publications\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Publications\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Publications\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Publications\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Publications\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\Shared\EditorTemplates\SelectDegreeEditorViewModel.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>SelectDegreeEditorViewModel.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\Shared\EditorTemplates\SelectRankEditorViewModel.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>SelectRankEditorViewModel.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Shared\_SideNavBar.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_SideNavBar.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Error\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Error\NotFound.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>NotFound.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Error\NotPublished.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>NotPublished.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Error\NotTranslated.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>NotTranslated.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Error\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Error\NotFound.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>NotFound.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Error\NotPublished.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>NotPublished.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Error\NotTranslated.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>NotTranslated.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\Error\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\Error\NotFound.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>NotFound.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\Error\NotPublished.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>NotPublished.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\Error\NotTranslated.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>NotTranslated.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\Statistics\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\Statistics\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\Statistics\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ContentTypeTerms\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ContentTypeTerms\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ContentTypeTerms\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ContentTypeTerms\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ContentTypeTerms\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSRanks\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSRanks\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSRanks\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSRanks\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSRanks\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSDegrees\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSDegrees\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSDegrees\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSDegrees\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSDegrees\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSPrograms\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSPrograms\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSPrograms\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSPrograms\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSPrograms\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\JobTypes\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\JobTypes\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\JobTypes\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\JobTypes\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\JobTypes\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSDegreeTerms\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSDegreeTerms\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSDegreeTerms\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSDegreeTerms\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSDegreeTerms\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSRankTerms\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSRankTerms\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSRankTerms\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSRankTerms\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSRankTerms\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\JobTypeTerms\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\JobTypeTerms\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\JobTypeTerms\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\JobTypeTerms\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\JobTypeTerms\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSProgramTerms\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSProgramTerms\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSProgramTerms\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSProgramTerms\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\RMSProgramTerms\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\IdentityPersonalTitles\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\IdentityPersonalTitles\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\IdentityPersonalTitles\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\IdentityPersonalTitles\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\IdentityPersonalTitles\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\GalleryTerms\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\GalleryTerms\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\GalleryTerms\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\GalleryTerms\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\GalleryTerms\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Tags\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Tags\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Tags\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Tags\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Tags\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\TagTerms\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\TagTerms\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\TagTerms\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\TagTerms\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\TagTerms\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\EmployeeTypes\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\EmployeeTypes\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\EmployeeTypes\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\EmployeeTypes\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\EmployeeTypes\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Occupations\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Occupations\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Occupations\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Occupations\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Occupations\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\EmployeeTypeTerms\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\EmployeeTypeTerms\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\EmployeeTypeTerms\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\EmployeeTypeTerms\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\EmployeeTypeTerms\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\OccupationTerms\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\OccupationTerms\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\OccupationTerms\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\OccupationTerms\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\OccupationTerms\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\IdentityPersonalTitleTerms\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\IdentityPersonalTitleTerms\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\IdentityPersonalTitleTerms\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\IdentityPersonalTitleTerms\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\IdentityPersonalTitleTerms\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\Organizations\Translations.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Translations.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\Contents\Translations.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Translations.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\Vacancies\Translations.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Translations.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Employees\Translations.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Translations.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ImageFileTerms\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ImageFileTerms\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ImageFileTerms\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ImageFileTerms\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ImageFileTerms\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\Languages\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\Languages\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\Languages\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\Languages\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\Languages\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
+    <Content Include="Areas\Identity\Views\IdentityDepartments\Create.cshtml" />
+    <Content Include="Areas\Identity\Views\IdentityDepartments\Delete.cshtml" />
+    <Content Include="Areas\Identity\Views\IdentityDepartments\Details.cshtml" />
+    <Content Include="Areas\Identity\Views\IdentityDepartments\Edit.cshtml" />
+    <Content Include="Areas\Identity\Views\IdentityDepartments\Index.cshtml" />
+    <Content Include="Areas\Identity\Views\EmpInDepts\Create.cshtml" />
+    <Content Include="Areas\Identity\Views\EmpInDepts\Delete.cshtml" />
+    <Content Include="Areas\Identity\Views\EmpInDepts\Details.cshtml" />
+    <Content Include="Areas\Identity\Views\EmpInDepts\Edit.cshtml" />
+    <Content Include="Areas\Identity\Views\EmpInDepts\Index.cshtml" />
+    <Content Include="Areas\Identity\Views\Employees\Create.cshtml" />
+    <Content Include="Areas\Identity\Views\Employees\Delete.cshtml" />
+    <Content Include="Areas\Identity\Views\Employees\Details.cshtml" />
+    <Content Include="Areas\Identity\Views\Employees\Edit.cshtml" />
+    <Content Include="Areas\Identity\Views\Employees\Index.cshtml" />
+    <Content Include="Areas\Identity\Views\Publications\Create.cshtml" />
+    <Content Include="Areas\Identity\Views\Publications\Delete.cshtml" />
+    <Content Include="Areas\Identity\Views\Publications\Details.cshtml" />
+    <Content Include="Areas\Identity\Views\Publications\Edit.cshtml" />
+    <Content Include="Areas\Identity\Views\Publications\Index.cshtml" />
+    <Content Include="Areas\RMS\Views\Shared\EditorTemplates\SelectDegreeEditorViewModel.cshtml" />
+    <Content Include="Areas\RMS\Views\Shared\EditorTemplates\SelectRankEditorViewModel.cshtml" />
+    <Content Include="Areas\CMS\Views\Shared\_SideNavBar.cshtml" />
+    <Content Include="Areas\CMS\Views\Error\Index.cshtml" />
+    <Content Include="Areas\CMS\Views\Error\NotFound.cshtml" />
+    <Content Include="Areas\CMS\Views\Error\NotPublished.cshtml" />
+    <Content Include="Areas\CMS\Views\Error\NotTranslated.cshtml" />
+    <Content Include="Areas\Identity\Views\Error\Index.cshtml" />
+    <Content Include="Areas\Identity\Views\Error\NotFound.cshtml" />
+    <Content Include="Areas\Identity\Views\Error\NotPublished.cshtml" />
+    <Content Include="Areas\Identity\Views\Error\NotTranslated.cshtml" />
+    <Content Include="Areas\RMS\Views\Error\Index.cshtml" />
+    <Content Include="Areas\RMS\Views\Error\NotFound.cshtml" />
+    <Content Include="Areas\RMS\Views\Error\NotPublished.cshtml" />
+    <Content Include="Areas\RMS\Views\Error\NotTranslated.cshtml" />
+    <Content Include="Areas\Config\Views\Statistics\Delete.cshtml" />
+    <Content Include="Areas\Config\Views\Statistics\Details.cshtml" />
+    <Content Include="Areas\Config\Views\Statistics\Index.cshtml" />
+    <Content Include="Areas\CMS\Views\ContentTypeTerms\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\ContentTypeTerms\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\ContentTypeTerms\Details.cshtml" />
+    <Content Include="Areas\CMS\Views\ContentTypeTerms\Edit.cshtml" />
+    <Content Include="Areas\CMS\Views\ContentTypeTerms\Index.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSRanks\Create.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSRanks\Delete.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSRanks\Details.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSRanks\Edit.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSRanks\Index.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSDegrees\Create.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSDegrees\Delete.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSDegrees\Details.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSDegrees\Edit.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSDegrees\Index.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSPrograms\Create.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSPrograms\Delete.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSPrograms\Details.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSPrograms\Edit.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSPrograms\Index.cshtml" />
+    <Content Include="Areas\RMS\Views\JobTypes\Create.cshtml" />
+    <Content Include="Areas\RMS\Views\JobTypes\Delete.cshtml" />
+    <Content Include="Areas\RMS\Views\JobTypes\Details.cshtml" />
+    <Content Include="Areas\RMS\Views\JobTypes\Edit.cshtml" />
+    <Content Include="Areas\RMS\Views\JobTypes\Index.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSDegreeTerms\Create.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSDegreeTerms\Delete.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSDegreeTerms\Details.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSDegreeTerms\Edit.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSDegreeTerms\Index.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSRankTerms\Create.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSRankTerms\Delete.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSRankTerms\Details.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSRankTerms\Edit.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSRankTerms\Index.cshtml" />
+    <Content Include="Areas\RMS\Views\JobTypeTerms\Create.cshtml" />
+    <Content Include="Areas\RMS\Views\JobTypeTerms\Delete.cshtml" />
+    <Content Include="Areas\RMS\Views\JobTypeTerms\Details.cshtml" />
+    <Content Include="Areas\RMS\Views\JobTypeTerms\Edit.cshtml" />
+    <Content Include="Areas\RMS\Views\JobTypeTerms\Index.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSProgramTerms\Create.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSProgramTerms\Delete.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSProgramTerms\Details.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSProgramTerms\Edit.cshtml" />
+    <Content Include="Areas\RMS\Views\RMSProgramTerms\Index.cshtml" />
+    <Content Include="Areas\Identity\Views\IdentityPersonalTitles\Create.cshtml" />
+    <Content Include="Areas\Identity\Views\IdentityPersonalTitles\Delete.cshtml" />
+    <Content Include="Areas\Identity\Views\IdentityPersonalTitles\Details.cshtml" />
+    <Content Include="Areas\Identity\Views\IdentityPersonalTitles\Edit.cshtml" />
+    <Content Include="Areas\Identity\Views\IdentityPersonalTitles\Index.cshtml" />
+    <Content Include="Areas\CMS\Views\GalleryTerms\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\GalleryTerms\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\GalleryTerms\Details.cshtml" />
+    <Content Include="Areas\CMS\Views\GalleryTerms\Edit.cshtml" />
+    <Content Include="Areas\CMS\Views\GalleryTerms\Index.cshtml" />
+    <Content Include="Areas\CMS\Views\Tags\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\Tags\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\Tags\Details.cshtml" />
+    <Content Include="Areas\CMS\Views\Tags\Edit.cshtml" />
+    <Content Include="Areas\CMS\Views\Tags\Index.cshtml" />
+    <Content Include="Areas\CMS\Views\TagTerms\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\TagTerms\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\TagTerms\Details.cshtml" />
+    <Content Include="Areas\CMS\Views\TagTerms\Edit.cshtml" />
+    <Content Include="Areas\CMS\Views\TagTerms\Index.cshtml" />
+    <Content Include="Areas\Identity\Views\EmployeeTypes\Create.cshtml" />
+    <Content Include="Areas\Identity\Views\EmployeeTypes\Delete.cshtml" />
+    <Content Include="Areas\Identity\Views\EmployeeTypes\Details.cshtml" />
+    <Content Include="Areas\Identity\Views\EmployeeTypes\Edit.cshtml" />
+    <Content Include="Areas\Identity\Views\EmployeeTypes\Index.cshtml" />
+    <Content Include="Areas\Identity\Views\Occupations\Create.cshtml" />
+    <Content Include="Areas\Identity\Views\Occupations\Delete.cshtml" />
+    <Content Include="Areas\Identity\Views\Occupations\Details.cshtml" />
+    <Content Include="Areas\Identity\Views\Occupations\Edit.cshtml" />
+    <Content Include="Areas\Identity\Views\Occupations\Index.cshtml" />
+    <Content Include="Areas\Identity\Views\EmployeeTypeTerms\Create.cshtml" />
+    <Content Include="Areas\Identity\Views\EmployeeTypeTerms\Delete.cshtml" />
+    <Content Include="Areas\Identity\Views\EmployeeTypeTerms\Details.cshtml" />
+    <Content Include="Areas\Identity\Views\EmployeeTypeTerms\Edit.cshtml" />
+    <Content Include="Areas\Identity\Views\EmployeeTypeTerms\Index.cshtml" />
+    <Content Include="Areas\Identity\Views\OccupationTerms\Create.cshtml" />
+    <Content Include="Areas\Identity\Views\OccupationTerms\Delete.cshtml" />
+    <Content Include="Areas\Identity\Views\OccupationTerms\Details.cshtml" />
+    <Content Include="Areas\Identity\Views\OccupationTerms\Edit.cshtml" />
+    <Content Include="Areas\Identity\Views\OccupationTerms\Index.cshtml" />
+    <Content Include="Areas\Identity\Views\IdentityPersonalTitleTerms\Create.cshtml" />
+    <Content Include="Areas\Identity\Views\IdentityPersonalTitleTerms\Delete.cshtml" />
+    <Content Include="Areas\Identity\Views\IdentityPersonalTitleTerms\Details.cshtml" />
+    <Content Include="Areas\Identity\Views\IdentityPersonalTitleTerms\Edit.cshtml" />
+    <Content Include="Areas\Identity\Views\IdentityPersonalTitleTerms\Index.cshtml" />
+    <Content Include="Areas\Config\Views\Organizations\Translations.cshtml" />
+    <Content Include="Areas\CMS\Views\Contents\Translations.cshtml" />
+    <Content Include="Areas\RMS\Views\Vacancies\Translations.cshtml" />
+    <Content Include="Areas\Identity\Views\Employees\Translations.cshtml" />
+    <Content Include="Areas\CMS\Views\ImageFileTerms\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\ImageFileTerms\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\ImageFileTerms\Details.cshtml" />
+    <Content Include="Areas\CMS\Views\ImageFileTerms\Edit.cshtml" />
+    <Content Include="Areas\CMS\Views\ImageFileTerms\Index.cshtml" />
+    <Content Include="Areas\Config\Views\Languages\Create.cshtml" />
+    <Content Include="Areas\Config\Views\Languages\Delete.cshtml" />
+    <Content Include="Areas\Config\Views\Languages\Details.cshtml" />
+    <Content Include="Areas\Config\Views\Languages\Edit.cshtml" />
+    <Content Include="Areas\Config\Views\Languages\Index.cshtml" />
     <Content Include="Areas\Config\Views\web.config" />
     <EntityDeploy Include="Areas\Config\Models\DBModel\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -8256,243 +5572,66 @@
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
     <Content Include="Areas\Config\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Config\Views\Error\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\Error\NotFound.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>NotFound.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\Error\NotPublished.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>NotPublished.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\Error\NotTranslated.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>NotTranslated.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\Genders\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\Genders\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\Genders\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\Genders\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\Genders\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\GenderTerms\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\GenderTerms\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\GenderTerms\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\GenderTerms\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\RMS\Views\GenderTerms\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\Notifications\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\Notifications\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\Notifications\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\Notifications\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\Notifications\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\NotificationTerms\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\NotificationTerms\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\NotificationTerms\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\NotificationTerms\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\NotificationTerms\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\SMTPSettings\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\SMTPSettings\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\SMTPSettings\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\SMTPSettings\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\SMTPSettings\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\IdentityDepartmentTerms\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\IdentityDepartmentTerms\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ContentGalleries\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ContentGalleries\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ContentGalleries\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ContentGalleries\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\CMS\Views\ContentGalleries\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\ConfigStatus\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\ConfigStatus\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\ConfigStatus\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\ConfigStatus\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\ConfigStatus\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\ConfigStatusTerms\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\ConfigStatusTerms\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\ConfigStatusTerms\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\ConfigStatusTerms\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Config\Views\ConfigStatusTerms\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
+    <Content Include="Areas\Config\Views\Error\Index.cshtml" />
+    <Content Include="Areas\Config\Views\Error\NotFound.cshtml" />
+    <Content Include="Areas\Config\Views\Error\NotPublished.cshtml" />
+    <Content Include="Areas\Config\Views\Error\NotTranslated.cshtml" />
+    <Content Include="Areas\RMS\Views\Genders\Create.cshtml" />
+    <Content Include="Areas\RMS\Views\Genders\Delete.cshtml" />
+    <Content Include="Areas\RMS\Views\Genders\Details.cshtml" />
+    <Content Include="Areas\RMS\Views\Genders\Edit.cshtml" />
+    <Content Include="Areas\RMS\Views\Genders\Index.cshtml" />
+    <Content Include="Areas\RMS\Views\GenderTerms\Create.cshtml" />
+    <Content Include="Areas\RMS\Views\GenderTerms\Delete.cshtml" />
+    <Content Include="Areas\RMS\Views\GenderTerms\Details.cshtml" />
+    <Content Include="Areas\RMS\Views\GenderTerms\Edit.cshtml" />
+    <Content Include="Areas\RMS\Views\GenderTerms\Index.cshtml" />
+    <Content Include="Areas\Config\Views\Notifications\Create.cshtml" />
+    <Content Include="Areas\Config\Views\Notifications\Delete.cshtml" />
+    <Content Include="Areas\Config\Views\Notifications\Details.cshtml" />
+    <Content Include="Areas\Config\Views\Notifications\Edit.cshtml" />
+    <Content Include="Areas\Config\Views\Notifications\Index.cshtml" />
+    <Content Include="Areas\Config\Views\NotificationTerms\Create.cshtml" />
+    <Content Include="Areas\Config\Views\NotificationTerms\Delete.cshtml" />
+    <Content Include="Areas\Config\Views\NotificationTerms\Details.cshtml" />
+    <Content Include="Areas\Config\Views\NotificationTerms\Edit.cshtml" />
+    <Content Include="Areas\Config\Views\NotificationTerms\Index.cshtml" />
+    <Content Include="Areas\Config\Views\SMTPSettings\Create.cshtml" />
+    <Content Include="Areas\Config\Views\SMTPSettings\Delete.cshtml" />
+    <Content Include="Areas\Config\Views\SMTPSettings\Details.cshtml" />
+    <Content Include="Areas\Config\Views\SMTPSettings\Edit.cshtml" />
+    <Content Include="Areas\Config\Views\SMTPSettings\Index.cshtml" />
+    <Content Include="Areas\Identity\Views\IdentityDepartmentTerms\Create.cshtml" />
+    <Content Include="Areas\Identity\Views\IdentityDepartmentTerms\Delete.cshtml" />
+    <Content Include="Areas\Identity\Views\IdentityDepartmentTerms\Details.cshtml" />
+    <Content Include="Areas\Identity\Views\IdentityDepartmentTerms\Edit.cshtml" />
+    <Content Include="Areas\Identity\Views\IdentityDepartmentTerms\Index.cshtml" />
+    <Content Include="Areas\CMS\Views\ContentGalleries\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\ContentGalleries\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\ContentGalleries\Details.cshtml" />
+    <Content Include="Areas\CMS\Views\ContentGalleries\Edit.cshtml" />
+    <Content Include="Areas\CMS\Views\ContentGalleries\Index.cshtml" />
+    <Content Include="Areas\Config\Views\ConfigStatus\Create.cshtml" />
+    <Content Include="Areas\Config\Views\ConfigStatus\Delete.cshtml" />
+    <Content Include="Areas\Config\Views\ConfigStatus\Details.cshtml" />
+    <Content Include="Areas\Config\Views\ConfigStatus\Edit.cshtml" />
+    <Content Include="Areas\Config\Views\ConfigStatus\Index.cshtml" />
+    <Content Include="Areas\Config\Views\ConfigStatusTerms\Create.cshtml" />
+    <Content Include="Areas\Config\Views\ConfigStatusTerms\Delete.cshtml" />
+    <Content Include="Areas\Config\Views\ConfigStatusTerms\Details.cshtml" />
+    <Content Include="Areas\Config\Views\ConfigStatusTerms\Edit.cshtml" />
+    <Content Include="Areas\Config\Views\ConfigStatusTerms\Index.cshtml" />
     <Content Include="assets\porto\vendor\validation\jquery.validate.unobtrusive.bootstrap.min.js.map" />
-    <Content Include="Views\Home\Calendar.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Calendar.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Home\Contact.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Contact.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Home\Contents.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Contents.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Home\ForgotPasswordConfirmation.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ForgotPasswordConfirmation.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Home\Galleries.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Galleries.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Home\ImageFiles.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ImageFiles.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Home\ResetPassword.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ResetPassword.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Home\ResetPasswordConfirmation.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ResetPasswordConfirmation.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Home\Subscribed.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Subscribed.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Home\Welcome.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Welcome.generated.cs</LastGenOutput>
-    </Content>
+    <Content Include="Views\Home\Calendar.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Contents.cshtml" />
+    <Content Include="Views\Home\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Home\Galleries.cshtml" />
+    <Content Include="Views\Home\ImageFiles.cshtml" />
+    <Content Include="Views\Home\ResetPassword.cshtml" />
+    <Content Include="Views\Home\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Home\Subscribed.cshtml" />
+    <Content Include="Views\Home\Welcome.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -8504,372 +5643,102 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Identity\Views\Account\_ExternalLoginsListPartial.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ExternalLoginsListPartial.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Account\ConfirmEmail.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ConfirmEmail.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Account\ExternalLoginConfirmation.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ExternalLoginConfirmation.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Account\ExternalLoginFailure.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ExternalLoginFailure.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Account\ForgotPassword.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ForgotPassword.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Account\ForgotPasswordConfirmation.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ForgotPasswordConfirmation.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Account\Login.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Login.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Account\Register.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Register.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Account\ResetPassword.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ResetPassword.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Account\ResetPasswordConfirmation.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ResetPasswordConfirmation.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Account\SendCode.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>SendCode.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Account\VerifyCode.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>VerifyCode.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Manage\AddPhoneNumber.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>AddPhoneNumber.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Manage\ChangePassword.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ChangePassword.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Manage\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Manage\ManageLogins.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ManageLogins.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Manage\SetPassword.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>SetPassword.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Manage\VerifyPhoneNumber.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>VerifyPhoneNumber.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\Lockout.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Lockout.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Account\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Groups\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Groups\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Groups\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Groups\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Groups\GroupRoles.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>GroupRoles.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Groups\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Roles\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Roles\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Roles\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Roles\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Account\UserGroups.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>UserGroups.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Account\UserRoles.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>UserRoles.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\EditorTemplates\SelectTagEditorViewModel.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>SelectTagEditorViewModel.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Account\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Identity\Views\Account\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\_HeaderMenu.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_HeaderMenu.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\_NewsBar.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_NewsBar.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Pages\Content.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Content.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\_Breadcrumb.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Breadcrumb.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\MyProfile\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\MyProfile\PersonalInfo.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>PersonalInfo.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\MyProfile\AcademicInfo.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>AcademicInfo.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\MyProfile\Biography.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Biography.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\MyProfile\ContactInfo.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ContactInfo.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\MyProfile\PersonalPhoto.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>PersonalPhoto.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\EmpInDepts\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\EmpInDepts\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\EmpInDepts\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\EmpInDepts\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\_MyProfile.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_MyProfile.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Publications\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Publications\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Publications\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Publications\Edit.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Edit.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Publications\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Staff\MemberProfile.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>MemberProfile.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Staff\Search.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Search.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Staff\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\_Profile.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Profile.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Staff\AcademicInfo.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>AcademicInfo.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Staff\ContactInfo.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ContactInfo.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Staff\Biography.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Biography.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Staff\Publications.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Publications.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Staff\EmpInDepts.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>EmpInDepts.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Staff\EmpsInDept.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>EmpsInDept.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Careers\Details.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Details.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Careers\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
+    <Content Include="Areas\Identity\Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Areas\Identity\Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Areas\Identity\Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Areas\Identity\Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Areas\Identity\Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Areas\Identity\Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Areas\Identity\Views\Account\Login.cshtml" />
+    <Content Include="Areas\Identity\Views\Account\Register.cshtml" />
+    <Content Include="Areas\Identity\Views\Account\ResetPassword.cshtml" />
+    <Content Include="Areas\Identity\Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Areas\Identity\Views\Account\SendCode.cshtml" />
+    <Content Include="Areas\Identity\Views\Account\VerifyCode.cshtml" />
+    <Content Include="Areas\Identity\Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Areas\Identity\Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Areas\Identity\Views\Manage\Index.cshtml" />
+    <Content Include="Areas\Identity\Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Areas\Identity\Views\Manage\SetPassword.cshtml" />
+    <Content Include="Areas\Identity\Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Areas\Identity\Views\Account\Index.cshtml" />
+    <Content Include="Areas\Identity\Views\Groups\Create.cshtml" />
+    <Content Include="Areas\Identity\Views\Groups\Delete.cshtml" />
+    <Content Include="Areas\Identity\Views\Groups\Details.cshtml" />
+    <Content Include="Areas\Identity\Views\Groups\Edit.cshtml" />
+    <Content Include="Areas\Identity\Views\Groups\GroupRoles.cshtml" />
+    <Content Include="Areas\Identity\Views\Groups\Index.cshtml" />
+    <Content Include="Areas\Identity\Views\Roles\Create.cshtml" />
+    <Content Include="Areas\Identity\Views\Roles\Delete.cshtml" />
+    <Content Include="Areas\Identity\Views\Roles\Edit.cshtml" />
+    <Content Include="Areas\Identity\Views\Roles\Index.cshtml" />
+    <Content Include="Areas\Identity\Views\Account\UserGroups.cshtml" />
+    <Content Include="Areas\Identity\Views\Account\UserRoles.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\SelectTagEditorViewModel.cshtml" />
+    <Content Include="Areas\Identity\Views\Account\Delete.cshtml" />
+    <Content Include="Areas\Identity\Views\Account\Edit.cshtml" />
+    <Content Include="Views\Shared\_HeaderMenu.cshtml" />
+    <Content Include="Views\Shared\_NewsBar.cshtml" />
+    <Content Include="Views\Pages\Content.cshtml" />
+    <Content Include="Views\Shared\_Breadcrumb.cshtml" />
+    <Content Include="Views\MyProfile\Index.cshtml" />
+    <Content Include="Views\MyProfile\PersonalInfo.cshtml" />
+    <Content Include="Views\MyProfile\AcademicInfo.cshtml" />
+    <Content Include="Views\MyProfile\Biography.cshtml" />
+    <Content Include="Views\MyProfile\ContactInfo.cshtml" />
+    <Content Include="Views\MyProfile\PersonalPhoto.cshtml" />
+    <Content Include="Views\EmpInDepts\Delete.cshtml" />
+    <Content Include="Views\EmpInDepts\Details.cshtml" />
+    <Content Include="Views\EmpInDepts\Edit.cshtml" />
+    <Content Include="Views\EmpInDepts\Index.cshtml" />
+    <Content Include="Views\Shared\_MyProfile.cshtml" />
+    <Content Include="Views\Publications\Create.cshtml" />
+    <Content Include="Views\Publications\Delete.cshtml" />
+    <Content Include="Views\Publications\Details.cshtml" />
+    <Content Include="Views\Publications\Edit.cshtml" />
+    <Content Include="Views\Publications\Index.cshtml" />
+    <Content Include="Views\Staff\MemberProfile.cshtml" />
+    <Content Include="Views\Staff\Search.cshtml" />
+    <Content Include="Views\Staff\Index.cshtml" />
+    <Content Include="Views\Shared\_Profile.cshtml" />
+    <Content Include="Views\Staff\AcademicInfo.cshtml" />
+    <Content Include="Views\Staff\ContactInfo.cshtml" />
+    <Content Include="Views\Staff\Biography.cshtml" />
+    <Content Include="Views\Staff\Publications.cshtml" />
+    <Content Include="Views\Staff\EmpInDepts.cshtml" />
+    <Content Include="Views\Staff\EmpsInDept.cshtml" />
+    <Content Include="Views\Careers\Details.cshtml" />
+    <Content Include="Views\Careers\Index.cshtml" />
     <Content Include="Views\Careers\Apply.cshtml" />
-    <Content Include="Views\Careers\Acknowledgement.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Acknowledgement.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\EmpInDepts\Create.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Create.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Error\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Error\NotFound.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>NotFound.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Error\NotTranslated.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>NotTranslated.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Error\NotPublished.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>NotPublished.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Staff\Departments.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Departments.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\MyProfile\Translations.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Translations.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\MyProfile\Delete.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Delete.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\Subscribe.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Subscribe.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\LoginAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>LoginAjax.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\RegisterAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>RegisterAjax.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\ForgotPassword.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ForgotPassword.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\ForgotPasswordAjax.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ForgotPasswordAjax.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Error\InvalidToken.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>InvalidToken.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\_TopMenu.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_TopMenu.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\_Footer.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Footer.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\_Layout.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_Layout.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Pages\Dept.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Dept.generated.cs</LastGenOutput>
-    </Content>
+    <Content Include="Views\Careers\Acknowledgement.cshtml" />
+    <Content Include="Views\EmpInDepts\Create.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Error\NotTranslated.cshtml" />
+    <Content Include="Views\Error\NotPublished.cshtml" />
+    <Content Include="Views\Staff\Departments.cshtml" />
+    <Content Include="Views\MyProfile\Translations.cshtml" />
+    <Content Include="Views\MyProfile\Delete.cshtml" />
+    <Content Include="Views\Shared\Subscribe.cshtml" />
+    <Content Include="Views\Shared\LoginAjax.cshtml" />
+    <Content Include="Views\Shared\RegisterAjax.cshtml" />
+    <Content Include="Views\Shared\ForgotPassword.cshtml" />
+    <Content Include="Views\Shared\ForgotPasswordAjax.cshtml" />
+    <Content Include="Views\Error\InvalidToken.cshtml" />
+    <Content Include="Views\Shared\_TopMenu.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Pages\Dept.cshtml" />
     <Content Include="Views\Shared\_DeptBreadcrumb.cshtml" />
     <Content Include="Views\Home\DefaultIndex.cshtml" />
-    <Content Include="Views\Home\SFJUIndex.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>SFJUIndex.generated.cs</LastGenOutput>
-    </Content>
+    <Content Include="Views\Home\SFJUIndex.cshtml" />
     <Content Include="Views\Home\DemoIndex.cshtml">
       <Generator>RazorGenerator</Generator>
     </Content>
-    <Content Include="Views\Shared\SendCode.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>SendCode.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\VerifyCode.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>VerifyCode.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Home\Index.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Index.generated.cs</LastGenOutput>
-    </Content>
+    <Content Include="Views\Shared\SendCode.cshtml" />
+    <Content Include="Views\Shared\VerifyCode.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
   </ItemGroup>
   <ItemGroup>
@@ -9758,22 +6627,10 @@
     <Content Include="assets\porto\vendor\simple-line-icons\LICENSE.md" />
     <Content Include="assets\porto\vendor\simple-line-icons\yarn.lock" />
     <None Include="Project_Readme.html" />
-    <Content Include="Views\Error\CatchAll.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>CatchAll.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\Account.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Account.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\Login.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Login.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Shared\Register.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Register.generated.cs</LastGenOutput>
-    </Content>
+    <Content Include="Views\Error\CatchAll.cshtml" />
+    <Content Include="Views\Shared\Account.cshtml" />
+    <Content Include="Views\Shared\Login.cshtml" />
+    <Content Include="Views\Shared\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

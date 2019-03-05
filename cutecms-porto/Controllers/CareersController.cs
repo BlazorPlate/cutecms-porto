@@ -2,6 +2,7 @@
 using cutecms_porto.Areas.RMS.Models;
 using cutecms_porto.Areas.RMS.Models.DBModel;
 using cutecms_porto.Helpers;
+using cutecms_porto.Models;
 using PagedList;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace cutecms_porto.Controllers
         #region Fields
         private static readonly Random random = new Random();
         private static readonly object syncLock = new object();
+        private string pathto = "";
         private RMSEntities db = new RMSEntities();
         private ConfigEntities configDb = new ConfigEntities();
         #endregion Fields
@@ -78,94 +80,116 @@ namespace cutecms_porto.Controllers
             }
             if (ModelState.IsValid)
             {
+                try
+                {
+                    int MaxCVContentLength = 20971520; //In bytes == 20MB
 
-                var allowedExtensions = new[] { ".png", ".jpg", ".jpeg", ".doc", ".docx", ".pdf" };
-                submission.Applicant.AttachmentFiles = attachmentFiles;
-                submission.Applicant.AttachmentFiles.RemoveAll(item => item == null);
-                if (submission.Applicant.AttachmentFiles.Count == 0)
-                {
-                    ModelState.AddModelError("attachments", Resources.Resources.PleaseUploadAttachments);
-                    ViewBag.VacancyTitle = db.Vacancies.Find(submission.VacancyId).Title.ToString();
-                    return View();
-                }
-                foreach (var item in submission.Applicant.AttachmentFiles)
-                {
-                    if (item != null)
+                    if (submission.Applicant.File.ContentLength > MaxCVContentLength)
                     {
-                        int MaxContentLength = 20971520; //In bytes == 20MB
-                        var attachemntExt = Path.GetExtension(item.FileName.ToLower());
-                        if (!allowedExtensions.Contains(attachemntExt))
+                        ModelState.AddModelError("files", Resources.Resources.MaximumAllowedSize + (MaxCVContentLength / 1024 / 1024).ToString() + "MB");
+                        return View();
+                    }
+                    var allowedExtensions = new[] { ".png", ".jpg", ".jpeg", ".doc", ".docx", ".pdf" };
+                    submission.Applicant.AttachmentFiles = attachmentFiles;
+                    submission.Applicant.AttachmentFiles.RemoveAll(item => item == null);
+                    if (submission.Applicant.AttachmentFiles.Count == 0)
+                    {
+                        ModelState.AddModelError("attachments", Resources.Resources.PleaseUploadAttachments);
+                        ViewBag.VacancyTitle = db.Vacancies.Find(submission.VacancyId).Title.ToString();
+                        return View();
+                    }
+                    foreach (var item in submission.Applicant.AttachmentFiles)
+                    {
+                        if (item != null)
                         {
-                            ModelState.AddModelError("files", Resources.Resources.AllowedAttachmentExtensions);
-                            return View();
-                        }
-                        if (item.ContentLength > MaxContentLength)
-                        {
-                            ModelState.AddModelError("files", Resources.Resources.MaximumAllowedSize + (MaxContentLength / 1024 / 1024).ToString() + "MB");
-                            return View();
+                            int MaxContentLength = 20971520; //In bytes == 20MB
+                            var attachemntExt = Path.GetExtension(item.FileName.ToLower());
+                            if (!allowedExtensions.Contains(attachemntExt))
+                            {
+                                ModelState.AddModelError("files", Resources.Resources.AllowedAttachmentExtensions);
+                                return View();
+                            }
+                            if (item.ContentLength > MaxContentLength)
+                            {
+                                ModelState.AddModelError("files", Resources.Resources.MaximumAllowedSize + (MaxContentLength / 1024 / 1024).ToString() + "MB");
+                                return View();
+                            }
                         }
                     }
-                }
-                using (var db = new RMSEntities())
-                {
-                    using (var dbContextTransaction = db.Database.BeginTransaction())
+                    using (var db = new RMSEntities())
                     {
-                        try
+                        using (var dbContextTransaction = db.Database.BeginTransaction())
                         {
-                            if (submission.Applicant.File != null && submission.Applicant.File.ContentLength > 0)
+                            try
                             {
-                                string submissionTimeStamp = DateTime.UtcNow.ToString("ddMMyyyy HHmmssfff", CultureInfo.InvariantCulture);
-                                var vacancyName = db.Vacancies.Find(submission.VacancyId).Title;
-                                var fileName = Path.GetFileName(submission.Applicant.File.FileName);
-                                var ext = Path.GetExtension(submission.Applicant.File.FileName);
-                                var newFileName = StringHelper.CleanFileName(submission.Applicant.FullName + "[" + "CV-" + submission.Id + "-" + submissionTimeStamp + "-" + RandomNumber(1000000, 9999999) + "]" + ext);
-                                var path = string.Format("~/fileman/Uploads/Documents/RMS/Applicants/{0}", newFileName);
-                                submission.Applicant.File.SaveAs(System.Web.Hosting.HostingEnvironment.MapPath(path));
-                                submission.Applicant.ResumeFilePath = path;
-                                submission.Applicant.ResumeFileName = newFileName;
-                                submission.SubmissionDate = DateTime.UtcNow;
-                                List<Areas.RMS.Models.DBModel.Attachment> attachments = new List<Areas.RMS.Models.DBModel.Attachment>();
-                                foreach (var item in submission.Applicant.AttachmentFiles)
+                            
+                                if (submission.Applicant.File != null && submission.Applicant.File.ContentLength > 0)
                                 {
-                                    if (item != null && item.ContentLength > 0)
+                                    string submissionTimeStamp = DateTime.UtcNow.ToString("ddMMyyyy HHmmssfff", CultureInfo.InvariantCulture);
+                                    var vacancyName = db.Vacancies.Find(submission.VacancyId).Title;
+                                    var fileName = Path.GetFileName(submission.Applicant.File.FileName);
+                                    var ext = Path.GetExtension(submission.Applicant.File.FileName);
+                                    var newFileName = StringHelper.CleanFileName(submission.Applicant.FullName + "[" + "CV-" + submission.Id + "-" + submissionTimeStamp + "-" + RandomNumber(1000000, 9999999) + "]" + ext);
+                                    var path = string.Format("~/fileman/Uploads/Documents/RMS/Applicants/{0}", newFileName);
+                                    submission.Applicant.File.SaveAs(System.Web.Hosting.HostingEnvironment.MapPath(path));
+                                    pathto = System.Web.Hosting.HostingEnvironment.MapPath(path);
+                                    submission.Applicant.ResumeFilePath = path;
+                                    submission.Applicant.ResumeFileName = newFileName;
+                                    submission.SubmissionDate = DateTime.UtcNow;
+                                    List<Areas.RMS.Models.DBModel.Attachment> attachments = new List<Areas.RMS.Models.DBModel.Attachment>();
+                                    foreach (var item in submission.Applicant.AttachmentFiles)
                                     {
-                                        fileName = Path.GetFileName(item.FileName);
-                                        ext = Path.GetExtension(item.FileName);
-                                        newFileName = StringHelper.CleanFileName(submission.Applicant.FullName + "[" + "Att-" + submission.Id + "-" + submissionTimeStamp + "-" + RandomNumber(1000000, 9999999) + "]" + ext);
-                                        path = String.Format("~/fileman/Uploads/Documents/RMS/Applicants/Attachments/{0}", newFileName);
-                                        newFileName = StringHelper.CleanFileName(newFileName);
-                                        item.SaveAs(System.Web.Hosting.HostingEnvironment.MapPath(path));
-                                        Areas.RMS.Models.DBModel.Attachment attachment = new Areas.RMS.Models.DBModel.Attachment();
-                                        attachment.FilePath = path;
-                                        attachment.FileName = newFileName;
-                                        attachments.Add(attachment);
-                                    }
-                                    else
-                                    {
-                                        ModelState.AddModelError("InvalidAttachemnt", "One or more attachment files are empty, please upload a non-empty attachemnt");
-                                        return View(submission);
-                                    }
+                                        if (item != null && item.ContentLength > 0)
+                                        {
+                                            fileName = Path.GetFileName(item.FileName);
+                                            ext = Path.GetExtension(item.FileName);
+                                            newFileName = StringHelper.CleanFileName(submission.Applicant.FullName + "[" + "Att-" + submission.Id + "-" + submissionTimeStamp + "-" + RandomNumber(1000000, 9999999) + "]" + ext);
+                                            path = String.Format("~/fileman/Uploads/Documents/RMS/Applicants/Attachments/{0}", newFileName);
+                                            newFileName = StringHelper.CleanFileName(newFileName);
+                                            item.SaveAs(System.Web.Hosting.HostingEnvironment.MapPath(path));
+                                            Areas.RMS.Models.DBModel.Attachment attachment = new Areas.RMS.Models.DBModel.Attachment();
+                                            attachment.FilePath = path;
+                                            attachment.FileName = newFileName;
+                                            attachments.Add(attachment);
+                                        }
+                                        else
+                                        {
+                                            ModelState.AddModelError("InvalidAttachemnt", "One or more attachment files are empty, please upload a non-empty attachemnt");
+                                            return View(submission);
+                                        }
 
+                                    }
+                                    submission.Applicant.Attachments = attachments;
+                                    db.Submissions.Add(submission);
+                                    db.SaveChanges();
+                                    dbContextTransaction.Commit();
+                                    return RedirectToAction("Acknowledgement", new { id = submission.Id });
                                 }
-                                submission.Applicant.Attachments = attachments;
-                                db.Submissions.Add(submission);
-                                db.SaveChanges();
-                                dbContextTransaction.Commit();
-                                return RedirectToAction("Acknowledgement", new { id = submission.Id });
+                                else
+                                {
+                                    ModelState.AddModelError("InvalidCV", "Please upload non-empty CV");
+                                }
                             }
-                            else
+                            catch (Exception)
                             {
-                                ModelState.AddModelError("InvalidCV", "Please upload non-empty CV");
+                                //ErrorLog e = new ErrorLog();
+                                //e.WriteErrorLog("1 "+ioe.StackTrace);
+                                //ModelState.AddModelError("attachments", ioe.Message);
+                                dbContextTransaction.Rollback();
                             }
                         }
-                        catch (Exception)
-                        {
 
-                            dbContextTransaction.Rollback();
-                        }
                     }
-
                 }
+                catch (Exception ex)
+                {
+                    //ErrorLog e = new ErrorLog();
+                    //e.WriteErrorLog("2 "+ioe.StackTrace);
+
+
+                    ModelState.AddModelError("attachments", ex.Message);
+                }
+
                 ViewBag.VacancyTitle = db.Vacancies.Find(submission.VacancyId).Title.ToString();
             }
             return View(submission);
@@ -176,7 +200,7 @@ namespace cutecms_porto.Controllers
             {
                 throw new HttpException(404, "Page Not Found");
             }
-          
+
             Notification notification = configDb.Notifications.Include("NotificationTerms").Include("NotificationTerms.Language").Include("SMTPSetting").Where(c => c.NotificationCode.Code.Trim().Equals("RMS")).FirstOrDefault();
             NotificationViewModel notificationViewModel = new NotificationViewModel();
             using (var db = new RMSEntities())
@@ -186,7 +210,7 @@ namespace cutecms_porto.Controllers
                 notificationViewModel.FullName = submission.Applicant.FullName;
                 notificationViewModel.RecepientEmail = submission.Applicant.Email;
             }
-   
+
             if (notification != null && notification.NotificationTerms.Count != 0)
             {
                 notificationViewModel.SenderEmail = notification.SMTPSetting.SenderEmail;

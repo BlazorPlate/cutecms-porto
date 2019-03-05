@@ -1,97 +1,97 @@
 ﻿@model IEnumerable<cutecms_porto.Areas.RMS.Models.VacancyViewModel>
-    @using cutecms_porto.Areas.RMS.Models.DBModel
-    @using System.Threading
-    @using cutecms_porto.Helpers
-    @{
+@using cutecms_porto.Areas.RMS.Models.DBModel
+@using System.Threading
+@using cutecms_porto.Helpers
+@{
     ViewBag.MainTitle = Resources.Resources.Vacancies;
     ViewBag.Title = Resources.Resources.Index;
     RMSEntities db = new RMSEntities();
-    }
-    @section styles{
+}
+@section styles{
     <link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/buttons/1.2.1/css/buttons.dataTables.min.css" rel="stylesheet" />}
 
-    <div>
-        @Html.ActionLink(Resources.Resources.Create, "Create", null, new { @class = "btn btn-danger" })
-    </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="white-box">
-                @*<h3 class="box-title m-b-0">Data Export</h3>
+<div>
+    @Html.ActionLink(Resources.Resources.Create, "Create", null, new { @class = "btn btn-danger" })
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="white-box">
+            @*<h3 class="box-title m-b-0">Data Export</h3>
                 <p class="text-muted m-b-30">Export data to Copy, CSV, Excel, PDF & Print</p>*@
-                <div class="table-responsive">
-                    <table id="vacanciesTable" class="display nowrap" cellspacing="0" width="100%">
-                        <thead>
-                            <tr>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Id)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Code)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Title)
-                                </th>
-                                <th class="select-filter">
-                                    @Html.DisplayNameFor(model => model.Language)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.LanguageId)
-                                </th>
-                                <th class="select-filter">
-                                    @Html.DisplayNameFor(model => model.Department)
-                                </th>
-                                <th class="select-filter">
-                                    @Html.DisplayNameFor(model => model.JobType)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.PublishedOn)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.ExpiredOn)
-                                </th>
-                                <th class="select-filter">
-                                    @Html.DisplayNameFor(model => model.IsTranslated)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.TranslationId)
-                                </th>
-                                <th class="select-filter">
-                                    @Html.DisplayNameFor(model => model.Status)
-                                </th>
-                                <th>@Resources.Resources.Actions</th>
-                            </tr>
-                        </thead>
-                        <tfoot>
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Language)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Department)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.JobType)
-                                </th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Status)
-                                </th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
+            <div class="table-responsive">
+                <table id="vacanciesTable" class="display nowrap" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Id)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Code)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Title)
+                            </th>
+                            <th class="select-filter">
+                                @Html.DisplayNameFor(model => model.Language)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.LanguageId)
+                            </th>
+                            <th class="select-filter">
+                                @Html.DisplayNameFor(model => model.Department)
+                            </th>
+                            <th class="select-filter">
+                                @Html.DisplayNameFor(model => model.JobType)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.PublishedOn)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ExpiredOn)
+                            </th>
+                            <th class="select-filter">
+                                @Html.DisplayNameFor(model => model.IsTranslated)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TranslationId)
+                            </th>
+                            <th class="select-filter">
+                                @Html.DisplayNameFor(model => model.Status)
+                            </th>
+                            <th>@Resources.Resources.Actions</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Language)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Department)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.JobType)
+                            </th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Status)
+                            </th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                </table>
             </div>
         </div>
     </div>
-    @section scripts{
+</div>
+@section scripts{
     <!-- Custom Theme JavaScript -->
     <script src="~/assets/admin/js/custom.min.js"></script>
     <script src="~/assets/admin/plugins/bower_components/datatables/jquery.dataTables.min.js"></script>
@@ -226,5 +226,5 @@
             });
         });
     </script>
-    }
+}
 
